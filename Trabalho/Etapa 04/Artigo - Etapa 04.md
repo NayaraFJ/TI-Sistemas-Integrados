@@ -17,9 +17,34 @@ O desenvolvimento será organizado nas etapas a seguir.
 
 ### 2.1 Revisão bibliográfica
 
-Será realizada revisão de trabalhos selecionados na IEEE Xplore sobre gestão de projetos em agências, automação de marketing, CRM, campanhas digitais, métricas de tráfego pago, experiência do usuário e sistemas de gestão de marketing. A revisão será complementada por fontes normativas e oficiais pertinentes ao projeto: ITIL 4 para gestão de serviços e solicitações, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0 para modelagem de processo e LGPD/ANPD para proteção de dados (PEOPLECERT, 2023; AXELOS, 2020; ISO/IEC/IEEE, 2018; OMG, 2011; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2024). As buscas em artigos já iniciaram com títulos relacionados a *digital marketing*, *marketing automation*, *project management*, *customer relationship management*, *campaign* e *advertising*.
+A revisão bibliográfica foi realizada de forma estruturada na base **IEEE Xplore**, complementada por fontes normativas e oficiais pertinentes ao projeto: ITIL 4 para gestão de serviços e solicitações, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0 para modelagem de processo e LGPD/ANPD para proteção de dados (PEOPLECERT, 2023; AXELOS, 2020; ISO/IEC/IEEE, 2018; OMG, 2011; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2024).
 
-Os artigos serão usados para fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizará trabalhos mais aderentes ao problema, especialmente aqueles sobre gestão de projetos em agência, plataformas de marketing, gestão de campanhas, orçamento e métricas de desempenho.
+O recorte de publicação compreende **2019 a 2026**, de forma inclusiva. Foram aceitos documentos em **inglês**. As buscas foram executadas no campo *Document Title* da IEEE Xplore, com as seguintes expressões booleanas:
+
+```text
+Pesquisa 01
+("Document Title":"digital marketing")
+AND
+("Document Title":"marketing automation"
+ OR "Document Title":"project management"
+ OR "Document Title":"customer relationship management"
+ OR "Document Title":"marketing agency"
+ OR "Document Title":"management system")
+
+Pesquisa 02
+("Document Title":"digital marketing")
+AND
+("Document Title":campaign
+ OR "Document Title":advertising
+ OR "Document Title":"paid advertising"
+ OR "Document Title":"media buying")
+```
+
+Foram incluídos artigos recuperados pelas expressões, publicados no período definido, com resumo ou texto disponível para leitura e que contribuíssem diretamente para pelo menos um dos seguintes aspectos: gestão de demandas ou projetos em agências; centralização de atividades de marketing; operação de campanhas pagas e suas métricas; relacionamento e comunicação com clientes; ou privacidade aplicável ao contexto de campanhas. Foram excluídos estudos cujo foco principal fosse: (a) automação, predição ou personalização por IA fora do escopo do MVP; (b) IoT, sinalização digital ou outro domínio tecnológico sem relação com a gestão de tickets; (c) comportamento de consumo ou nicho de mercado sem contribuição direta para o fluxo de atendimento; ou (d) tema genérico de marketing/CRM já coberto por fonte mais aderente ao problema.
+
+As duas buscas recuperaram **25 artigos sem duplicidade**: 10 na Pesquisa 01 e 15 na Pesquisa 02. Após a leitura de título, resumo e extração de conteúdo, **9 artigos** foram utilizados no referencial teórico e **16 artigos** foram descartados por aderência insuficiente ao problema de pesquisa ou ao escopo do MVP. A relação dos descartes e suas justificativas está documentada em [Tabela - artigos descartados.md](../../Referencias/Tabela%20-%20artigos%20descartados.md).
+
+Os artigos selecionados foram usados para fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizou trabalhos sobre gestão de projetos em agência, plataformas de marketing, gestão de campanhas, orçamento, métricas de desempenho, privacidade e rastreabilidade.
 
 ### 2.2 Levantamento e validação de requisitos
 
