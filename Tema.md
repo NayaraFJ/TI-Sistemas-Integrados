@@ -43,3 +43,31 @@ Pesquisa 02
 | 02       | Complementar | _Digital Publisher, Advertising Media Agency and Mobile Exchange..._                                        | Contexto de agência e cadeia de publicidade digital.           |
 | 02       | Complementar | _Machine Learning-Based Classification of the Traffic of Digital Marketing Campaigns_                       | Análise de tráfego, inclusive fraude.                          |
 | 02       | Complementar | _A Decision Model for Revolutionizing Digital Marketing Campaigns..._                                       | Apoio à decisão sobre campanhas.                               |
+
+
+## Cronograma
+
+Fonte: **Trabalho Interdisciplinar — Sistemas Integrados de Gestão Empresarial (TI SIGE), 2/2026**, Prof. Dr. Paulo Isnard. O cumprimento do cronograma integra a avaliação final.
+
+* ***Grupo:**   2 2026 - PBR - TI SIGE 1
+* ***Contato:** 
+	- Augusto do Couto Avelar - 770279@pucminas.edu.br
+	- Gabriel Fernandes de Araújo - 1445492@pucminas.edu.br
+	- Gabriel Rocha Lopes - 1460309@pucminas.edu.br
+	- Karine Kessen Gilberti Felix - 1448907@pucminas.edu.br
+	- Lorrainy Pâmela Siqueira Ferreira - 1452297@pucminas.edu.br
+	- Maria Heloisa Aguiar Mendes - 1406560@pucminas.edu.br
+	- Nayara Ferreira de Jesus Rodrigues - 720023@pucminas.edu.br
+	- Pedro Henrique Assuncao -1478372@pucminas.edu.br
+- **Tema / área:** Gestão de Demandas de Marketing Digital — Sistemas de Informação / Gestão de Serviços.
+- **Título provisório:** *Help Desk para Gestão de Tráfego Pago: Uma Aplicação para Controle de Campanhas e Atendimento a Clientes.*
+
+| Data  | Etapa / entrega                         | Atividades                                                                                                                      |             Pontos |
+| ----- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -----------------: |
+| 07/08 | Definição de grupos                     | Auto registro no CANVAS; debate de possibilidades; definição de tema/área e título provisório.                                  |                  — |
+| 28/08 | 1ª etapa                                | Postagem do link do repositório GitHub; tema e título validados; introdução revisada pelo orientador.                           |                  5 |
+| 25/09 | 2ª etapa                                | Postagem do link do repositório GitHub; introdução, problemática, justificativa e objetivos; esboço do protótipo do aplicativo. |                 20 |
+| 30/10 | 3ª etapa                                | Postagem do link do repositório GitHub; entregas anteriores, referencial/marco teórico, protótipo do aplicativo e requisitos.   |                 20 |
+| 27/11 | 4ª etapa                                | Postagem do link do repositório GitHub; entregas anteriores, metodologia e versão inicial do aplicativo.                        |                 20 |
+| 11/12 | 5ª etapa                                | Postagem do link do repositório GitHub; versão final do aplicativo e Mostra Tecnológica Interdisciplinar.                       |                 10 |
+| 11/12 | Apresentação final — demo do aplicativo | Versão final completa revisada pelo orientador, no padrão PUC Minas.                                                            | 20 (+5 pontos ADA) |
