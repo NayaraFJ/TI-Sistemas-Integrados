@@ -25,13 +25,13 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | --- | --- | --- |
 | RF-01 | O sistema deve permitir autenticação de usuários. | Alta |
 | RF-02 | O sistema deve controlar permissões conforme o perfil de usuário. | Alta |
-| RF-03 | O administrador deve poder cadastrar, editar, ativar e inativar clientes. | Alta |
+| RF-03 | O administrador deve poder cadastrar, editar, ativar e inativar clientes; clientes inativos não devem ficar disponíveis para novas solicitações. | Alta |
 | RF-04 | O administrador ou atendimento deve poder cadastrar campanhas vinculadas a um cliente. | Alta |
 | RF-05 | O sistema deve permitir abrir ticket com cliente, campanha, canal, tipo, urgência informada, prazo desejado, assunto e descrição. A prioridade oficial e os prazos de SLA serão definidos na triagem. | Alta |
 | RF-06 | O sistema deve gerar identificador único para cada ticket. | Alta |
 | RF-07 | O atendimento deve poder classificar e atribuir um ticket a um responsável. | Alta |
 | RF-08 | O responsável deve poder atualizar o status do ticket. | Alta |
-| RF-09 | O sistema deve registrar data, hora, usuário e motivo em cada mudança de status ou responsável. | Alta |
+| RF-09 | O sistema deve registrar data, hora, usuário, motivo, campo alterado, valor anterior e novo valor em cada alteração de status, responsável, prioridade, prazo ou aprovação. | Alta |
 | RF-10 | Usuários autorizados devem poder incluir comentários e anexos no ticket. | Alta |
 | RF-11 | O sistema deve permitir registrar aprovação, reprovação ou solicitação de complemento pelo cliente. | Média |
 | RF-12 | O responsável deve poder registrar a ação executada e evidências no encerramento. | Alta |
@@ -42,9 +42,10 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | RF-17 | O sistema deve permitir consultar histórico completo de cada ticket. | Alta |
 | RF-18 | O sistema deve permitir registrar métricas de contexto, como CTR, CPC, conversão, CPA e ROAS, quando aplicável. | Baixa |
 | RF-19 | O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. | Baixa |
-| RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail ao responsável ou solicitante quando o ticket for atribuído, comentado, estiver aguardando cliente, entrar em validação, vencer ou for concluído/reaberto. | Alta |
+| RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail aos envolvidos autorizados conforme o evento — solicitante, responsável, Atendimento/gestor de conta e Administrador — quando o ticket for atribuído, comentado, estiver aguardando cliente, entrar em validação, vencer ou for concluído/reaberto. | Alta |
 | RF-21 | O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. | Alta |
 | RF-22 | O administrador deve poder cadastrar, editar, ativar e inativar tipos de demanda, definindo campos obrigatórios, necessidade de aprovação do cliente e necessidade de evidência para cada tipo. | Alta |
+| RF-23 | O administrador deve poder configurar o calendário de SLA, incluindo horário de atendimento, fuso horário, feriados e recessos, e definir prazos de primeira resposta e resolução por prioridade, com regra opcional por cliente ou tipo de demanda. | Alta |
 
 ## 4. Requisitos não funcionais
 
@@ -114,6 +115,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Cliente | Identificador, nome, contato e status. |
 | Campanha | Identificador, cliente, nome, canal, objetivo e status. |
 | Tipo de demanda | Identificador, nome, status, campos obrigatórios, necessidade de aprovação do cliente e necessidade de evidência. |
+| Configuração de SLA | Calendário, horário de atendimento, fuso horário, feriados e recessos, prioridade, prazos de primeira resposta e resolução e escopo opcional por cliente ou tipo de demanda. |
 | Ticket | Número, cliente, campanha, tipo, canal, urgência informada, prazo desejado, prioridade oficial, prazos de SLA, assunto, descrição, solicitante, responsável e status. |
 | Comentário | Ticket, autor, data/hora, texto e referência a anexos vinculados. |
 | Histórico | Ticket, campo alterado, valor anterior, novo valor, usuário e data/hora. |
@@ -127,6 +129,8 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Cenário | Resultado esperado | Requisito(s) relacionado(s) | Caso(s) de teste |
 | --- | --- | --- | --- |
 | Cliente abre uma demanda | O ticket recebe número, status “Aberta”, urgência informada e prazo desejado; fica visível para atendimento. | RF-05, RF-06 | CT-01 |
+| Usuário acessa o sistema | Usuário autenticado acessa apenas as funções e os tickets permitidos ao seu perfil. | RF-01, RF-02 | CT-13 |
+| Administrador mantém clientes e campanhas | Cliente pode ser ativado/inativado e campanha cadastrada fica vinculada ao cliente selecionado. | RF-03, RF-04 | CT-14 |
 | Atendimento faz a triagem | Prioridade oficial, prazos de SLA e responsável ficam registrados no histórico. | RF-07, RF-09, RN-03, RN-14 | CT-02 |
 | Gestor de tráfego executa uma alteração | O ticket recebe comentário/evidência e pode ser encaminhado para validação. | RF-08, RF-10, RF-12, RN-05 | CT-03, CT-05 |
 | Cliente precisa aprovar uma mudança | O ticket fica “Aguardando cliente” até decisão registrada. | RF-11, RN-08, RN-10 | CT-04 |
@@ -135,6 +139,8 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Prazo é ultrapassado | O ticket é identificado como vencido no painel ou listagem. | RF-16, RF-21, RN-12 | CT-06 |
 | Ticket é atribuído, comentado, entra em aguardo ou validação, vence, é concluído ou reaberto | Os envolvidos recebem notificação conforme seu perfil e configuração. | RF-20, RN-13 | CT-07 |
 | Administrador configura um tipo de demanda | O tipo registra campos obrigatórios e regras de aprovação e evidência aplicáveis aos tickets desse tipo. | RF-22, RN-05, RN-10 | CT-11 |
+| Administrador configura o SLA | Calendário, prazos e regra por prioridade, cliente ou tipo de demanda são aplicados ao cálculo do ticket correspondente. | RF-23 | CT-12 |
+| Usuário consulta histórico completo | A consulta exibe todas as alterações auditáveis do ticket, com autor, data/hora, motivo, campo, valor anterior e novo valor. | RF-09, RF-17, RNF-04 | CT-15 |
 | Cliente tenta acessar ticket de outra organização | O acesso é negado e a tentativa fica registrada conforme a política de auditoria. | RF-02, RN-09, RNF-02 | CT-08 |
 | Backup é restaurado em cenário de teste | Dados e anexos do cenário são recuperados sem violar a retenção definida. | RNF-10, RNF-11 | CT-09 |
 | Abertura e listagem são executadas com base de teste | Pelo menos 90% das operações concluem em até 2 segundos. | RNF-06 | CT-10 |
@@ -181,8 +187,8 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 
 | ID | Origem da necessidade | Requisito(s) | Critério de aceite / teste | Prioridade | Responsável | Versão |
 | --- | --- | --- | --- | --- | --- |
-| RT-01 | Pedidos dispersos e perda de contexto | RF-05, RF-06, RF-17 | Ticket identificado e histórico consultável — CT-01. | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-02 | Falta de triagem, prazo e responsável | RF-07, RF-09, RF-21, RN-14 | Triagem registra responsável, prioridade, prazo e SLA; confirmação automática não encerra primeira resposta — CT-02. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-01 | Pedidos dispersos e perda de contexto | RF-05, RF-06, RF-17 | Ticket identificado e histórico consultável — CT-01 e CT-15. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-02 | Falta de triagem, prazo e responsável | RF-07, RF-09, RF-21, RF-23, RN-14 | Triagem registra responsável, prioridade, prazo e SLA; confirmação automática não encerra primeira resposta — CT-02 e CT-12. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-03 | Retrabalho e ausência de aprovação | RF-11, RF-12, RF-22, RN-05, RN-06, RN-11 | Validação, evidência, configuração do tipo e reabertura com justificativa — CT-05 e CT-11. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-04 | Atrasos e comunicação insuficiente | RF-16, RF-20, RN-12, RN-13 | Vencimento e eventos geram indicação e notificação — CT-06 e CT-07. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-05 | Proteção de dados e continuidade | RF-02, RNF-02, RNF-10, RNF-11 | Acesso por organização e restauração de backup — CT-08 e CT-09. | Alta | Grupo TI SIGE 1 | 1.0 |

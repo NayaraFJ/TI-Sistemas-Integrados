@@ -93,6 +93,10 @@ Os cenários mínimos previstos são:
 | CT-09 | RNF-10, RNF-11 | Alta | Administrador executa restauração em ambiente de teste. | Dados e anexos do cenário de teste são recuperados sem violar a retenção definida. |
 | CT-10 | RNF-06 | Média | Usuário abre e lista tickets em base de teste com pelo menos 100 tickets. | Pelo menos 90% das operações concluem em até 2 segundos, sem considerar limitações externas de rede. |
 | CT-11 | RF-22, RN-05, RN-10 | Alta | Administrador configura um tipo de demanda. | Campos obrigatórios, necessidade de aprovação e necessidade de evidência são aplicados aos tickets do tipo configurado. |
+| CT-12 | RF-23 | Alta | Administrador configura o calendário e os prazos do SLA. | Horário, fuso, feriados/recessos e prazo aplicável por prioridade, cliente ou tipo de demanda são usados no cálculo do ticket. |
+| CT-13 | RF-01, RF-02 | Alta | Usuário realiza autenticação e acessa o sistema com seu perfil. | O acesso é autenticado e o usuário visualiza apenas as funções e tickets autorizados. |
+| CT-14 | RF-03, RF-04 | Alta | Administrador ativa/inativa um cliente e cadastra uma campanha. | A campanha fica vinculada ao cliente e clientes inativos não podem receber novas solicitações. |
+| CT-15 | RF-09, RF-17, RNF-04 | Alta | Usuário consulta o histórico completo de um ticket após alterações de status, responsável, prioridade, prazo e aprovação. | O histórico exibe autor, data/hora, motivo, campo alterado, valor anterior e novo valor para cada alteração auditável. |
 
 O critério de aprovação funcional será: 100% dos casos de teste de prioridade alta aprovados, pelo menos 90% do total de casos aprovados e nenhum defeito crítico em aberto. Casos reprovados deverão gerar registro de correção ou justificativa de adiamento.
 
