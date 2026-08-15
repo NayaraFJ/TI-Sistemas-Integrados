@@ -1,4 +1,4 @@
-# Help Desk para Gestão de Tráfego Pago
+# Help Desk para Gestão de Demandas de Tráfego Pago
 
 ## Etapa 03 — Requisitos preliminares do aplicativo
 
@@ -40,13 +40,15 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | RF-17 | O sistema deve permitir consultar histórico completo de cada ticket. | Alta |
 | RF-18 | O sistema deve permitir registrar métricas de contexto, como CTR, CPC, conversão, CPA e ROAS, quando aplicável. | Baixa |
 | RF-19 | O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. | Baixa |
+| RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail ao responsável ou solicitante quando o ticket for atribuído, comentado, estiver aguardando cliente, vencer ou for concluído/reaberto. | Alta |
+| RF-21 | O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. | Alta |
 
 ## 4. Requisitos não funcionais
 
 | ID | Requisito | Critério inicial |
 | --- | --- | --- |
 | RNF-01 | Usabilidade | O fluxo de abertura de ticket deve ser compreensível por cliente e equipe sem treinamento técnico avançado. |
-| RNF-02 | Segurança | Senhas devem ser armazenadas de forma protegida e o acesso deve respeitar o perfil do usuário. |
+| RNF-02 | Segurança | Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos. |
 | RNF-03 | Privacidade | O sistema deve coletar somente dados necessários para a gestão da demanda e não deve armazenar bases de audiência ou dados sensíveis. |
 | RNF-04 | Rastreabilidade | Alterações de status, responsável, prazo e aprovação devem permanecer no histórico. |
 | RNF-05 | Integridade | Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo. |
@@ -54,8 +56,21 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | RNF-07 | Compatibilidade | A interface deve funcionar em navegadores modernos de computador e celular. |
 | RNF-08 | Disponibilidade | O sistema deve informar indisponibilidade e evitar perda de dados ao salvar uma solicitação. |
 | RNF-09 | Acessibilidade | Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado. |
+| RNF-10 | Backup | O sistema deve manter cópia diária dos dados e anexos, com retenção mínima de 30 dias e teste periódico de restauração. |
+| RNF-11 | Retenção | Tickets, histórico e anexos devem ser mantidos por 24 meses após conclusão ou cancelamento; ao fim do período, devem ser anonimizados ou eliminados, salvo obrigação legal ou contratual. |
 
-## 5. Regras de negócio
+## 5. Acordos de nível de serviço (SLA) preliminares
+
+Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o MVP. Os prazos são contados em horas úteis: a primeira resposta vai da abertura ao primeiro retorno registrado ao solicitante; a resolução vai da abertura à conclusão. O relógio de resolução fica pausado quando o ticket estiver em **Aguardando cliente**.
+
+| Prioridade | Primeira resposta | Resolução prevista |
+| --- | ---: | ---: |
+| Urgente | 2 horas úteis | 8 horas úteis |
+| Alta | 4 horas úteis | 16 horas úteis |
+| Média | 8 horas úteis | 24 horas úteis |
+| Baixa | 16 horas úteis | 40 horas úteis |
+
+## 6. Regras de negócio
 
 | ID | Regra |
 | --- | --- |
@@ -63,13 +78,26 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | RN-02 | Quando a demanda estiver vinculada a campanha existente, cliente e campanha devem ser compatíveis. |
 | RN-03 | Somente atendimento ou administrador pode definir prioridade, prazo e responsável na triagem. |
 | RN-04 | Somente responsável, atendimento ou administrador pode alterar o status de um ticket. |
-| RN-05 | O status “Concluída” exige descrição da ação executada; evidência será obrigatória apenas para tipos configurados. |
-| RN-06 | O status “Cancelada” exige motivo de cancelamento. |
-| RN-07 | O status “Aguardando cliente” deve registrar qual informação ou aprovação é necessária. |
-| RN-08 | O cliente deve visualizar somente tickets vinculados à sua organização. |
-| RN-09 | Alterações de orçamento, público ou criativo podem exigir aprovação do cliente antes da execução, conforme configuração do tipo de demanda. |
+| RN-05 | Após a execução, o ticket deve seguir para “Em validação”, com descrição da ação executada e evidência quando configurada para o tipo de demanda. |
+| RN-06 | O status “Concluída” exige validação/aprovação necessária ou registro de que o tipo de demanda não requer validação do cliente. |
+| RN-07 | O status “Cancelada” exige motivo de cancelamento. |
+| RN-08 | O status “Aguardando cliente” deve registrar qual informação ou aprovação é necessária. |
+| RN-09 | O cliente deve visualizar somente tickets vinculados à sua organização. |
+| RN-10 | Alterações de orçamento, público ou criativo podem exigir aprovação do cliente antes da execução, conforme configuração do tipo de demanda. |
+| RN-11 | Cliente, atendimento ou administrador pode reabrir um ticket concluído mediante justificativa; a reabertura preserva todo o histórico anterior. |
+| RN-12 | Ao vencer o SLA, o sistema deve sinalizar o ticket e notificar o responsável e o atendimento. |
+| RN-13 | Atribuição, comentário, mudança para “Aguardando cliente”, “Em validação”, “Concluída” e “Reaberta” devem gerar notificações aos envolvidos. |
 
-## 6. Dados principais
+## 7. Governança de dados, acesso e continuidade
+
+- O acesso será baseado no princípio do menor privilégio: cada perfil verá e alterará apenas as informações necessárias às suas responsabilidades.
+- Toda alteração relevante será auditável por usuário, data/hora, valor anterior e novo valor.
+- Anexos deverão ser vinculados a um ticket e seguir a mesma política de retenção do respectivo histórico.
+- O MVP utilizará dados fictícios ou autorizados para teste; credenciais de plataformas de anúncios e bases de audiência não serão armazenadas.
+- Backups diários deverão ser protegidos e a restauração deverá ser testada periodicamente antes de uso em produção.
+- A política de retenção de 24 meses é uma proposta inicial e deve ser revisada conforme contratos, finalidade do tratamento e orientação jurídica.
+
+## 8. Dados principais
 
 | Entidade | Dados iniciais |
 | --- | --- |
@@ -82,7 +110,7 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | Aprovação | Ticket, decisão, usuário, data/hora e observação. |
 | Evidência | Ticket, descrição, link ou arquivo, autor e data/hora. |
 
-## 7. Critérios de aceite iniciais
+## 9. Critérios de aceite iniciais
 
 | Cenário | Resultado esperado |
 | --- | --- |
@@ -90,13 +118,21 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | Atendimento faz a triagem | Prioridade, prazo e responsável ficam registrados no histórico. |
 | Gestor de tráfego executa uma alteração | O ticket recebe comentário/evidência e pode ser encaminhado para conclusão. |
 | Cliente precisa aprovar uma mudança | O ticket fica “Aguardando cliente” até decisão registrada. |
+| Entrega precisa ser confirmada | O ticket segue para “Em validação”; após aprovação, torna-se “Concluída”. |
+| Cliente solicita correção | O ticket é reaberto com justificativa e retorna à fila de execução. |
 | Prazo é ultrapassado | O ticket é identificado como vencido no painel ou listagem. |
+| Ticket é atribuído, comentado ou vencido | Os envolvidos recebem notificação conforme seu perfil e configuração. |
 | Ticket é concluído | A ação executada fica registrada e o histórico permanece disponível. |
 
-## 8. Fora do escopo do MVP
+## 10. Fora do escopo do MVP
 
 - integração automática com APIs de Google Ads e Meta Ads;
 - criação automática de anúncios e criativos;
 - cálculo automatizado de ROAS, CPA ou previsão de desempenho;
 - gestão financeira/faturamento;
 - chat em tempo real externo ao histórico do ticket.
+
+## Referências de governança
+
+- BRASIL. *Lei nº 13.709, de 14 de agosto de 2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).* Disponível em: [texto consolidado](https://www.gov.br/mj/pt-br/assuntos/sua-protecao/sedigi/Lei13709.pdf).
+- AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS. *Guia orientativo sobre segurança da informação para agentes de tratamento de pequeno porte.* Disponível em: [guia da ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte).

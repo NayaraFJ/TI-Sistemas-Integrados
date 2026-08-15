@@ -1,7 +1,7 @@
 # Foco na Gestão de Agências e Consultorias
 * *Tema:* Gestão de Demandas de Marketing Digital.
 * *Área de Estudo:* Sistemas de Informação / Gestão de Serviços.
-* *Título:* Help Desk para Gestão de Tráfego Pago: Uma Aplicação para Controle de Campanhas e Atendimento a Clientes.
+* *Título:* Help Desk para Gestão de Demandas de Tráfego Pago.
 * *Resumo:* Direciona a aplicação para o gerenciamento de solicitações de clientes de marketing digital. O sistema de Help Desk centralizaria pedidos de criação de anúncios, ajustes de campanhas e análises de métricas, substituindo comunicações informais (como o WhatsApp) por um fluxo registrado, metrificado e profissional.
 
 
@@ -60,7 +60,7 @@ Fonte: **Trabalho Interdisciplinar — Sistemas Integrados de Gestão Empresaria
 	- Nayara Ferreira de Jesus Rodrigues - 720023@pucminas.edu.br
 	- Pedro Henrique Assuncao -1478372@pucminas.edu.br
 - **Tema / área:** Gestão de Demandas de Marketing Digital — Sistemas de Informação / Gestão de Serviços.
-- **Título provisório:** *Help Desk para Gestão de Tráfego Pago: Uma Aplicação para Controle de Campanhas e Atendimento a Clientes.*
+- **Título provisório:** *Help Desk para Gestão de Demandas de Tráfego Pago.*
 
 | Data  | Etapa / entrega                         | Atividades                                                                                                                      |             Pontos |
 | ----- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -----------------: |

@@ -23,7 +23,7 @@
 
 ## Título provisório
 
-**Help Desk para Gestão de Tráfego Pago: uma Aplicação para Controle de Campanhas e Atendimento a Clientes**
+**Help Desk para Gestão de Demandas de Tráfego Pago**
 
 ## Introdução
 

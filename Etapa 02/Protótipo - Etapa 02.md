@@ -2,7 +2,7 @@
 
 ## Etapa 02 — Esboço do protótipo
 
-**Aplicação:** Help Desk para Gestão de Tráfego Pago  
+**Aplicação:** Help Desk para Gestão de Demandas de Tráfego Pago  
 **Objetivo do protótipo:** demonstrar como clientes e equipe da agência poderão registrar, acompanhar e concluir demandas de campanhas.
 
 ## 1. Delimitação do escopo
@@ -38,8 +38,12 @@ flowchart LR
     D --> E{Precisa de informação ou aprovação?}
     E -- Sim --> F[Aguardando cliente]
     F --> D
-    E -- Não --> G[Concluída com evidência]
-    B --> H[Cancelada]
+    E -- Não --> G[Em validação]
+    G --> H{Cliente aprova a entrega?}
+    H -- Sim --> I[Concluída com evidência]
+    H -- Não --> J[Reaberta com justificativa]
+    J --> D
+    B --> K[Cancelada]
 ```
 
 ### 2.3 Estados do ticket
@@ -50,16 +54,31 @@ flowchart LR
 | Em triagem | Atendimento está conferindo informações, prioridade e prazo. |
 | Em execução | A demanda foi atribuída e está sendo realizada. |
 | Aguardando cliente | A equipe precisa de informação, aprovação ou material do cliente. |
-| Concluída | A entrega foi registrada, com comentário e evidência quando aplicável. |
+| Em validação | A equipe registrou a execução e aguarda a validação ou aprovação necessária. |
+| Concluída | A entrega foi validada, com comentário e evidência quando aplicável. |
+| Reaberta | A entrega não foi aceita ou precisa de correção; a justificativa fica registrada. |
 | Cancelada | A solicitação não será executada, com motivo registrado. |
 
-### 2.4 Tela inicial — painel de demandas
+### 2.4 Acordos de nível de serviço (SLA) preliminares
+
+Os prazos abaixo são uma proposta inicial para validação com a agência. Eles devem ser contados em horário comercial e podem ser configurados por cliente ou tipo de demanda.
+
+| Prioridade | Exemplo | Primeira resposta | Resolução prevista |
+| --- | --- | ---: | ---: |
+| Urgente | Campanha ativa com erro crítico, gasto indevido ou risco de grande impacto. | 2 horas úteis | 8 horas úteis |
+| Alta | Alteração com impacto relevante em orçamento, prazo ou desempenho. | 4 horas úteis | 16 horas úteis |
+| Média | Ajuste planejado, relatório ou solicitação sem impacto imediato. | 8 horas úteis | 24 horas úteis |
+| Baixa | Melhoria, dúvida ou demanda programável. | 16 horas úteis | 40 horas úteis |
+
+O prazo de primeira resposta será contado da abertura até o primeiro retorno registrado ao solicitante. O prazo de resolução será contado da abertura até a conclusão, ficando pausado enquanto o ticket estiver em **Aguardando cliente**. Ao vencer qualquer prazo, o sistema deverá sinalizar a demanda e notificar o responsável e o atendimento.
+
+### 2.5 Tela inicial — painel de demandas
 
 ```text
 +--------------------------------------------------------------------------------+
 | SIGE Desk                         [Nova solicitação]       [Usuário / Perfil] |
 +--------------------------------------------------------------------------------+
-| Indicadores: [12 abertas] [4 em execução] [3 aguardando cliente] [2 vencidas]|
+| Indicadores: [12 abertas] [4 em execução] [2 em validação] [2 vencidas]      |
 +------------------------------+-------------------------------------------------+
 | Filtros                      | Minhas demandas                                |
 | - Cliente                    | #104 Ajustar orçamento - Cliente Alfa          |
@@ -72,7 +91,7 @@ flowchart LR
 +--------------------------------------------------------------------------------+
 ```
 
-### 2.5 Tela de abertura de solicitação
+### 2.6 Tela de abertura de solicitação
 
 ```text
 Nova solicitação
@@ -91,7 +110,7 @@ Anexos:        [Adicionar arquivo]
 [Cancelar]                                              [Enviar solicitação]
 ```
 
-### 2.6 Informações mínimas de uma demanda
+### 2.7 Informações mínimas de uma demanda
 
 | Grupo | Informações |
 | --- | --- |
@@ -100,6 +119,7 @@ Anexos:        [Adicionar arquivo]
 | Descrição | Assunto, contexto, pedido, links, anexos e métricas relacionadas. |
 | Comunicação | Comentários, menções, resposta ao cliente e histórico de status. |
 | Encerramento | Ação realizada, evidência, data de conclusão e motivo de cancelamento, se houver. |
+| SLA | Data/hora da abertura, prazos de primeira resposta e resolução, situação de vencimento e pausa por aguardo do cliente. |
 
 ## 3. Critérios iniciais de sucesso
 
@@ -110,4 +130,6 @@ O protótipo será considerado adequado à proposta se permitir:
 - manter histórico das interações e alterações de status;
 - filtrar demandas por cliente, campanha, prioridade e status;
 - identificar demandas em atraso ou aguardando resposta do cliente;
+- notificar os envolvidos em atribuições, comentários, mudanças de status e vencimentos;
+- permitir validar a entrega ou reabrir o ticket com justificativa;
 - concluir uma demanda registrando a ação executada.

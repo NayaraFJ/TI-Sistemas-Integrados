@@ -3,7 +3,7 @@
 ## Etapa 04 — Metodologia
 
 **Tema:** Gestão de Demandas de Marketing Digital  
-**Título provisório:** *Help Desk para Gestão de Tráfego Pago: uma Aplicação para Controle de Campanhas e Atendimento a Clientes*
+**Título provisório:** *Help Desk para Gestão de Demandas de Tráfego Pago*
 
 ## 1. Caracterização da pesquisa
 
@@ -39,13 +39,13 @@ As respostas serão organizadas por categorias, como entrada da demanda, prioriz
 
 ### 2.3 Modelagem do processo e do protótipo
 
-Com base nos requisitos validados, será modelado o fluxo de vida do ticket: abertura, triagem, atribuição, execução, espera de cliente, conclusão e cancelamento. Também serão refinados os perfis de usuário, regras de negócio, dados necessários e telas principais.
+Com base nos requisitos validados, será modelado o fluxo de vida do ticket: abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento. Também serão refinados os perfis de usuário, regras de negócio, dados necessários, SLAs e telas principais.
 
 O protótipo de interface será elaborado de forma incremental. Inicialmente, serão produzidas telas de painel, listagem de tickets, abertura de solicitação e detalhes do ticket. O protótipo deverá evidenciar os principais caminhos do usuário e permitir ajustes antes da implementação da aplicação.
 
 ### 2.4 Desenvolvimento da aplicação
 
-A versão inicial será desenvolvida como aplicação web. A implementação seguirá ciclos curtos: selecionar requisitos priorizados, implementar, testar o cenário correspondente e registrar eventuais ajustes. O foco inicial será garantir cadastro, autenticação, tickets, comentários, histórico, status, prazos, responsáveis e filtros.
+A versão inicial será desenvolvida como aplicação web. A implementação seguirá ciclos curtos: selecionar requisitos priorizados, implementar, testar o cenário correspondente e registrar eventuais ajustes. O foco inicial será garantir cadastro, autenticação, tickets, comentários, histórico, status, prazos, responsáveis, notificações, filtros e controles de acesso.
 
 Integrações automáticas com plataformas de anúncios, previsão por inteligência artificial e automação de alterações em campanhas não serão implementadas no MVP. Essa delimitação permitirá avaliar primeiro o valor do fluxo de atendimento e rastreabilidade.
 
@@ -61,20 +61,26 @@ Os cenários mínimos previstos são:
 | CT-02 | Atendimento classifica e atribui o ticket. | Prioridade, prazo e responsável ficam registrados. |
 | CT-03 | Gestor atualiza status e inclui comentário. | Histórico registra usuário, data/hora e alteração. |
 | CT-04 | Ticket aguarda aprovação do cliente. | O status e a solicitação de aprovação ficam visíveis. |
-| CT-05 | Responsável conclui o ticket com evidência. | Ação executada e evidência ficam disponíveis no histórico. |
+| CT-05 | Responsável encaminha a entrega para validação e o cliente solicita correção. | O ticket fica “Em validação”, é reaberto com justificativa e preserva o histórico. |
 | CT-06 | Usuário filtra demandas vencidas. | A listagem retorna apenas tickets com prazo ultrapassado. |
+| CT-07 | Ticket é atribuído, comentado, colocado em aguardo, vencido ou concluído. | Os envolvidos recebem a notificação configurada para o evento. |
+| CT-08 | Administrador consulta o histórico e executa restauração de teste. | O acesso respeita o perfil e o backup recupera dados e anexos do cenário de teste. |
+
+O critério de aprovação funcional será: 100% dos casos de teste de prioridade alta aprovados, pelo menos 90% do total de casos aprovados e nenhum defeito crítico em aberto. Casos reprovados deverão gerar registro de correção ou justificativa de adiamento.
 
 ### 2.6 Avaliação de usabilidade
 
-Após a versão inicial, o protótipo ou aplicação será submetido a uma avaliação de usabilidade com um pequeno grupo de potenciais usuários. A amostra será por conveniência e deverá incluir, sempre que possível, representantes dos perfis de cliente, atendimento e gestor de tráfego.
+Após a versão inicial, o protótipo ou aplicação será submetido a uma avaliação de usabilidade com **seis participantes**, selecionados por conveniência: dois potenciais clientes, dois profissionais de atendimento/gestão de conta e dois gestores de tráfego. Caso algum perfil não esteja disponível, a substituição e sua limitação serão registradas no relatório.
 
-Os participantes executarão tarefas como abrir uma demanda, localizar um ticket, atualizar o status, inserir um comentário e concluir uma solicitação. Serão observados obstáculos, dúvidas, erros e tempo de realização. Ao final, será aplicado questionário breve, preferencialmente o **Short User Experience Questionnaire (UEQ-S)**, que avalia atratividade, qualidade pragmática e qualidade hedônica.
+Cada participante executará cinco tarefas: (1) abrir uma demanda com os dados obrigatórios; (2) localizar e filtrar um ticket; (3) classificar, priorizar e atribuir a demanda; (4) incluir comentário e encaminhar a entrega para validação; e (5) aprovar ou reabrir a demanda com justificativa. Serão observados obstáculos, dúvidas, erros, necessidade de ajuda e tempo de realização.
+
+O teste será considerado aprovado se pelo menos 80% das execuções de tarefas forem concluídas sem ajuda e nenhuma tarefa tiver taxa de conclusão inferior a 70%. Ao final, será aplicado o **Short User Experience Questionnaire (UEQ-S)**. Suas oito respostas, coletadas em escala de 1 a 7, serão convertidas para a escala de -3 a +3; serão calculadas as médias das dimensões pragmática e hedônica e a média geral. Como critério interno do projeto, será buscada média geral superior a 0,8 e nenhuma dimensão abaixo de 0,5. Esses valores são metas de aceitação do projeto, não substituem a interpretação comparativa do instrumento.
 
 Os resultados serão apresentados de forma agregada, sem identificação individual. Sugestões e dificuldades recorrentes serão transformadas em lista de melhorias para a versão final.
 
 ## 3. Participantes e dados
 
-Os participantes serão convidados por conveniência entre pessoas que possuam experiência com atendimento, gestão de campanhas ou contratação de serviços de marketing digital. A participação será voluntária e ocorrerá apenas após explicação do objetivo do teste.
+Os seis participantes serão convidados por conveniência entre pessoas que possuam experiência com atendimento, gestão de campanhas ou contratação de serviços de marketing digital. A participação será voluntária e ocorrerá apenas após explicação do objetivo do teste.
 
 O projeto coletará somente dados necessários para a pesquisa e para o funcionamento do protótipo, como perfil de usuário, respostas ao questionário e registros fictícios de tickets. Não serão solicitadas credenciais de plataformas de anúncio, dados bancários, bases de audiência ou informações pessoais sensíveis.
 
@@ -86,15 +92,16 @@ Os dados quantitativos de teste serão analisados de forma descritiva, considera
 
 - quantidade de casos de teste aprovados e reprovados;
 - quantidade de tarefas concluídas por participante;
+- taxa de conclusão sem ajuda por tarefa e no conjunto do teste;
 - principais erros ou dúvidas observados;
 - tempo aproximado de execução das tarefas;
-- escores e comentários do UEQ-S, quando aplicado.
+- médias pragmática, hedônica e geral, além dos comentários do UEQ-S.
 
 Os resultados não terão pretensão de representar todas as agências de marketing. Eles servirão para verificar se o protótipo atende ao problema e para orientar melhorias na aplicação.
 
 ## 5. Critérios de qualidade e validade
 
-Para reduzir ambiguidades, os requisitos serão associados a critérios de aceite e casos de teste. O registro de histórico do ticket permitirá verificar se as regras de negócio foram atendidas. A validação com usuários complementará os testes técnicos, pois uma função pode estar correta do ponto de vista de software, mas ser difícil de usar.
+Para reduzir ambiguidades, os requisitos serão associados a critérios de aceite e casos de teste. A aprovação funcional exigirá 100% de aprovação dos casos de alta prioridade, pelo menos 90% dos casos totais e ausência de defeito crítico. O registro de histórico do ticket permitirá verificar se as regras de negócio foram atendidas. A validação com usuários exigirá ao menos 80% de conclusão sem ajuda, sem tarefa abaixo de 70%, e adotará como meta média geral do UEQ-S superior a 0,8.
 
 Como a avaliação utilizará amostra pequena e por conveniência, a validade externa será limitada. Para aumentar a credibilidade da análise, serão preservados os instrumentos de coleta, a lista de cenários, as decisões de requisitos e os resultados agregados de teste. Limitações e mudanças ocorridas durante o desenvolvimento deverão ser registradas na versão final.
 

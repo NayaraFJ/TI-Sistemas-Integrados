@@ -17,7 +17,7 @@
 
 ## Título provisório
 
-**Help Desk para Gestão de Tráfego Pago: uma Aplicação para Controle de Campanhas e Atendimento a Clientes**
+**Help Desk para Gestão de Demandas de Tráfego Pago**
 
 ## 1. Introdução
 
@@ -27,7 +27,7 @@ Apesar da importância desse processo, é comum que as demandas sejam registrada
 
 Estudos sobre agências de marketing digital apontam planejamento, comunicação, monitoramento, controle, gestão de tempo e análise de dados como competências necessárias à condução de projetos (Steponaitis e Andrijauskienė, 2023). Da mesma forma, plataformas integradas de automação de marketing demonstram o valor de concentrar atividades, indicadores e responsabilidades em um único ambiente (Younas et al., 2025). Esses achados reforçam a necessidade de um sistema de informação que organize o fluxo de trabalho, e não apenas a execução técnica dos anúncios.
 
-Assim, este trabalho propõe o desenvolvimento de uma aplicação web de Help Desk voltada à gestão de demandas de tráfego pago. A aplicação permitirá abrir, classificar, acompanhar e concluir solicitações relacionadas a campanhas, mantendo histórico de mensagens, responsáveis, prazos, prioridades, aprovações e evidências. A finalidade é profissionalizar o atendimento e apoiar o controle operacional das campanhas, substituindo comunicações dispersas por um processo rastreável e mensurável.
+Assim, este trabalho propõe o desenvolvimento de uma aplicação web de Help Desk voltada à gestão de demandas de tráfego pago. A aplicação permitirá abrir, classificar, acompanhar, validar e concluir solicitações relacionadas a campanhas, mantendo histórico de mensagens, responsáveis, prazos, prioridades, aprovações e evidências. A finalidade é profissionalizar o atendimento e apoiar o controle operacional das demandas de campanha, substituindo comunicações dispersas por um processo rastreável e mensurável.
 
 ## 2. Problemática
 
@@ -61,7 +61,7 @@ Do ponto de vista acadêmico, o trabalho integra conceitos de Sistemas de Inform
 
 ### 4.1 Objetivo geral
 
-Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e registrar demandas de tráfego pago, apoiando o controle de campanhas e o atendimento a clientes de agências de marketing digital.
+Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e registrar demandas de tráfego pago, apoiando a gestão das solicitações e o atendimento a clientes de agências de marketing digital.
 
 ### 4.2 Objetivos específicos
 
@@ -69,7 +69,9 @@ Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e regi
 - permitir a abertura de solicitações relacionadas a criação, alteração, pausa ou análise de campanhas;
 - classificar cada demanda por tipo, prioridade, cliente, campanha, canal e prazo;
 - atribuir responsáveis e registrar o histórico de movimentações e comentários;
-- controlar o status da solicitação até sua conclusão ou cancelamento;
+- controlar o status da solicitação até sua validação, conclusão, reabertura ou cancelamento;
+- definir e acompanhar prazo de primeira resposta e de resolução conforme a prioridade da demanda;
+- notificar os envolvidos sobre atribuições, comentários, pendências, validações, conclusões e vencimentos;
 - registrar aprovações do cliente e evidências de execução, quando necessárias;
 - disponibilizar painel com indicadores de volume, prazo, status e responsável;
 - validar a usabilidade do protótipo com potenciais usuários do sistema.

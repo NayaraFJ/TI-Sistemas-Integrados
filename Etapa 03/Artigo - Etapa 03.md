@@ -3,7 +3,7 @@
 ## Etapa 03 — Referencial / marco teórico
 
 **Tema:** Gestão de Demandas de Marketing Digital  
-**Título provisório:** *Help Desk para Gestão de Tráfego Pago: uma Aplicação para Controle de Campanhas e Atendimento a Clientes*
+**Título provisório:** *Help Desk para Gestão de Demandas de Tráfego Pago*
 
 ## 1. Gestão de demandas e sistemas de informação
 
@@ -11,7 +11,7 @@ Sistemas de informação apoiam a coleta, o processamento, o armazenamento e a d
 
 A gestão de demandas corresponde ao conjunto de práticas usadas para receber, registrar, classificar, priorizar, atribuir, acompanhar e encerrar solicitações. Quando esse processo ocorre por mensagens isoladas, a informação fica distribuída entre canais e pessoas. A consequência é a perda de rastreabilidade: torna-se difícil saber quem solicitou uma alteração, quando ela foi aprovada, quem a executou e qual resultado foi obtido.
 
-Um Help Desk é uma aplicação adequada para organizar esse processo porque transforma uma solicitação em um ticket. Cada ticket possui identificação única, dados do solicitante, descrição, prioridade, responsável, status, prazo, interações e evidências. Assim, além de permitir o atendimento individual, o sistema produz uma base histórica para identificar gargalos, medir tempo de resposta e apoiar a gestão do serviço.
+Um Help Desk é uma aplicação adequada para organizar esse processo porque transforma uma solicitação em um ticket. Cada ticket possui identificação única, dados do solicitante, descrição, prioridade, responsável, status, prazo, interações e evidências. Assim, além de permitir o atendimento individual, o sistema produz uma base histórica para identificar gargalos, medir tempo de resposta e apoiar a gestão do serviço. Na gestão de solicitações de serviço, essa organização requer papéis, fluxo, prazos e acompanhamento do atendimento; por isso, o projeto adota níveis de serviço e estados explícitos de validação e reabertura.
 
 ## 2. Marketing digital e tráfego pago
 
@@ -60,7 +60,7 @@ Rastreabilidade é a capacidade de recuperar o histórico de uma informação ou
 
 A transparência com o cliente é importante porque campanhas envolvem orçamento e decisões que podem afetar resultados. Ao permitir que o cliente consulte o status, envie informações e aprove solicitações, o sistema reduz dúvidas sobre a etapa em que o pedido se encontra. A equipe, por sua vez, terá uma visão organizada de prioridades, responsáveis e prazos.
 
-O sistema deve respeitar princípios de proteção de dados: coletar apenas informações necessárias à demanda, limitar acesso conforme o perfil do usuário e evitar cadastrar dados sensíveis ou bases completas de audiência. Daoud et al. (2023) destacam que publicidade direcionada deve equilibrar personalização, transparência e privacidade. Assim, o Help Desk armazenará informações operacionais da solicitação, e não dados detalhados de usuários alcançados pelas campanhas.
+O sistema deve respeitar princípios de proteção de dados: coletar apenas informações necessárias à demanda, limitar acesso conforme o perfil do usuário e evitar cadastrar dados sensíveis ou bases completas de audiência. A LGPD regula o tratamento de dados pessoais, inclusive em meios digitais; em complemento, o guia da ANPD recomenda controles de autenticação, autorização e auditoria. Daoud et al. (2023) destacam que publicidade direcionada deve equilibrar personalização, transparência e privacidade. Assim, o Help Desk armazenará informações operacionais da solicitação, e não dados detalhados de usuários alcançados pelas campanhas. A política de retenção de tickets e anexos, os backups e a recuperação de dados devem ser definidos como requisitos verificáveis do sistema.
 
 ## 7. Síntese do marco teórico
 
@@ -69,7 +69,8 @@ O referencial mostra que a proposta está apoiada em quatro ideias principais:
 1. **Gestão de serviços e demandas:** tickets estruturam solicitações, responsáveis, prazos e histórico.
 2. **Gestão de agências:** planejamento, comunicação, monitoramento e análise de dados são essenciais para conduzir demandas de marketing digital.
 3. **Tráfego pago e métricas:** decisões sobre campanha precisam ser contextualizadas por canal, orçamento, público, objetivo e indicadores.
-4. **Relacionamento e transparência:** centralizar comunicação e aprovações melhora o atendimento e preserva a rastreabilidade das decisões.
+4. **Relacionamento e transparência:** centralizar comunicação, notificações e aprovações melhora o atendimento e preserva a rastreabilidade das decisões.
+5. **Proteção de dados e continuidade:** acesso por perfil, auditoria, retenção de histórico e backups são necessários para proteger as informações operacionais registradas.
 
 Esses fundamentos orientam os requisitos do aplicativo e a metodologia de desenvolvimento apresentados nos documentos complementares das Etapas 03 e 04.
 
@@ -78,6 +79,8 @@ Esses fundamentos orientam os requisitos do aplicativo e a metodologia de desenv
 - ABBONIZIO, Sara; SERNANI, Paolo; DRAGONI, Aldo Franco; RINALDESI, Paolo. *Machine Learning-Based Classification of the Traffic of Digital Marketing Campaigns*. 2023. DOI: [10.1109/MetroXRAINE58569.2023.10405717](https://doi.org/10.1109/MetroXRAINE58569.2023.10405717).
 - AGUS, Anna Amalyah et al. *Digital Publisher, Advertising Media Agency and Mobile Exchange Triadic Interaction: Digital Marketing Service Supply Chain Landscape in Indonesia*. 2019. DOI: [10.1109/IC2IE47452.2019.8940881](https://doi.org/10.1109/IC2IE47452.2019.8940881).
 - DAOUD, Mohammad Khalaf et al. *Examining the Ethical Implications of Data Privacy and Targeted Advertising in Digital Marketing: Consumer Perceptions*. 2023. DOI: [10.1109/SNAMS60348.2023.10375481](https://doi.org/10.1109/SNAMS60348.2023.10375481).
+- BRASIL. *Lei nº 13.709, de 14 de agosto de 2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).* Disponível em: [texto consolidado](https://www.gov.br/mj/pt-br/assuntos/sua-protecao/sedigi/Lei13709.pdf).
+- AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS. *Guia orientativo sobre segurança da informação para agentes de tratamento de pequeno porte.* Disponível em: [guia da ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte).
 - GUJAR, Praveen; PALIWAL, Gunjan; PANYAM, Sriram. *Revolutionizing In-House Digital Marketing with End-to-End Marketing Automation Powered by AI and SaaS*. 2024. DOI: [10.1109/COLCOM62950.2024.10720305](https://doi.org/10.1109/COLCOM62950.2024.10720305).
 - KHARISMA, Fresha et al. *Digital Marketing, Brand Awareness and Customer Relationship Management on Repurchase Intention in E-Commerce Marketplace*. 2024. DOI: [10.1109/ICBIR61386.2024.10875931](https://doi.org/10.1109/ICBIR61386.2024.10875931).
 - NAIN, Arvind et al. *Impact of Voice-Based Search Queries on Paid Ad Rankings in Digital Marketing Campaigns*. 2025. DOI: [10.1109/IEMECON69302.2025.11365741](https://doi.org/10.1109/IEMECON69302.2025.11365741).
