@@ -63,7 +63,9 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 
 ## 5. Acordos de nível de serviço (SLA) preliminares
 
-Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o MVP. Os prazos são contados em horas úteis: a primeira resposta vai da abertura ao primeiro retorno efetivo registrado ao solicitante; a resolução vai da abertura à conclusão. A confirmação automática de recebimento não encerra a primeira resposta. O relógio de resolução fica pausado quando o ticket estiver em **Aguardando cliente**.
+Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o MVP. Na ausência de configuração específica de cliente ou tipo de demanda, o calendário padrão será de segunda a sexta-feira, das 08h às 18h, no fuso horário `America/Sao_Paulo`, excluídos os feriados nacionais e os feriados ou recessos cadastrados pela agência. Somente os intervalos inseridos nesse calendário serão contabilizados como horas úteis.
+
+O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registrado ao solicitante; o prazo de resolução vai da abertura à conclusão. A confirmação automática de recebimento não encerra a primeira resposta. Ao entrar em **Aguardando cliente**, o relógio de resolução deve ser pausado, preservando-se o tempo útil restante, e deve voltar a contar ao sair desse status. O status **Em validação** não pausa o SLA, salvo regra específica configurada pela agência. Quando um ticket concluído for reaberto, o sistema deve preservar os prazos e resultados do ciclo anterior, iniciar um novo ciclo de resolução a partir da reabertura conforme a prioridade vigente e não reiniciar o prazo de primeira resposta já cumprido.
 
 | Prioridade | Primeira resposta | Resolução prevista |
 | --- | ---: | ---: |
@@ -76,7 +78,7 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 
 | ID | Regra |
 | --- | --- |
-| RN-01 | Todo ticket deve possuir cliente, tipo de demanda, prioridade, assunto, descrição e solicitante. |
+| RN-01 | Na abertura, todo ticket deve possuir cliente, tipo de demanda, urgência informada, assunto, descrição e solicitante. A prioridade oficial torna-se obrigatória após a triagem. |
 | RN-02 | Quando a demanda estiver vinculada a campanha existente, cliente e campanha devem ser compatíveis. |
 | RN-03 | Somente atendimento ou administrador pode definir prioridade, prazo e responsável na triagem. |
 | RN-04 | Somente responsável, atendimento ou administrador pode alterar o status de um ticket. |

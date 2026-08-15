@@ -63,7 +63,7 @@ flowchart LR
 
 ### 2.4 Acordos de nível de serviço (SLA) preliminares
 
-Os prazos abaixo são uma proposta inicial para validação com a agência. Eles devem ser contados em horário comercial e podem ser configurados por cliente ou tipo de demanda.
+Os prazos abaixo são uma proposta inicial para validação com a agência e podem ser configurados por cliente ou tipo de demanda. Na ausência de configuração específica, devem ser contados de segunda a sexta-feira, das 08h às 18h, no fuso horário `America/Sao_Paulo`, excluídos feriados nacionais e os feriados ou recessos cadastrados pela agência.
 
 | Prioridade | Exemplo | Primeira resposta | Resolução prevista |
 | --- | --- | ---: | ---: |
@@ -72,7 +72,7 @@ Os prazos abaixo são uma proposta inicial para validação com a agência. Eles
 | Média | Ajuste planejado, relatório ou solicitação sem impacto imediato. | 8 horas úteis | 24 horas úteis |
 | Baixa | Melhoria, dúvida ou demanda programável. | 16 horas úteis | 40 horas úteis |
 
-O prazo de primeira resposta será contado da abertura até o primeiro **retorno efetivo** registrado ao solicitante por Atendimento, Administrador ou responsável; uma confirmação automática de recebimento não encerra esse prazo. O prazo de resolução será contado da abertura até a conclusão, ficando pausado enquanto o ticket estiver em **Aguardando cliente**. Ao vencer qualquer prazo, o sistema deverá sinalizar a demanda e notificar o responsável e o atendimento.
+O prazo de primeira resposta será contado da abertura até o primeiro **retorno efetivo** registrado ao solicitante por Atendimento, Administrador ou responsável; uma confirmação automática de recebimento não encerra esse prazo. O prazo de resolução será contado da abertura até a conclusão, ficando pausado enquanto o ticket estiver em **Aguardando cliente** e retomado com o tempo útil restante ao sair desse status. **Em validação** não pausa o SLA, salvo regra configurada pela agência. Quando um ticket concluído for reaberto, o resultado do ciclo anterior será preservado, um novo ciclo de resolução será iniciado conforme a prioridade vigente e o prazo de primeira resposta não será reiniciado. Ao vencer qualquer prazo, o sistema deverá sinalizar a demanda e notificar o responsável e o atendimento.
 
 ### 2.5 Tela inicial — painel de demandas
 

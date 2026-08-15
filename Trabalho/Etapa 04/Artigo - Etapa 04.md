@@ -59,7 +59,7 @@ Os cenários mínimos previstos são:
 | --- | --- | --- | --- | --- |
 | CT-01 | RF-05, RF-06 | Alta | Cliente abre ticket de alteração de campanha. | Ticket recebe identificador, status inicial, urgência informada e prazo desejado. |
 | CT-02 | RF-07, RF-09, RN-03, RN-14 | Alta | Atendimento classifica e atribui o ticket. | Prioridade oficial, prazos de SLA e responsável ficam registrados; confirmação automática não conta como primeira resposta. |
-| CT-03 | RF-08, RF-10 | Alta | Gestor atualiza status e inclui comentário. | Histórico registra usuário, data/hora e alteração. |
+| CT-03 | RF-08, RF-09, RF-10 | Alta | Gestor atualiza status e inclui comentário. | Histórico registra usuário, data/hora e alteração. |
 | CT-04 | RF-11, RN-08 | Média | Ticket aguarda aprovação do cliente. | O status e a solicitação de aprovação ficam visíveis. |
 | CT-05 | RF-11, RF-12, RN-05, RN-06, RN-11 | Alta | Responsável encaminha a entrega para validação e o cliente solicita correção. | O ticket fica “Em validação”, é reaberto com justificativa e preserva o histórico. |
 | CT-06 | RF-14, RF-16, RF-21, RN-12 | Média | Usuário filtra demandas vencidas. | A listagem retorna apenas tickets com prazo ultrapassado. |
