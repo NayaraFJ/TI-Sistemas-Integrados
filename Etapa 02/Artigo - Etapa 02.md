@@ -78,11 +78,7 @@ Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e regi
 
 ## 5. Referências iniciais
 
-- AGUS, Anna Amalyah et al. *Digital Publisher, Advertising Media Agency and Mobile Exchange Triadic Interaction: Digital Marketing Service Supply Chain Landscape in Indonesia*. 2019. DOI: [10.1109/IC2IE47452.2019.8940881](https://doi.org/10.1109/IC2IE47452.2019.8940881).
-- GUJAR, Praveen; PALIWAL, Gunjan; PANYAM, Sriram. *Revolutionizing In-House Digital Marketing with End-to-End Marketing Automation Powered by AI and SaaS*. 2024. DOI: [10.1109/COLCOM62950.2024.10720305](https://doi.org/10.1109/COLCOM62950.2024.10720305).
 - STEPONAITIS, Simonas; ANDRIJAUSKIENĖ, Meda. *Improving Digital Project Management Competencies: Case Study of a Digital Marketing Agency in Lithuania*. 2023. DOI: [10.1109/E-TEMS57541.2023.10424612](https://doi.org/10.1109/E-TEMS57541.2023.10424612).
 - YOUNAS, Mamoona et al. *DIGI-AI: An AI-Powered Web Platform for Intelligent Digital Marketing Automation*. 2025. DOI: [10.1109/MACS68476.2025.11453341](https://doi.org/10.1109/MACS68476.2025.11453341).
-- YAHIA, Zakaria; ELBOLOK, M. *A Proposed Nonlinear Programming Optimization Model for Optimal Budget Mix of Digital Marketing Campaigns*. 2024. DOI: [10.1109/NILES63360.2024.10753162](https://doi.org/10.1109/NILES63360.2024.10753162).
 - AXELOS. *ITIL 4 Practice Guide: Service Request Management*. 2020. Disponível em: [prática ITIL](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-request-management-3690).
 - PEOPLECERT. *ITIL 4 Practice Guide: Service Desk*. 2023. Disponível em: [guia de prática](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-desk-3706).
-- ISO/IEC/IEEE. *ISO/IEC/IEEE 29148:2018 — Systems and software engineering: Life cycle processes: Requirements engineering*. 2018. Disponível em: [norma](https://www.iso.org/standard/72089.html).
