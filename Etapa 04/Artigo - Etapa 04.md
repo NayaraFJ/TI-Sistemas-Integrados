@@ -35,11 +35,11 @@ O instrumento de levantamento poderá conter perguntas semiestruturadas, como:
 - quais informações o cliente precisa acompanhar;
 - quais indicadores seriam úteis para a gestão.
 
-As respostas serão organizadas por categorias, como entrada da demanda, priorização, execução, comunicação, aprovação, encerramento e indicadores. Cada requisito será classificado como alta, média ou baixa prioridade para a primeira versão do aplicativo. Para manter rastreabilidade, cada requisito deverá registrar origem, versão, responsável, critério de aceite e caso de teste relacionado.
+As respostas serão organizadas por categorias, como entrada da demanda, priorização, execução, comunicação, aprovação, encerramento e indicadores. Cada requisito será classificado como alta, média ou baixa prioridade para a primeira versão do aplicativo. Para manter rastreabilidade, cada requisito deverá registrar origem, versão, responsável, critério de aceite e caso de teste relacionado (ISO/IEC/IEEE, 2018).
 
 ### 2.3 Modelagem do processo e do protótipo
 
-Com base nos requisitos validados, será modelado o fluxo atual (**As Is**) e o fluxo de vida desejado (**To Be**) do ticket: abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento. A representação do processo futuro adotará BPMN 2.0, distinguindo Cliente e Agência como participantes e Atendimento/Gestor de conta e Gestor de tráfego como responsabilidades internas. Também serão refinados os perfis de usuário, regras de negócio, dados necessários, SLAs e telas principais.
+Com base nos requisitos validados, será modelado o fluxo atual (**As Is**) e o fluxo de vida desejado (**To Be**) do ticket: abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento. A representação do processo futuro adotará BPMN 2.0, distinguindo Cliente e Agência como participantes e Atendimento/Gestor de conta e Gestor de tráfego como responsabilidades internas (OMG, 2011). Também serão refinados os perfis de usuário, regras de negócio, dados necessários, SLAs e telas principais.
 
 O protótipo de interface será elaborado de forma incremental. Inicialmente, serão produzidas telas de painel, listagem de tickets, abertura de solicitação e detalhes do ticket. O protótipo deverá evidenciar os principais caminhos do usuário e permitir ajustes antes da implementação da aplicação.
 
@@ -57,8 +57,8 @@ Os cenários mínimos previstos são:
 
 | ID | Requisito(s) relacionado(s) | Prioridade | Cenário de teste | Resultado esperado |
 | --- | --- | --- | --- | --- |
-| CT-01 | RF-05, RF-06 | Alta | Cliente abre ticket de alteração de campanha. | Ticket recebe identificador e status inicial. |
-| CT-02 | RF-07, RF-09, RN-03 | Alta | Atendimento classifica e atribui o ticket. | Prioridade, prazo e responsável ficam registrados. |
+| CT-01 | RF-05, RF-06 | Alta | Cliente abre ticket de alteração de campanha. | Ticket recebe identificador, status inicial, urgência informada e prazo desejado. |
+| CT-02 | RF-07, RF-09, RN-03, RN-14 | Alta | Atendimento classifica e atribui o ticket. | Prioridade oficial, prazos de SLA e responsável ficam registrados; confirmação automática não conta como primeira resposta. |
 | CT-03 | RF-08, RF-10 | Alta | Gestor atualiza status e inclui comentário. | Histórico registra usuário, data/hora e alteração. |
 | CT-04 | RF-11, RN-08 | Média | Ticket aguarda aprovação do cliente. | O status e a solicitação de aprovação ficam visíveis. |
 | CT-05 | RF-11, RF-12, RN-05, RN-06, RN-11 | Alta | Responsável encaminha a entrega para validação e o cliente solicita correção. | O ticket fica “Em validação”, é reaberto com justificativa e preserva o histórico. |
@@ -66,6 +66,7 @@ Os cenários mínimos previstos são:
 | CT-07 | RF-20, RN-13 | Alta | Ticket é atribuído, comentado, colocado em aguardo, vencido ou concluído. | Os envolvidos recebem a notificação configurada para o evento. |
 | CT-08 | RF-02, RN-09, RNF-02 | Alta | Cliente tenta consultar ticket de outra organização. | O acesso é negado e a tentativa é registrada conforme a política de auditoria. |
 | CT-09 | RNF-10, RNF-11 | Alta | Administrador executa restauração em ambiente de teste. | Dados e anexos do cenário de teste são recuperados sem violar a retenção definida. |
+| CT-10 | RNF-06 | Média | Usuário abre e lista tickets em base de teste com pelo menos 100 tickets. | Pelo menos 90% das operações concluem em até 2 segundos, sem considerar limitações externas de rede. |
 
 O critério de aprovação funcional será: 100% dos casos de teste de prioridade alta aprovados, pelo menos 90% do total de casos aprovados e nenhum defeito crítico em aberto. Casos reprovados deverão gerar registro de correção ou justificativa de adiamento.
 
@@ -75,7 +76,7 @@ Após a versão inicial, o protótipo ou aplicação será submetido a uma avali
 
 Cada participante executará cinco tarefas: (1) abrir uma demanda com os dados obrigatórios; (2) localizar e filtrar um ticket; (3) classificar, priorizar e atribuir a demanda; (4) incluir comentário e encaminhar a entrega para validação; e (5) aprovar ou reabrir a demanda com justificativa. Serão observados obstáculos, dúvidas, erros, necessidade de ajuda e tempo de realização.
 
-O teste será considerado aprovado se pelo menos 80% das execuções de tarefas forem concluídas sem ajuda e nenhuma tarefa tiver taxa de conclusão inferior a 70%. Ao final, será aplicado o **Short User Experience Questionnaire (UEQ-S)**. Suas oito respostas, coletadas em escala de 1 a 7, serão convertidas para a escala de -3 a +3; serão calculadas as médias das dimensões pragmática e hedônica e a média geral. Como critério interno do projeto, será buscada média geral superior a 0,8 e nenhuma dimensão abaixo de 0,5. Esses valores são metas de aceitação do projeto, não substituem a interpretação comparativa do instrumento.
+O teste será considerado aprovado se pelo menos 80% das execuções de tarefas forem concluídas sem ajuda e nenhuma tarefa tiver taxa de conclusão inferior a 70%. Ao final, será aplicado o **Short User Experience Questionnaire (UEQ-S)**. Suas oito respostas, coletadas em escala de 1 a 7, serão convertidas para a escala de -3 a +3; serão calculadas as médias das dimensões pragmática e hedônica e a média geral. Como critério interno do projeto, será buscada média geral superior a 0,8 e nenhuma dimensão abaixo de 0,5. Esses valores são metas de aceitação do projeto, não substituem a interpretação comparativa do instrumento. O registro conjunto de conclusão, tempo, erros e comentários segue a abordagem de avaliação de usabilidade discutida por Radhitya et al. (2024).
 
 Os resultados serão apresentados de forma agregada, sem identificação individual. Sugestões e dificuldades recorrentes serão transformadas em lista de melhorias para a versão final.
 
@@ -92,6 +93,7 @@ Os dados qualitativos das entrevistas, observações e comentários serão anali
 Os dados quantitativos de teste serão analisados de forma descritiva, considerando:
 
 - quantidade de casos de teste aprovados e reprovados;
+- percentual de operações de abertura e listagem concluídas em até 2 segundos;
 - quantidade de tarefas concluídas por participante;
 - taxa de conclusão sem ajuda por tarefa e no conjunto do teste;
 - principais erros ou dúvidas observados;

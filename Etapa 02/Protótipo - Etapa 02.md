@@ -72,7 +72,7 @@ Os prazos abaixo são uma proposta inicial para validação com a agência. Eles
 | Média | Ajuste planejado, relatório ou solicitação sem impacto imediato. | 8 horas úteis | 24 horas úteis |
 | Baixa | Melhoria, dúvida ou demanda programável. | 16 horas úteis | 40 horas úteis |
 
-O prazo de primeira resposta será contado da abertura até o primeiro retorno registrado ao solicitante. O prazo de resolução será contado da abertura até a conclusão, ficando pausado enquanto o ticket estiver em **Aguardando cliente**. Ao vencer qualquer prazo, o sistema deverá sinalizar a demanda e notificar o responsável e o atendimento.
+O prazo de primeira resposta será contado da abertura até o primeiro **retorno efetivo** registrado ao solicitante por Atendimento, Administrador ou responsável; uma confirmação automática de recebimento não encerra esse prazo. O prazo de resolução será contado da abertura até a conclusão, ficando pausado enquanto o ticket estiver em **Aguardando cliente**. Ao vencer qualquer prazo, o sistema deverá sinalizar a demanda e notificar o responsável e o atendimento.
 
 ### 2.5 Tela inicial — painel de demandas
 
@@ -102,8 +102,8 @@ Cliente:       [selecionar cliente                     ]
 Campanha:      [selecionar campanha ou informar nova   ]
 Tipo:          [Alteração de campanha                  ]
 Canal:         [Google Ads / Meta Ads / outro          ]
-Prioridade:    [Baixa | Média | Alta | Urgente          ]
-Prazo:         [dd/mm/aaaa                              ]
+Urgência:      [Baixa | Média | Alta | Urgente          ]
+Prazo desejado:[dd/mm/aaaa                              ]
 Assunto:       [_______________________________________]
 Descrição:     [_______________________________________]
                [_______________________________________]
@@ -117,7 +117,7 @@ Anexos:        [Adicionar arquivo]
 | Grupo | Informações |
 | --- | --- |
 | Identificação | Número do ticket, cliente, campanha, tipo, canal e solicitante. |
-| Controle | Prioridade, responsável, data de abertura, prazo e status. |
+| Controle | Urgência e prazo desejado informados pelo solicitante; prioridade oficial, responsável, prazos de SLA, data de abertura e status definidos/confirmados na triagem. |
 | Descrição | Assunto, contexto, pedido, links, anexos e métricas relacionadas. |
 | Comunicação | Comentários, menções, resposta ao cliente e histórico de status. |
 | Encerramento | Ação realizada, evidência, data de conclusão e motivo de cancelamento, se houver. |

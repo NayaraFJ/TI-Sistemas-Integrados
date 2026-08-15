@@ -25,7 +25,7 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | RF-02 | O sistema deve controlar permissões conforme o perfil de usuário. | Alta |
 | RF-03 | O administrador deve poder cadastrar, editar, ativar e inativar clientes. | Alta |
 | RF-04 | O administrador ou atendimento deve poder cadastrar campanhas vinculadas a um cliente. | Alta |
-| RF-05 | O sistema deve permitir abrir ticket com cliente, campanha, canal, tipo, prioridade, prazo, assunto e descrição. | Alta |
+| RF-05 | O sistema deve permitir abrir ticket com cliente, campanha, canal, tipo, urgência informada, prazo desejado, assunto e descrição. A prioridade oficial e os prazos de SLA serão definidos na triagem. | Alta |
 | RF-06 | O sistema deve gerar identificador único para cada ticket. | Alta |
 | RF-07 | O atendimento deve poder classificar e atribuir um ticket a um responsável. | Alta |
 | RF-08 | O responsável deve poder atualizar o status do ticket. | Alta |
@@ -47,12 +47,12 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 
 | ID | Requisito | Critério inicial |
 | --- | --- | --- |
-| RNF-01 | Usabilidade | O fluxo de abertura de ticket deve ser compreensível por cliente e equipe sem treinamento técnico avançado. |
+| RNF-01 | Usabilidade | No teste com usuários, pelo menos 80% das execuções das tarefas devem ser concluídas sem ajuda e nenhuma tarefa pode ficar abaixo de 70% de conclusão. |
 | RNF-02 | Segurança | Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos. |
 | RNF-03 | Privacidade | O sistema deve coletar somente dados necessários para a gestão da demanda e não deve armazenar bases de audiência ou dados sensíveis. |
 | RNF-04 | Rastreabilidade | Alterações de status, responsável, prazo e aprovação devem permanecer no histórico. |
 | RNF-05 | Integridade | Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo. |
-| RNF-06 | Desempenho | Listagem e abertura de ticket devem ter resposta percebida como imediata em uso normal; o tempo-alvo será definido nos testes. |
+| RNF-06 | Desempenho | Em cenário de teste com pelo menos 100 tickets cadastrados, 90% das operações de abertura e listagem devem concluir em até 2 segundos, sem considerar limitações externas de rede. |
 | RNF-07 | Compatibilidade | A interface deve funcionar em navegadores modernos de computador e celular. |
 | RNF-08 | Disponibilidade | O sistema deve informar indisponibilidade e evitar perda de dados ao salvar uma solicitação. |
 | RNF-09 | Acessibilidade | Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado. |
@@ -61,7 +61,7 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 
 ## 5. Acordos de nível de serviço (SLA) preliminares
 
-Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o MVP. Os prazos são contados em horas úteis: a primeira resposta vai da abertura ao primeiro retorno registrado ao solicitante; a resolução vai da abertura à conclusão. O relógio de resolução fica pausado quando o ticket estiver em **Aguardando cliente**.
+Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o MVP. Os prazos são contados em horas úteis: a primeira resposta vai da abertura ao primeiro retorno efetivo registrado ao solicitante; a resolução vai da abertura à conclusão. A confirmação automática de recebimento não encerra a primeira resposta. O relógio de resolução fica pausado quando o ticket estiver em **Aguardando cliente**.
 
 | Prioridade | Primeira resposta | Resolução prevista |
 | --- | ---: | ---: |
@@ -87,6 +87,7 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 | RN-11 | Cliente, atendimento ou administrador pode reabrir um ticket concluído mediante justificativa; a reabertura preserva todo o histórico anterior. |
 | RN-12 | Ao vencer o SLA, o sistema deve sinalizar o ticket e notificar o responsável e o atendimento. |
 | RN-13 | Atribuição, comentário, mudança para “Aguardando cliente”, “Em validação”, “Concluída” e “Reaberta” devem gerar notificações aos envolvidos. |
+| RN-14 | A confirmação automática de recebimento não conta como primeira resposta do SLA. A primeira resposta exige retorno efetivo de Atendimento, Administrador ou responsável ao solicitante, registrado no ticket. |
 
 ## 7. Governança de dados, acesso e continuidade
 
@@ -98,7 +99,7 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 - A política de retenção de 24 meses é uma proposta inicial e deve ser revisada conforme contratos, finalidade do tratamento e orientação jurídica.
 - A finalidade declarada para os dados do MVP é registrar, comunicar, executar, validar e auditar demandas de tráfego pago. Antes da produção, a agência deverá identificar controlador, operadores e base legal aplicável, além de publicar aviso de privacidade compatível.
 - O sistema deverá manter canal de contato para solicitações de titulares relacionadas a acesso, correção ou eliminação de dados, encaminhando-as ao responsável definido pela agência.
-- O procedimento de incidente deverá prever registro, contenção, avaliação do impacto, decisão de comunicação e ações de correção, observadas as obrigações legais aplicáveis.
+- O procedimento de incidente deverá prever registro, contenção, avaliação do impacto, decisão de comunicação e ações de correção, observadas as obrigações legais aplicáveis. O Administrador registrará o incidente; o responsável designado pela agência avaliará o impacto e decidirá sobre comunicações; a equipe responsável executará a contenção e registrará as medidas adotadas.
 
 ## 8. Dados principais
 
@@ -107,18 +108,20 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 | Usuário | Identificador, nome, e-mail, perfil, status e cliente vinculado quando o perfil for Cliente. |
 | Cliente | Identificador, nome, contato e status. |
 | Campanha | Identificador, cliente, nome, canal, objetivo e status. |
-| Ticket | Número, cliente, campanha, tipo, canal, prioridade, assunto, descrição, solicitante, responsável, prazo e status. |
-| Comentário | Ticket, autor, data/hora, texto e anexo opcional. |
+| Ticket | Número, cliente, campanha, tipo, canal, urgência informada, prazo desejado, prioridade oficial, prazos de SLA, assunto, descrição, solicitante, responsável e status. |
+| Comentário | Ticket, autor, data/hora, texto e referência a anexos vinculados. |
 | Histórico | Ticket, campo alterado, valor anterior, novo valor, usuário e data/hora. |
 | Aprovação | Ticket, decisão, usuário, data/hora e observação. |
 | Evidência | Ticket, descrição, link ou arquivo, autor e data/hora. |
+| Anexo | Identificador, ticket, nome original, tipo, tamanho, referência de armazenamento, autor, data/hora e prazo de retenção. |
+| Notificação | Ticket, evento gerador, destinatário, canal, resumo, data/hora de geração, situação de envio e data de leitura, quando aplicável. |
 
 ## 9. Critérios de aceite iniciais
 
 | Cenário | Resultado esperado | Requisito(s) relacionado(s) | Caso(s) de teste |
 | --- | --- | --- | --- |
-| Cliente abre uma demanda | O ticket recebe número, status “Aberta” e fica visível para atendimento. | RF-05, RF-06 | CT-01 |
-| Atendimento faz a triagem | Prioridade, prazo e responsável ficam registrados no histórico. | RF-07, RF-09, RN-03 | CT-02 |
+| Cliente abre uma demanda | O ticket recebe número, status “Aberta”, urgência informada e prazo desejado; fica visível para atendimento. | RF-05, RF-06 | CT-01 |
+| Atendimento faz a triagem | Prioridade oficial, prazos de SLA e responsável ficam registrados no histórico. | RF-07, RF-09, RN-03, RN-14 | CT-02 |
 | Gestor de tráfego executa uma alteração | O ticket recebe comentário/evidência e pode ser encaminhado para validação. | RF-08, RF-10, RF-12, RN-05 | CT-03, CT-05 |
 | Cliente precisa aprovar uma mudança | O ticket fica “Aguardando cliente” até decisão registrada. | RF-11, RN-08, RN-10 | CT-04 |
 | Entrega precisa ser confirmada | O ticket segue para “Em validação”; após aprovação, torna-se “Concluída”. | RF-11, RN-05, RN-06 | CT-05 |
@@ -127,6 +130,7 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 | Ticket é atribuído, comentado ou vencido | Os envolvidos recebem notificação conforme seu perfil e configuração. | RF-20, RN-13 | CT-07 |
 | Cliente tenta acessar ticket de outra organização | O acesso é negado e a tentativa fica registrada conforme a política de auditoria. | RF-02, RN-09, RNF-02 | CT-08 |
 | Backup é restaurado em cenário de teste | Dados e anexos do cenário são recuperados sem violar a retenção definida. | RNF-10, RNF-11 | CT-09 |
+| Abertura e listagem são executadas com base de teste | Pelo menos 90% das operações concluem em até 2 segundos. | RNF-06 | CT-10 |
 
 ## 10. Fora do escopo do MVP
 
@@ -171,8 +175,22 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 | ID | Origem da necessidade | Requisito(s) | Critério de aceite / teste | Prioridade | Responsável | Versão |
 | --- | --- | --- | --- | --- | --- |
 | RT-01 | Pedidos dispersos e perda de contexto | RF-05, RF-06, RF-17 | Ticket identificado e histórico consultável — CT-01. | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-02 | Falta de triagem, prazo e responsável | RF-07, RF-09, RF-21 | Triagem registra responsável, prioridade, prazo e SLA — CT-02. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-02 | Falta de triagem, prazo e responsável | RF-07, RF-09, RF-21, RN-14 | Triagem registra responsável, prioridade, prazo e SLA; confirmação automática não encerra primeira resposta — CT-02. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-03 | Retrabalho e ausência de aprovação | RF-11, RF-12, RN-05, RN-06, RN-11 | Validação, evidência e reabertura com justificativa — CT-05. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-04 | Atrasos e comunicação insuficiente | RF-16, RF-20, RN-12, RN-13 | Vencimento e eventos geram indicação e notificação — CT-06 e CT-07. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-05 | Proteção de dados e continuidade | RF-02, RNF-02, RNF-10, RNF-11 | Acesso por organização e restauração de backup — CT-08 e CT-09. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-06 | Interface compreensível para diferentes perfis | RNF-01, RNF-09 | Teste de tarefas e UEQ-S conforme Etapa 04. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-07 | Necessidade de resposta previsível no uso diário | RNF-06 | Abertura e listagem atendem ao tempo definido — CT-10. | Média | Grupo TI SIGE 1 | 1.0 |
+
+## Anexo D — Matriz de notificações
+
+| Evento | Destinatários | Canal | Conteúdo mínimo |
+| --- | --- | --- | --- |
+| Ticket atribuído | Responsável e Atendimento/gestor de conta | No sistema; e-mail se configurado | Número, assunto, prioridade oficial e prazo de resolução. |
+| Comentário incluído | Solicitante, responsável e usuários mencionados com permissão | No sistema; e-mail se configurado | Número, autor e resumo do comentário. |
+| Aguardando cliente | Solicitante e Atendimento/gestor de conta | No sistema; e-mail se configurado | Informação ou aprovação necessária e prazo aplicável. |
+| Em validação | Solicitante e Atendimento/gestor de conta | No sistema; e-mail se configurado | Ação executada, evidência e ação esperada do cliente. |
+| SLA vencido | Responsável, Atendimento/gestor de conta e Administrador | No sistema; e-mail se configurado | Número, prioridade, prazo vencido e tempo em atraso. |
+| Concluída ou Reaberta | Solicitante, responsável e Atendimento/gestor de conta | No sistema; e-mail se configurado | Novo status, justificativa e próximo passo, quando houver. |
+
+> Notificações não devem revelar conteúdo ou anexos a usuários sem permissão para consultar o ticket.

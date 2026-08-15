@@ -23,7 +23,8 @@ Transformar solicitações recebidas por canais dispersos em tickets rastreávei
 flowchart TB
     subgraph Cliente[Cliente]
         A((Início: necessidade identificada)) --> B[Enviar solicitação]
-        L[Enviar complemento ou aprovação] --> M{Aprova a entrega?}
+        L[Enviar complemento solicitado]
+        M[Responder validação: aprovar ou solicitar correção]
     end
 
     subgraph Agencia[Agência]
@@ -31,22 +32,27 @@ flowchart TB
         subgraph Atendimento[Atendimento / gestor de conta]
             C[Registrar e validar ticket] --> D{Informações completas?}
             D -- Não --> E[Solicitar complemento]
-            D -- Sim --> F[Classificar, priorizar, definir SLA e atribuir]
-            O[Notificar cliente sobre status] --> P((Encerrar ticket))
+            D -- Sim --> F{Solicitação cancelada?}
+            F -- Sim --> G[Registrar motivo e notificar cancelamento]
+            G --> O((Encerrar ticket))
+            F -- Não --> H[Classificar, priorizar, definir SLA e atribuir]
+            N{Entrega aprovada?}
+            N -- Sim --> Q[Notificar conclusão]
+            Q --> O
         end
         subgraph Trafego[Gestor de tráfego]
-            G[Executar demanda] --> H[Registrar ação e evidência]
-            H --> I[Encaminhar para validação]
-            N[Corrigir demanda reaberta] --> H
+            I[Executar demanda] --> J[Registrar ação e evidência]
+            J --> K[Encaminhar para validação]
         end
     end
 
     B -. mensagem .-> C
     E -. mensagem .-> L
-    F --> G
-    I -. mensagem .-> M
-    M -- Sim --> O
-    M -. Não: justificar correção .-> N
+    L -. complemento .-> C
+    H --> I
+    K -. mensagem .-> M
+    M -. resposta .-> N
+    N -- Não: justificar correção --> I
 ```
 
 ## 4. Regras de leitura
