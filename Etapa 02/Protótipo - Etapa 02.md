@@ -30,6 +30,8 @@ Não fazem parte do escopo inicial:
 
 ### 2.2 Fluxo de uma demanda
 
+> A modelagem BPMN com participantes, responsabilidades e mensagens está disponível em [BPMN - Processo To Be.md](BPMN%20-%20Processo%20To%20Be.md). O fluxograma abaixo é a visão simplificada do mesmo fluxo para o protótipo.
+
 ```mermaid
 flowchart LR
     A[Cliente ou equipe abre a solicitação] --> B[Triagem: tipo, prioridade, campanha e prazo]

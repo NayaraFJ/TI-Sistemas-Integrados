@@ -96,6 +96,9 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 - O MVP utilizará dados fictícios ou autorizados para teste; credenciais de plataformas de anúncios e bases de audiência não serão armazenadas.
 - Backups diários deverão ser protegidos e a restauração deverá ser testada periodicamente antes de uso em produção.
 - A política de retenção de 24 meses é uma proposta inicial e deve ser revisada conforme contratos, finalidade do tratamento e orientação jurídica.
+- A finalidade declarada para os dados do MVP é registrar, comunicar, executar, validar e auditar demandas de tráfego pago. Antes da produção, a agência deverá identificar controlador, operadores e base legal aplicável, além de publicar aviso de privacidade compatível.
+- O sistema deverá manter canal de contato para solicitações de titulares relacionadas a acesso, correção ou eliminação de dados, encaminhando-as ao responsável definido pela agência.
+- O procedimento de incidente deverá prever registro, contenção, avaliação do impacto, decisão de comunicação e ações de correção, observadas as obrigações legais aplicáveis.
 
 ## 8. Dados principais
 
@@ -112,17 +115,18 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 
 ## 9. Critérios de aceite iniciais
 
-| Cenário | Resultado esperado |
-| --- | --- |
-| Cliente abre uma demanda | O ticket recebe número, status “Aberta” e fica visível para atendimento. |
-| Atendimento faz a triagem | Prioridade, prazo e responsável ficam registrados no histórico. |
-| Gestor de tráfego executa uma alteração | O ticket recebe comentário/evidência e pode ser encaminhado para conclusão. |
-| Cliente precisa aprovar uma mudança | O ticket fica “Aguardando cliente” até decisão registrada. |
-| Entrega precisa ser confirmada | O ticket segue para “Em validação”; após aprovação, torna-se “Concluída”. |
-| Cliente solicita correção | O ticket é reaberto com justificativa e retorna à fila de execução. |
-| Prazo é ultrapassado | O ticket é identificado como vencido no painel ou listagem. |
-| Ticket é atribuído, comentado ou vencido | Os envolvidos recebem notificação conforme seu perfil e configuração. |
-| Ticket é concluído | A ação executada fica registrada e o histórico permanece disponível. |
+| Cenário | Resultado esperado | Requisito(s) relacionado(s) | Caso(s) de teste |
+| --- | --- | --- | --- |
+| Cliente abre uma demanda | O ticket recebe número, status “Aberta” e fica visível para atendimento. | RF-05, RF-06 | CT-01 |
+| Atendimento faz a triagem | Prioridade, prazo e responsável ficam registrados no histórico. | RF-07, RF-09, RN-03 | CT-02 |
+| Gestor de tráfego executa uma alteração | O ticket recebe comentário/evidência e pode ser encaminhado para validação. | RF-08, RF-10, RF-12, RN-05 | CT-03, CT-05 |
+| Cliente precisa aprovar uma mudança | O ticket fica “Aguardando cliente” até decisão registrada. | RF-11, RN-08, RN-10 | CT-04 |
+| Entrega precisa ser confirmada | O ticket segue para “Em validação”; após aprovação, torna-se “Concluída”. | RF-11, RN-05, RN-06 | CT-05 |
+| Cliente solicita correção | O ticket é reaberto com justificativa e retorna à fila de execução. | RF-11, RN-11 | CT-05 |
+| Prazo é ultrapassado | O ticket é identificado como vencido no painel ou listagem. | RF-16, RF-21, RN-12 | CT-06 |
+| Ticket é atribuído, comentado ou vencido | Os envolvidos recebem notificação conforme seu perfil e configuração. | RF-20, RN-13 | CT-07 |
+| Cliente tenta acessar ticket de outra organização | O acesso é negado e a tentativa fica registrada conforme a política de auditoria. | RF-02, RN-09, RNF-02 | CT-08 |
+| Backup é restaurado em cenário de teste | Dados e anexos do cenário são recuperados sem violar a retenção definida. | RNF-10, RNF-11 | CT-09 |
 
 ## 10. Fora do escopo do MVP
 
@@ -132,7 +136,43 @@ Os SLAs serão configuráveis pela agência e representam uma proposta inicial p
 - gestão financeira/faturamento;
 - chat em tempo real externo ao histórico do ticket.
 
-## Referências de governança
+## Referências de governança e processo
 
 - BRASIL. *Lei nº 13.709, de 14 de agosto de 2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).* Disponível em: [texto consolidado](https://www.gov.br/mj/pt-br/assuntos/sua-protecao/sedigi/Lei13709.pdf).
 - AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS. *Guia orientativo sobre segurança da informação para agentes de tratamento de pequeno porte.* Disponível em: [guia da ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte).
+- ISO/IEC/IEEE. *ISO/IEC/IEEE 29148:2018 — Systems and software engineering: Life cycle processes: Requirements engineering*. 2018. Disponível em: [norma](https://www.iso.org/standard/72089.html).
+- AXELOS. *ITIL 4 Practice Guide: Service Request Management*. 2020. Disponível em: [prática ITIL](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-request-management-3690).
+- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0*. 2011. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0/).
+
+## Anexo A — Catálogo inicial de tipos de demanda
+
+| Tipo | Dados obrigatórios adicionais | Aprovação | Evidência esperada | SLA sugerido |
+| --- | --- | --- | --- | --- |
+| Ajuste de orçamento | Campanha, orçamento atual/proposto, justificativa e data desejada. | Cliente, quando o tipo for configurado como sensível. | Comentário com valor aplicado e captura/link quando disponível. | Alta ou Urgente, conforme impacto. |
+| Alteração ou pausa de anúncio | Campanha, canal, anúncio/ativo afetado, ação solicitada e motivo. | Cliente, quando alterar conteúdo ou gerar impacto relevante. | Comentário, captura ou link da alteração. | Alta ou Média. |
+| Aprovação de criativo | Campanha, canal, criativo/anexo e data limite. | Cliente obrigatória. | Decisão registrada no ticket. | Média. |
+| Relatório de desempenho | Campanha, período, métricas desejadas e formato. | Não obrigatória, salvo solicitação específica. | Arquivo ou link do relatório entregue. | Média. |
+| Análise de métricas | Campanha, período, pergunta de negócio e indicadores disponíveis. | Não obrigatória. | Comentário analítico e evidência/relatório de apoio. | Baixa ou Média. |
+
+## Anexo B — Matriz de transições de status
+
+| Status atual | Próximo status permitido | Quem pode alterar | Registro obrigatório | Efeito no SLA |
+| --- | --- | --- | --- | --- |
+| Aberta | Em triagem, Cancelada | Atendimento, Administrador | Motivo do cancelamento, quando aplicável. | Inicia primeira resposta e resolução. |
+| Em triagem | Em execução, Aguardando cliente, Cancelada | Atendimento, Administrador | Prioridade, prazo, responsável e motivo do aguardo/cancelamento. | Continua a contagem. |
+| Em execução | Aguardando cliente, Em validação | Responsável, Atendimento, Administrador | Comentário e evidência para validação. | Pausa somente em Aguardando cliente. |
+| Aguardando cliente | Em triagem, Em execução, Cancelada | Atendimento, Administrador | Informação recebida ou motivo de cancelamento. | Retoma resolução ao sair do aguardo. |
+| Em validação | Concluída, Reaberta | Cliente, Atendimento, Administrador | Aprovação ou justificativa da correção. | Continua até conclusão; reabertura retorna à execução. |
+| Concluída | Reaberta | Cliente, Atendimento, Administrador | Justificativa de reabertura. | Novo ciclo de resolução deve ser registrado. |
+| Reaberta | Em execução | Atendimento, Administrador | Responsável e prioridade confirmados. | Continua conforme regra configurada. |
+
+## Anexo C — Matriz de rastreabilidade preliminar
+
+| ID | Origem da necessidade | Requisito(s) | Critério de aceite / teste | Prioridade | Responsável | Versão |
+| --- | --- | --- | --- | --- | --- |
+| RT-01 | Pedidos dispersos e perda de contexto | RF-05, RF-06, RF-17 | Ticket identificado e histórico consultável — CT-01. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-02 | Falta de triagem, prazo e responsável | RF-07, RF-09, RF-21 | Triagem registra responsável, prioridade, prazo e SLA — CT-02. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-03 | Retrabalho e ausência de aprovação | RF-11, RF-12, RN-05, RN-06, RN-11 | Validação, evidência e reabertura com justificativa — CT-05. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-04 | Atrasos e comunicação insuficiente | RF-16, RF-20, RN-12, RN-13 | Vencimento e eventos geram indicação e notificação — CT-06 e CT-07. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-05 | Proteção de dados e continuidade | RF-02, RNF-02, RNF-10, RNF-11 | Acesso por organização e restauração de backup — CT-08 e CT-09. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-06 | Interface compreensível para diferentes perfis | RNF-01, RNF-09 | Teste de tarefas e UEQ-S conforme Etapa 04. | Alta | Grupo TI SIGE 1 | 1.0 |

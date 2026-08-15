@@ -51,7 +51,7 @@ Uma agência de marketing digital pode receber pedidos de diferentes clientes e 
 
 ## 3. Justificativa
 
-O projeto é relevante porque trata de um problema frequente em serviços de marketing digital: a gestão de demandas que chega por canais informais. Um Help Desk adaptado ao contexto de tráfego pago pode transformar mensagens avulsas em registros estruturados, permitindo acompanhar o ciclo completo de cada pedido — abertura, triagem, execução, validação e encerramento.
+O projeto é relevante porque trata de um problema frequente em serviços de marketing digital: a gestão de demandas que chega por canais informais. Um Help Desk adaptado ao contexto de tráfego pago pode transformar mensagens avulsas em registros estruturados, permitindo acompanhar o ciclo completo de cada pedido — abertura, triagem, execução, validação e encerramento. Essa organização se aproxima das práticas de Service Desk e de gerenciamento de solicitações de serviço da ITIL 4, que enfatizam ponto de contato, registro, comunicação e acompanhamento do atendimento.
 
 Do ponto de vista organizacional, a aplicação pode melhorar a distribuição de trabalho, reduzir retrabalho e facilitar a prestação de contas ao cliente. Para a equipe, o sistema fornecerá uma fila de tarefas, definição de responsáveis, prioridades e prazos. Para o cliente, oferecerá uma visão clara do status da solicitação e do histórico de decisões. Para a gestão, os registros poderão apoiar indicadores como quantidade de demandas por cliente, tempo médio de atendimento, demandas vencidas e tipos de alterações mais solicitadas.
 
@@ -83,3 +83,6 @@ Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e regi
 - STEPONAITIS, Simonas; ANDRIJAUSKIENĖ, Meda. *Improving Digital Project Management Competencies: Case Study of a Digital Marketing Agency in Lithuania*. 2023. DOI: [10.1109/E-TEMS57541.2023.10424612](https://doi.org/10.1109/E-TEMS57541.2023.10424612).
 - YOUNAS, Mamoona et al. *DIGI-AI: An AI-Powered Web Platform for Intelligent Digital Marketing Automation*. 2025. DOI: [10.1109/MACS68476.2025.11453341](https://doi.org/10.1109/MACS68476.2025.11453341).
 - YAHIA, Zakaria; ELBOLOK, M. *A Proposed Nonlinear Programming Optimization Model for Optimal Budget Mix of Digital Marketing Campaigns*. 2024. DOI: [10.1109/NILES63360.2024.10753162](https://doi.org/10.1109/NILES63360.2024.10753162).
+- AXELOS. *ITIL 4 Practice Guide: Service Request Management*. 2020.
+- PEOPLECERT. *ITIL 4 Practice Guide: Service Desk*. 2023.
+- ISO/IEC/IEEE. *ISO/IEC/IEEE 29148:2018 — Systems and software engineering: Life cycle processes: Requirements engineering*. 2018.
