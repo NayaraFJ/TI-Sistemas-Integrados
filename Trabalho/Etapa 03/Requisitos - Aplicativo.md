@@ -42,8 +42,9 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | RF-17 | O sistema deve permitir consultar histórico completo de cada ticket. | Alta |
 | RF-18 | O sistema deve permitir registrar métricas de contexto, como CTR, CPC, conversão, CPA e ROAS, quando aplicável. | Baixa |
 | RF-19 | O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. | Baixa |
-| RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail ao responsável ou solicitante quando o ticket for atribuído, comentado, estiver aguardando cliente, vencer ou for concluído/reaberto. | Alta |
+| RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail ao responsável ou solicitante quando o ticket for atribuído, comentado, estiver aguardando cliente, entrar em validação, vencer ou for concluído/reaberto. | Alta |
 | RF-21 | O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. | Alta |
+| RF-22 | O administrador deve poder cadastrar, editar, ativar e inativar tipos de demanda, definindo campos obrigatórios, necessidade de aprovação do cliente e necessidade de evidência para cada tipo. | Alta |
 
 ## 4. Requisitos não funcionais
 
@@ -81,7 +82,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | RN-01 | Na abertura, todo ticket deve possuir cliente, tipo de demanda, urgência informada, assunto, descrição e solicitante. A prioridade oficial torna-se obrigatória após a triagem. |
 | RN-02 | Quando a demanda estiver vinculada a campanha existente, cliente e campanha devem ser compatíveis. |
 | RN-03 | Somente atendimento ou administrador pode definir prioridade, prazo e responsável na triagem. |
-| RN-04 | Somente responsável, atendimento ou administrador pode alterar o status de um ticket. |
+| RN-04 | Somente responsável, atendimento ou administrador pode alterar o status de um ticket, exceto o Cliente, que pode aprovar ou solicitar correção de ticket em “Em validação”, resultando exclusivamente nas transições para “Concluída” ou “Reaberta”. |
 | RN-05 | Após a execução, o ticket deve seguir para “Em validação”, com descrição da ação executada e evidência quando configurada para o tipo de demanda. |
 | RN-06 | O status “Concluída” exige validação/aprovação necessária ou registro de que o tipo de demanda não requer validação do cliente. |
 | RN-07 | O status “Cancelada” exige motivo de cancelamento. |
@@ -112,6 +113,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Usuário | Identificador, nome, e-mail, perfil, status e cliente vinculado quando o perfil for Cliente. |
 | Cliente | Identificador, nome, contato e status. |
 | Campanha | Identificador, cliente, nome, canal, objetivo e status. |
+| Tipo de demanda | Identificador, nome, status, campos obrigatórios, necessidade de aprovação do cliente e necessidade de evidência. |
 | Ticket | Número, cliente, campanha, tipo, canal, urgência informada, prazo desejado, prioridade oficial, prazos de SLA, assunto, descrição, solicitante, responsável e status. |
 | Comentário | Ticket, autor, data/hora, texto e referência a anexos vinculados. |
 | Histórico | Ticket, campo alterado, valor anterior, novo valor, usuário e data/hora. |
@@ -131,7 +133,8 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Entrega precisa ser confirmada | O ticket segue para “Em validação”; após aprovação, torna-se “Concluída”. | RF-11, RN-05, RN-06 | CT-05 |
 | Cliente solicita correção | O ticket é reaberto com justificativa e retorna à fila de execução. | RF-11, RN-11 | CT-05 |
 | Prazo é ultrapassado | O ticket é identificado como vencido no painel ou listagem. | RF-16, RF-21, RN-12 | CT-06 |
-| Ticket é atribuído, comentado ou vencido | Os envolvidos recebem notificação conforme seu perfil e configuração. | RF-20, RN-13 | CT-07 |
+| Ticket é atribuído, comentado, entra em aguardo ou validação, vence, é concluído ou reaberto | Os envolvidos recebem notificação conforme seu perfil e configuração. | RF-20, RN-13 | CT-07 |
+| Administrador configura um tipo de demanda | O tipo registra campos obrigatórios e regras de aprovação e evidência aplicáveis aos tickets desse tipo. | RF-22, RN-05, RN-10 | CT-11 |
 | Cliente tenta acessar ticket de outra organização | O acesso é negado e a tentativa fica registrada conforme a política de auditoria. | RF-02, RN-09, RNF-02 | CT-08 |
 | Backup é restaurado em cenário de teste | Dados e anexos do cenário são recuperados sem violar a retenção definida. | RNF-10, RNF-11 | CT-09 |
 | Abertura e listagem são executadas com base de teste | Pelo menos 90% das operações concluem em até 2 segundos. | RNF-06 | CT-10 |
@@ -180,7 +183,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | --- | --- | --- | --- | --- | --- |
 | RT-01 | Pedidos dispersos e perda de contexto | RF-05, RF-06, RF-17 | Ticket identificado e histórico consultável — CT-01. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-02 | Falta de triagem, prazo e responsável | RF-07, RF-09, RF-21, RN-14 | Triagem registra responsável, prioridade, prazo e SLA; confirmação automática não encerra primeira resposta — CT-02. | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-03 | Retrabalho e ausência de aprovação | RF-11, RF-12, RN-05, RN-06, RN-11 | Validação, evidência e reabertura com justificativa — CT-05. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-03 | Retrabalho e ausência de aprovação | RF-11, RF-12, RF-22, RN-05, RN-06, RN-11 | Validação, evidência, configuração do tipo e reabertura com justificativa — CT-05 e CT-11. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-04 | Atrasos e comunicação insuficiente | RF-16, RF-20, RN-12, RN-13 | Vencimento e eventos geram indicação e notificação — CT-06 e CT-07. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-05 | Proteção de dados e continuidade | RF-02, RNF-02, RNF-10, RNF-11 | Acesso por organização e restauração de backup — CT-08 e CT-09. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-06 | Interface compreensível para diferentes perfis | RNF-01, RNF-09 | Teste de tarefas e UEQ-S conforme Etapa 04. | Alta | Grupo TI SIGE 1 | 1.0 |
