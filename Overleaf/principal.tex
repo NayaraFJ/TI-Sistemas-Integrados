@@ -1,0 +1,111 @@
+% !TEX program = xelatex
+% Projeto LaTeX sincronizado com ../Trabalho por scripts/sync-trabalho.ps1.
+\documentclass[a4paper,12pt]{article}
+\usepackage{times}
+\usepackage{abakos}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{graphicx}
+
+\newcommand{\titulo}{Help Desk para Gestão de Demandas de Tráfego Pago}
+\newcommand{\instituicao}{Pontifícia Universidade Católica de Minas Gerais}
+\newcommand{\curso}{Sistemas de Informação}
+\newcommand{\disciplina}{Trabalho Interdisciplinar --- Sistemas Integrados de Gestão Empresarial}
+\newcommand{\professor}{Prof. Dr. Paulo Isnard}
+\newcommand{\cidade}{Contagem}
+\newcommand{\anoentrega}{2026}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\includegraphics[height=2.2cm]{figuras/brasao.jpg}\\[0.4cm]
+\MakeUppercase{\instituicao}\\
+Instituto de Ciências Exatas e de Informática\\
+\curso
+
+\vspace{2.2cm}
+\begin{flushleft}\small
+\textbf{Grupo:} 2 2026 -- PBR -- TI SIGE 1\\[0.25cm]
+Augusto do Couto Avelar\\
+Gabriel Fernandes de Araújo\\
+Gabriel Rocha Lopes\\
+Karine Kessen Gilberti Felix\\
+Lorrainy Pâmela Siqueira Ferreira\\
+Maria Heloisa Aguiar Mendes\\
+Nayara Ferreira de Jesus Rodrigues\\
+Pedro Henrique Assuncao
+\end{flushleft}
+
+\vfill
+\textbf{\MakeUppercase{\titulo}}
+
+\vfill
+\cidade\\
+\anoentrega
+\end{center}
+\end{titlepage}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{2cm}
+\textbf{\MakeUppercase{\titulo}}
+\end{center}
+
+\vspace{4cm}
+\hspace*{7cm}%
+\begin{minipage}{\dimexpr\textwidth-7cm\relax}
+\singlespacing
+Trabalho apresentado à disciplina \disciplina{} do curso de \curso{} da \instituicao{}, como requisito parcial de avaliação.
+
+\vspace{\baselineskip}
+Professor: \professor
+\end{minipage}
+
+\vfill
+\begin{center}
+\cidade\\
+\anoentrega
+\end{center}
+\end{titlepage}
+
+\pagestyle{empty}
+\begin{center}\textbf{RESUMO}\end{center}
+\onehalfspacing
+\justifying
+\noindent Este trabalho propõe o SIGE Desk, um Help Desk para centralizar a gestão de demandas de tráfego pago entre clientes e equipes de agências de marketing digital. A solução transforma solicitações recebidas por canais dispersos em tickets rastreáveis, com classificação, prioridade, responsável, prazo, comentários, evidências, validação e encerramento. A pesquisa é aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa. O documento apresenta o problema, a justificativa, os objetivos, o referencial teórico, a metodologia, o processo futuro em BPMN, o esboço do protótipo e os requisitos preliminares. A versão inicial será avaliada por testes funcionais e de usabilidade, observando rastreabilidade, cumprimento de cenários e experiência dos usuários.
+
+\vspace{\baselineskip}
+\noindent\textbf{Palavras-chave:} gestão de demandas; help desk; tráfego pago; marketing digital; sistemas de informação.
+\clearpage
+
+\begin{center}\textbf{ABSTRACT}\end{center}
+\selectlanguage{english}
+\noindent This work proposes SIGE Desk, a help desk to centralize paid-traffic requests between clients and digital-marketing agency teams. The solution turns scattered requests into traceable tickets with classification, priority, assignee, deadline, comments, evidence, validation, and closure. The study is applied, exploratory, and descriptive, using a predominantly qualitative approach. It presents the problem, rationale, objectives, theoretical framework, methodology, future BPMN process, prototype outline, and preliminary requirements. The first version will be assessed through functional and usability tests.
+
+\vspace{\baselineskip}
+\noindent\textbf{Keywords:} demand management; help desk; paid traffic; digital marketing; information systems.
+\selectlanguage{brazilian}
+\clearpage
+
+\pagestyle{empty}
+\tableofcontents
+\clearpage
+
+\pagestyle{fancy}
+\hypersetup{pageanchor=true}
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+\setlength{\JustifyingParindent}{1.25cm}
+\justifying
+
+\input{conteudo}
+
+\end{document}
