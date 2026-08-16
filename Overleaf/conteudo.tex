@@ -64,7 +64,48 @@ Esta é uma pesquisa aplicada, pois propõe e constrói uma solução para um pr
 
 \subsection{Revisão bibliográfica}
 
-A revisão foi realizada na base IEEE Xplore e complementada por fontes normativas e oficiais. O recorte abrangeu publicações de 2019 a 2026, em inglês, relacionadas a gestão de demandas e projetos em agências, centralização de atividades de marketing, operação de campanhas pagas, relacionamento com clientes, privacidade e rastreabilidade. Foram recuperados 25 artigos sem duplicidade; após a leitura de título, resumo e conteúdo, nove estudos foram selecionados por aderência ao problema, e os demais foram descartados por não contribuírem diretamente para o escopo do MVP.
+A revisão bibliográfica foi realizada de forma estruturada na base IEEE Xplore e complementada por fontes normativas e oficiais pertinentes ao projeto. O recorte compreendeu publicações em inglês, de 2019 a 2026, inclusive. As buscas foram executadas no campo \textit{Document Title} para combinar o tema marketing digital com termos relacionados, de um lado, à gestão, à automação e ao relacionamento com clientes e, de outro, à operação de campanhas e publicidade paga. O Quadro \ref{qua:buscas-ieee} apresenta as expressões booleanas empregadas.
+
+\begin{quadro}[H]
+\centering
+\caption{Expressões de busca utilizadas na IEEE Xplore}
+\label{qua:buscas-ieee}
+\small
+\begin{tabular}{p{0.13\textwidth}p{0.75\textwidth}}
+\hline
+\textbf{Busca} & \textbf{Expressão booleana} \\
+\hline
+Pesquisa 01 & \ttfamily ("Document Title":"digital marketing") AND ("Document Title":"marketing automation" OR "Document Title":"project management" OR "Document Title":"customer relationship management" OR "Document Title":"marketing agency" OR "Document Title":"management system") \\
+\normalfont Pesquisa 02 & \ttfamily ("Document Title":"digital marketing") AND ("Document Title":campaign OR "Document Title":advertising OR "Document Title":"paid advertising" OR "Document Title":"media buying") \\
+\hline
+\end{tabular}
+\par\footnotesize\normalfont\textbf{Fonte:} Elaborado pelo grupo a partir do protocolo de busca da pesquisa.
+\end{quadro}
+
+Foram incluídos artigos recuperados por essas expressões que estivessem dentro do período e do idioma definidos, apresentassem resumo ou texto disponível para leitura e contribuíssem diretamente para pelo menos um dos seguintes aspectos: gestão de demandas ou de projetos em agências; centralização de atividades de marketing; operação de campanhas pagas e análise de suas métricas; relacionamento e comunicação com clientes; ou privacidade aplicável ao contexto das campanhas.
+
+Foram excluídos estudos cujo foco principal fosse: (a) automação, predição ou personalização por inteligência artificial sem relação direta com a gestão de demandas e fora do escopo do MVP; (b) Internet das Coisas, sinalização digital ou outro domínio tecnológico sem relação com tickets; (c) comportamento de consumo ou nicho de mercado sem contribuição direta para o fluxo de atendimento; ou (d) tema genérico de marketing ou CRM já contemplado por fonte mais aderente ao problema investigado. O descarte representa somente insuficiência de aderência ao problema e ao escopo do sistema, não uma avaliação negativa da qualidade dos artigos.
+
+As duas buscas recuperaram 25 artigos sem duplicidade: dez na Pesquisa 01 e quinze na Pesquisa 02. A triagem compreendeu a leitura de títulos e resumos, seguida da extração de conteúdo dos trabalhos potencialmente aderentes. Ao final, nove artigos foram utilizados no referencial teórico e dezesseis foram descartados conforme os critérios apresentados. A relação individual dos trabalhos descartados e as respectivas justificativas foram preservadas no registro de triagem bibliográfica da pesquisa. A Tabela \ref{tab:selecao-bibliografica} sintetiza esse processo.
+
+\begin{table}[H]
+\centering
+\caption{Resultado do processo de seleção bibliográfica}
+\label{tab:selecao-bibliografica}
+\begin{tabular}{lc}
+\hline
+\textbf{Etapa da seleção} & \textbf{Quantidade de artigos} \\
+\hline
+Recuperados na Pesquisa 01 & 10 \\
+Recuperados na Pesquisa 02 & 15 \\
+Selecionados para o referencial teórico & 9 \\
+Descartados após a triagem & 16 \\
+\hline
+\end{tabular}
+\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do registro de triagem bibliográfica.
+\end{table}
+
+Os trabalhos selecionados foram analisados com a finalidade de fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizou contribuições sobre gestão de projetos em agências, plataformas de marketing, gestão de campanhas, distribuição de orçamento, métricas de desempenho, relacionamento com clientes, privacidade e rastreabilidade.
 
 Também foram adotadas fontes para orientar as escolhas de projeto: ITIL 4 para Service Desk e solicitações de serviço, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0.2 para modelagem do processo e LGPD/ANPD para proteção de dados \cite{servicedesk2023,servicerequest2023,iso29148,omg2014,brasil2018,anpd2021}.
 
