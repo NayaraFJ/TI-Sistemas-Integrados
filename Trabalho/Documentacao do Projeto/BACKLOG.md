@@ -101,7 +101,7 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | BL-25 | Implementar aprovação, reabertura, evidências e notificações prioritárias. | Fluxos previstos demonstráveis e registrados. | BL-20, BL-22 | 11/12/2026 | | | A fazer |
 | BL-26 | Implementar filtros, painel e indicação de vencimento de prazo. | Consulta de tickets por filtros e visão de acompanhamento. | BL-20, BL-22 | 11/12/2026 | | Lorrainy Pâmela Siqueira Ferreira | A fazer |
-| BL-27 | Implementar segurança, backup/restauração e controles de qualidade definidos. | Evidências de acesso por perfil, backup/restauração e requisitos não funcionais prioritários. | BL-19, BL-20 | 11/12/2026 | | | A fazer |
+| BL-27 | Implementar segurança e controles de qualidade definidos. | Evidências de acesso por perfil e requisitos não funcionais prioritários aplicáveis ao protótipo. | BL-19, BL-20 | 11/12/2026 | | | A fazer |
 | BL-28 | Executar casos de teste, registrar defeitos e realizar retestes. | Evidências dos casos prioritários, lista de defeitos e situação final. | BL-22, BL-25 a BL-27 | 11/12/2026 | | | A fazer |
 | BL-29 | Realizar avaliação de usabilidade e registrar melhorias. | Resultado agregado das tarefas e UEQ-S; melhorias priorizadas pelo PO. | BL-22 | 11/12/2026 | | | A fazer |
 | BL-30 | Preparar release, instruções de execução e contingência da demonstração. | Versão identificada, passo a passo de execução e plano alternativo para a demo. | BL-23, BL-28 | 11/12/2026 | | | A fazer |

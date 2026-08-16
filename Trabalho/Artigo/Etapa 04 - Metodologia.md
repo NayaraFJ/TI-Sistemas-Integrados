@@ -88,7 +88,7 @@ Integrações automáticas com plataformas de anúncios, previsão por inteligê
 
 ### 2.5 Testes funcionais
 
-Os casos de teste serão derivados dos critérios de aceite e deverão registrar pré-condição, passos, resultado esperado, resultado obtido e situação final. O catálogo canônico dos quinze cenários, seus requisitos associados e seus resultados esperados está em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais). No artigo, eles são apresentados de forma consolidada no Apêndice de validação.
+Os casos de teste serão derivados dos critérios de aceite e deverão registrar pré-condição, passos, resultado esperado, resultado obtido e situação final. O catálogo canônico dos treze cenários, seus requisitos associados e seus resultados esperados está em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais). No artigo, eles são apresentados de forma consolidada no Apêndice de validação.
 
 O critério de aprovação funcional será 100% dos casos de alta prioridade aprovados, pelo menos 90% do total de casos aprovados e nenhum defeito crítico em aberto. Casos reprovados deverão gerar registro de correção ou justificativa de adiamento.
 
@@ -98,7 +98,7 @@ Após a versão inicial, o protótipo ou aplicação será submetido a uma avali
 
 Cada participante executará cinco tarefas: (1) abrir uma demanda com os dados obrigatórios; (2) localizar e filtrar um ticket; (3) classificar, priorizar e atribuir a demanda; (4) incluir comentário e encaminhar a entrega para validação; e (5) aprovar ou reabrir a demanda com justificativa. Serão observados obstáculos, dúvidas, erros, necessidade de ajuda e tempo de realização.
 
-O teste será considerado aprovado se pelo menos 80% das execuções de tarefas forem concluídas sem ajuda e nenhuma tarefa tiver taxa de conclusão inferior a 70%. Ao final, será aplicado o **Short User Experience Questionnaire (UEQ-S)**. A versão curta possui oito itens, distribuídos entre as dimensões pragmática e hedônica; suas respostas, coletadas em escala de 1 a 7, serão convertidas para a escala de -3 a +3, conforme a proposta e a validação do instrumento (SCHREPP; HINDERKS; THOMASCHEWSKI, 2017). Serão calculadas as médias das dimensões e a média geral. O UEQ-S será empregado para reduzir o esforço de resposta após a execução das tarefas, reconhecendo-se que ele fornece uma avaliação resumida, e não o detalhamento das seis dimensões do UEQ completo. Como critério interno do projeto, será buscada média geral superior a 0,8 e nenhuma dimensão abaixo de 0,5. Esses valores são metas de aceitação do projeto, não substituem a interpretação comparativa do instrumento. O registro conjunto de conclusão, tempo, erros e comentários segue a abordagem de avaliação de usabilidade discutida por Radhitya et al. (2024).
+Ao final, será aplicado o **Short User Experience Questionnaire (UEQ-S)**. A versão curta possui oito itens, distribuídos entre as dimensões pragmática e hedônica; suas respostas, coletadas em escala de 1 a 7, serão convertidas para a escala de -3 a +3, conforme a proposta e a validação do instrumento (SCHREPP; HINDERKS; THOMASCHEWSKI, 2017). Serão calculadas as médias das dimensões e a média geral. O UEQ-S será empregado para reduzir o esforço de resposta após a execução das tarefas, reconhecendo-se que ele fornece uma avaliação resumida, e não o detalhamento das seis dimensões do UEQ completo. Os resultados, juntamente com conclusão das tarefas, tempo, erros, dúvidas e comentários, serão analisados de forma descritiva para identificar melhorias na interface, sem estabelecer meta numérica de aprovação para o protótipo acadêmico. O registro conjunto desses dados segue a abordagem de avaliação de usabilidade discutida por Radhitya et al. (2024).
 
 Os resultados serão apresentados de forma agregada, sem identificação individual. Sugestões e dificuldades recorrentes serão transformadas em lista de melhorias para a versão final.
 
@@ -115,9 +115,7 @@ Os dados qualitativos das entrevistas, observações e comentários serão anali
 Os dados quantitativos de teste serão analisados de forma descritiva, considerando:
 
 - quantidade de casos de teste aprovados e reprovados;
-- percentual de operações de abertura e listagem concluídas em até 2 segundos;
 - quantidade de tarefas concluídas por participante;
-- taxa de conclusão sem ajuda por tarefa e no conjunto do teste;
 - principais erros ou dúvidas observados;
 - tempo aproximado de execução das tarefas;
 - médias pragmática, hedônica e geral, além dos comentários do UEQ-S.
@@ -126,7 +124,7 @@ Os resultados não terão pretensão de representar todas as agências de market
 
 ## 5. Critérios de qualidade e validade
 
-Para reduzir ambiguidades, os requisitos serão associados a critérios de aceite e casos de teste. A aprovação funcional exigirá 100% de aprovação dos casos de alta prioridade, pelo menos 90% dos casos totais e ausência de defeito crítico. O registro de histórico do ticket permitirá verificar se as regras de negócio foram atendidas. A validação com usuários exigirá ao menos 80% de conclusão sem ajuda, sem tarefa abaixo de 70%, e adotará como meta média geral do UEQ-S superior a 0,8.
+Para reduzir ambiguidades, os requisitos serão associados a critérios de aceite e casos de teste. A aprovação funcional exigirá 100% de aprovação dos casos de alta prioridade, pelo menos 90% dos casos totais e ausência de defeito crítico. O registro de histórico do ticket permitirá verificar se as regras de negócio foram atendidas. A avaliação com usuários será interpretada de forma descritiva, a partir da realização das tarefas, dos erros, das dúvidas, do tempo e das respostas ao UEQ-S, sem meta numérica rígida para o protótipo acadêmico.
 
 Como a avaliação utilizará amostra pequena e por conveniência, a validade externa será limitada. A revisão bibliográfica também se limita à IEEE Xplore, ao campo de título e a publicações em inglês; portanto, não pretende esgotar a literatura. Para aumentar a credibilidade da análise, serão preservados os instrumentos de coleta, a lista de cenários, as decisões de requisitos e os resultados agregados de teste. Limitações e mudanças ocorridas durante o desenvolvimento deverão ser registradas na versão final.
 
@@ -151,7 +149,7 @@ Como a avaliação utilizará amostra pequena e por conveniência, a validade ex
 
 ## 7. Resultados da especificação
 
-A etapa de especificação identificou 23 requisitos funcionais, 11 requisitos não funcionais e 14 regras de negócio. Eles foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança e continuidade. A organização demonstra que a proposta não se limita ao registro de chamados, pois articula controle operacional, transparência para o cliente e apoio à gestão.
+A etapa de especificação identificou 23 requisitos funcionais, seis requisitos não funcionais e 14 regras de negócio. Eles foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança, privacidade, compatibilidade e acessibilidade. A organização demonstra que a proposta não se limita ao registro de chamados, pois articula controle operacional, transparência para o cliente e apoio à gestão.
 
 O catálogo detalhado, os critérios de aceite e a rastreabilidade estão mantidos somente em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md). No artigo, esse resultado é apresentado de forma sintética e a documentação integral é encaminhada aos apêndices.
 

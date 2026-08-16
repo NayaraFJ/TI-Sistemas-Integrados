@@ -52,17 +52,13 @@ RF-23 & O administrador deve poder configurar calendário, horário, fuso, feria
 \textbf{ID} & \textbf{Aspecto} & \textbf{Critério inicial} \\
 \hline
 \endhead
-RNF-01 & Usabilidade & Pelo menos 80\% das execuções das tarefas devem ser concluídas sem ajuda e nenhuma tarefa pode ficar abaixo de 70\% de conclusão. \\
 RNF-02 & Segurança & Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos. \\
 RNF-03 & Privacidade & O sistema deve coletar somente dados necessários e não deve armazenar bases de audiência ou dados sensíveis. \\
 RNF-04 & Rastreabilidade & Alterações de status, responsável, prazo e aprovação devem permanecer no histórico. \\
 RNF-05 & Integridade & Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo. \\
-RNF-06 & Desempenho & Em teste com pelo menos 100 tickets, 90\% das operações de abertura e listagem devem concluir em até dois segundos, desconsideradas limitações externas de rede. \\
-RNF-07 & Compatibilidade & A interface deve funcionar em navegadores modernos de computador e celular. \\
-RNF-08 & Disponibilidade & O sistema deve informar indisponibilidade e evitar perda de dados ao salvar uma solicitação. \\
+RNF-07 & Compatibilidade & A interface deve funcionar em navegadores modernos. \\
 RNF-09 & Acessibilidade & Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado. \\
-RNF-10 & Backup & O sistema deve manter cópia diária dos dados e anexos, com retenção mínima de 30 dias e teste periódico de restauração. \\
-RNF-11 & Retenção & Tickets, histórico e anexos devem ser mantidos por 24 meses após conclusão ou cancelamento e depois anonimizados ou eliminados, salvo obrigação legal ou contratual. \\
+\multicolumn{3}{p{0.92\textwidth}}{\footnotesize\textit{Nota:} Por se tratar de protótipo acadêmico com dados fictícios ou autorizados, retenção, backup, restauração e disponibilidade contínua não integram a entrega. Esses controles deverão ser definidos em eventual adoção real, conforme a LGPD.} \\
 \hline
 \multicolumn{3}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir dos requisitos preliminares.}
 \end{longtable}
@@ -119,7 +115,7 @@ Comentário & Ticket, autor, data e hora, texto e referência a anexos. \\
 Histórico & Ticket, campo alterado, valor anterior, novo valor, usuário, data e hora. \\
 Aprovação & Ticket, decisão, usuário, data e hora e observação. \\
 Evidência & Ticket, descrição, link ou arquivo, autor, data e hora. \\
-Anexo & Identificador, ticket, nome original, tipo, tamanho, referência de armazenamento, autor, data e hora e prazo de retenção. \\
+Anexo & Identificador, ticket, nome original, tipo, tamanho, referência de armazenamento, autor, data e hora. \\
 Notificação & Ticket, evento, destinatário, canal, resumo, geração, situação de envio e data de leitura, quando aplicável. \\
 \hline
 \multicolumn{2}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
@@ -182,13 +178,12 @@ Reaberta & Em execução & Atendimento; Administrador & Confirma responsável e 
 \textbf{ID} & \textbf{Origem} & \textbf{Requisitos} & \textbf{Critério ou teste} & \textbf{Prior.} & \textbf{Responsável} & \textbf{Versão} \\
 \hline
 \endhead
-RT-01 & Pedidos dispersos e perda de contexto. & RF-05, RF-06, RF-17. & Ticket identificado e histórico consultável; CT-01 e CT-15. & Alta & Grupo TI SIGE 1 & 1.0 \\
-RT-02 & Falta de triagem, prazo e responsável. & RF-07, RF-09, RF-21, RF-23, RN-14. & Triagem e SLA registrados; CT-02 e CT-12. & Alta & Grupo TI SIGE 1 & 1.0 \\
-RT-03 & Retrabalho e ausência de aprovação. & RF-11, RF-12, RF-22, RN-05, RN-06, RN-11. & Validação, evidência e reabertura; CT-05 e CT-11. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-01 & Pedidos dispersos e perda de contexto. & RF-05, RF-06, RF-17. & Ticket identificado e histórico consultável; CT-01 e CT-13. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-02 & Falta de triagem, prazo e responsável. & RF-07, RF-09, RF-21, RF-23, RN-14. & Triagem e SLA registrados; CT-02 e CT-10. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-03 & Retrabalho e ausência de aprovação. & RF-11, RF-12, RF-22, RN-05, RN-06, RN-11. & Validação, evidência e reabertura; CT-05 e CT-09. & Alta & Grupo TI SIGE 1 & 1.0 \\
 RT-04 & Atrasos e comunicação insuficiente. & RF-16, RF-20, RN-12, RN-13. & Vencimento e eventos notificados; CT-06 e CT-07. & Alta & Grupo TI SIGE 1 & 1.0 \\
-RT-05 & Proteção de dados e continuidade. & RF-02, RNF-02, RNF-10, RNF-11. & Restrição por organização e restauração; CT-08 e CT-09. & Alta & Grupo TI SIGE 1 & 1.0 \\
-RT-06 & Interface compreensível. & RNF-01, RNF-09. & Teste de tarefas e UEQ-S. & Alta & Grupo TI SIGE 1 & 1.0 \\
-RT-07 & Resposta previsível. & RNF-06. & Abertura e listagem no tempo definido; CT-10. & Média & Grupo TI SIGE 1 & 1.0 \\
+RT-05 & Proteção de dados. & RF-02, RNF-02. & Restrição por organização; CT-08. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-06 & Interface compreensível. & RNF-09. & Campos claros, contraste, navegação por teclado e avaliação de usabilidade. & Alta & Grupo TI SIGE 1 & 1.0 \\
 \hline
 \multicolumn{7}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
 \end{longtable}
@@ -208,8 +203,8 @@ RT-07 & Resposta previsível. & RNF-06. & Abertura e listagem no tempo definido;
 \hline
 \endhead
 Cliente abre uma demanda. & Ticket recebe número, status Aberta, urgência e prazo desejado e fica visível ao atendimento. & RF-05, RF-06 & CT-01 \\
-Usuário acessa o sistema. & Usuário autenticado acessa somente funções e tickets permitidos. & RF-01, RF-02 & CT-13 \\
-Administrador mantém clientes e campanhas. & Cliente pode ser ativado ou inativado e campanha fica vinculada ao cliente. & RF-03, RF-04 & CT-14 \\
+Usuário acessa o sistema. & Usuário autenticado acessa somente funções e tickets permitidos. & RF-01, RF-02 & CT-11 \\
+Administrador mantém clientes e campanhas. & Cliente pode ser ativado ou inativado e campanha fica vinculada ao cliente. & RF-03, RF-04 & CT-12 \\
 Atendimento faz a triagem. & Prioridade, SLA e responsável ficam registrados no histórico. & RF-07, RF-09, RN-03, RN-14 & CT-02 \\
 Gestor executa alteração. & Ticket recebe comentário ou evidência e segue para validação. & RF-08, RF-10, RF-12, RN-05 & CT-03, CT-05 \\
 Cliente precisa aprovar mudança. & Ticket fica Aguardando cliente até decisão registrada. & RF-11, RN-08, RN-10 & CT-04 \\
@@ -217,12 +212,10 @@ Entrega precisa ser confirmada. & Ticket segue para Em validação e, após apro
 Cliente solicita correção. & Ticket é reaberto com justificativa e retorna à execução. & RF-11, RN-11 & CT-05 \\
 Prazo é ultrapassado. & Ticket é identificado como vencido. & RF-16, RF-21, RN-12 & CT-06 \\
 Evento notificável ocorre. & Envolvidos recebem notificação conforme perfil e configuração. & RF-20, RN-13 & CT-07 \\
-Administrador configura tipo. & Campos e regras de aprovação e evidência são aplicados. & RF-22, RN-05, RN-10 & CT-11 \\
-Administrador configura SLA. & Calendário, prazos e escopo são aplicados ao cálculo. & RF-23 & CT-12 \\
-Usuário consulta histórico. & Consulta exibe autor, data, motivo e valores alterados. & RF-09, RF-17, RNF-04 & CT-15 \\
+Administrador configura tipo. & Campos e regras de aprovação e evidência são aplicados. & RF-22, RN-05, RN-10 & CT-09 \\
+Administrador configura SLA. & Calendário, prazos e escopo são aplicados ao cálculo. & RF-23 & CT-10 \\
+Usuário consulta histórico. & Consulta exibe autor, data, motivo e valores alterados. & RF-09, RF-17, RNF-04 & CT-13 \\
 Cliente tenta acesso indevido. & Acesso é negado e tentativa é registrada. & RF-02, RN-09, RNF-02 & CT-08 \\
-Backup é restaurado. & Dados e anexos são recuperados respeitando a retenção. & RNF-10, RNF-11 & CT-09 \\
-Abertura e listagem são testadas. & Pelo menos 90\% das operações concluem em até dois segundos. & RNF-06 & CT-10 \\
 \hline
 \multicolumn{4}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
 \end{longtable}

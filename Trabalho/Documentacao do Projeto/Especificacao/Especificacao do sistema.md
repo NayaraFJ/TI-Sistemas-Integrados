@@ -4,7 +4,7 @@
 
 > Este documento reúne requisitos iniciais derivados do problema, objetivos e referencial teórico. Eles devem ser validados com usuários e podem ser refinados antes da implementação.
 
-> A estrutura de requisitos e rastreabilidade adota como referência a engenharia de requisitos da ISO/IEC/IEEE 29148; o fluxo de solicitações considera a prática ITIL 4 de gerenciamento de solicitações; e os controles de acesso e retenção consideram a Lei Geral de Proteção de Dados Pessoais (LGPD) e as orientações da Autoridade Nacional de Proteção de Dados (ANPD). A representação do processo correspondente está documentada em Business Process Model and Notation (BPMN) 2.0.2 no arquivo [BPMN - Processo To Be.md](../Processo/BPMN%20-%20Processo%20To%20Be.md) (ISO/IEC/IEEE, 2018; PEOPLECERT, 2023; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021; OMG, 2014).
+> A estrutura de requisitos e rastreabilidade adota como referência a engenharia de requisitos da ISO/IEC/IEEE 29148; o fluxo de solicitações considera a prática ITIL 4 de gerenciamento de solicitações; e os controles de acesso e minimização de dados consideram a Lei Geral de Proteção de Dados Pessoais (LGPD) e as orientações da Autoridade Nacional de Proteção de Dados (ANPD). A retenção operacional é tema para eventual adoção em produção, não para este protótipo acadêmico. A representação do processo correspondente está documentada em Business Process Model and Notation (BPMN) 2.0.2 no arquivo [BPMN - Processo To Be.md](../Processo/BPMN%20-%20Processo%20To%20Be.md) (ISO/IEC/IEEE, 2018; PEOPLECERT, 2023; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021; OMG, 2014).
 
 ## 1. Visão do produto
 
@@ -51,17 +51,14 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 
 | ID     | Requisito       | Critério inicial                                                                                                                                                                          |
 | ------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RNF-01 | Usabilidade     | No teste com usuários, pelo menos 80% das execuções das tarefas devem ser concluídas sem ajuda e nenhuma tarefa pode ficar abaixo de 70% de conclusão.                                    |
 | RNF-02 | Segurança       | Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos.                                            |
 | RNF-03 | Privacidade     | O sistema deve coletar somente dados necessários para a gestão da demanda e não deve armazenar bases de audiência ou dados sensíveis.                                                     |
 | RNF-04 | Rastreabilidade | Alterações de status, responsável, prazo e aprovação devem permanecer no histórico.                                                                                                       |
 | RNF-05 | Integridade     | Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo.                                                                                               |
-| RNF-06 | Desempenho      | Em cenário de teste com pelo menos 100 tickets cadastrados, 90% das operações de abertura e listagem devem concluir em até 2 segundos, sem considerar limitações externas de rede.        |
-| RNF-07 | Compatibilidade | A interface deve funcionar em navegadores modernos de computador e celular.                                                                                                               |
-| RNF-08 | Disponibilidade | O sistema deve informar indisponibilidade e evitar perda de dados ao salvar uma solicitação.                                                                                              |
-| RNF-09 | Acessibilidade  | Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado.                                                                                                 |
-| RNF-10 | Backup          | O sistema deve manter cópia diária dos dados e anexos, com retenção mínima de 30 dias e teste periódico de restauração.                                                                   |
-| RNF-11 | Retenção        | Tickets, histórico e anexos devem ser mantidos por 24 meses após conclusão ou cancelamento; ao fim do período, devem ser anonimizados ou eliminados, salvo obrigação legal ou contratual. |
+| RNF-07 | Compatibilidade | A interface deve funcionar em navegadores modernos. |
+| RNF-09 | Acessibilidade  | Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado. |
+
+> **Conformidade fora do escopo do protótipo acadêmico:** como o projeto utiliza dados fictícios ou autorizados apenas para demonstração e não será disponibilizado em produção, não são requisitos da entrega acadêmica a política operacional de retenção, o backup, a restauração e a disponibilidade contínua. Em uma eventual adoção real, a agência deverá definir esses controles e a base legal aplicável, em conformidade com a LGPD.
 
 ## 5. Acordos de nível de serviço (SLA) preliminares
 
@@ -78,34 +75,32 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 
 ## 6. Regras de negócio
 
-| ID | Regra |
-| --- | --- |
-| RN-01 | Na abertura, todo ticket deve possuir cliente, tipo de demanda, urgência informada, assunto, descrição e solicitante. A prioridade oficial torna-se obrigatória após a triagem. |
-| RN-02 | Quando a demanda estiver vinculada a campanha existente, cliente e campanha devem ser compatíveis. |
-| RN-03 | Somente atendimento ou administrador pode definir prioridade, prazo e responsável na triagem. |
+| ID    | Regra                                                                                                                                                                                                                                                |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RN-01 | Na abertura, todo ticket deve possuir cliente, tipo de demanda, urgência informada, assunto, descrição e solicitante. A prioridade oficial torna-se obrigatória após a triagem.                                                                      |
+| RN-02 | Quando a demanda estiver vinculada a campanha existente, cliente e campanha devem ser compatíveis.                                                                                                                                                   |
+| RN-03 | Somente atendimento ou administrador pode definir prioridade, prazo e responsável na triagem.                                                                                                                                                        |
 | RN-04 | Somente responsável, atendimento ou administrador pode alterar o status de um ticket, exceto o Cliente, que pode aprovar ou solicitar correção de ticket em “Em validação”, resultando exclusivamente nas transições para “Concluída” ou “Reaberta”. |
-| RN-05 | Após a execução, o ticket deve seguir para “Em validação”, com descrição da ação executada e evidência quando configurada para o tipo de demanda. |
-| RN-06 | O status “Concluída” exige validação/aprovação necessária ou registro de que o tipo de demanda não requer validação do cliente. |
-| RN-07 | O status “Cancelada” exige motivo de cancelamento. |
-| RN-08 | O status “Aguardando cliente” deve registrar qual informação ou aprovação é necessária. |
-| RN-09 | O cliente deve visualizar somente tickets vinculados à sua organização. |
-| RN-10 | Alterações de orçamento, público ou criativo podem exigir aprovação do cliente antes da execução, conforme configuração do tipo de demanda. |
-| RN-11 | Cliente, atendimento ou administrador pode reabrir um ticket concluído mediante justificativa; a reabertura preserva todo o histórico anterior. |
-| RN-12 | Ao vencer o SLA, o sistema deve sinalizar o ticket e notificar o responsável e o atendimento. |
-| RN-13 | Atribuição, comentário, mudança para “Aguardando cliente”, “Em validação”, “Concluída” e “Reaberta” devem gerar notificações aos envolvidos. |
-| RN-14 | A confirmação automática de recebimento não conta como primeira resposta do SLA. A primeira resposta exige retorno efetivo de Atendimento, Administrador ou responsável ao solicitante, registrado no ticket. |
+| RN-05 | Após a execução, o ticket deve seguir para “Em validação”, com descrição da ação executada e evidência quando configurada para o tipo de demanda.                                                                                                    |
+| RN-06 | O status “Concluída” exige validação/aprovação necessária ou registro de que o tipo de demanda não requer validação do cliente.                                                                                                                      |
+| RN-07 | O status “Cancelada” exige motivo de cancelamento.                                                                                                                                                                                                   |
+| RN-08 | O status “Aguardando cliente” deve registrar qual informação ou aprovação é necessária.                                                                                                                                                              |
+| RN-09 | O cliente deve visualizar somente tickets vinculados à sua organização.                                                                                                                                                                              |
+| RN-10 | Alterações de orçamento, público ou criativo podem exigir aprovação do cliente antes da execução, conforme configuração do tipo de demanda.                                                                                                          |
+| RN-11 | Cliente, atendimento ou administrador pode reabrir um ticket concluído mediante justificativa; a reabertura preserva todo o histórico anterior.                                                                                                      |
+| RN-12 | Ao vencer o SLA, o sistema deve sinalizar o ticket e notificar o responsável e o atendimento.                                                                                                                                                        |
+| RN-13 | Atribuição, comentário, mudança para “Aguardando cliente”, “Em validação”, “Concluída” e “Reaberta” devem gerar notificações aos envolvidos.                                                                                                         |
+| RN-14 | A confirmação automática de recebimento não conta como primeira resposta do SLA. A primeira resposta exige retorno efetivo de Atendimento, Administrador ou responsável ao solicitante, registrado no ticket.                                        |
 
 ## 7. Governança de dados, acesso e continuidade
 
 - O acesso será baseado no princípio do menor privilégio: cada perfil verá e alterará apenas as informações necessárias às suas responsabilidades.
 - Toda alteração relevante será auditável por usuário, data/hora, valor anterior e novo valor.
-- Anexos deverão ser vinculados a um ticket e seguir a mesma política de retenção do respectivo histórico.
+- Anexos deverão ser vinculados ao ticket e acessíveis somente a usuários autorizados.
 - O MVP utilizará dados fictícios ou autorizados para teste; credenciais de plataformas de anúncios e bases de audiência não serão armazenadas.
-- Backups diários deverão ser protegidos e a restauração deverá ser testada periodicamente antes de uso em produção.
-- A política de retenção de 24 meses é uma proposta inicial e deve ser revisada conforme contratos, finalidade do tratamento e orientação jurídica.
 - A finalidade declarada para os dados do MVP é registrar, comunicar, executar, validar e auditar demandas de tráfego pago. Antes da produção, a agência deverá identificar controlador, operadores e base legal aplicável, além de publicar aviso de privacidade compatível.
 - O sistema deverá manter canal de contato para solicitações de titulares relacionadas a acesso, correção ou eliminação de dados, encaminhando-as ao responsável definido pela agência.
-- O procedimento de incidente deverá prever registro, contenção, avaliação do impacto, decisão de comunicação e ações de correção, observadas as obrigações legais aplicáveis. O Administrador registrará o incidente; o responsável designado pela agência avaliará o impacto e decidirá sobre comunicações; a equipe responsável executará a contenção e registrará as medidas adotadas.
+- A política de retenção, backup, restauração e resposta a incidentes será definida somente em caso de adoção real, pois não integra o protótipo acadêmico com dados fictícios ou autorizados.
 
 ## 8. Dados principais
 
@@ -121,7 +116,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Histórico | Ticket, campo alterado, valor anterior, novo valor, usuário e data/hora. |
 | Aprovação | Ticket, decisão, usuário, data/hora e observação. |
 | Evidência | Ticket, descrição, link ou arquivo, autor e data/hora. |
-| Anexo | Identificador, ticket, nome original, tipo, tamanho, referência de armazenamento, autor, data/hora e prazo de retenção. |
+| Anexo | Identificador, ticket, nome original, tipo, tamanho, referência de armazenamento, autor e data/hora. |
 | Notificação | Ticket, evento gerador, destinatário, canal, resumo, data/hora de geração, situação de envio e data de leitura, quando aplicável. |
 
 ## 9. Critérios de aceite iniciais
@@ -129,8 +124,8 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Cenário | Resultado esperado | Requisito(s) relacionado(s) | Caso(s) de teste |
 | --- | --- | --- | --- |
 | Cliente abre uma demanda | O ticket recebe número, status “Aberta”, urgência informada e prazo desejado; fica visível para atendimento. | RF-05, RF-06 | CT-01 |
-| Usuário acessa o sistema | Usuário autenticado acessa apenas as funções e os tickets permitidos ao seu perfil. | RF-01, RF-02 | CT-13 |
-| Administrador mantém clientes e campanhas | Cliente pode ser ativado/inativado e campanha cadastrada fica vinculada ao cliente selecionado. | RF-03, RF-04 | CT-14 |
+| Usuário acessa o sistema | Usuário autenticado acessa apenas as funções e os tickets permitidos ao seu perfil. | RF-01, RF-02 | CT-11 |
+| Administrador mantém clientes e campanhas | Cliente pode ser ativado/inativado e campanha cadastrada fica vinculada ao cliente selecionado. | RF-03, RF-04 | CT-12 |
 | Atendimento faz a triagem | Prioridade oficial, prazos de SLA e responsável ficam registrados no histórico. | RF-07, RF-09, RN-03, RN-14 | CT-02 |
 | Gestor de tráfego executa uma alteração | O ticket recebe comentário/evidência e pode ser encaminhado para validação. | RF-08, RF-10, RF-12, RN-05 | CT-03, CT-05 |
 | Cliente precisa aprovar uma mudança | O ticket fica “Aguardando cliente” até decisão registrada. | RF-11, RN-08, RN-10 | CT-04 |
@@ -138,12 +133,10 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Cliente solicita correção | O ticket é reaberto com justificativa e retorna à fila de execução. | RF-11, RN-11 | CT-05 |
 | Prazo é ultrapassado | O ticket é identificado como vencido no painel ou listagem. | RF-16, RF-21, RN-12 | CT-06 |
 | Ticket é atribuído, comentado, entra em aguardo ou validação, vence, é concluído ou reaberto | Os envolvidos recebem notificação conforme seu perfil e configuração. | RF-20, RN-13 | CT-07 |
-| Administrador configura um tipo de demanda | O tipo registra campos obrigatórios e regras de aprovação e evidência aplicáveis aos tickets desse tipo. | RF-22, RN-05, RN-10 | CT-11 |
-| Administrador configura o SLA | Calendário, prazos e regra por prioridade, cliente ou tipo de demanda são aplicados ao cálculo do ticket correspondente. | RF-23 | CT-12 |
-| Usuário consulta histórico completo | A consulta exibe todas as alterações auditáveis do ticket, com autor, data/hora, motivo, campo, valor anterior e novo valor. | RF-09, RF-17, RNF-04 | CT-15 |
+| Administrador configura um tipo de demanda | O tipo registra campos obrigatórios e regras de aprovação e evidência aplicáveis aos tickets desse tipo. | RF-22, RN-05, RN-10 | CT-09 |
+| Administrador configura o SLA | Calendário, prazos e regra por prioridade, cliente ou tipo de demanda são aplicados ao cálculo do ticket correspondente. | RF-23 | CT-10 |
+| Usuário consulta histórico completo | A consulta exibe todas as alterações auditáveis do ticket, com autor, data/hora, motivo, campo, valor anterior e novo valor. | RF-09, RF-17, RNF-04 | CT-13 |
 | Cliente tenta acessar ticket de outra organização | O acesso é negado e a tentativa fica registrada conforme a política de auditoria. | RF-02, RN-09, RNF-02 | CT-08 |
-| Backup é restaurado em cenário de teste | Dados e anexos do cenário são recuperados sem violar a retenção definida. | RNF-10, RNF-11 | CT-09 |
-| Abertura e listagem são executadas com base de teste | Pelo menos 90% das operações concluem em até 2 segundos. | RNF-06 | CT-10 |
 
 ## 10. Fora do escopo do MVP
 
@@ -187,13 +180,12 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 
 | ID | Origem da necessidade | Requisito(s) | Critério de aceite / teste | Prioridade | Responsável | Versão |
 | --- | --- | --- | --- | --- | --- |
-| RT-01 | Pedidos dispersos e perda de contexto | RF-05, RF-06, RF-17 | Ticket identificado e histórico consultável — CT-01 e CT-15. | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-02 | Falta de triagem, prazo e responsável | RF-07, RF-09, RF-21, RF-23, RN-14 | Triagem registra responsável, prioridade, prazo e SLA; confirmação automática não encerra primeira resposta — CT-02 e CT-12. | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-03 | Retrabalho e ausência de aprovação | RF-11, RF-12, RF-22, RN-05, RN-06, RN-11 | Validação, evidência, configuração do tipo e reabertura com justificativa — CT-05 e CT-11. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-01 | Pedidos dispersos e perda de contexto | RF-05, RF-06, RF-17 | Ticket identificado e histórico consultável — CT-01 e CT-13. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-02 | Falta de triagem, prazo e responsável | RF-07, RF-09, RF-21, RF-23, RN-14 | Triagem registra responsável, prioridade, prazo e SLA; confirmação automática não encerra primeira resposta — CT-02 e CT-10. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-03 | Retrabalho e ausência de aprovação | RF-11, RF-12, RF-22, RN-05, RN-06, RN-11 | Validação, evidência, configuração do tipo e reabertura com justificativa — CT-05 e CT-09. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-04 | Atrasos e comunicação insuficiente | RF-16, RF-20, RN-12, RN-13 | Vencimento e eventos geram indicação e notificação — CT-06 e CT-07. | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-05 | Proteção de dados e continuidade | RF-02, RNF-02, RNF-10, RNF-11 | Acesso por organização e restauração de backup — CT-08 e CT-09. | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-06 | Interface compreensível para diferentes perfis | RNF-01, RNF-09 | Teste de tarefas e UEQ-S conforme [Etapa 04 - Metodologia.md](../../Artigo/Etapa%2004%20-%20Metodologia.md). | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-07 | Necessidade de resposta previsível no uso diário | RNF-06 | Abertura e listagem atendem ao tempo definido — CT-10. | Média | Grupo TI SIGE 1 | 1.0 |
+| RT-05 | Proteção de dados | RF-02, RNF-02 | Acesso por organização — CT-08. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-06 | Interface compreensível para diferentes perfis | RNF-09 | Campos claros, contraste e navegação por teclado; avaliação de usabilidade conforme [Etapa 04 - Metodologia.md](../../Artigo/Etapa%2004%20-%20Metodologia.md). | Alta | Grupo TI SIGE 1 | 1.0 |
 
 ## Anexo D — Matriz de notificações
 

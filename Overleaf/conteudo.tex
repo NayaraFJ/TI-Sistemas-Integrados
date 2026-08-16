@@ -145,7 +145,7 @@ O protótipo de baixa fidelidade apresenta painel, listagem de tickets, abertura
 
 \subsection{Testes funcionais}
 
-Os casos de teste serão derivados dos critérios de aceite e deverão registrar identificador, requisitos relacionados, prioridade, pré-condição, passos de execução, resultado esperado, resultado obtido e situação final. O plano contempla quinze cenários, apresentados no Apêndice \ref{ap:validacao}, que cobrem abertura, autenticação, cadastros, triagem, execução, aprovação, reabertura, vencimento, notificações, configuração, auditoria, segurança, restauração e desempenho.
+Os casos de teste serão derivados dos critérios de aceite e deverão registrar identificador, requisitos relacionados, prioridade, pré-condição, passos de execução, resultado esperado, resultado obtido e situação final. O plano contempla treze cenários, apresentados no Apêndice \ref{ap:validacao}, que cobrem abertura, autenticação, cadastros, triagem, execução, aprovação, reabertura, vencimento, notificações, configuração, auditoria e segurança.
 
 A aprovação funcional exigirá 100\% dos casos de alta prioridade aprovados, pelo menos 90\% do total de casos aprovados e nenhum defeito crítico em aberto. Cada reprovação deverá gerar registro de correção ou justificativa de adiamento.
 
@@ -153,7 +153,7 @@ A aprovação funcional exigirá 100\% dos casos de alta prioridade aprovados, p
 
 A avaliação de usabilidade contará com seis participantes selecionados por conveniência: dois potenciais clientes, dois profissionais de atendimento ou gestão de conta e dois gestores de tráfego. Cada participante executará cinco tarefas: abrir uma demanda com os dados obrigatórios; localizar e filtrar um ticket; classificar, priorizar e atribuir a demanda; incluir comentário e encaminhar a entrega para validação; e aprovar ou reabrir a demanda com justificativa. Durante as tarefas serão registrados obstáculos, dúvidas, erros, necessidade de ajuda e tempo de realização.
 
-O teste será considerado aprovado se pelo menos 80\% das execuções forem concluídas sem ajuda e nenhuma tarefa apresentar taxa de conclusão inferior a 70\%. Após as tarefas, será aplicado o UEQ-S, composto por oito itens distribuídos entre as dimensões pragmática e hedônica. As respostas, coletadas em escala de 1 a 7, serão convertidas para a escala de $-3$ a $+3$; serão calculadas as médias das duas dimensões e a média geral \cite{schrepp2017}. Como metas internas, será buscada média geral superior a 0,8 e nenhuma dimensão abaixo de 0,5. Esses valores orientarão a aceitação do projeto, mas não substituirão a interpretação do instrumento. A análise conjunta de conclusão, tempo, erros e comentários segue a abordagem discutida por \citeonline{radhitya2024}.
+Após as tarefas, será aplicado o UEQ-S, composto por oito itens distribuídos entre as dimensões pragmática e hedônica. As respostas, coletadas em escala de 1 a 7, serão convertidas para a escala de $-3$ a $+3$; serão calculadas as médias das duas dimensões e a média geral \cite{schrepp2017}. Os resultados, juntamente com conclusão das tarefas, tempo, erros, dúvidas e comentários, serão analisados de forma descritiva para identificar melhorias na interface, sem estabelecer meta numérica de aprovação para o protótipo acadêmico \cite{radhitya2024}.
 
 \subsection{Participantes, dados e análise}
 
@@ -167,7 +167,7 @@ A associação entre requisitos, critérios de aceite e casos de teste será uti
 
 \section{RESULTADOS DA ESPECIFICAÇÃO E PROPOSTA DA SOLUÇÃO}
 
-A etapa de especificação resultou na identificação de 23 requisitos funcionais, 11 requisitos não funcionais e 14 regras de negócio. Os requisitos foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança e continuidade. Essa organização evidencia que a proposta não se limita ao registro de chamados, pois articula o controle operacional das demandas com transparência para o cliente e apoio à gestão. A especificação completa, incluindo critérios de aceite e rastreabilidade, está disponível no Apêndice \ref{ap:especificacao}.
+A etapa de especificação resultou na identificação de 23 requisitos funcionais, seis requisitos não funcionais e 14 regras de negócio. Os requisitos foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança, privacidade, compatibilidade e acessibilidade. Essa organização evidencia que a proposta não se limita ao registro de chamados, pois articula o controle operacional das demandas com transparência para o cliente e apoio à gestão. A especificação completa, incluindo critérios de aceite e rastreabilidade, está disponível no Apêndice \ref{ap:especificacao}.
 
 \subsection{Síntese dos resultados de especificação e escopo do MVP}
 
@@ -258,13 +258,13 @@ Toda mudança de status, responsável, prioridade, prazo ou aprovação deverá 
 
 \subsection{Governança de dados, acesso e continuidade}
 
-O acesso seguirá o princípio do menor privilégio, de modo que cada perfil consulte e altere somente as informações necessárias às suas responsabilidades. Anexos serão vinculados ao ticket e submetidos à mesma política de retenção do histórico. O MVP utilizará dados fictícios ou autorizados; backups diários deverão ser protegidos e submetidos periodicamente a teste de restauração. A retenção inicial de 24 meses para tickets, histórico e anexos deverá ser revista conforme contratos, finalidade do tratamento e orientação jurídica \cite{brasil2018,anpd2021}.
+O acesso seguirá o princípio do menor privilégio, de modo que cada perfil consulte e altere somente as informações necessárias às suas responsabilidades. Anexos serão vinculados ao ticket e acessíveis apenas a usuários autorizados. O MVP utilizará dados fictícios ou autorizados; portanto, retenção operacional, backup, restauração e disponibilidade contínua não integram a entrega acadêmica. Em eventual adoção real, esses controles deverão ser definidos conforme contratos, finalidade do tratamento e orientação jurídica \cite{brasil2018,anpd2021}.
 
 A finalidade declarada para os dados será registrar, comunicar, executar, validar e auditar demandas de tráfego pago. Antes do uso em produção, a agência deverá identificar controlador, operadores e base legal aplicável, além de publicar aviso de privacidade e manter canal para solicitações de acesso, correção ou eliminação. O procedimento de incidente deverá contemplar registro, contenção, avaliação de impacto, decisão sobre comunicação e ações corretivas, com responsabilidades definidas e evidências das medidas adotadas.
 
 \subsection{Requisitos prioritários}
 
-Os requisitos foram organizados conforme a ISO/IEC/IEEE 29148 \cite{iso29148}. Para a primeira versão, são prioritários autenticação e autorização por perfil; cadastro de clientes e campanhas; abertura e identificação única do ticket; triagem e atribuição; atualização de status; comentários e anexos; histórico auditável; notificações; filtros; configuração de tipos de demanda e de SLA. Requisitos de segurança, privacidade, integridade, desempenho, acessibilidade, backup e retenção complementam o escopo. A especificação individual dos requisitos, as regras de negócio, os dados, as transições, a rastreabilidade e as notificações estão no Apêndice \ref{ap:especificacao}; os quinze casos de teste encontram-se no Apêndice \ref{ap:validacao}.
+Os requisitos foram organizados conforme a ISO/IEC/IEEE 29148 \cite{iso29148}. Para a primeira versão, são prioritários autenticação e autorização por perfil; cadastro de clientes e campanhas; abertura e identificação única do ticket; triagem e atribuição; atualização de status; comentários e anexos; histórico auditável; notificações; filtros; configuração de tipos de demanda e de SLA. Requisitos de segurança, privacidade, integridade, compatibilidade e acessibilidade complementam o escopo. A especificação individual dos requisitos, as regras de negócio, os dados, as transições, a rastreabilidade e as notificações estão no Apêndice \ref{ap:especificacao}; os treze casos de teste encontram-se no Apêndice \ref{ap:validacao}.
 
 \section{CONSIDERAÇÕES FINAIS}
 
