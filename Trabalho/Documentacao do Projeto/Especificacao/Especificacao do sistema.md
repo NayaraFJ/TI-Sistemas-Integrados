@@ -21,42 +21,44 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 
 ## 3. Requisitos funcionais
 
-| ID | Requisito | Prioridade |
-| --- | --- | --- |
-| RF-01 | O sistema deve permitir autenticação de usuários. | Alta |
-| RF-02 | O sistema deve controlar permissões conforme o perfil de usuário. | Alta |
-| RF-03 | O administrador deve poder cadastrar, editar, ativar e inativar clientes; clientes inativos não devem ficar disponíveis para novas solicitações. | Alta |
-| RF-04 | O administrador ou atendimento deve poder cadastrar campanhas vinculadas a um cliente. | Alta |
-| RF-05 | O sistema deve permitir abrir ticket com cliente, campanha, canal, tipo, urgência informada, prazo desejado, assunto e descrição. A prioridade oficial e os prazos de acordo de nível de serviço (SLA) serão definidos na triagem. | Alta |
-| RF-06 | O sistema deve gerar identificador único para cada ticket. | Alta |
-| RF-07 | O atendimento deve poder classificar e atribuir um ticket a um responsável. | Alta |
-| RF-08 | O responsável deve poder atualizar o status do ticket. | Alta |
-| RF-09 | O sistema deve registrar data, hora, usuário, motivo, campo alterado, valor anterior e novo valor em cada alteração de status, responsável, prioridade, prazo ou aprovação. | Alta |
-| RF-10 | Usuários autorizados devem poder incluir comentários e anexos no ticket. | Alta |
-| RF-11 | O sistema deve permitir registrar aprovação, reprovação ou solicitação de complemento pelo cliente. | Média |
-| RF-12 | O responsável deve poder registrar a ação executada e evidências no encerramento. | Alta |
-| RF-13 | O sistema deve permitir cancelar ticket com motivo obrigatório. | Média |
-| RF-14 | O usuário deve poder filtrar tickets por cliente, campanha, tipo, prioridade, responsável, status e período. | Alta |
-| RF-15 | O painel deve apresentar total de tickets por status, prioridade, responsável e prazo. | Média |
-| RF-16 | O sistema deve identificar tickets vencidos e tickets aguardando resposta do cliente. | Média |
-| RF-17 | O sistema deve permitir consultar histórico completo de cada ticket. | Alta |
-| RF-18 | O sistema deve permitir registrar métricas de contexto, como taxa de cliques (CTR), custo por clique (CPC), conversão, custo por aquisição (CPA) e retorno sobre o investimento em anúncios (ROAS), quando aplicável. | Baixa |
-| RF-19 | O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. | Baixa |
-| RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail aos envolvidos autorizados conforme o evento — solicitante, responsável, Atendimento/gestor de conta e Administrador — quando o ticket for atribuído, comentado, estiver aguardando cliente, entrar em validação, vencer ou for concluído/reaberto. | Alta |
-| RF-21 | O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. | Alta |
-| RF-22 | O administrador deve poder cadastrar, editar, ativar e inativar tipos de demanda, definindo campos obrigatórios, necessidade de aprovação do cliente e necessidade de evidência para cada tipo. | Alta |
-| RF-23 | O administrador deve poder configurar o calendário de SLA, incluindo horário de atendimento, fuso horário, feriados e recessos, e definir prazos de primeira resposta e resolução por prioridade, com regra opcional por cliente ou tipo de demanda. | Alta |
+As fontes da última coluna orientaram o levantamento e a priorização dos requisitos; elas não constituem prescrição literal de cada funcionalidade.
+
+| ID | Requisito | Prioridade | Fonte(s) de embasamento |
+| --- | --- | --- | --- |
+| RF-01 | O sistema deve permitir autenticação de usuários. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md) |
+| RF-02 | O sistema deve controlar permissões conforme o perfil de usuário. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md) |
+| RF-03 | O administrador deve poder cadastrar, editar, ativar e inativar clientes; clientes inativos não devem ficar disponíveis para novas solicitações. | Alta | [CRM e intenção de recompra](../../../Referencias/Pesquisa%2001/Extracoes/03-crm-intencao-recompra.md); [gestão de projetos em agência](../../../Referencias/Pesquisa%2001/Extracoes/05-competencias-gestao-projetos-agencia.md) |
+| RF-04 | O administrador ou atendimento deve poder cadastrar campanhas vinculadas a um cliente. | Alta | [DIGI-AI](../../../Referencias/Pesquisa%2001/Extracoes/02-digi-ai-plataforma.md); [cadeia de publicidade digital](../../../Referencias/Pesquisa%2002/Extracoes/06-cadeia-agencia-publicidade.md) |
+| RF-05 | O sistema deve permitir abrir ticket com cliente, campanha, canal, tipo, urgência informada, prazo desejado, assunto e descrição. A prioridade oficial e os prazos de acordo de nível de serviço (SLA) serão definidos na triagem. | Alta | [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md); [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md) |
+| RF-06 | O sistema deve gerar identificador único para cada ticket. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [ISO/IEC/IEEE 29148](../../../Referencias/Normas/Extracoes/01-iso-iec-ieee-29148-requisitos.md) |
+| RF-07 | O atendimento deve poder classificar e atribuir um ticket a um responsável. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [gestão de projetos em agência](../../../Referencias/Pesquisa%2001/Extracoes/05-competencias-gestao-projetos-agencia.md) |
+| RF-08 | O responsável deve poder atualizar o status do ticket. | Alta | [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md) |
+| RF-09 | O sistema deve registrar data, hora, usuário, motivo, campo alterado, valor anterior e novo valor em cada alteração de status, responsável, prioridade, prazo ou aprovação. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md) |
+| RF-10 | Usuários autorizados devem poder incluir comentários e anexos no ticket. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md) |
+| RF-11 | O sistema deve permitir registrar aprovação, reprovação ou solicitação de complemento pelo cliente. | Média | [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md); [gestão de projetos em agência](../../../Referencias/Pesquisa%2001/Extracoes/05-competencias-gestao-projetos-agencia.md) |
+| RF-12 | O responsável deve poder registrar a ação executada e evidências no encerramento. | Alta | [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md) |
+| RF-13 | O sistema deve permitir cancelar ticket com motivo obrigatório. | Média | [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md) |
+| RF-14 | O usuário deve poder filtrar tickets por cliente, campanha, tipo, prioridade, responsável, status e período. | Alta | [classificação de tráfego](../../../Referencias/Pesquisa%2002/Extracoes/13-classificacao-trafego.md); [DIGI-AI](../../../Referencias/Pesquisa%2001/Extracoes/02-digi-ai-plataforma.md) |
+| RF-15 | O painel deve apresentar total de tickets por status, prioridade, responsável e prazo. | Média | [classificação de tráfego](../../../Referencias/Pesquisa%2002/Extracoes/13-classificacao-trafego.md); [gestão de projetos em agência](../../../Referencias/Pesquisa%2001/Extracoes/05-competencias-gestao-projetos-agencia.md) |
+| RF-16 | O sistema deve identificar tickets vencidos e tickets aguardando resposta do cliente. | Média | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md) |
+| RF-17 | O sistema deve permitir consultar histórico completo de cada ticket. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md) |
+| RF-18 | O sistema deve permitir registrar métricas de contexto, como taxa de cliques (CTR), custo por clique (CPC), conversão, custo por aquisição (CPA) e retorno sobre o investimento em anúncios (ROAS), quando aplicável. | Baixa | [otimização de orçamento](../../../Referencias/Pesquisa%2002/Extracoes/02-otimizacao-orcamento.md); [busca por voz e anúncios pagos](../../../Referencias/Pesquisa%2002/Extracoes/09-voz-anuncios-pagos.md) |
+| RF-19 | O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. | Baixa | [classificação de tráfego](../../../Referencias/Pesquisa%2002/Extracoes/13-classificacao-trafego.md); [gestão de projetos em agência](../../../Referencias/Pesquisa%2001/Extracoes/05-competencias-gestao-projetos-agencia.md) |
+| RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail aos envolvidos autorizados conforme o evento — solicitante, responsável, Atendimento/gestor de conta e Administrador — quando o ticket for atribuído, comentado, estiver aguardando cliente, entrar em validação, vencer ou for concluído/reaberto. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md) |
+| RF-21 | O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md) |
+| RF-22 | O administrador deve poder cadastrar, editar, ativar e inativar tipos de demanda, definindo campos obrigatórios, necessidade de aprovação do cliente e necessidade de evidência para cada tipo. | Alta | [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md); [ISO/IEC/IEEE 29148](../../../Referencias/Normas/Extracoes/01-iso-iec-ieee-29148-requisitos.md) |
+| RF-23 | O administrador deve poder configurar o calendário de SLA, incluindo horário de atendimento, fuso horário, feriados e recessos, e definir prazos de primeira resposta e resolução por prioridade, com regra opcional por cliente ou tipo de demanda. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md) |
 
 ## 4. Requisitos não funcionais
 
-| ID     | Requisito       | Critério inicial                                                                                                                                                                          |
-| ------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RNF-02 | Segurança       | Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos.                                            |
-| RNF-03 | Privacidade     | O sistema deve coletar somente dados necessários para a gestão da demanda e não deve armazenar bases de audiência ou dados sensíveis.                                                     |
-| RNF-04 | Rastreabilidade | Alterações de status, responsável, prazo e aprovação devem permanecer no histórico.                                                                                                       |
-| RNF-05 | Integridade     | Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo.                                                                                               |
-| RNF-07 | Compatibilidade | A interface deve funcionar em navegadores modernos. |
-| RNF-09 | Acessibilidade  | Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado. |
+| ID     | Requisito       | Critério inicial | Fonte(s) de embasamento |
+| ------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| RNF-02 | Segurança       | Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos. | [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md); [ISO/IEC/IEEE 29148](../../../Referencias/Normas/Extracoes/01-iso-iec-ieee-29148-requisitos.md) |
+| RNF-03 | Privacidade     | O sistema deve coletar somente dados necessários para a gestão da demanda e não deve armazenar bases de audiência ou dados sensíveis. | [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md); [privacidade e publicidade direcionada](../../../Referencias/Pesquisa%2002/Extracoes/08-privacidade-publicidade-direcionada.md) |
+| RNF-04 | Rastreabilidade | Alterações de status, responsável, prazo e aprovação devem permanecer no histórico. | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md) |
+| RNF-05 | Integridade     | Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo. | [ISO/IEC/IEEE 29148](../../../Referencias/Normas/Extracoes/01-iso-iec-ieee-29148-requisitos.md); [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md) |
+| RNF-07 | Compatibilidade | A interface deve funcionar em navegadores modernos. | [ISO/IEC/IEEE 29148](../../../Referencias/Normas/Extracoes/01-iso-iec-ieee-29148-requisitos.md) |
+| RNF-09 | Acessibilidade  | Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado. | [usabilidade e ISO 9241-11](../../../Referencias/Normas/Extracoes/06-usabilidade-assinatura-digital-iso-9241-11.md) |
 
 > **Conformidade fora do escopo do protótipo acadêmico:** como o projeto utiliza dados fictícios ou autorizados apenas para demonstração e não será disponibilizado em produção, não são requisitos da entrega acadêmica a política operacional de retenção, o backup, a restauração e a disponibilidade contínua. Em uma eventual adoção real, a agência deverá definir esses controles e a base legal aplicável, em conformidade com a LGPD.
 
