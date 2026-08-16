@@ -49,19 +49,19 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 
 ## 4. Requisitos não funcionais
 
-| ID | Requisito | Critério inicial |
-| --- | --- | --- |
-| RNF-01 | Usabilidade | No teste com usuários, pelo menos 80% das execuções das tarefas devem ser concluídas sem ajuda e nenhuma tarefa pode ficar abaixo de 70% de conclusão. |
-| RNF-02 | Segurança | Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos. |
-| RNF-03 | Privacidade | O sistema deve coletar somente dados necessários para a gestão da demanda e não deve armazenar bases de audiência ou dados sensíveis. |
-| RNF-04 | Rastreabilidade | Alterações de status, responsável, prazo e aprovação devem permanecer no histórico. |
-| RNF-05 | Integridade | Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo. |
-| RNF-06 | Desempenho | Em cenário de teste com pelo menos 100 tickets cadastrados, 90% das operações de abertura e listagem devem concluir em até 2 segundos, sem considerar limitações externas de rede. |
-| RNF-07 | Compatibilidade | A interface deve funcionar em navegadores modernos de computador e celular. |
-| RNF-08 | Disponibilidade | O sistema deve informar indisponibilidade e evitar perda de dados ao salvar uma solicitação. |
-| RNF-09 | Acessibilidade | Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado. |
-| RNF-10 | Backup | O sistema deve manter cópia diária dos dados e anexos, com retenção mínima de 30 dias e teste periódico de restauração. |
-| RNF-11 | Retenção | Tickets, histórico e anexos devem ser mantidos por 24 meses após conclusão ou cancelamento; ao fim do período, devem ser anonimizados ou eliminados, salvo obrigação legal ou contratual. |
+| ID     | Requisito       | Critério inicial                                                                                                                                                                          |
+| ------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF-01 | Usabilidade     | No teste com usuários, pelo menos 80% das execuções das tarefas devem ser concluídas sem ajuda e nenhuma tarefa pode ficar abaixo de 70% de conclusão.                                    |
+| RNF-02 | Segurança       | Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos.                                            |
+| RNF-03 | Privacidade     | O sistema deve coletar somente dados necessários para a gestão da demanda e não deve armazenar bases de audiência ou dados sensíveis.                                                     |
+| RNF-04 | Rastreabilidade | Alterações de status, responsável, prazo e aprovação devem permanecer no histórico.                                                                                                       |
+| RNF-05 | Integridade     | Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo.                                                                                               |
+| RNF-06 | Desempenho      | Em cenário de teste com pelo menos 100 tickets cadastrados, 90% das operações de abertura e listagem devem concluir em até 2 segundos, sem considerar limitações externas de rede.        |
+| RNF-07 | Compatibilidade | A interface deve funcionar em navegadores modernos de computador e celular.                                                                                                               |
+| RNF-08 | Disponibilidade | O sistema deve informar indisponibilidade e evitar perda de dados ao salvar uma solicitação.                                                                                              |
+| RNF-09 | Acessibilidade  | Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado.                                                                                                 |
+| RNF-10 | Backup          | O sistema deve manter cópia diária dos dados e anexos, com retenção mínima de 30 dias e teste periódico de restauração.                                                                   |
+| RNF-11 | Retenção        | Tickets, histórico e anexos devem ser mantidos por 24 meses após conclusão ou cancelamento; ao fim do período, devem ser anonimizados ou eliminados, salvo obrigação legal ou contratual. |
 
 ## 5. Acordos de nível de serviço (SLA) preliminares
 

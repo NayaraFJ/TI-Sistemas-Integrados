@@ -65,16 +65,7 @@ Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e regi
 
 ### 4.2 Objetivos específicos
 
-- permitir o cadastro de clientes, usuários e campanhas;
-- permitir a abertura de solicitações relacionadas a criação, alteração, pausa ou análise de campanhas;
-- classificar cada demanda por tipo, prioridade, cliente, campanha, canal e prazo;
-- atribuir responsáveis e registrar o histórico de movimentações e comentários;
-- controlar o status da solicitação até sua validação, conclusão, reabertura ou cancelamento;
-- definir e acompanhar prazo de primeira resposta e de resolução conforme a prioridade da demanda;
-- notificar os envolvidos sobre atribuições, comentários, pendências, validações, conclusões e vencimentos;
-- registrar aprovações do cliente e evidências de execução, quando necessárias;
-- disponibilizar painel com indicadores de volume, prazo, status e responsável;
-- validar a usabilidade do protótipo com potenciais usuários do sistema.
+Pretende-se realizar uma revisão bibliográfica de artigos e normas aplicáveis para compreender o problema e fundamentar a solução; levantar, analisar e priorizar os requisitos do sistema; modelar o processo de atendimento e definir o backlog com responsabilidades, dependências e prazos de entrega; prototipar a solução; implementar o produto mínimo viável (MVP) com cadastro, autenticação, tickets, acompanhamento de prazos, histórico e comunicação entre os envolvidos; realizar testes funcionais e avaliação de usabilidade; e entregar uma versão final funcional do aplicativo, acompanhada da documentação e da demonstração previstas para o projeto.
 
 ## Referências
 
