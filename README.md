@@ -4,10 +4,11 @@
 
 `Trabalho/` está organizado em duas áreas com finalidades distintas:
 
-| Área | Finalidade | Relação com o Overleaf |
-| --- | --- | --- |
-| [Trabalho/Artigo](Trabalho/Artigo/README.md) | Fonte acadêmica: resumo, introdução, problema, objetivos, referencial e metodologia. | Compõe o texto contínuo de `Overleaf`. |
-| [Trabalho/Documentacao do Projeto](Trabalho/Documentacao%20do%20Projeto/README.md) | Processo BPMN, protótipo de baixa fidelidade e especificação completa. | Fornece sínteses para o corpo e detalhes para os apêndices. |
+| Área                                                                               | Finalidade                                                                           | Relação com o Overleaf                                      |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| [Trabalho/Artigo](Trabalho/Artigo/README.md)                                       | Fonte acadêmica: resumo, introdução, problema, objetivos, referencial e metodologia. | Compõe o texto contínuo de `Overleaf`.                      |
+| [Trabalho/Documentacao do Projeto](Trabalho/Documentacao%20do%20Projeto/README.md) | Processo BPMN, protótipo de baixa fidelidade e especificação completa.               | Fornece sínteses para o corpo e detalhes para os apêndices. |
+| [Referências](Referencias/README.md)                                               | Referências bibliográficas                                                           |                                                             |
 
 Os arquivos de artigo são complementares, não capítulos para cópia literal. A documentação técnica não deve ser transferida integralmente para o corpo do artigo: requisitos, regras, matrizes e casos de teste ficam na documentação e nos apêndices; o artigo os interpreta e sintetiza.
 
