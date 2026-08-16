@@ -6,16 +6,16 @@ As atribuições iniciais representam afinidade e coordenação, não exclusivid
 
 ## Integrantes e atribuição inicial
 
-| Integrante | Atribuição inicial |
-| --- | --- |
-| Augusto do Couto Avelar | |
-| Gabriel Fernandes de Araújo | |
-| Gabriel Rocha Lopes | |
-| Karine Kessen Gilberti Felix | |
-| Lorrainy Pâmela Siqueira Ferreira | Front-end |
-| Maria Heloisa Aguiar Mendes | |
+| Integrante                         | Atribuição inicial                                                  |
+| ---------------------------------- | ------------------------------------------------------------------- |
+| Augusto do Couto Avelar            |                                                                     |
+| Gabriel Fernandes de Araújo        |                                                                     |
+| Gabriel Rocha Lopes                |                                                                     |
+| Karine Kessen Gilberti Felix       |                                                                     |
+| Lorrainy Pâmela Siqueira Ferreira  | Front-end                                                           |
+| Maria Heloisa Aguiar Mendes        |                                                                     |
 | Nayara Ferreira de Jesus Rodrigues | Documentação; PO (priorização e aceite); interface com a orientação |
-| Pedro Henrique Assuncao | Back-end |
+| Pedro Henrique Assuncao            | Back-end                                                            |
 
 ## Frentes que ainda precisam de titular
 
@@ -24,6 +24,7 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 | Frente | Escopo principal | Titular |
 | --- | --- | --- |
 | Processo e requisitos | Levantamento As Is, validação do To Be, requisitos e critérios de aceite. | |
+| Revisão acadêmica do artigo | Revisão cruzada de coerência, estrutura, citações, referências, linguagem e padrão PUC Minas antes de cada etapa. | |
 | Dados e modelo relacional | Entidades, relacionamentos, restrições, migrações e dados de demonstração. | |
 | Contratos e integração | Contrato de API, mocks e compatibilidade entre front-end e back-end. | |
 | Qualidade e testes | Casos de teste, defeitos, retestes, segurança e avaliação de usabilidade. | |
@@ -36,6 +37,7 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 - Uma tarefa concluída deve conter link, captura, registro de teste ou outro artefato verificável.
 - `Conclusão prevista` deriva do marco oficial. `Concluído em` só deve ser preenchido quando houver aceite; não invente datas retroativas para artefatos já existentes.
 - Se uma tarefa comprometer um marco, registre o impedimento e redefina sua prioridade na reunião do grupo.
+- O revisor do artigo não substitui a autoria: quem redige revisa a versão seguinte de outra pessoa. A revisão acadêmica deve ocorrer antes de cada postagem e antes do envio ao orientador.
 
 ## Marcos oficiais
 
@@ -56,17 +58,17 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 | ID | Item | Entrega verificável | Dependência | Conclusão prevista | Concluído em | Responsável | Situação |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | BL-01 | Confirmar tema, área e título com o orientador. | Registro da validação e título vigente no README. | — | 28/08/2026 | | Nayara Ferreira de Jesus Rodrigues | Em andamento |
-| BL-02 | Revisar a introdução conforme retorno do orientador. | Texto revisado em `Trabalho/Artigo` e no Overleaf. | BL-01 | 28/08/2026 | | Nayara Ferreira de Jesus Rodrigues | Em revisão |
+| BL-02 | Revisar a introdução conforme retorno do orientador. | Texto revisado em `Trabalho/Artigo` e no Overleaf, com revisão cruzada registrada. | BL-01 | 28/08/2026 | | Nayara Ferreira de Jesus Rodrigues; revisor do artigo a definir | Em revisão |
 | BL-03 | Preparar o envio do link do repositório. | Link acessível e arquivos organizados. | BL-01 | 28/08/2026 | | Nayara Ferreira de Jesus Rodrigues | A fazer |
 
 ### 2ª Etapa — até 25/09
 
-| ID | Item | Entrega verificável | Dependência | Conclusão prevista | Concluído em | Responsável | Situação |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| BL-04 | Consolidar introdução, problemática, justificativa e objetivos. | Seções coerentes no artigo. | BL-02 | 25/09/2026 | | Nayara Ferreira de Jesus Rodrigues | Em revisão |
-| BL-05 | Levantar o processo atual (As Is) com potenciais usuários. | Registro das respostas e fluxo As Is inicial. | BL-04 | 25/09/2026 | | | A fazer |
-| BL-06 | Refinar o esboço de baixa fidelidade. | Painel, abertura de ticket e detalhe do ticket documentados. | BL-04 | 25/09/2026 | | Lorrainy Pâmela Siqueira Ferreira | Em revisão |
-| BL-07 | Revisar o fluxo To Be com base no problema e no esboço. | BPMN atualizado e legível. | BL-05, BL-06 | 25/09/2026 | | | Em revisão |
+| ID    | Item                                                            | Entrega verificável                                          | Dependência  | Conclusão prevista | Concluído em | Responsável                        | Situação   |
+| ----- | --------------------------------------------------------------- | ------------------------------------------------------------ | ------------ | ------------------ | ------------ | ---------------------------------- | ---------- |
+| BL-04 | Consolidar introdução, problemática, justificativa e objetivos. | Seções coerentes no artigo.                                  | BL-02        | 25/09/2026         |              | Nayara Ferreira de Jesus Rodrigues | Em revisão |
+| BL-05 | Validar o processo atual (As Is) com potenciais usuários.      | Fluxo As Is enxuto, hipóteses validadas ou corrigidas e registro das respostas. | BL-04        | 25/09/2026         |              |                                    | Em andamento |
+| BL-06 | Refinar o esboço de baixa fidelidade.                           | Painel, abertura de ticket e detalhe do ticket documentados. | BL-04        | 25/09/2026         |              | Lorrainy Pâmela Siqueira Ferreira  | Em revisão |
+| BL-07 | Revisar o fluxo To Be com base no problema e no esboço.         | BPMN atualizado e legível.                                   | BL-05, BL-06 | 25/09/2026         |              |                                    | Em revisão |
 
 ### 3ª Etapa — até 30/10
 
@@ -108,6 +110,7 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 | BL-31 | Consolidar artigo, apêndices e referências no padrão PUC Minas. | Versão revisada pelo orientador e pronta para submissão. | BL-28, BL-29 | 11/12/2026 | | Nayara Ferreira de Jesus Rodrigues | A fazer |
 | BL-32 | Preparar apresentação, roteiro e divisão de fala da demo. | Apresentação ensaiada, dados de demonstração e responsáveis por cada parte. | BL-30, BL-31 | 11/12/2026 | | | A fazer |
 | BL-33 | Participar da Mostra Tecnológica Interdisciplinar e da apresentação final. | APP final, apresentação e demo executada. | BL-32 | 11/12/2026 | | | A fazer |
+| BL-34 | Realizar a revisão cruzada final do artigo. | Checklist de coerência entre etapas, Overleaf, citações, referências, apêndices, resumo, abstract e padrão PUC Minas; pendências corrigidas ou registradas. | BL-31 | 11/12/2026 | | Revisor do artigo a definir | A fazer |
 
 ## Contrato de integração front-end e back-end
 
