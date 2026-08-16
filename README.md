@@ -17,6 +17,8 @@ Toda alteração acadêmica em `Trabalho/Artigo` deve ser refletida semanticamen
 
 O planejamento interno do desenvolvimento está em [Trabalho/Documentacao do Projeto/BACKLOG.md](Trabalho/Documentacao%20do%20Projeto/BACKLOG.md); ele não integra o artigo.
 
+O [índice de referências e extrações](Referencias/README.md) organiza artigos usados, artigos descartados, normas, legislação e outras fontes.
+
 ## Contexto do projeto
 
 ### Foco na Gestão de Agências e Consultorias
