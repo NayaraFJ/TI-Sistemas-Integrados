@@ -1,13 +1,7 @@
 # Projeto Overleaf — TI SIGE
 
-O projeto foi recriado com a formatação do modelo em `../../Ref Overleaf` e com o conteúdo de `../Trabalho`.
+O projeto usa a formatação do modelo em `../../Ref Overleaf` e consolida o conteúdo de `../Trabalho` em um único trabalho científico.
 
 ## Atualização do conteúdo
 
-Em `TI/Overleaf`, execute:
-
-```powershell
-& '.\scripts\sync-trabalho.ps1'
-```
-
-Depois, compile `principal.tex` no Overleaf ou com a ferramenta local de LaTeX. O arquivo `conteudo.tex` é gerado a partir dos Markdown de `TI/Trabalho`.
+Use `TI/Trabalho` como fonte. Ao alterar essa base, incorpore a mudança de forma editorial em `conteudo.tex`, atualize as entradas citadas em `bibliografia.bib` e compile `principal.tex`. As etapas da disciplina são fontes de conteúdo, não títulos do trabalho final.

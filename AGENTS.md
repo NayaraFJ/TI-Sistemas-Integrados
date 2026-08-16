@@ -1,13 +1,7 @@
 # Sincronização do Trabalho Interdisciplinar
 
-`TI/Trabalho` é a fonte de verdade do conteúdo acadêmico do projeto.
+`TI/Trabalho` é a fonte de verdade do conteúdo acadêmico do projeto; seus arquivos Markdown são materiais de pesquisa e não capítulos que devem ser copiados literalmente.
 
-Sempre que um arquivo, uma imagem ou qualquer outro material em `TI/Trabalho` for criado, alterado, renomeado ou removido, a alteração correspondente deve ser refletida em `TI/Overleaf` na mesma tarefa. Depois da sincronização, o projeto LaTeX deve ser compilado e o PDF gerado deve ser verificado.
+Sempre que um arquivo, uma imagem ou qualquer outro material em `TI/Trabalho` for criado, alterado, renomeado ou removido, a alteração correspondente deve ser incorporada em `TI/Overleaf` na mesma tarefa. A incorporação deve preservar a estrutura de trabalho científico: texto contínuo e coerente, sem seções chamadas “Etapa”, sem duplicação de conteúdo e com uma única lista de referências consolidada.
 
-Para atualizar o conteúdo LaTeX a partir dos arquivos Markdown, execute:
-
-```powershell
-& '.\\scripts\\sync-trabalho.ps1'
-```
-
-a partir de `TI/Overleaf`. O arquivo `conteudo.tex` é gerado por esse processo e não deve receber alterações manuais persistentes.
+Atualize `conteudo.tex`, `bibliografia.bib` e os arquivos de figura necessários. Em seguida, compile `principal.tex` e verifique o PDF. Não use conversão automática que apenas replique a hierarquia dos Markdown.

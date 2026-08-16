@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-% Projeto LaTeX sincronizado com ../Trabalho por scripts/sync-trabalho.ps1.
+% Projeto LaTeX consolidado a partir dos materiais em ../Trabalho.
 \documentclass[a4paper,12pt]{article}
 \usepackage{times}
 \usepackage{abakos}
@@ -18,6 +18,7 @@
 \newcommand{\professor}{Prof. Dr. Paulo Isnard}
 \newcommand{\cidade}{Contagem}
 \newcommand{\anoentrega}{2026}
+\providecommand{\htmladdnormallink}[2]{\url{#2}}
 
 \begin{document}
 
@@ -107,5 +108,13 @@ Professor: \professor
 \justifying
 
 \input{conteudo}
+
+\clearpage
+\begingroup
+\singlespacing
+\renewcommand\refname{\hfill REFERÊNCIAS\hfill}
+\addcontentsline{toc}{section}{REFERÊNCIAS}
+\bibliography{bibliografia}
+\endgroup
 
 \end{document}
