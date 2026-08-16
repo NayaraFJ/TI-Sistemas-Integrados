@@ -4,7 +4,7 @@
 
 > Este documento reúne requisitos iniciais derivados do problema, objetivos e referencial teórico. Eles devem ser validados com usuários e podem ser refinados antes da implementação.
 
-> A estrutura de requisitos e rastreabilidade adota como referência a engenharia de requisitos da ISO/IEC/IEEE 29148; o fluxo de solicitações considera a prática ITIL 4 de gerenciamento de solicitações; e os controles de acesso e retenção consideram a LGPD e as orientações da ANPD. A representação do processo correspondente está documentada em BPMN 2.0 no arquivo da Etapa 02 (ISO/IEC/IEEE, 2018; AXELOS, 2020; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2024; OMG, 2011).
+> A estrutura de requisitos e rastreabilidade adota como referência a engenharia de requisitos da ISO/IEC/IEEE 29148; o fluxo de solicitações considera a prática ITIL 4 de gerenciamento de solicitações; e os controles de acesso e retenção consideram a LGPD e as orientações da ANPD. A representação do processo correspondente está documentada em BPMN 2.0.2 no arquivo da Etapa 02 (ISO/IEC/IEEE, 2018; PEOPLECERT, 2023; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021; OMG, 2014).
 
 ## 1. Visão do produto
 
@@ -155,11 +155,11 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 
 ## Referências de governança e processo
 
-- BRASIL. *Lei nº 13.709, de 14 de agosto de 2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).* Disponível em: [texto consolidado](https://www.gov.br/mj/pt-br/assuntos/sua-protecao/sedigi/Lei13709.pdf).
-- AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS. *Guia orientativo sobre segurança da informação para agentes de tratamento de pequeno porte.* 2024. Disponível em: [guia da ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte).
-- ISO/IEC/IEEE. *ISO/IEC/IEEE 29148:2018 — Systems and software engineering: Life cycle processes: Requirements engineering*. 2018. Disponível em: [norma](https://www.iso.org/standard/72089.html).
-- AXELOS. *ITIL 4 Practice Guide: Service Request Management*. 2020. Disponível em: [prática ITIL](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-request-management-3690).
-- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0*. 2011. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0/).
+- BRASIL. *Lei nº 13.709, de 14 de agosto de 2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).* Brasília, DF: Presidência da República, 2018. Disponível em: [texto consolidado](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm). Acesso em: 16 ago. 2026.
+- AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS. *Guia orientativo sobre segurança da informação para agentes de tratamento de pequeno porte.* Brasília, DF, 2021. Disponível em: [guia da ANPD](https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guia-vf.pdf). Acesso em: 16 ago. 2026.
+- ISO/IEC/IEEE. *ISO/IEC/IEEE 29148:2018 — Systems and software engineering: Life cycle processes: Requirements engineering*. 2. ed. Geneva, 2018. Disponível em: [norma](https://www.iso.org/standard/72089.html). Acesso em: 16 ago. 2026.
+- PEOPLECERT. *ITIL 4 Practice Guide: Service Request Management*. London, 2023. Disponível em: [prática ITIL](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-request-management-3690). Acesso em: 16 ago. 2026.
+- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0.2*. Needham, 2014. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0.2/). Acesso em: 16 ago. 2026.
 
 ## Anexo A — Catálogo inicial de tipos de demanda
 

@@ -12,7 +12,7 @@ O sistema será voltado ao registro, à triagem, à atribuição, ao acompanhame
 
 Uma agência de marketing digital pode receber solicitações de diversos clientes e áreas internas simultaneamente. Quando essas solicitações circulam em canais dispersos, uma demanda pode ser perdida, repassada sem contexto ou executada sem que o cliente consiga acompanhar sua situação. Alterações de orçamento, público ou criativo também podem afetar diretamente o desempenho e o custo de uma campanha; por isso, requerem registro da solicitação, da aprovação e da evidência de execução.
 
-As práticas de Service Desk e de gerenciamento de solicitações de serviço destacam a importância de um ponto de contato, do registro da demanda, da triagem, da comunicação e do acompanhamento até a conclusão \cite{peoplecert2023,axelos2020}. A ausência dessa estrutura, no contexto de tráfego pago, causa especialmente perda ou duplicidade de pedidos, dificuldade de priorização, indefinição de responsável e prazo, ausência de histórico, retrabalho e pouca visibilidade para o cliente.
+As práticas de Service Desk e de gerenciamento de solicitações de serviço destacam a importância de um ponto de contato, do registro da demanda, da triagem, da comunicação e do acompanhamento até a conclusão \cite{servicedesk2023,servicerequest2023}. A ausência dessa estrutura, no contexto de tráfego pago, causa especialmente perda ou duplicidade de pedidos, dificuldade de priorização, indefinição de responsável e prazo, ausência de histórico, retrabalho e pouca visibilidade para o cliente.
 
 Assim, a questão que orienta o trabalho é: \textit{como uma aplicação web de Help Desk pode centralizar e rastrear demandas de tráfego pago, melhorando o acompanhamento de campanhas e o atendimento a clientes de agências de marketing digital?}
 
@@ -28,7 +28,7 @@ Pretende-se cadastrar clientes, usuários e campanhas; permitir a abertura e cla
 
 \section{JUSTIFICATIVA}
 
-O projeto trata de um problema frequente em serviços de marketing digital: a gestão de demandas recebidas por canais informais. Um Help Desk adaptado ao tráfego pago converte mensagens avulsas em registros estruturados e permite acompanhar o ciclo de cada pedido, da abertura ao encerramento. Essa organização está alinhada aos princípios de ponto de contato, registro, comunicação e acompanhamento previstos pelas práticas ITIL 4 \cite{peoplecert2023,axelos2020}.
+O projeto trata de um problema frequente em serviços de marketing digital: a gestão de demandas recebidas por canais informais. Um Help Desk adaptado ao tráfego pago converte mensagens avulsas em registros estruturados e permite acompanhar o ciclo de cada pedido, da abertura ao encerramento. Essa organização está alinhada aos princípios de ponto de contato, registro, comunicação e acompanhamento previstos pelas práticas ITIL 4 \cite{servicedesk2023,servicerequest2023}.
 
 Do ponto de vista organizacional, a solução poderá reduzir retrabalho, melhorar a distribuição das tarefas e facilitar a prestação de contas. A equipe terá uma fila de trabalho com responsáveis, prioridades e prazos; o cliente poderá consultar a situação e o histórico de sua solicitação; e a gestão poderá acompanhar indicadores de volume, tempo de atendimento, vencimentos e tipos de demanda.
 
@@ -40,7 +40,7 @@ Do ponto de vista acadêmico, o trabalho integra Sistemas de Informação, Gest�
 
 Sistemas de informação apoiam a coleta, o processamento, o armazenamento e a distribuição de informações necessárias às atividades organizacionais. Em serviços, sua contribuição não se limita a registrar dados: eles também organizam o fluxo de trabalho, definem responsabilidades e oferecem subsídios à decisão. A gestão de demandas compreende receber, registrar, classificar, priorizar, atribuir, acompanhar e encerrar solicitações.
 
-Um Help Desk materializa esse processo por meio do ticket, que possui identificação única, solicitante, descrição, prioridade, responsável, status, prazo, interações e evidências. Além de viabilizar o atendimento individual, o histórico de tickets permite identificar gargalos, medir tempo de resposta e acompanhar o nível de serviço \cite{peoplecert2023,axelos2020}. Por essa razão, o SIGE Desk prevê estados explícitos de validação e reabertura, bem como prazos de primeira resposta e de resolução.
+Um Help Desk materializa esse processo por meio do ticket, que possui identificação única, solicitante, descrição, prioridade, responsável, status, prazo, interações e evidências. Além de viabilizar o atendimento individual, o histórico de tickets permite identificar gargalos, medir tempo de resposta e acompanhar o nível de serviço \cite{servicedesk2023,servicerequest2023}. Por essa razão, o SIGE Desk prevê estados explícitos de validação e reabertura, bem como prazos de primeira resposta e de resolução.
 
 \subsection{Tráfego pago, agências e métricas}
 
@@ -54,7 +54,7 @@ Indicadores como impressões, CTR, CPC, conversão, CPA e ROAS permitem contextu
 
 Soluções integradas de marketing e CRM reduzem a fragmentação de informações, apoiam a comunicação e fortalecem o relacionamento com clientes \cite{gujar2024,younas2025,kharisma2024}. No SIGE Desk, o ticket será o registro da interação entre cliente e agência: concentrará a solicitação, as mensagens, as aprovações e as evidências, sem substituir ferramentas de mídia ou CRM.
 
-A rastreabilidade será obtida pelo número do ticket, pelas datas, pelo usuário responsável, pelo histórico de status, pelos comentários, anexos e decisões de aprovação. Como o projeto tratará dados operacionais, a coleta será limitada ao necessário para a gestão da demanda. A LGPD regula o tratamento de dados pessoais em meios digitais \cite{brasil2018}, e a ANPD recomenda controles de autenticação, autorização e auditoria \cite{anpd2024}. Assim, o sistema não armazenará credenciais de plataformas, bases de audiência ou dados pessoais sensíveis.
+A rastreabilidade será obtida pelo número do ticket, pelas datas, pelo usuário responsável, pelo histórico de status, pelos comentários, anexos e decisões de aprovação. Como o projeto tratará dados operacionais, a coleta será limitada ao necessário para a gestão da demanda. A LGPD regula o tratamento de dados pessoais em meios digitais \cite{brasil2018}, e a ANPD recomenda controles de autenticação, autorização e auditoria \cite{anpd2021}. Além disso, a publicidade direcionada exige equilíbrio entre personalização, transparência e privacidade, pois a percepção do consumidor sobre o uso de seus dados influencia a confiança no serviço \cite{daoud2023}. Assim, o sistema não armazenará credenciais de plataformas, bases de audiência ou dados pessoais sensíveis.
 
 \section{METODOLOGIA}
 
@@ -66,7 +66,7 @@ Esta é uma pesquisa aplicada, pois propõe e constrói uma solução para um pr
 
 A revisão foi realizada na base IEEE Xplore e complementada por fontes normativas e oficiais. O recorte abrangeu publicações de 2019 a 2026, em inglês, relacionadas a gestão de demandas e projetos em agências, centralização de atividades de marketing, operação de campanhas pagas, relacionamento com clientes, privacidade e rastreabilidade. Foram recuperados 25 artigos sem duplicidade; após a leitura de título, resumo e conteúdo, nove estudos foram selecionados por aderência ao problema, e os demais foram descartados por não contribuírem diretamente para o escopo do MVP.
 
-Também foram adotadas fontes para orientar as escolhas de projeto: ITIL 4 para Service Desk e solicitações de serviço, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0 para modelagem do processo e LGPD/ANPD para proteção de dados \cite{peoplecert2023,axelos2020,iso29148,omg2011,brasil2018,anpd2024}.
+Também foram adotadas fontes para orientar as escolhas de projeto: ITIL 4 para Service Desk e solicitações de serviço, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0.2 para modelagem do processo e LGPD/ANPD para proteção de dados \cite{servicedesk2023,servicerequest2023,iso29148,omg2014,brasil2018,anpd2021}.
 
 \subsection{Levantamento, desenvolvimento e avaliação}
 
@@ -91,7 +91,7 @@ O processo To Be inicia com o registro da solicitação. Na triagem, o atendimen
 \includegraphics[width=\textwidth]{figuras/bpmn-processo-to-be.png}
 \caption{Processo To Be do SIGE Desk}
 \label{fig:processo-to-be}
-\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo, com base em BPMN 2.0 \cite{omg2011}.
+\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo, com base em BPMN 2.0.2 \cite{omg2014}.
 \end{figure}
 
 \subsection{Estados, SLA e rastreabilidade}

@@ -17,7 +17,7 @@ O desenvolvimento será organizado nas etapas a seguir.
 
 ### 2.1 Revisão bibliográfica
 
-A revisão bibliográfica foi realizada de forma estruturada na base **IEEE Xplore**, complementada por fontes normativas e oficiais pertinentes ao projeto: ITIL 4 para gestão de serviços e solicitações, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0 para modelagem de processo e LGPD/ANPD para proteção de dados (PEOPLECERT, 2023; AXELOS, 2020; ISO/IEC/IEEE, 2018; OMG, 2011; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2024).
+A revisão bibliográfica foi realizada de forma estruturada na base **IEEE Xplore**, complementada por fontes normativas e oficiais pertinentes ao projeto: ITIL 4 para gestão de serviços e solicitações, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0.2 para modelagem de processo e LGPD/ANPD para proteção de dados (PEOPLECERT, 2023a, 2023b; ISO/IEC/IEEE, 2018; OMG, 2014; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021).
 
 O recorte de publicação compreende **2019 a 2026**, de forma inclusiva. Foram aceitos documentos em **inglês**. As buscas foram executadas no campo *Document Title* da IEEE Xplore, com as seguintes expressões booleanas:
 
@@ -64,7 +64,7 @@ As respostas serão organizadas por categorias, como entrada da demanda, prioriz
 
 ### 2.3 Modelagem do processo e do protótipo
 
-Com base nos requisitos validados, será modelado o fluxo atual (**As Is**) e o fluxo de vida desejado (**To Be**) do ticket: abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento. A representação do processo futuro adotará BPMN 2.0, distinguindo Cliente e Agência como participantes e Atendimento/Gestor de conta e Gestor de tráfego como responsabilidades internas (OMG, 2011). Também serão refinados os perfis de usuário, regras de negócio, dados necessários, SLAs e telas principais.
+Com base nos requisitos validados, será modelado o fluxo atual (**As Is**) e o fluxo de vida desejado (**To Be**) do ticket: abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento. A representação do processo futuro adotará BPMN 2.0.2, distinguindo Cliente e Agência como participantes e Atendimento/Gestor de conta e Gestor de tráfego como responsabilidades internas (OMG, 2014). Também serão refinados os perfis de usuário, regras de negócio, dados necessários, SLAs e telas principais.
 
 O protótipo de interface será elaborado de forma incremental. Inicialmente, serão produzidas telas de painel, listagem de tickets, abertura de solicitação e detalhes do ticket. O protótipo deverá evidenciar os principais caminhos do usuário e permitir ajustes antes da implementação da aplicação.
 
@@ -164,11 +164,11 @@ Como a avaliação utilizará amostra pequena e por conveniência, a validade ex
 
 ## Referências metodológicas
 
-- ISO/IEC/IEEE. *ISO/IEC/IEEE 29148:2018 — Systems and software engineering: Life cycle processes: Requirements engineering*. 2018. Disponível em: [norma](https://www.iso.org/standard/72089.html).
-- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0*. 2011. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0/).
+- ISO/IEC/IEEE. *ISO/IEC/IEEE 29148:2018 — Systems and software engineering: Life cycle processes: Requirements engineering*. 2. ed. Geneva, 2018. Disponível em: [norma](https://www.iso.org/standard/72089.html). Acesso em: 16 ago. 2026.
+- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0.2*. Needham, 2014. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0.2/). Acesso em: 16 ago. 2026.
 - RADHITYA, Ridha et al. *Usability Analysis of Digital Signature Application Based on ISO 9241-11 Using Retrospective Think Aloud and User Experience Questionnaire*. 2024. DOI: [10.1109/ICITSI65188.2024.10929447](https://doi.org/10.1109/ICITSI65188.2024.10929447).
 - SCHREPP, Martin; HINDERKS, Andreas; THOMASCHEWSKI, Jörg. *Design and Evaluation of a Short Version of the User Experience Questionnaire (UEQ-S).* *International Journal of Interactive Multimedia and Artificial Intelligence*, v. 4, n. 6, p. 103-108, 2017. DOI: [10.9781/ijimai.2017.09.001](https://doi.org/10.9781/ijimai.2017.09.001).
-- PEOPLECERT. *ITIL 4 Practice Guide: Service Desk*. 2023. Disponível em: [guia de prática](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-desk-3706).
-- AXELOS. *ITIL 4 Practice Guide: Service Request Management*. 2020. Disponível em: [prática ITIL](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-request-management-3690).
-- BRASIL. *Lei nº 13.709, de 14 de agosto de 2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).* Disponível em: [texto consolidado](https://www.gov.br/mj/pt-br/assuntos/sua-protecao/sedigi/Lei13709.pdf).
-- AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS. *Guia orientativo sobre segurança da informação para agentes de tratamento de pequeno porte.* 2024. Disponível em: [guia da ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte).
+- PEOPLECERT. *ITIL 4 Practice Guide: Service Desk*. London, 2023a. Disponível em: [guia de prática](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-desk-3706). Acesso em: 16 ago. 2026.
+- PEOPLECERT. *ITIL 4 Practice Guide: Service Request Management*. London, 2023b. Disponível em: [prática ITIL](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-request-management-3690). Acesso em: 16 ago. 2026.
+- BRASIL. *Lei nº 13.709, de 14 de agosto de 2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).* Brasília, DF: Presidência da República, 2018. Disponível em: [texto consolidado](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm). Acesso em: 16 ago. 2026.
+- AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS. *Guia orientativo sobre segurança da informação para agentes de tratamento de pequeno porte.* Brasília, DF, 2021. Disponível em: [guia da ANPD](https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guia-vf.pdf). Acesso em: 16 ago. 2026.

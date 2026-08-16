@@ -2,7 +2,7 @@
 
 **Aplicação:** Help Desk para Gestão de Demandas de Tráfego Pago
 
-> Modelo de processo baseado nos elementos da BPMN 2.0. Ele representa o fluxo desejado do SIGE Desk; não representa automações dentro de Google Ads, Meta Ads ou CRM.
+> Modelo de processo baseado nos elementos da BPMN 2.0.2. Ele representa o fluxo desejado do SIGE Desk; não representa automações dentro de Google Ads, Meta Ads ou CRM.
 
 ## 1. Objetivo do processo
 
@@ -75,4 +75,4 @@ Em entrevista ou teste de requisitos, perguntar a cada perfil:
 
 ## Referência
 
-- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0*. 2011. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0/).
+- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0.2*. Needham, 2014. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0.2/). Acesso em: 16 ago. 2026.
