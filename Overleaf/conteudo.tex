@@ -48,7 +48,29 @@ Tráfego pago é o investimento em plataformas de publicidade para levar usuári
 
 Agências atuam em ambiente de múltiplos canais, prazos curtos e comunicação constante com os clientes. Planejamento, comunicação, adaptação, gestão de tempo, monitoramento e análise de dados são competências fundamentais nesse contexto \cite{steponaitis2023}. A agência também ocupa posição intermediária na cadeia de publicidade digital entre anunciantes, publishers e plataformas de mídia \cite{agus2019}; portanto, transparência e coordenação são elementos importantes para a entrega de valor.
 
-Indicadores como impressões, CTR, CPC, conversão, CPA e ROAS permitem contextualizar uma solicitação e avaliar os resultados de uma alteração. Neste projeto, essas métricas serão registradas como contexto ou evidência quando aplicável; não serão calculadas automaticamente no MVP. Essa decisão mantém o escopo viável e preserva a ligação entre o ticket e o desempenho da campanha. A interpretação dos indicadores também exige cautela, pois métricas de tráfego podem ser distorcidas por acessos automatizados \cite{nain2025,abbonizio2023}.
+Indicadores como impressões, CTR, CPC, conversão, CPA e ROAS permitem contextualizar uma solicitação e avaliar os resultados de uma alteração. A Tabela \ref{tab:metricas-campanha} relaciona esses indicadores ao uso previsto na gestão das demandas.
+
+\begin{table}[H]
+\centering
+\caption{Métricas de campanha aplicáveis ao contexto dos tickets}
+\label{tab:metricas-campanha}
+\small
+\begin{tabular}{p{0.15\textwidth}p{0.30\textwidth}p{0.40\textwidth}}
+\hline
+\textbf{Métrica} & \textbf{Significado} & \textbf{Uso na gestão da demanda} \\
+\hline
+Impressões & Quantidade de exibições do anúncio. & Contextualizar alcance e alterações de orçamento. \\
+CTR & Proporção de cliques em relação às impressões. & Avaliar aderência do anúncio e do público. \\
+CPC & Custo médio por clique. & Apoiar solicitações de otimização de custo. \\
+Conversão & Ação desejada realizada pelo usuário. & Verificar atendimento ao objetivo da campanha. \\
+CPA & Custo médio por conversão ou aquisição. & Avaliar eficiência na geração de resultados. \\
+ROAS & Receita atribuída em relação ao investimento. & Apoiar análise de retorno quando houver dados de receita. \\
+\hline
+\end{tabular}
+\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do referencial teórico.
+\end{table}
+
+No projeto, essas métricas serão registradas como contexto ou evidência quando aplicável; não serão calculadas automaticamente no MVP. Essa decisão mantém o escopo viável e preserva a ligação entre o ticket e o desempenho da campanha. A interpretação dos indicadores também exige cautela, pois métricas de tráfego podem ser distorcidas por acessos automatizados \cite{nain2025,abbonizio2023}.
 
 \subsection{Centralização, relacionamento e proteção de dados}
 
@@ -109,11 +131,39 @@ Os trabalhos selecionados foram analisados com a finalidade de fundamentar conce
 
 Também foram adotadas fontes para orientar as escolhas de projeto: ITIL 4 para Service Desk e solicitações de serviço, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0.2 para modelagem do processo e LGPD/ANPD para proteção de dados \cite{servicedesk2023,servicerequest2023,iso29148,omg2014,brasil2018,anpd2021}.
 
-\subsection{Levantamento, desenvolvimento e avaliação}
+\subsection{Levantamento e validação de requisitos}
 
-Os requisitos preliminares foram derivados do problema, dos objetivos, do referencial e do esboço do protótipo. Eles deverão ser validados com clientes de agências, profissionais de atendimento ou gestão de conta e gestores de tráfego. O levantamento considerará canais de entrada, informações necessárias, tipos de demanda, critérios de prioridade, prazo, responsáveis, comunicação e indicadores.
+Os requisitos preliminares foram derivados do problema de pesquisa, dos objetivos, do referencial teórico e do esboço do protótipo. Eles deverão ser validados com clientes de agências, profissionais de atendimento ou gestão de conta e gestores de tráfego. O instrumento de levantamento adotará perguntas semiestruturadas sobre os canais atualmente utilizados, as informações que costumam faltar nas solicitações, os tipos de demanda recorrentes, os critérios para prioridade, prazo e responsável, as causas de retrabalho ou atraso, as informações que o cliente precisa acompanhar e os indicadores úteis à gestão.
 
-A versão inicial será implementada como aplicação web em ciclos curtos: selecionar requisitos priorizados, implementar, testar o cenário correspondente e registrar ajustes. A avaliação combinará testes funcionais e teste de usabilidade com seis participantes por conveniência: dois potenciais clientes, dois profissionais de atendimento ou gestão de conta e dois gestores de tráfego. O teste de usabilidade observará a abertura de uma demanda, a localização de um ticket, a triagem e atribuição, a validação e a reabertura. Como meta interna, pelo menos 80\% das execuções devem ser concluídas sem ajuda e nenhuma tarefa pode ter taxa de conclusão inferior a 70\%. O questionário UEQ-S complementará a análise da experiência \cite{schrepp2017,radhitya2024}.
+As respostas serão organizadas nas categorias entrada da demanda, priorização, execução, comunicação, aprovação, encerramento e indicadores. Cada requisito será classificado como de prioridade alta, média ou baixa. Para assegurar rastreabilidade, seu registro deverá conter origem, versão, responsável, critério de aceite e caso de teste relacionado, conforme a ISO/IEC/IEEE 29148 \cite{iso29148}.
+
+\subsection{Modelagem, prototipação e desenvolvimento}
+
+Com base nos requisitos validados, serão modelados o fluxo atual (\textit{As Is}) e o fluxo desejado (\textit{To Be}). O processo futuro abrangerá abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento, distinguindo o Cliente e a Agência como participantes e o Atendimento ou gestor de conta e o Gestor de tráfego como responsabilidades internas. O modelo será submetido aos perfis envolvidos para verificar a adequação da sequência, dos pontos de aprovação, das permissões, das evidências e das situações de retrabalho.
+
+O protótipo será elaborado incrementalmente, inicialmente com painel, listagem de tickets, abertura de solicitação e detalhes do ticket. A aplicação web será implementada em ciclos curtos, nos quais requisitos priorizados serão selecionados, implementados, testados e ajustados. O foco do MVP será cadastro, autenticação, tickets, comentários, histórico, estados, prazos, responsáveis, notificações, filtros e controle de acesso; integrações com plataformas de anúncios, previsão por inteligência artificial e execução automática de mudanças permanecerão fora do escopo.
+
+\subsection{Testes funcionais}
+
+Os casos de teste serão derivados dos critérios de aceite e deverão registrar identificador, requisitos relacionados, prioridade, pré-condição, passos de execução, resultado esperado, resultado obtido e situação final. O plano contempla quinze cenários, apresentados no Apêndice \ref{ap:validacao}, que cobrem abertura, autenticação, cadastros, triagem, execução, aprovação, reabertura, vencimento, notificações, configuração, auditoria, segurança, restauração e desempenho.
+
+A aprovação funcional exigirá 100\% dos casos de alta prioridade aprovados, pelo menos 90\% do total de casos aprovados e nenhum defeito crítico em aberto. Cada reprovação deverá gerar registro de correção ou justificativa de adiamento.
+
+\subsection{Avaliação de usabilidade}
+
+A avaliação de usabilidade contará com seis participantes selecionados por conveniência: dois potenciais clientes, dois profissionais de atendimento ou gestão de conta e dois gestores de tráfego. Cada participante executará cinco tarefas: abrir uma demanda com os dados obrigatórios; localizar e filtrar um ticket; classificar, priorizar e atribuir a demanda; incluir comentário e encaminhar a entrega para validação; e aprovar ou reabrir a demanda com justificativa. Durante as tarefas serão registrados obstáculos, dúvidas, erros, necessidade de ajuda e tempo de realização.
+
+O teste será considerado aprovado se pelo menos 80\% das execuções forem concluídas sem ajuda e nenhuma tarefa apresentar taxa de conclusão inferior a 70\%. Após as tarefas, será aplicado o UEQ-S, composto por oito itens distribuídos entre as dimensões pragmática e hedônica. As respostas, coletadas em escala de 1 a 7, serão convertidas para a escala de $-3$ a $+3$; serão calculadas as médias das duas dimensões e a média geral \cite{schrepp2017}. Como metas internas, será buscada média geral superior a 0,8 e nenhuma dimensão abaixo de 0,5. Esses valores orientarão a aceitação do projeto, mas não substituirão a interpretação do instrumento. A análise conjunta de conclusão, tempo, erros e comentários segue a abordagem discutida por \citeonline{radhitya2024}.
+
+\subsection{Participantes, dados e análise}
+
+A participação será voluntária e ocorrerá após a explicação do objetivo do teste e a concordância com o uso agregado dos resultados. Caso algum perfil não esteja disponível, a substituição e sua limitação serão registradas. Os dados de pesquisa ficarão restritos ao perfil do participante, ao desempenho nas tarefas, às observações e às respostas ao questionário. Serão utilizados tickets fictícios ou dados autorizados; não serão solicitadas credenciais de plataformas de anúncios, dados bancários, bases de audiência ou informações pessoais sensíveis.
+
+Os dados qualitativos provenientes de entrevistas, observações e comentários serão submetidos à categorização temática, inicialmente segundo problemas do processo atual, informações do ticket, comunicação, prioridade, prazo, aprovação, evidências e indicadores. Os dados quantitativos serão analisados descritivamente por quantidade de casos aprovados e reprovados, percentual de operações concluídas em até dois segundos, conclusão das tarefas com e sem ajuda, erros, dúvidas, tempo de execução e médias pragmática, hedônica e geral do UEQ-S. Os resultados serão apresentados de forma agregada e utilizados para orientar melhorias, sem pretensão de representar todas as agências de marketing.
+
+\subsection{Critérios de qualidade e validade}
+
+A associação entre requisitos, critérios de aceite e casos de teste será utilizada para reduzir ambiguidades e verificar as regras de negócio. Serão preservados os instrumentos de coleta, cenários, decisões de requisitos e resultados agregados. A amostra reduzida e por conveniência limita a validade externa; por isso, substituições de participantes, alterações de procedimento, limitações e decisões ocorridas durante o desenvolvimento deverão ser registradas na versão final.
 
 \section{PROPOSTA DA SOLUÇÃO}
 
@@ -135,24 +185,68 @@ O processo To Be inicia com o registro da solicitação. Na triagem, o atendimen
 \par\footnotesize\textbf{Fonte:} Elaborado pelo grupo, com base em BPMN 2.0.2 \cite{omg2014}.
 \end{figure}
 
+\subsection{Esboço do protótipo}
+
+O protótipo inicial materializa os principais caminhos de uso antes da implementação. O painel reúne indicadores, filtros e a fila de demandas, conforme o Quadro \ref{qua:prototipo-painel}, enquanto a abertura de solicitação estrutura os dados mínimos necessários à triagem, conforme o Quadro \ref{qua:prototipo-abertura}.
+
+\begin{quadro}[H]
+\centering
+\caption{Estrutura prevista para o painel de demandas}
+\label{qua:prototipo-painel}
+\begin{tabular}{p{0.23\textwidth}p{0.65\textwidth}}
+\hline
+\textbf{Área} & \textbf{Conteúdo previsto} \\
+\hline
+Cabeçalho & Identificação do SIGE Desk, ação Nova solicitação e usuário/perfil ativo. \\
+Indicadores & Quantidades de tickets abertos, em execução, em validação e vencidos. \\
+Filtros & Cliente, campanha, tipo de demanda, prioridade e status. \\
+Fila de demandas & Número, assunto, cliente, prioridade, estado, responsável e prazo de cada ticket. \\
+Navegação & Dashboard, Demandas, Clientes, Campanhas, Relatórios e Administração, conforme permissão. \\
+\hline
+\end{tabular}
+\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do esboço do protótipo.
+\end{quadro}
+
+\begin{quadro}[H]
+\centering
+\caption{Campos previstos para a abertura de solicitação}
+\label{qua:prototipo-abertura}
+\begin{tabular}{p{0.23\textwidth}p{0.65\textwidth}}
+\hline
+\textbf{Campo} & \textbf{Finalidade} \\
+\hline
+Cliente e campanha & Identificar a organização e a campanha relacionada. \\
+Tipo e canal & Classificar a solicitação e a plataforma de mídia envolvida. \\
+Urgência e prazo desejado & Registrar a percepção do solicitante antes da triagem oficial. \\
+Assunto e descrição & Informar pedido, contexto, justificativa, links e métricas relacionadas. \\
+Anexos & Vincular materiais, criativos, relatórios ou outras evidências ao ticket. \\
+\hline
+\end{tabular}
+\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do esboço do protótipo.
+\end{quadro}
+
+Além dos campos de abertura, cada demanda deverá manter número, solicitante, prioridade oficial, responsável, datas, prazos de SLA, comentários, histórico de alterações, ação executada, evidência, decisão de aprovação e motivo de cancelamento ou reabertura, quando aplicável.
+
 \subsection{Estados, SLA e rastreabilidade}
 
 O ciclo de vida do ticket possui os estados Aberta, Em triagem, Em execução, Aguardando cliente, Em validação, Concluída, Reaberta e Cancelada. A conclusão requer validação ou o registro de que o tipo de demanda dispensa aprovação; o cancelamento requer justificativa; e a reabertura inicia novo ciclo de resolução sem apagar o histórico anterior.
 
-O calendário padrão de SLA considera dias úteis, das 8h às 18h, no fuso America/Sao\_Paulo, excluindo feriados e recessos configurados. A primeira resposta é o primeiro retorno efetivo registrado ao solicitante; uma confirmação automática não a satisfaz. O prazo de resolução é pausado enquanto o ticket estiver Aguardando cliente e volta a contar quando ele retornar à execução. A Tabela \ref{tab:sla} sintetiza a configuração inicial.
+Os SLAs serão configuráveis por cliente ou tipo de demanda. Na ausência de regra específica, o calendário padrão considerará segunda a sexta-feira, das 8h às 18h, no fuso America/Sao\_Paulo, excluindo feriados e recessos configurados; somente os intervalos inseridos nesse calendário serão contabilizados como horas úteis. A urgência informada pelo solicitante não substituirá a prioridade oficial, que será definida na triagem.
+
+A primeira resposta corresponde ao primeiro retorno efetivo registrado ao solicitante; a confirmação automática de recebimento não encerra esse prazo. O relógio de resolução será pausado em Aguardando cliente, preservando o tempo útil restante, e retomado ao sair desse estado. Em validação não pausará o SLA, salvo configuração específica. Quando um ticket concluído for reaberto, os resultados e prazos do ciclo anterior serão preservados, um novo ciclo de resolução será iniciado conforme a prioridade vigente e o prazo de primeira resposta já cumprido não será reiniciado. O vencimento deverá ser sinalizado e comunicado ao responsável e ao atendimento. A Tabela \ref{tab:sla} sintetiza a configuração inicial.
 
 \begin{table}[H]
 \centering
 \caption{Prazos preliminares de SLA}
 \label{tab:sla}
-\begin{tabular}{lcc}
+\begin{tabular}{p{0.12\textwidth}p{0.38\textwidth}p{0.17\textwidth}p{0.17\textwidth}}
 \hline
-\textbf{Prioridade} & \textbf{Primeira resposta} & \textbf{Resolução prevista} \\
+\textbf{Prioridade} & \textbf{Exemplo} & \textbf{Primeira resposta} & \textbf{Resolução} \\
 \hline
-Urgente & 2 horas úteis & 8 horas úteis \\
-Alta & 4 horas úteis & 16 horas úteis \\
-Média & 8 horas úteis & 24 horas úteis \\
-Baixa & 16 horas úteis & 40 horas úteis \\
+Urgente & Campanha ativa com erro crítico, gasto indevido ou risco de grande impacto. & 2 horas úteis & 8 horas úteis \\
+Alta & Alteração com impacto relevante em orçamento, prazo ou desempenho. & 4 horas úteis & 16 horas úteis \\
+Média & Ajuste planejado, relatório ou solicitação sem impacto imediato. & 8 horas úteis & 24 horas úteis \\
+Baixa & Melhoria, dúvida ou demanda programável. & 16 horas úteis & 40 horas úteis \\
 \hline
 \end{tabular}
 \par\footnotesize\textbf{Fonte:} Elaborado pelo grupo.
@@ -160,9 +254,15 @@ Baixa & 16 horas úteis & 40 horas úteis \\
 
 Toda mudança de status, responsável, prioridade, prazo ou aprovação deverá registrar usuário, data e hora, motivo, valor anterior e novo valor. Esse histórico, associado a comentários, anexos e evidências, sustenta a rastreabilidade e a auditoria da demanda.
 
+\subsection{Governança de dados, acesso e continuidade}
+
+O acesso seguirá o princípio do menor privilégio, de modo que cada perfil consulte e altere somente as informações necessárias às suas responsabilidades. Anexos serão vinculados ao ticket e submetidos à mesma política de retenção do histórico. O MVP utilizará dados fictícios ou autorizados; backups diários deverão ser protegidos e submetidos periodicamente a teste de restauração. A retenção inicial de 24 meses para tickets, histórico e anexos deverá ser revista conforme contratos, finalidade do tratamento e orientação jurídica \cite{brasil2018,anpd2021}.
+
+A finalidade declarada para os dados será registrar, comunicar, executar, validar e auditar demandas de tráfego pago. Antes do uso em produção, a agência deverá identificar controlador, operadores e base legal aplicável, além de publicar aviso de privacidade e manter canal para solicitações de acesso, correção ou eliminação. O procedimento de incidente deverá contemplar registro, contenção, avaliação de impacto, decisão sobre comunicação e ações corretivas, com responsabilidades definidas e evidências das medidas adotadas.
+
 \subsection{Requisitos prioritários}
 
-Os requisitos foram organizados conforme a ISO/IEC/IEEE 29148 \cite{iso29148}. Para a primeira versão, são prioritários autenticação e autorização por perfil; cadastro de clientes e campanhas; abertura e identificação única do ticket; triagem e atribuição; atualização de status; comentários e anexos; histórico auditável; notificações; filtros; configuração de tipos de demanda e de SLA. Requisitos de segurança, privacidade, integridade, desempenho, acessibilidade, backup e retenção complementam o escopo. A matriz detalhada de requisitos e os cenários de teste estão apresentados nos Apêndices A e B.
+Os requisitos foram organizados conforme a ISO/IEC/IEEE 29148 \cite{iso29148}. Para a primeira versão, são prioritários autenticação e autorização por perfil; cadastro de clientes e campanhas; abertura e identificação única do ticket; triagem e atribuição; atualização de status; comentários e anexos; histórico auditável; notificações; filtros; configuração de tipos de demanda e de SLA. Requisitos de segurança, privacidade, integridade, desempenho, acessibilidade, backup e retenção complementam o escopo. A especificação individual dos requisitos, as regras de negócio, os dados, as transições, a rastreabilidade e as notificações estão no Apêndice \ref{ap:especificacao}; os quinze casos de teste encontram-se no Apêndice \ref{ap:validacao}.
 
 \section{CONSIDERAÇÕES FINAIS}
 
@@ -171,71 +271,5 @@ O SIGE Desk foi proposto para transformar comunicações dispersas em um fluxo d
 O trabalho encontra-se na fase de especificação e prototipação. A continuidade prevê validar os requisitos com potenciais usuários, implementar o MVP, executar os casos de teste e registrar os resultados da avaliação de usabilidade. Esses resultados permitirão ajustar o processo, os requisitos e a interface antes de uma eventual adoção em contexto real.
 
 \appendix
-\section{MATRIZ SINTÉTICA DE REQUISITOS}
-
-\begin{longtable}{p{0.16\textwidth}p{0.57\textwidth}p{0.13\textwidth}}
-\caption{Requisitos funcionais prioritários}\label{tab:requisitos}\\
-\hline
-\textbf{ID} & \textbf{Requisito} & \textbf{Prioridade} \\
-\hline
-\endfirsthead
-\hline
-\textbf{ID} & \textbf{Requisito} & \textbf{Prioridade} \\
-\hline
-\endhead
-RF-01/RF-02 & Autenticar usuários e restringir funções e tickets conforme perfil. & Alta \\
-RF-03/RF-04 & Manter clientes ativos e campanhas vinculadas ao respectivo cliente. & Alta \\
-RF-05/RF-06 & Abrir ticket com dados mínimos e gerar identificador único. & Alta \\
-RF-07/RF-09 & Classificar, atribuir e auditar mudanças de prioridade, prazo, responsável e status. & Alta \\
-RF-08/RF-10/RF-12 & Atualizar status, registrar comentários, anexos, ação executada e evidências. & Alta \\
-RF-14/RF-17 & Filtrar tickets e consultar o histórico completo. & Alta \\
-RF-20/RF-21 & Notificar envolvidos autorizados e exibir os prazos de SLA. & Alta \\
-RF-22/RF-23 & Configurar tipos de demanda, campos obrigatórios, aprovações, evidências e calendário de SLA. & Alta \\
-RF-11/RF-13/RF-15/RF-16 & Registrar aprovação, cancelamento, indicadores do painel e situações de vencimento. & Média \\
-RF-18/RF-19 & Registrar métricas de contexto e exportar lista filtrada de tickets. & Baixa \\
-\hline
-\multicolumn{3}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir dos requisitos preliminares.}
-\end{longtable}
-
-\begin{longtable}{p{0.16\textwidth}p{0.70\textwidth}}
-\caption{Requisitos não funcionais}\label{tab:requisitos-nao-funcionais}\\
-\hline
-\textbf{Aspecto} & \textbf{Critério inicial} \\
-\hline
-\endfirsthead
-\hline
-\textbf{Aspecto} & \textbf{Critério inicial} \\
-\hline
-\endhead
-Usabilidade & Ao menos 80\% das tarefas concluídas sem ajuda e nenhuma abaixo de 70\% de conclusão. \\
-Segurança e privacidade & Senhas protegidas, autorização por perfil, auditoria de acessos e coleta apenas de dados necessários. \\
-Rastreabilidade e integridade & Histórico preservado; tickets concluídos ou cancelados não podem ser apagados sem registro administrativo. \\
-Desempenho & Em base de teste com 100 tickets, 90\% das operações de abertura e listagem devem concluir em até dois segundos. \\
-Disponibilidade e acessibilidade & Salvamento sem perda de dados, compatibilidade com navegadores modernos, rótulos claros, contraste adequado e navegação por teclado. \\
-Continuidade & Backup diário com retenção mínima de 30 dias e teste periódico de restauração; retenção de tickets e anexos por 24 meses, sujeita à revisão jurídica. \\
-\hline
-\multicolumn{2}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir dos requisitos preliminares.}
-\end{longtable}
-
-\section{PLANO DE VALIDAÇÃO}
-
-\begin{longtable}{p{0.15\textwidth}p{0.46\textwidth}p{0.25\textwidth}}
-\caption{Cenários mínimos de teste funcional}\label{tab:testes}\\
-\hline
-\textbf{ID} & \textbf{Cenário} & \textbf{Resultado esperado} \\
-\hline
-\endfirsthead
-\hline
-\textbf{ID} & \textbf{Cenário} & \textbf{Resultado esperado} \\
-\hline
-\endhead
-CT-01 & Cliente abre ticket de alteração de campanha. & Ticket recebe identificador, status inicial, urgência e prazo desejado. \\
-CT-02 & Atendimento classifica e atribui o ticket. & Prioridade, SLA e responsável ficam registrados; confirmação automática não conta como primeira resposta. \\
-CT-03 a CT-05 & Responsável atualiza o ticket, solicita informação, valida e trata correção. & Histórico, evidência, estados de aguardo e validação, aprovação ou reabertura são preservados. \\
-CT-06 e CT-07 & Usuário consulta demandas vencidas e acompanha eventos. & Filtros retornam os tickets corretos e envolvidos recebem notificação configurada. \\
-CT-08 e CT-09 & Cliente tenta acesso indevido e administrador restaura backup de teste. & Acesso é negado e registrado; dados e anexos são recuperados conforme a política. \\
-CT-10 & Usuário abre e lista tickets em base com 100 registros. & Pelo menos 90\% das operações concluem em até dois segundos. \\
-CT-11 a CT-15 & Administrador configura tipo, SLA e cadastros; usuário consulta auditoria. & Regras configuradas são aplicadas e o histórico exibe autor, data, motivo e valores alterados. \\
-\hline
-\multicolumn{3}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do plano de testes preliminar.}
-\end{longtable}
+\input{apendice-especificacao}
+\input{apendice-validacao}
