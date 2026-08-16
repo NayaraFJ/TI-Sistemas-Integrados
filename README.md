@@ -1,4 +1,23 @@
-# Foco na Gestão de Agências e Consultorias
+# TI SIGE — organização do repositório
+
+## Fonte acadêmica e documentação
+
+`Trabalho/` está organizado em duas áreas com finalidades distintas:
+
+| Área | Finalidade | Relação com o Overleaf |
+| --- | --- | --- |
+| [Trabalho/Artigo](Trabalho/Artigo/README.md) | Fonte acadêmica: resumo, introdução, problema, objetivos, referencial e metodologia. | Compõe o texto contínuo de `Overleaf`. |
+| [Trabalho/Documentacao do Projeto](Trabalho/Documentacao%20do%20Projeto/README.md) | Processo BPMN, protótipo de baixa fidelidade e especificação completa. | Fornece sínteses para o corpo e detalhes para os apêndices. |
+
+Os arquivos de artigo são complementares, não capítulos para cópia literal. A documentação técnica não deve ser transferida integralmente para o corpo do artigo: requisitos, regras, matrizes e casos de teste ficam na documentação e nos apêndices; o artigo os interpreta e sintetiza.
+
+### Regra de sincronização
+
+Toda alteração acadêmica em `Trabalho/Artigo` deve ser refletida semanticamente em `Overleaf` na mesma tarefa. Toda mudança de processo, protótipo ou especificação em `Trabalho/Documentacao do Projeto` deve atualizar a síntese ou o apêndice correspondente em `Overleaf`, quando afetar o artigo. Quando uma informação já possuir arquivo canônico, use um link para ele em vez de manter cópias concorrentes.
+
+## Contexto do projeto
+
+### Foco na Gestão de Agências e Consultorias
 * *Tema:* Gestão de Demandas de Marketing Digital.
 * *Área de Estudo:* Sistemas de Informação / Gestão de Serviços.
 * *Título:* Help Desk para Gestão de Demandas de Tráfego Pago.

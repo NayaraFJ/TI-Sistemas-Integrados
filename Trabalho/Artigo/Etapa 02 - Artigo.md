@@ -76,9 +76,6 @@ Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e regi
 - disponibilizar painel com indicadores de volume, prazo, status e responsável;
 - validar a usabilidade do protótipo com potenciais usuários do sistema.
 
-## 5. Referências iniciais
+## Referências
 
-- STEPONAITIS, Simonas; ANDRIJAUSKIENĖ, Meda. *Improving Digital Project Management Competencies: Case Study of a Digital Marketing Agency in Lithuania*. 2023. DOI: [10.1109/E-TEMS57541.2023.10424612](https://doi.org/10.1109/E-TEMS57541.2023.10424612).
-- YOUNAS, Mamoona et al. *DIGI-AI: An AI-Powered Web Platform for Intelligent Digital Marketing Automation*. 2025. DOI: [10.1109/MACS68476.2025.11453341](https://doi.org/10.1109/MACS68476.2025.11453341).
-- PEOPLECERT. *ITIL 4 Practice Guide: Service Desk*. London, 2023a. Disponível em: [guia de prática](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-desk-3706). Acesso em: 16 ago. 2026.
-- PEOPLECERT. *ITIL 4 Practice Guide: Service Request Management*. London, 2023b. Disponível em: [prática ITIL](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-request-management-3690). Acesso em: 16 ago. 2026.
+As referências acadêmicas foram consolidadas em [Etapa 03 - Referencial teorico.md](Etapa%2003%20-%20Referencial%20teorico.md) e em `../../Overleaf/bibliografia.bib`. Esta etapa mantém somente o texto de introdução, problema, justificativa e objetivos.

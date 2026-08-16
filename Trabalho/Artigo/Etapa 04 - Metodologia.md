@@ -7,15 +7,15 @@
 
 ## Resumo
 
-Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital, contexto em que solicitações de clientes e da equipe são frequentemente distribuídas entre aplicativos de mensagens, e-mails e outros canais informais. O problema investigado consiste na dispersão dessas informações, que dificulta a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. Diante disso, o estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a centralizar e rastrear essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, levantamento e especificação de requisitos, modelagem do processo em BPMN 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de SLA, os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Esses resultados indicam que a organização das demandas em tickets pode explicitar responsabilidades, prazos e decisões, reduzindo a perda de contexto e ampliando a rastreabilidade e a transparência do atendimento. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para o problema identificado, cuja efetividade deverá ser confirmada após a implementação e a avaliação do MVP.
+Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital, contexto em que solicitações de clientes e da equipe são frequentemente distribuídas entre aplicativos de mensagens, e-mails e outros canais informais. O problema investigado consiste na dispersão dessas informações, que dificulta a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. Diante disso, o estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a centralizar e rastrear essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, levantamento e especificação de requisitos, modelagem do processo em Business Process Model and Notation (BPMN) 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de acordo de nível de serviço (SLA), os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Esses resultados indicam que a organização das demandas em tickets pode explicitar responsabilidades, prazos e decisões, reduzindo a perda de contexto e ampliando a rastreabilidade e a transparência do atendimento. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para o problema identificado, cuja efetividade deverá ser confirmada após a implementação e a avaliação do produto mínimo viável (MVP).
 
 **Palavras-chave:** gestão de demandas; help desk; tráfego pago; marketing digital; sistemas de informação.
 
 ## Abstract
 
-This work addresses the management of paid advertising requests in digital marketing agencies, where requests from clients and staff are frequently distributed across messaging applications, emails, and other informal channels. The research problem concerns the fragmentation of this information, which makes it difficult to assign responsibilities and deadlines, monitor service progress, retrieve decisions, and record approvals and evidence. Therefore, the study aims to develop SIGE Desk, a web-based help desk application designed to centralize and track these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, requirements elicitation and specification, BPMN 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, SLA rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. These results indicate that organizing requests as tickets can clarify responsibilities, deadlines, and decisions while reducing context loss and increasing service traceability and transparency. It is preliminarily concluded that SIGE Desk is a technically coherent proposal for the identified problem, although its effectiveness must still be confirmed through MVP implementation and evaluation.
+This work addresses the management of paid advertising requests in digital marketing agencies, where requests from clients and staff are frequently distributed across messaging applications, emails, and other informal channels. The research problem concerns the fragmentation of this information, which makes it difficult to assign responsibilities and deadlines, monitor service progress, retrieve decisions, and record approvals and evidence. Therefore, the study aims to develop SIGE Desk, a web-based help desk application designed to centralize and track these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, requirements elicitation and specification, Business Process Model and Notation (BPMN) 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, service level agreement (SLA) rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. These results indicate that organizing requests as tickets can clarify responsibilities, deadlines, and decisions while reducing context loss and increasing service traceability and transparency. It is preliminarily concluded that SIGE Desk is a technically coherent proposal for the identified problem, although its effectiveness must still be confirmed through minimum viable product (MVP) implementation and evaluation.
 
-**Keywords:** demand management; help desk; paid traffic; digital marketing; information systems.
+**Keywords:** demand management; help desk; paid advertising; digital marketing; information systems.
 
 ## 1. Caracterização da pesquisa
 
@@ -29,7 +29,7 @@ O desenvolvimento será organizado nas etapas a seguir.
 
 ### 2.1 Revisão bibliográfica
 
-A revisão bibliográfica foi realizada de forma estruturada na base **IEEE Xplore**, complementada por fontes normativas e oficiais pertinentes ao projeto: ITIL 4 para gestão de serviços e solicitações, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0.2 para modelagem de processo e LGPD/ANPD para proteção de dados (PEOPLECERT, 2023a, 2023b; ISO/IEC/IEEE, 2018; OMG, 2014; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021).
+A revisão bibliográfica foi realizada em **15 de agosto de 2026**, de forma estruturada, na base **IEEE Xplore**. A ela foram somadas fontes normativas e oficiais pertinentes ao projeto e, exclusivamente para fundamentar o instrumento de usabilidade UEQ-S, um artigo externo localizado em `Referencias/Outras Fontes`; esse artigo não integra os totais do corpus da IEEE Xplore.
 
 O recorte de publicação compreende **2019 a 2026**, de forma inclusiva. Foram aceitos documentos em **inglês**. As buscas foram executadas no campo *Document Title* da IEEE Xplore, com as seguintes expressões booleanas:
 
@@ -54,7 +54,7 @@ AND
 
 Foram incluídos artigos recuperados pelas expressões, publicados no período definido, com resumo ou texto disponível para leitura e que contribuíssem diretamente para pelo menos um dos seguintes aspectos: gestão de demandas ou projetos em agências; centralização de atividades de marketing; operação de campanhas pagas e suas métricas; relacionamento e comunicação com clientes; ou privacidade aplicável ao contexto de campanhas. Foram excluídos estudos cujo foco principal fosse: (a) automação, predição ou personalização por IA fora do escopo do MVP; (b) IoT, sinalização digital ou outro domínio tecnológico sem relação com a gestão de tickets; (c) comportamento de consumo ou nicho de mercado sem contribuição direta para o fluxo de atendimento; ou (d) tema genérico de marketing/CRM já coberto por fonte mais aderente ao problema.
 
-As duas buscas recuperaram **25 artigos sem duplicidade**: 10 na Pesquisa 01 e 15 na Pesquisa 02. Após a leitura de título, resumo e extração de conteúdo, **9 artigos** foram utilizados no referencial teórico e **16 artigos** foram descartados por aderência insuficiente ao problema de pesquisa ou ao escopo do MVP. A relação dos descartes e suas justificativas está documentada em [Tabela - artigos descartados.md](../../Referencias/Tabela%20-%20artigos%20descartados.md).
+As duas buscas recuperaram **25 artigos sem duplicidade**: 10 na Pesquisa 01 e 15 na Pesquisa 02. As duplicidades foram verificadas pela comparação dos DOIs. A triagem consistiu na leitura de títulos e resumos e na verificação da aderência aos critérios de inclusão e exclusão; os trabalhos potencialmente aderentes seguiram para extração de conteúdo. Ao final, **9 artigos** foram utilizados no referencial teórico e **16 artigos** foram descartados conforme esses critérios. A relação dos descartes e suas justificativas está documentada em [Tabela - artigos descartados.md](../../Referencias/Tabela%20-%20artigos%20descartados.md).
 
 Os artigos selecionados foram usados para fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizou trabalhos sobre gestão de projetos em agência, plataformas de marketing, gestão de campanhas, orçamento, métricas de desempenho, privacidade e rastreabilidade.
 
@@ -76,9 +76,9 @@ As respostas serão organizadas por categorias, como entrada da demanda, prioriz
 
 ### 2.3 Modelagem do processo e do protótipo
 
-Com base nos requisitos validados, será modelado o fluxo atual (**As Is**) e o fluxo de vida desejado (**To Be**) do ticket: abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento. A representação do processo futuro adotará BPMN 2.0.2, distinguindo Cliente e Agência como participantes e Atendimento/Gestor de conta e Gestor de tráfego como responsabilidades internas (OMG, 2014). Também serão refinados os perfis de usuário, regras de negócio, dados necessários, SLAs e telas principais.
+O fluxo de vida desejado (**To Be**) e o esboço do protótipo de baixa fidelidade já foram elaborados a partir dos requisitos preliminares. O fluxo atual (**As Is**) ainda será levantado com os perfis envolvidos, e o modelo To Be será refinado após essa validação. A representação do processo futuro adota Business Process Model and Notation (BPMN) 2.0.2, distinguindo Cliente e Agência como participantes e Atendimento/Gestor de conta e Gestor de tráfego como responsabilidades internas (OMG, 2014). Também serão refinados os perfis de usuário, regras de negócio, dados necessários, acordos de nível de serviço (SLAs) e telas principais.
 
-O protótipo de interface será elaborado de forma incremental. Inicialmente, serão produzidas telas de painel, listagem de tickets, abertura de solicitação e detalhes do ticket. O protótipo deverá evidenciar os principais caminhos do usuário e permitir ajustes antes da implementação da aplicação.
+O protótipo de baixa fidelidade apresenta painel, listagem de tickets, abertura de solicitação e detalhes do ticket. Ele será refinado conforme a validação dos requisitos e deverá evidenciar os principais caminhos do usuário antes da implementação da aplicação.
 
 ### 2.4 Desenvolvimento da aplicação
 
@@ -88,29 +88,9 @@ Integrações automáticas com plataformas de anúncios, previsão por inteligê
 
 ### 2.5 Testes funcionais
 
-Serão elaborados casos de teste a partir dos critérios de aceite dos requisitos. Cada caso deverá informar pré-condição, passos de execução, resultado esperado, resultado obtido e situação final.
+Os casos de teste serão derivados dos critérios de aceite e deverão registrar pré-condição, passos, resultado esperado, resultado obtido e situação final. O catálogo canônico dos quinze cenários, seus requisitos associados e seus resultados esperados está em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais). No artigo, eles são apresentados de forma consolidada no Apêndice de validação.
 
-Os cenários mínimos previstos são:
-
-| ID | Requisito(s) relacionado(s) | Prioridade | Cenário de teste | Resultado esperado |
-| --- | --- | --- | --- | --- |
-| CT-01 | RF-05, RF-06 | Alta | Cliente abre ticket de alteração de campanha. | Ticket recebe identificador, status inicial, urgência informada e prazo desejado. |
-| CT-02 | RF-07, RF-09, RN-03, RN-14 | Alta | Atendimento classifica e atribui o ticket. | Prioridade oficial, prazos de SLA e responsável ficam registrados; confirmação automática não conta como primeira resposta. |
-| CT-03 | RF-08, RF-09, RF-10 | Alta | Gestor atualiza status e inclui comentário. | Histórico registra usuário, data/hora e alteração. |
-| CT-04 | RF-11, RN-08 | Média | Ticket aguarda aprovação do cliente. | O status e a solicitação de aprovação ficam visíveis. |
-| CT-05 | RF-11, RF-12, RN-05, RN-06, RN-11 | Alta | Responsável encaminha a entrega para validação e o cliente solicita correção. | O ticket fica “Em validação”, é reaberto com justificativa e preserva o histórico. |
-| CT-06 | RF-14, RF-16, RF-21, RN-12 | Média | Usuário filtra demandas vencidas. | A listagem retorna apenas tickets com prazo ultrapassado. |
-| CT-07 | RF-20, RN-13 | Alta | Ticket é atribuído, comentado, colocado em aguardo ou validação, vencido, concluído ou reaberto. | Os envolvidos recebem a notificação configurada para o evento. |
-| CT-08 | RF-02, RN-09, RNF-02 | Alta | Cliente tenta consultar ticket de outra organização. | O acesso é negado e a tentativa é registrada conforme a política de auditoria. |
-| CT-09 | RNF-10, RNF-11 | Alta | Administrador executa restauração em ambiente de teste. | Dados e anexos do cenário de teste são recuperados sem violar a retenção definida. |
-| CT-10 | RNF-06 | Média | Usuário abre e lista tickets em base de teste com pelo menos 100 tickets. | Pelo menos 90% das operações concluem em até 2 segundos, sem considerar limitações externas de rede. |
-| CT-11 | RF-22, RN-05, RN-10 | Alta | Administrador configura um tipo de demanda. | Campos obrigatórios, necessidade de aprovação e necessidade de evidência são aplicados aos tickets do tipo configurado. |
-| CT-12 | RF-23 | Alta | Administrador configura o calendário e os prazos do SLA. | Horário, fuso, feriados/recessos e prazo aplicável por prioridade, cliente ou tipo de demanda são usados no cálculo do ticket. |
-| CT-13 | RF-01, RF-02 | Alta | Usuário realiza autenticação e acessa o sistema com seu perfil. | O acesso é autenticado e o usuário visualiza apenas as funções e tickets autorizados. |
-| CT-14 | RF-03, RF-04 | Alta | Administrador ativa/inativa um cliente e cadastra uma campanha. | A campanha fica vinculada ao cliente e clientes inativos não podem receber novas solicitações. |
-| CT-15 | RF-09, RF-17, RNF-04 | Alta | Usuário consulta o histórico completo de um ticket após alterações de status, responsável, prioridade, prazo e aprovação. | O histórico exibe autor, data/hora, motivo, campo alterado, valor anterior e novo valor para cada alteração auditável. |
-
-O critério de aprovação funcional será: 100% dos casos de teste de prioridade alta aprovados, pelo menos 90% do total de casos aprovados e nenhum defeito crítico em aberto. Casos reprovados deverão gerar registro de correção ou justificativa de adiamento.
+O critério de aprovação funcional será 100% dos casos de alta prioridade aprovados, pelo menos 90% do total de casos aprovados e nenhum defeito crítico em aberto. Casos reprovados deverão gerar registro de correção ou justificativa de adiamento.
 
 ### 2.6 Avaliação de usabilidade
 
@@ -148,7 +128,7 @@ Os resultados não terão pretensão de representar todas as agências de market
 
 Para reduzir ambiguidades, os requisitos serão associados a critérios de aceite e casos de teste. A aprovação funcional exigirá 100% de aprovação dos casos de alta prioridade, pelo menos 90% dos casos totais e ausência de defeito crítico. O registro de histórico do ticket permitirá verificar se as regras de negócio foram atendidas. A validação com usuários exigirá ao menos 80% de conclusão sem ajuda, sem tarefa abaixo de 70%, e adotará como meta média geral do UEQ-S superior a 0,8.
 
-Como a avaliação utilizará amostra pequena e por conveniência, a validade externa será limitada. Para aumentar a credibilidade da análise, serão preservados os instrumentos de coleta, a lista de cenários, as decisões de requisitos e os resultados agregados de teste. Limitações e mudanças ocorridas durante o desenvolvimento deverão ser registradas na versão final.
+Como a avaliação utilizará amostra pequena e por conveniência, a validade externa será limitada. A revisão bibliográfica também se limita à IEEE Xplore, ao campo de título e a publicações em inglês; portanto, não pretende esgotar a literatura. Para aumentar a credibilidade da análise, serão preservados os instrumentos de coleta, a lista de cenários, as decisões de requisitos e os resultados agregados de teste. Limitações e mudanças ocorridas durante o desenvolvimento deverão ser registradas na versão final.
 
 ## 6. Cronograma metodológico
 
@@ -161,12 +141,19 @@ Como a avaliação utilizará amostra pequena e por conveniência, a validade ex
 | Testes funcionais e avaliação de usabilidade | Etapas 04 e 05 | Casos de teste, resultados e melhorias. |
 | Revisão e entrega final | Etapa 05 | Versão final da aplicação e documentação. |
 
-## 7. Situação atual
+## 7. Resultados da especificação
+
+A etapa de especificação identificou 23 requisitos funcionais, 11 requisitos não funcionais e 14 regras de negócio. Eles foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança e continuidade. A organização demonstra que a proposta não se limita ao registro de chamados, pois articula controle operacional, transparência para o cliente e apoio à gestão.
+
+O catálogo detalhado, os critérios de aceite e a rastreabilidade estão mantidos somente em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md). No artigo, esse resultado é apresentado de forma sintética e a documentação integral é encaminhada aos apêndices.
+
+## 8. Situação atual
 
 - [x] Pesquisa bibliográfica inicial realizada.
 - [x] Referencial teórico inicial elaborado.
 - [x] Requisitos preliminares definidos.
 - [x] Esboço do protótipo produzido.
+- [x] Síntese dos resultados de especificação elaborada para o artigo; o catálogo completo permanece na documentação do projeto e nos apêndices.
 - [ ] Validação dos requisitos com potenciais usuários.
 - [ ] Implementação da versão inicial do aplicativo.
 - [ ] Testes funcionais executados.

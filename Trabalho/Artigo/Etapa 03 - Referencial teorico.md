@@ -29,7 +29,7 @@ Essas competências mostram que a gestão de demandas não se limita a “recebe
 
 O estudo de Agus et al. (2019) também mostra que agências ocupam posição intermediária em uma cadeia de publicidade digital formada por anunciantes, publishers e plataformas de mídia. Nesse cenário, a agência precisa gerar valor por meio de estratégia, transparência e coordenação. Portanto, registrar solicitações e evidências de execução contribui para a prestação de contas ao cliente e para a organização interna da agência.
 
-## 4. Automação de marketing, CRM e atendimento ao cliente
+## 4. Automação de marketing, gestão do relacionamento com o cliente (CRM) e atendimento ao cliente
 
 Automação de marketing utiliza sistemas para apoiar tarefas repetitivas, segmentação, comunicação, acompanhamento de campanhas e análise de dados. Gujar, Paliwal e Panyam (2024) argumentam que soluções integradas de IA e SaaS podem simplificar fluxos de trabalho, melhorar personalização e apoiar decisões baseadas em dados. Da mesma forma, Younas et al. (2025) propõem uma plataforma web que reúne gestão de campanhas, recomendações, análises, painéis administrativos e interação com usuários.
 
@@ -44,11 +44,11 @@ O acompanhamento de campanhas depende de métricas que relacionam investimento, 
 | Métrica | Significado | Uso na gestão da demanda |
 | --- | --- | --- |
 | Impressões | Quantidade de vezes em que um anúncio foi exibido. | Avaliar alcance da ação e alterações de orçamento. |
-| CTR | Proporção de cliques em relação às impressões. | Avaliar interesse/aderência de anúncio e público. |
-| CPC | Custo médio por clique. | Apoiar pedidos de otimização de custo. |
+| Taxa de cliques (CTR) | Proporção de cliques em relação às impressões. | Avaliar interesse/aderência de anúncio e público. |
+| Custo por clique (CPC) | Custo médio por clique. | Apoiar pedidos de otimização de custo. |
 | Conversão | Ação desejada realizada pelo usuário. | Verificar se a campanha atende ao objetivo. |
-| CPA | Custo médio por conversão/aquisição. | Avaliar eficiência de geração de resultado. |
-| ROAS | Receita atribuída em relação ao investimento em anúncios. | Apoiar análise de retorno, quando houver dados de receita. |
+| Custo por aquisição (CPA) | Custo médio por conversão/aquisição. | Avaliar eficiência de geração de resultado. |
+| Retorno sobre o investimento em anúncios (ROAS) | Receita atribuída em relação ao investimento em anúncios. | Apoiar análise de retorno, quando houver dados de receita. |
 
 Nain et al. (2025) analisaram mudanças de ranking, CTR, CPC, conversão e ROI em campanhas de busca por voz, reforçando a utilidade de registrar métricas antes e depois de uma mudança. Abbonizio et al. (2023) mostram ainda que métricas de tráfego podem ser distorcidas por bots; por isso, resultados de campanha devem ser interpretados com cuidado e com evidências disponíveis.
 
@@ -60,9 +60,9 @@ Rastreabilidade é a capacidade de recuperar o histórico de uma informação ou
 
 A transparência com o cliente é importante porque campanhas envolvem orçamento e decisões que podem afetar resultados. Ao permitir que o cliente consulte o status, envie informações e aprove solicitações, o sistema reduz dúvidas sobre a etapa em que o pedido se encontra. A equipe, por sua vez, terá uma visão organizada de prioridades, responsáveis e prazos.
 
-O sistema deve respeitar princípios de proteção de dados: coletar apenas informações necessárias à demanda, limitar acesso conforme o perfil do usuário e evitar cadastrar dados sensíveis ou bases completas de audiência. A LGPD regula o tratamento de dados pessoais, inclusive em meios digitais (BRASIL, 2018); em complemento, o guia da ANPD recomenda controles de autenticação, autorização e auditoria (AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021). Daoud et al. (2023) destacam que publicidade direcionada deve equilibrar personalização, transparência e privacidade. Assim, o Help Desk armazenará informações operacionais da solicitação, e não dados detalhados de usuários alcançados pelas campanhas. A política de retenção de tickets e anexos, os backups e a recuperação de dados devem ser definidos como requisitos verificáveis do sistema.
+O sistema deve respeitar princípios de proteção de dados: coletar apenas informações necessárias à demanda, limitar acesso conforme o perfil do usuário e evitar cadastrar dados sensíveis ou bases completas de audiência. A Lei Geral de Proteção de Dados Pessoais (LGPD) regula o tratamento de dados pessoais, inclusive em meios digitais (BRASIL, 2018); em complemento, o guia da Autoridade Nacional de Proteção de Dados (ANPD) recomenda controles de autenticação, autorização e auditoria (AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021). Daoud et al. (2023) destacam que publicidade direcionada deve equilibrar personalização, transparência e privacidade. Assim, o Help Desk armazenará informações operacionais da solicitação, e não dados detalhados de usuários alcançados pelas campanhas. A política de retenção de tickets e anexos, os backups e a recuperação de dados devem ser definidos como requisitos verificáveis do sistema.
 
-A especificação dos requisitos deve manter linguagem clara, prioridade, origem e critério de verificação, conforme a ISO/IEC/IEEE 29148:2018. Para representar o fluxo proposto, a BPMN 2.0.2 permite distinguir participantes, responsabilidades, atividades, eventos e decisões, facilitando a validação do processo com cliente e equipe (ISO/IEC/IEEE, 2018; OMG, 2014).
+A especificação dos requisitos deve manter linguagem clara, prioridade, origem e critério de verificação, conforme a ISO/IEC/IEEE 29148:2018. Para representar o fluxo proposto, a Business Process Model and Notation (BPMN) 2.0.2 permite distinguir participantes, responsabilidades, atividades, eventos e decisões, facilitando a validação do processo com cliente e equipe (ISO/IEC/IEEE, 2018; OMG, 2014).
 
 ## 7. Síntese do marco teórico
 

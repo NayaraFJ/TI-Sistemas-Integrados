@@ -48,7 +48,7 @@ Tráfego pago é o investimento em plataformas de publicidade para levar usuári
 
 Agências atuam em ambiente de múltiplos canais, prazos curtos e comunicação constante com os clientes. Planejamento, comunicação, adaptação, gestão de tempo, monitoramento e análise de dados são competências fundamentais nesse contexto \cite{steponaitis2023}. A agência também ocupa posição intermediária na cadeia de publicidade digital entre anunciantes, publishers e plataformas de mídia \cite{agus2019}; portanto, transparência e coordenação são elementos importantes para a entrega de valor.
 
-Indicadores como impressões, CTR, CPC, conversão, CPA e ROAS permitem contextualizar uma solicitação e avaliar os resultados de uma alteração. A Tabela \ref{tab:metricas-campanha} relaciona esses indicadores ao uso previsto na gestão das demandas.
+Indicadores como impressões, taxa de cliques (CTR), custo por clique (CPC), conversão, custo por aquisição (CPA) e retorno sobre o investimento em anúncios (ROAS) permitem contextualizar uma solicitação e avaliar os resultados de uma alteração. A Tabela \ref{tab:metricas-campanha} relaciona esses indicadores ao uso previsto na gestão das demandas.
 
 \begin{table}[H]
 \centering
@@ -70,13 +70,13 @@ ROAS & Receita atribuída em relação ao investimento. & Apoiar análise de ret
 \par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do referencial teórico.
 \end{table}
 
-No projeto, essas métricas serão registradas como contexto ou evidência quando aplicável; não serão calculadas automaticamente no MVP. Essa decisão mantém o escopo viável e preserva a ligação entre o ticket e o desempenho da campanha. A interpretação dos indicadores também exige cautela, pois métricas de tráfego podem ser distorcidas por acessos automatizados \cite{nain2025,abbonizio2023}.
+No projeto, essas métricas serão registradas como contexto ou evidência quando aplicável; não serão calculadas automaticamente no produto mínimo viável (MVP). Essa decisão mantém o escopo viável e preserva a ligação entre o ticket e o desempenho da campanha. A interpretação dos indicadores também exige cautela, pois métricas de tráfego podem ser distorcidas por acessos automatizados \cite{nain2025,abbonizio2023}.
 
 \subsection{Centralização, relacionamento e proteção de dados}
 
-Soluções integradas de marketing e CRM reduzem a fragmentação de informações, apoiam a comunicação e fortalecem o relacionamento com clientes \cite{gujar2024,younas2025,kharisma2024}. No SIGE Desk, o ticket será o registro da interação entre cliente e agência: concentrará a solicitação, as mensagens, as aprovações e as evidências, sem substituir ferramentas de mídia ou CRM.
+Soluções integradas de marketing e de gestão do relacionamento com o cliente (CRM) reduzem a fragmentação de informações, apoiam a comunicação e fortalecem o relacionamento com clientes \cite{gujar2024,younas2025,kharisma2024}. No SIGE Desk, o ticket será o registro da interação entre cliente e agência: concentrará a solicitação, as mensagens, as aprovações e as evidências, sem substituir ferramentas de mídia ou CRM.
 
-A rastreabilidade será obtida pelo número do ticket, pelas datas, pelo usuário responsável, pelo histórico de status, pelos comentários, anexos e decisões de aprovação. Como o projeto tratará dados operacionais, a coleta será limitada ao necessário para a gestão da demanda. A LGPD regula o tratamento de dados pessoais em meios digitais \cite{brasil2018}, e a ANPD recomenda controles de autenticação, autorização e auditoria \cite{anpd2021}. Além disso, a publicidade direcionada exige equilíbrio entre personalização, transparência e privacidade, pois a percepção do consumidor sobre o uso de seus dados influencia a confiança no serviço \cite{daoud2023}. Assim, o sistema não armazenará credenciais de plataformas, bases de audiência ou dados pessoais sensíveis.
+A rastreabilidade será obtida pelo número do ticket, pelas datas, pelo usuário responsável, pelo histórico de status, pelos comentários, anexos e decisões de aprovação. Como o projeto tratará dados operacionais, a coleta será limitada ao necessário para a gestão da demanda. A Lei Geral de Proteção de Dados Pessoais (LGPD) regula o tratamento de dados pessoais em meios digitais \cite{brasil2018}, e a Autoridade Nacional de Proteção de Dados (ANPD) recomenda controles de autenticação, autorização e auditoria \cite{anpd2021}. Além disso, a publicidade direcionada exige equilíbrio entre personalização, transparência e privacidade, pois a percepção do consumidor sobre o uso de seus dados influencia a confiança no serviço \cite{daoud2023}. Assim, o sistema não armazenará credenciais de plataformas, bases de audiência ou dados pessoais sensíveis.
 
 \section{METODOLOGIA}
 
@@ -86,7 +86,7 @@ Esta é uma pesquisa aplicada, pois propõe e constrói uma solução para um pr
 
 \subsection{Revisão bibliográfica}
 
-A revisão bibliográfica foi realizada de forma estruturada na base IEEE Xplore e complementada por fontes normativas e oficiais pertinentes ao projeto. O recorte compreendeu publicações em inglês, de 2019 a 2026, inclusive. As buscas foram executadas no campo \textit{Document Title} para combinar o tema marketing digital com termos relacionados, de um lado, à gestão, à automação e ao relacionamento com clientes e, de outro, à operação de campanhas e publicidade paga. O Quadro \ref{qua:buscas-ieee} apresenta as expressões booleanas empregadas.
+A revisão bibliográfica foi realizada em 15 de agosto de 2026, de forma estruturada, na base IEEE Xplore. O recorte compreendeu publicações em inglês, de 2019 a 2026, inclusive. As buscas foram executadas no campo \textit{Document Title} para combinar o tema marketing digital com termos relacionados, de um lado, à gestão, à automação e ao relacionamento com clientes e, de outro, à operação de campanhas e publicidade paga. O Quadro \ref{qua:buscas-ieee} apresenta as expressões booleanas empregadas.
 
 \begin{quadro}[H]
 \centering
@@ -108,7 +108,7 @@ Foram incluídos artigos recuperados por essas expressões que estivessem dentro
 
 Foram excluídos estudos cujo foco principal fosse: (a) automação, predição ou personalização por inteligência artificial sem relação direta com a gestão de demandas e fora do escopo do MVP; (b) Internet das Coisas, sinalização digital ou outro domínio tecnológico sem relação com tickets; (c) comportamento de consumo ou nicho de mercado sem contribuição direta para o fluxo de atendimento; ou (d) tema genérico de marketing ou CRM já contemplado por fonte mais aderente ao problema investigado. O descarte representa somente insuficiência de aderência ao problema e ao escopo do sistema, não uma avaliação negativa da qualidade dos artigos.
 
-As duas buscas recuperaram 25 artigos sem duplicidade: dez na Pesquisa 01 e quinze na Pesquisa 02. A triagem compreendeu a leitura de títulos e resumos, seguida da extração de conteúdo dos trabalhos potencialmente aderentes. Ao final, nove artigos foram utilizados no referencial teórico e dezesseis foram descartados conforme os critérios apresentados. A relação individual dos trabalhos descartados e as respectivas justificativas foram preservadas no registro de triagem bibliográfica da pesquisa. A Tabela \ref{tab:selecao-bibliografica} sintetiza esse processo.
+As duas buscas recuperaram 25 artigos sem duplicidade: dez na Pesquisa 01 e quinze na Pesquisa 02. A identificação de duplicidades foi feita pela comparação dos DOIs. A triagem compreendeu a leitura de títulos e resumos e a verificação de aderência aos critérios de inclusão e exclusão apresentados; os trabalhos potencialmente aderentes seguiram para extração de conteúdo. Ao final, nove artigos foram utilizados no referencial teórico e dezesseis foram descartados conforme esses critérios. A relação individual dos trabalhos descartados e as respectivas justificativas foi preservada no registro de triagem bibliográfica da pesquisa. A Tabela \ref{tab:selecao-bibliografica} sintetiza esse processo.
 
 \begin{table}[H]
 \centering
@@ -129,7 +129,7 @@ Descartados após a triagem & 16 \\
 
 Os trabalhos selecionados foram analisados com a finalidade de fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizou contribuições sobre gestão de projetos em agências, plataformas de marketing, gestão de campanhas, distribuição de orçamento, métricas de desempenho, relacionamento com clientes, privacidade e rastreabilidade.
 
-Também foram adotadas fontes para orientar as escolhas de projeto: ITIL 4 para Service Desk e solicitações de serviço, ISO/IEC/IEEE 29148 para requisitos, BPMN 2.0.2 para modelagem do processo e LGPD/ANPD para proteção de dados \cite{servicedesk2023,servicerequest2023,iso29148,omg2014,brasil2018,anpd2021}.
+Além do corpus da IEEE Xplore, foi utilizado um artigo externo especificamente para fundamentar o instrumento UEQ-S de avaliação de usabilidade \cite{schrepp2017}; ele não integra os totais da seleção bibliográfica. Também foram adotadas fontes para orientar as escolhas de projeto: ITIL 4 para Service Desk e solicitações de serviço, ISO/IEC/IEEE 29148 para requisitos, Business Process Model and Notation (BPMN) 2.0.2 para modelagem do processo e LGPD/ANPD para proteção de dados \cite{servicedesk2023,servicerequest2023,iso29148,omg2014,brasil2018,anpd2021}.
 
 \subsection{Levantamento e validação de requisitos}
 
@@ -139,9 +139,9 @@ As respostas serão organizadas nas categorias entrada da demanda, priorização
 
 \subsection{Modelagem, prototipação e desenvolvimento}
 
-Com base nos requisitos validados, serão modelados o fluxo atual (\textit{As Is}) e o fluxo desejado (\textit{To Be}). O processo futuro abrangerá abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento, distinguindo o Cliente e a Agência como participantes e o Atendimento ou gestor de conta e o Gestor de tráfego como responsabilidades internas. O modelo será submetido aos perfis envolvidos para verificar a adequação da sequência, dos pontos de aprovação, das permissões, das evidências e das situações de retrabalho.
+O fluxo desejado (\textit{To Be}) e o esboço do protótipo de baixa fidelidade já foram elaborados a partir dos requisitos preliminares. O fluxo atual (\textit{As Is}) ainda será levantado com os perfis envolvidos, e o modelo \textit{To Be} será refinado após essa validação. O processo futuro abrange abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento, distinguindo o Cliente e a Agência como participantes e o Atendimento ou gestor de conta e o Gestor de tráfego como responsabilidades internas.
 
-O protótipo será elaborado incrementalmente, inicialmente com painel, listagem de tickets, abertura de solicitação e detalhes do ticket. A aplicação web será implementada em ciclos curtos, nos quais requisitos priorizados serão selecionados, implementados, testados e ajustados. O foco do MVP será cadastro, autenticação, tickets, comentários, histórico, estados, prazos, responsáveis, notificações, filtros e controle de acesso; integrações com plataformas de anúncios, previsão por inteligência artificial e execução automática de mudanças permanecerão fora do escopo.
+O protótipo de baixa fidelidade apresenta painel, listagem de tickets, abertura de solicitação e detalhes do ticket; ele será refinado conforme a validação dos requisitos. A aplicação web será implementada em ciclos curtos, nos quais requisitos priorizados serão selecionados, implementados, testados e ajustados. O foco do produto mínimo viável (MVP) será cadastro, autenticação, tickets, comentários, histórico, estados, prazos, responsáveis, notificações, filtros e controle de acesso; integrações com plataformas de anúncios, previsão por inteligência artificial e execução automática de mudanças permanecerão fora do escopo.
 
 \subsection{Testes funcionais}
 
@@ -163,17 +163,19 @@ Os dados qualitativos provenientes de entrevistas, observações e comentários 
 
 \subsection{Critérios de qualidade e validade}
 
-A associação entre requisitos, critérios de aceite e casos de teste será utilizada para reduzir ambiguidades e verificar as regras de negócio. Serão preservados os instrumentos de coleta, cenários, decisões de requisitos e resultados agregados. A amostra reduzida e por conveniência limita a validade externa; por isso, substituições de participantes, alterações de procedimento, limitações e decisões ocorridas durante o desenvolvimento deverão ser registradas na versão final.
+A associação entre requisitos, critérios de aceite e casos de teste será utilizada para reduzir ambiguidades e verificar as regras de negócio. Serão preservados os instrumentos de coleta, cenários, decisões de requisitos e resultados agregados. A revisão bibliográfica foi delimitada à IEEE Xplore, ao campo de título e a publicações em inglês; portanto, não tem a pretensão de esgotar a literatura. O artigo externo sobre o UEQ-S foi incluído exclusivamente como base metodológica. A amostra reduzida e por conveniência limita a validade externa; por isso, substituições de participantes, alterações de procedimento, limitações e decisões ocorridas durante o desenvolvimento deverão ser registradas na versão final.
 
-\section{PROPOSTA DA SOLUÇÃO}
+\section{RESULTADOS DA ESPECIFICAÇÃO E PROPOSTA DA SOLUÇÃO}
 
-\subsection{Escopo do MVP}
+A etapa de especificação resultou na identificação de 23 requisitos funcionais, 11 requisitos não funcionais e 14 regras de negócio. Os requisitos foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança e continuidade. Essa organização evidencia que a proposta não se limita ao registro de chamados, pois articula o controle operacional das demandas com transparência para o cliente e apoio à gestão. A especificação completa, incluindo critérios de aceite e rastreabilidade, está disponível no Apêndice \ref{ap:especificacao}.
+
+\subsection{Síntese dos resultados de especificação e escopo do MVP}
 
 O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago entre clientes e equipe de uma agência. O MVP contempla o registro de criação, alteração ou pausa de anúncios; ajustes de orçamento, público, segmentação e criativos; solicitação de relatórios; análise de métricas; e aprovação de entregas. Não fazem parte do escopo inicial integrações automáticas com APIs de anúncios, execução automática de alterações, geração de recomendações por inteligência artificial, cálculo automatizado de métricas, faturamento ou armazenamento de bases de audiência.
 
 \subsection{Perfis e processo de atendimento}
 
-O cliente abre solicitações, consulta sua situação, complementa informações e aprova ou solicita correções. O atendimento ou gestor de conta realiza a triagem, define prioridade e prazo, atribui responsável e acompanha o SLA. O gestor de tráfego executa a demanda, registra ação e evidência e a encaminha para validação. O administrador mantém usuários, clientes, campanhas, tipos de demanda, regras e configurações do sistema.
+O cliente abre solicitações, consulta sua situação, complementa informações e aprova ou solicita correções. O atendimento ou gestor de conta realiza a triagem, define prioridade e prazo, atribui responsável e acompanha o acordo de nível de serviço (SLA). O gestor de tráfego executa a demanda, registra ação e evidência e a encaminha para validação. O administrador mantém usuários, clientes, campanhas, tipos de demanda, regras e configurações do sistema.
 
 O processo To Be inicia com o registro da solicitação. Na triagem, o atendimento verifica a completude das informações, classifica a demanda, define a prioridade e os prazos e atribui um responsável. A demanda é então executada; quando há necessidade de informação adicional, o ticket fica aguardando o cliente. Após o registro da ação e da evidência, o ticket entra em validação. A aprovação encerra o atendimento; uma solicitação de correção o reabre, preservando o histórico anterior. A Figura \ref{fig:processo-to-be} apresenta esse fluxo.
 
@@ -269,7 +271,3 @@ Os requisitos foram organizados conforme a ISO/IEC/IEEE 29148 \cite{iso29148}. P
 O SIGE Desk foi proposto para transformar comunicações dispersas em um fluxo de atendimento rastreável, com responsáveis, prazos, validações e evidências. A solução combina fundamentos de gestão de serviços, marketing digital, gestão de projetos e proteção de dados para responder ao problema de centralização das demandas de tráfego pago.
 
 O trabalho encontra-se na fase de especificação e prototipação. A continuidade prevê validar os requisitos com potenciais usuários, implementar o MVP, executar os casos de teste e registrar os resultados da avaliação de usabilidade. Esses resultados permitirão ajustar o processo, os requisitos e a interface antes de uma eventual adoção em contexto real.
-
-\appendix
-\input{apendice-especificacao}
-\input{apendice-validacao}

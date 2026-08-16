@@ -1,10 +1,10 @@
 # Help Desk para Gestão de Demandas de Tráfego Pago
 
-## Etapa 03 — Requisitos preliminares do aplicativo
+## Documentação do projeto — Especificação preliminar do sistema
 
 > Este documento reúne requisitos iniciais derivados do problema, objetivos e referencial teórico. Eles devem ser validados com usuários e podem ser refinados antes da implementação.
 
-> A estrutura de requisitos e rastreabilidade adota como referência a engenharia de requisitos da ISO/IEC/IEEE 29148; o fluxo de solicitações considera a prática ITIL 4 de gerenciamento de solicitações; e os controles de acesso e retenção consideram a LGPD e as orientações da ANPD. A representação do processo correspondente está documentada em BPMN 2.0.2 no arquivo da Etapa 02 (ISO/IEC/IEEE, 2018; PEOPLECERT, 2023; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021; OMG, 2014).
+> A estrutura de requisitos e rastreabilidade adota como referência a engenharia de requisitos da ISO/IEC/IEEE 29148; o fluxo de solicitações considera a prática ITIL 4 de gerenciamento de solicitações; e os controles de acesso e retenção consideram a Lei Geral de Proteção de Dados Pessoais (LGPD) e as orientações da Autoridade Nacional de Proteção de Dados (ANPD). A representação do processo correspondente está documentada em Business Process Model and Notation (BPMN) 2.0.2 no arquivo [BPMN - Processo To Be.md](../Processo/BPMN%20-%20Processo%20To%20Be.md) (ISO/IEC/IEEE, 2018; PEOPLECERT, 2023; BRASIL, 2018; AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021; OMG, 2014).
 
 ## 1. Visão do produto
 
@@ -27,7 +27,7 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | RF-02 | O sistema deve controlar permissões conforme o perfil de usuário. | Alta |
 | RF-03 | O administrador deve poder cadastrar, editar, ativar e inativar clientes; clientes inativos não devem ficar disponíveis para novas solicitações. | Alta |
 | RF-04 | O administrador ou atendimento deve poder cadastrar campanhas vinculadas a um cliente. | Alta |
-| RF-05 | O sistema deve permitir abrir ticket com cliente, campanha, canal, tipo, urgência informada, prazo desejado, assunto e descrição. A prioridade oficial e os prazos de SLA serão definidos na triagem. | Alta |
+| RF-05 | O sistema deve permitir abrir ticket com cliente, campanha, canal, tipo, urgência informada, prazo desejado, assunto e descrição. A prioridade oficial e os prazos de acordo de nível de serviço (SLA) serão definidos na triagem. | Alta |
 | RF-06 | O sistema deve gerar identificador único para cada ticket. | Alta |
 | RF-07 | O atendimento deve poder classificar e atribuir um ticket a um responsável. | Alta |
 | RF-08 | O responsável deve poder atualizar o status do ticket. | Alta |
@@ -40,7 +40,7 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 | RF-15 | O painel deve apresentar total de tickets por status, prioridade, responsável e prazo. | Média |
 | RF-16 | O sistema deve identificar tickets vencidos e tickets aguardando resposta do cliente. | Média |
 | RF-17 | O sistema deve permitir consultar histórico completo de cada ticket. | Alta |
-| RF-18 | O sistema deve permitir registrar métricas de contexto, como CTR, CPC, conversão, CPA e ROAS, quando aplicável. | Baixa |
+| RF-18 | O sistema deve permitir registrar métricas de contexto, como taxa de cliques (CTR), custo por clique (CPC), conversão, custo por aquisição (CPA) e retorno sobre o investimento em anúncios (ROAS), quando aplicável. | Baixa |
 | RF-19 | O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. | Baixa |
 | RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail aos envolvidos autorizados conforme o evento — solicitante, responsável, Atendimento/gestor de conta e Administrador — quando o ticket for atribuído, comentado, estiver aguardando cliente, entrar em validação, vencer ou for concluído/reaberto. | Alta |
 | RF-21 | O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. | Alta |
@@ -65,7 +65,7 @@ O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago e
 
 ## 5. Acordos de nível de serviço (SLA) preliminares
 
-Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o MVP. Na ausência de configuração específica de cliente ou tipo de demanda, o calendário padrão será de segunda a sexta-feira, das 08h às 18h, no fuso horário `America/Sao_Paulo`, excluídos os feriados nacionais e os feriados ou recessos cadastrados pela agência. Somente os intervalos inseridos nesse calendário serão contabilizados como horas úteis.
+Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o produto mínimo viável (MVP). Na ausência de configuração específica de cliente ou tipo de demanda, o calendário padrão será de segunda a sexta-feira, das 08h às 18h, no fuso horário `America/Sao_Paulo`, excluídos os feriados nacionais e os feriados ou recessos cadastrados pela agência. Somente os intervalos inseridos nesse calendário serão contabilizados como horas úteis.
 
 O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registrado ao solicitante; o prazo de resolução vai da abertura à conclusão. A confirmação automática de recebimento não encerra a primeira resposta. Ao entrar em **Aguardando cliente**, o relógio de resolução deve ser pausado, preservando-se o tempo útil restante, e deve voltar a contar ao sair desse status. O status **Em validação** não pausa o SLA, salvo regra específica configurada pela agência. Quando um ticket concluído for reaberto, o sistema deve preservar os prazos e resultados do ciclo anterior, iniciar um novo ciclo de resolução a partir da reabertura conforme a prioridade vigente e não reiniciar o prazo de primeira resposta já cumprido.
 
@@ -192,7 +192,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | RT-03 | Retrabalho e ausência de aprovação | RF-11, RF-12, RF-22, RN-05, RN-06, RN-11 | Validação, evidência, configuração do tipo e reabertura com justificativa — CT-05 e CT-11. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-04 | Atrasos e comunicação insuficiente | RF-16, RF-20, RN-12, RN-13 | Vencimento e eventos geram indicação e notificação — CT-06 e CT-07. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-05 | Proteção de dados e continuidade | RF-02, RNF-02, RNF-10, RNF-11 | Acesso por organização e restauração de backup — CT-08 e CT-09. | Alta | Grupo TI SIGE 1 | 1.0 |
-| RT-06 | Interface compreensível para diferentes perfis | RNF-01, RNF-09 | Teste de tarefas e UEQ-S conforme Etapa 04. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-06 | Interface compreensível para diferentes perfis | RNF-01, RNF-09 | Teste de tarefas e UEQ-S conforme [Etapa 04 - Metodologia.md](../../Artigo/Etapa%2004%20-%20Metodologia.md). | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-07 | Necessidade de resposta previsível no uso diário | RNF-06 | Abertura e listagem atendem ao tempo definido — CT-10. | Média | Grupo TI SIGE 1 | 1.0 |
 
 ## Anexo D — Matriz de notificações

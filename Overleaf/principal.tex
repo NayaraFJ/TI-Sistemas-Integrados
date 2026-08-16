@@ -10,6 +10,17 @@
 \usepackage{verbatim}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{url}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+\emergencystretch=2em
+
+\addto\captionsbrazilian{\renewcommand{\contentsname}{SUMÁRIO}}
+\renewcommand{\cfttoctitlefont}{\hfill\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{1.5\baselineskip}
 
 \newcommand{\titulo}{Help Desk para Gestão de Demandas de Tráfego Pago}
 \newcommand{\instituicao}{Pontifícia Universidade Católica de Minas Gerais}
@@ -18,6 +29,15 @@
 \newcommand{\professor}{Prof. Dr. Paulo Isnard}
 \newcommand{\cidade}{Contagem}
 \newcommand{\anoentrega}{2026}
+\newcommand{\integrantes}{%
+Augusto do Couto Avelar\\
+Gabriel Fernandes de Araújo\\
+Gabriel Rocha Lopes\\
+Karine Kessen Gilberti Felix\\
+Lorrainy Pâmela Siqueira Ferreira\\
+Maria Heloisa Aguiar Mendes\\
+Nayara Ferreira de Jesus Rodrigues\\
+Pedro Henrique Assuncao}
 \providecommand{\htmladdnormallink}[2]{\url{#2}}
 
 \begin{document}
@@ -34,14 +54,7 @@ Instituto de Ciências Exatas e de Informática\\
 \vspace{2.2cm}
 \begin{flushleft}\small
 \textbf{Grupo:} 2 2026 -- PBR -- TI SIGE 1\\[0.25cm]
-Augusto do Couto Avelar\\
-Gabriel Fernandes de Araújo\\
-Gabriel Rocha Lopes\\
-Karine Kessen Gilberti Felix\\
-Lorrainy Pâmela Siqueira Ferreira\\
-Maria Heloisa Aguiar Mendes\\
-Nayara Ferreira de Jesus Rodrigues\\
-Pedro Henrique Assuncao
+\integrantes
 \end{flushleft}
 
 \vfill
@@ -54,9 +67,13 @@ Pedro Henrique Assuncao
 \end{titlepage}
 
 \begin{titlepage}
+\setcounter{page}{1}
 \thispagestyle{empty}
 \begin{center}
-\vspace*{2cm}
+\vspace*{1cm}
+{\small\integrantes}
+
+\vspace{2cm}
 \textbf{\MakeUppercase{\titulo}}
 \end{center}
 
@@ -76,12 +93,13 @@ Professor: \professor
 \anoentrega
 \end{center}
 \end{titlepage}
+\setcounter{page}{2}
 
 \pagestyle{empty}
 \begin{center}\textbf{RESUMO}\end{center}
 \onehalfspacing
 \justifying
-\noindent Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital, contexto em que solicitações de clientes e da equipe são frequentemente distribuídas entre aplicativos de mensagens, e-mails e outros canais informais. O problema investigado consiste na dispersão dessas informações, que dificulta a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. Diante disso, o estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a centralizar e rastrear essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, levantamento e especificação de requisitos, modelagem do processo em BPMN 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de SLA, os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Esses resultados indicam que a organização das demandas em tickets pode explicitar responsabilidades, prazos e decisões, reduzindo a perda de contexto e ampliando a rastreabilidade e a transparência do atendimento. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para o problema identificado, cuja efetividade deverá ser confirmada após a implementação e a avaliação do MVP.
+\noindent Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital, contexto em que solicitações de clientes e da equipe são frequentemente distribuídas entre aplicativos de mensagens, e-mails e outros canais informais. O problema investigado consiste na dispersão dessas informações, que dificulta a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. Diante disso, o estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a centralizar e rastrear essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, levantamento e especificação de requisitos, modelagem do processo em Business Process Model and Notation (BPMN) 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de acordo de nível de serviço (SLA), os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Esses resultados indicam que a organização das demandas em tickets pode explicitar responsabilidades, prazos e decisões, reduzindo a perda de contexto e ampliando a rastreabilidade e a transparência do atendimento. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para o problema identificado, cuja efetividade deverá ser confirmada após a implementação e a avaliação do produto mínimo viável (MVP).
 
 \vspace{\baselineskip}
 \noindent\textbf{Palavras-chave:} gestão de demandas; help desk; tráfego pago; marketing digital; sistemas de informação.
@@ -89,10 +107,10 @@ Professor: \professor
 
 \begin{center}\textbf{ABSTRACT}\end{center}
 \selectlanguage{english}
-\noindent This work addresses the management of paid advertising requests in digital marketing agencies, where requests from clients and staff are frequently distributed across messaging applications, emails, and other informal channels. The research problem concerns the fragmentation of this information, which makes it difficult to assign responsibilities and deadlines, monitor service progress, retrieve decisions, and record approvals and evidence. Therefore, the study aims to develop SIGE Desk, a web-based help desk application designed to centralize and track these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, requirements elicitation and specification, BPMN 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, SLA rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. These results indicate that organizing requests as tickets can clarify responsibilities, deadlines, and decisions while reducing context loss and increasing service traceability and transparency. It is preliminarily concluded that SIGE Desk is a technically coherent proposal for the identified problem, although its effectiveness must still be confirmed through MVP implementation and evaluation.
+\noindent This work addresses the management of paid advertising requests in digital marketing agencies, where requests from clients and staff are frequently distributed across messaging applications, emails, and other informal channels. The research problem concerns the fragmentation of this information, which makes it difficult to assign responsibilities and deadlines, monitor service progress, retrieve decisions, and record approvals and evidence. Therefore, the study aims to develop SIGE Desk, a web-based help desk application designed to centralize and track these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, requirements elicitation and specification, Business Process Model and Notation (BPMN) 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, service level agreement (SLA) rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. These results indicate that organizing requests as tickets can clarify responsibilities, deadlines, and decisions while reducing context loss and increasing service traceability and transparency. It is preliminarily concluded that SIGE Desk is a technically coherent proposal for the identified problem, although its effectiveness must still be confirmed through minimum viable product (MVP) implementation and evaluation.
 
 \vspace{\baselineskip}
-\noindent\textbf{Keywords:} demand management; help desk; paid traffic; digital marketing; information systems.
+\noindent\textbf{Keywords:} demand management; help desk; paid advertising; digital marketing; information systems.
 \selectlanguage{brazilian}
 \clearpage
 
@@ -116,5 +134,10 @@ Professor: \professor
 \addcontentsline{toc}{section}{REFERÊNCIAS}
 \bibliography{bibliografia}
 \endgroup
+
+\clearpage
+\appendix
+\input{apendice-especificacao}
+\input{apendice-validacao}
 
 \end{document}
