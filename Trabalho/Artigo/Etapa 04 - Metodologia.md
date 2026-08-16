@@ -130,16 +130,24 @@ Para reduzir ambiguidades, os requisitos serão associados a critérios de aceit
 
 Como a avaliação utilizará amostra pequena e por conveniência, a validade externa será limitada. A revisão bibliográfica também se limita à IEEE Xplore, ao campo de título e a publicações em inglês; portanto, não pretende esgotar a literatura. Para aumentar a credibilidade da análise, serão preservados os instrumentos de coleta, a lista de cenários, as decisões de requisitos e os resultados agregados de teste. Limitações e mudanças ocorridas durante o desenvolvimento deverão ser registradas na versão final.
 
-## 6. Cronograma metodológico
+## 6. Cronograma de atividades do artigo e do projeto
 
-| Etapa | Período previsto | Produto |
-| --- | --- | --- |
-| Revisão bibliográfica | Etapas 01 a 03 | Referencial / marco teórico. |
-| Levantamento e priorização de requisitos | Etapa 03 | Documento de requisitos. |
-| Modelagem e prototipação | Etapas 02 e 03 | Fluxos, telas e regras de negócio. |
-| Desenvolvimento da versão inicial | Etapa 04 | Aplicação web inicial. |
-| Testes funcionais e avaliação de usabilidade | Etapas 04 e 05 | Casos de teste, resultados e melhorias. |
-| Revisão e entrega final | Etapa 05 | Versão final da aplicação e documentação. |
+| Tarefa | 07/08<br>Definição de grupos | 28/08<br>1ª Etapa | 25/09<br>2ª Etapa | 30/10<br>3ª Etapa | 27/11<br>4ª Etapa | 11/12<br>5ª Etapa e apresentação final |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Auto registro no CANVAS, debate de possibilidades, definição de grupo, tema / área e título provisório | X |  |  |  |  |  |
+| Validação do tema e do título; revisão da introdução pelo orientador |  | X |  |  |  |  |
+| Introdução, problemática, justificativa e objetivos |  |  | X |  |  |  |
+| Esboço do protótipo do APP |  |  | X | X |  |  |
+| Referencial / marco teórico |  |  |  | X |  |  |
+| Requisitos do APP |  |  |  | X |  |  |
+| Metodologia |  |  |  |  | X |  |
+| Versão inicial do APP |  |  |  |  | X |  |
+| Versão final do APP |  |  |  |  |  | X |
+| Mostra Tecnológica Interdisciplinar |  |  |  |  |  | X |
+| Artigo completo revisado pelo orientador, no padrão PUC Minas |  |  |  |  |  | X |
+| Apresentação final e demo do APP |  |  |  |  |  | X |
+
+> Em cada etapa, será realizado o envio do link do repositório GitHub correspondente à entrega prevista.
 
 ## 7. Resultados da especificação
 

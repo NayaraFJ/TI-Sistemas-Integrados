@@ -15,6 +15,8 @@ Os arquivos de artigo são complementares, não capítulos para cópia literal. 
 
 Toda alteração acadêmica em `Trabalho/Artigo` deve ser refletida semanticamente em `Overleaf` na mesma tarefa. Toda mudança de processo, protótipo ou especificação em `Trabalho/Documentacao do Projeto` deve atualizar a síntese ou o apêndice correspondente em `Overleaf`, quando afetar o artigo. Quando uma informação já possuir arquivo canônico, use um link para ele em vez de manter cópias concorrentes.
 
+O planejamento interno do desenvolvimento está em [Trabalho/Documentacao do Projeto/BACKLOG.md](Trabalho/Documentacao%20do%20Projeto/BACKLOG.md); ele não integra o artigo.
+
 ## Contexto do projeto
 
 ### Foco na Gestão de Agências e Consultorias
@@ -79,12 +81,12 @@ Fonte: **Trabalho Interdisciplinar — Sistemas Integrados de Gestão Empresaria
 - **Tema / área:** Gestão de Demandas de Marketing Digital — Sistemas de Informação / Gestão de Serviços.
 - **Título provisório:** *Help Desk para Gestão de Demandas de Tráfego Pago.*
 
-| Data  | Etapa / entrega                         | Atividades                                                                                                                      |             Pontos |
-| ----- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -----------------: |
-| 07/08 | Definição de grupos                     | Auto registro no CANVAS; debate de possibilidades; definição de tema/área e título provisório.                                  |                  — |
-| 28/08 | 1ª etapa                                | Postagem do link do repositório GitHub; tema e título validados; introdução revisada pelo orientador.                           |                  5 |
-| 25/09 | 2ª etapa                                | Postagem do link do repositório GitHub; introdução, problemática, justificativa e objetivos; esboço do protótipo do aplicativo. |                 20 |
-| 30/10 | 3ª etapa                                | Postagem do link do repositório GitHub; entregas anteriores, referencial/marco teórico, protótipo do aplicativo e requisitos.   |                 20 |
-| 27/11 | 4ª etapa                                | Postagem do link do repositório GitHub; entregas anteriores, metodologia e versão inicial do aplicativo.                        |                 20 |
-| 11/12 | 5ª etapa                                | Postagem do link do repositório GitHub; versão final do aplicativo e Mostra Tecnológica Interdisciplinar.                       |                 10 |
-| 11/12 | Apresentação final — demo do aplicativo | Versão final completa revisada pelo orientador, no padrão PUC Minas.                                                            | 20 (+5 pontos ADA) |
+| Data | Etapa / entrega | Atividades e entregas | Pontos |
+| --- | --- | --- | ---: |
+| 07/08 | Definição de Grupos | Auto registro no CANVAS.<br>Debate de possibilidades.<br>Tema / Área e Título Provisório. | — |
+| 28/08 | 1ª Etapa | Postagem Repositório GitHub (envio link).<br>Tema e Título validado e **INTRODUÇÃO** revisada pelo orientador. | 05 |
+| 25/09 | 2ª Etapa | Postagem Repositório GitHub (envio link).<br>**INTRODUÇÃO + PROBLEMÁTICA + JUSTIFICATIVA + OBJETIVOS**.<br>Esboço do protótipo do APP. | 20 |
+| 30/10 | 3ª Etapa | Postagem Repositório GitHub (envio link).<br>(anterior +) **REFERENCIAL / MARCO TEÓRICO**.<br>Protótipo do APP + Requisitos. | 20 |
+| 27/11 | 4ª Etapa | Postagem Repositório GitHub (envio link).<br>(anterior +) **METODOLOGIA**.<br>Versão inicial do APP. | 20 |
+| 11/12 | 5ª Etapa | Postagem Repositório GitHub (envio link).<br>Versão Final do APP.<br>Mostra Tecnológica Interdisciplinar. | 10 |
+| 11/12 | APRESENTAÇÃO FINAL — DEMO APP | Versão Final completa revisada pelo orientador.<br>**PADRÃO PUC MINAS**. | 20 (+ 5 pontos) |

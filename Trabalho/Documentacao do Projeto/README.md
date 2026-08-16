@@ -7,5 +7,6 @@ Esta documentação registra as definições técnicas do SIGE Desk. Ela sustent
 | [Processo/BPMN - Processo To Be.md](Processo/BPMN%20-%20Processo%20To%20Be.md) | Processo futuro, participantes e regras de leitura. | Síntese e figura BPMN. |
 | [Prototipo/Prototipo de baixa fidelidade.md](Prototipo/Prototipo%20de%20baixa%20fidelidade.md) | Estrutura das telas e critérios do protótipo. | Síntese das telas e quadros representativos. |
 | [Especificacao/Especificacao do sistema.md](Especificacao/Especificacao%20do%20sistema.md) | Requisitos, regras, dados, rastreabilidade, notificações e aceite. | Síntese de requisitos; catálogo completo em apêndices. |
+| [BACKLOG.md](BACKLOG.md) | Marcos, tarefas, responsáveis, dependências e critérios de entrega. | Gestão interna; não integra o artigo. |
 
 Os arquivos `.bpm` e `.png` do processo ficam em `Processo/` como artefatos de edição e figura-fonte.
