@@ -6,8 +6,10 @@ Este diretório reúne os PDFs e as extrações de leitura que sustentam a pesqu
 
 | Situação | Quantidade | Registro |
 | --- | ---: | --- |
-| Usados no artigo | 9 | [Tabela de artigos utilizados](<Tabela - artigos utilizados.md>) |
-| Excluídos na triagem | 16 | [Tabela de artigos descartados](<Tabela - artigos descartados.md>) |
+| Usados no artigo | 12 | [Tabela de artigos utilizados](<Tabela - artigos utilizados.md>) |
+| Excluídos na triagem | 32 | [Tabela de artigos descartados](<Tabela - artigos descartados.md>) |
+
+> A Pesquisa 03 recuperou 19 artigos de periódicos e conferências sobre Service Desk e comunicação. Três foram selecionados para sustentar ponto único de contato, múltiplos pontos de contato, registro e rastreamento de solicitações; os demais foram documentados como excluídos por baixa aderência ao problema ou ao escopo do MVP.
 
 ## Normas, guias e legislação
 

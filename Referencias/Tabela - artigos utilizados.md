@@ -2,7 +2,7 @@
 
 ## Escopo
 
-Esta tabela registra os nove artigos científicos selecionados do corpus recuperado na IEEE Xplore para fundamentar o artigo **Help Desk para Gestão de Demandas de Tráfego Pago**. Cada linha liga o PDF original à sua extração de leitura. Os 16 registros que não integraram a fundamentação principal estão na [tabela de artigos descartados](<Tabela - artigos descartados.md>).
+Esta tabela registra os doze artigos científicos selecionados do corpus recuperado na IEEE Xplore para fundamentar o artigo **Help Desk para Gestão de Demandas de Tráfego Pago**. Cada linha liga o PDF original à sua extração de leitura. Os 32 registros que não integraram a fundamentação principal estão na [tabela de artigos descartados](<Tabela - artigos descartados.md>).
 
 ## Artigos utilizados
 
@@ -17,5 +17,8 @@ Esta tabela registra os nove artigos científicos selecionados do corpus recuper
 | 02 | Examining the Ethical Implications of Data Privacy and Targeted Advertising in Digital Marketing: Consumer Perceptions | [PDF](<Pesquisa 02/Examining the Ethical Implications of Data Privacy and Targeted Advertising in Digital Marketing Consumer Perceptions.pdf>) | [Extração](<Pesquisa 02/Extracoes/08-privacidade-publicidade-direcionada.md>) |
 | 02 | Impact of Voice-Based Search Queries on Paid Ad Rankings in Digital Marketing Campaigns | [PDF](<Pesquisa 02/Impact of Voice-Based Search Queries on Paid Ad Rankings in Digital Marketing Campaigns.pdf>) | [Extração](<Pesquisa 02/Extracoes/09-voz-anuncios-pagos.md>) |
 | 02 | Machine Learning-Based Classification of the Traffic of Digital Marketing Campaigns | [PDF](<Pesquisa 02/Machine Learning-Based Classification of the Traffic of Digital Marketing Campaigns.pdf>) | [Extração](<Pesquisa 02/Extracoes/13-classificacao-trafego.md>) |
+| 03 | A System Dynamics Model for Managing Service Desk Capacity | [PDF](<Pesquisa 03/A system dynamics model for managing service desk capacity.pdf>) | [Extração](<Pesquisa 03/Extracoes/01-fenner-capacidade-service-desk.md>) |
+| 03 | IT Service Desk Model Literature Review: Benefits and Challenges | [PDF](<Pesquisa 03/IT Service Desk Model Literature Review Benefits and Challenges.pdf>) | [Extração](<Pesquisa 03/Extracoes/02-firmansyah-revisao-service-desk.md>) |
+| 03 | Information-Based Interactive Services and Support System | [PDF](<Pesquisa 03/Information-Based interactive services and support system.pdf>) | [Extração](<Pesquisa 03/Extracoes/03-amanullah-sistema-interativo-suporte.md>) |
 
 > “Utilizado” significa que a fonte compõe a fundamentação do artigo atual; não significa que todos os seus métodos ou tecnologias façam parte do MVP.

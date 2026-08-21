@@ -2,7 +2,7 @@
 
 O marketing digital é uma atividade estratégica para organizações que desejam divulgar produtos e serviços, alcançar públicos específicos e acompanhar resultados por indicadores mensuráveis \cite{gujar2024,younas2025}. Em agências e consultorias, a gestão de tráfego pago envolve a criação e a alteração contínua de campanhas, públicos, orçamentos, criativos e metas em plataformas como Google Ads e Meta Ads. Como diferentes clientes podem demandar essas ações ao mesmo tempo, o trabalho exige coordenação entre atendimento, gestão de tráfego, criação, análise e o próprio cliente \cite{steponaitis2023,agus2019}.
 
-Entretanto, pedidos de alteração de campanha, aprovação de criativo, envio de relatório e análise de métricas são frequentemente enviados por WhatsApp, e-mail ou mensagens diretas. Esses canais favorecem respostas rápidas, mas dispersam informações e dificultam a identificação do pedido original, a definição de responsável, o acompanhamento de prazo, o registro de aprovação e a recuperação das decisões tomadas. O resultado pode ser retrabalho, atrasos, perda de contexto e baixa transparência no atendimento, riscos que as práticas de Service Desk e de gerenciamento de solicitações procuram mitigar por meio de registro, triagem, comunicação e acompanhamento \cite{servicedesk2023,servicerequest2023}.
+Embora os canais efetivamente utilizados por agências devam ser verificados no levantamento de requisitos, a literatura de Service Desk mostra que o encaminhamento de solicitações diretamente a diferentes pessoas pode produzir múltiplos pontos de contato. Em contraposição, o Service Desk é concebido como ponto único de contato para receber, registrar, analisar, encaminhar e acompanhar solicitações \cite{firmansyah2022,fenner2015,amanullah2017}. Quando a demanda não está centralizada, tornam-se mais difíceis a identificação do pedido original, a definição de responsável, o acompanhamento de prazo, o registro de aprovação e a recuperação das decisões tomadas. Esse cenário pode gerar retrabalho, atrasos, perda de contexto e baixa transparência no atendimento, riscos que as práticas de Service Desk e de gerenciamento de solicitações procuram mitigar por meio de registro, triagem, comunicação e acompanhamento \cite{firmansyah2022,servicedesk2023,servicerequest2023}.
 
 Estudos sobre agências de marketing digital apontam planejamento, comunicação, monitoramento, controle, gestão de tempo e análise de dados como competências necessárias à condução de projetos \cite{steponaitis2023}. Por sua vez, plataformas integradas de automação evidenciam o valor de concentrar atividades, indicadores e responsabilidades em um mesmo ambiente \cite{gujar2024,younas2025}. Nesse cenário, este trabalho propõe o SIGE Desk: uma aplicação web de Help Desk para centralizar e rastrear demandas de tráfego pago.
 
@@ -10,7 +10,7 @@ O sistema será voltado ao registro, à triagem, à atribuição, ao acompanhame
 
 \section{PROBLEMA DE PESQUISA}
 
-Uma agência de marketing digital pode receber solicitações de diversos clientes e áreas internas simultaneamente. Quando essas solicitações circulam em canais dispersos, uma demanda pode ser perdida, repassada sem contexto ou executada sem que o cliente consiga acompanhar sua situação. Alterações de orçamento, público ou criativo também podem afetar diretamente o desempenho e o custo de uma campanha; por isso, requerem registro da solicitação, da aprovação e da evidência de execução.
+Uma agência de marketing digital pode receber solicitações de diversos clientes e áreas internas simultaneamente, cenário que exige planejamento, comunicação, monitoramento e coordenação \cite{steponaitis2023,agus2019}. Se as solicitações forem encaminhadas a diferentes pessoas sem um ponto de contato e um registro comum, aumentam as dificuldades para acompanhar responsável, prazo, histórico e andamento do atendimento \cite{firmansyah2022,fenner2015}. Alterações de orçamento, público ou criativo também podem afetar diretamente o desempenho e o custo de uma campanha; por isso, requerem registro da solicitação, da aprovação e da evidência de execução \cite{yahia2024}.
 
 As práticas de Service Desk e de gerenciamento de solicitações de serviço destacam a importância de um ponto de contato, do registro da demanda, da triagem, da comunicação e do acompanhamento até a conclusão \cite{servicedesk2023,servicerequest2023}. A ausência dessa estrutura, no contexto de tráfego pago, causa especialmente perda ou duplicidade de pedidos, dificuldade de priorização, indefinição de responsável e prazo, ausência de histórico, retrabalho e pouca visibilidade para o cliente.
 
@@ -28,7 +28,7 @@ Pretende-se realizar uma revisão bibliográfica de artigos e normas aplicáveis
 
 \section{JUSTIFICATIVA}
 
-O projeto trata de um problema frequente em serviços de marketing digital: a gestão de demandas recebidas por canais informais. Um Help Desk adaptado ao tráfego pago converte mensagens avulsas em registros estruturados e permite acompanhar o ciclo de cada pedido, da abertura ao encerramento. Essa organização está alinhada aos princípios de ponto de contato, registro, comunicação e acompanhamento previstos pelas práticas ITIL 4 \cite{servicedesk2023,servicerequest2023}.
+O projeto investiga como centralizar e rastrear demandas de tráfego pago quando elas são encaminhadas a múltiplos pontos de contato. Um Help Desk adaptado ao tráfego pago converte solicitações em registros estruturados e permite acompanhar o ciclo de cada pedido, da abertura ao encerramento. Essa organização está alinhada aos princípios de ponto de contato, registro, comunicação e acompanhamento previstos pelas práticas ITIL 4 \cite{firmansyah2022,servicedesk2023,servicerequest2023}.
 
 Do ponto de vista organizacional, a solução poderá reduzir retrabalho, melhorar a distribuição das tarefas e facilitar a prestação de contas. A equipe terá uma fila de trabalho com responsáveis, prioridades e prazos; o cliente poderá consultar a situação e o histórico de sua solicitação; e a gestão poderá acompanhar indicadores de volume, tempo de atendimento, vencimentos e tipos de demanda.
 
@@ -38,9 +38,9 @@ Do ponto de vista acadêmico, o trabalho integra Sistemas de Informação, Gest�
 
 \subsection{Gestão de demandas e Help Desk}
 
-Sistemas de informação apoiam a coleta, o processamento, o armazenamento e a distribuição de informações necessárias às atividades organizacionais. Em serviços, sua contribuição não se limita a registrar dados: eles também organizam o fluxo de trabalho, definem responsabilidades e oferecem subsídios à decisão. A gestão de demandas compreende receber, registrar, classificar, priorizar, atribuir, acompanhar e encerrar solicitações.
+Sistemas de informação apoiam a coleta, o processamento, o armazenamento e a distribuição de informações necessárias às atividades organizacionais. Em serviços, sua contribuição não se limita a registrar dados: eles também organizam o fluxo de trabalho, definem responsabilidades e oferecem subsídios à decisão. Um Service Desk pode atuar como ponto de contato entre usuários e equipe responsável, apoiando a coleta, o rastreamento e o processamento das solicitações \cite{fenner2015,amanullah2017}. A gestão de demandas compreende receber, registrar, classificar, priorizar, atribuir, acompanhar e encerrar solicitações.
 
-Um Help Desk materializa esse processo por meio do ticket, que possui identificação única, solicitante, descrição, prioridade, responsável, status, prazo, interações e evidências. Além de viabilizar o atendimento individual, o histórico de tickets permite identificar gargalos, medir tempo de resposta e acompanhar o nível de serviço \cite{servicedesk2023,servicerequest2023}. Por essa razão, o SIGE Desk prevê estados explícitos de validação e reabertura, bem como prazos de primeira resposta e de resolução.
+O encaminhamento de incidentes e solicitações diretamente a diferentes pessoas pode produzir múltiplos pontos de contato; a centralização, por sua vez, é associada a melhor documentação e eficiência da comunicação interna \cite{firmansyah2022}. Um Help Desk materializa esse processo por meio do ticket, que possui identificação única, solicitante, descrição, prioridade, responsável, status, prazo, interações e evidências. Além de viabilizar o atendimento individual, o histórico de tickets permite identificar gargalos, medir tempo de resposta e acompanhar o nível de serviço \cite{servicedesk2023,servicerequest2023}. Por essa razão, o SIGE Desk prevê estados explícitos de validação e reabertura, bem como prazos de primeira resposta e de resolução.
 
 \subsection{Tráfego pago, agências e métricas}
 
@@ -86,7 +86,7 @@ Esta é uma pesquisa aplicada, pois propõe e constrói uma solução para um pr
 
 \subsection{Revisão bibliográfica}
 
-A revisão bibliográfica foi realizada em 15 de agosto de 2026, de forma estruturada, na base IEEE Xplore. O recorte compreendeu publicações em inglês, de 2019 a 2026, inclusive. As buscas foram executadas no campo \textit{Document Title} para combinar o tema marketing digital com termos relacionados, de um lado, à gestão, à automação e ao relacionamento com clientes e, de outro, à operação de campanhas e publicidade paga. O Quadro \ref{qua:buscas-ieee} apresenta as expressões booleanas empregadas.
+A revisão bibliográfica foi realizada de forma estruturada na IEEE Xplore. As Pesquisas 01 e 02 foram executadas em 15 de agosto de 2026, com publicações em inglês, de 2019 a 2026, e no campo \textit{Document Title}; elas combinaram marketing digital a termos de gestão, automação, relacionamento com clientes, campanhas e publicidade paga. A Pesquisa 03 foi executada em 21 de agosto de 2026 para complementar a fundamentação de Help Desk, no campo \textit{All}, sem recorte temporal e limitada, na exportação, a artigos de periódicos e conferências. O Quadro \ref{qua:buscas-ieee} apresenta as expressões booleanas empregadas.
 
 \begin{quadro}[H]
 \centering
@@ -99,16 +99,17 @@ A revisão bibliográfica foi realizada em 15 de agosto de 2026, de forma estrut
 \hline
 Pesquisa 01 & \ttfamily ("Document Title":"digital marketing") AND ("Document Title":"marketing automation" OR "Document Title":"project management" OR "Document Title":"customer relationship management" OR "Document Title":"marketing agency" OR "Document Title":"management system") \\
 \normalfont Pesquisa 02 & \ttfamily ("Document Title":"digital marketing") AND ("Document Title":campaign OR "Document Title":advertising OR "Document Title":"paid advertising" OR "Document Title":"media buying") \\
+\normalfont Pesquisa 03 & \ttfamily ("service desk") AND communication \\
 \hline
 \end{tabular}
 \par\footnotesize\normalfont\textbf{Fonte:} Elaborado pelo grupo a partir do protocolo de busca da pesquisa.
 \end{quadro}
 
-Foram incluídos artigos recuperados por essas expressões que estivessem dentro do período e do idioma definidos, apresentassem resumo ou texto disponível para leitura e contribuíssem diretamente para pelo menos um dos seguintes aspectos: gestão de demandas ou de projetos em agências; centralização de atividades de marketing; operação de campanhas pagas e análise de suas métricas; relacionamento e comunicação com clientes; ou privacidade aplicável ao contexto das campanhas.
+Foram incluídos artigos recuperados por essas expressões que apresentassem resumo ou texto disponível para leitura e contribuíssem diretamente para pelo menos um dos seguintes aspectos: gestão de demandas ou de projetos em agências; centralização de atividades de marketing; operação de campanhas pagas e análise de suas métricas; relacionamento e comunicação com clientes; privacidade aplicável ao contexto das campanhas; ou ponto único de contato, registro, rastreamento e processamento de solicitações. Nas Pesquisas 01 e 02, também foram aplicados o período e o idioma definidos; na Pesquisa 03, o filtro de tipo documental foi periódico ou conferência.
 
-Foram excluídos estudos cujo foco principal fosse: (a) automação, predição ou personalização por inteligência artificial sem relação direta com a gestão de demandas e fora do escopo do MVP; (b) Internet das Coisas, sinalização digital ou outro domínio tecnológico sem relação com tickets; (c) comportamento de consumo ou nicho de mercado sem contribuição direta para o fluxo de atendimento; ou (d) tema genérico de marketing ou CRM já contemplado por fonte mais aderente ao problema investigado. O descarte representa somente insuficiência de aderência ao problema e ao escopo do sistema, não uma avaliação negativa da qualidade dos artigos.
+Foram excluídos estudos cujo foco principal fosse: (a) automação, predição ou personalização por inteligência artificial sem relação direta com a gestão de demandas e fora do escopo do MVP; (b) Internet das Coisas, sinalização digital ou outro domínio tecnológico sem relação com tickets; (c) comportamento de consumo ou nicho de mercado sem contribuição direta para o fluxo de atendimento; (d) tema genérico de marketing, CRM ou Service Desk já contemplado por fonte mais aderente ao problema investigado; ou (e) contexto de telecomunicações, infraestrutura, saúde ou segurança sem transferência direta para o fluxo de demandas proposto. O descarte representa somente insuficiência de aderência ao problema e ao escopo do sistema, não uma avaliação negativa da qualidade dos artigos.
 
-As duas buscas recuperaram 25 artigos sem duplicidade: dez na Pesquisa 01 e quinze na Pesquisa 02. A identificação de duplicidades foi feita pela comparação dos DOIs. A triagem compreendeu a leitura de títulos e resumos e a verificação de aderência aos critérios de inclusão e exclusão apresentados; os trabalhos potencialmente aderentes seguiram para extração de conteúdo. Ao final, nove artigos foram utilizados no referencial teórico e dezesseis foram descartados conforme esses critérios. A relação individual dos trabalhos descartados e as respectivas justificativas foi preservada no registro de triagem bibliográfica da pesquisa. A Tabela \ref{tab:selecao-bibliografica} sintetiza esse processo.
+As três buscas recuperaram 44 artigos sem duplicidade: dez na Pesquisa 01, quinze na Pesquisa 02 e dezenove na Pesquisa 03. A identificação de duplicidades foi feita pela comparação dos DOIs. A triagem compreendeu a leitura de títulos e resumos, a verificação de aderência aos critérios de inclusão e exclusão apresentados e a extração de conteúdo dos trabalhos avaliados. Ao final, doze artigos foram utilizados no referencial teórico e 32 foram descartados conforme esses critérios. A relação individual dos trabalhos descartados e as respectivas justificativas foi preservada no registro de triagem bibliográfica da pesquisa. A Tabela \ref{tab:selecao-bibliografica} sintetiza esse processo.
 
 \begin{table}[H]
 \centering
@@ -120,14 +121,15 @@ As duas buscas recuperaram 25 artigos sem duplicidade: dez na Pesquisa 01 e quin
 \hline
 Recuperados na Pesquisa 01 & 10 \\
 Recuperados na Pesquisa 02 & 15 \\
-Selecionados para o referencial teórico & 9 \\
-Descartados após a triagem & 16 \\
+Recuperados na Pesquisa 03 & 19 \\
+Selecionados para o referencial teórico & 12 \\
+Descartados após a triagem & 32 \\
 \hline
 \end{tabular}
 \par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do registro de triagem bibliográfica.
 \end{table}
 
-Os trabalhos selecionados foram analisados com a finalidade de fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizou contribuições sobre gestão de projetos em agências, plataformas de marketing, gestão de campanhas, distribuição de orçamento, métricas de desempenho, relacionamento com clientes, privacidade e rastreabilidade.
+Os trabalhos selecionados foram analisados com a finalidade de fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizou contribuições sobre gestão de projetos em agências, plataformas de marketing, gestão de campanhas, distribuição de orçamento, métricas de desempenho, relacionamento com clientes, privacidade, rastreabilidade, ponto único de contato e processamento de solicitações.
 
 Além do corpus da IEEE Xplore, foi utilizado um artigo externo especificamente para fundamentar o instrumento UEQ-S de avaliação de usabilidade \cite{schrepp2017}; ele não integra os totais da seleção bibliográfica. Também foram adotadas fontes para orientar as escolhas de projeto: ITIL 4 para Service Desk e solicitações de serviço, ISO/IEC/IEEE 29148 para requisitos, Business Process Model and Notation (BPMN) 2.0.2 para modelagem do processo e LGPD/ANPD para proteção de dados \cite{servicedesk2023,servicerequest2023,iso29148,omg2014,brasil2018,anpd2021}.
 
