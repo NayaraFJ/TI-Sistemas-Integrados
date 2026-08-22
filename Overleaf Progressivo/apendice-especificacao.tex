@@ -1,0 +1,248 @@
+\section{ESPECIFICAÇÃO DETALHADA DO SISTEMA}
+\label{ap:especificacao}
+
+\subsection{Requisitos funcionais}
+
+As fontes indicadas na última coluna orientaram o levantamento e a priorização dos requisitos; elas não constituem prescrição literal de cada funcionalidade.
+
+\begin{longtable}{p{0.10\textwidth}p{0.55\textwidth}p{0.10\textwidth}p{0.17\textwidth}}
+\caption{Requisitos funcionais do SIGE Desk}\label{tab:requisitos-funcionais}\\
+\hline
+\textbf{ID} & \textbf{Requisito} & \textbf{Prioridade} & \textbf{Fontes de embasamento} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Requisito} & \textbf{Prioridade} & \textbf{Fontes de embasamento} \\
+\hline
+\endhead
+RF-01 & O sistema deve permitir autenticação de usuários. & Alta & \cite{servicedesk2023,brasil2018} \\
+RF-02 & O sistema deve controlar permissões conforme o perfil de usuário. & Alta & \cite{servicedesk2023,brasil2018} \\
+RF-03 & O administrador deve poder cadastrar, editar, ativar e inativar clientes; clientes inativos não devem ficar disponíveis para novas solicitações. & Alta & \cite{kharisma2024,steponaitis2023} \\
+RF-04 & O administrador ou atendimento deve poder cadastrar campanhas vinculadas a um cliente. & Alta & \cite{younas2025,agus2019} \\
+RF-05 & O sistema deve permitir abrir ticket com cliente, campanha, canal, tipo, urgência informada, prazo desejado, assunto e descrição. A prioridade oficial e os prazos de SLA serão definidos na triagem. & Alta & \cite{servicerequest2023,servicedesk2023} \\
+RF-06 & O sistema deve gerar identificador único para cada ticket. & Alta & \cite{servicedesk2023,iso29148} \\
+RF-07 & O atendimento deve poder classificar e atribuir um ticket a um responsável. & Alta & \cite{servicedesk2023,steponaitis2023} \\
+RF-08 & O responsável deve poder atualizar o status do ticket. & Alta & \cite{servicerequest2023} \\
+RF-09 & O sistema deve registrar data, hora, usuário, motivo, campo alterado, valor anterior e novo valor em cada alteração de status, responsável, prioridade, prazo ou aprovação. & Alta & \cite{servicedesk2023,brasil2018} \\
+RF-10 & Usuários autorizados devem poder incluir comentários e anexos no ticket. & Alta & \cite{servicedesk2023} \\
+RF-11 & O sistema deve permitir registrar aprovação, reprovação ou solicitação de complemento pelo cliente. & Média & \cite{servicerequest2023,steponaitis2023} \\
+RF-12 & O responsável deve poder registrar a ação executada e evidências no encerramento. & Alta & \cite{servicerequest2023} \\
+RF-13 & O sistema deve permitir cancelar ticket com motivo obrigatório. & Média & \cite{servicerequest2023} \\
+RF-14 & O usuário deve poder filtrar tickets por cliente, campanha, tipo, prioridade, responsável, status e período. & Alta & \cite{abbonizio2023,younas2025} \\
+RF-15 & O painel deve apresentar total de tickets por status, prioridade, responsável e prazo. & Média & \cite{abbonizio2023,steponaitis2023} \\
+RF-16 & O sistema deve identificar tickets vencidos e tickets aguardando resposta do cliente. & Média & \cite{servicedesk2023,servicerequest2023} \\
+RF-17 & O sistema deve permitir consultar o histórico completo de cada ticket. & Alta & \cite{servicedesk2023,brasil2018} \\
+RF-18 & O sistema deve permitir registrar métricas de contexto, como CTR, CPC, conversão, CPA e ROAS, quando aplicável. & Baixa & \cite{yahia2024,nain2025} \\
+RF-19 & O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. & Baixa & \cite{abbonizio2023,steponaitis2023} \\
+RF-20 & O sistema deve notificar, no sistema e por e-mail quando configurado, os envolvidos autorizados em atribuição, comentário, aguardo do cliente, validação, vencimento, conclusão ou reabertura. & Alta & \cite{servicedesk2023,servicerequest2023} \\
+RF-21 & O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. & Alta & \cite{servicedesk2023} \\
+RF-22 & O administrador deve poder manter tipos de demanda, definindo campos obrigatórios e necessidade de aprovação e evidência. & Alta & \cite{servicerequest2023,iso29148} \\
+RF-23 & O administrador deve poder configurar calendário, horário, fuso, feriados, recessos e prazos do SLA por prioridade, com regra opcional por cliente ou tipo. & Alta & \cite{servicedesk2023} \\
+\hline
+\multicolumn{4}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do levantamento de requisitos e das fontes indicadas.}
+\end{longtable}
+
+\subsection{Requisitos não funcionais}
+
+\begin{longtable}{p{0.10\textwidth}p{0.15\textwidth}p{0.50\textwidth}p{0.20\textwidth}}
+\caption{Requisitos não funcionais do SIGE Desk}\label{tab:requisitos-nao-funcionais}\\
+\hline
+\textbf{ID} & \textbf{Aspecto} & \textbf{Critério inicial} & \textbf{Fontes de embasamento} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Aspecto} & \textbf{Critério inicial} & \textbf{Fontes de embasamento} \\
+\hline
+\endhead
+RNF-02 & Segurança & Senhas devem ser armazenadas de forma protegida; autenticação, autorização por perfil e auditoria devem impedir e registrar acessos indevidos. & \cite{brasil2018,iso29148} \\
+RNF-03 & Privacidade & O sistema deve coletar somente dados necessários e não deve armazenar bases de audiência ou dados sensíveis. & \cite{brasil2018,daoud2023} \\
+RNF-04 & Rastreabilidade & Alterações de status, responsável, prazo e aprovação devem permanecer no histórico. & \cite{servicedesk2023,brasil2018} \\
+RNF-05 & Integridade & Um ticket concluído ou cancelado não poderá ser apagado sem manter registro administrativo. & \cite{iso29148,brasil2018} \\
+RNF-07 & Compatibilidade & A interface deve funcionar em navegadores modernos. & \cite{iso29148} \\
+RNF-09 & Acessibilidade & Campos devem possuir rótulos claros, contraste adequado e navegação possível por teclado. & \cite{radhitya2024} \\
+\multicolumn{4}{p{0.95\textwidth}}{\footnotesize\textit{Nota:} Por se tratar de protótipo acadêmico com dados fictícios ou autorizados, retenção, backup, restauração e disponibilidade contínua não integram a entrega. Esses controles deverão ser definidos em eventual adoção real, conforme a LGPD.} \\
+\hline
+\multicolumn{4}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do levantamento de requisitos e das fontes indicadas.}
+\end{longtable}
+
+\subsection{Regras de negócio}
+
+\begin{longtable}{p{0.12\textwidth}p{0.80\textwidth}}
+\caption{Regras de negócio do SIGE Desk}\label{tab:regras-negocio}\\
+\hline
+\textbf{ID} & \textbf{Regra} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra} \\
+\hline
+\endhead
+RN-01 & Na abertura, todo ticket deve possuir cliente, tipo, urgência informada, assunto, descrição e solicitante. A prioridade oficial torna-se obrigatória após a triagem. \\
+RN-02 & Quando a demanda estiver vinculada a campanha existente, cliente e campanha devem ser compatíveis. \\
+RN-03 & Somente atendimento ou administrador pode definir prioridade, prazo e responsável na triagem. \\
+RN-04 & Somente responsável, atendimento ou administrador pode alterar o status, exceto o Cliente, que pode aprovar ou solicitar correção em Em validação, resultando em Concluída ou Reaberta. \\
+RN-05 & Após a execução, o ticket deve seguir para Em validação, com descrição da ação e evidência quando configurada para o tipo. \\
+RN-06 & O status Concluída exige validação necessária ou registro de que o tipo de demanda não requer aprovação do cliente. \\
+RN-07 & O status Cancelada exige motivo de cancelamento. \\
+RN-08 & O status Aguardando cliente deve registrar qual informação ou aprovação é necessária. \\
+RN-09 & O cliente deve visualizar somente tickets vinculados à sua organização. \\
+RN-10 & Alterações de orçamento, público ou criativo podem exigir aprovação do cliente antes da execução, conforme o tipo de demanda. \\
+RN-11 & Cliente, atendimento ou administrador pode reabrir ticket concluído mediante justificativa, preservando todo o histórico anterior. \\
+RN-12 & Ao vencer o SLA, o sistema deve sinalizar o ticket e notificar o responsável e o atendimento. \\
+RN-13 & Atribuição, comentário e mudanças para Aguardando cliente, Em validação, Concluída e Reaberta devem gerar notificações aos envolvidos. \\
+RN-14 & A confirmação automática não conta como primeira resposta; é necessário retorno efetivo de atendimento, administrador ou responsável, registrado no ticket. \\
+\hline
+\multicolumn{2}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir das regras preliminares.}
+\end{longtable}
+
+\subsection{Dados principais}
+
+\begin{longtable}{p{0.20\textwidth}p{0.72\textwidth}}
+\caption{Entidades e dados iniciais}\label{tab:dados-principais}\\
+\hline
+\textbf{Entidade} & \textbf{Dados iniciais} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Entidade} & \textbf{Dados iniciais} \\
+\hline
+\endhead
+Usuário & Identificador, nome, e-mail, perfil, status e cliente vinculado quando o perfil for Cliente. \\
+Cliente & Identificador, nome, contato e status. \\
+Campanha & Identificador, cliente, nome, canal, objetivo e status. \\
+Tipo de demanda & Identificador, nome, status, campos obrigatórios e necessidade de aprovação e evidência. \\
+Configuração de SLA & Calendário, horário, fuso, feriados, recessos, prioridade, prazos e escopo opcional por cliente ou tipo. \\
+Ticket & Número, cliente, campanha, tipo, canal, urgência, prazo desejado, prioridade oficial, SLA, assunto, descrição, solicitante, responsável e status. \\
+Comentário & Ticket, autor, data e hora, texto e referência a anexos. \\
+Histórico & Ticket, campo alterado, valor anterior, novo valor, usuário, data e hora. \\
+Aprovação & Ticket, decisão, usuário, data e hora e observação. \\
+Evidência & Ticket, descrição, link ou arquivo, autor, data e hora. \\
+Anexo & Identificador, ticket, nome original, tipo, tamanho, referência de armazenamento, autor, data e hora. \\
+Notificação & Ticket, evento, destinatário, canal, resumo, geração, situação de envio e data de leitura, quando aplicável. \\
+\hline
+\multicolumn{2}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
+\end{longtable}
+
+\subsection{Catálogo inicial de tipos de demanda}
+
+\begin{longtable}{p{0.14\textwidth}p{0.24\textwidth}p{0.14\textwidth}p{0.19\textwidth}p{0.14\textwidth}}
+\caption{Catálogo inicial de tipos de demanda}\label{tab:tipos-demanda}\\
+\hline
+\textbf{Tipo} & \textbf{Dados adicionais} & \textbf{Aprovação} & \textbf{Evidência} & \textbf{SLA sugerido} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Tipo} & \textbf{Dados adicionais} & \textbf{Aprovação} & \textbf{Evidência} & \textbf{SLA sugerido} \\
+\hline
+\endhead
+Ajuste de orçamento & Campanha, orçamento atual e proposto, justificativa e data desejada. & Cliente quando configurado como sensível. & Valor aplicado e captura ou link disponível. & Alta ou Urgente, conforme impacto. \\
+Alteração ou pausa de anúncio & Campanha, canal, ativo afetado, ação e motivo. & Cliente quando houver impacto relevante. & Comentário, captura ou link da alteração. & Alta ou Média. \\
+Aprovação de criativo & Campanha, canal, criativo e data limite. & Obrigatória. & Decisão registrada no ticket. & Média. \\
+Relatório de desempenho & Campanha, período, métricas e formato. & Não obrigatória, salvo configuração. & Arquivo ou link do relatório. & Média. \\
+Análise de métricas & Campanha, período, questão e indicadores disponíveis. & Não obrigatória. & Comentário analítico e relatório de apoio. & Baixa ou Média. \\
+\hline
+\multicolumn{5}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
+\end{longtable}
+
+\subsection{Matriz de transições de status}
+
+\begin{longtable}{p{0.16\textwidth}p{0.20\textwidth}p{0.22\textwidth}p{0.27\textwidth}}
+\caption{Transições permitidas no ciclo de vida do ticket}\label{tab:transicoes-status}\\
+\hline
+\textbf{Status atual} & \textbf{Próximo status} & \textbf{Quem altera} & \textbf{Registro e efeito no SLA} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Status atual} & \textbf{Próximo status} & \textbf{Quem altera} & \textbf{Registro e efeito no SLA} \\
+\hline
+\endhead
+Aberta & Em triagem; Cancelada & Atendimento; Administrador & Inicia primeira resposta e resolução; cancelamento exige motivo. \\
+Em triagem & Em execução; Aguardando cliente; Cancelada & Atendimento; Administrador & Registra prioridade, prazo, responsável ou motivo; contagem continua. \\
+Em execução & Aguardando cliente; Em validação & Responsável; Atendimento; Administrador & Registra comentário e evidência; pausa somente em Aguardando cliente. \\
+Aguardando cliente & Em triagem; Em execução; Cancelada & Atendimento; Administrador & Registra informação recebida ou motivo; resolução retoma ao sair. \\
+Em validação & Concluída; Reaberta & Cliente; Atendimento; Administrador & Registra aprovação ou correção; SLA continua até conclusão. \\
+Concluída & Reaberta & Cliente; Atendimento; Administrador & Exige justificativa e inicia novo ciclo de resolução. \\
+Reaberta & Em execução & Atendimento; Administrador & Confirma responsável e prioridade; segue a regra configurada. \\
+\hline
+\multicolumn{4}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
+\end{longtable}
+
+\subsection{Matriz de rastreabilidade}
+
+\scriptsize
+\begin{longtable}{p{0.06\textwidth}p{0.16\textwidth}p{0.18\textwidth}p{0.23\textwidth}p{0.08\textwidth}p{0.13\textwidth}p{0.06\textwidth}}
+\caption{Rastreabilidade preliminar entre necessidades, requisitos e testes}\label{tab:rastreabilidade}\\
+\hline
+\textbf{ID} & \textbf{Origem} & \textbf{Requisitos} & \textbf{Critério ou teste} & \textbf{Prior.} & \textbf{Responsável} & \textbf{Versão} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Origem} & \textbf{Requisitos} & \textbf{Critério ou teste} & \textbf{Prior.} & \textbf{Responsável} & \textbf{Versão} \\
+\hline
+\endhead
+RT-01 & Pedidos dispersos e perda de contexto. & RF-05, RF-06, RF-17. & Ticket identificado e histórico consultável; CT-01 e CT-13. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-02 & Falta de triagem, prazo e responsável. & RF-07, RF-09, RF-21, RF-23, RN-14. & Triagem e SLA registrados; CT-02 e CT-10. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-03 & Retrabalho e ausência de aprovação. & RF-11, RF-12, RF-22, RN-05, RN-06, RN-11. & Validação, evidência e reabertura; CT-05 e CT-09. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-04 & Atrasos e comunicação insuficiente. & RF-16, RF-20, RN-12, RN-13. & Vencimento e eventos notificados; CT-06 e CT-07. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-05 & Proteção de dados. & RF-02, RNF-02. & Restrição por organização; CT-08. & Alta & Grupo TI SIGE 1 & 1.0 \\
+RT-06 & Interface compreensível. & RNF-09. & Campos claros, contraste, navegação por teclado e avaliação de usabilidade. & Alta & Grupo TI SIGE 1 & 1.0 \\
+\hline
+\multicolumn{7}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
+\end{longtable}
+\normalsize
+
+\subsection{Critérios de aceite iniciais}
+
+\scriptsize
+\begin{longtable}{p{0.23\textwidth}p{0.35\textwidth}p{0.18\textwidth}p{0.10\textwidth}}
+\caption{Critérios de aceite e testes relacionados}\label{tab:criterios-aceite}\\
+\hline
+\textbf{Cenário} & \textbf{Resultado esperado} & \textbf{Requisitos} & \textbf{Teste} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Cenário} & \textbf{Resultado esperado} & \textbf{Requisitos} & \textbf{Teste} \\
+\hline
+\endhead
+Cliente abre uma demanda. & Ticket recebe número, status Aberta, urgência e prazo desejado e fica visível ao atendimento. & RF-05, RF-06 & CT-01 \\
+Usuário acessa o sistema. & Usuário autenticado acessa somente funções e tickets permitidos. & RF-01, RF-02 & CT-11 \\
+Administrador mantém clientes e campanhas. & Cliente pode ser ativado ou inativado e campanha fica vinculada ao cliente. & RF-03, RF-04 & CT-12 \\
+Atendimento faz a triagem. & Prioridade, SLA e responsável ficam registrados no histórico. & RF-07, RF-09, RN-03, RN-14 & CT-02 \\
+Gestor executa alteração. & Ticket recebe comentário ou evidência e segue para validação. & RF-08, RF-10, RF-12, RN-05 & CT-03, CT-05 \\
+Cliente precisa aprovar mudança. & Ticket fica Aguardando cliente até decisão registrada. & RF-11, RN-08, RN-10 & CT-04 \\
+Entrega precisa ser confirmada. & Ticket segue para Em validação e, após aprovação, para Concluída. & RF-11, RN-05, RN-06 & CT-05 \\
+Cliente solicita correção. & Ticket é reaberto com justificativa e retorna à execução. & RF-11, RN-11 & CT-05 \\
+Prazo é ultrapassado. & Ticket é identificado como vencido. & RF-16, RF-21, RN-12 & CT-06 \\
+Evento notificável ocorre. & Envolvidos recebem notificação conforme perfil e configuração. & RF-20, RN-13 & CT-07 \\
+Administrador configura tipo. & Campos e regras de aprovação e evidência são aplicados. & RF-22, RN-05, RN-10 & CT-09 \\
+Administrador configura SLA. & Calendário, prazos e escopo são aplicados ao cálculo. & RF-23 & CT-10 \\
+Usuário consulta histórico. & Consulta exibe autor, data, motivo e valores alterados. & RF-09, RF-17, RNF-04 & CT-13 \\
+Cliente tenta acesso indevido. & Acesso é negado e tentativa é registrada. & RF-02, RN-09, RNF-02 & CT-08 \\
+\hline
+\multicolumn{4}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
+\end{longtable}
+\normalsize
+
+\subsection{Matriz de notificações}
+
+\begin{longtable}{p{0.20\textwidth}p{0.29\textwidth}p{0.15\textwidth}p{0.24\textwidth}}
+\caption{Eventos e destinatários das notificações}\label{tab:notificacoes}\\
+\hline
+\textbf{Evento} & \textbf{Destinatários} & \textbf{Canal} & \textbf{Conteúdo mínimo} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Evento} & \textbf{Destinatários} & \textbf{Canal} & \textbf{Conteúdo mínimo} \\
+\hline
+\endhead
+Ticket atribuído & Responsável e atendimento. & Sistema; e-mail configurado. & Número, assunto, prioridade e prazo. \\
+Comentário incluído & Solicitante, responsável e mencionados autorizados. & Sistema; e-mail configurado. & Número, autor e resumo. \\
+Aguardando cliente & Solicitante e atendimento. & Sistema; e-mail configurado. & Informação necessária e prazo aplicável. \\
+Em validação & Solicitante e atendimento. & Sistema; e-mail configurado. & Ação, evidência e decisão esperada. \\
+SLA vencido & Responsável, atendimento e administrador. & Sistema; e-mail configurado. & Prioridade, prazo e atraso. \\
+Concluída ou Reaberta & Solicitante, responsável e atendimento. & Sistema; e-mail configurado. & Novo status, justificativa e próximo passo. \\
+\hline
+\multicolumn{4}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
+\end{longtable}
+
+As notificações não devem revelar conteúdo ou anexos a usuários sem permissão para consultar o ticket.

@@ -23,11 +23,27 @@
 
 ## Título provisório
 
-**Help Desk para Gestão de Demandas de Tráfego Pago**
+**Help Desk para Gestão de Tráfego Pago: uma Aplicação para Controle de Campanhas e Atendimento a Clientes**
 
 ## Registro da etapa
 
-Esta entrega registrou a definição inicial do tema, do título e da introdução. A versão acadêmica vigente da introdução e da delimitação foi revisada e consolidada em [Etapa 02 - Artigo.md](Etapa%2002%20-%20Artigo.md), para evitar manutenção de duas versões do mesmo texto.
+Esta entrega registra a definição inicial do tema, do título, da introdução e da delimitação. Ela é preservada como fonte do projeto progressivo da primeira etapa; a versão acadêmica vigente do artigo completo foi posteriormente revisada e consolidada em [Etapa 02 - Artigo.md](Etapa%2002%20-%20Artigo.md).
+
+## Introdução inicial
+
+O marketing digital tornou-se um componente estratégico para empresas que desejam alcançar públicos específicos, divulgar produtos e serviços e mensurar os efeitos de suas ações. Em especial, as campanhas de tráfego pago exigem acompanhamento contínuo de orçamento, público, criativos, canais, indicadores de desempenho e solicitações dos clientes. Em agências e consultorias de marketing, esse trabalho envolve diversos profissionais e ocorre em paralelo para diferentes contas, o que amplia a necessidade de organização e visibilidade operacional.
+
+Como hipótese inicial do projeto, pedidos de criação de anúncios, alteração de orçamento, ajuste de segmentação, envio de relatórios e análise de métricas podem ser encaminhados por canais distintos. Quando as informações não são mantidas em um registro comum, pode ser mais difícil acompanhar responsáveis, prazos e o histórico de decisões. Essa hipótese será aprofundada nas etapas posteriores por meio da revisão bibliográfica e do levantamento de requisitos.
+
+Estudos sobre gestão de projetos e automação de marketing apontam a importância de planejamento, comunicação, monitoramento, análise de dados e integração de atividades para a operação de marketing digital (Steponaitis e Andrijauskienė, 2023; Younas et al., 2025; Gujar, Paliwal e Panyam, 2024).
+
+Nesse contexto, propõe-se o desenvolvimento de uma aplicação web no formato de Help Desk para apoiar a gestão de demandas de tráfego pago. A aplicação deverá centralizar solicitações de clientes e da equipe, permitindo registrar o tipo de pedido, campanha relacionada, prioridade, responsável, prazo, status, comentários e evidências de execução. Dessa forma, pretende-se estruturar um fluxo registrado e profissional para apoiar a organização do atendimento e o controle das atividades de campanhas digitais.
+
+## Delimitação inicial da aplicação
+
+A proposta concentra-se em demandas relacionadas a campanhas de tráfego pago, tais como criação, alteração ou pausa de anúncios; ajustes de orçamento, público, segmentação, palavras-chave ou criativos; solicitação e entrega de relatórios de desempenho; análise de métricas de campanha; e registro de comentários, aprovações e histórico de atendimento entre cliente e agência.
+
+Nesta etapa, a aplicação não pretende substituir plataformas de mídia, como Google Ads ou Meta Ads. Seu papel é organizar o processo de solicitação, acompanhamento, comunicação e registro das decisões relacionadas a essas plataformas.
 
 ## Situação da entrega
 
@@ -41,4 +57,6 @@ Esta entrega registrou a definição inicial do tema, do título e da introduç�
 
 ## Referências
 
-As referências consolidadas do artigo estão em [Etapa 03 - Referencial teorico.md](Etapa%2003%20-%20Referencial%20teorico.md) e em `../../Overleaf/bibliografia.bib`.
+- GUJAR, Praveen; PALIWAL, Gunjan; PANYAM, Sriram. *Revolutionizing In-House Digital Marketing with End-to-End Marketing Automation Powered by AI and SaaS*. 2024. DOI: [10.1109/COLCOM62950.2024.10720305](https://doi.org/10.1109/COLCOM62950.2024.10720305). Acesso em: 14 ago. 2026.
+- STEPONAITIS, Simonas; ANDRIJAUSKIENĖ, Meda. *Improving Digital Project Management Competencies: Case Study of a Digital Marketing Agency in Lithuania*. 2023. DOI: [10.1109/E-TEMS57541.2023.10424612](https://doi.org/10.1109/E-TEMS57541.2023.10424612). Acesso em: 14 ago. 2026.
+- YOUNAS, Mamoona et al. *DIGI-AI: An AI-Powered Web Platform for Intelligent Digital Marketing Automation*. 2025. DOI: [10.1109/MACS68476.2025.11453341](https://doi.org/10.1109/MACS68476.2025.11453341). Acesso em: 14 ago. 2026.
