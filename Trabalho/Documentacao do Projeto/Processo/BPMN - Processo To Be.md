@@ -10,7 +10,7 @@ Oferecer um fluxo de tickets rastreáveis para demandas de tráfego pago, com tr
 
 ## 2. Participantes e responsabilidades
 
-Os quatro perfis abaixo são definidos para o processo proposto. Anunciante/cliente, agência, *publishers* e plataformas de troca de anúncios são atores do contexto da publicidade digital; apenas Cliente e Agência utilizam o SIGE Desk no MVP.
+Os quatro perfis abaixo são definidos para o processo proposto. Anunciante/cliente, agência, *publishers* e plataformas de troca de anúncios são atores do contexto da publicidade digital. No MVP, o acesso é limitado ao perfil Cliente e aos perfis internos da Agência; *publishers* e plataformas não possuem conta ou integração automática.
 
 | Pool / lane BPMN | Responsabilidade no processo |
 | --- | --- |
@@ -65,15 +65,14 @@ flowchart TB
 - O status **Em validação** começa após o registro da ação e da evidência; uma reprovação gera **Reaberta**, sem apagar o histórico.
 - Cancelamento pode ocorrer antes da execução, com motivo registrado, por Atendimento ou Administrador.
 
-## 5. Como validar o modelo
+## 5. Limites do modelo
 
-Em entrevista ou teste de requisitos, perguntar a cada perfil:
+O modelo foi derivado do referencial, das normas e dos requisitos preliminares. Por isso, ele delimita uma proposta de MVP e não afirma uma rotina universal de agências. Os seguintes pontos permanecem como limites explícitos do projeto:
 
-1. Esta é a sequência realista para sua rotina?
-2. Em que momento o cliente precisa aprovar ou complementar informações?
-3. Quem pode alterar prioridade, prazo, responsável e status?
-4. Que evidência deve existir antes de concluir cada tipo de demanda?
-5. Em qual etapa geralmente ocorre retrabalho hoje?
+1. os canais utilizados por agências não são especificados;
+2. a estrutura de cargos pode variar entre organizações;
+3. regras específicas de aprovação, SLA e evidência são configuráveis no sistema;
+4. integrações com plataformas de anúncios, *publishers* e CRM não fazem parte do MVP.
 
 ## Referência
 

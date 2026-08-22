@@ -39,8 +39,8 @@ As telas abaixo materializam os caminhos definidos na especificação, sem repet
 ```text
 Nova solicitação
 
-Cliente:       [selecionar cliente                     ]
-Campanha:      [selecionar campanha ou informar nova   ]
+Cliente:       [sua organização / selecionar se Atendimento]
+Campanha:      [selecionar campanha ou informar não cadastrada]
 Tipo:          [Criação, alteração ou pausa de anúncio ]
 Canal:         [plataforma de mídia / outro            ]
 Urgência:      [Baixa | Média | Alta | Urgente          ]
@@ -48,10 +48,37 @@ Prazo desejado:[dd/mm/aaaa                              ]
 Assunto:       [_______________________________________]
 Descrição:     [_______________________________________]
                [_______________________________________]
+Métricas de contexto (opcional):
+               [impressões, CTR, CPC, conversão, CPA ou ROAS]
 Anexos:        [Adicionar arquivo]
 
 [Cancelar]                                              [Enviar solicitação]
 ```
+
+### 2.1.3 Tela de detalhe do ticket
+
+```text
+#104 — Ajustar orçamento da campanha X                         [Em validação]
+Cliente: Cliente Alfa | Campanha: Campanha X | Responsável: Gestor de tráfego
+Prioridade: Alta | Prazo de resolução: 22/09, 16h | Tipo: Ajuste de orçamento
+
+Descrição
+Solicitação, contexto, anexos e métricas informadas quando aplicável.
+
+Histórico
+22/09 10h12 Atendimento classificou, definiu prioridade e atribuiu responsável.
+22/09 14h30 Gestor de tráfego registrou ação executada e evidência.
+
+Comentários e evidências
+[Adicionar comentário ou anexo]
+
+Ações conforme o perfil
+Cliente: [Enviar complemento] [Aprovar entrega] [Solicitar correção]
+Atendimento/Administrador: [Triar] [Solicitar complemento] [Cancelar com motivo]
+Gestor de tráfego: [Atualizar status] [Registrar ação e evidência] [Encaminhar para validação]
+```
+
+As ações apresentadas ao usuário devem respeitar os estados e as permissões definidos na especificação. Por exemplo, aprovar ou solicitar correção só é permitido ao Cliente quando o ticket estiver em **Em validação**; cancelar exige motivo e só é permitido antes da execução.
 
 ## 3. Critérios iniciais de sucesso
 
@@ -65,3 +92,4 @@ O protótipo será considerado adequado à proposta se permitir:
 - notificar os envolvidos em atribuições, comentários, mudanças de status e vencimentos;
 - permitir validar a entrega ou reabrir o ticket com justificativa;
 - concluir uma demanda registrando a ação executada.
+- exportar uma listagem filtrada para apoio a relatórios.

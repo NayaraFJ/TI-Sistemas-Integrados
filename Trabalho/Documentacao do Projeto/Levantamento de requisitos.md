@@ -1,11 +1,11 @@
 # Levantamento de requisitos e definição de atores
 
 **Aplicação:** SIGE Desk — Help Desk para Gestão de Demandas de Tráfego Pago  
-**Situação:** instrumento de levantamento e definição preliminar; ainda depende de validação com potenciais usuários.
+**Situação:** derivação e definição preliminar fundamentadas no referencial teórico, nas normas e no escopo do MVP.
 
 ## 1. Objetivo
 
-Este documento organiza o levantamento de requisitos do SIGE Desk. Seu propósito é distinguir: (a) os atores e relações observados nas fontes; (b) os perfis de acesso definidos para o produto; e (c) as questões que precisam ser confirmadas com potenciais usuários antes da implementação.
+Este documento organiza a derivação dos requisitos do SIGE Desk. Seu propósito é distinguir: (a) os atores e relações observados nas fontes; (b) os perfis de acesso definidos para o produto; e (c) as decisões de escopo adotadas para o MVP.
 
 ## 2. Evidências usadas para delimitar os atores
 
@@ -29,9 +29,9 @@ Os perfis abaixo são uma decisão de desenho do MVP. Eles convertem a relação
 | Usuário do sistema | Administrador | Mantém usuários, clientes, campanhas, tipos de demanda, configurações e regras de SLA. | Não substitui a aprovação do cliente nem a execução registrada pelo responsável. |
 | Contexto externo | *Publisher* digital ou plataforma de troca de anúncios | Integra a cadeia de publicidade paga descrita na literatura. | Não possui conta, permissão ou integração automática no MVP. |
 
-## 4. Perguntas de levantamento
+## 4. Critérios de análise do referencial
 
-As perguntas serão aplicadas separadamente, quando possível, a Cliente, Atendimento/gestor de conta e Gestor de tráfego. O Administrador poderá ser consultado sobre cadastros, acessos e configurações.
+Os tópicos abaixo orientam a leitura das fontes e a derivação dos requisitos. Eles não constituem roteiro de entrevista nem descrevem uma prática empiricamente observada em uma agência específica.
 
 ### 4.1 Processo e entrada
 
@@ -44,7 +44,7 @@ As perguntas serão aplicadas separadamente, quando possível, a Cliente, Atendi
 
 1. Quem confirma a completude, define prioridade, prazo e responsável?
 2. Quem executa cada tipo de demanda e que evidência consegue registrar?
-3. Quando a aprovação do cliente é necessária antes ou depois da execução?
+3. Em quais tipos de demanda a validação do cliente é necessária antes da conclusão? Há exceção que exija validação antes da execução?
 4. Quem pode cancelar ou reabrir uma demanda e em quais condições?
 
 ### 4.3 Acompanhamento e dados
@@ -54,9 +54,9 @@ As perguntas serão aplicadas separadamente, quando possível, a Cliente, Atendi
 3. Quais notificações são necessárias e para quem?
 4. Que dados não devem ser registrados no ticket, como credenciais de plataformas ou bases de audiência?
 
-## 5. Registro de decisões do levantamento
+## 5. Registro de decisões de requisitos
 
-Cada entrevista, reunião ou teste deverá registrar data, perfil consultado, pergunta, resposta resumida, decisão tomada, requisito ou regra afetada e limitação identificada. Uma alteração nos atores, nas permissões ou no fluxo deve atualizar simultaneamente:
+Cada decisão deverá registrar a fonte bibliográfica ou normativa, o trecho ou conceito utilizado, a decisão de escopo, o requisito ou regra afetada e sua limitação. Uma alteração nos atores, nas permissões ou no fluxo deve atualizar simultaneamente:
 
 - [Especificação do sistema](Especificacao/Especificacao%20do%20sistema.md);
 - [Processo To Be](Processo/BPMN%20-%20Processo%20To%20Be.md);
@@ -64,4 +64,4 @@ Cada entrevista, reunião ou teste deverá registrar data, perfil consultado, pe
 - [Protótipo de baixa fidelidade](Prototipo/Prototipo%20de%20baixa%20fidelidade.md), se a mudança afetar uma tela ou permissão;
 - rastreabilidade e critérios de aceite da especificação.
 
-Enquanto o levantamento não for realizado, os papéis e o fluxo devem ser tratados como proposta do MVP, e não como descrição comprovada de uma agência específica.
+Os papéis e o fluxo são uma proposta de MVP derivada do referencial; não descrevem uma agência específica nem pretendem representar todas as suas estruturas organizacionais.

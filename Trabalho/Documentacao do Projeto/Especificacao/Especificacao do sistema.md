@@ -8,11 +8,11 @@
 
 ## 1. Visão do produto
 
-O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago entre clientes e equipe de uma agência de marketing digital. O sistema centralizará solicitações, responsáveis, prazos, status, comentários, aprovações e evidências de execução. A delimitação dos atores, as evidências bibliográficas e as perguntas de validação estão registradas em [Levantamento de requisitos.md](../Levantamento%20de%20requisitos.md).
+O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago entre clientes e equipe de uma agência de marketing digital. O sistema centralizará solicitações, responsáveis, prazos, status, comentários, aprovações e evidências de execução. A delimitação dos atores, as evidências bibliográficas e as decisões de escopo estão registradas em [Levantamento de requisitos.md](../Levantamento%20de%20requisitos.md).
 
 ## 2. Perfis de usuário
 
-Os perfis são uma decisão de desenho do MVP e não a afirmação de que toda agência utiliza os mesmos cargos. Eles transformam as responsabilidades necessárias ao processo em permissões do sistema; serão refinados após o levantamento de requisitos.
+Os perfis são uma decisão de desenho do MVP e não a afirmação de que toda agência utiliza os mesmos cargos. Eles transformam as responsabilidades identificadas no referencial em permissões do sistema e poderão ser refinados somente se o escopo do projeto for alterado.
 
 | Perfil | Permissões principais |
 | --- | --- |
@@ -88,7 +88,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | RN-05 | Após a execução, o ticket deve seguir para “Em validação”, com descrição da ação executada e evidência quando configurada para o tipo de demanda.                                                                                                    |
 | RN-06 | O status “Concluída” exige validação/aprovação necessária ou registro de que o tipo de demanda não requer validação do cliente.                                                                                                                      |
 | RN-07 | O status “Cancelada” exige motivo de cancelamento.                                                                                                                                                                                                   |
-| RN-08 | O status “Aguardando cliente” deve registrar qual informação ou aprovação é necessária.                                                                                                                                                              |
+| RN-08 | O status “Aguardando cliente” deve registrar qual informação complementar é necessária.                                                                                                                                                               |
 | RN-09 | O cliente deve visualizar somente tickets vinculados à sua organização.                                                                                                                                                                              |
 | RN-10 | Tipos de demanda configurados como sensíveis podem exigir validação do cliente antes da conclusão, conforme sua regra de aprovação.                                                                                                                |
 | RN-11 | Cliente, atendimento ou administrador pode reabrir um ticket concluído mediante justificativa; a reabertura preserva todo o histórico anterior.                                                                                                      |
@@ -115,7 +115,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Campanha | Identificador, cliente, nome, canal, objetivo e status. |
 | Tipo de demanda | Identificador, nome, status, campos obrigatórios, necessidade de aprovação do cliente e necessidade de evidência. |
 | Configuração de SLA | Calendário, horário de atendimento, fuso horário, feriados e recessos, prioridade, prazos de primeira resposta e resolução e escopo opcional por cliente ou tipo de demanda. |
-| Ticket | Número, cliente, campanha, tipo, canal, urgência informada, prazo desejado, prioridade oficial, prazos de SLA, assunto, descrição, solicitante, responsável e status. |
+| Ticket | Número, cliente, campanha, tipo, canal, urgência informada, prazo desejado, prioridade oficial, prazos de SLA, assunto, descrição, métricas de contexto quando aplicável, solicitante, responsável e status. |
 | Comentário | Ticket, autor, data/hora, texto e referência a anexos vinculados. |
 | Histórico | Ticket, campo alterado, valor anterior, novo valor, usuário e data/hora. |
 | Aprovação | Ticket, decisão, usuário, data/hora e observação. |
@@ -135,7 +135,11 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Informação adicional é necessária | O ticket fica “Aguardando cliente” até o complemento ser registrado. | RF-11, RN-08 | CT-04 |
 | Entrega precisa ser confirmada | O ticket segue para “Em validação”; após aprovação, torna-se “Concluída”. | RF-11, RN-05, RN-06 | CT-05 |
 | Cliente solicita correção | O ticket é reaberto com justificativa e retorna à fila de execução. | RF-11, RN-11 | CT-05 |
-| Prazo é ultrapassado | O ticket é identificado como vencido no painel ou listagem. | RF-16, RF-21, RN-12 | CT-06 |
+| Usuário filtra demandas vencidas | A listagem retorna os tickets vencidos de acordo com os filtros e as permissões do perfil. | RF-14, RF-16, RF-21, RN-12 | CT-06 |
+| Atendimento cancela ticket antes da execução | O motivo do cancelamento é registrado e o ticket não segue para execução. | RF-13, RN-07 | CT-14 |
+| Usuário consulta o painel de demandas | O painel apresenta totais por status, prioridade, responsável e prazo, conforme o perfil autorizado. | RF-15 | CT-15 |
+| Solicitante informa métricas de contexto | Quando aplicável, métricas como impressões, CTR, CPC, conversão, CPA ou ROAS ficam registradas no ticket. | RF-18 | CT-16 |
+| Usuário exporta uma listagem filtrada | A exportação contém apenas os tickets retornados pelos filtros e acessíveis ao perfil do usuário. | RF-19 | CT-17 |
 | Ticket é atribuído, comentado, entra em aguardo ou validação, vence, é concluído ou reaberto | Os envolvidos recebem notificação conforme seu perfil e configuração. | RF-20, RN-13 | CT-07 |
 | Administrador configura um tipo de demanda | O tipo registra campos obrigatórios e regras de aprovação e evidência aplicáveis aos tickets desse tipo. | RF-22, RN-05, RN-10 | CT-09 |
 | Administrador configura o SLA | Calendário, prazos e regra por prioridade, cliente ou tipo de demanda são aplicados ao cálculo do ticket correspondente. | RF-23 | CT-10 |
@@ -191,6 +195,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | RT-05 | Proteção de dados | RF-02, RNF-02 | Acesso por organização — CT-08. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-06 | Interface compreensível para diferentes perfis | RNF-09 | Campos claros, contraste e navegação por teclado; avaliação de usabilidade conforme [Etapa 04 - Metodologia.md](../../Artigo/Etapa%2004%20-%20Metodologia.md). | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-07 | Separação entre atores externos da cadeia de publicidade e perfis de acesso do MVP, conforme [levantamento de requisitos](../Levantamento%20de%20requisitos.md) | RF-01, RF-02, RF-07, RF-08, RN-03, RN-04, RN-09 | Perfis autorizados executam somente as ações previstas; cliente não acessa tickets de outra organização — CT-02, CT-03, CT-08 e CT-11. | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-08 | Acompanhamento do ciclo de vida e apoio à consulta gerencial, derivados do referencial e do escopo do MVP | RF-13, RF-14, RF-15, RF-18, RF-19 | Cancelamento justificado, filtro de vencidos, painel, métricas de contexto e exportação — CT-06 e CT-14 a CT-17. | Média | Grupo TI SIGE 1 | 1.0 |
 
 ## Anexo D — Matriz de notificações
 
@@ -198,7 +203,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | --- | --- | --- | --- |
 | Ticket atribuído | Responsável e Atendimento/gestor de conta | No sistema; e-mail se configurado | Número, assunto, prioridade oficial e prazo de resolução. |
 | Comentário incluído | Solicitante, responsável e usuários mencionados com permissão | No sistema; e-mail se configurado | Número, autor e resumo do comentário. |
-| Aguardando cliente | Solicitante e Atendimento/gestor de conta | No sistema; e-mail se configurado | Informação ou aprovação necessária e prazo aplicável. |
+| Aguardando cliente | Solicitante e Atendimento/gestor de conta | No sistema; e-mail se configurado | Informação complementar necessária e prazo aplicável. |
 | Em validação | Solicitante e Atendimento/gestor de conta | No sistema; e-mail se configurado | Ação executada, evidência e ação esperada do cliente. |
 | SLA vencido | Responsável, Atendimento/gestor de conta e Administrador | No sistema; e-mail se configurado | Número, prioridade, prazo vencido e tempo em atraso. |
 | Concluída ou Reaberta | Solicitante, responsável e Atendimento/gestor de conta | No sistema; e-mail se configurado | Novo status, justificativa e próximo passo, quando houver. |

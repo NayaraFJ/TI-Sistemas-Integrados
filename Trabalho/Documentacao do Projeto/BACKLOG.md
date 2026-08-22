@@ -23,7 +23,7 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 
 | Frente | Escopo principal | Titular |
 | --- | --- | --- |
-| Processo e requisitos | Levantamento As Is, validação do To Be, requisitos e critérios de aceite. | |
+| Processo e requisitos | Derivação do As Is e do To Be a partir do referencial, requisitos e critérios de aceite. | |
 | Revisão acadêmica do artigo | Revisão cruzada de coerência, estrutura, citações, referências, linguagem e padrão PUC Minas antes de cada etapa. | |
 | Dados e modelo relacional | Entidades, relacionamentos, restrições, migrações e dados de demonstração. | |
 | Contratos e integração | Contrato de API, mocks e compatibilidade entre front-end e back-end. | |
@@ -66,7 +66,7 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 | ID    | Item                                                            | Entrega verificável                                          | Dependência  | Conclusão prevista | Concluído em | Responsável                        | Situação   |
 | ----- | --------------------------------------------------------------- | ------------------------------------------------------------ | ------------ | ------------------ | ------------ | ---------------------------------- | ---------- |
 | BL-04 | Consolidar introdução, problemática, justificativa e objetivos. | Seções coerentes no artigo.                                  | BL-02        | 25/09/2026         |              | Nayara Ferreira de Jesus Rodrigues | Em revisão |
-| BL-05 | Validar o processo atual (As Is) e os atores do MVP com potenciais usuários. | Fluxo As Is enxuto, papéis e hipóteses validados ou corrigidos e registro das respostas no levantamento de requisitos. | BL-04        | 25/09/2026         |              |                                    | Em andamento |
+| BL-05 | Consolidar o processo analítico (As Is) e os atores do MVP a partir do referencial. | Fluxo As Is, papéis, evidências e limitações registrados no levantamento de requisitos. | BL-04        | 25/09/2026         |              |                                    | Em andamento |
 | BL-06 | Refinar o esboço de baixa fidelidade.                           | Painel, abertura de ticket e detalhe do ticket documentados. | BL-04        | 25/09/2026         |              | Lorrainy Pâmela Siqueira Ferreira  | Em revisão |
 | BL-07 | Revisar o fluxo To Be com base no problema e no esboço.         | BPMN atualizado e legível.                                   | BL-05, BL-06 | 25/09/2026         |              |                                    | Em revisão |
 
@@ -75,7 +75,7 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 | ID | Item | Entrega verificável | Dependência | Conclusão prevista | Concluído em | Responsável | Situação |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | BL-08 | Concluir o referencial / marco teórico. | Fontes selecionadas, citações e referências consolidadas. | BL-04 | 30/10/2026 | | Nayara Ferreira de Jesus Rodrigues | Em revisão |
-| BL-09 | Validar e priorizar requisitos do MVP. | Requisitos, regras, critérios de aceite e rastreabilidade revisados. | BL-05, BL-08 | 30/10/2026 | | Nayara Ferreira de Jesus Rodrigues | Em revisão |
+| BL-09 | Derivar e priorizar requisitos do MVP. | Requisitos, regras, critérios de aceite e rastreabilidade revisados. | BL-05, BL-08 | 30/10/2026 | | Nayara Ferreira de Jesus Rodrigues | Em revisão |
 | BL-10 | Refinar o BPMN To Be e alinhá-lo aos requisitos. | Fluxo, papéis, estados e regras consistentes. | BL-07, BL-09 | 30/10/2026 | | | Em revisão |
 | BL-11 | Revisar protótipo contra requisitos prioritários. | Cada tela cobre os caminhos prioritários. | BL-06, BL-09 | 30/10/2026 | | Lorrainy Pâmela Siqueira Ferreira | Em revisão |
 | BL-12 | Definir titulares para as cinco frentes ainda abertas. | Matriz de responsabilidades preenchida e aceita pelo grupo. | — | 30/10/2026 | | Nayara Ferreira de Jesus Rodrigues | A fazer |

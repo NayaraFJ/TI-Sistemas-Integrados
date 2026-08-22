@@ -7,13 +7,13 @@
 
 ## Resumo
 
-Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital e investiga como solicitações encaminhadas a múltiplos pontos de contato podem dificultar a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. Diante disso, o estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a centralizar e rastrear essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, levantamento e especificação de requisitos, modelagem do processo em Business Process Model and Notation (BPMN) 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de acordo de nível de serviço (SLA), os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Esses resultados indicam que a organização das demandas em tickets pode explicitar responsabilidades, prazos e decisões, reduzindo a perda de contexto e ampliando a rastreabilidade e a transparência do atendimento. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para o problema identificado, cuja efetividade deverá ser confirmada após a implementação e a avaliação do produto mínimo viável (MVP).
+Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital e investiga como solicitações encaminhadas a múltiplos pontos de contato podem dificultar a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. Diante disso, o estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a centralizar e rastrear essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, derivação e especificação de requisitos fundamentadas no referencial, modelagem do processo em Business Process Model and Notation (BPMN) 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de acordo de nível de serviço (SLA), os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Esses resultados indicam que a organização das demandas em tickets pode explicitar responsabilidades, prazos e decisões, reduzindo a perda de contexto e ampliando a rastreabilidade e a transparência do atendimento. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para o problema identificado, cuja efetividade deverá ser confirmada após a implementação e a avaliação do produto mínimo viável (MVP).
 
 **Palavras-chave:** gestão de demandas; help desk; tráfego pago; marketing digital; sistemas de informação.
 
 ## Abstract
 
-This work addresses the management of paid advertising requests in digital marketing agencies and investigates how requests directed to multiple points of contact can make it difficult to assign responsibilities and deadlines, monitor service progress, retrieve decisions, and record approvals and evidence. Therefore, the study aims to develop SIGE Desk, a web-based help desk application designed to centralize and track these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, requirements elicitation and specification, Business Process Model and Notation (BPMN) 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, service level agreement (SLA) rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. These results indicate that organizing requests as tickets can clarify responsibilities, deadlines, and decisions while reducing context loss and increasing service traceability and transparency. It is preliminarily concluded that SIGE Desk is a technically coherent proposal for the identified problem, although its effectiveness must still be confirmed through minimum viable product (MVP) implementation and evaluation.
+This work addresses the management of paid advertising requests in digital marketing agencies and investigates how requests directed to multiple points of contact can make it difficult to assign responsibilities and deadlines, monitor service progress, retrieve decisions, and record approvals and evidence. Therefore, the study aims to develop SIGE Desk, a web-based help desk application designed to centralize and track these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, literature-grounded requirements derivation and specification, Business Process Model and Notation (BPMN) 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, service level agreement (SLA) rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. These results indicate that organizing requests as tickets can clarify responsibilities, deadlines, and decisions while reducing context loss and increasing service traceability and transparency. It is preliminarily concluded that SIGE Desk is a technically coherent proposal for the identified problem, although its effectiveness must still be confirmed through minimum viable product (MVP) implementation and evaluation.
 
 **Keywords:** demand management; help desk; paid advertising; digital marketing; information systems.
 
@@ -61,27 +61,17 @@ As três buscas recuperaram **44 artigos sem duplicidade**: 10 na Pesquisa 01, 1
 
 Os artigos selecionados foram usados para fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizou trabalhos sobre gestão de projetos em agência, plataformas de marketing, gestão de campanhas, orçamento, métricas de desempenho, privacidade, rastreabilidade, ponto único de contato e processamento de solicitações.
 
-### 2.2 Levantamento e validação de requisitos
+### 2.2 Derivação e especificação de requisitos
 
-Os requisitos preliminares serão derivados do problema de pesquisa, do referencial teórico e do esboço do protótipo. Em seguida, deverão ser validados com potenciais usuários: clientes de agências, profissionais de atendimento/gestão de conta e gestores de tráfego.
+Os requisitos preliminares serão derivados do problema de pesquisa, dos objetivos, do referencial teórico, das normas aplicáveis e do esboço do protótipo. Portanto, o levantamento de requisitos desta etapa é bibliográfico e documental; não envolve entrevista ou outra coleta de dados com clientes, profissionais de atendimento/gestão de conta ou gestores de tráfego.
 
-O instrumento de levantamento poderá conter perguntas semiestruturadas, como:
-
-- por quais canais as demandas são recebidas atualmente;
-- quais informações costumam faltar em uma solicitação;
-- quais tipos de demanda são mais recorrentes;
-- como são definidos prioridade, prazo e responsável;
-- quais situações causam retrabalho ou atraso;
-- quais informações o cliente precisa acompanhar;
-- quais indicadores seriam úteis para a gestão.
-
-As respostas serão organizadas por categorias, como entrada da demanda, priorização, execução, comunicação, aprovação, encerramento e indicadores. Cada requisito será classificado como alta, média ou baixa prioridade para a primeira versão do aplicativo. Para manter rastreabilidade, cada requisito deverá registrar origem, versão, responsável, critério de aceite e caso de teste relacionado (ISO/IEC/IEEE, 2018).
+A análise das fontes orientará as categorias entrada da demanda, priorização, execução, comunicação, aprovação, encerramento e indicadores. Cada requisito será classificado como alta, média ou baixa prioridade para a primeira versão do aplicativo. Para manter rastreabilidade, cada requisito deverá registrar origem, versão, responsável, critério de aceite e caso de teste relacionado (ISO/IEC/IEEE, 2018).
 
 ### 2.3 Modelagem do processo e do protótipo
 
-O fluxo de vida desejado (**To Be**) e o esboço do protótipo de baixa fidelidade já foram elaborados a partir dos requisitos preliminares. O fluxo atual (**As Is**) ainda será levantado com os perfis envolvidos, e o modelo To Be será refinado após essa validação. A representação do processo futuro adota Business Process Model and Notation (BPMN) 2.0.2, distinguindo Cliente e Agência como participantes e Atendimento/Gestor de conta e Gestor de tráfego como responsabilidades internas (OMG, 2014). Também serão refinados os perfis de usuário, regras de negócio, dados necessários, acordos de nível de serviço (SLAs) e telas principais.
+O fluxo de vida desejado (**To Be**) e o esboço do protótipo de baixa fidelidade já foram elaborados a partir dos requisitos preliminares. O fluxo atual (**As Is**) é uma hipótese analítica derivada da problemática e do referencial, usada para contrastar o problema com a solução proposta; não descreve empiricamente a rotina de uma agência específica. A representação do processo futuro adota Business Process Model and Notation (BPMN) 2.0.2, distinguindo Cliente e Agência como participantes e Atendimento/Gestor de conta e Gestor de tráfego como responsabilidades internas (OMG, 2014). Também serão refinados os perfis de usuário, regras de negócio, dados necessários, acordos de nível de serviço (SLAs) e telas principais.
 
-O protótipo de baixa fidelidade apresenta painel, listagem de tickets, abertura de solicitação e detalhes do ticket. Ele será refinado conforme a validação dos requisitos e deverá evidenciar os principais caminhos do usuário antes da implementação da aplicação.
+O protótipo de baixa fidelidade apresenta painel, listagem de tickets, abertura de solicitação e detalhes do ticket. Ele será refinado conforme a revisão dos requisitos derivados e deverá evidenciar os principais caminhos do usuário antes da implementação da aplicação.
 
 ### 2.4 Desenvolvimento da aplicação
 
@@ -91,7 +81,7 @@ Integrações automáticas com plataformas de anúncios, previsão por inteligê
 
 ### 2.5 Testes funcionais
 
-Os casos de teste serão derivados dos critérios de aceite e deverão registrar pré-condição, passos, resultado esperado, resultado obtido e situação final. O catálogo canônico dos treze cenários, seus requisitos associados e seus resultados esperados está em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais). No artigo, eles são descritos de forma sintética, pois o catálogo completo permanece na documentação do projeto.
+Os casos de teste serão derivados dos critérios de aceite e deverão registrar pré-condição, passos, resultado esperado, resultado obtido e situação final. O catálogo canônico dos dezessete cenários, seus requisitos associados e seus resultados esperados está em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais). No artigo, eles são descritos de forma sintética, pois o catálogo completo permanece na documentação do projeto.
 
 O critério de aprovação funcional será 100% dos casos de alta prioridade aprovados, pelo menos 90% do total de casos aprovados e nenhum defeito crítico em aberto. Casos reprovados deverão gerar registro de correção ou justificativa de adiamento.
 
@@ -163,7 +153,6 @@ O catálogo detalhado, os critérios de aceite e a rastreabilidade estão mantid
 - [x] Requisitos preliminares definidos.
 - [x] Esboço do protótipo produzido.
 - [x] Síntese dos resultados de especificação elaborada para o artigo; o catálogo completo permanece na documentação do projeto.
-- [ ] Validação dos requisitos com potenciais usuários.
 - [ ] Implementação da versão inicial do aplicativo.
 - [ ] Testes funcionais executados.
 - [ ] Avaliação de usabilidade executada.
