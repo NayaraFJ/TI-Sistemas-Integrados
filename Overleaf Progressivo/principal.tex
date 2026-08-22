@@ -1,14 +1,9 @@
 % !TEX program = xelatex
-% Projeto LaTeX consolidado a partir dos materiais em ../Trabalho.
+% Formatação baseada no modelo institucional ICEI PUC Minas (versão 2024).
 \documentclass[a4paper,12pt]{article}
 \usepackage{times}
 \usepackage{abakos}
-\usepackage{longtable}
 \usepackage{ragged2e}
-\usepackage{adjustbox}
-\usepackage{enumitem}
-\usepackage{verbatim}
-\usepackage{float}
 \usepackage{graphicx}
 \usepackage{url}
 \makeatletter
@@ -16,106 +11,66 @@
 \makeatother
 \emergencystretch=2em
 
-\addto\captionsbrazilian{\renewcommand{\contentsname}{SUMÁRIO}}
-\renewcommand{\cfttoctitlefont}{\hfill\bfseries}
-\renewcommand{\cftaftertoctitle}{\hfill}
-\setlength{\cftbeforetoctitleskip}{0pt}
-\setlength{\cftaftertoctitleskip}{1.5\baselineskip}
-
-\newcommand{\titulo}{Help Desk para Gestão de Demandas de Tráfego Pago}
+\newcommand{\monog}{Help Desk para Gestão de Demandas de Tráfego Pago}
 \newcommand{\instituicao}{Pontifícia Universidade Católica de Minas Gerais}
 \newcommand{\curso}{Sistemas de Informação}
 \newcommand{\disciplina}{Trabalho Interdisciplinar --- Sistemas Integrados de Gestão Empresarial}
 \newcommand{\professor}{Prof. Dr. Paulo Isnard}
-\newcommand{\cidade}{Contagem}
-\newcommand{\anoentrega}{2026}
-\newcommand{\integrantes}{%
-Augusto do Couto Avelar\\
-Gabriel Fernandes de Araújo\\
-Gabriel Rocha Lopes\\
-Karine Kessen Gilberti Felix\\
-Lorrainy Pâmela Siqueira Ferreira\\
-Maria Heloisa Aguiar Mendes\\
-Nayara Ferreira de Jesus Rodrigues\\
-Pedro Henrique Assuncao}
+\newcommand{\autores}{%
+Augusto do Couto Avelar\textsuperscript{1}\\
+Gabriel Fernandes de Araújo\textsuperscript{2}\\
+Gabriel Rocha Lopes\textsuperscript{3}\\
+Karine Kessen Gilberti Felix\textsuperscript{4}\\
+Lorrainy Pâmela Siqueira Ferreira\textsuperscript{5}\\
+Maria Heloisa Aguiar Mendes\textsuperscript{6}\\
+Nayara Ferreira de Jesus Rodrigues\textsuperscript{7}\\
+Pedro Henrique Assuncao\textsuperscript{8}}
+\newcommand{\orientador}{Prof. Dr. Paulo Augusto Isnard Santos\textsuperscript{9}}
 \providecommand{\htmladdnormallink}[2]{\url{#2}}
 
 \begin{document}
 
-\hypersetup{pageanchor=false}
-\begin{titlepage}
-\thispagestyle{empty}
 \begin{center}
-\includegraphics[height=2.2cm]{figuras/brasao.jpg}\\[0.4cm]
-\MakeUppercase{\instituicao}\\
-Instituto de Ciências Exatas e de Informática\\
-\curso
-
-\vspace{2.2cm}
-\begin{flushleft}\small
-\textbf{Grupo:} 2 2026 -- PBR -- TI SIGE 1\\[0.25cm]
-\integrantes
-\end{flushleft}
-
-\vfill
-\textbf{\MakeUppercase{\titulo}}
-
-\vfill
-\cidade\\
-\anoentrega
-\end{center}
-\end{titlepage}
-
-\begin{titlepage}
-\setcounter{page}{1}
-\thispagestyle{empty}
-\begin{center}
-\vspace*{1cm}
-{\small\integrantes}
-
-\vspace{2cm}
-\textbf{\MakeUppercase{\titulo}}
+\includegraphics[scale=0.2]{figuras/brasao.jpg} \\
+PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS \\
+Instituto de Ciências Exatas e de Informática
 \end{center}
 
-\vspace{4cm}
-\hspace*{7cm}%
-\begin{minipage}{\dimexpr\textwidth-7cm\relax}
+\vspace{0cm}
+{\singlespacing\Large
+\monog\symbolfootnote[1]{Trabalho apresentado à disciplina \disciplina{} do curso de \curso{} da \instituicao{}, como requisito parcial de avaliação. Professor: \professor.}\\}
+
+\vspace{1.0cm}
+\begin{flushright}
 \singlespacing
-Trabalho apresentado à disciplina \disciplina{} do curso de \curso{} da \instituicao{}, como requisito parcial de avaliação.
+\small
+\autores\\[-0.1cm]
+\orientador
+\end{flushright}
+\footnotetext[1]{Aluno do Programa de Graduação em Sistemas de Informação -- \href{mailto:770279@pucminas.edu.br}{770279@pucminas.edu.br}.}
+\footnotetext[2]{Aluno do Programa de Graduação em Sistemas de Informação -- \href{mailto:1445492@pucminas.edu.br}{1445492@pucminas.edu.br}.}
+\footnotetext[3]{Aluno do Programa de Graduação em Sistemas de Informação -- \href{mailto:1460309@pucminas.edu.br}{1460309@pucminas.edu.br}.}
+\footnotetext[4]{Aluna do Programa de Graduação em Sistemas de Informação -- \href{mailto:1448907@pucminas.edu.br}{1448907@pucminas.edu.br}.}
+\footnotetext[5]{Aluna do Programa de Graduação em Sistemas de Informação -- \href{mailto:1452297@pucminas.edu.br}{1452297@pucminas.edu.br}.}
+\footnotetext[6]{Aluna do Programa de Graduação em Sistemas de Informação -- \href{mailto:1406560@pucminas.edu.br}{1406560@pucminas.edu.br}.}
+\footnotetext[7]{Aluna do Programa de Graduação em Sistemas de Informação -- \href{mailto:720023@pucminas.edu.br}{720023@pucminas.edu.br}.}
+\footnotetext[8]{Aluno do Programa de Graduação em Sistemas de Informação -- \href{mailto:1478372@pucminas.edu.br}{1478372@pucminas.edu.br}.}
+\footnotetext[9]{Professor do Programa de Graduação em Sistemas de Informação.}
+\thispagestyle{empty}
 
-\vspace{\baselineskip}
-Professor: \professor
-\end{minipage}
-
-\vfill
-\begin{center}
-\cidade\\
-\anoentrega
-\end{center}
-\end{titlepage}
-\setcounter{page}{2}
-
-\pagestyle{empty}
-\tableofcontents
 \clearpage
-
-\pagestyle{fancy}
-\hypersetup{pageanchor=true}
-\onehalfspacing
+\onehalfspace
 \setlength{\parindent}{1.25cm}
 \setlength{\JustifyingParindent}{1.25cm}
 \justifying
-
 \input{conteudo}
 
 \clearpage
 \begingroup
-\singlespacing
+\singlespace
 \raggedright
-\renewcommand\refname{\hfill REFERÊNCIAS\hfill}
-\addcontentsline{toc}{section}{REFERÊNCIAS}
+\renewcommand\refname{REFERÊNCIAS}
 \bibliography{bibliografia}
 \endgroup
-
-\clearpage
+\bibliographystyle{abntex2-alf.bst}
 \end{document}

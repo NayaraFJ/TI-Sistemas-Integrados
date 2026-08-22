@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-% Projeto LaTeX consolidado a partir dos materiais em ../Trabalho.
+% Formatação baseada no modelo institucional ICEI PUC Minas (versão 2024).
 \documentclass[a4paper,12pt]{article}
 \usepackage{times}
 \usepackage{abakos}
@@ -16,129 +16,86 @@
 \makeatother
 \emergencystretch=2em
 
-\addto\captionsbrazilian{\renewcommand{\contentsname}{SUMÁRIO}}
-\renewcommand{\cfttoctitlefont}{\hfill\bfseries}
-\renewcommand{\cftaftertoctitle}{\hfill}
-\setlength{\cftbeforetoctitleskip}{0pt}
-\setlength{\cftaftertoctitleskip}{1.5\baselineskip}
-
-\newcommand{\titulo}{Help Desk para Gestão de Demandas de Tráfego Pago}
+\newcommand{\monog}{Help Desk para Gestão de Demandas de Tráfego Pago}
 \newcommand{\instituicao}{Pontifícia Universidade Católica de Minas Gerais}
 \newcommand{\curso}{Sistemas de Informação}
 \newcommand{\disciplina}{Trabalho Interdisciplinar --- Sistemas Integrados de Gestão Empresarial}
 \newcommand{\professor}{Prof. Dr. Paulo Isnard}
-\newcommand{\cidade}{Contagem}
-\newcommand{\anoentrega}{2026}
-\newcommand{\integrantes}{%
-Augusto do Couto Avelar\\
-Gabriel Fernandes de Araújo\\
-Gabriel Rocha Lopes\\
-Karine Kessen Gilberti Felix\\
-Lorrainy Pâmela Siqueira Ferreira\\
-Maria Heloisa Aguiar Mendes\\
-Nayara Ferreira de Jesus Rodrigues\\
-Pedro Henrique Assuncao}
+\newcommand{\autores}{%
+Augusto do Couto Avelar\textsuperscript{1}\\
+Gabriel Fernandes de Araújo\textsuperscript{2}\\
+Gabriel Rocha Lopes\textsuperscript{3}\\
+Karine Kessen Gilberti Felix\textsuperscript{4}\\
+Lorrainy Pâmela Siqueira Ferreira\textsuperscript{5}\\
+Maria Heloisa Aguiar Mendes\textsuperscript{6}\\
+Nayara Ferreira de Jesus Rodrigues\textsuperscript{7}\\
+Pedro Henrique Assuncao\textsuperscript{8}}
+\newcommand{\orientador}{Prof. Dr. Paulo Augusto Isnard Santos\textsuperscript{9}}
+\newcommand{\keyword}[1]{\textsf{#1}}
 \providecommand{\htmladdnormallink}[2]{\url{#2}}
 
 \begin{document}
 
-\hypersetup{pageanchor=false}
-\begin{titlepage}
-\thispagestyle{empty}
 \begin{center}
-\includegraphics[height=2.2cm]{figuras/brasao.jpg}\\[0.4cm]
-\MakeUppercase{\instituicao}\\
-Instituto de Ciências Exatas e de Informática\\
-\curso
-
-\vspace{2.2cm}
-\begin{flushleft}\small
-\textbf{Grupo:} 2 2026 -- PBR -- TI SIGE 1\\[0.25cm]
-\integrantes
-\end{flushleft}
-
-\vfill
-\textbf{\MakeUppercase{\titulo}}
-
-\vfill
-\cidade\\
-\anoentrega
-\end{center}
-\end{titlepage}
-
-\begin{titlepage}
-\setcounter{page}{1}
-\thispagestyle{empty}
-\begin{center}
-\vspace*{1cm}
-{\small\integrantes}
-
-\vspace{2cm}
-\textbf{\MakeUppercase{\titulo}}
+\includegraphics[scale=0.2]{figuras/brasao.jpg} \\
+PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS \\
+Instituto de Ciências Exatas e de Informática
 \end{center}
 
-\vspace{4cm}
-\hspace*{7cm}%
-\begin{minipage}{\dimexpr\textwidth-7cm\relax}
+\vspace{0cm}
+{\singlespacing\Large
+\monog\symbolfootnote[1]{Trabalho apresentado à disciplina \disciplina{} do curso de \curso{} da \instituicao{}, como requisito parcial de avaliação. Professor: \professor.}\\}
+
+\vspace{1.0cm}
+\begin{flushright}
 \singlespacing
-Trabalho apresentado à disciplina \disciplina{} do curso de \curso{} da \instituicao{}, como requisito parcial de avaliação.
+\small
+\autores\\[-0.1cm]
+\orientador
+\end{flushright}
+\footnotetext[1]{Aluno do Programa de Graduação em Sistemas de Informação -- \href{mailto:770279@pucminas.edu.br}{770279@pucminas.edu.br}.}
+\footnotetext[2]{Aluno do Programa de Graduação em Sistemas de Informação -- \href{mailto:1445492@pucminas.edu.br}{1445492@pucminas.edu.br}.}
+\footnotetext[3]{Aluno do Programa de Graduação em Sistemas de Informação -- \href{mailto:1460309@pucminas.edu.br}{1460309@pucminas.edu.br}.}
+\footnotetext[4]{Aluna do Programa de Graduação em Sistemas de Informação -- \href{mailto:1448907@pucminas.edu.br}{1448907@pucminas.edu.br}.}
+\footnotetext[5]{Aluna do Programa de Graduação em Sistemas de Informação -- \href{mailto:1452297@pucminas.edu.br}{1452297@pucminas.edu.br}.}
+\footnotetext[6]{Aluna do Programa de Graduação em Sistemas de Informação -- \href{mailto:1406560@pucminas.edu.br}{1406560@pucminas.edu.br}.}
+\footnotetext[7]{Aluna do Programa de Graduação em Sistemas de Informação -- \href{mailto:720023@pucminas.edu.br}{720023@pucminas.edu.br}.}
+\footnotetext[8]{Aluno do Programa de Graduação em Sistemas de Informação -- \href{mailto:1478372@pucminas.edu.br}{1478372@pucminas.edu.br}.}
+\footnotetext[9]{Professor do Programa de Graduação em Sistemas de Informação.}
+\thispagestyle{empty}
 
-\vspace{\baselineskip}
-Professor: \professor
-\end{minipage}
+\vspace{1.0cm}
+\begin{abstract}
+\noindent
+Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital e investiga como solicitações encaminhadas a múltiplos pontos de contato podem dificultar a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. Diante disso, o estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a centralizar e rastrear essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, levantamento e especificação de requisitos, modelagem do processo em Business Process Model and Notation (BPMN) 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de acordo de nível de serviço (SLA), os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Esses resultados indicam que a organização das demandas em tickets pode explicitar responsabilidades, prazos e decisões, reduzindo a perda de contexto e ampliando a rastreabilidade e a transparência do atendimento. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para o problema identificado, cuja efetividade deverá ser confirmada após a implementação e a avaliação do produto mínimo viável (MVP).
+\\\textbf{\keyword{Palavras-chave:}} gestão de demandas; help desk; tráfego pago; marketing digital; sistemas de informação.
+\end{abstract}
 
-\vfill
-\begin{center}
-\cidade\\
-\anoentrega
-\end{center}
-\end{titlepage}
-\setcounter{page}{2}
-
-\pagestyle{empty}
-\begin{center}\textbf{RESUMO}\end{center}
-\onehalfspacing
-\justifying
-\noindent Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital e investiga como solicitações encaminhadas a múltiplos pontos de contato podem dificultar a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. Diante disso, o estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a centralizar e rastrear essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, levantamento e especificação de requisitos, modelagem do processo em Business Process Model and Notation (BPMN) 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de acordo de nível de serviço (SLA), os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Esses resultados indicam que a organização das demandas em tickets pode explicitar responsabilidades, prazos e decisões, reduzindo a perda de contexto e ampliando a rastreabilidade e a transparência do atendimento. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para o problema identificado, cuja efetividade deverá ser confirmada após a implementação e a avaliação do produto mínimo viável (MVP).
-
-\vspace{\baselineskip}
-\noindent\textbf{Palavras-chave:} gestão de demandas; help desk; tráfego pago; marketing digital; sistemas de informação.
-\clearpage
-
-\begin{center}\textbf{ABSTRACT}\end{center}
 \selectlanguage{english}
-\noindent This work addresses the management of paid advertising requests in digital marketing agencies and investigates how requests directed to multiple points of contact can make it difficult to assign responsibilities and deadlines, monitor service progress, retrieve decisions, and record approvals and evidence. Therefore, the study aims to develop SIGE Desk, a web-based help desk application designed to centralize and track these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, requirements elicitation and specification, Business Process Model and Notation (BPMN) 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, service level agreement (SLA) rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. These results indicate that organizing requests as tickets can clarify responsibilities, deadlines, and decisions while reducing context loss and increasing service traceability and transparency. It is preliminarily concluded that SIGE Desk is a technically coherent proposal for the identified problem, although its effectiveness must still be confirmed through minimum viable product (MVP) implementation and evaluation.
-
-\vspace{\baselineskip}
-\noindent\textbf{Keywords:} demand management; help desk; paid advertising; digital marketing; information systems.
+\begin{abstract}
+\noindent
+This work addresses the management of paid advertising requests in digital marketing agencies and investigates how requests directed to multiple points of contact can make it difficult to assign responsibilities and deadlines, monitor service progress, retrieve decisions, and record approvals and evidence. Therefore, the study aims to develop SIGE Desk, a web-based help desk application designed to centralize and track these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, requirements elicitation and specification, Business Process Model and Notation (BPMN) 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, service level agreement (SLA) rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. These results indicate that organizing requests as tickets can clarify responsibilities, deadlines, and decisions while reducing context loss and increasing service traceability and transparency. It is preliminarily concluded that SIGE Desk is a technically coherent proposal for the identified problem, although its effectiveness must still be confirmed through minimum viable product (MVP) implementation and evaluation.
+\\\textbf{\keyword{Keywords:}} demand management; help desk; paid advertising; digital marketing; information systems.
+\end{abstract}
 \selectlanguage{brazilian}
-\clearpage
 
-\pagestyle{empty}
-\tableofcontents
-\clearpage
-
-\pagestyle{fancy}
-\hypersetup{pageanchor=true}
-\onehalfspacing
+\onehalfspace
 \setlength{\parindent}{1.25cm}
 \setlength{\JustifyingParindent}{1.25cm}
 \justifying
-
 \input{conteudo}
 
 \clearpage
 \begingroup
-\singlespacing
+\singlespace
 \raggedright
-\renewcommand\refname{\hfill REFERÊNCIAS\hfill}
-\addcontentsline{toc}{section}{REFERÊNCIAS}
+\renewcommand\refname{REFERÊNCIAS}
 \bibliography{bibliografia}
 \endgroup
+\bibliographystyle{abntex2-alf.bst}
 
 \clearpage
 \appendix
 \input{apendice-especificacao}
 \input{apendice-validacao}
-
 \end{document}
