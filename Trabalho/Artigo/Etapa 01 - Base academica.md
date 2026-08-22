@@ -29,15 +29,7 @@
 
 Esta entrega registra a definição inicial do tema, do título, da introdução e da delimitação. Ela é preservada como fonte do projeto progressivo da primeira etapa; a versão acadêmica vigente do artigo completo foi posteriormente revisada e consolidada em [Etapa 02 - Artigo.md](Etapa%2002%20-%20Artigo.md).
 
-## Introdução inicial
 
-O marketing digital é uma atividade estratégica para organizações que desejam divulgar produtos e serviços, alcançar públicos específicos e acompanhar resultados por indicadores mensuráveis (Gujar, Paliwal e Panyam, 2024; Younas et al., 2025). Em agências e consultorias, a gestão de tráfego pago envolve a criação e a alteração contínua de campanhas, públicos, orçamentos, criativos e metas. Como diferentes clientes podem demandar essas ações ao mesmo tempo, o trabalho exige coordenação entre atendimento, gestão de tráfego, criação, análise e o próprio cliente (Steponaitis e Andrijauskienė, 2023; Agus et al., 2019).
-
-Essa coordenação se traduz em solicitações relacionadas às campanhas, como criação ou pausa de anúncios, ajustes de orçamento e de público, aprovação de criativos e pedido de relatórios. Embora os canais efetivamente utilizados por agências devam ser identificados no levantamento de requisitos, a literatura de Service Desk indica que o encaminhamento direto de solicitações a diferentes pessoas pode produzir múltiplos pontos de contato. Em contraposição, o Service Desk é concebido como ponto único para receber, registrar, analisar, encaminhar e acompanhar solicitações (Firmansyah e Subriadi, 2022; Fenner et al., 2015; Amanullah, Zeki e Abubakar, 2017).
-
-Quando as informações de uma solicitação não são mantidas em um registro comum, tornam-se mais difíceis a definição de responsável, o acompanhamento de prazo, o registro de aprovação e a recuperação das decisões tomadas. As práticas de Service Desk e de gerenciamento de solicitações procuram mitigar esses riscos por meio de registro, triagem, comunicação e acompanhamento (Firmansyah e Subriadi, 2022; PEOPLECERT, 2023a, 2023b). Nesse contexto, esta etapa propõe o SIGE Desk, uma aplicação web de Help Desk para centralizar e rastrear demandas de tráfego pago.
-
-A aplicação será voltada ao registro, à triagem, à atribuição, ao acompanhamento, à validação e ao encerramento de solicitações. Cada ticket reunirá informações da campanha, prioridade, prazo, responsável, comentários, aprovações, histórico e evidências. A proposta não substitui plataformas de mídia nem automatiza a alteração de anúncios; ela organiza o processo de atendimento e de gestão das demandas associadas a essas plataformas.
 
 ## Delimitação inicial da aplicação
 
