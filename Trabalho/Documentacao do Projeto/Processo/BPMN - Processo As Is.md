@@ -10,17 +10,17 @@ Para este trabalho, o As Is é recomendado como um diagnóstico breve: ele evide
 
 ## 2. Hipótese do processo atual
 
-As solicitações podem chegar por mensagens, e-mail ou outros canais. O atendimento ou gestor de tráfego interpreta a demanda, busca informações adicionais quando necessário e executa a alteração. A confirmação ao cliente e as evidências podem ficar distribuídas entre os mesmos canais. Não há, inicialmente, garantia de número único, responsável, prazo, estado, histórico ou aprovação registrados em um único local.
+Este diagrama não descreve uma rotina já comprovada de agência. Ele registra uma hipótese de processo a ser confrontada com potenciais usuários: uma solicitação é recebida pelo canal vigente, alguém da agência verifica as informações, a demanda é executada ou encaminhada e a resposta retorna ao cliente. Caso não exista um registro comum, pedido, responsável, prazo, decisão, aprovação e evidência podem ficar distribuídos em pontos de contato distintos. Os canais e papéis efetivamente utilizados devem ser registrados no [levantamento de requisitos](../Levantamento%20de%20requisitos.md).
 
 ```mermaid
 flowchart TB
-    A[Cliente identifica uma necessidade] --> B[Envia mensagem ou e-mail]
-    B --> C[Atendimento ou gestor recebe a demanda]
+    A[Cliente identifica uma necessidade] --> B[Envia solicitação pelo canal vigente]
+    B --> C[Pessoa da agência recebe a demanda]
     C --> D{Informações suficientes?}
     D -- Não --> E[Solicita complemento pelo canal disponível]
     E --> B
-    D -- Sim --> F[Executa ou repassa a demanda]
-    F --> G[Comunica resultado pelo canal disponível]
+    D -- Sim --> F[Executa ou encaminha a demanda]
+    F --> G[Comunica resultado pelo canal vigente]
     G --> H{Cliente pede ajuste?}
     H -- Sim --> B
     H -- Não --> I[Fim sem registro centralizado]

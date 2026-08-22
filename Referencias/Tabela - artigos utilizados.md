@@ -2,13 +2,14 @@
 
 ## Escopo
 
-Esta tabela registra os doze artigos científicos selecionados do corpus recuperado na IEEE Xplore para fundamentar o artigo **Help Desk para Gestão de Demandas de Tráfego Pago**. Cada linha liga o PDF original à sua extração de leitura. Os 32 registros que não integraram a fundamentação principal estão na [tabela de artigos descartados](<Tabela - artigos descartados.md>).
+Esta tabela registra os treze artigos científicos selecionados do corpus recuperado na IEEE Xplore para fundamentar o artigo **Help Desk para Gestão de Demandas de Tráfego Pago**. Cada linha liga o PDF original à sua extração de leitura. Os 31 registros que não integraram a fundamentação principal estão na [tabela de artigos descartados](<Tabela - artigos descartados.md>).
 
 ## Artigos utilizados
 
 | Busca | Artigo | PDF | Extração |
 | --- | --- | --- | --- |
 | 01 | DIGI-AI: An AI-Powered Web Platform for Intelligent Digital Marketing Automation | [PDF](<Pesquisa 01/DIGI-AI an AI-Powered Web Platform for Intelligent Digital Marketing Automation.pdf>) | [Extração](<Pesquisa 01/Extracoes/02-digi-ai-plataforma.md>) |
+| 01 | Adoption of Artificial Intelligence in Customer Relationship Management: Insights from Bangladesh's Digital Marketing Sector | [PDF](<Pesquisa 01/Adoption of Artificial Intelligence in Customer Relationship Management Insights from Bangladesh-s Digital Marketing Sector.pdf>) | [Extração](<Pesquisa 01/Extracoes/01-ai-crm-bangladesh.md>) |
 | 01 | Digital Marketing, Brand Awareness and Customer Relationship Management on Repurchase Intention in E-Commerce Marketplace | [PDF](<Pesquisa 01/Digital Marketing- Brand Awareness and Customer Relationship Management on Repurchase Intention in E-Commerce Marketplace.pdf>) | [Extração](<Pesquisa 01/Extracoes/03-crm-intencao-recompra.md>) |
 | 01 | Improving Digital Project Management Competencies: Case Study of a Digital Marketing Agency in Lithuania | [PDF](<Pesquisa 01/Improving Digital Project Management Competencies Case Study of a Digital Marketing Agency in Lithuania.pdf>) | [Extração](<Pesquisa 01/Extracoes/05-competencias-gestao-projetos-agencia.md>) |
 | 01 | Revolutionizing In-House Digital Marketing with End-to-End Marketing Automation Powered by AI and SaaS | [PDF](<Pesquisa 01/Revolutionizing In-House Digital Marketing with End-to-End Marketing Automation Powered by AI and SaaS.pdf>) | [Extração](<Pesquisa 01/Extracoes/07-automacao-end-to-end.md>) |

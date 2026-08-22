@@ -41,8 +41,8 @@ Nova solicitação
 
 Cliente:       [selecionar cliente                     ]
 Campanha:      [selecionar campanha ou informar nova   ]
-Tipo:          [Alteração de campanha                  ]
-Canal:         [Google Ads / Meta Ads / outro          ]
+Tipo:          [Criação, alteração ou pausa de anúncio ]
+Canal:         [plataforma de mídia / outro            ]
 Urgência:      [Baixa | Média | Alta | Urgente          ]
 Prazo desejado:[dd/mm/aaaa                              ]
 Assunto:       [_______________________________________]
@@ -57,7 +57,7 @@ Anexos:        [Adicionar arquivo]
 
 O protótipo será considerado adequado à proposta se permitir:
 
-- registrar uma solicitação sem recorrer a mensagens externas;
+- registrar uma solicitação com o SIGE Desk como registro principal;
 - visualizar o status, o responsável e o prazo de cada demanda;
 - manter histórico das interações e alterações de status;
 - filtrar demandas por cliente, campanha, prioridade e status;

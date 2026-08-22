@@ -1,6 +1,6 @@
 # Backlog do SIGE Desk
 
-Este é o backlog operacional do grupo. Ele converte o [cronograma oficial](../../README.md#cronograma) em marcos de entrega e usa como fontes técnicas o [processo](Processo/BPMN%20-%20Processo%20To%20Be.md), o [protótipo](Prototipo/Prototipo%20de%20baixa%20fidelidade.md) e a [especificação](Especificacao/Especificacao%20do%20sistema.md).
+Este é o backlog operacional do grupo. Ele converte o [cronograma oficial](../../README.md#cronograma) em marcos de entrega e usa como fontes técnicas o [levantamento de requisitos](Levantamento%20de%20requisitos.md), o [processo](Processo/BPMN%20-%20Processo%20To%20Be.md), o [protótipo](Prototipo/Prototipo%20de%20baixa%20fidelidade.md) e a [especificação](Especificacao/Especificacao%20do%20sistema.md).
 
 As atribuições iniciais representam afinidade e coordenação, não exclusividade: Pedro Henrique Assuncao atua no eixo de back-end; Lorrainy Pâmela Siqueira Ferreira, no de front-end; e Nayara Ferreira de Jesus Rodrigues, na documentação, no papel de Product Owner (PO) e na interface com a orientação. Cada entrega deve ter revisão de pelo menos outro integrante.
 
@@ -66,7 +66,7 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 | ID    | Item                                                            | Entrega verificável                                          | Dependência  | Conclusão prevista | Concluído em | Responsável                        | Situação   |
 | ----- | --------------------------------------------------------------- | ------------------------------------------------------------ | ------------ | ------------------ | ------------ | ---------------------------------- | ---------- |
 | BL-04 | Consolidar introdução, problemática, justificativa e objetivos. | Seções coerentes no artigo.                                  | BL-02        | 25/09/2026         |              | Nayara Ferreira de Jesus Rodrigues | Em revisão |
-| BL-05 | Validar o processo atual (As Is) com potenciais usuários.      | Fluxo As Is enxuto, hipóteses validadas ou corrigidas e registro das respostas. | BL-04        | 25/09/2026         |              |                                    | Em andamento |
+| BL-05 | Validar o processo atual (As Is) e os atores do MVP com potenciais usuários. | Fluxo As Is enxuto, papéis e hipóteses validados ou corrigidos e registro das respostas no levantamento de requisitos. | BL-04        | 25/09/2026         |              |                                    | Em andamento |
 | BL-06 | Refinar o esboço de baixa fidelidade.                           | Painel, abertura de ticket e detalhe do ticket documentados. | BL-04        | 25/09/2026         |              | Lorrainy Pâmela Siqueira Ferreira  | Em revisão |
 | BL-07 | Revisar o fluxo To Be com base no problema e no esboço.         | BPMN atualizado e legível.                                   | BL-05, BL-06 | 25/09/2026         |              |                                    | Em revisão |
 
@@ -107,10 +107,10 @@ As cinco frentes abaixo existem para distribuir trabalho entre os oito integrant
 | BL-28 | Executar casos de teste, registrar defeitos e realizar retestes. | Evidências dos casos prioritários, lista de defeitos e situação final. | BL-22, BL-25 a BL-27 | 11/12/2026 | | | A fazer |
 | BL-29 | Realizar avaliação de usabilidade e registrar melhorias. | Resultado agregado das tarefas e UEQ-S; melhorias priorizadas pelo PO. | BL-22 | 11/12/2026 | | | A fazer |
 | BL-30 | Preparar release, instruções de execução e contingência da demonstração. | Versão identificada, passo a passo de execução e plano alternativo para a demo. | BL-23, BL-28 | 11/12/2026 | | | A fazer |
-| BL-31 | Consolidar artigo, apêndices e referências no padrão PUC Minas. | Versão revisada pelo orientador e pronta para submissão. | BL-28, BL-29 | 11/12/2026 | | Nayara Ferreira de Jesus Rodrigues | A fazer |
+| BL-31 | Consolidar artigo, documentação de apoio e referências no padrão PUC Minas. | Versão revisada pelo orientador e pronta para submissão. | BL-28, BL-29 | 11/12/2026 | | Nayara Ferreira de Jesus Rodrigues | A fazer |
 | BL-32 | Preparar apresentação, roteiro e divisão de fala da demo. | Apresentação ensaiada, dados de demonstração e responsáveis por cada parte. | BL-30, BL-31 | 11/12/2026 | | | A fazer |
 | BL-33 | Participar da Mostra Tecnológica Interdisciplinar e da apresentação final. | APP final, apresentação e demo executada. | BL-32 | 11/12/2026 | | | A fazer |
-| BL-34 | Realizar a revisão cruzada final do artigo. | Checklist de coerência entre etapas, Overleaf, citações, referências, apêndices, resumo, abstract e padrão PUC Minas; pendências corrigidas ou registradas. | BL-31 | 11/12/2026 | | Revisor do artigo a definir | A fazer |
+| BL-34 | Realizar a revisão cruzada final do artigo. | Checklist de coerência entre etapas, Overleaf, citações, referências, documentação de apoio, resumo, abstract e padrão PUC Minas; pendências corrigidas ou registradas. | BL-31 | 11/12/2026 | | Revisor do artigo a definir | A fazer |
 
 ## Contrato de integração front-end e back-end
 

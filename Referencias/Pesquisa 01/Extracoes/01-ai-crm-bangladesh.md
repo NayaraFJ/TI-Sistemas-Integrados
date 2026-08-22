@@ -4,7 +4,7 @@
 - **Autores:** Md Mehedi Hasan Emon; Md. Adnan Rahman; Sharmin Jahan; Soeb Md Shoayeb Noman; Zerin Tasnim; Javed Mahmud.
 - **Ano:** 2026.
 - **DOI:** `10.1109/QPAIN69676.2026.11546086`.
-- **Relevância para o tema:** **3/5**. É útil para CRM, adoção de IA e atendimento mais proativo, mas não avalia Help Desk, tickets ou fluxo de demandas.
+- **Relevância para o tema:** **4/5** para contextualizar funções profissionais no setor de marketing digital e decisões de CRM. Não avalia Help Desk, tickets ou fluxo de demandas, e seus resultados sobre IA não são usados para definir o MVP.
 
 ## Contexto / Motivação
 
@@ -64,7 +64,7 @@ Moderada-baixa: deve-se restringir a organizações e profissionais semelhantes 
 
 ## Utilidade para minha pesquisa
 
-Pode justificar requisitos de implantação: compatibilidade com WhatsApp/CRM, capacitação da equipe, apoio da gestão e percepção de utilidade. Os quatro construtos também servem como variáveis para avaliar aceitação futura do Help Desk.
+Na introdução, fundamenta a menção a gerentes de marketing, profissionais de marketing digital e especialistas em CRM como participantes de decisões de relacionamento com o cliente: foram os perfis investigados pelos autores entre 149 respostas válidas. Pode também orientar avaliação futura de capacitação, apoio da gestão e compatibilidade tecnológica, sem introduzir recursos de IA no MVP.
 
 ## Observação adicional
 

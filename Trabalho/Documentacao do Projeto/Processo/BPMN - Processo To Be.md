@@ -2,13 +2,15 @@
 
 **Aplicação:** Help Desk para Gestão de Demandas de Tráfego Pago
 
-> Modelo de processo baseado nos elementos da Business Process Model and Notation (BPMN) 2.0.2. Ele representa o fluxo desejado do SIGE Desk; não representa automações dentro de Google Ads, Meta Ads ou ferramentas de gestão do relacionamento com o cliente (CRM).
+> Modelo de processo baseado nos elementos da Business Process Model and Notation (BPMN) 2.0.2. Ele representa o fluxo desejado do SIGE Desk; não representa automações em plataformas de anúncios, *publishers* digitais ou ferramentas de gestão do relacionamento com o cliente (CRM). Os participantes e o limite entre atores externos e perfis do sistema estão documentados em [Levantamento de requisitos.md](../Levantamento%20de%20requisitos.md).
 
 ## 1. Objetivo do processo
 
-Transformar solicitações recebidas por canais dispersos em tickets rastreáveis, com triagem, responsável, prazo, comunicação, validação e encerramento registrados.
+Oferecer um fluxo de tickets rastreáveis para demandas de tráfego pago, com triagem, responsável, prazo, comunicação, validação e encerramento registrados.
 
 ## 2. Participantes e responsabilidades
+
+Os quatro perfis abaixo são definidos para o processo proposto. Anunciante/cliente, agência, *publishers* e plataformas de troca de anúncios são atores do contexto da publicidade digital; apenas Cliente e Agência utilizam o SIGE Desk no MVP.
 
 | Pool / lane BPMN | Responsabilidade no processo |
 | --- | --- |

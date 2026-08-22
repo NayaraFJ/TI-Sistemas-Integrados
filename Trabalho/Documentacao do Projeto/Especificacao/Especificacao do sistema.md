@@ -8,9 +8,11 @@
 
 ## 1. Visão do produto
 
-O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago entre clientes e equipe de uma agência de marketing digital. O sistema centralizará solicitações, responsáveis, prazos, status, comentários, aprovações e evidências de execução.
+O SIGE Desk será uma aplicação web para organizar demandas de tráfego pago entre clientes e equipe de uma agência de marketing digital. O sistema centralizará solicitações, responsáveis, prazos, status, comentários, aprovações e evidências de execução. A delimitação dos atores, as evidências bibliográficas e as perguntas de validação estão registradas em [Levantamento de requisitos.md](../Levantamento%20de%20requisitos.md).
 
 ## 2. Perfis de usuário
+
+Os perfis são uma decisão de desenho do MVP e não a afirmação de que toda agência utiliza os mesmos cargos. Eles transformam as responsabilidades necessárias ao processo em permissões do sistema; serão refinados após o levantamento de requisitos.
 
 | Perfil | Permissões principais |
 | --- | --- |
@@ -42,7 +44,7 @@ As fontes da última coluna orientaram o levantamento e a priorização dos requ
 | RF-15 | O painel deve apresentar total de tickets por status, prioridade, responsável e prazo. | Média | [classificação de tráfego](../../../Referencias/Pesquisa%2002/Extracoes/13-classificacao-trafego.md); [gestão de projetos em agência](../../../Referencias/Pesquisa%2001/Extracoes/05-competencias-gestao-projetos-agencia.md) |
 | RF-16 | O sistema deve identificar tickets vencidos e tickets aguardando resposta do cliente. | Média | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md) |
 | RF-17 | O sistema deve permitir consultar histórico completo de cada ticket. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [LGPD](../../../Referencias/Normas/Extracoes/05-lgpd-lei-13709.md) |
-| RF-18 | O sistema deve permitir registrar métricas de contexto, como taxa de cliques (CTR), custo por clique (CPC), conversão, custo por aquisição (CPA) e retorno sobre o investimento em anúncios (ROAS), quando aplicável. | Baixa | [otimização de orçamento](../../../Referencias/Pesquisa%2002/Extracoes/02-otimizacao-orcamento.md); [busca por voz e anúncios pagos](../../../Referencias/Pesquisa%2002/Extracoes/09-voz-anuncios-pagos.md) |
+| RF-18 | O sistema deve permitir registrar métricas de contexto, como impressões, taxa de cliques (CTR), custo por clique (CPC), conversão, custo por aquisição (CPA) e retorno sobre o investimento em anúncios (ROAS), quando aplicável. | Baixa | [otimização de orçamento](../../../Referencias/Pesquisa%2002/Extracoes/02-otimizacao-orcamento.md); [busca por voz e anúncios pagos](../../../Referencias/Pesquisa%2002/Extracoes/09-voz-anuncios-pagos.md) |
 | RF-19 | O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. | Baixa | [classificação de tráfego](../../../Referencias/Pesquisa%2002/Extracoes/13-classificacao-trafego.md); [gestão de projetos em agência](../../../Referencias/Pesquisa%2001/Extracoes/05-competencias-gestao-projetos-agencia.md) |
 | RF-20 | O sistema deve enviar notificação no sistema e, quando configurado, por e-mail aos envolvidos autorizados conforme o evento — solicitante, responsável, Atendimento/gestor de conta e Administrador — quando o ticket for atribuído, comentado, estiver aguardando cliente, entrar em validação, vencer ou for concluído/reaberto. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md); [ITIL — Service Request Management](../../../Referencias/Normas/Extracoes/03-itil-4-service-request-management.md) |
 | RF-21 | O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. | Alta | [ITIL — Service Desk](../../../Referencias/Normas/Extracoes/02-itil-4-service-desk.md) |
@@ -88,7 +90,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | RN-07 | O status “Cancelada” exige motivo de cancelamento.                                                                                                                                                                                                   |
 | RN-08 | O status “Aguardando cliente” deve registrar qual informação ou aprovação é necessária.                                                                                                                                                              |
 | RN-09 | O cliente deve visualizar somente tickets vinculados à sua organização.                                                                                                                                                                              |
-| RN-10 | Alterações de orçamento, público ou criativo podem exigir aprovação do cliente antes da execução, conforme configuração do tipo de demanda.                                                                                                          |
+| RN-10 | Tipos de demanda configurados como sensíveis podem exigir validação do cliente antes da conclusão, conforme sua regra de aprovação.                                                                                                                |
 | RN-11 | Cliente, atendimento ou administrador pode reabrir um ticket concluído mediante justificativa; a reabertura preserva todo o histórico anterior.                                                                                                      |
 | RN-12 | Ao vencer o SLA, o sistema deve sinalizar o ticket e notificar o responsável e o atendimento.                                                                                                                                                        |
 | RN-13 | Atribuição, comentário, mudança para “Aguardando cliente”, “Em validação”, “Concluída” e “Reaberta” devem gerar notificações aos envolvidos.                                                                                                         |
@@ -130,7 +132,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Administrador mantém clientes e campanhas | Cliente pode ser ativado/inativado e campanha cadastrada fica vinculada ao cliente selecionado. | RF-03, RF-04 | CT-12 |
 | Atendimento faz a triagem | Prioridade oficial, prazos de SLA e responsável ficam registrados no histórico. | RF-07, RF-09, RN-03, RN-14 | CT-02 |
 | Gestor de tráfego executa uma alteração | O ticket recebe comentário/evidência e pode ser encaminhado para validação. | RF-08, RF-10, RF-12, RN-05 | CT-03, CT-05 |
-| Cliente precisa aprovar uma mudança | O ticket fica “Aguardando cliente” até decisão registrada. | RF-11, RN-08, RN-10 | CT-04 |
+| Informação adicional é necessária | O ticket fica “Aguardando cliente” até o complemento ser registrado. | RF-11, RN-08 | CT-04 |
 | Entrega precisa ser confirmada | O ticket segue para “Em validação”; após aprovação, torna-se “Concluída”. | RF-11, RN-05, RN-06 | CT-05 |
 | Cliente solicita correção | O ticket é reaberto com justificativa e retorna à fila de execução. | RF-11, RN-11 | CT-05 |
 | Prazo é ultrapassado | O ticket é identificado como vencido no painel ou listagem. | RF-16, RF-21, RN-12 | CT-06 |
@@ -161,7 +163,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Tipo | Dados obrigatórios adicionais | Aprovação | Evidência esperada | SLA sugerido |
 | --- | --- | --- | --- | --- |
 | Ajuste de orçamento | Campanha, orçamento atual/proposto, justificativa e data desejada. | Cliente, quando o tipo for configurado como sensível. | Comentário com valor aplicado e captura/link quando disponível. | Alta ou Urgente, conforme impacto. |
-| Alteração ou pausa de anúncio | Campanha, canal, anúncio/ativo afetado, ação solicitada e motivo. | Cliente, quando alterar conteúdo ou gerar impacto relevante. | Comentário, captura ou link da alteração. | Alta ou Média. |
+| Criação, alteração ou pausa de anúncio | Campanha, canal, anúncio/ativo afetado quando existente, ação solicitada e motivo. | Cliente, quando alterar conteúdo ou gerar impacto relevante. | Comentário, captura ou link da criação, alteração ou pausa. | Alta ou Média. |
 | Aprovação de criativo | Campanha, canal, criativo/anexo e data limite. | Cliente obrigatória. | Decisão registrada no ticket. | Média. |
 | Relatório de desempenho | Campanha, período, métricas desejadas e formato. | Não obrigatória, salvo solicitação específica. | Arquivo ou link do relatório entregue. | Média. |
 | Análise de métricas | Campanha, período, pergunta de negócio e indicadores disponíveis. | Não obrigatória. | Comentário analítico e evidência/relatório de apoio. | Baixa ou Média. |
@@ -188,6 +190,7 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | RT-04 | Atrasos e comunicação insuficiente | RF-16, RF-20, RN-12, RN-13 | Vencimento e eventos geram indicação e notificação — CT-06 e CT-07. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-05 | Proteção de dados | RF-02, RNF-02 | Acesso por organização — CT-08. | Alta | Grupo TI SIGE 1 | 1.0 |
 | RT-06 | Interface compreensível para diferentes perfis | RNF-09 | Campos claros, contraste e navegação por teclado; avaliação de usabilidade conforme [Etapa 04 - Metodologia.md](../../Artigo/Etapa%2004%20-%20Metodologia.md). | Alta | Grupo TI SIGE 1 | 1.0 |
+| RT-07 | Separação entre atores externos da cadeia de publicidade e perfis de acesso do MVP, conforme [levantamento de requisitos](../Levantamento%20de%20requisitos.md) | RF-01, RF-02, RF-07, RF-08, RN-03, RN-04, RN-09 | Perfis autorizados executam somente as ações previstas; cliente não acessa tickets de outra organização — CT-02, CT-03, CT-08 e CT-11. | Alta | Grupo TI SIGE 1 | 1.0 |
 
 ## Anexo D — Matriz de notificações
 
