@@ -91,7 +91,7 @@ Integrações automáticas com plataformas de anúncios, previsão por inteligê
 
 ### 2.5 Testes funcionais
 
-Os casos de teste serão derivados dos critérios de aceite e deverão registrar pré-condição, passos, resultado esperado, resultado obtido e situação final. O catálogo canônico dos treze cenários, seus requisitos associados e seus resultados esperados está em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais). No artigo, eles são apresentados de forma consolidada no Apêndice de validação.
+Os casos de teste serão derivados dos critérios de aceite e deverão registrar pré-condição, passos, resultado esperado, resultado obtido e situação final. O catálogo canônico dos treze cenários, seus requisitos associados e seus resultados esperados está em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais). No artigo, eles são descritos de forma sintética, pois o catálogo completo permanece na documentação do projeto.
 
 O critério de aprovação funcional será 100% dos casos de alta prioridade aprovados, pelo menos 90% do total de casos aprovados e nenhum defeito crítico em aberto. Casos reprovados deverão gerar registro de correção ou justificativa de adiamento.
 
@@ -154,7 +154,7 @@ Como a avaliação utilizará amostra pequena e por conveniência, a validade ex
 
 A etapa de especificação identificou 23 requisitos funcionais, seis requisitos não funcionais e 14 regras de negócio. Eles foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança, privacidade, compatibilidade e acessibilidade. A organização demonstra que a proposta não se limita ao registro de chamados, pois articula controle operacional, transparência para o cliente e apoio à gestão.
 
-O catálogo detalhado, os critérios de aceite e a rastreabilidade estão mantidos somente em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md). No artigo, esse resultado é apresentado de forma sintética e a documentação integral é encaminhada aos apêndices.
+O catálogo detalhado, os critérios de aceite e a rastreabilidade estão mantidos somente em [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md). No artigo, esse resultado é apresentado de forma sintética.
 
 ## 8. Situação atual
 
@@ -162,7 +162,7 @@ O catálogo detalhado, os critérios de aceite e a rastreabilidade estão mantid
 - [x] Referencial teórico inicial elaborado.
 - [x] Requisitos preliminares definidos.
 - [x] Esboço do protótipo produzido.
-- [x] Síntese dos resultados de especificação elaborada para o artigo; o catálogo completo permanece na documentação do projeto e nos apêndices.
+- [x] Síntese dos resultados de especificação elaborada para o artigo; o catálogo completo permanece na documentação do projeto.
 - [ ] Validação dos requisitos com potenciais usuários.
 - [ ] Implementação da versão inicial do aplicativo.
 - [ ] Testes funcionais executados.

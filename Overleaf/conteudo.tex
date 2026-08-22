@@ -2,7 +2,7 @@
 
 O marketing digital é uma atividade estratégica para organizações que desejam divulgar produtos e serviços, alcançar públicos específicos e acompanhar resultados por indicadores mensuráveis \cite{gujar2024,younas2025}. Em agências e consultorias, a gestão de tráfego pago envolve a criação e a alteração contínua de campanhas, públicos, orçamentos, criativos e metas em plataformas como Google Ads e Meta Ads. Como diferentes clientes podem demandar essas ações ao mesmo tempo, o trabalho exige coordenação entre atendimento, gestão de tráfego, criação, análise e o próprio cliente \cite{steponaitis2023,agus2019}.
 
-Essa coordenação se concretiza em solicitações relacionadas às campanhas, tais como criação ou pausa de anúncios, ajustes de orçamento e de público, aprovação de criativos e pedido de relatórios. Para estruturar o atendimento de solicitações desse tipo, a literatura de Service Desk o concebe como ponto único para receber, registrar, analisar, encaminhar e acompanhar solicitações \cite{firmansyah2022,fenner2015,amanullah2017}.
+No escopo do SIGE Desk, as solicitações poderão envolver criação ou pausa de anúncios, ajustes de orçamento e de público, aprovação de criativos e pedido de relatórios. A literatura de Service Desk aponta que, quando solicitações são encaminhadas diretamente a diferentes pessoas, podem surgir múltiplos pontos de contato. Nesse sentido, o Service Desk é concebido como ponto único para receber, registrar, analisar, encaminhar e acompanhar solicitações \cite{firmansyah2022,fenner2015,amanullah2017}.
 
 Quando as informações de uma solicitação não são mantidas em um registro comum, tornam-se mais difíceis a identificação do pedido original, a definição de responsável, o acompanhamento de prazo, o registro de aprovação e a recuperação das decisões tomadas. Essa dificuldade é particularmente relevante no tráfego pago, pois alterações de orçamento, público ou criativo podem afetar o desempenho e o custo de uma campanha \cite{yahia2024}. As práticas de Service Desk e de gerenciamento de solicitações procuram mitigar esses riscos por meio de registro, triagem, comunicação e acompanhamento até a conclusão \cite{firmansyah2022,servicedesk2023,servicerequest2023}. Assim, a questão que orienta o trabalho é: \textit{como uma aplicação web de Help Desk pode centralizar e rastrear demandas de tráfego pago, melhorando o acompanhamento de campanhas e o atendimento a clientes de agências de marketing digital?}
 
@@ -26,7 +26,7 @@ Tráfego pago é o investimento em plataformas de publicidade para levar usuári
 
 Agências atuam em ambiente de múltiplos canais, prazos curtos e comunicação constante com os clientes. Planejamento, comunicação, adaptação, gestão de tempo, monitoramento e análise de dados são competências fundamentais nesse contexto \cite{steponaitis2023}. A agência também ocupa posição intermediária na cadeia de publicidade digital entre anunciantes, publishers e plataformas de mídia \cite{agus2019}; portanto, transparência e coordenação são elementos importantes para a entrega de valor.
 
-Indicadores como impressões, taxa de cliques (CTR), custo por clique (CPC), conversão, custo por aquisição (CPA) e retorno sobre o investimento em anúncios (ROAS) permitem contextualizar uma solicitação e avaliar os resultados de uma alteração. A Tabela \ref{tab:metricas-campanha} relaciona esses indicadores ao uso previsto na gestão das demandas.
+Para fins deste projeto, são adotadas definições operacionais para os indicadores de impressões, taxa de cliques (CTR), custo por clique (CPC), conversão, custo por aquisição (CPA) e retorno sobre o investimento em anúncios (ROAS). Esses indicadores permitem contextualizar uma solicitação e avaliar os resultados de uma alteração. A Tabela \ref{tab:metricas-campanha} relaciona essas definições ao uso previsto na gestão das demandas.
 
 \begin{table}[H]
 \centering
@@ -45,7 +45,7 @@ CPA & Custo médio por conversão ou aquisição. & Avaliar eficiência na gera�
 ROAS & Receita atribuída em relação ao investimento. & Apoiar análise de retorno quando houver dados de receita. \\
 \hline
 \end{tabular}
-\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do referencial teórico.
+\par\footnotesize\textbf{Fonte:} Definições operacionais adotadas pelo grupo.
 \end{table}
 
 No projeto, essas métricas serão registradas como contexto ou evidência quando aplicável; não serão calculadas automaticamente no produto mínimo viável (MVP). Essa decisão mantém o escopo viável e preserva a ligação entre o ticket e o desempenho da campanha. A interpretação dos indicadores também exige cautela, pois métricas de tráfego podem ser distorcidas por acessos automatizados \cite{nain2025,abbonizio2023}.
@@ -125,7 +125,7 @@ O protótipo de baixa fidelidade apresenta painel, listagem de tickets, abertura
 
 \subsection{\esp Testes funcionais}
 
-Os casos de teste serão derivados dos critérios de aceite e deverão registrar identificador, requisitos relacionados, prioridade, pré-condição, passos de execução, resultado esperado, resultado obtido e situação final. O plano contempla treze cenários, apresentados no Apêndice \ref{ap:validacao}, que cobrem abertura, autenticação, cadastros, triagem, execução, aprovação, reabertura, vencimento, notificações, configuração, auditoria e segurança.
+Os casos de teste serão derivados dos critérios de aceite e deverão registrar identificador, requisitos relacionados, prioridade, pré-condição, passos de execução, resultado esperado, resultado obtido e situação final. O plano contempla treze cenários que cobrem abertura, autenticação, cadastros, triagem, execução, aprovação, reabertura, vencimento, notificações, configuração, auditoria e segurança.
 
 A aprovação funcional exigirá 100\% dos casos de alta prioridade aprovados, pelo menos 90\% do total de casos aprovados e nenhum defeito crítico em aberto. Cada reprovação deverá gerar registro de correção ou justificativa de adiamento.
 
@@ -147,7 +147,7 @@ A associação entre requisitos, critérios de aceite e casos de teste será uti
 
 \section{\esp RESULTADOS DA ESPECIFICAÇÃO E PROPOSTA DA SOLUÇÃO}
 
-A etapa de especificação resultou na identificação de 23 requisitos funcionais, seis requisitos não funcionais e 14 regras de negócio. Os requisitos foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança, privacidade, compatibilidade e acessibilidade. Essa organização evidencia que a proposta não se limita ao registro de chamados, pois articula o controle operacional das demandas com transparência para o cliente e apoio à gestão. A especificação completa, incluindo critérios de aceite e rastreabilidade, está disponível no Apêndice \ref{ap:especificacao}.
+A etapa de especificação resultou na identificação de 23 requisitos funcionais, seis requisitos não funcionais e 14 regras de negócio. Esta seção apresenta resultados de especificação e de proposta de solução; os resultados dos testes funcionais e da avaliação de usabilidade dependerão da implementação do MVP. Os requisitos foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança, privacidade, compatibilidade e acessibilidade. Essa organização evidencia que a proposta não se limita ao registro de chamados, pois articula o controle operacional das demandas com transparência para o cliente e apoio à gestão.
 
 \subsection{\esp Síntese dos resultados de especificação e escopo do MVP}
 
@@ -244,10 +244,10 @@ A finalidade declarada para os dados será registrar, comunicar, executar, valid
 
 \subsection{\esp Requisitos prioritários}
 
-Os requisitos foram organizados conforme a ISO/IEC/IEEE 29148 \cite{iso29148}. Para a primeira versão, são prioritários autenticação e autorização por perfil; cadastro de clientes e campanhas; abertura e identificação única do ticket; triagem e atribuição; atualização de status; comentários e anexos; histórico auditável; notificações; filtros; configuração de tipos de demanda e de SLA. Requisitos de segurança, privacidade, integridade, compatibilidade e acessibilidade complementam o escopo. A especificação individual dos requisitos, as regras de negócio, os dados, as transições, a rastreabilidade e as notificações estão no Apêndice \ref{ap:especificacao}; os treze casos de teste encontram-se no Apêndice \ref{ap:validacao}.
+Os requisitos foram organizados conforme a ISO/IEC/IEEE 29148 \cite{iso29148}. Para a primeira versão, são prioritários autenticação e autorização por perfil; cadastro de clientes e campanhas; abertura e identificação única do ticket; triagem e atribuição; atualização de status; comentários e anexos; histórico auditável; notificações; filtros; configuração de tipos de demanda e de SLA. Requisitos de segurança, privacidade, integridade, compatibilidade e acessibilidade complementam o escopo. A especificação individual dos requisitos, as regras de negócio, os dados, as transições, a rastreabilidade, as notificações e os casos de teste compõem a documentação de apoio ao desenvolvimento do sistema.
 
 \section{\esp CONSIDERAÇÕES FINAIS}
 
-O SIGE Desk foi proposto para transformar comunicações dispersas em um fluxo de atendimento rastreável, com responsáveis, prazos, validações e evidências. A solução combina fundamentos de gestão de serviços, marketing digital, gestão de projetos e proteção de dados para responder ao problema de centralização das demandas de tráfego pago.
+O SIGE Desk foi proposto para centralizar e rastrear demandas de tráfego pago por meio de um fluxo de atendimento com responsáveis, prazos, validações e evidências. A solução combina fundamentos de gestão de serviços, marketing digital, gestão de projetos e proteção de dados para responder ao problema de organização dessas demandas.
 
 O trabalho encontra-se na fase de especificação e prototipação. A continuidade prevê validar os requisitos com potenciais usuários, implementar o MVP, executar os casos de teste e registrar os resultados da avaliação de usabilidade. Esses resultados permitirão ajustar o processo, os requisitos e a interface antes de uma eventual adoção em contexto real.

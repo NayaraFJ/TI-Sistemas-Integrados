@@ -27,7 +27,7 @@
 
 ## Registro da etapa
 
-Esta entrega registra a definição inicial do tema, do título, da introdução e da delimitação. Ela é preservada como fonte do projeto progressivo da primeira etapa; a versão acadêmica vigente do artigo completo foi posteriormente revisada e consolidada em [Etapa 02 - Artigo.md](Etapa%2002%20-%20Artigo.md).
+Esta entrega registra a definição inicial do tema, do título e da delimitação. A Introdução única do trabalho está consolidada em [Etapa 02 - Artigo.md](Etapa%2002%20-%20Artigo.md) e nos dois projetos Overleaf.
 
 
 
@@ -41,7 +41,7 @@ Nesta etapa, a aplicação não pretende substituir plataformas de mídia, como 
 
 - [x] Tema definido.
 - [x] Título provisório definido.
-- [x] Introdução inicial elaborada.
+- [x] Introdução elaborada.
 - [ ] Tema e título validados pelo orientador.
 - [ ] Introdução revisada pelo orientador.
 

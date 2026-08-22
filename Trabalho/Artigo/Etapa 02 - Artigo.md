@@ -19,6 +19,18 @@
 
 **Help Desk para Gestão de Demandas de Tráfego Pago**
 
+## Resumo
+
+Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital e analisa como a centralização e o rastreamento de solicitações podem apoiar a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. O estudo tem como objetivo desenvolver o SIGE Desk, uma aplicação web de Help Desk destinada a organizar essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore e em fontes normativas e oficiais, levantamento e especificação de requisitos, modelagem em BPMN 2.0.2, prototipação e planejamento de testes funcionais e de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de SLA, os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para apoiar a organização e a rastreabilidade das demandas, cuja efetividade deverá ser confirmada após a implementação e a avaliação do MVP.
+
+**Palavras-chave:** gestão de demandas; help desk; tráfego pago; marketing digital; sistemas de informação.
+
+## Abstract
+
+This work addresses the management of paid advertising requests in digital marketing agencies and analyzes how the centralization and tracking of requests can support the definition of responsibilities and deadlines, service monitoring, retrieval of decisions, and recording of approvals and evidence. The study aims to develop SIGE Desk, a web-based help desk application designed to organize these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore and official and normative sources, requirements elicitation and specification, BPMN 2.0.2 process modeling, prototyping, and the planning of functional and usability tests with six participants. The specification stage resulted in the definition of user roles, the ticket life cycle, SLA rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. It is preliminarily concluded that SIGE Desk is a technically coherent proposal to support the organization and traceability of requests, although its effectiveness must still be confirmed through MVP implementation and evaluation.
+
+**Keywords:** demand management; help desk; paid advertising; digital marketing; information systems.
+
 ## 1. Introdução
 
 O marketing digital é uma atividade estratégica para organizações que desejam divulgar produtos e serviços, alcançar públicos específicos e acompanhar resultados por indicadores mensuráveis (Gujar, Paliwal e Panyam, 2024; Younas et al., 2025). Em agências e consultorias, a gestão de tráfego pago envolve a criação e a alteração contínua de campanhas, públicos, orçamentos, criativos e metas em plataformas como Google Ads e Meta Ads. Como diferentes clientes podem demandar essas ações ao mesmo tempo, o trabalho exige coordenação entre atendimento, gestão de tráfego, criação, análise e o próprio cliente (Steponaitis e Andrijauskienė, 2023; Agus et al., 2019).

@@ -39,7 +39,7 @@ O CRM, por sua vez, busca organizar e fortalecer o relacionamento com clientes. 
 
 ## 5. Métricas e controle de campanhas
 
-O acompanhamento de campanhas depende de métricas que relacionam investimento, interação e resultado. Entre os indicadores mais utilizados estão:
+Para fins deste projeto, são adotadas definições operacionais para métricas que relacionam investimento, interação e resultado. Entre os indicadores utilizados estão:
 
 | Métrica | Significado | Uso na gestão da demanda |
 | --- | --- | --- |
