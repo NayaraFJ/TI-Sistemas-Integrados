@@ -69,13 +69,13 @@ Usar o fluxo: **registrar → validar → triar → atribuir → comunicar → e
 
 ## Observação adicional
 
-O sistema não precisa substituir WhatsApp ou e-mail no MVP, mas toda decisão relevante recebida por esses canais deve ser registrada no ticket para preservar o histórico.
+O sistema não precisa substituir canais de comunicação externos no MVP, mas toda decisão relevante recebida por esses canais deve ser registrada no ticket para preservar o histórico.
 
 ## Guia rápido — como pensar como um Help Desk
 
 | Pergunta | Resposta para o SIGE Desk |
 | --- | --- |
-| Onde a demanda entra? | No ticket; se vier por WhatsApp ou e-mail, deve ser registrada nele. |
+| Onde a demanda entra? | No ticket; se vier por canal externo, deve ser registrada nele. |
 | Quem organiza antes de executar? | Atendimento / gestor de conta faz a triagem. |
 | Quem executa? | Gestor de tráfego ou outro responsável atribuído. |
 | Como o cliente sabe o que ocorreu? | Pelo status, comentários, notificações e evidências. |

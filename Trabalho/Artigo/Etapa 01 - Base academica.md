@@ -47,14 +47,15 @@ Nesta etapa, a aplicação não pretende substituir plataformas de mídia, como 
 
 > Após o retorno do orientador, as observações deverão ser incorporadas a este arquivo antes da postagem do link do repositório GitHub.
 
-## Referências
+## Referências da introdução vigente
 
 - AGUS, Anna Amalyah; YUDOKO, Gatot; MULYONO, Nur Budi; NASUTION, Reza Ashari. *Digital Publisher, Advertising Media Agency and Mobile Exchange Triadic Interaction: Digital Marketing Service Supply Chain Landscape in Indonesia*. 2019. DOI: [10.1109/IC2IE47452.2019.8940881](https://doi.org/10.1109/IC2IE47452.2019.8940881). Acesso em: 14 ago. 2026.
 - AMANULLAH, M.; ZEKI, Akram M.; ABUBAKAR, Adamu. *Information-Based Interactive Services and Support System*. 2017. DOI: [10.1109/SPC.2017.8313025](https://doi.org/10.1109/SPC.2017.8313025). Acesso em: 21 ago. 2026.
 - FENNER, Germano et al. *A System Dynamics Model for Managing Service Desk Capacity*. 2015. DOI: [10.1109/INM.2015.7140506](https://doi.org/10.1109/INM.2015.7140506). Acesso em: 21 ago. 2026.
 - FIRMANSYAH, Ardhi Dwi; SUBRIADI, Apol Pribadi. *IT Service Desk Model Literature Review: Benefits and Challenges*. 2022. DOI: [10.1109/iSemantic55962.2022.9920439](https://doi.org/10.1109/iSemantic55962.2022.9920439). Acesso em: 21 ago. 2026.
 - GUJAR, Praveen; PALIWAL, Gunjan; PANYAM, Sriram. *Revolutionizing In-House Digital Marketing with End-to-End Marketing Automation Powered by AI and SaaS*. 2024. DOI: [10.1109/COLCOM62950.2024.10720305](https://doi.org/10.1109/COLCOM62950.2024.10720305). Acesso em: 14 ago. 2026.
+- NAIN, Arvind et al. *Impact of Voice-Based Search Queries on Paid Ad Rankings in Digital Marketing Campaigns*. 2025. DOI: [10.1109/IEMECON69302.2025.11365741](https://doi.org/10.1109/IEMECON69302.2025.11365741). Acesso em: 14 ago. 2026.
 - PEOPLECERT. *ITIL 4 Practice Guide: Service Desk*. London, 2023a. Disponível em: [PeopleCert](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-desk-3706). Acesso em: 16 ago. 2026.
 - PEOPLECERT. *ITIL 4 Practice Guide: Service Request Management*. London, 2023b. Disponível em: [PeopleCert](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-service-request-management-3690). Acesso em: 16 ago. 2026.
-- STEPONAITIS, Simonas; ANDRIJAUSKIENĖ, Meda. *Improving Digital Project Management Competencies: Case Study of a Digital Marketing Agency in Lithuania*. 2023. DOI: [10.1109/E-TEMS57541.2023.10424612](https://doi.org/10.1109/E-TEMS57541.2023.10424612). Acesso em: 14 ago. 2026.
+- YAHIA, Zakaria; ELBOLOK, Mostafa. *A Proposed Nonlinear Programming Optimization Model for Optimal Budget Mix of Digital Marketing Campaigns*. 2024. DOI: [10.1109/NILES63360.2024.10753162](https://doi.org/10.1109/NILES63360.2024.10753162). Acesso em: 14 ago. 2026.
 - YOUNAS, Mamoona et al. *DIGI-AI: An AI-Powered Web Platform for Intelligent Digital Marketing Automation*. 2025. DOI: [10.1109/MACS68476.2025.11453341](https://doi.org/10.1109/MACS68476.2025.11453341). Acesso em: 14 ago. 2026.

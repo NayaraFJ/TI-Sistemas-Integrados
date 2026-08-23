@@ -2,7 +2,7 @@
 
 ## Escopo
 
-Esta tabela registra os treze artigos científicos selecionados do corpus recuperado na IEEE Xplore para fundamentar o artigo **Help Desk para Gestão de Demandas de Tráfego Pago**. Cada linha liga o PDF original à sua extração de leitura. Os 31 registros que não integraram a fundamentação principal estão na [tabela de artigos descartados](<Tabela - artigos descartados.md>).
+Esta tabela registra os treze artigos científicos selecionados do corpus recuperado na IEEE Xplore para fundamentar o projeto **Help Desk para Gestão de Demandas de Tráfego Pago**. Cada linha liga o PDF original à sua extração de leitura. Os 31 registros que não integraram a fundamentação principal estão na [tabela de artigos descartados](<Tabela - artigos descartados.md>).
 
 ## Artigos utilizados
 
@@ -22,4 +22,4 @@ Esta tabela registra os treze artigos científicos selecionados do corpus recupe
 | 03 | IT Service Desk Model Literature Review: Benefits and Challenges | [PDF](<Pesquisa 03/IT Service Desk Model Literature Review Benefits and Challenges.pdf>) | [Extração](<Pesquisa 03/Extracoes/02-firmansyah-revisao-service-desk.md>) |
 | 03 | Information-Based Interactive Services and Support System | [PDF](<Pesquisa 03/Information-Based interactive services and support system.pdf>) | [Extração](<Pesquisa 03/Extracoes/03-amanullah-sistema-interativo-suporte.md>) |
 
-> “Utilizado” significa que a fonte compõe a fundamentação do artigo atual; não significa que todos os seus métodos ou tecnologias façam parte do MVP.
+> “Utilizado” significa que a fonte compõe o corpus selecionado do projeto; não significa que ela deva ser citada em todas as seções do artigo nem que todos os seus métodos ou tecnologias façam parte do MVP. No artigo consolidado, Emon et al. (2026) é mantido apenas como evidência complementar do levantamento de requisitos.

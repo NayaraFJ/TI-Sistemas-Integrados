@@ -26,7 +26,7 @@ O [índice de referências e extrações](Referencias/README.md) organiza artigo
 * *Tema:* Gestão de Demandas de Marketing Digital.
 * *Área de Estudo:* Sistemas de Informação / Gestão de Serviços.
 * *Título:* Help Desk para Gestão de Demandas de Tráfego Pago.
-* *Resumo:* Direciona a aplicação para o gerenciamento de solicitações de clientes de marketing digital. O sistema de Help Desk centralizaria pedidos de criação de anúncios, ajustes de campanhas e análises de métricas, substituindo comunicações informais (como o WhatsApp) por um fluxo registrado, metrificado e profissional.
+* *Resumo:* Direciona a aplicação para o gerenciamento de solicitações de clientes de marketing digital. O sistema de Help Desk centralizaria pedidos de criação de anúncios, ajustes de campanhas e análises de métricas em um fluxo registrado, rastreável e profissional.
 
 
 Pesquisa 01

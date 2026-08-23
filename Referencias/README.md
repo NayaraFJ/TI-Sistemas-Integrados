@@ -6,8 +6,10 @@ Este diretório reúne os PDFs e as extrações de leitura que sustentam a pesqu
 
 | Situação | Quantidade | Registro |
 | --- | ---: | --- |
-| Usados no artigo | 12 | [Tabela de artigos utilizados](<Tabela - artigos utilizados.md>) |
-| Excluídos na triagem | 32 | [Tabela de artigos descartados](<Tabela - artigos descartados.md>) |
+| Selecionados para o corpus do projeto | 13 | [Tabela de artigos utilizados](<Tabela - artigos utilizados.md>) |
+| Excluídos na triagem | 31 | [Tabela de artigos descartados](<Tabela - artigos descartados.md>) |
+
+Dos treze artigos selecionados, doze são citados no artigo consolidado em `../Overleaf`. O artigo de Emon et al. (2026) permanece como evidência complementar na documentação de requisitos, mas não é citado na introdução nem integra a bibliografia dos projetos Overleaf.
 
 > A Pesquisa 03 recuperou 19 artigos de periódicos e conferências sobre Service Desk e comunicação. Três foram selecionados para sustentar ponto único de contato, múltiplos pontos de contato, registro e rastreamento de solicitações; os demais foram documentados como excluídos por baixa aderência ao problema ou ao escopo do MVP.
 

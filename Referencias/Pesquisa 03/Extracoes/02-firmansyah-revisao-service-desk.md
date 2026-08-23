@@ -24,5 +24,4 @@ O artigo trata de Service Desk de TI, com atenção ao setor público, e não in
 
 ## Utilidade para esta pesquisa
 
-Sustenta a substituição da afirmação genérica sobre WhatsApp por uma formulação verificável: solicitações encaminhadas diretamente a diferentes pessoas podem gerar múltiplos pontos de contato. Também reforça os requisitos de ticket, histórico, comunicação, triagem e indicadores, além da necessidade de avaliar aceitação e adequação organizacional antes de adoção real.
-
+Sustenta uma formulação verificável: solicitações encaminhadas diretamente a diferentes pessoas podem gerar múltiplos pontos de contato. Também reforça os requisitos de ticket, histórico, comunicação, triagem e indicadores, além da necessidade de avaliar aceitação e adequação organizacional antes de adoção real.
