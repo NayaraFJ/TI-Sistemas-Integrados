@@ -1,6 +1,6 @@
 # Backlog do SIGE Desk
 
-Este é o backlog operacional do grupo. Ele converte o [cronograma oficial](../../README.md#cronograma) em marcos de entrega e usa como fontes técnicas o [levantamento de requisitos](Levantamento%20de%20requisitos.md), o [processo](Processo/BPMN%20-%20Processo%20To%20Be.md), o [protótipo](Prototipo/Prototipo%20de%20baixa%20fidelidade.md) e a [especificação](Especificacao/Especificacao%20do%20sistema.md).
+Este é o backlog operacional do grupo. Ele converte o [cronograma oficial](../../README.md#cronograma) em marcos de entrega e usa como fontes técnicas o [levantamento de requisitos](Levantamento%20de%20requisitos.md), o [processo](Processo/BPMN%20-%20Processo%20To%20Be.md), o [protótipo](Prototipo%20especificação.md) e a [especificação](Especificacao/Especificacao%20do%20sistema.md).
 
 As atribuições iniciais representam afinidade e coordenação, não exclusividade: Pedro Henrique Assuncao atua no eixo de back-end; Karine Kessen Gilberti Felix, no de banco de dados; Lorrainy Pâmela Siqueira Ferreira e Maria Heloisa Aguiar Mendes, no de front-end; e Nayara Ferreira de Jesus Rodrigues, na documentação, no papel de Product Owner (PO) e na interface com a orientação. Cada entrega deve ter revisão de pelo menos outro integrante.
 

@@ -169,47 +169,30 @@ O processo To Be inicia com o registro da solicitação. Na triagem, o atendimen
 \par\footnotesize\textbf{Fonte:} Elaborado pelo grupo, com base em BPMN 2.0.2 \cite{omg2014}.
 \end{figure}
 
-\subsection{\esp Esboço do protótipo}
+\subsection{\esp Guia de telas para prototipação}
 
-O protótipo inicial materializa os principais caminhos de uso antes da implementação. O painel reúne indicadores, filtros e a fila de demandas, conforme o Quadro \ref{qua:prototipo-painel}, enquanto a abertura de solicitação estrutura os dados mínimos necessários à triagem, conforme o Quadro \ref{qua:prototipo-abertura}.
-
-\begin{quadro}[H]
-\centering
-\caption{Estrutura prevista para o painel de demandas}
-\label{qua:prototipo-painel}
-\begin{tabular}{p{0.23\textwidth}p{0.65\textwidth}}
-\hline
-\textbf{Área} & \textbf{Conteúdo previsto} \\
-\hline
-Cabeçalho & Identificação do SIGE Desk, ação Nova solicitação e usuário/perfil ativo. \\
-Indicadores & Quantidades de tickets abertos, em execução, em validação e vencidos. \\
-Filtros & Cliente, campanha, tipo de demanda, prioridade e status. \\
-Fila de demandas & Número, assunto, cliente, prioridade, estado, responsável e prazo de cada ticket. \\
-Navegação & Dashboard, Demandas, Clientes, Campanhas, Relatórios e Administração, conforme permissão. \\
-\hline
-\end{tabular}
-\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do esboço do protótipo.
-\end{quadro}
+Para orientar a elaboração do protótipo de baixa fidelidade sem antecipar suas decisões visuais, foi preparado um guia de telas. O guia define quinze telas navegáveis, seus objetivos, campos, permissões, ações e regras de comportamento; a composição visual e a escolha dos componentes permanecem sob responsabilidade da equipe de interface. O Quadro \ref{qua:guia-telas} sintetiza o inventário previsto.
 
 \begin{quadro}[H]
 \centering
-\caption{Campos previstos para a abertura de solicitação}
-\label{qua:prototipo-abertura}
+\caption{Inventário do guia de telas para prototipação}
+\label{qua:guia-telas}
 \begin{tabular}{p{0.23\textwidth}p{0.65\textwidth}}
 \hline
-\textbf{Campo} & \textbf{Finalidade} \\
+\textbf{Grupo} & \textbf{Telas e finalidade} \\
 \hline
-Cliente e campanha & Identificar a organização e a campanha relacionada. \\
-Tipo e canal & Classificar a solicitação e a plataforma de mídia envolvida. \\
-Urgência e prazo desejado & Registrar a percepção do solicitante antes da triagem oficial. \\
-Assunto e descrição & Informar pedido, contexto, justificativa, links e métricas relacionadas. \\
-Anexos & Vincular materiais, criativos, relatórios ou outras evidências ao ticket. \\
+Acesso e acompanhamento & Autenticação; painel; lista e filtros; abertura; detalhe, comunicação e histórico do ticket. \\
+Tratamento do ticket & Triagem e atribuição; registro de execução e evidência; validação, correção e reabertura. \\
+Comunicação e consulta & Central de notificações; relatórios e exportação. \\
+Administração & Clientes; campanhas; tipos de demanda; configuração de SLA; usuários e perfis. \\
 \hline
 \end{tabular}
-\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do esboço do protótipo.
+\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir da especificação do sistema.
 \end{quadro}
 
-Além dos campos de abertura, cada demanda deverá manter número, solicitante, prioridade oficial, responsável, datas, prazos de SLA, comentários, histórico de alterações, ação executada, evidência, decisão de aprovação e motivo de cancelamento ou reabertura, quando aplicável.
+O fluxo de telas parte da autenticação, painel e abertura de solicitação; prossegue pelo detalhe, triagem, execução e validação; e contempla os caminhos de complemento, cancelamento e reabertura. A abertura exige cliente, tipo de demanda, urgência, assunto, descrição e solicitante, e poderá receber campanha, canal, prazo desejado, métricas de contexto e anexos. A prioridade oficial, os prazos de SLA e o responsável são definidos somente na triagem. No detalhe, a demanda mantém número, status, prazos, comentários, histórico de alterações, ação executada, evidência, decisão de aprovação e motivo de cancelamento ou reabertura, quando aplicável.
+
+O guia também prevê variantes para todos os estados do ticket, um diagrama de navegação identificado pelos códigos das telas e uma matriz que relaciona as telas aos requisitos funcionais, regras de negócio, requisitos não funcionais e fluxo BPMN. Assim, o protótipo poderá demonstrar a cobertura do MVP sem incorporar integrações automáticas com plataformas de anúncios, cálculos de desempenho, faturamento ou chat externo ao histórico do ticket.
 
 \subsection{\esp Estados, SLA e rastreabilidade}
 

@@ -61,7 +61,7 @@ Cada decisão deverá registrar a fonte bibliográfica ou normativa, o trecho ou
 - [Especificação do sistema](Especificacao/Especificacao%20do%20sistema.md);
 - [Processo To Be](Processo/BPMN%20-%20Processo%20To%20Be.md);
 - [Processo As Is](Processo/BPMN%20-%20Processo%20As%20Is.md), quando a evidência tratar da prática atual;
-- [Protótipo de baixa fidelidade](Prototipo/Prototipo%20de%20baixa%20fidelidade.md), se a mudança afetar uma tela ou permissão;
+- [Protótipo de baixa fidelidade](Prototipo%20especificação.md), se a mudança afetar uma tela ou permissão;
 - rastreabilidade e critérios de aceite da especificação.
 
 Os papéis e o fluxo são uma proposta de MVP derivada do referencial; não descrevem uma agência específica nem pretendem representar todas as suas estruturas organizacionais.
