@@ -7,7 +7,7 @@ Esta documentação registra as definições técnicas do SIGE Desk. Ela sustent
 | [Processo/BPMN - Processo As Is.md](Processo/BPMN%20-%20Processo%20As%20Is.md) | Hipótese analítica do processo atual e limites de uso. | Sustenta a caracterização do problema; não precisa ser reproduzido como figura no artigo. |
 | [Levantamento de requisitos.md](Levantamento%20de%20requisitos.md) | Atores, evidências, critérios de análise e registro de decisões de requisitos. | Sustenta a delimitação dos perfis e a derivação dos requisitos. |
 | [Processo/BPMN - Processo To Be.md](Processo/BPMN%20-%20Processo%20To%20Be.md) | Processo futuro, participantes e regras de leitura. | Síntese e figura BPMN. |
-| [Prototipo/Especificação.md](Processo/Prototipo%20especificação.md) | Estrutura das telas e critérios do protótipo. | Síntese das telas e quadros representativos. |
+| [Prototipo/Especificação.md](Prototipo/Prototipo%20especificação.md) | Estrutura das telas e critérios do protótipo. | Síntese das telas e quadros representativos. |
 | [Especificacao/Especificacao do sistema.md](Especificacao/Especificacao%20do%20sistema.md) | Requisitos, regras, dados, rastreabilidade, notificações e aceite. | Síntese de requisitos; catálogo completo mantido na documentação do projeto. |
 | [BACKLOG.md](BACKLOG.md) | Marcos, tarefas, responsáveis, dependências e critérios de entrega. | Gestão interna; não integra o artigo. |
 
