@@ -42,8 +42,8 @@ Nesta etapa, a aplicação não pretende substituir plataformas de mídia, como 
 - [x] Tema definido.
 - [x] Título provisório definido.
 - [x] Introdução elaborada.
-- [ ] Tema e título validados pelo orientador.
-- [ ] Introdução revisada pelo orientador.
+- [x] Tema e título validados pelo orientador.
+- [x] Introdução revisada pelo orientador.
 
 > Após o retorno do orientador, as observações deverão ser incorporadas a este arquivo antes da postagem do link do repositório GitHub.
 
