@@ -76,4 +76,4 @@ O modelo foi derivado do referencial, das normas e dos requisitos preliminares. 
 
 ## Referência
 
-- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0.2*. Needham, 2014. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0.2/). Acesso em: 16 ago. 2026.
+- OBJECT MANAGEMENT GROUP. *Business Process Model and Notation (BPMN), Version 2.0*. Needham, 2011. Disponível em: [especificação BPMN](https://www.omg.org/spec/BPMN/2.0/). Acesso em: 16 ago. 2026.
