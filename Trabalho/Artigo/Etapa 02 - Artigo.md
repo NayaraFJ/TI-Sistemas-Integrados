@@ -45,47 +45,43 @@ O estudo justifica-se pela possibilidade de organizar as solicitações em ticke
 
 O objetivo geral é desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e registrar demandas de tráfego pago. Para tanto, pretende-se revisar artigos e normas aplicáveis; levantar, analisar e priorizar requisitos; modelar o processo de atendimento e o backlog; prototipar e implementar um produto mínimo viável com tickets, histórico, prazos e comunicação entre os envolvidos; e realizar testes funcionais e avaliação de usabilidade.
 
-Na versão consolidada em `../../Overleaf`, o artigo apresenta, após a introdução, o referencial teórico sobre gestão de demandas, Help Desk e tráfego pago; descreve a metodologia; expõe os resultados da especificação e da proposta de solução; e encerra com as considerações finais. As seções de problemática, justificativa e objetivos abaixo são mantidas como registro da decomposição acadêmica desta etapa.
+### 1.1 Problemática
 
-## 2. Problemática
+Quando as informações de uma solicitação não são mantidas em um registro comum, tornam-se mais difíceis a identificação do pedido original, a definição de responsável, o acompanhamento de prazo, o registro de aprovação e a recuperação das decisões tomadas (Fenner et al., 2015; PEOPLECERT, 2023; AXELOS, 2020). Essa dificuldade é particularmente relevante no tráfego pago, pois alterações em orçamento, público ou criativo podem afetar o desempenho e o custo de uma campanha (Yahia e ElBolok, 2024). As práticas de Service Desk e de gerenciamento de solicitações procuram mitigar esses riscos por meio de registro, triagem, comunicação e acompanhamento até a conclusão (Firmansyah e Subriadi, 2022; PEOPLECERT, 2023; AXELOS, 2020). À vista disso, coloca-se a seguinte pergunta de pesquisa: **como uma aplicação web de Help Desk pode centralizar e rastrear demandas de tráfego pago, melhorando o acompanhamento de campanhas e o atendimento a clientes de agências de marketing digital?**
 
-### 2.1 Situação-problema
+O estudo de caso de Steponaitis e Andrijauskienė (2023), realizado em uma agência de marketing digital, identificou planejamento, comunicação, gestão de tempo, monitoramento e análise de dados entre as competências relevantes para a condução de projetos digitais. Embora não avalie a adoção de Help Desk e não permita generalizações para todas as agências, esse resultado sustenta a necessidade de organizar as informações necessárias ao acompanhamento das demandas. Sem uma gestão centralizada, podem ocorrer perda ou duplicidade de solicitações, dificuldade de priorizar demandas urgentes, ausência de responsável e prazo claramente definidos, falta de histórico de alterações e aprovações, retrabalho entre atendimento, tráfego e criação, baixa visibilidade para o cliente e dificuldade de medir o volume de demandas, o tempo de atendimento e o cumprimento de prazos.
 
-No contexto delimitado para o SIGE Desk, a gestão de uma solicitação de tráfego pago requer planejamento, comunicação e acompanhamento. Como analogia de processo, a literatura de Service Desk indica que o encaminhamento de solicitações a diferentes pessoas sem ponto de contato e registro comum pode dificultar o acompanhamento de responsável, prazo, histórico e andamento do atendimento (Firmansyah e Subriadi, 2022; Fenner et al., 2015). Além disso, alterações em orçamento, público ou criativo podem afetar diretamente o desempenho e o custo de uma campanha (Yahia e ElBolok, 2024). Assim, a proposta prevê uma estrutura de atendimento que registre a solicitação, permita sua triagem e comunique seu andamento ao solicitante, práticas centrais de Service Desk e de gerenciamento de solicitações de serviço (PEOPLECERT, 2023; AXELOS, 2020).
+### 1.2 Objetivos
 
-### 2.2 Pergunta de pesquisa
-
-**Como uma aplicação web de Help Desk pode centralizar e rastrear demandas de tráfego pago, melhorando o acompanhamento de campanhas e o atendimento a clientes de agências de marketing digital?**
-
-### 2.3 Consequências do problema
-
-O estudo de caso de Steponaitis e Andrijauskienė (2023), realizado em uma agência de marketing digital, identificou planejamento, comunicação, gestão de tempo, monitoramento e análise de dados entre as competências relevantes para a condução de projetos digitais. Embora não avalie a adoção de Help Desk e não permita generalizações para todas as agências, esse resultado sustenta a necessidade de organizar as informações necessárias ao acompanhamento das demandas. Sem uma gestão centralizada, podem ocorrer:
-
-- perda ou duplicidade de solicitações;
-- dificuldade de priorizar demandas urgentes;
-- falta de definição clara de responsável e prazo;
-- ausência de histórico sobre alterações e aprovações;
-- retrabalho entre atendimento, tráfego e criação;
-- baixa visibilidade para o cliente sobre o andamento do pedido;
-- dificuldade de medir volume de demandas, tempo de atendimento e cumprimento de prazos.
-
-## 3. Justificativa
-
-O projeto investiga como centralizar e rastrear demandas de tráfego pago. Um Help Desk adaptado ao contexto de tráfego pago pode transformar solicitações em registros estruturados, permitindo acompanhar o ciclo completo de cada pedido — abertura, triagem, execução, validação e encerramento. Essa organização se aproxima das práticas de Service Desk e de gerenciamento de solicitações de serviço da ITIL 4, que enfatizam ponto de contato, registro, comunicação e acompanhamento do atendimento (Firmansyah e Subriadi, 2022; PEOPLECERT, 2023; AXELOS, 2020).
-
-Do ponto de vista organizacional, a aplicação pode melhorar a distribuição de trabalho, reduzir retrabalho e facilitar a prestação de contas ao cliente. Para a equipe, o sistema fornecerá uma fila de tarefas, definição de responsáveis, prioridades e prazos. Para o cliente, oferecerá uma visão clara do status da solicitação e do histórico de decisões. Para a gestão, os registros poderão apoiar indicadores como quantidade de demandas por cliente, tempo médio de atendimento, demandas vencidas e tipos de alterações mais solicitadas. Essas funcionalidades respondem, no contexto do SIGE Desk, às necessidades de planejamento, comunicação, gestão de tempo e monitoramento identificadas no estudo de caso de uma agência de marketing digital (Steponaitis e Andrijauskienė, 2023).
-
-Do ponto de vista acadêmico, o trabalho integra conceitos de Sistemas de Informação, Gestão de Serviços, Gestão de Projetos e Marketing Digital. A proposta permite aplicar conhecimentos de levantamento de requisitos, modelagem de processos, experiência do usuário, banco de dados, desenvolvimento web e validação de software em um problema real de gestão. A pesquisa sobre agências evidencia a importância de planejamento, comunicação e monitoramento; o sistema proposto busca operacionalizar esses elementos no fluxo diário de atendimento (Steponaitis e Andrijauskienė, 2023).
-
-## 4. Objetivos
-
-### 4.1 Objetivo geral
+#### 1.2.1 Objetivo geral
 
 Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e registrar demandas de tráfego pago, apoiando a gestão das solicitações e o atendimento a clientes de agências de marketing digital.
 
-### 4.2 Objetivos específicos
+#### 1.2.2 Objetivos específicos
 
-Pretende-se realizar uma revisão bibliográfica de artigos e normas aplicáveis para compreender o problema e fundamentar a solução; levantar, analisar e priorizar os requisitos do sistema; modelar o processo de atendimento e definir o backlog com responsabilidades, dependências e prazos de entrega; prototipar a solução; implementar o produto mínimo viável (MVP) com cadastro, autenticação, tickets, acompanhamento de prazos, histórico e comunicação entre os envolvidos; realizar testes funcionais e avaliação de usabilidade; e entregar uma versão final funcional do aplicativo, acompanhada da documentação e da demonstração previstas para o projeto.
+- Realizar uma revisão bibliográfica de artigos e normas aplicáveis para compreender o problema e fundamentar a solução.
+- Levantar, analisar e priorizar os requisitos do sistema.
+- Modelar o processo de atendimento e definir o *backlog* com responsabilidades, dependências e prazos de entrega.
+- Prototipar a solução.
+- Implementar o produto mínimo viável (MVP) com cadastro, autenticação, tickets, acompanhamento de prazos, histórico e comunicação entre os envolvidos.
+- Realizar testes funcionais e avaliação de usabilidade.
+- Entregar uma versão final funcional do aplicativo, acompanhada da documentação e da demonstração previstas para o projeto.
+
+### 1.3 Justificativa
+
+O projeto investiga como centralizar e rastrear demandas de tráfego pago. Um Help Desk adaptado ao contexto de tráfego pago pode transformar solicitações em registros estruturados, permitindo acompanhar o ciclo completo de cada pedido — abertura, triagem, execução, validação e encerramento. Essa organização se aproxima das práticas de Service Desk e de gerenciamento de solicitações de serviço da ITIL 4, que enfatizam ponto de contato, registro, comunicação e acompanhamento do atendimento (Firmansyah e Subriadi, 2022; PEOPLECERT, 2023; AXELOS, 2020).
+
+O tema é atual porque as atividades de marketing digital envolvem planejamento, orçamento, públicos, conteúdo e análise de resultados de campanha, dimensões que precisam ser coordenadas ao longo do atendimento (Gujar et al., 2024; Younas et al., 2025; Yahia et al., 2024; Nain et al., 2025). A motivação da pesquisa decorre da aproximação entre essa dinâmica e os princípios de gestão de serviços: uma solicitação de alteração de orçamento, público ou criativo precisa ser compreendida, registrada, encaminhada e acompanhada, sem que a ferramenta proposta substitua as plataformas de mídia ou automatize campanhas. Dessa forma, o SIGE Desk é investigado como uma solução de apoio à organização do trabalho e à comunicação entre os envolvidos.
+
+Do ponto de vista organizacional, a aplicação pode melhorar a distribuição de trabalho, reduzir retrabalho e facilitar a prestação de contas ao cliente. Para a equipe, o sistema fornecerá uma fila de tarefas, definição de responsáveis, prioridades e prazos. Para o cliente, oferecerá uma visão clara do status da solicitação e do histórico de decisões. Para a gestão, os registros poderão apoiar indicadores como quantidade de demandas por cliente, tempo médio de atendimento, demandas vencidas e tipos de alterações mais solicitadas. Essas funcionalidades respondem, no contexto do SIGE Desk, às necessidades de planejamento, comunicação, gestão de tempo e monitoramento identificadas no estudo de caso de uma agência de marketing digital (Steponaitis e Andrijauskienė, 2023).
+
+Do ponto de vista social, a centralização pode qualificar a relação de atendimento entre clientes e agência. O registro do pedido, do responsável, do prazo, das mensagens e das aprovações favorece que o cliente acompanhe uma demanda que afeta sua comunicação digital e obtenha explicações sobre o seu andamento. Para a equipe, a preservação do histórico reduz a dependência de conversas dispersas e facilita a continuidade do atendimento quando há mudança de responsável. Esse benefício esperado está ligado à transparência e à responsabilização no relacionamento de serviço; ele deverá ser avaliado apenas no contexto do protótipo, sem pressupor que o sistema resolverá, por si só, problemas de comunicação de todas as agências.
+
+A dimensão social também envolve o tratamento responsável de dados. A LGPD estabelece regras para o tratamento de dados pessoais em meios digitais, enquanto a ANPD destaca a importância de controles de autenticação, autorização e auditoria (BRASIL, 2018; ANPD, 2021). Estudos sobre publicidade direcionada indicam que transparência e privacidade influenciam a confiança do consumidor (Daoud, 2023). Por isso, o escopo do SIGE Desk restringe a coleta às informações necessárias para gerir a demanda e não prevê o armazenamento de credenciais de plataformas, bases de audiência ou dados pessoais sensíveis. Essa delimitação busca conciliar a utilidade do registro operacional com a proteção das pessoas envolvidas.
+
+Do ponto de vista econômico, solicitações relacionadas a orçamento, público ou criativo exigem registro e validação porque tais alterações podem afetar o desempenho e o custo das campanhas (Yahia et al., 2024). Ao tornar o fluxo e as decisões consultáveis, a aplicação poderá apoiar a priorização de demandas, a prevenção de retrabalho e a prestação de contas sobre as ações solicitadas. O trabalho não pretende mensurar ganhos financeiros nem atribuir causalidade entre o uso do sistema e os resultados das campanhas; sua contribuição é propor uma estrutura informacional que permita acompanhar decisões que possuem implicações econômicas para clientes e agências.
+
+Do ponto de vista acadêmico, o trabalho integra conceitos de Sistemas de Informação, Gestão de Serviços, Gestão de Projetos e Marketing Digital. A proposta permite aplicar conhecimentos de levantamento de requisitos, modelagem de processos, experiência do usuário, banco de dados, desenvolvimento web e validação de software em um problema real de gestão. A pesquisa sobre agências evidencia a importância de planejamento, comunicação e monitoramento; o sistema proposto busca operacionalizar esses elementos no fluxo diário de atendimento (Steponaitis e Andrijauskienė, 2023).
 
 ## Referências
 
