@@ -23,10 +23,10 @@ Os perfis abaixo são uma decisão de desenho do MVP. Eles convertem a relação
 | Tipo | Ator ou perfil | Participação no SIGE Desk | Limite de acesso inicial |
 | --- | --- | --- | --- |
 | Contexto externo | Anunciante / cliente | Contrata ou acompanha o serviço de publicidade e utiliza o sistema pelo perfil Cliente. | Não acessa tickets de outra organização nem configura regras globais. |
-| Usuário do sistema | Cliente | Abre solicitação, complementa informações, acompanha o ticket, aprova a entrega ou solicita correção. | Consulta somente tickets vinculados à própria organização. |
-| Usuário do sistema | Atendimento / gestor de conta | Registra demanda em nome do cliente quando necessário, confere informações, classifica, prioriza, atribui, comunica e acompanha prazo. | Não administra usuários, tipos de demanda ou regras globais sem perfil de Administrador. |
-| Usuário do sistema | Gestor de tráfego | Executa a demanda atribuída, registra ação, comentário e evidência e encaminha para validação. | Atua somente nas demandas autorizadas ou atribuídas. |
-| Usuário do sistema | Administrador | Mantém usuários, clientes, campanhas, tipos de demanda, configurações e regras de SLA. | Não substitui a aprovação do cliente nem a execução registrada pelo responsável. |
+| Usuário do sistema | Cliente | Abre solicitação, envia complemento, acompanha o ticket, aprova ou solicita correção em validação e reabre demanda concluída com justificativa. | Consulta somente tickets vinculados à própria organização; não executa triagem nem aprova fora de validação. |
+| Usuário do sistema | Atendimento / gestor de conta | Registra demanda em nome do cliente quando necessário, inicia e conduz triagem, classifica, prioriza, atribui, solicita/confere complemento, retoma, cancela antes da execução, comunica e acompanha prazo. | Não aprova em nome do Cliente, não registra execução em nome do responsável e não administra usuários, tipos ou regras globais sem perfil de Administrador. |
+| Usuário do sistema | Gestor de tráfego | Executa demanda atribuída, registra ação, comentário e material/evidência e solicita complemento durante a execução. | Atua somente nas demandas atribuídas; não confirma retomada, não aprova e não altera prioridade, prazo ou responsável. |
+| Usuário do sistema | Administrador | Mantém usuários, clientes, campanhas, tipos de demanda, configurações e regras de SLA e executa as ações de continuidade atribuídas ao Atendimento. | Não substitui a aprovação do Cliente nem a execução registrada pelo responsável. |
 | Contexto externo | *Publisher* digital ou plataforma de troca de anúncios | Integra a cadeia de publicidade paga descrita na literatura. | Não possui conta, permissão ou integração automática no MVP. |
 
 ## 4. Critérios de análise do referencial

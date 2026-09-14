@@ -1,14 +1,15 @@
 # SIGE Desk — Revisão de cobertura e fluxos para prototipação
 
 **Data:** 06/09/2026.  
-**Natureza:** revisão documental; não é teste de um protótipo implementado nem aprovação de novas regras de negócio.  
-**Conclusão:** o inventário de telas é suficiente para começar os esboços, mas os fluxos de tratamento ainda precisam de consolidação antes de a navegação ser considerada uma referência fechada para implementação.
+**Natureza:** revisão documental e registro de consolidação; não é teste de um protótipo implementado.
+**Conclusão original:** o inventário de telas era suficiente para começar os esboços, mas os fluxos de tratamento precisavam de consolidação.
+**Situação após a correção:** os achados A01–A18 foram incorporados nas fontes canônicas de especificação, processo e orientação de telas em 06/09/2026. Este arquivo preserva as evidências da revisão; em caso de divergência, prevalecem a [Especificação do sistema](../Especificacao/Especificacao%20do%20sistema.md), o [Processo To Be](../Processo/BPMN%20-%20Processo%20To%20Be.md) e o [guia do protótipo](Prototipo%20especificação.md).
 
 ## 1. Escopo e fontes
 
 O objeto da revisão é o [guia do protótipo em Markdown](Prototipo%20especificação.md), cruzado com a [especificação do sistema](../Especificacao/Especificacao%20do%20sistema.md), o [levantamento de requisitos](../Levantamento%20de%20requisitos.md), o [processo To Be](../Processo/BPMN%20-%20Processo%20To%20Be.md), o [backlog](../BACKLOG.md) e a [metodologia](../../Artigo/Etapa%2004%20-%20Metodologia.md), também em Markdown. O Overleaf foi consultado para a sincronização exigida pelo projeto. Os PDFs são exportações dos Markdown e não constituem fonte independente nem objeto dos achados deste relatório. Não se trata de auditoria visual ou validação do arquivo nativo BPMN.
 
-As referências abaixo usam códigos e seções para continuarem localizáveis após a edição dos documentos. As propostas devem ser consolidadas primeiro na especificação canônica e depois refletidas no processo, guia de telas e artigo. Este relatório não substitui essas fontes.
+As referências abaixo usam códigos e seções para continuarem localizáveis após a edição dos documentos. As propostas foram consolidadas primeiro na especificação canônica e refletidas no processo, guia de telas, critérios de aceite, plano de validação, metodologia e síntese acadêmica. Este relatório não substitui essas fontes.
 
 ## 2. Cobertura encontrada
 
@@ -222,4 +223,4 @@ Essas atividades se relacionam a BL-06 (esboço), BL-09 (requisitos), BL-10 (To 
 - [ ] O roteiro de usabilidade respeita os perfis e diferencia avaliação visual de comprovação funcional.
 - [ ] Os Markdown de processo, especificação e protótipo descrevem as mesmas decisões, com links válidos entre as fontes.
 
-**Situação após esta revisão:** diagnóstico concluído, com oito achados P1 e dez P2; regras propostas ainda não incorporadas como decisões de produto. Foram corrigidos os dois links quebrados de entrada no guia e o rótulo do índice (A18), adicionado este relatório ao índice e registrada a síntese da revisão no Overleaf. As demais lacunas identificadas permanecem pendências explícitas para a consolidação dos Markdown.
+**Situação após a correção:** diagnóstico concluído, com oito achados P1 e dez P2 tratados. As decisões foram incorporadas sem criar novas telas: a matriz de permissões, o contrato mínimo de formulário, as transições por origem do aguardo, os ciclos de SLA, as variantes e os critérios de aceite agora registram o comportamento antes da prototipação. Os dois links de entrada do guia e o rótulo do índice também permanecem corrigidos. A comprovação do comportamento continuará dependente do protótipo navegável e dos testes previstos.

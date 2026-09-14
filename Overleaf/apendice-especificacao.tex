@@ -34,7 +34,7 @@ RF-16 & O sistema deve identificar tickets vencidos e tickets aguardando respost
 RF-17 & O sistema deve permitir consultar o histórico completo de cada ticket. & Alta & \cite{servicedesk2023,brasil2018} \\
 RF-18 & O sistema deve permitir registrar métricas de contexto, como CTR, CPC, conversão, CPA e ROAS, quando aplicável. & Baixa & \cite{yahia2024,nain2025} \\
 RF-19 & O sistema deve permitir exportar uma lista de tickets filtrada para apoio a relatórios. & Baixa & \cite{abbonizio2023,steponaitis2023} \\
-RF-20 & O sistema deve notificar, no sistema e por e-mail quando configurado, os envolvidos autorizados em atribuição, comentário, aguardo do cliente, validação, vencimento, conclusão ou reabertura. & Alta & \cite{servicedesk2023,servicerequest2020} \\
+RF-20 & O sistema deve notificar no sistema e, por e-mail quando configurado, os envolvidos autorizados em atribuição, comentário, aguardo, complemento confirmado, validação, vencimento, conclusão, reabertura ou cancelamento. & Alta & \cite{servicedesk2023,servicerequest2020} \\
 RF-21 & O sistema deve exibir os prazos de primeira resposta e resolução do SLA, incluindo situação de vencimento ou pausa. & Alta & \cite{servicedesk2023} \\
 RF-22 & O administrador deve poder manter tipos de demanda, definindo campos obrigatórios e necessidade de aprovação e evidência. & Alta & \cite{servicerequest2020,iso29148} \\
 RF-23 & O administrador deve poder configurar calendário, horário, fuso, feriados, recessos e prazos do SLA por prioridade, com regra opcional por cliente ou tipo. & Alta & \cite{servicedesk2023} \\
@@ -77,20 +77,20 @@ RNF-09 & Acessibilidade & Campos devem possuir rótulos claros, contraste adequa
 \textbf{ID} & \textbf{Regra} \\
 \hline
 \endhead
-RN-01 & Na abertura, todo ticket deve possuir cliente, tipo, urgência informada, assunto, descrição e solicitante. A prioridade oficial torna-se obrigatória após a triagem. \\
-RN-02 & Quando a demanda estiver vinculada a campanha existente, cliente e campanha devem ser compatíveis. \\
-RN-03 & Somente atendimento ou administrador pode definir prioridade, prazo e responsável na triagem. \\
-RN-04 & Somente responsável, atendimento ou administrador pode alterar o status, exceto o Cliente, que pode aprovar ou solicitar correção em Em validação, resultando em Concluída ou Reaberta. \\
-RN-05 & Após a execução, o ticket deve seguir para Em validação, com descrição da ação e evidência quando configurada para o tipo. \\
-RN-06 & O status Concluída exige validação necessária ou registro de que o tipo de demanda não requer aprovação do cliente. \\
-RN-07 & O status Cancelada exige motivo de cancelamento. \\
-RN-08 & O status Aguardando cliente deve registrar qual informação ou aprovação é necessária. \\
-RN-09 & O cliente deve visualizar somente tickets vinculados à sua organização. \\
-RN-10 & Alterações de orçamento, público ou criativo podem exigir aprovação do cliente antes da execução, conforme o tipo de demanda. \\
-RN-11 & Cliente, atendimento ou administrador pode reabrir ticket concluído mediante justificativa, preservando todo o histórico anterior. \\
-RN-12 & Ao vencer o SLA, o sistema deve sinalizar o ticket e notificar o responsável e o atendimento. \\
-RN-13 & Atribuição, comentário e mudanças para Aguardando cliente, Em validação, Concluída e Reaberta devem gerar notificações aos envolvidos. \\
-RN-14 & A confirmação automática não conta como primeira resposta; é necessário retorno efetivo de atendimento, administrador ou responsável, registrado no ticket. \\
+RN-01 & A abertura exige cliente, tipo, urgência informada, assunto, descrição e solicitante. Registro em nome do Cliente guarda separadamente autor e solicitante. Prioridade é obrigatória para executar. \\
+RN-02 & Campanha existente deve ser compatível com o cliente. Campanha não cadastrada pode ser identificada na abertura, mas precisa ser vinculada a campanha ativa antes da execução. \\
+RN-03 & Somente Atendimento ou Administrador pode definir/alterar prioridade, prazo e responsável; esses campos são confirmados para encaminhar ou retomar execução. \\
+RN-04 & A matriz de transições define o ator de cada mudança: Atendimento/Admin tratam abertura, triagem, complemento e reabertura; Gestor atribuído trata execução; Cliente ativo aprova/corrige em Em validação e reabre em Concluída. Atendimento/Admin não aprovam em seu nome. \\
+RN-05 & Após a execução, o ticket registra ação e material/evidência quando configurados. Tipo com aprovação segue para Em validação; tipo sem aprovação pode concluir com dispensa derivada da configuração. \\
+RN-06 & Concluída exige aprovação quando obrigatória ou dispensa automática do tipo; aprovação obrigatória não pode ser dispensada manualmente. \\
+RN-07 & Cancelada exige motivo, confirmação e só pode ser alcançada antes da execução. \\
+RN-08 & Aguardando cliente registra informação necessária, origem e início de execução. Complemento recebido só retoma a fase de origem após confirmação de suficiência. \\
+RN-09 & Cliente vê apenas sua organização; Atendimento/Admin veem a agência; Gestor vê apenas tickets atribuídos. Menus, anexos e notificações seguem o mesmo escopo. \\
+RN-10 & Tipos podem exigir evidência e validação antes da conclusão. Para criativo, o material submetido é evidência anterior à decisão do Cliente. \\
+RN-11 & Reabertura de concluída exige justificativa, preserva histórico, inicia novo ciclo e requer confirmação de prioridade/responsável antes da execução. Correção em validação mantém o ciclo. \\
+RN-12 & Vencimento sinaliza se é de primeira resposta ou resolução e notifica responsável, Atendimento e Administrador; antes da classificação, prazo fica pendente. \\
+RN-13 & Atribuição, comentário, solicitação/confirmação de complemento, validação, conclusão, reabertura e cancelamento notificam envolvidos autorizados no sistema. \\
+RN-14 & Confirmação automática não conta como primeira resposta; é necessário retorno efetivo de Atendimento, Administrador ou responsável registrado no ticket. \\
 \hline
 \multicolumn{2}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir das regras preliminares.}
 \end{longtable}
@@ -110,13 +110,13 @@ RN-14 & A confirmação automática não conta como primeira resposta; é necess
 Usuário & Identificador, nome, e-mail, perfil, status e cliente vinculado quando o perfil for Cliente. \\
 Cliente & Identificador, nome, contato e status. \\
 Campanha & Identificador, cliente, nome, canal, objetivo e status. \\
-Tipo de demanda & Identificador, nome, status, campos obrigatórios e necessidade de aprovação e evidência. \\
-Configuração de SLA & Calendário, horário, fuso, feriados, recessos, prioridade, prazos e escopo opcional por cliente ou tipo. \\
-Ticket & Número, cliente, campanha, tipo, canal, urgência, prazo desejado, prioridade oficial, SLA, assunto, descrição, solicitante, responsável e status. \\
-Comentário & Ticket, autor, data e hora, texto e referência a anexos. \\
+Tipo de demanda & Identificador, nome, status, campos com rótulo, tipo, obrigatoriedade, opções e validação, e necessidade de aprovação e evidência. \\
+Configuração de SLA & Calendário, horário, fuso, feriados, recessos, prioridade, prazos, pausa em validação e escopo padrão, por cliente, tipo ou ambos. \\
+Ticket & Número, cliente, campanha ou identificação pendente, tipo/regra aplicada, canal, urgência, prazo desejado, prioridade, SLA, assunto, descrição, solicitante, autor, responsável, status, origem do aguardo e ciclo. \\
+Comentário & Ticket, autor, data/hora, texto, anexos e indicação de retorno efetivo, quando aplicável. \\
 Histórico & Ticket, campo alterado, valor anterior, novo valor, usuário, data e hora. \\
-Aprovação & Ticket, decisão, usuário, data e hora e observação. \\
-Evidência & Ticket, descrição, link ou arquivo, autor, data e hora. \\
+Aprovação & Ticket, material avaliado, decisão, usuário, data e hora e observação. \\
+Evidência & Ticket, descrição, link ou arquivo, autor, data/hora e natureza da evidência. \\
 Anexo & Identificador, ticket, nome original, tipo, tamanho, referência de armazenamento, autor, data e hora. \\
 Notificação & Ticket, evento, destinatário, canal, resumo, geração, situação de envio e data de leitura, quando aplicável. \\
 \hline
@@ -135,11 +135,11 @@ Notificação & Ticket, evento, destinatário, canal, resumo, geração, situaç
 \textbf{Tipo} & \textbf{Dados adicionais} & \textbf{Aprovação} & \textbf{Evidência} & \textbf{SLA sugerido} \\
 \hline
 \endhead
-Ajuste de orçamento & Campanha, orçamento atual e proposto, justificativa e data desejada. & Cliente quando configurado como sensível. & Valor aplicado e captura ou link disponível. & Alta ou Urgente, conforme impacto. \\
-Alteração ou pausa de anúncio & Campanha, canal, ativo afetado, ação e motivo. & Cliente quando houver impacto relevante. & Comentário, captura ou link da alteração. & Alta ou Média. \\
-Aprovação de criativo & Campanha, canal, criativo e data limite. & Obrigatória. & Decisão registrada no ticket. & Média. \\
-Relatório de desempenho & Campanha, período, métricas e formato. & Não obrigatória, salvo configuração. & Arquivo ou link do relatório. & Média. \\
-Análise de métricas & Campanha, período, questão e indicadores disponíveis. & Não obrigatória. & Comentário analítico e relatório de apoio. & Baixa ou Média. \\
+Ajuste de orçamento & Campanha ativa ou identificação pendente, orçamento atual/proposto, justificativa e data. & Cliente quando configurado como sensível. & Valor aplicado e captura ou link disponível. & Alta ou Urgente. \\
+Alteração ou pausa de anúncio & Campanha ativa ou identificação pendente, canal, ativo, ação e motivo. & Cliente quando houver impacto relevante. & Comentário, captura ou link da alteração. & Alta ou Média. \\
+Aprovação de criativo & Campanha ativa ou identificação pendente, canal, criativo e data limite. & Obrigatória. & Material submetido e descrição da versão; decisão somente após validação. & Média. \\
+Relatório de desempenho & Campanha ativa ou identificação pendente, período, métricas e formato. & Não obrigatória, salvo configuração. & Arquivo ou link do relatório. & Média. \\
+Análise de métricas & Campanha ativa ou identificação pendente, período, questão e indicadores disponíveis. & Não obrigatória. & Comentário analítico e relatório de apoio. & Baixa ou Média. \\
 \hline
 \multicolumn{5}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
 \end{longtable}
@@ -156,13 +156,14 @@ Análise de métricas & Campanha, período, questão e indicadores disponíveis.
 \textbf{Status atual} & \textbf{Próximo status} & \textbf{Quem altera} & \textbf{Registro e efeito no SLA} \\
 \hline
 \endhead
-Aberta & Em triagem; Cancelada & Atendimento; Administrador & Inicia primeira resposta e resolução; cancelamento exige motivo. \\
-Em triagem & Em execução; Aguardando cliente; Cancelada & Atendimento; Administrador & Registra prioridade, prazo, responsável ou motivo; contagem continua. \\
-Em execução & Aguardando cliente; Em validação & Responsável; Atendimento; Administrador & Registra comentário e evidência; pausa somente em Aguardando cliente. \\
-Aguardando cliente & Em triagem; Em execução; Cancelada & Atendimento; Administrador & Registra informação recebida ou motivo; resolução retoma ao sair. \\
-Em validação & Concluída; Reaberta & Cliente; Atendimento; Administrador & Registra aprovação ou correção; SLA continua até conclusão. \\
-Concluída & Reaberta & Cliente; Atendimento; Administrador & Exige justificativa e inicia novo ciclo de resolução. \\
-Reaberta & Em execução & Atendimento; Administrador & Confirma responsável e prioridade; segue a regra configurada. \\
+Aberta & Em triagem; Cancelada & Atendimento; Administrador & Registra início da triagem ou motivo/confirmação de cancelamento; prazo fica pendente até classificação. \\
+Em triagem & Em execução; Aguardando cliente; Cancelada & Atendimento; Administrador & Para executar, registra prioridade, SLA e responsável; para aguardar, informação e origem; para cancelar, motivo/confirmação. \\
+Em execução & Aguardando cliente; Em validação; Concluída & Responsável atribuído & Registra ação e material/evidência; conclusão direta requer dispensa automática do tipo. \\
+Aguardando cliente (triagem) & Em triagem; Cancelada & Atendimento; Administrador & Confere complemento e retoma, solicita novo complemento ou cancela antes da execução. \\
+Aguardando cliente (execução) & Em execução & Atendimento; Administrador & Confere complemento e retoma execução ou solicita novo complemento; não permite cancelamento. \\
+Em validação & Concluída; Reaberta & Cliente ativo da organização & Registra aprovação/correção e material avaliado; correção mantém o ciclo. \\
+Concluída & Reaberta & Cliente ativo; Atendimento; Administrador & Exige justificativa e inicia novo ciclo de resolução. \\
+Reaberta & Em execução & Atendimento; Administrador & Confirma responsável/prioridade e registra origem da correção ou reabertura. \\
 \hline
 \multicolumn{4}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
 \end{longtable}
@@ -204,18 +205,18 @@ RT-06 & Interface compreensível. & RNF-09. & Campos claros, contraste, navegaç
 \textbf{Cenário} & \textbf{Resultado esperado} & \textbf{Requisitos} & \textbf{Teste} \\
 \hline
 \endhead
-Cliente abre uma demanda. & Ticket recebe número, status Aberta, urgência e prazo desejado e fica visível ao atendimento. & RF-05, RF-06 & CT-01 \\
+Cliente abre uma demanda. & Ticket recebe número, status Aberta, urgência, prazo desejado e SLA pendente de classificação; campanha pendente segue para triagem. & RF-05, RF-06, RF-21 & CT-01 \\
 Usuário acessa o sistema. & Usuário autenticado acessa somente funções e tickets permitidos. & RF-01, RF-02 & CT-11 \\
 Administrador mantém clientes e campanhas. & Cliente pode ser ativado ou inativado e campanha fica vinculada ao cliente. & RF-03, RF-04 & CT-12 \\
-Atendimento faz a triagem. & Prioridade, SLA e responsável ficam registrados no histórico. & RF-07, RF-09, RN-03, RN-14 & CT-02 \\
-Gestor executa alteração. & Ticket recebe comentário ou evidência e segue para validação. & RF-08, RF-10, RF-12, RN-05 & CT-03, CT-05 \\
-Cliente precisa aprovar mudança. & Ticket fica Aguardando cliente até decisão registrada. & RF-11, RN-08, RN-10 & CT-04 \\
-Entrega precisa ser confirmada. & Ticket segue para Em validação e, após aprovação, para Concluída. & RF-11, RN-05, RN-06 & CT-05 \\
-Cliente solicita correção. & Ticket é reaberto com justificativa e retorna à execução. & RF-11, RN-11 & CT-05 \\
+Atendimento faz a triagem. & Prioridade, regra/SLA, responsável e primeiro retorno efetivo ficam registrados no histórico. & RF-07, RF-09, RN-03, RN-14 & CT-02 \\
+Gestor executa alteração. & Ticket recebe comentário, ação e material/evidência e segue para validação ou conclusão conforme o tipo. & RF-08, RF-10, RF-12, RN-05 & CT-03, CT-05 \\
+Cliente envia complemento. & Aguardo registra motivo/origem e só retoma a fase correta após complemento suficiente confirmado. & RF-11, RN-08 & CT-04 \\
+Entrega precisa ser confirmada. & Tipo com aprovação segue para Em validação e somente Cliente aprova; tipo sem aprovação conclui com dispensa automática. & RF-11, RN-04, RN-05, RN-06 & CT-05 \\
+Cliente solicita correção ou reabre concluída. & Correção mantém o ciclo; reabertura exige justificativa, inicia novo ciclo e requer confirmação antes da execução. & RF-11, RN-11 & CT-05 \\
 Prazo é ultrapassado. & Ticket é identificado como vencido. & RF-16, RF-21, RN-12 & CT-06 \\
-Evento notificável ocorre. & Envolvidos recebem notificação conforme perfil e configuração. & RF-20, RN-13 & CT-07 \\
+Evento notificável ocorre. & Envolvidos autorizados recebem notificação no sistema, inclusive complemento confirmado e cancelamento. & RF-20, RN-13 & CT-07 \\
 Administrador configura tipo. & Campos e regras de aprovação e evidência são aplicados. & RF-22, RN-05, RN-10 & CT-09 \\
-Administrador configura SLA. & Calendário, prazos e escopo são aplicados ao cálculo. & RF-23 & CT-10 \\
+Administrador configura SLA. & Calendário, prazos, pausa e precedência são aplicados a novos tickets; existentes preservam a regra registrada. & RF-23 & CT-10 \\
 Usuário consulta histórico. & Consulta exibe autor, data, motivo e valores alterados. & RF-09, RF-17, RNF-04 & CT-13 \\
 Cliente tenta acesso indevido. & Acesso é negado e tentativa é registrada. & RF-02, RN-09, RNF-02 & CT-08 \\
 \hline
@@ -235,12 +236,14 @@ Cliente tenta acesso indevido. & Acesso é negado e tentativa é registrada. & R
 \textbf{Evento} & \textbf{Destinatários} & \textbf{Canal} & \textbf{Conteúdo mínimo} \\
 \hline
 \endhead
-Ticket atribuído & Responsável e atendimento. & Sistema; e-mail configurado. & Número, assunto, prioridade e prazo. \\
-Comentário incluído & Solicitante, responsável e mencionados autorizados. & Sistema; e-mail configurado. & Número, autor e resumo. \\
-Aguardando cliente & Solicitante e atendimento. & Sistema; e-mail configurado. & Informação necessária e prazo aplicável. \\
-Em validação & Solicitante e atendimento. & Sistema; e-mail configurado. & Ação, evidência e decisão esperada. \\
-SLA vencido & Responsável, atendimento e administrador. & Sistema; e-mail configurado. & Prioridade, prazo e atraso. \\
-Concluída ou Reaberta & Solicitante, responsável e atendimento. & Sistema; e-mail configurado. & Novo status, justificativa e próximo passo. \\
+Ticket atribuído & Responsável e atendimento. & Sistema; e-mail opcional fora do protótipo. & Número, assunto, prioridade e prazo. \\
+Comentário incluído & Solicitante, responsável e atendimento autorizados. & Sistema; e-mail opcional fora do protótipo. & Número, autor e resumo. \\
+Aguardando cliente & Solicitante e atendimento. & Sistema; e-mail opcional fora do protótipo. & Informação necessária, origem e pausa. \\
+Complemento confirmado & Solicitante, responsável e atendimento autorizados. & Sistema; e-mail opcional fora do protótipo. & Informação recebida, fase retomada e prazo. \\
+Em validação & Solicitante e atendimento. & Sistema; e-mail opcional fora do protótipo. & Ação, material/evidência e decisão esperada. \\
+SLA vencido & Responsável, atendimento e administrador. & Sistema; e-mail opcional fora do protótipo. & Prioridade, tipo de prazo e atraso. \\
+Concluída ou Reaberta & Solicitante, responsável e atendimento. & Sistema; e-mail opcional fora do protótipo. & Novo status, justificativa, ciclo e próximo passo. \\
+Cancelada & Solicitante, responsável e atendimento. & Sistema; e-mail opcional fora do protótipo. & Motivo, autor e confirmação. \\
 \hline
 \multicolumn{4}{l}{\footnotesize\textbf{Fonte:} Elaborado pelo grupo.}
 \end{longtable}

@@ -18,6 +18,8 @@ Toda alteração acadêmica em `Trabalho/Artigo` deve ser refletida semanticamen
 
 O planejamento interno do desenvolvimento está em [Trabalho/Documentacao do Projeto/BACKLOG.md](Trabalho/Documentacao%20do%20Projeto/BACKLOG.md); ele não integra o artigo.
 
+O [protótipo navegável do SIGE Desk](Prototipo-SIGE-Desk/README.md) representa as quinze telas, os perfis e os fluxos definidos na documentação do projeto com dados fictícios persistidos localmente no navegador.
+
 O [índice de referências e extrações](Referencias/README.md) organiza artigos usados, artigos descartados, normas, legislação e outras fontes.
 
 ## Contexto do projeto

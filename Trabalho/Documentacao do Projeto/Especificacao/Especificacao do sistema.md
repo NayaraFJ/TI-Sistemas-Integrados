@@ -16,10 +16,10 @@ Os perfis são uma decisão de desenho do MVP e não a afirmação de que toda a
 
 | Perfil | Permissões principais |
 | --- | --- |
-| Cliente | Abrir e consultar as próprias demandas; enviar comentários/anexos; aprovar ou solicitar complementação. |
-| Atendimento / gestor de conta | Registrar demandas para clientes; fazer triagem; definir prioridade/prazo; acompanhar e comunicar-se. |
-| Gestor de tráfego | Consultar demandas atribuídas; atualizar status; comentar; registrar execução e evidências. |
-| Administrador | Gerenciar usuários, clientes, campanhas, tipos de demanda, prioridades e relatórios. |
+| Cliente | Abrir e consultar as demandas de sua organização; enviar comentários/anexos nos estados permitidos; aprovar, solicitar correção em validação e reabrir demanda concluída. |
+| Atendimento / gestor de conta | Registrar demandas para clientes; iniciar e conduzir triagem; definir prioridade/prazo; atribuir, solicitar e conferir complemento; retomar fluxo, cancelar antes da execução, acompanhar, comunicar-se e consultar relatórios. |
+| Gestor de tráfego | Consultar somente demandas atribuídas; comentar; registrar execução, material/evidência e solicitação de complemento. |
+| Administrador | Manter usuários, clientes, campanhas, tipos de demanda e regras de SLA; executar as ações de triagem e continuidade do Atendimento; consultar relatórios. |
 
 ## 3. Requisitos funcionais
 
@@ -66,9 +66,11 @@ As fontes da última coluna orientaram o levantamento e a priorização dos requ
 
 ## 5. Acordos de nível de serviço (SLA) preliminares
 
-Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o produto mínimo viável (MVP). Na ausência de configuração específica de cliente ou tipo de demanda, o calendário padrão será de segunda a sexta-feira, das 08h às 18h, no fuso horário `America/Sao_Paulo`, excluídos os feriados nacionais e os feriados ou recessos cadastrados pela agência. Somente os intervalos inseridos nesse calendário serão contabilizados como horas úteis.
+Os SLAs serão configuráveis pela agência e representam uma proposta inicial para o produto mínimo viável (MVP). Na ausência de configuração específica, o calendário padrão será de segunda a sexta-feira, das 08h às 18h, no fuso horário `America/Sao_Paulo`, excluídos os feriados nacionais e os feriados ou recessos cadastrados pela agência. Somente os intervalos inseridos nesse calendário serão contabilizados como horas úteis. A regra aplicável segue esta precedência: cliente e tipo de demanda combinados; cliente; tipo de demanda; regra padrão. A regra, o calendário e os prazos aplicados ficam registrados no ticket; editar ou desativar uma regra afeta somente novos tickets e novos ciclos de reabertura.
 
-O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registrado ao solicitante; o prazo de resolução vai da abertura à conclusão. A confirmação automática de recebimento não encerra a primeira resposta. Ao entrar em **Aguardando cliente**, o relógio de resolução deve ser pausado, preservando-se o tempo útil restante, e deve voltar a contar ao sair desse status. O status **Em validação** não pausa o SLA, salvo regra específica configurada pela agência. Quando um ticket concluído for reaberto, o sistema deve preservar os prazos e resultados do ciclo anterior, iniciar um novo ciclo de resolução a partir da reabertura conforme a prioridade vigente e não reiniciar o prazo de primeira resposta já cumprido.
+Na abertura, o sistema registra a data/hora e mostra o SLA como **pendente de classificação**, sem atribuir prioridade a partir da urgência informada. A primeira resposta e a resolução são contadas desde a abertura, mas seus prazos só são calculados quando Atendimento ou Administrador define a prioridade na triagem, usando a regra vigente e a data/hora de abertura. Assim, uma triagem tardia pode resultar em prazo já vencido; antes dela, a tela informa o tempo útil transcorrido, sem classificar o ticket como vencido.
+
+O prazo de primeira resposta termina no primeiro comentário ou registro de retorno efetivo ao solicitante feito por Atendimento, Administrador ou responsável; a confirmação automática de recebimento não conta. O prazo de resolução termina na conclusão. Ao entrar em **Aguardando cliente**, o relógio de resolução é pausado, preservando o tempo útil restante, e só volta a contar quando Atendimento ou Administrador confirma informação suficiente e retoma a fase de origem. **Em validação** não pausa o SLA, exceto se a regra aplicada ao ticket tiver essa opção marcada. Correção solicitada ainda em validação mantém o mesmo ciclo de resolução. Quando uma demanda **Concluída** for reaberta, o sistema preserva os resultados do ciclo anterior, inicia novo ciclo de resolução segundo a prioridade e a regra então aplicáveis e não reinicia a primeira resposta já cumprida. Em cancelamento, os prazos e sua situação ficam preservados e deixam de contar.
 
 | Prioridade | Primeira resposta | Resolução prevista |
 | --- | ---: | ---: |
@@ -81,20 +83,20 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 
 | ID    | Regra                                                                                                                                                                                                                                                |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RN-01 | Na abertura, todo ticket deve possuir cliente, tipo de demanda, urgência informada, assunto, descrição e solicitante. A prioridade oficial torna-se obrigatória após a triagem.                                                                      |
-| RN-02 | Quando a demanda estiver vinculada a campanha existente, cliente e campanha devem ser compatíveis.                                                                                                                                                   |
-| RN-03 | Somente atendimento ou administrador pode definir prioridade, prazo e responsável na triagem.                                                                                                                                                        |
-| RN-04 | Somente responsável, atendimento ou administrador pode alterar o status de um ticket, exceto o Cliente, que pode aprovar ou solicitar correção de ticket em “Em validação”, resultando exclusivamente nas transições para “Concluída” ou “Reaberta”. |
-| RN-05 | Após a execução, o ticket deve seguir para “Em validação”, com descrição da ação executada e evidência quando configurada para o tipo de demanda.                                                                                                    |
-| RN-06 | O status “Concluída” exige validação/aprovação necessária ou registro de que o tipo de demanda não requer validação do cliente.                                                                                                                      |
-| RN-07 | O status “Cancelada” exige motivo de cancelamento.                                                                                                                                                                                                   |
-| RN-08 | O status “Aguardando cliente” deve registrar qual informação complementar é necessária.                                                                                                                                                               |
-| RN-09 | O cliente deve visualizar somente tickets vinculados à sua organização.                                                                                                                                                                              |
-| RN-10 | Tipos de demanda configurados como sensíveis podem exigir validação do cliente antes da conclusão, conforme sua regra de aprovação.                                                                                                                |
-| RN-11 | Cliente, atendimento ou administrador pode reabrir um ticket concluído mediante justificativa; a reabertura preserva todo o histórico anterior.                                                                                                      |
-| RN-12 | Ao vencer o SLA, o sistema deve sinalizar o ticket e notificar o responsável e o atendimento.                                                                                                                                                        |
-| RN-13 | Atribuição, comentário, mudança para “Aguardando cliente”, “Em validação”, “Concluída” e “Reaberta” devem gerar notificações aos envolvidos.                                                                                                         |
-| RN-14 | A confirmação automática de recebimento não conta como primeira resposta do SLA. A primeira resposta exige retorno efetivo de Atendimento, Administrador ou responsável ao solicitante, registrado no ticket.                                        |
+| RN-01 | Na abertura, todo ticket deve possuir cliente, tipo de demanda, urgência informada, assunto, descrição e solicitante. Quando Atendimento registrar em nome do Cliente, o sistema deve guardar separadamente o autor do registro e o solicitante representado. A prioridade oficial torna-se obrigatória para encaminhar à execução. |
+| RN-02 | Quando houver campanha existente, cliente e campanha devem ser compatíveis. A abertura pode informar campanha não cadastrada, com identificação mínima; antes da execução, Atendimento ou Administrador deve vincular uma campanha ativa e compatível. |
+| RN-03 | Somente Atendimento ou Administrador pode definir ou alterar prioridade, prazo e responsável. Para encaminhar ou retomar execução, prioridade, regra de SLA e responsável devem estar confirmados. |
+| RN-04 | A matriz de transições define o ator de cada mudança de status: Atendimento/Admin tratam abertura, triagem, complemento e reabertura; Gestor de tráfego atribuído trata execução; Cliente ativo vinculado à organização aprova ou solicita correção somente em **Em validação** e reabre somente em **Concluída**. Atendimento e Administrador não substituem a aprovação do Cliente. |
+| RN-05 | Após a execução, o ticket deve conter descrição da ação e material/evidência quando configurados para o tipo. Se o tipo exigir aprovação, segue para **Em validação**; se não exigir, pode seguir para **Concluída** com o registro automático da dispensa derivada da configuração. |
+| RN-06 | **Concluída** exige aprovação do Cliente quando ela for obrigatória ou dispensa registrada automaticamente a partir da configuração do tipo. Não pode haver dispensa manual de aprovação obrigatória. |
+| RN-07 | **Cancelada** exige motivo, confirmação e só pode ser alcançada antes do início da execução, inclusive quando o ticket estiver aguardando complemento originado na triagem. |
+| RN-08 | **Aguardando cliente** deve registrar a informação complementar necessária, a fase de origem (triagem ou execução) e se a execução foi iniciada. Comentário ou anexo do Cliente marca complemento recebido, mas a pausa só termina quando Atendimento ou Administrador confirmar suficiência e retomar a fase de origem. |
+| RN-09 | Cliente ativo deve visualizar somente tickets vinculados à sua organização; Atendimento e Administrador visualizam o escopo da agência; Gestor de tráfego visualiza somente tickets atribuídos. Menus, listas, anexos e notificações seguem o mesmo escopo. |
+| RN-10 | Tipos de demanda podem exigir evidência e validação do Cliente antes da conclusão, conforme configuração. Em Aprovação de criativo, o material submetido é a evidência anterior à validação; a decisão do Cliente é registrada depois e não é pré-requisito para encaminhar o material. |
+| RN-11 | Cliente, Atendimento ou Administrador pode reabrir ticket **Concluído** mediante justificativa. A reabertura preserva todo o histórico anterior, inicia novo ciclo de resolução e exige que Atendimento ou Administrador confirme prioridade e responsável antes de retornar à execução. Correção solicitada em **Em validação** também gera **Reaberta**, mas mantém o ciclo de resolução em curso. |
+| RN-12 | Ao vencer o SLA calculado, o sistema deve sinalizar se o vencimento é de primeira resposta ou resolução e notificar responsável, Atendimento e Administrador. Antes da classificação, o sistema mostra prazo pendente e tempo transcorrido, sem sinalizar vencimento. |
+| RN-13 | Atribuição, comentário, solicitação de complemento, complemento confirmado, entrada em validação, conclusão, reabertura e cancelamento devem gerar notificações aos envolvidos autorizados. O MVP demonstra notificações no sistema; e-mail é canal opcional externo e não requer tela de configuração no protótipo. |
+| RN-14 | A confirmação automática de recebimento não conta como primeira resposta do SLA. A primeira resposta exige comentário ou registro de retorno efetivo de Atendimento, Administrador ou responsável ao solicitante, registrado no ticket. |
 
 ## 7. Governança de dados, acesso e continuidade
 
@@ -113,36 +115,67 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 | Usuário | Identificador, nome, e-mail, perfil, status e cliente vinculado quando o perfil for Cliente. |
 | Cliente | Identificador, nome, contato e status. |
 | Campanha | Identificador, cliente, nome, canal, objetivo e status. |
-| Tipo de demanda | Identificador, nome, status, campos obrigatórios, necessidade de aprovação do cliente e necessidade de evidência. |
-| Configuração de SLA | Calendário, horário de atendimento, fuso horário, feriados e recessos, prioridade, prazos de primeira resposta e resolução e escopo opcional por cliente ou tipo de demanda. |
-| Ticket | Número, cliente, campanha, tipo, canal, urgência informada, prazo desejado, prioridade oficial, prazos de SLA, assunto, descrição, métricas de contexto quando aplicável, solicitante, responsável e status. |
-| Comentário | Ticket, autor, data/hora, texto e referência a anexos vinculados. |
+| Tipo de demanda | Identificador, nome, status, campos adicionais (rótulo, tipo de dado, obrigatório/condicional, opções e validação), necessidade de aprovação do Cliente e necessidade de evidência. A regra fica copiada no ticket criado. |
+| Configuração de SLA | Calendário, horário de atendimento, fuso horário, feriados e recessos, prioridade, prazos de primeira resposta e resolução, pausa em validação e escopo padrão, por tipo, por cliente ou por cliente e tipo. |
+| Ticket | Número, cliente, campanha ou identificação de campanha não cadastrada, tipo e regra do tipo aplicados, canal, urgência informada, prazo desejado, prioridade oficial, regra e prazos de SLA aplicados, assunto, descrição, métricas de contexto quando aplicável, solicitante, autor do registro, responsável, status, origem do aguardo e ciclo de resolução. |
+| Comentário | Ticket, autor, data/hora, texto, referência a anexos vinculados e indicação de retorno efetivo ao solicitante, quando aplicável. |
 | Histórico | Ticket, campo alterado, valor anterior, novo valor, usuário e data/hora. |
-| Aprovação | Ticket, decisão, usuário, data/hora e observação. |
-| Evidência | Ticket, descrição, link ou arquivo, autor e data/hora. |
-| Anexo | Identificador, ticket, nome original, tipo, tamanho, referência de armazenamento, autor e data/hora. |
+| Aprovação | Ticket, material avaliado, decisão, usuário, data/hora e observação. |
+| Evidência | Ticket, descrição, link ou arquivo, autor, data/hora e natureza (ação executada ou material submetido). |
+| Anexo | Identificador, ticket, nome original, tipo de arquivo, tamanho, referência de armazenamento, autor e data/hora. Formatos e limites serão definidos no contrato técnico antes da implementação. |
 | Notificação | Ticket, evento gerador, destinatário, canal, resumo, data/hora de geração, situação de envio e data de leitura, quando aplicável. |
+
+### 8.1 Matriz de permissões operacionais
+
+| Ação | Cliente | Atendimento | Gestor de tráfego | Administrador |
+| --- | --- | --- | --- | --- |
+| Abrir demanda | Própria organização. | Em nome de cliente ativo, identificando autor e solicitante. | Não. | Em nome de cliente ativo, identificando autor e solicitante. |
+| Consultar ticket, comentário, anexo e notificação | Somente organização vinculada. | Todos os tickets da agência. | Somente ticket atribuído. | Todos os tickets da agência. |
+| Iniciar triagem, classificar, atribuir, reatribuir ou alterar prioridade/prazo | Não. | Sim. | Não. | Sim. |
+| Solicitar complemento, conferir suficiência e retomar fase | Somente enviar o complemento solicitado. | Sim. | Solicitar complemento apenas em execução; não confirma retomada. | Sim. |
+| Registrar ação, material e evidência | Não. | Não. | Somente ticket atribuído em execução. | Não. |
+| Encaminhar para validação ou concluir diretamente | Não. | Não. | Somente ticket atribuído, conforme regra do tipo. | Não. |
+| Aprovar ou solicitar correção | Somente Cliente ativo da organização, em validação. | Não. | Não. | Não. |
+| Reabrir concluída | Própria organização, com justificativa. | Sim, com justificativa. | Não. | Sim, com justificativa. |
+| Cancelar antes da execução | Não. | Sim, inclusive aguardo originado na triagem. | Não. | Sim, inclusive aguardo originado na triagem. |
+| Gerir campanhas | Consultar apenas no ticket. | Cadastrar/editar/ativar/inativar campanha de cliente ativo. | Não. | Sim. |
+| Consultar relatório e exportar | Lista restrita da própria organização em T03; sem T10. | T10 no escopo da agência. | Lista restrita às demandas atribuídas em T03; sem T10. | T10 no escopo da agência. |
+
+Comentário e anexo podem ser adicionados por usuário autorizado durante estados ativos e em **Concluída** para registrar informação posterior, sem alterar o status. **Cancelada** é somente consultável. Trabalho adicional após conclusão exige reabertura explícita; uma interação isolada nunca muda o estado do ticket.
+
+### 8.2 Contrato mínimo de formulário e continuidade
+
+| Contexto | Definição para o protótipo |
+| --- | --- |
+| Abertura | `Cliente`, `tipo`, `urgência informada`, `assunto`, `descrição` e `solicitante` são obrigatórios. `Campanha` usa as opções `existente` ou `não cadastrada`; nesta última, `identificação da campanha` é obrigatória. Atendimento/Admin registra também o autor do registro. |
+| Campos por tipo | Cada campo adicional informa rótulo, tipo (`texto`, `número`, `data`, `seleção` ou `anexo`), condição de obrigatoriedade, opções e validação. O tipo decide aprovação e evidência; a configuração fica copiada no ticket para não mudar o trabalho em andamento. |
+| Métricas | Impressões, conversões e valores de custo/receita são numéricos; CTR é percentual; CPC, CPA e ROAS exibem unidade/moeda e período de referência. Zero é valor informado; campo vazio significa não informado. |
+| Arquivos | O protótipo mostra nome, tipo e tamanho, estados de envio, sucesso e erro. Formatos e limites quantitativos serão definidos no contrato técnico, sem inventar restrições antes dessa decisão. |
+| Triagem | `Prioridade`, `regra de SLA`, `responsável` e registro de retorno efetivo são obrigatórios para encaminhar ou retomar execução. Para solicitar complemento, somente a informação necessária e a origem são obrigatórias. |
+| Inativação | Cliente e campanha inativos não entram em novos registros. Tipo e regra de SLA inativos deixam de valer para novos tickets, que preservam a configuração copiada. Não se pode inativar usuário com tickets ativos atribuídos nem o último Cliente ativo de uma organização com ticket aguardando resposta/validação; a tela orienta reatribuir ou manter outro Cliente ativo. A última regra padrão de SLA não pode ser desativada. |
+| Acesso | E-mail é o identificador de acesso. Usuário inativo não autentica. O protótipo contém sair e sessão expirada; recuperação/primeiro acesso e envio real de e-mail ficam fora do escopo e não aparecem como caminho navegável. |
 
 ## 9. Critérios de aceite iniciais
 
 | Cenário | Resultado esperado | Requisito(s) relacionado(s) | Caso(s) de teste |
 | --- | --- | --- | --- |
-| Cliente abre uma demanda | O ticket recebe número, status “Aberta”, urgência informada e prazo desejado; fica visível para atendimento. | RF-05, RF-06 | CT-01 |
+| Cliente abre uma demanda | O ticket recebe número, status “Aberta”, urgência informada, prazo desejado e SLA pendente de classificação; fica visível para Atendimento. | RF-05, RF-06, RF-21 | CT-01 |
 | Usuário acessa o sistema | Usuário autenticado acessa apenas as funções e os tickets permitidos ao seu perfil. | RF-01, RF-02 | CT-11 |
 | Administrador mantém clientes e campanhas | Cliente pode ser ativado/inativado e campanha cadastrada fica vinculada ao cliente selecionado. | RF-03, RF-04 | CT-12 |
-| Atendimento faz a triagem | Prioridade oficial, prazos de SLA e responsável ficam registrados no histórico. | RF-07, RF-09, RN-03, RN-14 | CT-02 |
-| Gestor de tráfego executa uma alteração | O ticket recebe comentário/evidência e pode ser encaminhado para validação. | RF-08, RF-10, RF-12, RN-05 | CT-03, CT-05 |
-| Informação adicional é necessária | O ticket fica “Aguardando cliente” até o complemento ser registrado. | RF-11, RN-08 | CT-04 |
-| Entrega precisa ser confirmada | O ticket segue para “Em validação”; após aprovação, torna-se “Concluída”. | RF-11, RN-05, RN-06 | CT-05 |
-| Cliente solicita correção | O ticket é reaberto com justificativa e retorna à fila de execução. | RF-11, RN-11 | CT-05 |
+| Atendimento faz a triagem | Prioridade oficial, regra de SLA, prazos calculados desde a abertura e responsável ficam registrados no histórico; primeiro retorno efetivo é identificável. | RF-07, RF-09, RF-21, RN-03, RN-14 | CT-02 |
+| Gestor de tráfego executa uma alteração | O ticket recebe comentário, ação e material/evidência configurado; segue para validação ou conclusão conforme a regra do tipo. | RF-08, RF-10, RF-12, RN-05, RN-06 | CT-03, CT-05 |
+| Informação adicional é necessária | O ticket fica “Aguardando cliente” com motivo, origem e pausa registrados. Comentário/anexo do Cliente é conferido antes da retomada da fase de origem. | RF-11, RN-08 | CT-04 |
+| Entrega precisa ser confirmada | Somente tipo com aprovação obrigatória segue para “Em validação”; aprovação do Cliente torna o ticket “Concluída”. | RF-11, RN-04, RN-05, RN-06 | CT-05 |
+| Entrega dispensa aprovação | O tipo sem aprovação obrigatória permite conclusão com ação, evidência quando exigida e dispensa registrada pela configuração. | RF-12, RN-05, RN-06, RN-10 | CT-05 |
+| Cliente solicita correção ou reabre concluída | Correção em validação mantém o ciclo; reabertura de concluída exige justificativa, inicia novo ciclo e requer confirmação antes da execução. | RF-11, RN-04, RN-11 | CT-05 |
 | Usuário filtra demandas vencidas | A listagem retorna os tickets vencidos de acordo com os filtros e as permissões do perfil. | RF-14, RF-16, RF-21, RN-12 | CT-06 |
 | Atendimento cancela ticket antes da execução | O motivo do cancelamento é registrado e o ticket não segue para execução. | RF-13, RN-07 | CT-14 |
 | Usuário consulta o painel de demandas | O painel apresenta totais por status, prioridade, responsável e prazo, conforme o perfil autorizado. | RF-15 | CT-15 |
 | Solicitante informa métricas de contexto | Quando aplicável, métricas como impressões, CTR, CPC, conversão, CPA ou ROAS ficam registradas no ticket. | RF-18 | CT-16 |
 | Usuário exporta uma listagem filtrada | A exportação contém apenas os tickets retornados pelos filtros e acessíveis ao perfil do usuário. | RF-19 | CT-17 |
-| Ticket é atribuído, comentado, entra em aguardo ou validação, vence, é concluído ou reaberto | Os envolvidos recebem notificação conforme seu perfil e configuração. | RF-20, RN-13 | CT-07 |
+| Ticket é atribuído, comentado, entra em aguardo, tem complemento confirmado, entra em validação, vence, é concluído, reaberto ou cancelado | Os envolvidos autorizados recebem notificação no sistema; o e-mail permanece opcional fora da demonstração de interface. | RF-20, RN-13 | CT-07 |
 | Administrador configura um tipo de demanda | O tipo registra campos obrigatórios e regras de aprovação e evidência aplicáveis aos tickets desse tipo. | RF-22, RN-05, RN-10 | CT-09 |
-| Administrador configura o SLA | Calendário, prazos e regra por prioridade, cliente ou tipo de demanda são aplicados ao cálculo do ticket correspondente. | RF-23 | CT-10 |
+| Administrador configura o SLA | Calendário, prazos, pausa em validação, precedência e regra por prioridade, cliente ou tipo são aplicados a novos tickets; os existentes preservam sua regra registrada. | RF-23 | CT-10 |
 | Usuário consulta histórico completo | A consulta exibe todas as alterações auditáveis do ticket, com autor, data/hora, motivo, campo, valor anterior e novo valor. | RF-09, RF-17, RNF-04 | CT-13 |
 | Cliente tenta acessar ticket de outra organização | O acesso é negado e a tentativa fica registrada conforme a política de auditoria. | RF-02, RN-09, RNF-02 | CT-08 |
 
@@ -166,23 +199,24 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 
 | Tipo | Dados obrigatórios adicionais | Aprovação | Evidência esperada | SLA sugerido |
 | --- | --- | --- | --- | --- |
-| Ajuste de orçamento | Campanha, orçamento atual/proposto, justificativa e data desejada. | Cliente, quando o tipo for configurado como sensível. | Comentário com valor aplicado e captura/link quando disponível. | Alta ou Urgente, conforme impacto. |
-| Criação, alteração ou pausa de anúncio | Campanha, canal, anúncio/ativo afetado quando existente, ação solicitada e motivo. | Cliente, quando alterar conteúdo ou gerar impacto relevante. | Comentário, captura ou link da criação, alteração ou pausa. | Alta ou Média. |
-| Aprovação de criativo | Campanha, canal, criativo/anexo e data limite. | Cliente obrigatória. | Decisão registrada no ticket. | Média. |
-| Relatório de desempenho | Campanha, período, métricas desejadas e formato. | Não obrigatória, salvo solicitação específica. | Arquivo ou link do relatório entregue. | Média. |
-| Análise de métricas | Campanha, período, pergunta de negócio e indicadores disponíveis. | Não obrigatória. | Comentário analítico e evidência/relatório de apoio. | Baixa ou Média. |
+| Ajuste de orçamento | Campanha ativa ou identificação de campanha pendente, orçamento atual/proposto, justificativa e data desejada. | Cliente, quando o tipo for configurado como sensível. | Comentário com valor aplicado e captura/link quando disponível. | Alta ou Urgente, conforme impacto. |
+| Criação, alteração ou pausa de anúncio | Campanha ativa ou identificação de campanha pendente, canal, anúncio/ativo afetado quando existente, ação solicitada e motivo. | Cliente, quando alterar conteúdo ou gerar impacto relevante. | Comentário, captura ou link da criação, alteração ou pausa. | Alta ou Média. |
+| Aprovação de criativo | Campanha ativa ou identificação de campanha pendente, canal, criativo/anexo e data limite. | Cliente obrigatória. | Material submetido (criativo, arquivo ou link) e descrição da versão; a decisão é registrada somente após a validação. | Média. |
+| Relatório de desempenho | Campanha ativa ou identificação de campanha pendente, período, métricas desejadas e formato. | Não obrigatória, salvo solicitação específica. | Arquivo ou link do relatório entregue. | Média. |
+| Análise de métricas | Campanha ativa ou identificação de campanha pendente, período, pergunta de negócio e indicadores disponíveis. | Não obrigatória. | Comentário analítico e evidência/relatório de apoio. | Baixa ou Média. |
 
 ## Anexo B — Matriz de transições de status
 
 | Status atual | Próximo status permitido | Quem pode alterar | Registro obrigatório | Efeito no SLA |
 | --- | --- | --- | --- | --- |
-| Aberta | Em triagem, Cancelada | Atendimento, Administrador | Motivo do cancelamento, quando aplicável. | Inicia primeira resposta e resolução. |
-| Em triagem | Em execução, Aguardando cliente, Cancelada | Atendimento, Administrador | Prioridade, prazo, responsável e motivo do aguardo/cancelamento. | Continua a contagem. |
-| Em execução | Aguardando cliente, Em validação | Responsável, Atendimento, Administrador | Comentário e evidência para validação. | Pausa somente em Aguardando cliente. |
-| Aguardando cliente | Em triagem, Em execução, Cancelada | Atendimento, Administrador | Informação recebida ou motivo de cancelamento. | Retoma resolução ao sair do aguardo. |
-| Em validação | Concluída, Reaberta | Cliente, Atendimento, Administrador | Aprovação ou justificativa da correção. | Continua até conclusão; reabertura retorna à execução. |
-| Concluída | Reaberta | Cliente, Atendimento, Administrador | Justificativa de reabertura. | Novo ciclo de resolução deve ser registrado. |
-| Reaberta | Em execução | Atendimento, Administrador | Responsável e prioridade confirmados. | Continua conforme regra configurada. |
+| Aberta | Em triagem, Cancelada | Atendimento, Administrador | Início da triagem ou motivo e confirmação de cancelamento. | Tempo útil começa na abertura; prazo permanece pendente até classificação. Cancelamento preserva e encerra a contagem. |
+| Em triagem | Em execução, Aguardando cliente, Cancelada | Atendimento, Administrador | Para execução: prioridade, regra de SLA, prazo e responsável. Para aguardo: informação necessária e origem `triagem`. Para cancelamento: motivo e confirmação. | Prazo calculado desde a abertura após classificar; pausa somente em aguardo. |
+| Em execução | Aguardando cliente, Em validação, Concluída | Responsável atribuído, Atendimento, Administrador | Para aguardo: informação necessária e origem `execução`. Para validação/conclusão: ação executada, material/evidência quando exigido e regra de aprovação aplicada. Conclusão direta exige dispensa automática do tipo. | Pausa somente em aguardo. |
+| Aguardando cliente (origem triagem) | Em triagem, Cancelada | Atendimento, Administrador | Complemento conferido e suficiente para retomar, nova informação solicitada ou motivo e confirmação de cancelamento. | Retoma somente após confirmação de suficiência; cancelamento encerra a contagem. |
+| Aguardando cliente (origem execução) | Em execução | Atendimento, Administrador | Complemento conferido e suficiente para retomar ou nova informação solicitada. | Retoma somente após confirmação de suficiência; cancelamento não é permitido. |
+| Em validação | Concluída, Reaberta | Cliente ativo vinculado à organização | Aprovação ou justificativa da correção, com material avaliado. | Continua até conclusão; correção mantém o ciclo de resolução. |
+| Concluída | Reaberta | Cliente ativo vinculado à organização, Atendimento, Administrador | Justificativa de reabertura. | Preserva o ciclo anterior e inicia novo ciclo de resolução. |
+| Reaberta | Em execução | Atendimento, Administrador | Responsável e prioridade confirmados; registrar se a origem foi correção em validação ou reabertura de concluída. | Correção mantém o ciclo; reabertura de concluída usa o novo ciclo. |
 
 ## Anexo C — Matriz de rastreabilidade preliminar
 
@@ -201,11 +235,13 @@ O prazo de primeira resposta vai da abertura ao primeiro retorno efetivo registr
 
 | Evento | Destinatários | Canal | Conteúdo mínimo |
 | --- | --- | --- | --- |
-| Ticket atribuído | Responsável e Atendimento/gestor de conta | No sistema; e-mail se configurado | Número, assunto, prioridade oficial e prazo de resolução. |
-| Comentário incluído | Solicitante, responsável e usuários mencionados com permissão | No sistema; e-mail se configurado | Número, autor e resumo do comentário. |
-| Aguardando cliente | Solicitante e Atendimento/gestor de conta | No sistema; e-mail se configurado | Informação complementar necessária e prazo aplicável. |
-| Em validação | Solicitante e Atendimento/gestor de conta | No sistema; e-mail se configurado | Ação executada, evidência e ação esperada do cliente. |
-| SLA vencido | Responsável, Atendimento/gestor de conta e Administrador | No sistema; e-mail se configurado | Número, prioridade, prazo vencido e tempo em atraso. |
-| Concluída ou Reaberta | Solicitante, responsável e Atendimento/gestor de conta | No sistema; e-mail se configurado | Novo status, justificativa e próximo passo, quando houver. |
+| Ticket atribuído | Responsável e Atendimento/gestor de conta | No sistema; e-mail opcional fora do protótipo | Número, assunto, prioridade oficial e prazo de resolução. |
+| Comentário incluído | Solicitante, responsável e Atendimento/gestor de conta autorizados | No sistema; e-mail opcional fora do protótipo | Número, autor e resumo do comentário. |
+| Aguardando cliente | Solicitante e Atendimento/gestor de conta | No sistema; e-mail opcional fora do protótipo | Informação complementar necessária, origem e situação da pausa. |
+| Complemento confirmado | Solicitante, responsável e Atendimento/gestor de conta autorizados | No sistema; e-mail opcional fora do protótipo | Informação recebida, fase retomada e prazo aplicável. |
+| Em validação | Solicitante e Atendimento/gestor de conta | No sistema; e-mail opcional fora do protótipo | Ação executada, material/evidência e ação esperada do Cliente. |
+| SLA vencido | Responsável, Atendimento/gestor de conta e Administrador | No sistema; e-mail opcional fora do protótipo | Número, prioridade, tipo de prazo vencido e tempo em atraso. |
+| Concluída ou Reaberta | Solicitante, responsável e Atendimento/gestor de conta | No sistema; e-mail opcional fora do protótipo | Novo status, justificativa, ciclo e próximo passo, quando houver. |
+| Cancelada | Solicitante, responsável e Atendimento/gestor de conta | No sistema; e-mail opcional fora do protótipo | Motivo, autor e confirmação do cancelamento. |
 
 > Notificações não devem revelar conteúdo ou anexos a usuários sem permissão para consultar o ticket.

@@ -11,18 +11,18 @@
 \textbf{ID} & \textbf{Requisitos} & \textbf{Prior.} & \textbf{Cenário} & \textbf{Resultado esperado} \\
 \hline
 \endhead
-CT-01 & RF-05, RF-06 & Alta & Cliente abre ticket de alteração de campanha. & Ticket recebe identificador, status inicial, urgência e prazo desejado. \\
-CT-02 & RF-07, RF-09, RN-03, RN-14 & Alta & Atendimento classifica e atribui o ticket. & Prioridade oficial, SLA e responsável ficam registrados; confirmação automática não conta como primeira resposta. \\
+CT-01 & RF-05, RF-06, RF-21 & Alta & Cliente abre ticket de alteração de campanha, inclusive sem campanha cadastrada. & Ticket recebe identificador, status Aberta, urgência, prazo desejado e SLA pendente de classificação; campanha pendente segue para triagem. \\
+CT-02 & RF-07, RF-09, RN-03, RN-14 & Alta & Atendimento inicia triagem, classifica e atribui o ticket. & Prioridade, regra e prazos de SLA calculados desde a abertura e responsável ficam registrados; confirmação automática não conta como primeira resposta. \\
 CT-03 & RF-08, RF-09, RF-10 & Alta & Gestor atualiza o status e inclui comentário. & Histórico registra usuário, data, hora e alteração realizada. \\
-CT-04 & RF-11, RN-08 & Média & Ticket aguarda complemento do cliente. & Estado e informação complementar solicitada ficam visíveis. \\
-CT-05 & RF-11, RF-12, RN-05, RN-06, RN-11 & Alta & Responsável encaminha entrega para validação e cliente solicita correção. & Ticket entra em validação, é reaberto com justificativa e preserva o histórico. \\
-CT-06 & RF-14, RF-16, RF-21, RN-12 & Média & Usuário filtra demandas vencidas. & Listagem retorna apenas tickets com prazo ultrapassado. \\
-CT-07 & RF-20, RN-13 & Alta & Ticket é atribuído, comentado, colocado em aguardo ou validação, vencido, concluído ou reaberto. & Envolvidos recebem a notificação configurada para o evento. \\
+CT-04 & RF-11, RN-08 & Média & Ticket aguarda complemento na triagem e na execução; Cliente envia informação. & Motivo, origem e pausa ficam visíveis; somente complemento suficiente confirmado retoma a fase correta, sem permitir cancelamento após execução. \\
+CT-05 & RF-11, RF-12, RN-04, RN-05, RN-06, RN-11 & Alta & Gestor registra entrega de tipo com e sem aprovação; Cliente corrige e reabre concluída. & Tipo obrigatório entra em validação e só Cliente aprova/corrige; tipo sem aprovação conclui com dispensa automática; correção e reabertura preservam histórico e ciclos corretos. \\
+CT-06 & RF-14, RF-16, RF-21, RN-12 & Média & Usuário filtra demandas por abertura e situação de SLA. & Listagem distingue prazo pendente, pausa, vencimento de primeira resposta e vencimento de resolução, no escopo autorizado. \\
+CT-07 & RF-20, RN-13 & Alta & Ticket é atribuído, comentado, colocado em aguardo, tem complemento confirmado, entra em validação, vence, conclui, reabre ou é cancelado. & Envolvidos autorizados recebem notificação no sistema sem revelação de conteúdo fora da permissão. \\
 CT-08 & RF-02, RN-09, RNF-02 & Alta & Cliente tenta consultar ticket de outra organização. & Acesso é negado e a tentativa é registrada conforme a política de auditoria. \\
-CT-09 & RF-22, RN-05, RN-10 & Alta & Administrador configura um tipo de demanda. & Campos obrigatórios e regras de aprovação e evidência são aplicados aos tickets do tipo. \\
-CT-10 & RF-23 & Alta & Administrador configura calendário e prazos do SLA. & Horário, fuso, feriados, recessos e regra por prioridade, cliente ou tipo são usados no cálculo. \\
+CT-09 & RF-22, RN-05, RN-10 & Alta & Administrador configura um tipo de demanda, inclusive Aprovação de criativo. & Campos tipados, regras de aprovação/evidência e material submetido são aplicados a novos tickets sem exigir decisão antes da validação. \\
+CT-10 & RF-23 & Alta & Administrador configura calendário e prazos do SLA. & Horário, fuso, feriados, recessos, pausa em validação e precedência por cliente/tipo são usados em novos tickets; os existentes preservam a regra registrada. \\
 CT-11 & RF-01, RF-02 & Alta & Usuário realiza autenticação e acessa o sistema com seu perfil. & Usuário visualiza somente funções e tickets autorizados. \\
-CT-12 & RF-03, RF-04 & Alta & Administrador ativa ou inativa cliente e cadastra campanha. & Campanha fica vinculada ao cliente e clientes inativos não recebem novas solicitações. \\
+CT-12 & RF-03, RF-04 & Alta & Administrador/Atendimento cadastra campanha e administra inativação. & Campanha fica vinculada ao cliente; cliente/campanha inativos não recebem novas solicitações e inativações que deixam pendências sem responsável/Cliente são bloqueadas. \\
 CT-13 & RF-09, RF-17, RNF-04 & Alta & Usuário consulta o histórico após mudanças de status, responsável, prioridade, prazo e aprovação. & Histórico exibe autor, data, hora, motivo, campo, valor anterior e novo valor. \\
 CT-14 & RF-13, RN-07 & Média & Atendimento cancela ticket antes da execução. & Motivo do cancelamento fica registrado e o ticket não segue para execução. \\
 CT-15 & RF-15 & Média & Usuário autorizado consulta o painel de demandas. & Painel apresenta totais por status, prioridade, responsável e prazo. \\
