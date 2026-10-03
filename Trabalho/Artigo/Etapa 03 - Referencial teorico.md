@@ -15,7 +15,7 @@ Um Help Desk é uma aplicação adequada para organizar esse processo porque tra
 
 ## 2. Marketing digital e tráfego pago
 
-Marketing digital utiliza canais e tecnologias digitais para comunicar valor, alcançar clientes e mensurar resultados. Entre seus principais meios estão websites, redes sociais, e-mail, mecanismos de busca, aplicativos e publicidade paga. Em comparação com ações tradicionais, os canais digitais permitem segmentação mais detalhada, acompanhamento frequente de métricas e ajustes durante a execução da campanha.
+Marketing digital utiliza canais e tecnologias digitais para comunicar valor, alcançar clientes e mensurar resultados. Entre seus meios estão websites, redes sociais, e-mail, mecanismos de busca, aplicativos e publicidade paga. Os estudos de Gujar, Paliwal e Panyam (2024) e Younas et al. (2025) discutem recursos de automação, gestão de campanhas e análise de dados nesse contexto. No presente projeto, o recorte concentra-se nas solicitações relacionadas à publicidade digital paga.
 
 Tráfego pago é a utilização de investimento em plataformas de publicidade para levar usuários a uma página, perfil, formulário, produto ou outro objetivo digital. A operação de uma campanha pode exigir definição de orçamento, canal, público, localização, palavras-chave, criativos, período e métricas de sucesso. Por esse motivo, uma alteração aparentemente simples — como aumentar o orçamento ou mudar um público — precisa de contexto, aprovação e registro para que seus efeitos possam ser avaliados.
 
@@ -27,7 +27,7 @@ No estudo de caso de Steponaitis e Andrijauskienė (2023), realizado em uma agê
 
 O estudo não avalia a adoção de Help Desk nem permite generalizar sua estrutura interna para outras agências. Neste projeto, seus achados são utilizados como fundamento para a decisão de incluir triagem, responsável, prazo, histórico e acompanhamento na proposta de atendimento. Um Help Desk pode apoiar essas atividades ao disponibilizar uma fila de tickets, responsáveis definidos, prazos, estados de atendimento e histórico de comentários.
 
-O estudo de Agus et al. (2019) também mostra que agências ocupam posição intermediária em uma cadeia de publicidade digital formada por anunciantes, publishers e plataformas de mídia. Nesse cenário, a agência precisa gerar valor por meio de estratégia, transparência e coordenação. Portanto, registrar solicitações e evidências de execução contribui para a prestação de contas ao cliente e para a organização interna da agência.
+O estudo de Agus et al. (2019) também mostra que agências ocupam posição intermediária em uma cadeia de publicidade digital formada por anunciantes, publishers e plataformas de mídia. Nesse cenário, a agência precisa gerar valor por meio de estratégia, transparência e coordenação. Neste projeto, o registro de solicitações e evidências de execução é proposto como apoio à prestação de contas ao cliente e à organização interna da agência.
 
 ## 4. Automação de marketing, gestão do relacionamento com o cliente (CRM) e atendimento ao cliente
 
@@ -35,7 +35,7 @@ Automação de marketing utiliza sistemas para apoiar tarefas repetitivas, segme
 
 Embora essas plataformas tenham foco na execução e automação do marketing, elas evidenciam uma necessidade relevante para este trabalho: reduzir a fragmentação das informações. No projeto proposto, o Help Desk não substitui ferramentas de mídia ou CRM; ele atua como camada de organização do serviço, concentrando solicitações, conversas, aprovações e evidências relacionadas às campanhas.
 
-O CRM, por sua vez, busca organizar e fortalecer o relacionamento com clientes. No contexto de marketing digital, Kharisma et al. (2024) associam a gestão do relacionamento com clientes à confiança e à intenção de recompra. A aplicação desses conceitos ao atendimento da agência é uma decisão de projeto: o ticket funcionará como registro de interação, permitindo que o cliente acompanhe o andamento, receba resposta da equipe e aprove ou complemente a solicitação. Essa transparência reduz a dependência de conversas informais e preserva o contexto do atendimento.
+O CRM, por sua vez, busca organizar e fortalecer o relacionamento com clientes. No contexto de um marketplace de comércio eletrônico, Kharisma et al. (2024) associam a gestão do relacionamento com clientes à confiança e à intenção de recompra. Seus resultados oferecem uma referência conceitual para discutir o relacionamento, sem demonstrar efeitos de um Help Desk no atendimento de agências. A aplicação desses conceitos ao atendimento da agência é uma decisão de projeto: o ticket funcionará como registro de interação, permitindo que o cliente acompanhe o andamento, receba resposta da equipe e aprove ou complemente a solicitação. Essa organização busca disponibilizar um registro comum das interações e preservar o contexto do atendimento; sua utilidade deverá ser examinada na avaliação da aplicação.
 
 ## 5. Métricas e controle de campanhas
 
@@ -58,7 +58,7 @@ No Help Desk, as métricas não serão calculadas automaticamente na primeira ve
 
 Rastreabilidade é a capacidade de recuperar o histórico de uma informação ou decisão. No sistema proposto, ela será obtida por meio de número do ticket, datas, usuário responsável, histórico de status, comentários, anexos e registro de aprovação. Esses elementos permitem verificar o ciclo de vida da demanda e oferecem base para auditoria e aprendizado da equipe.
 
-A transparência com o cliente é importante porque campanhas envolvem orçamento e decisões que podem afetar resultados. Ao permitir que o cliente consulte o status, envie informações e aprove solicitações, o sistema reduz dúvidas sobre a etapa em que o pedido se encontra. A equipe, por sua vez, terá uma visão organizada de prioridades, responsáveis e prazos.
+A transparência com o cliente é importante porque campanhas envolvem orçamento e decisões que podem afetar resultados. A consulta de status, o envio de informações e o registro de aprovações são recursos propostos para apoiar a compreensão do andamento pelo cliente, cuja adequação deverá ser avaliada. A equipe, por sua vez, terá uma visão organizada de prioridades, responsáveis e prazos.
 
 O sistema deve respeitar princípios de proteção de dados: coletar apenas informações necessárias à demanda, limitar acesso conforme o perfil do usuário e evitar cadastrar dados sensíveis ou bases completas de audiência. A Lei Geral de Proteção de Dados Pessoais (LGPD) regula o tratamento de dados pessoais, inclusive em meios digitais (BRASIL, 2018); em complemento, o guia da Autoridade Nacional de Proteção de Dados (ANPD) recomenda controles de autenticação, autorização e auditoria (AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS, 2021). Daoud et al. (2023) destacam que publicidade direcionada deve equilibrar personalização, transparência e privacidade. Assim, o Help Desk armazenará informações operacionais da solicitação, e não dados detalhados de usuários alcançados pelas campanhas. Como o projeto é um protótipo acadêmico com dados fictícios ou autorizados, retenção operacional, backup e recuperação não fazem parte da entrega; eles deverão ser definidos caso a solução seja adotada em produção.
 
@@ -66,13 +66,14 @@ A especificação dos requisitos deve manter linguagem clara, prioridade, origem
 
 ## 7. Síntese do marco teórico
 
-O referencial mostra que a proposta está apoiada em quatro ideias principais:
+O referencial articula os seis conceitos apresentados no levantamento:
 
-1. **Gestão de serviços e demandas:** tickets estruturam solicitações, responsáveis, prazos e histórico.
-2. **Gestão de agências:** planejamento, comunicação, monitoramento e análise de dados são essenciais para conduzir demandas de marketing digital.
-3. **Tráfego pago e métricas:** decisões sobre campanha precisam ser contextualizadas por canal, orçamento, público, objetivo e indicadores.
-4. **Relacionamento e transparência:** centralizar comunicação, notificações e aprovações melhora o atendimento e preserva a rastreabilidade das decisões.
-5. **Proteção de dados:** acesso por perfil, auditoria e minimização de dados protegem as informações operacionais registradas; controles operacionais de continuidade ficam para eventual adoção em produção.
+1. **Gestão de demandas e sistemas de informação:** tickets estruturam solicitações, responsáveis, prazos e histórico.
+2. **Marketing digital e tráfego pago:** decisões sobre campanhas precisam de contexto sobre canal, orçamento, público e objetivo.
+3. **Gestão de projetos em agências:** planejamento, comunicação, monitoramento e análise de dados fundamentam a organização do atendimento.
+4. **Automação, CRM e atendimento:** recursos de integração e relacionamento orientam a centralização das interações, sem transformar o Help Desk em ferramenta de execução de anúncios ou em CRM.
+5. **Métricas e controle de campanhas:** indicadores podem contextualizar pedidos e evidências, sem cálculo automático no MVP.
+6. **Rastreabilidade, transparência e proteção de dados:** histórico, aprovações, acesso por perfil e minimização de dados orientam o registro das decisões e o tratamento das informações operacionais; controles de continuidade ficam para eventual adoção em produção.
 
 Esses fundamentos orientam os requisitos do aplicativo e a metodologia de desenvolvimento apresentados nos documentos complementares das Etapas 03 e 04.
 
