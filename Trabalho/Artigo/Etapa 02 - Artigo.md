@@ -41,10 +41,6 @@ Os estudos revisados sobre marketing digital concentram-se na automação, no pl
 
 Quando as informações de uma solicitação não são mantidas em um registro comum, tornam-se mais difíceis a identificação do pedido original, a definição de responsável, o acompanhamento de prazo, o registro de aprovação e a recuperação das decisões tomadas (Fenner et al., 2015; PEOPLECERT, 2023; AXELOS, 2020). Essa dificuldade é particularmente relevante no tráfego pago, pois alterações em orçamento, público ou criativo podem afetar o desempenho e o custo de uma campanha (Yahia e ElBolok, 2024). As práticas de Service Desk e de gerenciamento de solicitações procuram mitigar esses riscos por meio de registro, triagem, comunicação e acompanhamento até a conclusão (Firmansyah e Subriadi, 2022; PEOPLECERT, 2023; AXELOS, 2020). Assim, a questão que orienta o trabalho é: **como uma aplicação web de Help Desk pode centralizar e rastrear demandas de tráfego pago, melhorando o acompanhamento de campanhas e o atendimento a clientes de agências de marketing digital?**
 
-O estudo justifica-se pela possibilidade de organizar as solicitações em tickets com responsáveis, prioridades, prazos, comentários, aprovações, histórico e evidências. Essa estrutura pode apoiar a distribuição do trabalho, a prestação de contas ao cliente e a consulta a indicadores de atendimento, sem substituir as plataformas de mídia nem automatizar a alteração dos anúncios. Do ponto de vista acadêmico, a proposta integra Sistemas de Informação, Gestão de Serviços, Gestão de Projetos e Marketing Digital, aplicando conhecimentos de levantamento de requisitos, modelagem de processos, experiência do usuário, desenvolvimento web e validação de software a um problema de gestão.
-
-O objetivo geral é desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e registrar demandas de tráfego pago. Para tanto, pretende-se revisar artigos e normas aplicáveis; levantar, analisar e priorizar requisitos; modelar o processo de atendimento e o backlog; prototipar e implementar um produto mínimo viável com tickets, histórico, prazos e comunicação entre os envolvidos; e realizar testes funcionais e avaliação de usabilidade.
-
 ### 1.1 Problemática
 
 No estudo de caso realizado em uma agência de marketing digital, Steponaitis e Andrijauskienė (2023) identificaram planejamento, comunicação, gestão de tempo e monitoramento entre as competências relevantes para a condução de projetos digitais. Esses achados situam a organização do trabalho e a troca de informações como aspectos pertinentes à investigação das demandas de tráfego pago, embora não constituam um diagnóstico de todas as agências nem uma avaliação do uso de Help Desk.
@@ -55,23 +51,7 @@ A problemática consiste, portanto, em como adaptar essas práticas ao registro 
 
 À vista disso, coloca-se a seguinte pergunta de pesquisa: **como uma aplicação web de Help Desk pode centralizar e rastrear demandas de tráfego pago, melhorando o acompanhamento de campanhas e o atendimento a clientes de agências de marketing digital?**
 
-### 1.2 Objetivos
-
-#### 1.2.1 Objetivo geral
-
-Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e registrar demandas de tráfego pago, apoiando a gestão das solicitações e o atendimento a clientes de agências de marketing digital.
-
-#### 1.2.2 Objetivos específicos
-
-- Realizar uma revisão bibliográfica de artigos e normas aplicáveis para compreender o problema e fundamentar a solução.
-- Levantar, analisar e priorizar os requisitos do sistema.
-- Modelar o processo de atendimento e definir o *backlog* com responsabilidades, dependências e prazos de entrega.
-- Prototipar a solução.
-- Implementar o produto mínimo viável (MVP) com cadastro, autenticação, tickets, acompanhamento de prazos, histórico e comunicação entre os envolvidos.
-- Realizar testes funcionais e avaliação de usabilidade.
-- Entregar uma versão final funcional do aplicativo, acompanhada da documentação e da demonstração previstas para o projeto.
-
-### 1.3 Justificativa
+### 1.2 Justificativa
 
 A relevância deste trabalho está na investigação de uma forma de organizar e acompanhar solicitações de tráfego pago, aproximando a gestão de serviços do atendimento prestado por agências de marketing digital. A motivação decorre da relação entre as competências de planejamento, comunicação e monitoramento identificadas por Steponaitis e Andrijauskienė (2023) e as práticas de registro e acompanhamento discutidas na literatura de Service Desk (Firmansyah e Subriadi, 2022). A partir dessa relação, o SIGE Desk propõe tratar cada demanda como uma solicitação de serviço cujo andamento possa ser consultado pelos envolvidos. A pesquisa busca examinar como essa organização pode apoiar o trabalho da equipe e a participação do cliente ao longo do atendimento.
 
@@ -86,6 +66,22 @@ Na dimensão social, o trabalho é relevante pela atenção à comunicação e �
 Para os profissionais da agência, a proposta busca disponibilizar um contexto compartilhado sobre o pedido e as decisões registradas, de modo a apoiar a comunicação durante sua execução. A relevância desse aspecto se aproxima dos achados de Steponaitis e Andrijauskienė (2023), que incluem comunicação e empatia entre as competências necessárias à gestão de projetos digitais. A aplicação será concebida como apoio à interação entre pessoas, preservando oportunidades de esclarecimento e retorno sobre a entrega. Nessa perspectiva, a avaliação de usabilidade prevista poderá identificar dificuldades para consultar, comunicar e validar uma demanda. Seus resultados oferecerão indícios sobre a adequação da interface a essas atividades, enquanto efeitos mais amplos sobre relações de trabalho e qualidade do atendimento exigirão acompanhamento posterior.
 
 Na dimensão acadêmica, o trabalho integra conceitos de Sistemas de Informação, Gestão de Serviços, Gestão de Projetos e Marketing Digital. A proposta permite colocar em prática conhecimentos de levantamento de requisitos, modelagem de processos, experiência do usuário, banco de dados, desenvolvimento web e validação de software. 
+
+### 1.3 Objetivos
+
+#### 1.3.1 Objetivo geral
+
+Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e registrar demandas de tráfego pago, apoiando a gestão das solicitações e o atendimento a clientes de agências de marketing digital.
+
+#### 1.3.2 Objetivos específicos
+
+- Realizar uma revisão bibliográfica de artigos e normas aplicáveis para compreender o problema e fundamentar a solução.
+- Levantar, analisar e priorizar os requisitos do sistema.
+- Modelar o processo de atendimento e definir o *backlog* com responsabilidades, dependências e prazos de entrega.
+- Prototipar a solução.
+- Implementar o produto mínimo viável (MVP) com cadastro, autenticação, tickets, acompanhamento de prazos, histórico e comunicação entre os envolvidos.
+- Realizar testes funcionais e avaliação de usabilidade.
+- Entregar uma versão final funcional do aplicativo, acompanhada da documentação e da demonstração previstas para o projeto.
 
 ## Referências
 
