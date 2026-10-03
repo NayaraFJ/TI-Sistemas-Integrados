@@ -12,6 +12,7 @@ import br.pucminas.sige.tickets.application.TicketNumberGenerator;
 import br.pucminas.sige.tickets.domain.*;
 import br.pucminas.sige.users.domain.*;
 import jakarta.persistence.EntityManager;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -247,15 +248,18 @@ public class DemoDataInitializer implements ApplicationRunner {
     String key="demo/"+ticket.getId()+"/"+kind.name().toLowerCase()+".csv";
     Path file=storage.resolve(key).normalize();
     if (!file.startsWith(storage)) throw new IllegalStateException("Caminho demo inválido");
-    String contents="ticket,tipo,periodo,impressoes,ctr_percentual,cpc_brl,conversoes,cpa_brl,roas\n"
-        +ticket.getNumber()+","+kind.name()+",ultimos 7 dias,12000,2.4,1.80,48,9.00,3.2\n";
     try {
+      var metrics=new ObjectMapper().readTree(ticket.getMetrics());
+      String contents="ticket,tipo,periodo,impressoes,ctr_percentual,cpc_brl,conversoes,cpa_brl,roas\n"
+          +ticket.getNumber()+","+kind.name()+","+metrics.path("period").asText()+","+metrics.path("impressions").asLong()
+          +","+metrics.path("ctr").asText()+","+metrics.path("cpc").asText()+","+metrics.path("conversions").asText()
+          +","+metrics.path("cpa").asText()+","+metrics.path("roas").asText()+"\n";
       Files.createDirectories(file.getParent());
       Files.writeString(file,contents,StandardCharsets.UTF_8);
-    } catch (IOException exception) { throw new IllegalStateException("Não foi possível criar o arquivo demonstrativo",exception); }
-    attachments.save(new TicketAttachment(ticket,author,kind==TicketAttachment.Kind.EVIDENCE?"evidencia-demonstrativa.csv":"contexto-campanha.csv",
+      attachments.save(new TicketAttachment(ticket,author,kind==TicketAttachment.Kind.EVIDENCE?"evidencia-demonstrativa.csv":"contexto-campanha.csv",
         key,"text/csv",contents.getBytes(StandardCharsets.UTF_8).length,kind,
         kind==TicketAttachment.Kind.EVIDENCE?"Registro fictício de execução para validação do protótipo":null,null));
+    } catch (IOException exception) { throw new IllegalStateException("Não foi possível criar o arquivo demonstrativo",exception); }
   }
 
   private String metrics(int i) {

@@ -29,7 +29,7 @@ $env:SIGE_DB_USERNAME = 'sige'
 $env:SIGE_DB_PASSWORD = 'sua-senha-local'
 ```
 
-O Flyway executa `V1__initial_schema.sql` e `V2__add_ticket_completion_timestamp.sql` nessa base. Se a conta padrão do SIGE Desk não existir na instância, use uma conta própria ou inicie o serviço do Docker.
+O Flyway executa as migrações de `Backend/src/main/resources/db/migration` nessa base, incluindo a estrutura inicial, o registro de conclusão dos tickets e o controle de carga demo. Se a conta padrão do SIGE Desk não existir na instância, use uma conta própria ou inicie o serviço do Docker.
 
 ### Validação de migration MySQL
 
@@ -55,15 +55,19 @@ Ao iniciar a API com a tabela `users` vazia, o backend cadastra automaticamente 
 
 Em `Backend`, execute `./mvnw spring-boot:run` (Windows: `.\mvnw.cmd spring-boot:run`). No ambiente local sem variáveis de senha configuradas, entre com **admin@sige.demo / 123**. Essa conta pode cadastrar os demais usuários pela tela de administração. As credenciais da aplicação são independentes do usuário e senha de conexão MySQL.
 
-O cadastro inicial ocorre somente quando não há usuários: reiniciar a API ou alterar as variáveis não redefine senhas, não reativa contas e não sobrescreve cadastros. No perfil `demo`, os dados fictícios são inicializados antes do administrador de fallback; nessa situação, a conta administrativa usa `SIGE_DEMO_PASSWORD` (padrão local `123`). As contas demo também só são criadas com a tabela de usuários vazia.
+O cadastro inicial ocorre somente quando não há usuários: reiniciar a API ou alterar as variáveis não redefine senhas, não reativa contas e não sobrescreve cadastros. No perfil `demo`, a carga é executada antes do administrador de fallback e funciona também com usuários existentes. Contas novas usam `SIGE_DEMO_PASSWORD` (padrão local `123`); contas existentes mantêm a senha anterior. O registro da versão em `demo_seed_runs` impede repetir a carga.
 
 ### Contas fictícias
 
 | Perfil | E-mail |
 | --- | --- |
 | Cliente | `cliente@aurora.demo` |
+| Cliente Horizonte | `rafael@horizonte.demo` |
+| Cliente Viva | `cliente@viva.demo` |
 | Atendimento | `atendimento@sige.demo` |
+| Atendimento adicional | `atendimento2@sige.demo` |
 | Gestor de tráfego | `gestor@sige.demo` |
+| Gestor de tráfego adicional | `gestor2@sige.demo` |
 | Administrador | `admin@sige.demo` |
 
-Todas usam a senha definida em `SIGE_DEMO_PASSWORD`, com padrão local `123`.
+As contas novas usam a senha definida em `SIGE_DEMO_PASSWORD`, com padrão local `123`. As contas existentes mantêm suas senhas. O [roteiro de validação](Backend/VALIDACAO-DEMO.md) descreve os 24 tickets, evidências e a comparação com as telas do protótipo.

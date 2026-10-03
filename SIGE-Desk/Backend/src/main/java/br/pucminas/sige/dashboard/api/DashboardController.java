@@ -7,8 +7,10 @@ import br.pucminas.sige.tickets.application.TicketAccessPolicy;
 import java.time.Instant;
 import java.util.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.transaction.annotation.Transactional;
 
 @RestController @RequestMapping("/api/v1/dashboard")
+@Transactional(readOnly=true)
 public class DashboardController {
   private final TicketAccessPolicy access; private final CurrentUser current;
   public DashboardController(TicketAccessPolicy access,CurrentUser current){this.access=access;this.current=current;}

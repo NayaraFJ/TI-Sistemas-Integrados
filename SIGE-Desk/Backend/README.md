@@ -35,6 +35,7 @@ Não é necessário configurar o nome de uma tabela para iniciar o sistema. O Fl
 
 - `V1__initial_schema.sql`: estrutura inicial, incluindo a tabela `users` e os demais cadastros.
 - `V2__add_ticket_completion_timestamp.sql`: atualização do registro de conclusão dos tickets.
+- `V3__demo_seed_tracking.sql`: controle da carga demo para impedir duplicação nas reinicializações.
 
 O banco também é criado automaticamente quando não existe, pois `spring.datasource.hikari.data-source-properties.createDatabaseIfNotExist` está habilitado. A conta MySQL precisa de permissão para criar o banco e aplicar as migrações, além de ler e gravar os dados. Se não tiver permissão de criação, o banco deve ser criado previamente por uma conta autorizada.
 
@@ -86,14 +87,16 @@ Reiniciar o backend ou mudar essas variáveis não sobrescreve usuários, não r
 
 ## Dados de demonstração opcionais
 
-Para cadastrar clientes, campanhas, usuários e tickets fictícios, inicie com o perfil `demo` e a tabela de usuários vazia:
+Para adicionar os dados de validação do protótipo, inicie com o perfil `demo`. A carga funciona também em bancos que já têm o administrador ou outros registros:
 
 ```powershell
 $env:SIGE_DEMO_PASSWORD = 'sua-senha-demo'
 .\mvnw.cmd spring-boot:run "-Dspring-boot.run.profiles=demo"
 ```
 
-Nesse perfil, os dados fictícios são criados primeiro e o administrador `admin@sige.demo` usa `SIGE_DEMO_PASSWORD` (padrão local `123`). Se já houver usuários, a carga demo não é executada. As demais contas estão listadas no [README geral](../README.md#contas-do-perfil-demo).
+Nesse perfil, são acrescentados 24 tickets nos oito estados, organizações, campanhas, tipos, regras de SLA, comentários, histórico, notificações e arquivos CSV para download. Contas e cadastros compatíveis são reutilizados; suas senhas e alterações são preservadas. A carga é registrada em `demo_seed_runs` e só é aplicada uma vez por versão. A presença de usuários não bloqueia mais a carga; contas incompatíveis com os perfis/vínculos demo interrompem a inicialização com uma mensagem explícita.
+
+Contas novas usam `SIGE_DEMO_PASSWORD` (padrão local `123`). Um administrador já existente mantém sua senha anterior. Consulte o [roteiro de validação demo](VALIDACAO-DEMO.md) para contas, cenários e telas a verificar. Os arquivos ficam em `uploads/demo/`, ou sob o caminho configurado em `SIGE_STORAGE_PATH`; preserve essa pasta para manter os downloads após reiniciar.
 
 ## Verificação e testes
 

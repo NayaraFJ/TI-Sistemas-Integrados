@@ -38,13 +38,15 @@ public class SlaService {
   private String snapshot(SlaRule rule) { return "{\"id\":\""+rule.getId()+"\",\"name\":\""+rule.getName().replace("\"","\\\"")+"\",\"version\":"+rule.getVersionNumber()+",\"timezone\":\""+rule.getTimezone()+"\",\"pauseInValidation\":"+rule.isPauseInValidation()+",\"deadlines\":"+rule.getDeadlines()+"}"; }
   private Instant addBusinessHours(Instant start, int hours, SlaRule rule) throws java.io.IOException {
     ZoneId zone=ZoneId.of(rule.getTimezone()); JsonNode days=json.readTree(rule.getBusinessDays()); JsonNode holidays=json.readTree(rule.getHolidays());
-    ZonedDateTime cursor=start.atZone(zone); int remaining=hours*60;
-    while(remaining>0) {
+    ZonedDateTime cursor=start.atZone(zone); Duration remaining=Duration.ofHours(hours);
+    while(!remaining.isZero()) {
       LocalDate date=cursor.toLocalDate(); boolean day=contains(days,cursor.getDayOfWeek().name()) && !contains(holidays,date.toString());
       ZonedDateTime businessStart=ZonedDateTime.of(date,rule.getBusinessStart(),zone); ZonedDateTime businessEnd=ZonedDateTime.of(date,rule.getBusinessEnd(),zone);
       if(!day || !cursor.isBefore(businessEnd)) { cursor=ZonedDateTime.of(date.plusDays(1),LocalTime.MIDNIGHT,zone); continue; }
       if(cursor.isBefore(businessStart)) cursor=businessStart;
-      long available=Duration.between(cursor,businessEnd).toMinutes(); long used=Math.min(remaining,available); cursor=cursor.plusMinutes(used); remaining-=used;
+      Duration available=Duration.between(cursor,businessEnd);
+      Duration used=remaining.compareTo(available)<0 ? remaining : available;
+      cursor=cursor.plus(used); remaining=remaining.minus(used);
     }
     return cursor.toInstant();
   }

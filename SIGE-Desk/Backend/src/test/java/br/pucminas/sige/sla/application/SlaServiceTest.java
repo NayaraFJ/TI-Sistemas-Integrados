@@ -17,6 +17,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.mockito.Mockito;
 import org.springframework.test.util.ReflectionTestUtils;
 
@@ -47,6 +48,20 @@ class SlaServiceTest {
 
     assertEquals(Instant.parse("2026-09-28T14:00:00Z"), result.responseDueAt());
     assertEquals(Instant.parse("2026-09-28T14:00:00Z"), result.resolutionDueAt());
+  }
+
+  @Test
+  @Timeout(value=2, threadMode=Timeout.ThreadMode.SEPARATE_THREAD)
+  void preservesSecondsAndFractionsWhenCrossingTheEndOfABusinessDay() {
+    Ticket ticket=ticket();
+    ReflectionTestUtils.setField(ticket,"createdAt",Instant.parse("2026-09-28T20:59:30.123456Z"));
+    SlaRuleRepository repository=Mockito.mock(SlaRuleRepository.class);
+    when(repository.findByActiveTrue()).thenReturn(List.of(rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES)));
+
+    SlaService.Calculation result=new SlaService(repository,new ObjectMapper()).calculate(ticket,Priority.MEDIUM);
+
+    assertEquals(Instant.parse("2026-09-29T12:59:30.123456Z"),result.responseDueAt());
+    assertEquals(Instant.parse("2026-09-29T20:59:30.123456Z"),result.resolutionDueAt());
   }
 
   private SlaRule rule(SlaRule.Scope scope, Client client, DemandType type, String deadlines) {
