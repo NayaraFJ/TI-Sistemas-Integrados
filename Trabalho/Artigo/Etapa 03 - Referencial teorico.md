@@ -3,7 +3,7 @@
 ## Etapa 03 — Referencial / marco teórico
 
 **Tema:** Gestão de Demandas de Marketing Digital  
-**Título provisório:** *Help Desk para Gestão de Demandas de Tráfego Pago*
+**Título provisório:** *Desenvolvimento de um Help Desk Web para Centralizar e Rastrear Demandas de Tráfego Pago*
 
 ## 1. Gestão de demandas e sistemas de informação
 

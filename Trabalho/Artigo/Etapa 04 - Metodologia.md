@@ -3,7 +3,7 @@
 ## Etapa 04 — Metodologia
 
 **Tema:** Gestão de Demandas de Marketing Digital  
-**Título provisório:** *Help Desk para Gestão de Demandas de Tráfego Pago*
+**Título provisório:** *Desenvolvimento de um Help Desk Web para Centralizar e Rastrear Demandas de Tráfego Pago*
 
 ## Resumo
 

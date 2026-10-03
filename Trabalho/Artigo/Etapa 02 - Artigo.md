@@ -17,7 +17,7 @@
 
 ## Título provisório
 
-**Help Desk para Gestão de Demandas de Tráfego Pago**
+**Desenvolvimento de um Help Desk Web para Centralizar e Rastrear Demandas de Tráfego Pago**
 
 ## Resumo
 

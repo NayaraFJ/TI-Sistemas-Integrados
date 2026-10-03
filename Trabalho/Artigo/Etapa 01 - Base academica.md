@@ -21,9 +21,15 @@
 **Tema:** Gestão de Demandas de Marketing Digital.  
 **Área de estudo:** Sistemas de Informação / Gestão de Serviços.
 
-## Título provisório
+## Título provisório da entrega inicial
 
 **Help Desk para Gestão de Tráfego Pago: uma Aplicação para Controle de Campanhas e Atendimento a Clientes**
+
+## Título revisado
+
+**Desenvolvimento de um Help Desk Web para Centralizar e Rastrear Demandas de Tráfego Pago**
+
+Em 3 de outubro de 2026, o título foi reformulado para explicitar o desenvolvimento da aplicação e sua finalidade de centralizar e rastrear demandas de tráfego pago, em alinhamento com a pergunta de pesquisa. O título da entrega inicial foi mantido acima como registro histórico. A reformulação ainda será apresentada ao professor; não constitui confirmação da interpretação do comentário sobre a Etapa 1.
 
 ## Registro da etapa
 
