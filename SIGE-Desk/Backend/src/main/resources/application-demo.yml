@@ -1,0 +1,3 @@
+sige:
+  demo:
+    password: ${SIGE_DEMO_PASSWORD:?Defina SIGE_DEMO_PASSWORD para iniciar o perfil demo}

@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: sige-desk-api
+  datasource:
+    url: ${SIGE_DB_URL:jdbc:mysql://localhost:3306/sige_desk?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${SIGE_DB_USERNAME:sige}
+    password: ${SIGE_DB_PASSWORD:sige_local}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        type:
+          preferred_uuid_jdbc_type: CHAR
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        same-site: lax
+        secure: ${SIGE_COOKIE_SECURE:false}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+sige:
+  storage:
+    path: ${SIGE_STORAGE_PATH:uploads}
+  cors:
+    allowed-origin: ${SIGE_ALLOWED_ORIGIN:http://localhost:5173}

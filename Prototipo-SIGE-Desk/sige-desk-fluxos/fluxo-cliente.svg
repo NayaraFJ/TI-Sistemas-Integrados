@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 930" role="img" aria-labelledby="title desc">
+  <title id="title">Fluxo de telas — Cliente</title><desc id="desc">Caminho do Cliente pelo SIGE Desk.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#52616b"/></marker><style>text{font-family:Inter,Arial,sans-serif;fill:#112d42}.title{font-size:28px;font-weight:700}.sub{font-size:15px;fill:#5f7280}.code{font-size:13px;font-weight:700;fill:#087ca7}.node{fill:#fff;stroke:#b7c6d0;stroke-width:2}.login{fill:#e7f4fb;stroke:#279ac5}.home{fill:#f0edff;stroke:#8a75de}.ticket{fill:#e8f8f5;stroke:#31a99b}.action{fill:#fff8e7;stroke:#e6a930}.edge{fill:none;stroke:#52616b;stroke-width:2;marker-end:url(#a)}.edgeLabel{font-size:13px;fill:#40515d}.legend{font-size:12px;fill:#5f7280}</style></defs>
+  <rect width="1280" height="930" fill="#f7fafc"/><rect x="30" y="25" width="1220" height="880" rx="20" fill="#fff" stroke="#dce6ed"/>
+  <text x="70" y="82" class="title">Fluxo de telas — Cliente</text><text x="70" y="110" class="sub">Abertura, acompanhamento e validação da própria solicitação</text>
+  <path class="edge" d="M640 225V285"/><text x="662" y="260" class="edgeLabel">autenticar</text>
+  <path class="edge" d="M560 385C430 420 310 415 260 475"/><text x="320" y="416" class="edgeLabel">acompanhar fila</text>
+  <path class="edge" d="M640 385V475"/><text x="662" y="435" class="edgeLabel">abrir solicitação</text>
+  <path class="edge" d="M720 385C850 420 970 415 1020 475"/><text x="870" y="416" class="edgeLabel">ver alertas</text>
+  <path class="edge" d="M340 565C390 600 450 610 510 635"/><text x="368" y="602" class="edgeLabel">abrir ticket</text>
+  <path class="edge" d="M280 565C310 650 450 720 580 795"/><text x="295" y="675" class="edgeLabel">em validação</text>
+  <path class="edge" d="M640 565V635"/><text x="662" y="605" class="edgeLabel">enviar</text>
+  <path class="edge" d="M940 565C880 600 820 615 770 655"/><text x="820" y="602" class="edgeLabel">abrir evento</text>
+  <path class="edge" d="M770 700C830 700 875 660 940 540"/><text x="790" y="690" class="edgeLabel">acompanhar e responder</text>
+  <path class="edge" d="M690 720V770"/><text x="712" y="750" class="edgeLabel">entrega pendente</text>
+  <path class="edge" d="M700 860C670 830 640 810 610 720"/><text x="840" y="845" class="edgeLabel">aprovar ou corrigir</text>
+  <rect class="node login" x="490" y="135" width="300" height="90" rx="14"/><text x="520" y="170" class="code">T01</text><text x="520" y="198" font-size="18">Acessar o ambiente</text>
+  <rect class="node home" x="490" y="285" width="300" height="100" rx="14"/><text x="520" y="322" class="code">T02</text><text x="520" y="352" font-size="20" font-weight="700">Visão geral</text>
+  <rect class="node ticket" x="120" y="475" width="220" height="90" rx="14"/><text x="145" y="510" class="code">T03</text><text x="145" y="540" font-size="18">Tickets</text>
+  <rect class="node action" x="530" y="475" width="220" height="90" rx="14"/><text x="555" y="510" class="code">T04</text><text x="555" y="540" font-size="18">Novo ticket</text>
+  <rect class="node ticket" x="940" y="475" width="220" height="90" rx="14"/><text x="965" y="510" class="code">T09</text><text x="965" y="540" font-size="18">Notificações</text>
+  <rect class="node ticket" x="510" y="635" width="260" height="85" rx="14"/><text x="535" y="670" class="code">T05</text><text x="535" y="700" font-size="18">Detalhe do ticket</text>
+  <rect class="node action" x="580" y="770" width="240" height="90" rx="14"/><text x="605" y="805" class="code">T08</text><text x="605" y="835" font-size="18">Validação</text>
+  <circle cx="92" cy="860" r="7" fill="#279ac5"/><text x="108" y="865" class="legend">Entrada</text><circle cx="205" cy="860" r="7" fill="#8a75de"/><text x="221" y="865" class="legend">Visão geral</text><circle cx="355" cy="860" r="7" fill="#31a99b"/><text x="371" y="865" class="legend">Consulta / detalhe</text><circle cx="560" cy="860" r="7" fill="#e6a930"/><text x="576" y="865" class="legend">Ação do fluxo</text>
+</svg>

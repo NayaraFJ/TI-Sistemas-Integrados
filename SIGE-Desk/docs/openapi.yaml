@@ -1,0 +1,119 @@
+openapi: 3.0.3
+info:
+  title: SIGE Desk API
+  version: 1.0.0
+  description: Contrato de referência da API. A descrição completa e sincronizada com os controladores está disponível em /v3/api-docs quando a aplicação está em execução.
+servers:
+  - url: /api/v1
+paths:
+  /auth/login:
+    post: { summary: Inicia sessão, requestBody: { $ref: '#/components/requestBodies/Login' }, responses: { '200': { $ref: '#/components/responses/Session' }, '401': { $ref: '#/components/responses/Unauthorized' } } }
+  /auth/logout:
+    post: { summary: Encerra sessão, responses: { '204': { description: Sessão encerrada } } }
+  /auth/me:
+    get: { summary: Consulta a sessão atual, responses: { '200': { $ref: '#/components/responses/Session' }, '401': { $ref: '#/components/responses/Unauthorized' } } }
+  /auth/csrf:
+    get: { summary: Emite ou renova o token CSRF, responses: { '200': { description: Token entregue por cookie } } }
+  /dashboard:
+    get: { summary: Indicadores calculados no escopo do usuário, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /reference:
+    get: { summary: Opções de referência autorizadas para formulários, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /clients:
+    get: { summary: Lista clientes autorizados, responses: { '200': { $ref: '#/components/responses/Json' } } }
+    post: { summary: Cria cliente, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
+  /clients/{id}:
+    put: { summary: Atualiza cliente, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /clients/{id}/active:
+    post: { summary: Ativa ou inativa cliente, parameters: [ { $ref: '#/components/parameters/Id' }, { name: value, in: query, required: true, schema: { type: boolean } } ], responses: { '200': { $ref: '#/components/responses/Json' }, '409': { $ref: '#/components/responses/Conflict' } } }
+  /campaigns:
+    get: { summary: Lista campanhas autorizadas, responses: { '200': { $ref: '#/components/responses/Json' } } }
+    post: { summary: Cria campanha, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
+  /campaigns/{id}:
+    put: { summary: Atualiza campanha, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /campaigns/{id}/active:
+    post: { summary: Ativa ou inativa campanha, parameters: [ { $ref: '#/components/parameters/Id' }, { name: value, in: query, required: true, schema: { type: boolean } } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /demand-types:
+    get: { summary: Lista tipos de demanda, responses: { '200': { $ref: '#/components/responses/Json' } } }
+    post: { summary: Cria tipo de demanda, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
+  /demand-types/{id}:
+    put: { summary: Atualiza tipo de demanda, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /demand-types/{id}/active:
+    post: { summary: Ativa ou inativa tipo de demanda, parameters: [ { $ref: '#/components/parameters/Id' }, { name: value, in: query, required: true, schema: { type: boolean } } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /sla-rules:
+    get: { summary: Lista regras de SLA, responses: { '200': { $ref: '#/components/responses/Json' } } }
+    post: { summary: Cria regra de SLA, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
+  /sla-rules/{id}:
+    put: { summary: Atualiza regra de SLA, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /users:
+    get: { summary: Lista usuários, responses: { '200': { $ref: '#/components/responses/Json' } } }
+    post: { summary: Cria usuário, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
+  /users/{id}:
+    put: { summary: Atualiza usuário, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' }, '409': { $ref: '#/components/responses/Conflict' } } }
+  /tickets:
+    get: { summary: 'Lista tickets com busca, filtros e escopo aplicados', parameters: [ { $ref: '#/components/parameters/TicketFilters' }, { $ref: '#/components/parameters/Page' }, { $ref: '#/components/parameters/PageSize' } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
+    post: { summary: Abre um ticket, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' }, '400': { $ref: '#/components/responses/ValidationError' } } }
+  /tickets/{id}:
+    get: { summary: 'Consulta detalhe, histórico, comentários e anexos de um ticket visível', parameters: [ { $ref: '#/components/parameters/Id' } ], responses: { '200': { $ref: '#/components/responses/Json' }, '404': { $ref: '#/components/responses/NotFound' } } }
+  /tickets/{id}/triage/start:
+    post: { summary: Inicia a triagem, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' }, '409': { $ref: '#/components/responses/Conflict' } } }
+  /tickets/{id}/triage:
+    post: { summary: Classifica e atribui a demanda, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' }, '400': { $ref: '#/components/responses/ValidationError' } } }
+  /tickets/{id}/wait:
+    post: { summary: Solicita complemento e pausa o fluxo, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /tickets/{id}/complement:
+    post: { summary: Registra complemento enviado pelo cliente, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /tickets/{id}/resume:
+    post: { summary: Confere complemento e retoma o fluxo, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /tickets/{id}/execution:
+    post: { summary: Registra execução e evidência, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /tickets/{id}/approve:
+    post: { summary: Aprova a entrega, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /tickets/{id}/correction:
+    post: { summary: Solicita correção, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /tickets/{id}/cancel:
+    post: { summary: Cancela antes da execução, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' }, '409': { $ref: '#/components/responses/Conflict' } } }
+  /tickets/{id}/reopen:
+    post: { summary: Reabre ticket concluído, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /tickets/{id}/comments:
+    post: { summary: Inclui comentário, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
+  /tickets/{ticketId}/attachments:
+    get: { summary: Lista anexos visíveis, parameters: [ { $ref: '#/components/parameters/TicketId' } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
+    post: { summary: Envia anexo, parameters: [ { $ref: '#/components/parameters/TicketId' } ], requestBody: { $ref: '#/components/requestBodies/Multipart' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
+  /tickets/{ticketId}/attachments/{id}/download:
+    get: { summary: Baixa anexo com autorização do ticket, parameters: [ { $ref: '#/components/parameters/TicketId' }, { $ref: '#/components/parameters/Id' } ], responses: { '200': { description: Conteúdo do anexo } } }
+  /notifications:
+    get: { summary: Lista notificações no escopo atual, responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /notifications/{id}/read:
+    post: { summary: Marca uma notificação acessível como lida, parameters: [ { $ref: '#/components/parameters/Id' } ], responses: { '204': { description: Atualizada } } }
+  /notifications/read-all:
+    post: { summary: Marca notificações visíveis como lidas, responses: { '204': { description: Atualizadas } } }
+  /reports/tickets:
+    get: { summary: Relatório de tickets com os mesmos filtros e escopo da listagem, parameters: [ { $ref: '#/components/parameters/TicketFilters' } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
+  /reports/tickets/export:
+    get: { summary: Exporta o relatório filtrado em CSV, parameters: [ { $ref: '#/components/parameters/TicketFilters' } ], responses: { '200': { description: CSV UTF-8 } } }
+components:
+  securitySchemes:
+    sessionCookie: { type: apiKey, in: cookie, name: JSESSIONID }
+    csrfToken: { type: apiKey, in: header, name: X-XSRF-TOKEN }
+  parameters:
+    Id: { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+    TicketId: { name: ticketId, in: path, required: true, schema: { type: string, format: uuid } }
+    Page: { name: page, in: query, required: false, schema: { type: integer, minimum: 0, default: 0 } }
+    PageSize: { name: size, in: query, required: false, schema: { type: integer, minimum: 1, maximum: 100, default: 25 } }
+    TicketFilters: { name: search, in: query, required: false, schema: { type: string }, description: 'Também aceita status, clientId, campaignId, demandTypeId, priority, assigneeId, createdFrom e createdTo.' }
+  requestBodies:
+    Login: { required: true, content: { application/json: { schema: { type: object, required: [email, password], properties: { email: { type: string, format: email }, password: { type: string, format: password } } } } } }
+    Json: { required: true, content: { application/json: { schema: { type: object } } } }
+    Multipart: { required: true, content: { multipart/form-data: { schema: { type: object, required: [file], properties: { file: { type: string, format: binary }, kind: { type: string, enum: [ATTACHMENT, EVIDENCE] }, description: { type: string }, evidenceUrl: { type: string, format: uri } } } } } }
+  responses:
+    Json: { description: Resposta JSON da API, content: { application/json: { schema: { type: object } } } }
+    Session: { description: Sessão autenticada, content: { application/json: { schema: { type: object, required: [id, name, email, role], properties: { id: { type: string, format: uuid }, name: { type: string }, email: { type: string, format: email }, role: { type: string, enum: [CLIENT, SERVICE, TRAFFIC_MANAGER, ADMIN] }, clientId: { type: string, nullable: true, format: uuid } } } } } }
+    Unauthorized: { description: Sessão ausente, expirada ou credencial inválida }
+    NotFound: { description: Recurso inexistente ou fora do escopo }
+    ValidationError: { description: Erro de validação, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+    Conflict: { description: Transição inválida ou conflito, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  schemas:
+    Error: { type: object, required: [code, message, timestamp], properties: { code: { type: string }, message: { type: string }, timestamp: { type: string, format: date-time }, fields: { type: object, additionalProperties: { type: string } } } }
+security:
+  - sessionCookie: []
+    csrfToken: []
