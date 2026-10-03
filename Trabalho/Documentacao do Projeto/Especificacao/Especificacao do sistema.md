@@ -21,6 +21,12 @@ Os perfis são uma decisão de desenho do MVP e não a afirmação de que toda a
 | Gestor de tráfego | Consultar somente demandas atribuídas; comentar; registrar execução, material/evidência e solicitação de complemento. |
 | Administrador | Manter usuários, clientes, campanhas, tipos de demanda e regras de SLA; executar as ações de triagem e continuidade do Atendimento; consultar relatórios. |
 
+### Acesso administrativo inicial na implementação
+
+O backend cadastra uma conta administrativa ativa (`admin@sige.demo`) ao iniciar com a tabela de usuários vazia, após a aplicação das migrações, independentemente da ativação do perfil de demonstração. A senha é protegida com BCrypt e configurada por `SIGE_ADMIN_PASSWORD`, com fallback para `SIGE_DEMO_PASSWORD`; o padrão `123` serve ao desenvolvimento local e deve ser substituído por configuração própria em outros ambientes. Esse administrador permite cadastrar os demais usuários, evitando que uma base nova fique sem acesso às funções de administração.
+
+No perfil `demo`, a carga de contas e dados fictícios é executada primeiro e usa `SIGE_DEMO_PASSWORD` (padrão local `123`); a conta de fallback só é criada se a tabela continuar vazia. Reinicializações e alterações dessas variáveis não sobrescrevem usuários, senhas ou estados de ativação existentes. As credenciais da aplicação são independentes das credenciais da conexão MySQL. Esse mecanismo de primeiro acesso constitui uma decisão de implementação, sem alterar os perfis ou os requisitos funcionais especificados.
+
 ## 3. Requisitos funcionais
 
 As fontes da última coluna orientaram o levantamento e a priorização dos requisitos; elas não constituem prescrição literal de cada funcionalidade.

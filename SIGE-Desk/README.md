@@ -10,16 +10,18 @@ Aplicação web para gestão de demandas de tráfego pago. O frontend React cons
 
 ## Execução local
 
+As instruções específicas estão no [README do frontend](Frontend/README.md) e no [README do backend](Backend/README.md), incluindo instalação, conexão MySQL e primeiro acesso administrativo.
+
 1. Suba o banco com `docker compose up -d mysql`.
-2. Defina `SIGE_DEMO_PASSWORD` no terminal. Este valor protege as contas fictícias e não é salvo no repositório.
+2. Defina `SIGE_DEMO_PASSWORD` no terminal para escolher a senha das contas fictícias; na ausência da variável, o padrão local é `123`.
 3. Inicie a API em `Backend` com `./mvnw spring-boot:run -Dspring-boot.run.profiles=demo`.
-4. Em outro terminal, execute `npm install` e `npm run dev` em `Frontend`.
+4. Em outro terminal, execute `pnpm install` na primeira vez e `pnpm dev` em `Frontend`.
 
 O frontend usa proxy local para `/api`, portanto não precisa conhecer a porta da API. As migrations do Flyway são executadas ao iniciar a API e o Hibernate não altera o esquema.
 
 ### MySQL já instalado
 
-Se for usar uma instância MySQL fora do Docker, crie uma base vazia e uma conta com permissão nela, depois informe a conexão antes de iniciar a API. Não use as credenciais de outro projeto na mesma instância.
+Se for usar uma instância MySQL fora do Docker, informe a conexão antes de iniciar a API. O datasource usa `createDatabaseIfNotExist=true` para criar a base indicada quando ela não existir, antes de o Flyway executar as migrations. Isso também se aplica a uma URL definida em `SIGE_DB_URL`. A conta precisa ter permissão `CREATE` para essa base, além das permissões necessárias às migrations e à aplicação. Se ela não puder criar bancos, crie a base previamente com uma conta autorizada. Não use as credenciais de outro projeto na mesma instância.
 
 ```powershell
 $env:SIGE_DB_URL = 'jdbc:mysql://localhost:3306/sige_desk?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC'
@@ -47,6 +49,16 @@ Com a API em execução, o contrato OpenAPI vivo está em `http://localhost:8080
 
 ## Contas do perfil demo
 
+### Administrador inicial sem perfil demo
+
+Ao iniciar a API com a tabela `users` vazia, o backend cadastra automaticamente `admin@sige.demo`, com perfil Administrador e acesso ativo, mesmo sem o perfil `demo`. A senha é armazenada com BCrypt. A prioridade da configuração é `SIGE_ADMIN_PASSWORD`, depois `SIGE_DEMO_PASSWORD` e, na ausência das duas, `123` para desenvolvimento local. Para outros ambientes, configure uma senha própria em `SIGE_ADMIN_PASSWORD` antes da primeira inicialização.
+
+Em `Backend`, execute `./mvnw spring-boot:run` (Windows: `.\mvnw.cmd spring-boot:run`). No ambiente local sem variáveis de senha configuradas, entre com **admin@sige.demo / 123**. Essa conta pode cadastrar os demais usuários pela tela de administração. As credenciais da aplicação são independentes do usuário e senha de conexão MySQL.
+
+O cadastro inicial ocorre somente quando não há usuários: reiniciar a API ou alterar as variáveis não redefine senhas, não reativa contas e não sobrescreve cadastros. No perfil `demo`, os dados fictícios são inicializados antes do administrador de fallback; nessa situação, a conta administrativa usa `SIGE_DEMO_PASSWORD` (padrão local `123`). As contas demo também só são criadas com a tabela de usuários vazia.
+
+### Contas fictícias
+
 | Perfil | E-mail |
 | --- | --- |
 | Cliente | `cliente@aurora.demo` |
@@ -54,4 +66,4 @@ Com a API em execução, o contrato OpenAPI vivo está em `http://localhost:8080
 | Gestor de tráfego | `gestor@sige.demo` |
 | Administrador | `admin@sige.demo` |
 
-Todas usam a senha definida em `SIGE_DEMO_PASSWORD`.
+Todas usam a senha definida em `SIGE_DEMO_PASSWORD`, com padrão local `123`.

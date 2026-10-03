@@ -3,8 +3,11 @@ spring:
     name: sige-desk-api
   datasource:
     url: ${SIGE_DB_URL:jdbc:mysql://localhost:3306/sige_desk?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
-    username: ${SIGE_DB_USERNAME:sige}
-    password: ${SIGE_DB_PASSWORD:sige_local}
+    username: ${SIGE_DB_USERNAME:root}
+    password: ${SIGE_DB_PASSWORD:123}
+    hikari:
+      data-source-properties:
+        createDatabaseIfNotExist: true
   jpa:
     open-in-view: false
     hibernate:
@@ -31,6 +34,8 @@ management:
       exposure:
         include: health,info
 sige:
+  admin:
+    password: ${SIGE_ADMIN_PASSWORD:${SIGE_DEMO_PASSWORD:123}}
   storage:
     path: ${SIGE_STORAGE_PATH:uploads}
   cors:
