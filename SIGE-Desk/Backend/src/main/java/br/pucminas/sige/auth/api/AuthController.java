@@ -40,6 +40,4 @@ public class AuthController {
   public SessionResponse me() { var user=currentUser.require(); return new SessionResponse(user.getId().toString(),user.getName(),user.getEmail(),user.getRole().name(),user.getClient()==null?null:user.getClient().getId().toString()); }
   @GetMapping("/csrf")
   public Map<String,String> csrf(jakarta.servlet.http.HttpServletRequest request) { var token=(org.springframework.security.web.csrf.CsrfToken) request.getAttribute(org.springframework.security.web.csrf.CsrfToken.class.getName()); return Map.of("token", token.getToken(), "headerName", token.getHeaderName()); }
-  @PostMapping("/logout") @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void logout(HttpServletRequest request) { var session=request.getSession(false); if(session!=null) session.invalidate(); SecurityContextHolder.clearContext(); }
 }

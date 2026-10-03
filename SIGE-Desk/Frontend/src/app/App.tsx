@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, Navigate, Outlet, Route, Routes, useNavigate, useParams } from 'react-router-dom';
+import { Link, Navigate, Outlet, Route, Routes, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Alert, AppBar, Box, Button, Card, CardContent, Chip, CircularProgress, CssBaseline, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, FormControl, FormHelperText, InputLabel, List, ListItemButton, ListItemText, MenuItem, Select, Stack, TextField, ThemeProvider, Toolbar, Typography, createTheme, useMediaQuery } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
@@ -12,6 +12,7 @@ import type { Priority, Role, TicketDetail, TicketFilters, TicketItem, TicketSta
 import { TicketFilterPanel } from '../shared/components/TicketFilterPanel';
 
 const theme=createTheme({ palette:{primary:{main:'#0b5d84',dark:'#063b5a'},secondary:{main:'#0b826d'},background:{default:'#f5f7fa'}},shape:{borderRadius:10},typography:{fontFamily:'Inter, system-ui, sans-serif'} });
+const brandGradient='linear-gradient(145deg,#063b5a,#0b826d)';
 const statuses:TicketStatus[]=['OPEN','TRIAGE','EXECUTION','WAITING_FOR_CLIENT','VALIDATION','DONE','REOPENED','CANCELLED'];
 const priorities:Priority[]=['URGENT','HIGH','MEDIUM','LOW'];
 const metricValue=z.string().trim().refine(value=>!value||(Number.isFinite(Number(value.replace(',','.')))&&Number(value.replace(',','.'))>=0));
@@ -31,11 +32,62 @@ function Failure({error}:{error?:unknown}){const {t}=useTranslation();const code
 function date(value:string|null){return value?new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(new Date(value)):'—'}
 function StatusChip({status}:{status:TicketStatus}){const {t}=useTranslation();return <Chip size="small" label={t(`status.${status}`)} color={status==='DONE'?'success':status==='CANCELLED'?'default':status==='WAITING_FOR_CLIENT'?'warning':'primary'} variant="outlined"/>}
 
-function Login(){const {t}=useTranslation();const navigate=useNavigate();const [email,setEmail]=useState('');const [password,setPassword]=useState('');const mutation=useMutation({mutationFn:()=>apiClient.login(email,password),onSuccess:()=>navigate('/',{replace:true})});return <Box sx={{minHeight:'100vh',display:'grid',gridTemplateColumns:{md:'1fr 480px'},bgcolor:'background.default'}}><Box sx={{display:{xs:'none',md:'flex'},p:8,color:'white',flexDirection:'column',justifyContent:'space-between',background:'linear-gradient(145deg,#063b5a,#0b826d)'}}><Box><Typography variant="h4" fontWeight={800}>{t('app.name')}</Typography><Typography variant="h3" sx={{mt:10,maxWidth:500}}>{t('app.tagline')}</Typography></Box></Box><Stack component="form" onSubmit={event=>{event.preventDefault();mutation.mutate();}} justifyContent="center" spacing={3} sx={{p:{xs:3,sm:6}}}><Box><Typography variant="h4" fontWeight={700}>{t('login.title')}</Typography><Typography color="text.secondary" sx={{mt:1}}>{t('login.subtitle')}</Typography></Box>{mutation.isError&&<Alert severity="error">{t('login.invalid')}</Alert>}<TextField label={t('login.email')} type="email" value={email} onChange={event=>setEmail(event.target.value)} required autoComplete="email"/><TextField label={t('login.password')} type="password" value={password} onChange={event=>setPassword(event.target.value)} required autoComplete="current-password"/><Button type="submit" size="large" variant="contained" disabled={mutation.isPending}>{t('actions.login')}</Button></Stack></Box>}
-
+function Login(){
+  const {t}=useTranslation();
+  const navigate=useNavigate();
+  const cache=useQueryClient();
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+  const mutation=useMutation({mutationFn:()=>apiClient.login(email,password),onSuccess:user=>{
+    cache.clear(); cache.setQueryData(['session'],user); navigate('/',{replace:true});
+  }});
+  return <Box sx={{minHeight:'100vh',display:'grid',gridTemplateColumns:{xs:'1fr',md:'1fr 1fr'},bgcolor:'background.default'}}>
+    <Box sx={{display:{xs:'none',md:'flex'},p:8,color:'white',flexDirection:'column',justifyContent:'space-between',background:brandGradient}}>
+      <Box><Typography variant="h4" fontWeight={800}>{t('app.name')}</Typography><Typography variant="h3" sx={{mt:10,maxWidth:500}}>{t('app.tagline')}</Typography></Box>
+    </Box>
+    <Stack component="form" onSubmit={event=>{event.preventDefault();mutation.mutate();}} justifyContent="center" spacing={3} sx={{width:'100%',maxWidth:480,mx:'auto',boxSizing:'border-box',p:{xs:3,sm:5}}}>
+      <Box><Typography variant="h4" fontWeight={700}>{t('login.title')}</Typography><Typography color="text.secondary" sx={{mt:1}}>{t('login.subtitle')}</Typography></Box>
+      {mutation.isError&&<Alert severity="error">{t('login.invalid')}</Alert>}
+      <TextField label={t('login.email')} type="email" value={email} onChange={event=>setEmail(event.target.value)} required autoComplete="email"/>
+      <TextField label={t('login.password')} type="password" value={password} onChange={event=>setPassword(event.target.value)} required autoComplete="current-password"/>
+      <Button type="submit" size="large" variant="contained" disabled={mutation.isPending}>{t('actions.login')}</Button>
+    </Stack>
+  </Box>
+}
 function TutorialDialog({role,onClose}:{role:Role;onClose:()=>void}){const {t}=useTranslation();const [step,setStep]=useState(0);const total=tutorialSteps[role];return <Dialog open onClose={onClose} fullWidth maxWidth="sm" aria-labelledby="tutorial-title"><DialogTitle id="tutorial-title">{t('tutorial.title')}</DialogTitle><DialogContent><Typography color="text.secondary">{t('tutorial.progress',{current:step+1,total})}</Typography><Typography variant="h6" sx={{mt:2}}>{t(`tutorial.steps.${role}.${step}.title`)}</Typography><Typography sx={{mt:1}}>{t(`tutorial.steps.${role}.${step}.text`)}</Typography></DialogContent><DialogActions><Button onClick={onClose}>{t('tutorial.close')}</Button><Button onClick={()=>setStep(current=>Math.max(0,current-1))} disabled={step===0}>{t('tutorial.previous')}</Button><Button variant="contained" onClick={()=>step===total-1?onClose():setStep(current=>current+1)}>{step===total-1?t('tutorial.finish'):t('tutorial.next')}</Button></DialogActions></Dialog>}
-function Layout(){const {t}=useTranslation();const session=useQuery({queryKey:['session'],queryFn:apiClient.me});const navigate=useNavigate();const cache=useQueryClient();const compact=useMediaQuery(theme.breakpoints.down('md'));const [menuOpen,setMenuOpen]=useState(false);const [tutorialOpen,setTutorialOpen]=useState(false);if(session.isPending)return <Loading/>;if(session.isError)return <Navigate to="/login" replace/>;const user=session.data;const logout=async()=>{await apiClient.logout();cache.removeQueries();navigate('/login',{replace:true});};const items=navigation.filter(item=>navByRole[user.role].includes(item.key));return <Box sx={{display:'flex',minHeight:'100vh'}}><CssBaseline/><AppBar position="fixed" color="inherit" elevation={0} sx={{borderBottom:1,borderColor:'divider',zIndex:1201}}><Toolbar sx={{justifyContent:'space-between'}}><Stack direction="row" spacing={1} alignItems="center">{compact&&<Button onClick={()=>setMenuOpen(true)}>{t('actions.menu')}</Button>}<Typography color="primary" fontWeight={800}>{t('app.name')}</Typography></Stack><Stack direction="row" spacing={2} alignItems="center"><Typography sx={{display:{xs:'none',sm:'block'}}} variant="body2" color="text.secondary">{user.name} · {t(`role.${user.role}`)}</Typography><Button onClick={logout}>{t('actions.logout')}</Button></Stack></Toolbar></AppBar><Drawer variant={compact?'temporary':'permanent'} open={compact?menuOpen:true} onClose={()=>setMenuOpen(false)} sx={{width:250,flexShrink:0,'& .MuiDrawer-paper':{width:250,boxSizing:'border-box',pt:8}}}><List>{items.map(item=><ListItemButton key={item.key} component={Link} to={item.path} onClick={()=>setMenuOpen(false)}><ListItemText primary={t(`nav.${item.key}`)}/></ListItemButton>)}</List><Box sx={{mt:'auto',p:2}}><Button fullWidth variant="outlined" onClick={()=>{setMenuOpen(false);setTutorialOpen(true);}}>{t('tutorial.open')}</Button></Box></Drawer><Box component="main" sx={{flexGrow:1,p:{xs:2,md:4},pt:{xs:10,md:12},maxWidth:1600,width:'100%',mx:'auto'}}><Outlet/></Box>{tutorialOpen&&<TutorialDialog role={user.role} onClose={()=>setTutorialOpen(false)}/>}</Box>}
-
+function Layout(){
+  const {t}=useTranslation();
+  const session=useQuery({queryKey:['session'],queryFn:apiClient.me});
+  const navigate=useNavigate();
+  const location=useLocation();
+  const cache=useQueryClient();
+  const compact=useMediaQuery(theme.breakpoints.down('md'));
+  const [menuOpen,setMenuOpen]=useState(false);
+  const [tutorialOpen,setTutorialOpen]=useState(false);
+  const logout=useMutation({mutationFn:apiClient.logout,onSuccess:async()=>{
+    await cache.cancelQueries(); cache.clear(); navigate('/login',{replace:true});
+  }});
+  if(session.isPending)return <Loading/>;
+  if(session.isError)return <Navigate to="/login" replace/>;
+  const user=session.data;
+  const items=navigation.filter(item=>navByRole[user.role].includes(item.key));
+  return <Box sx={{display:'flex',minHeight:'100vh'}}>
+    <AppBar position="fixed" color="inherit" elevation={0} sx={{borderBottom:1,borderColor:'divider',zIndex:1201}}>
+      <Toolbar sx={{justifyContent:'space-between'}}>
+        <Stack direction="row" spacing={1} alignItems="center">{compact&&<Button onClick={()=>setMenuOpen(true)}>{t('actions.menu')}</Button>}<Typography color="primary" fontWeight={800}>{t('app.name')}</Typography></Stack>
+        <Stack direction="row" spacing={2} alignItems="center"><Typography sx={{display:{xs:'none',sm:'block'}}} variant="body2" color="text.secondary">{user.name} · {t(`role.${user.role}`)}</Typography><Button onClick={()=>logout.mutate()} disabled={logout.isPending}>{t(logout.isPending?'actions.loggingOut':'actions.logout')}</Button></Stack>
+      </Toolbar>
+    </AppBar>
+    <Drawer variant={compact?'temporary':'permanent'} open={compact?menuOpen:true} onClose={()=>setMenuOpen(false)} sx={{width:250,flexShrink:0,'& .MuiDrawer-paper':{width:250,boxSizing:'border-box',pt:8,color:'white',background:brandGradient,borderRight:0}}}>
+      <List sx={{px:1,py:2}}>{items.map(item=><ListItemButton key={item.key} component={Link} to={item.path} selected={location.pathname===item.path||(item.path!=='/'&&location.pathname.startsWith(item.path+'/'))} onClick={()=>setMenuOpen(false)} sx={{borderRadius:1,mb:0.5,color:'inherit','&:hover':{bgcolor:'rgba(255,255,255,0.12)'},'&.Mui-selected':{bgcolor:'rgba(255,255,255,0.2)','&:hover':{bgcolor:'rgba(255,255,255,0.25)'}},'&.Mui-focusVisible':{outline:'2px solid white',outlineOffset:-2}}}><ListItemText primary={t(`nav.${item.key}`)}/></ListItemButton>)}</List>
+      <Box sx={{mt:'auto',p:2}}><Button fullWidth variant="outlined" onClick={()=>{setMenuOpen(false);setTutorialOpen(true);}} sx={{color:'inherit',borderColor:'rgba(255,255,255,0.6)','&:hover':{borderColor:'white',bgcolor:'rgba(255,255,255,0.12)'}}}>{t('tutorial.open')}</Button></Box>
+    </Drawer>
+    <Box component="main" sx={{flexGrow:1,p:{xs:2,md:4},pt:{xs:10,md:12},maxWidth:1600,width:'100%',mx:'auto'}}>
+      {logout.isError&&<Alert severity="error" sx={{mb:2}}>{t('messages.logoutError')}</Alert>}
+      <Outlet/>
+    </Box>
+    {tutorialOpen&&<TutorialDialog role={user.role} onClose={()=>setTutorialOpen(false)}/>}</Box>
+}
 function DashboardPage(){const {t}=useTranslation();const dashboard=useQuery({queryKey:['dashboard'],queryFn:apiClient.dashboard});if(dashboard.isPending)return <Loading/>;if(dashboard.isError)return <Failure error={dashboard.error}/>;const data=dashboard.data;const metrics=[['active',data.activeCount],['priority',data.highPriorityCount],['validation',data.validationCount],['waiting',data.waitingCount],['overdue',data.overdueCount]];return <Stack spacing={3}><Box><Typography variant="h4" fontWeight={700}>{t('dashboard.title')}</Typography></Box><Box sx={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:2}}>{metrics.map(([key,value])=><Card key={key}><CardContent><Typography color="text.secondary">{t(`dashboard.${key}`)}</Typography><Typography variant="h3" fontWeight={700}>{value}</Typography></CardContent></Card>)}</Box><Box sx={{display:'grid',gridTemplateColumns:{lg:'1fr 1fr'},gap:3}}><Card><CardContent><Typography variant="h6">{t('dashboard.distribution')}</Typography><Stack direction="row" flexWrap="wrap" gap={1} mt={2}>{data.statusDistribution.map(item=><Chip key={item.status} label={`${t(`status.${item.status}`)} · ${item.count}`}/>)}</Stack></CardContent></Card><Card><CardContent><Typography variant="h6">{t('dashboard.slaHealth')}</Typography><Typography color="text.secondary" variant="body2">{t('dashboard.classified',{count:data.classifiedCount})}</Typography><Typography variant="h4" color={data.overdueCount?'error.main':'success.main'} sx={{mt:2}}>{data.overdueCount}</Typography><Typography variant="body2">{t('dashboard.overdue')}</Typography></CardContent></Card><Card><CardContent><Typography variant="h6">{t('dashboard.recent')}</Typography><Stack spacing={1} mt={2}>{data.recent.map(item=><Button key={item.id} component={Link} to={`/tickets/${item.id}`} sx={{justifyContent:'space-between'}}>{item.number} · {item.subject}<StatusChip status={item.status}/></Button>)}</Stack></CardContent></Card></Box></Stack>}
 
 function TicketsPage(){
@@ -150,4 +202,4 @@ function ReportPage(){
   return <Stack spacing={3}><Stack direction="row" justifyContent="space-between"><Typography variant="h4" fontWeight={700}>{t('nav.reports')}</Typography><Button variant="outlined" onClick={()=>exportCsv.mutate()} disabled={exportCsv.isPending}>{t('actions.export')}</Button></Stack>{exportCsv.isError&&<Failure error={exportCsv.error}/>}<Card><CardContent><TicketFilterPanel filters={filters} onChange={setFilters} reference={refs.data}/></CardContent></Card><Box sx={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:2}}>{[['active',summary.activeCount],['completed',summary.completedCount],['slaCompliant',`${summary.slaCompliantCount}/${summary.classifiedCount}`],['overdue',summary.overdueCount],['averageResolution',average]].map(([key,value])=><Card key={key}><CardContent><Typography color="text.secondary">{t(`reports.${key}`)}</Typography><Typography variant="h5" fontWeight={700}>{value}</Typography></CardContent></Card>)}</Box><TicketTable items={query.data.items}/></Stack>
 }
 function AppRoutes(){return <Routes><Route path="/login" element={<Login/>}/><Route element={<Layout/>}><Route path="/" element={<DashboardPage/>}/><Route path="/tickets" element={<TicketsPage/>}/><Route path="/tickets/new" element={<NewTicketPage/>}/><Route path="/tickets/:id" element={<TicketDetailPage/>}/><Route path="/notifications" element={<NotificationsPage/>}/><Route path="/reports" element={<ReportPage/>}/><Route path="/clients" element={<ManagementPage resource="clients" titleKey="nav.clients"/>}/><Route path="/campaigns" element={<ManagementPage resource="campaigns" titleKey="nav.campaigns"/>}/><Route path="/demand-types" element={<ManagementPage resource="demand-types" titleKey="nav.demandTypes"/>}/><Route path="/sla" element={<ManagementPage resource="sla-rules" titleKey="nav.sla"/>}/><Route path="/users" element={<ManagementPage resource="users" titleKey="nav.users"/>}/></Route><Route path="*" element={<Navigate to="/" replace/>}/></Routes>}
-export function App(){return <ThemeProvider theme={theme}><AppRoutes/></ThemeProvider>}
+export function App(){return <ThemeProvider theme={theme}><CssBaseline/><AppRoutes/></ThemeProvider>}

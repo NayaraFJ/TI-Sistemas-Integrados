@@ -28,7 +28,9 @@ public class SecurityConfig {
     http.authenticationProvider(provider).cors(cors -> {}).csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).ignoringRequestMatchers("/api/v1/auth/login"))
       .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
       .authorizeHttpRequests(auth -> auth.requestMatchers("/actuator/health", "/v3/api-docs/**", "/swagger-ui/**", "/api/v1/auth/login", "/api/v1/auth/csrf").permitAll().requestMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest().authenticated())
-      .logout(logout -> logout.logoutUrl("/api/v1/auth/logout"));
+      .logout(logout -> logout.logoutUrl("/api/v1/auth/logout")
+        .deleteCookies("JSESSIONID")
+        .logoutSuccessHandler((request, response, authentication) -> response.setStatus(204)));
     return http.build();
   }
   @Bean CorsConfigurationSource corsConfigurationSource(@Value("${sige.cors.allowed-origin}") String origin) {

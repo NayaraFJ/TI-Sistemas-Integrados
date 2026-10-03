@@ -1,14 +1,15 @@
 import axios from 'axios';
 import type { Dashboard, NotificationItem, ReferenceData, Session, TicketDetail, TicketFilters, TicketItem, TicketList, TicketReport } from './types';
 
-const api = axios.create({ baseURL: '/api/v1', withCredentials: true, headers: { 'Content-Type': 'application/json' } });
+// O interceptor envia o token mascarado do endpoint; o Axios não deve substituí-lo pelo cookie bruto.
+const api = axios.create({ baseURL: '/api/v1', withCredentials: true, withXSRFToken: false, headers: { 'Content-Type': 'application/json' } });
 let csrfToken: string | null = null;
 async function csrf() { if (!csrfToken) { const response = await api.get<{token:string}>('/auth/csrf'); csrfToken=response.data.token; } return csrfToken; }
 api.interceptors.request.use(async config => { if (!['get','head','options'].includes(config.method?.toLowerCase() ?? 'get') && !config.url?.endsWith('/auth/login')) config.headers.set('X-XSRF-TOKEN', await csrf()); return config; });
 export const apiClient = {
-  login: (email:string,password:string) => api.post<Session>('/auth/login',{email,password}).then(response=>response.data),
+  login: async (email:string,password:string) => { const response=await api.post<Session>('/auth/login',{email,password}); csrfToken=null; return response.data; },
   me: () => api.get<Session>('/auth/me').then(response=>response.data),
-  logout: () => api.post('/auth/logout').then(()=>undefined),
+  logout: async () => { try { await api.post('/auth/logout'); } finally { csrfToken=null; } },
   dashboard: () => api.get<Dashboard>('/dashboard').then(response=>response.data),
   tickets: (filters:TicketFilters={}) => api.get<TicketList>('/tickets',{params:filters}).then(response=>response.data),
   ticket: (id:string) => api.get<TicketDetail>(`/tickets/${id}`).then(response=>response.data),
