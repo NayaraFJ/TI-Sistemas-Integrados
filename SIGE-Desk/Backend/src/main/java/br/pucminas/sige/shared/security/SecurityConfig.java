@@ -28,6 +28,7 @@ public class SecurityConfig {
     http.authenticationProvider(provider).cors(cors -> {}).csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).ignoringRequestMatchers("/api/v1/auth/login"))
       .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
       .authorizeHttpRequests(auth -> auth.requestMatchers("/actuator/health", "/v3/api-docs/**", "/swagger-ui/**", "/api/v1/auth/login", "/api/v1/auth/csrf").permitAll().requestMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest().authenticated())
+      .exceptionHandling(errors -> errors.authenticationEntryPoint((request,response,exception)->response.sendError(401)))
       .logout(logout -> logout.logoutUrl("/api/v1/auth/logout")
         .deleteCookies("JSESSIONID")
         .logoutSuccessHandler((request, response, authentication) -> response.setStatus(204)));

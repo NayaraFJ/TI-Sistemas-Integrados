@@ -4,6 +4,7 @@ import br.pucminas.sige.shared.domain.Priority;
 import br.pucminas.sige.sla.domain.SlaRule;
 import br.pucminas.sige.sla.domain.SlaRuleRepository;
 import br.pucminas.sige.tickets.domain.Ticket;
+import br.pucminas.sige.tickets.domain.TicketStatus;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.*;
@@ -13,42 +14,98 @@ import org.springframework.stereotype.Service;
 @Service
 public class SlaService {
   public record Calculation(String snapshot, Instant responseDueAt, Instant resolutionDueAt) {}
+  private record Calendar(ZoneId zone, JsonNode days, JsonNode holidays, LocalTime start, LocalTime end) {}
   private final SlaRuleRepository rules;
   private final ObjectMapper json;
   public SlaService(SlaRuleRepository rules, ObjectMapper json) { this.rules=rules; this.json=json; }
   public Calculation calculate(Ticket ticket, Priority priority) {
-    SlaRule rule=rules.findByActiveTrue().stream().filter(ruleItem -> matches(ruleItem,ticket)).max(Comparator.comparingInt(this::specificity)).orElseThrow(() -> new IllegalStateException("Regra padrão de SLA não encontrada"));
     try {
-      JsonNode deadline=json.readTree(rule.getDeadlines()).path(priority.name());
-      int responseHours=deadline.path("responseHours").asInt(); int resolutionHours=deadline.path("resolutionHours").asInt();
-      if(responseHours <= 0 || resolutionHours <= 0) throw new IllegalStateException("Prazos de SLA inválidos");
-      Instant start=ticket.getCreatedAt();
-      return new Calculation(snapshot(rule), addBusinessHours(start,responseHours,rule), addBusinessHours(start,resolutionHours,rule));
-    } catch (java.io.IOException exception) { throw new IllegalStateException("Configuração de SLA inválida"); }
+      String snapshot=ticket.getSlaRuleSnapshot();
+      if(snapshot==null) {
+        SlaRule rule=rules.findByActiveTrue().stream().filter(item->matches(item,ticket)).max(Comparator.comparingInt(this::specificity)).orElseThrow(()->new IllegalStateException("Regra padrão de SLA não encontrada"));
+        snapshot=snapshot(rule);
+      }
+      JsonNode config=json.readTree(snapshot);
+      Calendar calendar=calendar(config);
+      JsonNode deadline=config.path("deadlines").path(priority.name());
+      int responseHours=deadline.path("responseHours").asInt(), resolutionHours=deadline.path("resolutionHours").asInt();
+      if(responseHours<=0||resolutionHours<=0)throw new IllegalStateException("Prazos de SLA inválidos");
+      Instant response=ticket.getResponseCompletedAt()!=null&&ticket.getResponseDueAt()!=null?ticket.getResponseDueAt():add(ticket.getCreatedAt(),Duration.ofHours(responseHours),calendar);
+      Instant resolution=add(ticket.getResolutionCycleStartedAt(),Duration.ofHours(resolutionHours),calendar);
+      for(JsonNode period:json.readTree(ticket.getResolutionPauseIntervals())) {
+        Duration paused=businessDuration(Instant.parse(period.path("start").asText()),Instant.parse(period.path("end").asText()),calendar);
+        resolution=add(resolution,paused,calendar);
+      }
+      return new Calculation(snapshot,response,resolution);
+    }catch(java.io.IOException|DateTimeException ex){throw new IllegalStateException("Configuração de SLA inválida");}
   }
-  private boolean matches(SlaRule rule, Ticket ticket) {
+  public void resumeResolution(Ticket ticket) {
+    if(ticket.getPriority()!=null&&ticket.getSlaRuleSnapshot()!=null)ticket.setResolutionDueAt(calculate(ticket,ticket.getPriority()).resolutionDueAt());
+  }
+  public boolean pauseInValidation(Ticket ticket) {
+    try{return ticket.getSlaRuleSnapshot()!=null&&json.readTree(ticket.getSlaRuleSnapshot()).path("pauseInValidation").asBoolean();}catch(java.io.IOException ex){throw new IllegalStateException("Configuração de SLA inválida");}
+  }
+  public static String responseState(Ticket ticket, Instant now) {
+    if(ticket.getResponseDueAt()==null)return "PENDING_CLASSIFICATION";
+    Instant end=ticket.getResponseCompletedAt();
+    return (end==null?now:end).isAfter(ticket.getResponseDueAt())?"OVERDUE":end==null?"ON_TIME":"COMPLETED";
+  }
+  public static String resolutionState(Ticket ticket, Instant now) {
+    if(ticket.getStatus()==TicketStatus.CANCELLED)return "CANCELLED";
+    if(ticket.getResolutionDueAt()==null)return ticket.getResolutionCycle()>1?"PENDING_RECONFIRMATION":"PENDING_CLASSIFICATION";
+    Instant end=ticket.getCompletedAt();
+    if(end!=null)return end.isAfter(ticket.getResolutionDueAt())?"OVERDUE":"COMPLETED";
+    if(ticket.getResolutionPausedAt()!=null)return "PAUSED";
+    return now.isAfter(ticket.getResolutionDueAt())?"OVERDUE":"ON_TIME";
+  }
+  public static String state(Ticket ticket, Instant now) {
+    if(ticket.getStatus()==TicketStatus.DONE)return "COMPLETED";
+    String resolution=resolutionState(ticket,now);
+    if("CANCELLED".equals(resolution)||resolution.startsWith("PENDING")||"PAUSED".equals(resolution))return resolution;
+    return "OVERDUE".equals(resolution)||"OVERDUE".equals(responseState(ticket,now))?"OVERDUE":"ON_TIME";
+  }
+  private boolean matches(SlaRule rule,Ticket ticket) {
     return switch(rule.getScope()) {
-      case DEFAULT -> true;
-      case CLIENT -> rule.getClient()!=null && rule.getClient().getId().equals(ticket.getClient().getId());
-      case DEMAND_TYPE -> rule.getDemandType()!=null && rule.getDemandType().getId().equals(ticket.getDemandType().getId());
-      case CLIENT_AND_DEMAND_TYPE -> rule.getClient()!=null && rule.getDemandType()!=null && rule.getClient().getId().equals(ticket.getClient().getId()) && rule.getDemandType().getId().equals(ticket.getDemandType().getId());
+      case DEFAULT->true;
+      case CLIENT->rule.getClient()!=null&&rule.getClient().getId().equals(ticket.getClient().getId());
+      case DEMAND_TYPE->rule.getDemandType()!=null&&rule.getDemandType().getId().equals(ticket.getDemandType().getId());
+      case CLIENT_AND_DEMAND_TYPE->rule.getClient()!=null&&rule.getDemandType()!=null&&rule.getClient().getId().equals(ticket.getClient().getId())&&rule.getDemandType().getId().equals(ticket.getDemandType().getId());
     };
   }
-  private int specificity(SlaRule rule) { return switch(rule.getScope()) { case DEFAULT -> 0; case CLIENT, DEMAND_TYPE -> 1; case CLIENT_AND_DEMAND_TYPE -> 2; }; }
-  private String snapshot(SlaRule rule) { return "{\"id\":\""+rule.getId()+"\",\"name\":\""+rule.getName().replace("\"","\\\"")+"\",\"version\":"+rule.getVersionNumber()+",\"timezone\":\""+rule.getTimezone()+"\",\"pauseInValidation\":"+rule.isPauseInValidation()+",\"deadlines\":"+rule.getDeadlines()+"}"; }
-  private Instant addBusinessHours(Instant start, int hours, SlaRule rule) throws java.io.IOException {
-    ZoneId zone=ZoneId.of(rule.getTimezone()); JsonNode days=json.readTree(rule.getBusinessDays()); JsonNode holidays=json.readTree(rule.getHolidays());
-    ZonedDateTime cursor=start.atZone(zone); Duration remaining=Duration.ofHours(hours);
+  private int specificity(SlaRule rule){return switch(rule.getScope()){case DEFAULT->0;case DEMAND_TYPE->1;case CLIENT->2;case CLIENT_AND_DEMAND_TYPE->3;};}
+  private String snapshot(SlaRule rule)throws java.io.IOException {
+    var node=json.createObjectNode();node.put("id",rule.getId().toString());node.put("name",rule.getName());node.put("version",rule.getVersionNumber());node.put("timezone",rule.getTimezone());node.put("pauseInValidation",rule.isPauseInValidation());node.set("deadlines",json.readTree(rule.getDeadlines()));node.set("businessDays",json.readTree(rule.getBusinessDays()));node.put("businessStart",rule.getBusinessStart().toString());node.put("businessEnd",rule.getBusinessEnd().toString());node.set("holidays",json.readTree(rule.getHolidays()));return json.writeValueAsString(node);
+  }
+  private Calendar calendar(JsonNode config) {
+    JsonNode days=config.path("businessDays"),holidays=config.path("holidays");
+    LocalTime start=LocalTime.parse(config.path("businessStart").asText()),end=LocalTime.parse(config.path("businessEnd").asText());
+    if(!days.isArray()||days.isEmpty()||!holidays.isArray()||!start.isBefore(end))throw new IllegalStateException("Calendário de SLA inválido");
+    for(JsonNode day:days)DayOfWeek.valueOf(day.asText());
+    return new Calendar(ZoneId.of(config.path("timezone").asText()),days,holidays,start,end);
+  }
+  private Instant add(Instant start,Duration remaining,Calendar calendar) {
+    if(remaining.isZero())return start;
+    ZonedDateTime cursor=start.atZone(calendar.zone());
+    int traversed=0;
     while(!remaining.isZero()) {
-      LocalDate date=cursor.toLocalDate(); boolean day=contains(days,cursor.getDayOfWeek().name()) && !contains(holidays,date.toString());
-      ZonedDateTime businessStart=ZonedDateTime.of(date,rule.getBusinessStart(),zone); ZonedDateTime businessEnd=ZonedDateTime.of(date,rule.getBusinessEnd(),zone);
-      if(!day || !cursor.isBefore(businessEnd)) { cursor=ZonedDateTime.of(date.plusDays(1),LocalTime.MIDNIGHT,zone); continue; }
-      if(cursor.isBefore(businessStart)) cursor=businessStart;
-      Duration available=Duration.between(cursor,businessEnd);
-      Duration used=remaining.compareTo(available)<0 ? remaining : available;
-      cursor=cursor.plus(used); remaining=remaining.minus(used);
+      if(++traversed>40000)throw new IllegalStateException("Prazo excede o calendário suportado");
+      LocalDate date=cursor.toLocalDate();ZonedDateTime from=date.atTime(calendar.start()).atZone(calendar.zone()),to=date.atTime(calendar.end()).atZone(calendar.zone());
+      if(!working(date,calendar)||!cursor.isBefore(to)){cursor=date.plusDays(1).atStartOfDay(calendar.zone());continue;}
+      if(cursor.isBefore(from))cursor=from;
+      Duration available=Duration.between(cursor,to),used=remaining.compareTo(available)<0?remaining:available;
+      cursor=cursor.plus(used);remaining=remaining.minus(used);
     }
     return cursor.toInstant();
   }
-  private boolean contains(JsonNode values, String value) { for(JsonNode node: values) if(value.equals(node.asText())) return true; return false; }
+  private Duration businessDuration(Instant start,Instant end,Calendar calendar) {
+    Duration result=Duration.ZERO;
+    for(LocalDate date=start.atZone(calendar.zone()).toLocalDate();!date.isAfter(end.atZone(calendar.zone()).toLocalDate());date=date.plusDays(1)) {
+      if(!working(date,calendar))continue;
+      Instant from=date.atTime(calendar.start()).atZone(calendar.zone()).toInstant(),to=date.atTime(calendar.end()).atZone(calendar.zone()).toInstant();
+      if(from.isBefore(start))from=start;if(to.isAfter(end))to=end;if(from.isBefore(to))result=result.plus(Duration.between(from,to));
+    }
+    return result;
+  }
+  private boolean working(LocalDate date,Calendar calendar){return contains(calendar.days(),date.getDayOfWeek().name())&&!contains(calendar.holidays(),date.toString());}
+  private boolean contains(JsonNode values,String value){for(JsonNode node:values)if(value.equals(node.asText()))return true;return false;}
 }

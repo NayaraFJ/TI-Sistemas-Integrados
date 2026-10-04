@@ -124,15 +124,17 @@ SIGE-Desk/
 
 ## 10. Estado da implementação
 
-| Fase | Estado | Evidência |
+A revisão de 03/10/2026 validou 33 testes Java, 160 checks HTTP em MySQL isolado, build de produção e percursos no navegador. Isso comprova os cenários executados, mas a entrega continua parcial frente aos critérios completos. Consulte [a revisão com achados e matriz RF/RNF](docs/REVISAO-ENTREGA.md).
+
+| Fase | Estado | Evidência/pendência |
 | --- | --- | --- |
-| 0. Contrato e decisões | Implementada | Matriz em `docs/permissoes.md`, decisões em `docs/decisoes.md`, contrato versionado em `docs/openapi.yaml` e contrato vivo em `/v3/api-docs`. Conflitos de versão retornam `409 VERSION_CONFLICT` e são traduzidos no frontend. |
-| 1. Fundação | Implementada, com validação de banco pendente | React/Vite/TypeScript, i18n, Spring Security, sessão/CSRF, MySQL/Flyway, `compose.yaml` e semeador exclusivo do perfil `demo`. A migration contra uma instância MySQL ainda precisa ser executada no ambiente local. |
-| 2. Cadastros e referências | Implementada | Endpoints e telas com busca, formulários e ativação para clientes, campanhas, tipos, regras de SLA e usuários; opções de formulário vêm da API. |
-| 3. Jornada principal | Implementada | Criação com métricas e anexos, filtros e paginação no servidor, tabela, Kanban, detalhe, triagem com campanha/tipo, atribuição, execução e validação são persistidos e autorizados no backend. |
-| 4. Exceções e colaboração | Implementada | Complemento, pausa/retomada, correção, reabertura, cancelamento, comentários, anexos, evidências, auditoria e notificações. A publicação persiste notificações e um evento outbox por transição, com teste automatizado. |
-| 5. Gestão e acabamento | Implementada, com conferência visual pendente | Dashboard com saúde do SLA, relatórios/CSV com totais e tempo médio, navegação responsiva, carregamento, erro e vazio. O tutorial por perfil está disponível na barra lateral e usa o catálogo de tradução. A comparação visual precisa ser feita com a aplicação em execução. |
-| 6. Validação e entrega | Em andamento | Build de produção do frontend e testes unitários de transição, autorização, paginação, painel, relatório e cálculo de SLA passaram. Há um teste de integração de migration preparado para uma base MySQL descartável por variáveis de ambiente. A busca estática confirmou que o frontend não contém seed, mock, `localStorage` de negócio, acesso rápido de demonstração nem códigos T01–T15. As migrations `V1` e `V2` aguardam execução em MySQL; também faltam os fluxos autenticados completos em ambiente executável. |
+| 0. Contrato e decisões | Parcial | Permissões revisadas; contrato estático e controle de formulário desatualizado precisam de acabamento. |
+| 1. Fundação | Validada no ambiente local | Sessão/CSRF, MySQL 8.0.40, Flyway V1–V4, carga demo idempotente e testes executados. |
+| 2. Cadastros e referências | Parcial | CRUD e referências exercitados; faltam campos tipados/condicionais e tratamento de e-mail duplicado em clientes. |
+| 3. Jornada principal | Percursos críticos validados | Criação, triagem, atribuição, execução, aprovação/correção e dois ciclos; falta reatribuição durante execução/espera. |
+| 4. Exceções e colaboração | Parcial | Complemento, pausas, reabertura, cancelamento, anexos e histórico testados; faltam notificações automáticas de vencimento e auditoria dedicada de prazo na retomada. |
+| 5. Gestão e acabamento | Parcial | Lista/Kanban, busca e relatórios testados; faltam agregações do painel, filtro/indicação de vencimento e tempo útil antes da triagem. |
+| 6. Validação e entrega | Revisão executada; aceite integral pendente | Evidências e roteiro em `docs/review` e `Backend/scripts`; faltam resolver achados e certificar acessibilidade, outros navegadores e escala. |
 
 ## Fontes técnicas para as escolhas
 

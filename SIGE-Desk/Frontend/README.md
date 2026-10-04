@@ -31,7 +31,7 @@ O Kanban utiliza [`@caldwell619/react-kanban`](https://github.com/christopher-ca
 
 ## Conexão com o backend
 
-O arquivo [vite.config.ts](vite.config.ts) configura a porta `5173` e encaminha as chamadas `/api` e `/actuator` para `http://localhost:8080`. Mantenha o backend em execução em outro terminal. Se mudar a porta ou o endereço do backend, ajuste os dois destinos em `server.proxy` e reinicie `pnpm dev`.
+O arquivo [vite.config.ts](vite.config.ts) configura a porta `5173` e encaminha as chamadas `/api` e `/actuator` para `http://localhost:8080`. Mantenha o backend em execução em outro terminal. Se mudar a porta ou o endereço do backend, defina `SIGE_API_TARGET` antes de iniciar o Vite (por exemplo, `$env:SIGE_API_TARGET = 'http://localhost:8081'`) e reinicie `pnpm dev`.
 
 ## Primeiro acesso
 

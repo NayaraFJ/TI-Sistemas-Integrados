@@ -36,6 +36,8 @@ public class Ticket extends AuditableEntity {
   @Column(name="complement_received", nullable=false) private boolean complementReceived;
   @Column(name="execution_started", nullable=false) private boolean executionStarted;
   @Column(name="resolution_cycle", nullable=false) private int resolutionCycle = 1;
+  @Column(name="resolution_cycle_started_at") private Instant resolutionCycleStartedAt;
+  @Column(name="resolution_pause_intervals", columnDefinition="json", nullable=false) private String resolutionPauseIntervals = "[]";
   @Column(name="response_due_at") private Instant responseDueAt;
   @Column(name="resolution_due_at") private Instant resolutionDueAt;
   @Column(name="response_completed_at") private Instant responseCompletedAt;
@@ -62,22 +64,30 @@ public class Ticket extends AuditableEntity {
   public boolean isExecutionStarted(){return executionStarted;} public int getResolutionCycle(){return resolutionCycle;} public Instant getResponseDueAt(){return responseDueAt;}
   public Instant getResolutionDueAt(){return resolutionDueAt;} public Instant getResponseCompletedAt(){return responseCompletedAt;} public Instant getResolutionPausedAt(){return resolutionPausedAt;} public Instant getCompletedAt(){return completedAt;}
   public String getSlaState(){return slaState;} public String getSlaRuleSnapshot(){return slaRuleSnapshot;} public String getTypeSnapshot(){return typeSnapshot;} public String getMetrics(){return metrics;} public long getVersionNumber(){return versionNumber;}
+  public Instant getResolutionCycleStartedAt(){return resolutionCycleStartedAt==null?getCreatedAt():resolutionCycleStartedAt;}
+  public String getResolutionPauseIntervals(){return resolutionPauseIntervals;}
+  public boolean isApprovalRequired(){return snapshotFlag("approvalRequired");}
+  public boolean isEvidenceRequired(){return snapshotFlag("evidenceRequired");}
+  private boolean snapshotFlag(String key){try{return new com.fasterxml.jackson.databind.ObjectMapper().readTree(typeSnapshot).path(key).asBoolean();}catch(java.io.IOException ex){throw new IllegalStateException("Configuração do tipo aplicada ao ticket inválida");}}
+  public void finishResolutionPause(Instant now){if(resolutionPausedAt==null)return;try{var mapper=new com.fasterxml.jackson.databind.ObjectMapper();var periods=(com.fasterxml.jackson.databind.node.ArrayNode)mapper.readTree(resolutionPauseIntervals);var period=periods.addObject();period.put("start",resolutionPausedAt.toString());period.put("end",now.toString());resolutionPauseIntervals=mapper.writeValueAsString(periods);resolutionPausedAt=null;}catch(java.io.IOException ex){throw new IllegalStateException("Registro de pausas inválido");}}
+  public void setResolutionDueAt(Instant dueAt){resolutionDueAt=dueAt;}
+  public void pauseValidation(){resolutionPausedAt=Instant.now();slaState="PAUSED";}
   public void startTriage(){ require(TicketStatus.OPEN, TicketStatus.REOPENED); status=TicketStatus.TRIAGE; }
   public void classify(Priority priority, AppUser assignee, String slaSnapshot, Instant responseDue, Instant resolutionDue) {
     require(TicketStatus.TRIAGE, TicketStatus.REOPENED); this.priority=priority; this.assignee=assignee; this.slaRuleSnapshot=slaSnapshot; this.responseDueAt=responseDue; this.resolutionDueAt=resolutionDue; this.slaState="ON_TIME";
   }
-  public void sendToExecution(){ require(TicketStatus.TRIAGE, TicketStatus.REOPENED); if (priority==null || assignee==null || slaRuleSnapshot==null) throw new IllegalStateException("Triagem incompleta"); status=TicketStatus.EXECUTION; }
+  public void sendToExecution(){ require(TicketStatus.TRIAGE, TicketStatus.REOPENED); if (priority==null || assignee==null || slaRuleSnapshot==null) throw new IllegalStateException("Triagem incompleta"); status=TicketStatus.EXECUTION; executionStarted=true; }
   public void waitForClient(WaitOrigin origin, String reason) { require(TicketStatus.TRIAGE, TicketStatus.EXECUTION); waitOrigin=origin; waitReason=reason; complementReceived=false; resolutionPausedAt=Instant.now(); status=TicketStatus.WAITING_FOR_CLIENT; slaState="PAUSED"; }
   public void receiveComplement(){ require(TicketStatus.WAITING_FOR_CLIENT); complementReceived=true; }
-  public void resume(){ require(TicketStatus.WAITING_FOR_CLIENT); if (!complementReceived) throw new IllegalStateException("Complemento ainda não foi recebido"); status = waitOrigin == WaitOrigin.TRIAGE ? TicketStatus.TRIAGE : TicketStatus.EXECUTION; waitOrigin=null; waitReason=null; complementReceived=false; resolutionPausedAt=null; slaState="ON_TIME"; }
-  public void recordExecution(boolean approvalRequired) { require(TicketStatus.EXECUTION, TicketStatus.REOPENED); executionStarted=true; status=approvalRequired ? TicketStatus.VALIDATION : TicketStatus.DONE; if (!approvalRequired) { slaState="COMPLETED"; completedAt=Instant.now(); } }
+  public void resume(){ require(TicketStatus.WAITING_FOR_CLIENT); if (!complementReceived) throw new IllegalStateException("Complemento ainda não foi recebido"); if(waitOrigin==WaitOrigin.EXECUTION&&(priority==null||assignee==null||slaRuleSnapshot==null))throw new IllegalStateException("Triagem incompleta"); finishResolutionPause(Instant.now()); status = waitOrigin == WaitOrigin.TRIAGE ? TicketStatus.TRIAGE : TicketStatus.EXECUTION; waitOrigin=null; waitReason=null; complementReceived=false; resolutionPausedAt=null; slaState="ON_TIME"; }
+  public void recordExecution(boolean approvalRequired) { require(TicketStatus.EXECUTION, TicketStatus.REOPENED); if(status==TicketStatus.REOPENED&&slaRuleSnapshot==null)throw new IllegalStateException("Reabertura exige confirmação da triagem"); executionStarted=true; status=approvalRequired ? TicketStatus.VALIDATION : TicketStatus.DONE; if (!approvalRequired) { slaState="COMPLETED"; completedAt=Instant.now(); } }
   public void approve(){ require(TicketStatus.VALIDATION); status=TicketStatus.DONE; slaState="COMPLETED"; completedAt=Instant.now(); }
-  public void requestCorrection(){ require(TicketStatus.VALIDATION); status=TicketStatus.REOPENED; }
+  public void requestCorrection(){ require(TicketStatus.VALIDATION); finishResolutionPause(Instant.now()); status=TicketStatus.REOPENED; slaState="ON_TIME"; }
   public void cancel(){ require(TicketStatus.OPEN, TicketStatus.TRIAGE, TicketStatus.WAITING_FOR_CLIENT); if (executionStarted || waitOrigin==WaitOrigin.EXECUTION) throw new IllegalStateException("Cancelamento não permitido após execução"); status=TicketStatus.CANCELLED; slaState="CANCELLED"; }
-  public void reopenFromDone(){ require(TicketStatus.DONE); status=TicketStatus.REOPENED; resolutionCycle++; completedAt=null; slaState="PENDING_RECONFIRMATION"; }
+  public void reopenFromDone(){ require(TicketStatus.DONE); status=TicketStatus.REOPENED; resolutionCycle++; resolutionCycleStartedAt=Instant.now(); resolutionPauseIntervals="[]"; resolutionPausedAt=null; slaRuleSnapshot=null; resolutionDueAt=null; completedAt=null; slaState="PENDING_RECONFIRMATION"; }
   public void markEffectiveResponse(){ if (responseCompletedAt == null) responseCompletedAt=Instant.now(); }
   public void assignCampaign(Campaign campaign){ if(!campaign.getClient().getId().equals(client.getId())) throw new IllegalArgumentException("Campanha incompatível"); this.campaign=campaign; this.pendingCampaign=null; }
-  public void updateClassificationReferences(Campaign campaign, DemandType demandType) { require(TicketStatus.TRIAGE, TicketStatus.REOPENED); assignCampaign(campaign); this.demandType=demandType; this.typeSnapshot=typeSnapshot(demandType); }
-  private String typeSnapshot(DemandType type) { return "{\"id\":\"" + type.getId() + "\",\"version\":" + type.getVersionNumber() + ",\"approvalRequired\":" + type.isApprovalRequired() + ",\"evidenceRequired\":" + type.isEvidenceRequired() + "}"; }
+  public void updateClassificationReferences(Campaign campaign, DemandType demandType) { require(TicketStatus.TRIAGE, TicketStatus.REOPENED); assignCampaign(campaign); if(!this.demandType.getId().equals(demandType.getId()))this.typeSnapshot=typeSnapshot(demandType); this.demandType=demandType; }
+  private String typeSnapshot(DemandType type) {try{var mapper=new com.fasterxml.jackson.databind.ObjectMapper();var snapshot=mapper.createObjectNode();snapshot.put("id",type.getId().toString());snapshot.put("name",type.getName());snapshot.put("version",type.getVersionNumber());snapshot.put("approvalRequired",type.isApprovalRequired());snapshot.put("evidenceRequired",type.isEvidenceRequired());snapshot.set("fieldDefinitions",mapper.readTree(type.getFieldDefinitions()));return mapper.writeValueAsString(snapshot);}catch(java.io.IOException ex){throw new IllegalArgumentException("Configuração do tipo inválida");}}
   private void require(TicketStatus... allowed) { for (TicketStatus value: allowed) if(status==value) return; throw new IllegalStateException("Transição inválida a partir de " + status); }
 }

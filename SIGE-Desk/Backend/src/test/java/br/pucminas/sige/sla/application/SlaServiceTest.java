@@ -64,6 +64,41 @@ class SlaServiceTest {
     assertEquals(Instant.parse("2026-09-29T20:59:30.123456Z"),result.resolutionDueAt());
   }
 
+  @Test void clientRuleTakesPrecedenceOverTypeRule() {
+    Ticket ticket=ticket();var repository=Mockito.mock(SlaRuleRepository.class);
+    var clientRule=rule(SlaRule.Scope.CLIENT,ticket.getClient(),null,"{\"MEDIUM\":{\"responseHours\":1,\"resolutionHours\":1}}");
+    var typeRule=rule(SlaRule.Scope.DEMAND_TYPE,null,ticket.getDemandType(),DEADLINES);
+    when(repository.findByActiveTrue()).thenReturn(List.of(clientRule,typeRule));
+    assertEquals(Instant.parse("2026-09-28T14:00:00Z"),new SlaService(repository,new ObjectMapper()).calculate(ticket,Priority.MEDIUM).resolutionDueAt());
+  }
+  @Test void frozenCalendarSurvivesRuleEdits() {
+    Ticket ticket=ticket();var repository=Mockito.mock(SlaRuleRepository.class);var rule=rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES);
+    when(repository.findByActiveTrue()).thenReturn(List.of(rule));var service=new SlaService(repository,new ObjectMapper());var initial=service.calculate(ticket,Priority.MEDIUM);
+    ticket.startTriage();ticket.classify(Priority.MEDIUM,null,initial.snapshot(),initial.responseDueAt(),initial.resolutionDueAt());
+    rule.update("Editada",SlaRule.Scope.DEFAULT,null,null,"UTC","[\"SATURDAY\"]",LocalTime.of(1,0),LocalTime.of(2,0),"[]",false,"{}",true);
+    assertEquals(initial.resolutionDueAt(),service.calculate(ticket,Priority.MEDIUM).resolutionDueAt());
+  }
+  @Test void excludesOnlyBusinessTimeDuringComplementPause() {
+    Ticket ticket=ticket();var repository=Mockito.mock(SlaRuleRepository.class);when(repository.findByActiveTrue()).thenReturn(List.of(rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES)));
+    var service=new SlaService(repository,new ObjectMapper());var initial=service.calculate(ticket,Priority.MEDIUM);ticket.startTriage();ticket.classify(Priority.MEDIUM,null,initial.snapshot(),initial.responseDueAt(),initial.resolutionDueAt());
+    ReflectionTestUtils.setField(ticket,"resolutionPauseIntervals","[{\"start\":\"2026-09-28T15:00:00Z\",\"end\":\"2026-09-29T13:00:00Z\"}]");
+    assertEquals(Instant.parse("2026-09-29T21:00:00Z"),service.calculate(ticket,Priority.MEDIUM).resolutionDueAt());
+    assertEquals(initial.responseDueAt(),service.calculate(ticket,Priority.MEDIUM).responseDueAt());
+  }
+  @Test void newCycleStartsAtReopeningAndKeepsTheFirstResponseDeadline() {
+    Ticket ticket=ticket();var repository=Mockito.mock(SlaRuleRepository.class);when(repository.findByActiveTrue()).thenReturn(List.of(rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES)));var service=new SlaService(repository,new ObjectMapper());
+    ReflectionTestUtils.setField(ticket,"resolutionCycle",2);ReflectionTestUtils.setField(ticket,"resolutionCycleStartedAt",Instant.parse("2026-10-05T11:00:00Z"));ReflectionTestUtils.setField(ticket,"responseCompletedAt",Instant.parse("2026-09-28T14:00:00Z"));ReflectionTestUtils.setField(ticket,"responseDueAt",Instant.parse("2026-09-28T15:00:00Z"));
+    var result=service.calculate(ticket,Priority.MEDIUM);assertEquals(Instant.parse("2026-10-05T21:00:00Z"),result.resolutionDueAt());assertEquals(Instant.parse("2026-09-28T15:00:00Z"),result.responseDueAt());
+  }
+  @Test void showsWhichDeadlineExpiredEvenWhenResolutionIsPaused() {
+    Ticket ticket=ticket();ReflectionTestUtils.setField(ticket,"responseDueAt",Instant.parse("2026-09-28T15:00:00Z"));ReflectionTestUtils.setField(ticket,"resolutionDueAt",Instant.parse("2026-09-29T13:00:00Z"));ReflectionTestUtils.setField(ticket,"resolutionPausedAt",Instant.parse("2026-09-28T16:00:00Z"));
+    assertEquals("OVERDUE",SlaService.responseState(ticket,Instant.parse("2026-09-28T17:00:00Z")));assertEquals("PAUSED",SlaService.resolutionState(ticket,Instant.parse("2026-09-28T17:00:00Z")));
+  }
+  @Test @Timeout(value=2,threadMode=Timeout.ThreadMode.SEPARATE_THREAD) void emptyCalendarFailsInsteadOfLoopingForever() {
+    var repository=Mockito.mock(SlaRuleRepository.class);var invalid=rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES);ReflectionTestUtils.setField(invalid,"businessDays","[]");when(repository.findByActiveTrue()).thenReturn(List.of(invalid));
+    org.junit.jupiter.api.Assertions.assertThrows(IllegalStateException.class,()->new SlaService(repository,new ObjectMapper()).calculate(ticket(),Priority.MEDIUM));
+  }
+
   private SlaRule rule(SlaRule.Scope scope, Client client, DemandType type, String deadlines) {
     SlaRule rule = new SlaRule("Regra", scope, client, type, deadlines);
     rule.update("Regra", scope, client, type, "America/Sao_Paulo", "[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\"]", LocalTime.of(8, 0), LocalTime.of(18, 0), "[]", false, deadlines, true);

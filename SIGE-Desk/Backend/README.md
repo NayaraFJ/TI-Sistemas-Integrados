@@ -36,6 +36,7 @@ Não é necessário configurar o nome de uma tabela para iniciar o sistema. O Fl
 - `V1__initial_schema.sql`: estrutura inicial, incluindo a tabela `users` e os demais cadastros.
 - `V2__add_ticket_completion_timestamp.sql`: atualização do registro de conclusão dos tickets.
 - `V3__demo_seed_tracking.sql`: controle da carga demo para impedir duplicação nas reinicializações.
+- `V4__resolution_cycles_and_pause_calendar.sql`: marco do ciclo de resolução, intervalos de pausa e calendário no snapshot de SLA.
 
 O banco também é criado automaticamente quando não existe, pois `spring.datasource.hikari.data-source-properties.createDatabaseIfNotExist` está habilitado. A conta MySQL precisa de permissão para criar o banco e aplicar as migrações, além de ler e gravar os dados. Se não tiver permissão de criação, o banco deve ser criado previamente por uma conta autorizada.
 
@@ -110,3 +111,6 @@ Para executar os testes do backend:
 ```
 
 O teste de migração MySQL depende de uma base vazia e descartável configurada separadamente; consulte o [README geral](../README.md#validação-de-migration-mysql).
+
+
+A revisão funcional, as pendências por requisito e o roteiro HTTP em banco isolado estão em [docs/REVISAO-ENTREGA.md](../docs/REVISAO-ENTREGA.md).

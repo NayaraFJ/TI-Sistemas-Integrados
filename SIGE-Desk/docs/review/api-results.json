@@ -1,0 +1,802 @@
+[
+  {
+    "name": "admin@sige.demo POST /auth/login HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /auth/login HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo POST /auth/login HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor2@sige.demo POST /auth/login HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /users HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /demand-types HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Abertura sem prioridade oficial",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "rafael@horizonte.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 404",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 404",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/triage/start HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/triage/start HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/wait HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/resume HTTP 409",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/comments HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Comentário confirma complemento sem retomar",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/resume HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo PUT /demand-types/14b9f724-9f36-4efe-b64c-6b2cc0465c4d HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/triage HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/execution HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor2@sige.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 404",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/execution HTTP 400",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/execution HTTP 400",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/execution HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Snapshot mantém aprovação após editar tipo",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/approve HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/correction HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Correção mantém ciclo",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/execution HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/approve HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/comments HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Comentário após conclusão mantém status",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/reopen HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Reabertura inicia ciclo pendente",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/execution HTTP 409",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/triage HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Histórico audita responsável, prazo e ciclo",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/execution HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/f4d72d4f-c99c-4263-abad-8e4aa9c126dc/approve HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Jornada principal e dois ciclos",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /demand-types HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/34923ed6-e995-418a-9a1d-1e5d48775edc/triage/start HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/34923ed6-e995-418a-9a1d-1e5d48775edc/triage HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo POST /tickets/34923ed6-e995-418a-9a1d-1e5d48775edc/execution HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/34923ed6-e995-418a-9a1d-1e5d48775edc HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Conclusão sem aprovação registra dispensa",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Conclusão com dispensa",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /demand-types HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/337eec20-d8fc-4d38-84c7-5dc9b94c2a5b/triage/start HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/337eec20-d8fc-4d38-84c7-5dc9b94c2a5b/wait HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/337eec20-d8fc-4d38-84c7-5dc9b94c2a5b/attachments HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/337eec20-d8fc-4d38-84c7-5dc9b94c2a5b HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Anexo confirma complemento",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/337eec20-d8fc-4d38-84c7-5dc9b94c2a5b/attachments/7865872e-cb2e-44ba-89b2-ecbf5155f9a4/download HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Download mantém o conteúdo",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "rafael@horizonte.demo GET /tickets/337eec20-d8fc-4d38-84c7-5dc9b94c2a5b/attachments/7865872e-cb2e-44ba-89b2-ecbf5155f9a4/download HTTP 404",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/337eec20-d8fc-4d38-84c7-5dc9b94c2a5b/cancel HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/337eec20-d8fc-4d38-84c7-5dc9b94c2a5b/comments HTTP 409",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /demand-types HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets/4bddb06d-58e4-423e-bc92-fffd79dc471d/attachments HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /tickets/4bddb06d-58e4-423e-bc92-fffd79dc471d HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Upload de 2 MB respeita limite de 10 MB",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Anexos e cancelamento",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo PUT /users/c657b434-4c57-41c3-b86b-30ecf297c3b3 HTTP 409",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo PUT /users/6fe2b585-2243-49d8-bc41-1f80993e86de HTTP 409",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo PUT /users/263c8e8b-889a-4fa4-8484-3d05f32f2bec HTTP 409",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /sla-rules HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo PUT /sla-rules/03ee01d7-3edd-4361-8a67-f7348036165c HTTP 409",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /sla-rules HTTP 400",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /sla-rules HTTP 400",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /clients HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo PUT /clients/e3ccb299-9703-4c74-b344-cba07ddcdd85 HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /clients/e3ccb299-9703-4c74-b344-cba07ddcdd85/active?value=false HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /campaigns HTTP 400",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /clients HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo GET /users HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo GET /reports/tickets HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Proteções de cadastros",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /users HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "review-e913755f-user@example.test POST /auth/login HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "review-e913755f-user@example.test GET /auth/me HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo PUT /users/d9bd72b8-8f7c-4577-a9e3-cb69abfa4cca HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "review-e913755f-user@example.test GET /auth/me HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Conta inativa POST /auth/login HTTP 401",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /campaigns HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo PUT /campaigns/0f608b29-781f-4da6-b2b9-c9c0ebfae537 HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /campaigns/0f608b29-781f-4da6-b2b9-c9c0ebfae537/active?value=false HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Campanha inativa sai das referências",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /demand-types HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /demand-types/7909139f-8b65-4458-80d9-d011337ae6be/active?value=false HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Tipo inativo sai das referências",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /sla-rules HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /sla-rules HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo PUT /sla-rules/9e56b79d-001d-4f15-8366-6b9314916103 HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Criação e edição de cadastros",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /dashboard HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /dashboard HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "rafael@horizonte.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "rafael@horizonte.demo GET /dashboard HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "rafael@horizonte.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo GET /dashboard HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo GET /dashboard HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor2@sige.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor2@sige.demo GET /dashboard HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor2@sige.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo GET /tickets?size=100 HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "gestor@sige.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Gestor recebe apenas referências do escopo",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /reference HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Cliente não recebe outros solicitantes",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /tickets?search=Review%20e913755f&size=100 HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /reports/tickets?search=Review%20e913755f HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /reports/tickets/export?search=Review%20e913755f HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "CSV, relatório e lista coincidem",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /reports/tickets/export HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo POST /demand-types HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /tickets HTTP 201",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /reports/tickets/export?search=SIGE-1049 HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "CSV neutraliza fórmula em assunto",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /tickets?page=1&size=10 HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Paginação devolve segunda página",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "admin@sige.demo GET /tickets?page=-1 HTTP 400",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Escopo, relatórios e CSV",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "rafael@horizonte.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /notifications/a1396743-38ad-49de-a18b-c934fa8e8fe1/read HTTP 404",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /notifications/read-all HTTP 204",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /notifications HTTP 200",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Leitura em lote persistiu",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "atendimento@sige.demo POST /tickets/00000000-0000-0000-0000-000000000000/cancel HTTP 403",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo POST /auth/logout HTTP 204",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "cliente@aurora.demo GET /auth/me HTTP 401",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "login inválido POST /auth/login HTTP 401",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "name": "Notificações, CSRF e logout",
+    "passed": true,
+    "detail": ""
+  }
+]

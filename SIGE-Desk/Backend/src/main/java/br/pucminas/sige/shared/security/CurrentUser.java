@@ -13,7 +13,9 @@ public class CurrentUser {
   private final AppUserRepository users;
   public CurrentUser(AppUserRepository users) { this.users = users; }
   public AppUser require() {
-    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    var authentication=SecurityContextHolder.getContext().getAuthentication();
+    if(authentication==null)throw new AccessDeniedException("Sessão inválida");
+    Object principal=authentication.getPrincipal();
     if (!(principal instanceof SigeUserPrincipal user)) throw new AccessDeniedException("Sessão inválida");
     return users.findById(user.id()).filter(AppUser::isActive).orElseThrow(() -> new AccessDeniedException("Sessão inválida"));
   }

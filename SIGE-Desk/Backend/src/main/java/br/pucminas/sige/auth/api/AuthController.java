@@ -31,6 +31,8 @@ public class AuthController {
   public SessionResponse login(@Valid @RequestBody LoginRequest request, HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
     try {
       Authentication authentication = authenticationManager.authenticate(UsernamePasswordAuthenticationToken.unauthenticated(request.email(), request.password()));
+      servletRequest.getSession(); servletRequest.changeSessionId();
+      org.springframework.security.web.csrf.CookieCsrfTokenRepository.withHttpOnlyFalse().saveToken(null,servletRequest,servletResponse);
       SecurityContext context = SecurityContextHolder.createEmptyContext(); context.setAuthentication(authentication); SecurityContextHolder.setContext(context); contexts.saveContext(context, servletRequest, servletResponse);
       SigeUserPrincipal user=(SigeUserPrincipal) authentication.getPrincipal();
       return new SessionResponse(user.id().toString(), user.name(), user.email(), user.role(), user.clientId()==null?null:user.clientId().toString());

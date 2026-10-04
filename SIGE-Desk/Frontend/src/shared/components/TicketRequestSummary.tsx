@@ -7,6 +7,7 @@ export function TicketRequestSummary({ data }: { data: TicketDetail }) {
   const { t } = useTranslation();
   const ticket = data.ticket;
   const details = [
+    {label:t('tickets.channel'),value:data.channel??'—'},
     { label: t('tickets.type'), value: ticket.typeName },
     { label: t('tickets.campaign'), value: ticket.campaignName ?? data.pendingCampaign ?? '—' },
     { label: t('tickets.priority'), value: <PriorityText priority={ticket.priority} /> },

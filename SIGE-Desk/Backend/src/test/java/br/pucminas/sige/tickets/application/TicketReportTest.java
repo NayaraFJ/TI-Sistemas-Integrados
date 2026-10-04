@@ -38,6 +38,7 @@ class TicketReportTest {
     AppUser manager = new AppUser("Lucas", "manager@example.test", "hash", Role.TRAFFIC_MANAGER, null);
     Instant created = Instant.parse("2020-09-01T12:00:00Z");
     Ticket completed = classified("SIGE-4001", client, requester, manager, created, Instant.parse("2020-09-03T12:00:00Z"));
+    ReflectionTestUtils.setField(completed, "responseCompletedAt", created.plusSeconds(30*60));
     completed.sendToExecution(); completed.recordExecution(false); ReflectionTestUtils.setField(completed, "completedAt", created.plusSeconds(120 * 60));
     Ticket overdue = classified("SIGE-4002", client, requester, manager, created, Instant.parse("2020-09-02T12:00:00Z"));
     Ticket cancelled = classified("SIGE-4003", client, requester, manager, created, Instant.parse("2020-09-02T12:00:00Z"));
