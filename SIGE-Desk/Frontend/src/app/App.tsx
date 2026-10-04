@@ -2,18 +2,36 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, Navigate, Outlet, Route, Routes, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Alert, AppBar, Box, Button, Card, CardContent, Chip, CircularProgress, CssBaseline, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, FormControl, FormHelperText, InputLabel, List, ListItemButton, ListItemText, MenuItem, Select, Stack, TextField, ThemeProvider, Toolbar, Typography, createTheme, useMediaQuery } from '@mui/material';
+import { Alert, AppBar, Box, Button, Card, CardContent, Chip, CssBaseline, Dialog, DialogActions, DialogContent, DialogTitle, Drawer, FormControl, FormControlLabel, Switch, FormHelperText, InputLabel, List, ListItemButton, ListItemIcon, ListItemText, MenuItem, Select, Stack, TextField, ThemeProvider, Toolbar, Typography, useMediaQuery } from '@mui/material';
+import DashboardOutlined from '@mui/icons-material/DashboardOutlined';
+import ConfirmationNumberOutlined from '@mui/icons-material/ConfirmationNumberOutlined';
+import NotificationsOutlined from '@mui/icons-material/NotificationsOutlined';
+import AssessmentOutlined from '@mui/icons-material/AssessmentOutlined';
+import BusinessOutlined from '@mui/icons-material/BusinessOutlined';
+import CampaignOutlined from '@mui/icons-material/CampaignOutlined';
+import CategoryOutlined from '@mui/icons-material/CategoryOutlined';
+import AccessTimeOutlined from '@mui/icons-material/AccessTimeOutlined';
+import ManageAccountsOutlined from '@mui/icons-material/ManageAccountsOutlined';
+import HelpOutline from '@mui/icons-material/HelpOutline';
 import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { isAxiosError } from 'axios';
 import { apiClient } from '../shared/api/client';
-import type { Priority, Role, TicketDetail, TicketFilters, TicketItem, TicketStatus } from '../shared/api/types';
-import { TicketFilterPanel } from '../shared/components/TicketFilterPanel';
+import type { Priority, Role, TicketDetail, TicketStatus } from '../shared/api/types';
 
-const theme=createTheme({ palette:{primary:{main:'#0b5d84',dark:'#063b5a'},secondary:{main:'#0b826d'},background:{default:'#f5f7fa'}},shape:{borderRadius:10},typography:{fontFamily:'Inter, system-ui, sans-serif'} });
+import Add from '@mui/icons-material/Add';
+import { Loading, Failure } from '../shared/components/DataFeedback';
+import { PageHeading, StatusBadge } from '../shared/components/PageLayout';
+import { ManagementListing, scopeLabels } from '../shared/components/ManagementListing';
+import { DashboardPage } from '../features/DashboardPage';
+import { TicketsPage } from '../features/TicketsPage';
+import { NotificationsPage } from '../features/NotificationsPage';
+import { ReportPage } from '../features/ReportPage';
+import { TicketRequestSummary } from '../shared/components/TicketRequestSummary';
+
+import { theme } from './theme';
+import { DynamicFieldsEditor, SlaCalendarEditor, SlaDeadlinesEditor } from '../shared/components/ManagementSettings';
 const brandGradient='linear-gradient(145deg,#063b5a,#0b826d)';
-const statuses:TicketStatus[]=['OPEN','TRIAGE','EXECUTION','WAITING_FOR_CLIENT','VALIDATION','DONE','REOPENED','CANCELLED'];
 const priorities:Priority[]=['URGENT','HIGH','MEDIUM','LOW'];
 const metricValue=z.string().trim().refine(value=>!value||(Number.isFinite(Number(value.replace(',','.')))&&Number(value.replace(',','.'))>=0));
 const newTicketSchema=z.object({clientId:z.string().min(1),requesterId:z.string(),campaignId:z.string(),pendingCampaign:z.string().trim(),demandTypeId:z.string().min(1),channel:z.string().trim().min(1).max(80),subject:z.string().trim().min(1).max(255),description:z.string().trim().min(1),urgency:z.enum(['URGENT','HIGH','MEDIUM','LOW']),desiredDate:z.string(),metricPeriod:z.string().trim().max(120),impressions:metricValue,ctr:metricValue,cpc:metricValue,conversions:metricValue,cpa:metricValue,roas:metricValue}).superRefine((value,context)=>{if(!value.campaignId&&!value.pendingCampaign)context.addIssue({code:'custom',path:['pendingCampaign']});});
@@ -23,14 +41,21 @@ function dynamicFields(source:string|undefined):DynamicField[]{try{const parsed=
 const metricNumber=(value:string)=>value.trim()?Number(value.replace(',','.')):null;
 const metrics=(form:NewTicketForm,fields:Record<string,string>)=>({period:form.metricPeriod||null,impressions:metricNumber(form.impressions),ctr:metricNumber(form.ctr),cpc:metricNumber(form.cpc),conversions:metricNumber(form.conversions),cpa:metricNumber(form.cpa),roas:metricNumber(form.roas),fields});
 const navByRole:Record<Role,string[]>={CLIENT:['dashboard','tickets','notifications'],SERVICE:['dashboard','tickets','notifications','reports','campaigns'],TRAFFIC_MANAGER:['dashboard','tickets','notifications'],ADMIN:['dashboard','tickets','notifications','reports','clients','campaigns','demandTypes','sla','users']};
-const navigation:{key:string;path:string}[]=[{key:'dashboard',path:'/'},{key:'tickets',path:'/tickets'},{key:'notifications',path:'/notifications'},{key:'reports',path:'/reports'},{key:'clients',path:'/clients'},{key:'campaigns',path:'/campaigns'},{key:'demandTypes',path:'/demand-types'},{key:'sla',path:'/sla'},{key:'users',path:'/users'}];
+const navigation:{key:string;path:string;icon:typeof DashboardOutlined}[]=[
+  {key:'dashboard',path:'/',icon:DashboardOutlined},
+  {key:'tickets',path:'/tickets',icon:ConfirmationNumberOutlined},
+  {key:'notifications',path:'/notifications',icon:NotificationsOutlined},
+  {key:'reports',path:'/reports',icon:AssessmentOutlined},
+  {key:'clients',path:'/clients',icon:BusinessOutlined},
+  {key:'campaigns',path:'/campaigns',icon:CampaignOutlined},
+  {key:'demandTypes',path:'/demand-types',icon:CategoryOutlined},
+  {key:'sla',path:'/sla',icon:AccessTimeOutlined},
+  {key:'users',path:'/users',icon:ManageAccountsOutlined}
+];
 const tutorialSteps:Record<Role,number>={CLIENT:4,SERVICE:4,TRAFFIC_MANAGER:4,ADMIN:5};
 
-function Loading(){const {t}=useTranslation();return <Stack alignItems="center" spacing={2} sx={{py:8}}><CircularProgress/><Typography>{t('messages.loading')}</Typography></Stack>}
-type ApiErrorPayload={code?:string};
-function Failure({error}:{error?:unknown}){const {t}=useTranslation();const code=isAxiosError<ApiErrorPayload>(error)?error.response?.data?.code:undefined;const key=code==='FORBIDDEN'?'messages.forbidden':code==='VALIDATION_ERROR'?'messages.validation':code==='BUSINESS_RULE'?'messages.business':code==='INVALID_TRANSITION'||code==='VERSION_CONFLICT'?'messages.conflict':'messages.error';return <Alert severity="error">{t(key)}</Alert>}
 function date(value:string|null){return value?new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(new Date(value)):'—'}
-function StatusChip({status}:{status:TicketStatus}){const {t}=useTranslation();return <Chip size="small" label={t(`status.${status}`)} color={status==='DONE'?'success':status==='CANCELLED'?'default':status==='WAITING_FOR_CLIENT'?'warning':'primary'} variant="outlined"/>}
+function StatusChip({status}:{status:TicketStatus}){return <StatusBadge status={status}/>;}
 
 function Login(){
   const {t}=useTranslation();
@@ -48,8 +73,8 @@ function Login(){
     <Stack component="form" onSubmit={event=>{event.preventDefault();mutation.mutate();}} justifyContent="center" spacing={3} sx={{width:'100%',maxWidth:480,mx:'auto',boxSizing:'border-box',p:{xs:3,sm:5}}}>
       <Box><Typography variant="h4" fontWeight={700}>{t('login.title')}</Typography><Typography color="text.secondary" sx={{mt:1}}>{t('login.subtitle')}</Typography></Box>
       {mutation.isError&&<Alert severity="error">{t('login.invalid')}</Alert>}
-      <TextField label={t('login.email')} type="email" value={email} onChange={event=>setEmail(event.target.value)} required autoComplete="email"/>
-      <TextField label={t('login.password')} type="password" value={password} onChange={event=>setPassword(event.target.value)} required autoComplete="current-password"/>
+      <TextField size="medium" label={t('login.email')} type="email" value={email} onChange={event=>setEmail(event.target.value)} required autoComplete="email"/>
+      <TextField size="medium" label={t('login.password')} type="password" value={password} onChange={event=>setPassword(event.target.value)} required autoComplete="current-password"/>
       <Button type="submit" size="large" variant="contained" disabled={mutation.isPending}>{t('actions.login')}</Button>
     </Stack>
   </Box>
@@ -60,6 +85,7 @@ function Layout(){
   const session=useQuery({queryKey:['session'],queryFn:apiClient.me});
   const navigate=useNavigate();
   const location=useLocation();
+  useEffect(()=>{window.scrollTo({top:0,left:0});},[location.pathname]);
   const cache=useQueryClient();
   const compact=useMediaQuery(theme.breakpoints.down('md'));
   const [menuOpen,setMenuOpen]=useState(false);
@@ -78,28 +104,16 @@ function Layout(){
         <Stack direction="row" spacing={2} alignItems="center"><Typography sx={{display:{xs:'none',sm:'block'}}} variant="body2" color="text.secondary">{user.name} · {t(`role.${user.role}`)}</Typography><Button onClick={()=>logout.mutate()} disabled={logout.isPending}>{t(logout.isPending?'actions.loggingOut':'actions.logout')}</Button></Stack>
       </Toolbar>
     </AppBar>
-    <Drawer variant={compact?'temporary':'permanent'} open={compact?menuOpen:true} onClose={()=>setMenuOpen(false)} sx={{width:250,flexShrink:0,'& .MuiDrawer-paper':{width:250,boxSizing:'border-box',pt:8,color:'white',background:brandGradient,borderRight:0}}}>
-      <List sx={{px:1,py:2}}>{items.map(item=><ListItemButton key={item.key} component={Link} to={item.path} selected={location.pathname===item.path||(item.path!=='/'&&location.pathname.startsWith(item.path+'/'))} onClick={()=>setMenuOpen(false)} sx={{borderRadius:1,mb:0.5,color:'inherit','&:hover':{bgcolor:'rgba(255,255,255,0.12)'},'&.Mui-selected':{bgcolor:'rgba(255,255,255,0.2)','&:hover':{bgcolor:'rgba(255,255,255,0.25)'}},'&.Mui-focusVisible':{outline:'2px solid white',outlineOffset:-2}}}><ListItemText primary={t(`nav.${item.key}`)}/></ListItemButton>)}</List>
-      <Box sx={{mt:'auto',p:2}}><Button fullWidth variant="outlined" onClick={()=>{setMenuOpen(false);setTutorialOpen(true);}} sx={{color:'inherit',borderColor:'rgba(255,255,255,0.6)','&:hover':{borderColor:'white',bgcolor:'rgba(255,255,255,0.12)'}}}>{t('tutorial.open')}</Button></Box>
+    <Drawer variant={compact?'temporary':'permanent'} open={compact?menuOpen:true} onClose={()=>setMenuOpen(false)} sx={{width:compact?0:250,flexShrink:0,'& .MuiDrawer-paper':{width:250,boxSizing:'border-box',pt:8,color:'white',background:brandGradient,borderRight:0}}}>
+      <List sx={{px:1,py:2}}>{items.map(item=><ListItemButton key={item.key} component={Link} to={item.path} selected={location.pathname===item.path||(item.path!=='/'&&location.pathname.startsWith(item.path+'/'))} onClick={()=>setMenuOpen(false)} sx={{borderRadius:1,mb:0.5,color:'inherit','&:hover':{bgcolor:'rgba(255,255,255,0.12)'},'&.Mui-selected':{bgcolor:'rgba(255,255,255,0.2)','&:hover':{bgcolor:'rgba(255,255,255,0.25)'}},'&.Mui-focusVisible':{outline:'2px solid white',outlineOffset:-2}}}><ListItemIcon sx={{minWidth:36,color:'inherit'}}><item.icon fontSize="small"/></ListItemIcon><ListItemText primary={t(`nav.${item.key}`)}/></ListItemButton>)}</List>
+      <Box sx={{mt:'auto',p:2}}><Button fullWidth variant="outlined" startIcon={<HelpOutline/>} onClick={()=>{setMenuOpen(false);setTutorialOpen(true);}} sx={{color:'inherit',bgcolor:'transparent',borderColor:'rgba(255,255,255,0.6)','&:hover':{borderColor:'white',bgcolor:'rgba(255,255,255,0.12)'}}}>{t('tutorial.open')}</Button></Box>
     </Drawer>
-    <Box component="main" sx={{flexGrow:1,p:{xs:2,md:4},pt:{xs:10,md:12},maxWidth:1600,width:'100%',mx:'auto'}}>
+    <Box component="main" sx={{flexGrow:1,minWidth:0,p:{xs:2,md:4},pt:{xs:10,md:12},maxWidth:1600,width:'100%',mx:'auto'}}>
       {logout.isError&&<Alert severity="error" sx={{mb:2}}>{t('messages.logoutError')}</Alert>}
       <Outlet/>
     </Box>
     {tutorialOpen&&<TutorialDialog role={user.role} onClose={()=>setTutorialOpen(false)}/>}</Box>
 }
-function DashboardPage(){const {t}=useTranslation();const dashboard=useQuery({queryKey:['dashboard'],queryFn:apiClient.dashboard});if(dashboard.isPending)return <Loading/>;if(dashboard.isError)return <Failure error={dashboard.error}/>;const data=dashboard.data;const metrics=[['active',data.activeCount],['priority',data.highPriorityCount],['validation',data.validationCount],['waiting',data.waitingCount],['overdue',data.overdueCount]];return <Stack spacing={3}><Box><Typography variant="h4" fontWeight={700}>{t('dashboard.title')}</Typography></Box><Box sx={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:2}}>{metrics.map(([key,value])=><Card key={key}><CardContent><Typography color="text.secondary">{t(`dashboard.${key}`)}</Typography><Typography variant="h3" fontWeight={700}>{value}</Typography></CardContent></Card>)}</Box><Box sx={{display:'grid',gridTemplateColumns:{lg:'1fr 1fr'},gap:3}}><Card><CardContent><Typography variant="h6">{t('dashboard.distribution')}</Typography><Stack direction="row" flexWrap="wrap" gap={1} mt={2}>{data.statusDistribution.map(item=><Chip key={item.status} label={`${t(`status.${item.status}`)} · ${item.count}`}/>)}</Stack></CardContent></Card><Card><CardContent><Typography variant="h6">{t('dashboard.slaHealth')}</Typography><Typography color="text.secondary" variant="body2">{t('dashboard.classified',{count:data.classifiedCount})}</Typography><Typography variant="h4" color={data.overdueCount?'error.main':'success.main'} sx={{mt:2}}>{data.overdueCount}</Typography><Typography variant="body2">{t('dashboard.overdue')}</Typography></CardContent></Card><Card><CardContent><Typography variant="h6">{t('dashboard.recent')}</Typography><Stack spacing={1} mt={2}>{data.recent.map(item=><Button key={item.id} component={Link} to={`/tickets/${item.id}`} sx={{justifyContent:'space-between'}}>{item.number} · {item.subject}<StatusChip status={item.status}/></Button>)}</Stack></CardContent></Card></Box></Stack>}
-
-function TicketsPage(){
-  const {t}=useTranslation(); const [filters,setFilters]=useState<TicketFilters>({}); const [page,setPage]=useState(0); const [view,setView]=useState<'kanban'|'table'>('kanban'); const refs=useQuery({queryKey:['reference'],queryFn:apiClient.reference}); const session=useQuery({queryKey:['session'],queryFn:apiClient.me}); const query=useQuery({queryKey:['tickets',filters,page],queryFn:()=>apiClient.tickets({...filters,page,size:25})});
-  if(query.isPending||refs.isPending||session.isPending)return <Loading/>; if(query.isError||refs.isError||session.isError)return <Failure error={query.error??refs.error??session.error}/>;
-  const pages=Math.max(1,Math.ceil(query.data.total/query.data.size));
-  const canCreate=session.data.role!=='TRAFFIC_MANAGER';
-  return <Stack spacing={3}><Stack direction={{xs:'column',sm:'row'}} justifyContent="space-between" gap={2}><Box><Typography variant="h4" fontWeight={700}>{t('tickets.title')}</Typography><Typography color="text.secondary">{t('tickets.subtitle')}</Typography></Box>{canCreate&&<Button component={Link} to="/tickets/new" variant="contained">{t('actions.create')}</Button>}</Stack><Card><CardContent><TicketFilterPanel filters={filters} onChange={next=>{setFilters(next);setPage(0);}} reference={refs.data} searchPlaceholder={t('tickets.searchPlaceholder')}/><Stack direction="row" justifyContent="flex-end"><Stack direction="row" spacing={1}><Button variant={view==='kanban'?'contained':'outlined'} onClick={()=>setView('kanban')}>{t('actions.kanban')}</Button><Button variant={view==='table'?'contained':'outlined'} onClick={()=>setView('table')}>{t('actions.table')}</Button></Stack></Stack></CardContent></Card>{view==='kanban'?<TicketKanban items={query.data.items}/>:<TicketTable items={query.data.items}/>}<Stack direction="row" spacing={2} justifyContent="flex-end" alignItems="center"><Typography variant="body2" color="text.secondary">{t('tickets.page',{current:page+1,total:pages})}</Typography><Button onClick={()=>setPage(current=>current-1)} disabled={page===0}>{t('tutorial.previous')}</Button><Button onClick={()=>setPage(current=>current+1)} disabled={page+1>=pages}>{t('tutorial.next')}</Button></Stack></Stack>
-}
-function TicketTable({items}:{items:TicketItem[]}){const {t}=useTranslation();if(!items.length)return <Alert severity="info">{t('tickets.noItems')}</Alert>;return <Stack spacing={1}>{items.map(item=><Card key={item.id} component={Link} to={`/tickets/${item.id}`} sx={{textDecoration:'none',color:'inherit'}}><CardContent sx={{display:'grid',gridTemplateColumns:{md:'1.5fr 1fr 1fr 1fr'},gap:2,alignItems:'center'}}><Box><Typography fontWeight={700}>{item.number} · {item.subject}</Typography><Typography variant="body2" color="text.secondary">{item.typeName}</Typography></Box><Typography>{item.clientName}</Typography><StatusChip status={item.status}/><Typography variant="body2" color="text.secondary">{date(item.updatedAt)}</Typography></CardContent></Card>)}</Stack>}
-function TicketKanban({items}:{items:TicketItem[]}){const {t}=useTranslation();if(!items.length)return <Alert severity="info">{t('tickets.noItems')}</Alert>;return <Box sx={{display:'grid',gridTemplateColumns:'repeat(8,minmax(230px,1fr))',gap:2,overflowX:'auto',pb:2}}>{statuses.map(status=><Stack key={status} spacing={1} sx={{minWidth:230}}><Stack direction="row" justifyContent="space-between" alignItems="center"><StatusChip status={status}/><Chip size="small" label={items.filter(item=>item.status===status).length}/></Stack>{items.filter(item=>item.status===status).map(item=><Card key={item.id} component={Link} to={`/tickets/${item.id}`} sx={{textDecoration:'none',color:'inherit'}}><CardContent><Typography fontWeight={700} variant="body2">{item.number}</Typography><Typography variant="body2">{item.subject}</Typography><Typography variant="caption" display="block" color="text.secondary" sx={{mt:1}}>{item.clientName}</Typography>{item.priority&&<Chip size="small" sx={{mt:1}} label={t(`priority.${item.priority}`)}/>}</CardContent></Card>)}</Stack>)}</Box>}
-
 function NewTicketPage(){
   const {t}=useTranslation(); const navigate=useNavigate(); const refs=useQuery({queryKey:['reference'],queryFn:apiClient.reference}); const session=useQuery({queryKey:['session'],queryFn:apiClient.me}); const [files,setFiles]=useState<File[]>([]); const [customFields,setCustomFields]=useState<Record<string,string>>({}); const [customErrors,setCustomErrors]=useState<Record<string,boolean>>({}); const {control,register,handleSubmit,setError,setValue,watch,formState:{errors}}=useForm<NewTicketForm>({resolver:zodResolver(newTicketSchema),defaultValues:{clientId:'',requesterId:'',campaignId:'',pendingCampaign:'',demandTypeId:'',channel:'',subject:'',description:'',urgency:'MEDIUM',desiredDate:'',metricPeriod:'',impressions:'',ctr:'',cpc:'',conversions:'',cpa:'',roas:''}});
   useEffect(()=>{if(session.data?.role==='CLIENT'&&session.data.clientId)setValue('clientId',session.data.clientId);},[session.data?.clientId,session.data?.role,setValue]);
@@ -162,17 +176,16 @@ function TicketDetailPage(){
   const {t}=useTranslation(); const params=useParams(); const query=useQuery({queryKey:['ticket',params.id],queryFn:()=>apiClient.ticket(params.id!)}); const [action,setAction]=useState<string|null>(null);
   if(query.isPending)return <Loading/>; if(query.isError)return <Failure error={query.error}/>; const data=query.data;
   return <Stack spacing={3}>
-    <Stack direction={{xs:'column',sm:'row'}} justifyContent="space-between" gap={2}><Box><Typography variant="h4" fontWeight={700}>{data.ticket.number} · {data.ticket.subject}</Typography><Typography color="text.secondary">{data.ticket.clientName} · {data.requesterName}</Typography></Box><StatusChip status={data.ticket.status}/></Stack>
+    <Stack direction={{xs:'column',sm:'row'}} justifyContent="space-between" gap={2}><Box><Typography component="h1" variant="h4" fontWeight={700}>{data.ticket.number} · {data.ticket.subject}</Typography><Typography color="text.secondary">{data.ticket.clientName} · {data.requesterName}</Typography></Box><StatusChip status={data.ticket.status}/></Stack>
     <Stack direction="row" flexWrap="wrap" gap={1}>{data.ticket.actions.map(item=><Button key={item} variant={item==='APPROVE'?'contained':'outlined'} onClick={()=>setAction(item)}>{t(actionLabels[item])}</Button>)}</Stack>
     <Box sx={{display:'grid',gridTemplateColumns:{lg:'1.6fr 1fr'},gap:3}}><Stack spacing={3}>
-      <Card><CardContent><Typography variant="h6">{t('tickets.description')}</Typography><Typography sx={{whiteSpace:'pre-wrap',mt:1}}>{data.description}</Typography></CardContent></Card><TicketMetricsCard source={data.metrics}/>
+      <TicketRequestSummary data={data}/><TicketMetricsCard source={data.metrics}/>
       <Card><CardContent><Typography variant="h6">{t('tickets.attachments')}</Typography><Stack spacing={1} mt={2}>{data.attachments.length===0?<Typography color="text.secondary">—</Typography>:data.attachments.map(item=><Box key={item.id}><Typography fontWeight={600}>{item.description??item.name}</Typography>{item.evidenceUrl?<Button component="a" href={item.evidenceUrl} target="_blank" rel="noreferrer">{item.evidenceUrl}</Button>:<Button component="a" href={apiClient.attachmentDownloadUrl(data.ticket.id,item.id)}>{t('actions.download')}</Button>}<Typography variant="caption" display="block" color="text.secondary">{date(item.createdAt)}</Typography></Box>)}</Stack>{data.ticket.status!=='CANCELLED'&&<AttachmentUploader ticketId={data.ticket.id}/>}</CardContent></Card>
       <Card><CardContent><Typography variant="h6">{t('tickets.comments')}</Typography><Stack spacing={2} mt={2}>{data.comments.map(item=><Box key={item.id}><Typography fontWeight={600}>{item.authorName}</Typography><Typography>{item.body}</Typography><Typography variant="caption" color="text.secondary">{date(item.createdAt)}</Typography></Box>)}</Stack></CardContent></Card>
-    </Stack><Stack spacing={3}><Card><CardContent><Typography variant="h6">{t('tickets.sla')}</Typography><Typography>{data.slaState}</Typography><Typography variant="body2">{date(data.responseDueAt)} · {date(data.resolutionDueAt)}</Typography></CardContent></Card><Card><CardContent><Typography variant="h6">{t('tickets.history')}</Typography><Stack spacing={2} mt={2}>{data.history.map(item=><Box key={item.id}><Typography fontWeight={600}>{item.action}</Typography><Typography variant="body2">{item.actorName} · {date(item.createdAt)}</Typography><Typography variant="body2" color="text.secondary">{item.reason}</Typography></Box>)}</Stack></CardContent></Card></Stack></Box>
+    </Stack><Stack spacing={3}><Card><CardContent><Typography variant="h6">{t('tickets.sla')}</Typography><Typography>{t(`slaState.${data.slaState}`,{defaultValue:data.slaState})}</Typography><Stack spacing={1} sx={{mt:2}}><Typography variant="body2">Primeira resposta: <strong>{date(data.responseDueAt)}</strong></Typography><Typography variant="body2">Resolução: <strong>{date(data.resolutionDueAt)}</strong></Typography><Typography variant="caption" color="text.secondary">Ciclo de resolução: {data.resolutionCycle}</Typography></Stack></CardContent></Card><Card><CardContent><Typography variant="h6">{t('tickets.history')}</Typography><Stack spacing={2} mt={2}>{data.history.map(item=><Box key={item.id}><Typography fontWeight={600}>{t(`historyAction.${item.action}`,{defaultValue:item.action})}</Typography><Typography variant="body2">{item.actorName} · {date(item.createdAt)}</Typography><Typography variant="body2" color="text.secondary">{item.reason}</Typography></Box>)}</Stack></CardContent></Card></Stack></Box>
     {action&&<ActionDialog ticket={data} action={action} onClose={()=>setAction(null)}/>}</Stack>
 }
 
-function NotificationsPage(){const {t}=useTranslation();const cache=useQueryClient();const query=useQuery({queryKey:['notifications'],queryFn:apiClient.notifications});const read=useMutation({mutationFn:apiClient.readNotification,onSuccess:()=>cache.invalidateQueries({queryKey:['notifications']})});if(query.isPending)return <Loading/>;if(query.isError)return <Failure error={query.error}/>;return <Stack spacing={3}><Typography variant="h4" fontWeight={700}>{t('notifications.title')}</Typography>{query.data.items.length===0?<Alert severity="info">{t('notifications.empty')}</Alert>:query.data.items.map(item=><Card key={item.id} component={Link} to={`/tickets/${item.ticketId}`} sx={{textDecoration:'none',color:'inherit'}}><CardContent sx={{display:'flex',justifyContent:'space-between',gap:2}}><Box><Typography fontWeight={item.readAt?400:700}>{item.ticketNumber} · {item.summary}</Typography><Typography variant="body2" color="text.secondary">{date(item.createdAt)}</Typography></Box>{!item.readAt&&<Button onClick={event=>{event.preventDefault();read.mutate(item.id)}}>{t('actions.markRead')}</Button>}</CardContent></Card>)}</Stack>}
 type ManagementField={key:string;type?:'text'|'email'|'password'|'time'|'checkbox'|'select'|'textarea';createOnly?:boolean;options?:string[]};
 const managementFields:Record<string,ManagementField[]>={
   clients:[{key:'name'},{key:'contactName'},{key:'email',type:'email'},{key:'phone'}],
@@ -186,20 +199,75 @@ const managementDefaults:Record<string,Record<string,unknown>>={
   'sla-rules':{scope:'DEFAULT',timezone:'America/Sao_Paulo',businessDays:'["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY"]',businessStart:'08:00',businessEnd:'18:00',holidays:'[]',pauseInValidation:false,deadlines:'{"URGENT":{"responseHours":2,"resolutionHours":8},"HIGH":{"responseHours":4,"resolutionHours":16},"MEDIUM":{"responseHours":8,"resolutionHours":24},"LOW":{"responseHours":16,"resolutionHours":40}}',active:true},
 };
 function ManagementDialog({resource,item,onClose}:{resource:string;item:Record<string,unknown>|null;onClose:()=>void}){
-  const {t}=useTranslation(); const cache=useQueryClient(); const refs=useQuery({queryKey:['reference'],queryFn:apiClient.reference}); const [values,setValues]=useState<Record<string,unknown>>({...managementDefaults[resource],...(item??{})});
-  const fields=managementFields[resource]; const mutation=useMutation({mutationFn:()=>item?apiClient.updateResource(resource,String(item.id),Object.fromEntries(Object.entries(values).filter(([key])=>key!=='id'&&(key!=='active'||resource==='users'||resource==='sla-rules')))):apiClient.createResource(resource,values),onSuccess:()=>{cache.invalidateQueries({queryKey:['management',resource]});cache.invalidateQueries({queryKey:['reference']});onClose();}});
-  const options=(field:string)=>{if(field==='clientId')return refs.data?.clients.map(value=>({value:value.id,label:value.label}))??[];if(field==='demandTypeId')return refs.data?.demandTypes.map(value=>({value:value.id,label:value.name}))??[];if(field==='role')return (['CLIENT','SERVICE','TRAFFIC_MANAGER','ADMIN'] as Role[]).map(value=>({value,label:t(`role.${value}`)}));if(field==='scope')return ['DEFAULT','CLIENT','DEMAND_TYPE','CLIENT_AND_DEMAND_TYPE'].map(value=>({value,label:value}));return [];};
+  const {t}=useTranslation(); const cache=useQueryClient();
+  const refs=useQuery({queryKey:['reference'],queryFn:apiClient.reference});
+  const [values,setValues]=useState<Record<string,unknown>>({...managementDefaults[resource],...(item??{})});
+  const fields=managementFields[resource];
+  const mutation=useMutation({mutationFn:()=>{
+    const body=Object.fromEntries(fields.filter(field=>!(field.createOnly&&item)).map(field=>[field.key,values[field.key]??(field.type==='checkbox'?false:null)]));
+    if(resource==='sla-rules'){
+      body.clientId=['CLIENT','CLIENT_AND_DEMAND_TYPE'].includes(String(body.scope))?(body.clientId||null):null;
+      body.demandTypeId=['DEMAND_TYPE','CLIENT_AND_DEMAND_TYPE'].includes(String(body.scope))?(body.demandTypeId||null):null;
+    }
+    if(resource==='users'&&body.role!=='CLIENT')body.clientId=null;
+    return item?apiClient.updateResource(resource,String(item.id),body):apiClient.createResource(resource,body);
+  },onSuccess:()=>{cache.invalidateQueries({queryKey:['management',resource]});cache.invalidateQueries({queryKey:['reference']});onClose();}});
+  const options=(field:string)=>{
+    if(field==='clientId')return refs.data?.clients.map(value=>({value:value.id,label:value.label}))??[];
+    if(field==='demandTypeId')return refs.data?.demandTypes.map(value=>({value:value.id,label:value.name}))??[];
+    if(field==='role')return (['CLIENT','SERVICE','TRAFFIC_MANAGER','ADMIN'] as Role[]).map(value=>({value,label:t(`role.${value}`)}));
+    if(field==='scope')return Object.entries(scopeLabels).map(([value,label])=>({value,label}));
+    return [];
+  };
   const update=(key:string,value:unknown)=>setValues(current=>({...current,[key]:value}));
-  if(refs.isPending)return <Dialog open><DialogContent><Loading/></DialogContent></Dialog>;
-  return <Dialog open onClose={onClose} fullWidth maxWidth="sm"><DialogTitle>{t(item?'admin.edit':'admin.new')}</DialogTitle><DialogContent><Stack spacing={2} sx={{pt:1}}>{fields.filter(field=>!(field.createOnly&&item)).map(field=>{const label=t(`admin.fields.${field.key}`);const value=values[field.key]??(field.type==='checkbox'?false:'');if(field.type==='checkbox')return <FormControl key={field.key}><Button variant={value?'contained':'outlined'} onClick={()=>update(field.key,!value)}>{label}: {value?'✓':'—'}</Button></FormControl>;if(field.type==='select')return <FormControl key={field.key}><InputLabel>{label}</InputLabel><Select label={label} value={String(value)} onChange={event=>update(field.key,event.target.value)}><MenuItem value="">—</MenuItem>{options(field.key).map(option=><MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>)}</Select></FormControl>;return <TextField key={field.key} label={label} type={field.type==='textarea'?'text':field.type??'text'} multiline={field.type==='textarea'} minRows={field.type==='textarea'?3:undefined} value={String(value)} onChange={event=>update(field.key,event.target.value)} required={field.key!=='phone'&&field.key!=='clientId'&&field.key!=='demandTypeId'}/>;})}{mutation.isError&&<Failure/>}</Stack></DialogContent><DialogActions><Button onClick={onClose}>{t('actions.cancel')}</Button><Button variant="contained" onClick={()=>mutation.mutate()} disabled={mutation.isPending}>{t('actions.save')}</Button></DialogActions></Dialog>;
+  const visibleFields=fields.filter(field=>{
+    if(field.createOnly&&item)return false;
+    if(resource==='users'&&field.key==='clientId'&&values.role!=='CLIENT')return false;
+    if(resource==='sla-rules'&&field.key==='clientId'&&!['CLIENT','CLIENT_AND_DEMAND_TYPE'].includes(String(values.scope)))return false;
+    if(resource==='sla-rules'&&field.key==='demandTypeId'&&!['DEMAND_TYPE','CLIENT_AND_DEMAND_TYPE'].includes(String(values.scope)))return false;
+    return true;
+  });
+  return <Dialog open onClose={mutation.isPending?undefined:onClose} fullWidth maxWidth={resource==='sla-rules'?'md':'sm'} aria-labelledby="management-dialog-title">
+    <Box component="form" onSubmit={event=>{event.preventDefault();mutation.mutate();}}>
+      <DialogTitle id="management-dialog-title">{t(item?'admin.edit':'admin.new')}</DialogTitle>
+      <DialogContent><Stack spacing={2} sx={{pt:1}}>
+        {refs.isPending?<Loading/>:refs.isError?<Failure error={refs.error}/>:visibleFields.map(field=>{
+          const label=t(`admin.fields.${field.key}`); const value=values[field.key]??(field.type==='checkbox'?false:'');
+          if(field.key==='fieldDefinitions')return <DynamicFieldsEditor key={field.key} value={value} onChange={next=>update(field.key,next)}/>;
+          if(field.key==='businessDays')return <SlaCalendarEditor key={field.key} values={values} onChange={update}/>;
+          if(field.key==='holidays')return null;
+          if(field.key==='deadlines')return <SlaDeadlinesEditor key={field.key} value={value} onChange={next=>update(field.key,next)}/>;
+          if(field.type==='checkbox')return <FormControlLabel key={field.key} control={<Switch color="secondary" checked={Boolean(value)} onChange={event=>update(field.key,event.target.checked)}/>} label={label}/>;
+          if(field.type==='select')return <FormControl key={field.key} required><InputLabel id={`management-${field.key}-label`}>{label}</InputLabel><Select labelId={`management-${field.key}-label`} label={label} value={String(value)} onChange={event=>update(field.key,event.target.value)}><MenuItem value="">{t('admin.select')}</MenuItem>{options(field.key).map(option=><MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>)}</Select></FormControl>;
+          return <TextField key={field.key} label={label} type={field.type==='textarea'?'text':field.type??'text'} multiline={field.type==='textarea'} minRows={field.type==='textarea'?3:undefined} value={String(value)} onChange={event=>update(field.key,event.target.value)} required={field.key!=='phone'} helperText={field.key==='password'?t('admin.passwordHint'):undefined} slotProps={{htmlInput:field.key==='password'?{minLength:12,maxLength:128}:undefined,inputLabel:field.type==='time'?{shrink:true}:undefined}}/>;
+        })}
+        {mutation.isError&&<Failure error={mutation.error}/>}
+      </Stack></DialogContent>
+      <DialogActions><Button onClick={onClose} disabled={mutation.isPending}>{t('actions.cancel')}</Button><Button type="submit" variant="contained" disabled={mutation.isPending||refs.isPending||refs.isError}>{t('actions.save')}</Button></DialogActions>
+    </Box>
+  </Dialog>;
 }
-function ManagementPage({resource,titleKey}:{resource:string;titleKey:string}){const {t}=useTranslation();const cache=useQueryClient();const [editing,setEditing]=useState<Record<string,unknown>|null|undefined>(undefined);const [search,setSearch]=useState('');const query=useQuery({queryKey:['management',resource],queryFn:()=>apiClient.managementList(resource)});const toggle=useMutation({mutationFn:(item:Record<string,unknown>)=>apiClient.setResourceActive(resource,String(item.id),!Boolean(item.active)),onSuccess:()=>cache.invalidateQueries({queryKey:['management',resource]})});if(query.isPending)return <Loading/>;if(query.isError)return <Failure/>;const visible=query.data.filter(item=>JSON.stringify(item).toLocaleLowerCase().includes(search.toLocaleLowerCase()));return <Stack spacing={3}><Stack direction="row" justifyContent="space-between"><Typography variant="h4" fontWeight={700}>{t(titleKey)}</Typography><Button variant="contained" onClick={()=>setEditing(null)}>{t('admin.new')}</Button></Stack><Card><CardContent><Stack direction={{xs:'column',sm:'row'}} spacing={2}><TextField fullWidth label={t('actions.search')} value={search} onChange={event=>setSearch(event.target.value)}/><Button onClick={()=>setSearch('')}>{t('actions.clear')}</Button></Stack></CardContent></Card>{visible.length===0?<Alert severity="info">{t('tickets.noItems')}</Alert>:visible.map(item=><Card key={String(item.id)}><CardContent><Stack direction={{xs:'column',sm:'row'}} justifyContent="space-between" gap={2}><Box><Typography fontWeight={700}>{String(item.name??item.email??item.id)}</Typography><Stack direction="row" gap={1} flexWrap="wrap" mt={1}>{Object.entries(item).filter(([key,value])=>!['id','name'].includes(key)&&value!==null&&typeof value!=='object').map(([key,value])=><Chip key={key} size="small" label={`${t(`admin.fields.${key}`)}: ${String(value)}`}/>)}</Stack></Box><Stack direction="row" gap={1}><Button onClick={()=>setEditing(item)}>{t('actions.open')}</Button>{typeof item.active==='boolean'&&resource!=='users'&&resource!=='sla-rules'&&<Button onClick={()=>toggle.mutate(item)}>{Boolean(item.active)?t('actions.cancel'):t('actions.open')}</Button>}</Stack></Stack></CardContent></Card>)}{editing!==undefined&&<ManagementDialog resource={resource} item={editing} onClose={()=>setEditing(undefined)}/>}</Stack>}
-function ReportPage(){
-  const {t}=useTranslation(); const [filters,setFilters]=useState<TicketFilters>({}); const refs=useQuery({queryKey:['reference'],queryFn:apiClient.reference}); const query=useQuery({queryKey:['report',filters],queryFn:()=>apiClient.reportTickets(filters)});
-  const exportCsv=useMutation({mutationFn:()=>apiClient.exportTickets(filters),onSuccess:blob=>{const url=URL.createObjectURL(blob);const anchor=document.createElement('a');anchor.href=url;anchor.download='sige-desk-tickets.csv';anchor.click();URL.revokeObjectURL(url);}});
-  if(query.isPending||refs.isPending)return <Loading/>;if(query.isError||refs.isError)return <Failure error={query.error??refs.error}/>;
-  const summary=query.data.summary;const average=summary.averageResolutionMinutes===null?t('reports.notAvailable'):`${summary.averageResolutionMinutes} ${t('reports.minutes')}`;
-  return <Stack spacing={3}><Stack direction="row" justifyContent="space-between"><Typography variant="h4" fontWeight={700}>{t('nav.reports')}</Typography><Button variant="outlined" onClick={()=>exportCsv.mutate()} disabled={exportCsv.isPending}>{t('actions.export')}</Button></Stack>{exportCsv.isError&&<Failure error={exportCsv.error}/>}<Card><CardContent><TicketFilterPanel filters={filters} onChange={setFilters} reference={refs.data}/></CardContent></Card><Box sx={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:2}}>{[['active',summary.activeCount],['completed',summary.completedCount],['slaCompliant',`${summary.slaCompliantCount}/${summary.classifiedCount}`],['overdue',summary.overdueCount],['averageResolution',average]].map(([key,value])=><Card key={key}><CardContent><Typography color="text.secondary">{t(`reports.${key}`)}</Typography><Typography variant="h5" fontWeight={700}>{value}</Typography></CardContent></Card>)}</Box><TicketTable items={query.data.items}/></Stack>
+function ManagementPage({resource,titleKey}:{resource:string;titleKey:string}){
+  const {t}=useTranslation(); const cache=useQueryClient();
+  const [editing,setEditing]=useState<Record<string,unknown>|null|undefined>(undefined);
+  const [search,setSearch]=useState('');
+  const query=useQuery({queryKey:['management',resource],queryFn:()=>apiClient.managementList(resource)});
+  const refs=useQuery({queryKey:['reference'],queryFn:apiClient.reference});
+  const session=useQuery({queryKey:['session'],queryFn:apiClient.me});
+  const toggle=useMutation({mutationFn:(item:Record<string,unknown>)=>{
+    const active=!Boolean(item.active);
+    if(resource==='users') return apiClient.updateResource(resource,String(item.id),{name:item.name,email:item.email,role:item.role,clientId:item.clientId,active});
+    if(resource==='sla-rules') return apiClient.updateResource(resource,String(item.id),Object.fromEntries(Object.entries({...item,active}).filter(([key])=>!['id','versionNumber'].includes(key))));
+    return apiClient.setResourceActive(resource,String(item.id),active);
+  },onSuccess:()=>{cache.invalidateQueries({queryKey:['management',resource]});cache.invalidateQueries({queryKey:['reference']});}});
+  if(query.isPending||refs.isPending||session.isPending)return <Loading/>;
+  if(query.isError||refs.isError||session.isError)return <Failure error={query.error??refs.error??session.error}/>;
+  return <Stack spacing={2.5}>
+    <PageHeading title={t(titleKey)} description={t(`admin.descriptions.${resource}`)} actions={<Button variant="contained" startIcon={<Add/>} onClick={()=>setEditing(null)}>{t('admin.add')}</Button>}/>
+    {toggle.isError&&<Failure error={toggle.error}/>}
+    <ManagementListing resource={resource} items={query.data} reference={refs.data} search={search} onSearch={setSearch} onEdit={setEditing} onToggle={item=>toggle.mutate(item)} pending={toggle.isPending} currentUserId={session.data.id}/>
+    {editing!==undefined&&<ManagementDialog resource={resource} item={editing} onClose={()=>setEditing(undefined)}/>}
+  </Stack>;
 }
 function AppRoutes(){return <Routes><Route path="/login" element={<Login/>}/><Route element={<Layout/>}><Route path="/" element={<DashboardPage/>}/><Route path="/tickets" element={<TicketsPage/>}/><Route path="/tickets/new" element={<NewTicketPage/>}/><Route path="/tickets/:id" element={<TicketDetailPage/>}/><Route path="/notifications" element={<NotificationsPage/>}/><Route path="/reports" element={<ReportPage/>}/><Route path="/clients" element={<ManagementPage resource="clients" titleKey="nav.clients"/>}/><Route path="/campaigns" element={<ManagementPage resource="campaigns" titleKey="nav.campaigns"/>}/><Route path="/demand-types" element={<ManagementPage resource="demand-types" titleKey="nav.demandTypes"/>}/><Route path="/sla" element={<ManagementPage resource="sla-rules" titleKey="nav.sla"/>}/><Route path="/users" element={<ManagementPage resource="users" titleKey="nav.users"/>}/></Route><Route path="*" element={<Navigate to="/" replace/>}/></Routes>}
 export function App(){return <ThemeProvider theme={theme}><CssBaseline/><AppRoutes/></ThemeProvider>}
