@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "api:sync": "node scripts/sync-api.mjs"
   },
   "dependencies": {
     "@caldwell619/react-kanban": "^0.0.12",

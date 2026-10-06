@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Dashboard, NotificationItem, ReferenceData, Session, TicketDetail, TicketFilters, TicketItem, TicketList, TicketReport } from './types';
+import type { Dashboard, Notifications, ReferenceData, Session, TicketDetail, TicketFilters, TicketItem, TicketList, TicketReport } from './types';
 
 // O interceptor envia o token mascarado do endpoint; o Axios não deve substituí-lo pelo cookie bruto.
 const api = axios.create({ baseURL: '/api/v1', withCredentials: true, withXSRFToken: false, headers: { 'Content-Type': 'application/json' } });
@@ -18,12 +18,14 @@ export const apiClient = {
   tickets: (filters:TicketFilters={}) => api.get<TicketList>('/tickets',{params:filters}).then(response=>response.data),
   ticket: (id:string) => api.get<TicketDetail>(`/tickets/${id}`).then(response=>response.data),
   reference: () => api.get<ReferenceData>('/reference').then(response=>response.data),
+  createTicketWithFiles: (body:unknown,files:File[],fields:Record<string,File>) => {const form=new FormData();form.append('request',new Blob([JSON.stringify(body)],{type:'application/json'}));files.forEach(file=>form.append('files',file));Object.entries(fields).forEach(([name,file])=>form.append(`field.${name}`,file));return api.post<TicketItem>('/tickets',form,{headers:{'Content-Type':'multipart/form-data'}}).then(response=>response.data);},
   createTicket: (body:unknown) => api.post<TicketItem>('/tickets',body).then(response=>response.data),
-  action: (id:string,path:string,body:unknown) => api.post<TicketItem>(`/tickets/${id}/${path}`,body).then(response=>response.data),
-  comment: (id:string,body:unknown) => api.post(`/tickets/${id}/comments`,body).then(response=>response.data),
-  notifications: () => api.get<{items:NotificationItem[];unreadCount:number}>('/notifications').then(response=>response.data),
+  action: (id:string,path:string,body:unknown,version:number) => api.post<TicketItem>(`/tickets/${id}/${path}`,body,{headers:{'If-Match':String(version)}}).then(response=>response.data),
+  comment: (id:string,body:unknown,version:number) => api.post(`/tickets/${id}/comments`,body,{headers:{'If-Match':String(version)}}).then(response=>response.data),
+  notifications: (page=0,unread=false) => api.get<Notifications>('/notifications',{params:{page,size:25,unread}}).then(response=>response.data),
   readNotification: (id:string) => api.post(`/notifications/${id}/read`).then(()=>undefined),
   readAllNotifications: () => api.post('/notifications/read-all').then(()=>undefined),
+  managementPage: (resource:string,search:string,page:number) => api.get<{items:Record<string,unknown>[];total:number;page:number;size:number}>(`/${resource}/page`,{params:{search,page,size:25}}).then(response=>response.data),
   managementList: (resource:string) => api.get<Record<string, unknown>[]>(`/${resource}`).then(response=>response.data),
   createResource: (resource:string,body:unknown) => api.post(`/${resource}`,body).then(response=>response.data),
   updateResource: (resource:string,id:string,body:unknown) => api.put(`/${resource}/${id}`,body).then(response=>response.data),

@@ -29,6 +29,10 @@ public class ApiExceptionHandler {
   ResponseEntity<ApiError> conflict(IllegalStateException ex) { return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiError("INVALID_TRANSITION", ex.getMessage(), Instant.now(), Map.of())); }
   @ExceptionHandler({OptimisticLockException.class, ObjectOptimisticLockingFailureException.class})
   ResponseEntity<ApiError> optimistic(Exception ex) { return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiError("VERSION_CONFLICT", "O ticket foi alterado por outra pessoa.", Instant.now(), Map.of())); }
+  @ExceptionHandler(org.springframework.dao.DataIntegrityViolationException.class)
+  ResponseEntity<ApiError> integrity(org.springframework.dao.DataIntegrityViolationException ex) { return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiError("DATA_CONFLICT", "O cadastro conflita com dados existentes. Confira os campos informados.", Instant.now(), Map.of())); }
+  @ExceptionHandler(org.springframework.web.multipart.MaxUploadSizeExceededException.class)
+  ResponseEntity<ApiError> uploadLimit(Exception ex) { return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body(new ApiError("UPLOAD_TOO_LARGE", "O envio excede o limite permitido de arquivos.", Instant.now(), Map.of())); }
   @ExceptionHandler(ResponseStatusException.class)
   ResponseEntity<ApiError> status(ResponseStatusException ex) { return ResponseEntity.status(ex.getStatusCode()).body(new ApiError("REQUEST_ERROR", ex.getReason(), Instant.now(), Map.of())); }
 }

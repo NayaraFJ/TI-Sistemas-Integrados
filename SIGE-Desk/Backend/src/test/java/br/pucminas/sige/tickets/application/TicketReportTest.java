@@ -95,6 +95,9 @@ class TicketReportTest {
   }
 
   private TicketService service(TicketAccessPolicy access, CurrentUser current) {
-    return new TicketService(Mockito.mock(TicketRepository.class), Mockito.mock(ClientRepository.class), Mockito.mock(CampaignRepository.class), Mockito.mock(DemandTypeRepository.class), Mockito.mock(AppUserRepository.class), Mockito.mock(TicketHistoryRepository.class), Mockito.mock(TicketCommentRepository.class), Mockito.mock(TicketAttachmentRepository.class), Mockito.mock(TicketNumberGenerator.class), Mockito.mock(SlaService.class), Mockito.mock(NotificationService.class), current, access, new ObjectMapper());
+    TicketRepository repository=Mockito.mock(TicketRepository.class);
+    when(repository.findAll(Mockito.<org.springframework.data.jpa.domain.Specification<Ticket>>any(),Mockito.any(org.springframework.data.domain.Sort.class))).thenAnswer(call->access.visibleTickets(current.require()));
+    when(repository.findAll(Mockito.<org.springframework.data.jpa.domain.Specification<Ticket>>any(),Mockito.any(org.springframework.data.domain.Pageable.class))).thenAnswer(call->{var page=(org.springframework.data.domain.Pageable)call.getArgument(1);var all=access.visibleTickets(current.require());int start=(int)Math.min(page.getOffset(),all.size());return new org.springframework.data.domain.PageImpl<>(all.subList(start,Math.min(start+page.getPageSize(),all.size())),page,all.size());});
+    return new TicketService(repository, Mockito.mock(ClientRepository.class), Mockito.mock(CampaignRepository.class), Mockito.mock(DemandTypeRepository.class), Mockito.mock(AppUserRepository.class), Mockito.mock(TicketHistoryRepository.class), Mockito.mock(TicketCommentRepository.class), Mockito.mock(TicketAttachmentRepository.class), Mockito.mock(TicketNumberGenerator.class), Mockito.mock(SlaService.class), Mockito.mock(NotificationService.class), current, access, new ObjectMapper());
   }
 }

@@ -71,7 +71,7 @@ export function TicketKanban({ items }: { items: TicketItem[] }) {
         '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main' }
       }}>
         <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
-          <Stack direction="row" justifyContent="space-between" alignItems="center" gap={1}><Typography variant="caption" color="primary" fontWeight={800}>{ticket.number}</Typography><PriorityText priority={ticket.priority}/></Stack>
+          <Stack direction="row" justifyContent="space-between" alignItems="center" gap={1}><Typography variant="caption" color="primary" fontWeight={800}>{ticket.number}</Typography><PriorityText priority={ticket.priority}/></Stack>{ticket.overdue&&<Chip size="small" color="error" variant="outlined" label={t('dashboard.overdue')} sx={{mt:1}}/>}
           <Typography variant="body2" fontWeight={600} sx={{ mt: 0.5, minHeight: 42, overflowWrap: 'anywhere' }}>{ticket.subject}</Typography>
           <Typography variant="caption" display="block" color="text.secondary" sx={{ mt: 1 }}>{ticket.clientName}</Typography>
           <Typography variant="caption" display="block" color="text.secondary">{ticket.typeName}</Typography><Typography variant="caption" display="block" color="text.secondary" sx={{ mt: 1, pt: 1, borderTop: 1, borderColor: 'divider' }}>{ticket.campaignName ?? 'Campanha pendente'}</Typography>

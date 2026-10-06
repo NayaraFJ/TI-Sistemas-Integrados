@@ -25,8 +25,8 @@ public class AuthController {
   private final CurrentUser currentUser;
   private final HttpSessionSecurityContextRepository contexts = new HttpSessionSecurityContextRepository();
   public AuthController(AuthenticationManager authenticationManager, CurrentUser currentUser) { this.authenticationManager=authenticationManager; this.currentUser=currentUser; }
-  record LoginRequest(@NotBlank @Email String email, @NotBlank String password) {}
-  record SessionResponse(String id, String name, String email, String role, String clientId) {}
+  @io.swagger.v3.oas.annotations.media.Schema(name="AuthLoginRequest") record LoginRequest(@NotBlank @Email String email, @NotBlank String password) {}
+  @io.swagger.v3.oas.annotations.media.Schema(name="AuthSessionResponse") record SessionResponse(String id, String name, String email, @io.swagger.v3.oas.annotations.media.Schema(allowableValues={"CLIENT","SERVICE","TRAFFIC_MANAGER","ADMIN"}) String role, @io.swagger.v3.oas.annotations.media.Schema(types={"string","null"}) String clientId) {}
   @PostMapping("/login")
   public SessionResponse login(@Valid @RequestBody LoginRequest request, HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
     try {

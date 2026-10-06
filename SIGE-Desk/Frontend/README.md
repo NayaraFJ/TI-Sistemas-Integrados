@@ -61,3 +61,18 @@ As abas de clientes, campanhas, tipos de demanda, SLA e usuários usam uma lista
 Em Tickets, alterne entre Kanban e tabela. Os filtros principais ficam visíveis; **Mais filtros** mostra campanha, tipo, prioridade oficial, responsável e período. Recolher os campos preserva os filtros aplicados. A paginação permite 10, 25 ou 50 itens, e a exportação CSV considera todos os resultados dos filtros, independentemente da página exibida.
 
 Notificações permite consultar todas ou apenas não lidas, marcar uma notificação e marcar todas como lidas. Os indicadores e gráficos do painel e dos relatórios vêm da API. Os dados de demonstração do backend são persistidos no MySQL.
+
+## Campos, concorrência e contrato
+
+Tipos de demanda permitem texto, número, data, seleção e anexo, com limites e obrigatoriedade condicional. A abertura envia arquivos e ticket juntos; uma falha mantém o formulário e não cria um ticket parcial. No detalhe, os rótulos dos campos seguem o snapshot da demanda.
+
+Atendimento/Admin podem reatribuir tickets ativos com motivo. Formulários guardam a versão aberta: se o ticket mudar, a API rejeita a alteração e a interface pede fechar/reabrir a ação para revisar os dados atuais. O filtro **Somente SLA vencido** funciona na lista, no Kanban e nos relatórios. Cadastros e notificações paginam no servidor.
+
+Para atualizar contrato e tipos após mudar DTOs do backend:
+
+```powershell
+pnpm api:sync http://localhost:8080/v3/api-docs
+pnpm build
+```
+
+Sem servidor, `pnpm api:sync` gera tipos a partir do contrato versionado. Detalhes em [docs/openapi.md](../docs/openapi.md).

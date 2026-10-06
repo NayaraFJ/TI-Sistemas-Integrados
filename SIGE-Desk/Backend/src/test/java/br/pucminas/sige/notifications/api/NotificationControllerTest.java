@@ -28,13 +28,12 @@ class NotificationControllerTest {
     Ticket ticket = ticket(user);
     Notification notification = new Notification(user, ticket, "ASSIGNED", "Novo responsável");
     when(current.require()).thenReturn(user);
-    when(notifications.findByUserIdOrderByCreatedAtDesc(user.getId())).thenReturn(List.of(notification));
+    when(notifications.findById(notification.getId())).thenReturn(java.util.Optional.of(notification));
     when(access.canAccess(ticket, user)).thenReturn(false);
 
-    var response = new NotificationController(notifications, current, access).list();
-
-    assertEquals(List.of(), response.items());
-    assertEquals(0, response.unreadCount());
+    var ex=org.junit.jupiter.api.Assertions.assertThrows(org.springframework.web.server.ResponseStatusException.class,()->new NotificationController(notifications,current,access).markRead(notification.getId()));
+    assertEquals(404,ex.getStatusCode().value());
+    org.junit.jupiter.api.Assertions.assertNull(notification.getReadAt());
   }
 
   private AppUser user() {

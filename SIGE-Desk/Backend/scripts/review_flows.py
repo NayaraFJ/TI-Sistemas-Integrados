@@ -15,7 +15,7 @@ class Account:
     def __init__(self,email,password="123"):
         self.email=email;self.jar=http.cookiejar.CookieJar();self.http=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.jar));self.token=None
         self.me=self.request('/auth/login',dict(email=email,password=password),'POST')
-    def request(self,path,body=None,method='GET',expected=200,raw=None,content_type=None,csrf=True):
+    def request(self,path,body=None,method='GET',expected=200,raw=None,content_type=None,csrf=True,version="auto"):
         headers={}
         if method!='GET' and path!='/auth/login' and csrf:
             if self.token is None:self.token=self.request('/auth/csrf')['token']
@@ -23,6 +23,10 @@ class Account:
         if raw is not None: data=raw;headers['Content-Type']=content_type
         elif body is not None:data=json.dumps(body).encode();headers['Content-Type']='application/json'
         else:data=None
+        parts=path.split('/')
+        if method=='POST' and len(parts)>=4 and parts[1]=='tickets' and parts[3]!='attachments' and csrf:
+            if version=='auto':version=self.request('/tickets/'+parts[2])['ticket']['version']
+            if version is not None:headers['If-Match']=str(version)
         req=urllib.request.Request(args.base_url+path,data=data,headers=headers,method=method)
         try:
             with self.http.open(req,timeout=10) as response:status=response.status;data=response.read();headers=dict(response.headers)
@@ -131,6 +135,56 @@ def reference_and_report():
     page=a.request('/tickets?page=1&size=10');check('Paginação devolve segunda página',page['page']==1 and len(page['items'])==10)
     a.request('/tickets?page=-1',expected=400)
 
+def concurrency_and_reassignment():
+    tp=new_type(False,False);ticket=create_ticket(tp);old=detail(ticket)['ticket']['version'];start(ticket)
+    stale=staff.request('/tickets/'+ticket['id']+'/triage/start',{'reason':'Formulário antigo'},'POST',409,version=old)
+    check('Formulário antigo retorna conflito explícito',stale['code']=='VERSION_CONFLICT')
+    staff.request('/tickets/'+ticket['id']+'/wait',{'reason':'Sem versão'},'POST',428,version=None)
+    triage(ticket,tp);before=detail(ticket)
+    action(staff,ticket,'reassign',dict(assigneeId=other_manager.me['id'],reason='Continuidade do atendimento'))
+    manager.request('/tickets/'+ticket['id'],expected=404);other_manager.request('/tickets/'+ticket['id'])
+    after=detail(ticket);check('Reatribuição preserva prazo e ciclo',before['resolutionDueAt']==after['resolutionDueAt'] and before['resolutionCycle']==after['resolutionCycle'])
+    action(c,ticket,'reassign',dict(assigneeId=manager.me['id'],reason='Indevido'),403)
+    action(other_manager,ticket,'wait',{'reason':'Preciso de contexto'})
+    action(a,ticket,'reassign',dict(assigneeId=manager.me['id'],reason='Redistribuição durante espera'))
+    other_manager.request('/tickets/'+ticket['id'],expected=404)
+    action(c,ticket,'complement',{'body':'Dados enviados','effectiveResponse':False});action(staff,ticket,'resume',{'reason':'Contexto suficiente'})
+    check('Retomada audita novo prazo',any(h['action']=='RESOLUTION_DEADLINE_CHANGED' for h in detail(ticket)['history']))
+
+def typed_fields_and_atomic_upload():
+    fields=[dict(name='budget',label='Orçamento',type='NUMBER',required=True,validation={'min':0,'max':100}),dict(name='date',label='Data',type='DATE',required=True),dict(name='channel',label='Canal',type='SELECT',options=['Google','Meta'],required=True),dict(name='context',label='Contexto',type='TEXT',requiredWhen={'field':'channel','equals':'Meta'},validation={'minLength':3}),dict(name='brief',label='Briefing',type='FILE',required=True)]
+    tp=a.request('/demand-types',dict(name=tag+' campos tipados',approvalRequired=False,evidenceRequired=False,fieldDefinitions=json.dumps(fields)),'POST',201)
+    body=dict(clientId=client_id,campaignId=campaign['id'],demandTypeId=tp['id'],channel='Google Ads',subject=tag+' tipado',description='Teste de tipos e atomicidade',urgency='HIGH',metrics={'fields':{'budget':'10','date':'2026-10-04','channel':'Meta','context':'Detalhes','brief':'brief.csv'}})
+    c.request('/tickets',body,'POST',400)
+    def multipart(payload,files,expected):
+        boundary='review'+uuid.uuid4().hex
+        chunks=[('--'+boundary+'\r\nContent-Disposition: form-data; name="request"\r\nContent-Type: application/json\r\n\r\n').encode()+json.dumps(payload).encode()]
+        for name,filename,mime,content in files:chunks.append(('--'+boundary+'\r\nContent-Disposition: form-data; name="'+name+'"; filename="'+filename+'"\r\nContent-Type: '+mime+'\r\n\r\n').encode()+content)
+        return c.request('/tickets',method='POST',expected=expected,raw=b'\r\n'.join(chunks)+('\r\n--'+boundary+'--\r\n').encode(),content_type='multipart/form-data; boundary='+boundary)
+    uploaded=[('field.brief','brief.csv','text/csv',b'coluna;valor\ncontrole;1\n')]
+    for key,value in [('budget','abc'),('budget','101'),('date','2026-02-30'),('channel','Outro'),('context','')]:
+        invalid=json.loads(json.dumps(body));invalid['metrics']['fields'][key]=value;multipart(invalid,uploaded,400)
+    created=detail(multipart(body,uploaded,201));check('Arquivo tipado persistido junto ao ticket',len(created['attachments'])==1 and json.loads(created['metrics'])['fields']['brief']=='brief.csv')
+    body['subject']=tag+' rollback'
+    storage=Path(__file__).resolve().parents[1]/'target/fixes-uploads';before={p for p in storage.rglob('*') if p.is_file()}
+    multipart(body,uploaded+[('files','invalid.exe','application/octet-stream',b'invalid')],400)
+    check('Falha no segundo arquivo não deixa ticket',a.request('/tickets?search='+urllib.parse.quote(body['subject']))['total']==0)
+    check('Rollback remove arquivos já escritos',before=={p for p in storage.rglob('*') if p.is_file()})
+    duplicate=next(x for x in a.request('/clients') if x['email'])
+    a.request('/clients',dict(name=tag,contactName='Teste',email=duplicate['email'],phone=None),'POST',400)
+
+def pagination_and_aggregates():
+    for account in [a,c,other,staff,manager,other_manager]:
+        dashboard=account.request('/dashboard');scope=account.request('/tickets?size=1');check('Distribuições por prioridade e responsável fecham o escopo '+account.email,sum(x['count'] for x in dashboard['priorityDistribution'])==scope['total']==sum(x['count'] for x in dashboard['assigneeDistribution']))
+        check('Distribuição de prazos fecha ativos '+account.email,sum(x['count'] for x in dashboard['deadlineDistribution'])==dashboard['activeCount'])
+        expired=account.request('/tickets?overdue=true&size=100');check('Filtro só retorna vencidos '+account.email,all(x['overdue'] for x in expired['items']))
+        notes=account.request('/notifications?size=1&unread=true');check('Notificações paginadas e não lidas '+account.email,len(notes['items'])<=1 and all(x['readAt'] is None for x in notes['items']) and notes['total']==notes['unreadCount'])
+    page=a.request('/clients/page?size=1&search='+urllib.parse.quote(tag));check('Cadastro usa paginação no servidor',page['size']==1 and len(page['items'])<=1 and page['total']>=1)
+    c.request('/clients/page',expected=403);a.request('/clients/page?page=-1',expected=400)
+    result=a.request('/reports/tickets?overdue=true');listing=a.request('/tickets?overdue=true&size=1');check('Relatório e lista concordam sobre vencimento',result['total']==listing['total'])
+    expired=a.request('/tickets?overdue=true&size=100')
+    check('Job publica vencimento automaticamente',any(any(h['action']=='SLA_OVERDUE' for h in a.request('/tickets/'+t['id'])['history']) for t in expired['items'] if t['status'] not in ['DONE','CANCELLED']))
+
 def notifications_and_auth():
     notes=c.request('/notifications');foreign=other.request('/notifications')['items'][0]
     c.request('/notifications/'+foreign['id']+'/read',method='POST',expected=404)
@@ -140,7 +194,7 @@ def notifications_and_auth():
     invalid=Account.__new__(Account);invalid.email='login inválido';invalid.http=urllib.request.build_opener();invalid.token=None
     invalid.request('/auth/login',dict(email='admin@sige.demo',password='senha-incorreta'),'POST',401)
 
-for name,fn in [('Jornada principal e dois ciclos',main_flow),('Conclusão com dispensa',no_approval),('Anexos e cancelamento',files_and_cancel),('Proteções de cadastros',catalog_guards),('Criação e edição de cadastros',catalog_roundtrip),('Escopo, relatórios e CSV',reference_and_report),('Notificações, CSRF e logout',notifications_and_auth)]:scenario(name,fn)
+for name,fn in [('Jornada principal e dois ciclos',main_flow),('Conclusão com dispensa',no_approval),('Anexos e cancelamento',files_and_cancel),('Proteções de cadastros',catalog_guards),('Criação e edição de cadastros',catalog_roundtrip),('Escopo, relatórios e CSV',reference_and_report),('Concorrência e reatribuição',concurrency_and_reassignment),('Campos tipados e upload atômico',typed_fields_and_atomic_upload),('Paginação, painel e vencimentos',pagination_and_aggregates),('Notificações, CSRF e logout',notifications_and_auth)]:scenario(name,fn)
 output=Path(args.output);output.parent.mkdir(parents=True,exist_ok=True);output.write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
 failed=[result for result in results if not result['passed']]
 print(json.dumps(dict(checks=len(results),passed=len(results)-len(failed),failed=failed),ensure_ascii=False,indent=2))

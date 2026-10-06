@@ -1,21 +1,18 @@
 package br.pucminas.sige.dashboard.api;
-
-import br.pucminas.sige.shared.domain.Priority;
+import br.pucminas.sige.dashboard.application.DashboardMetrics;
 import br.pucminas.sige.shared.security.CurrentUser;
-import br.pucminas.sige.tickets.domain.TicketStatus;
-import br.pucminas.sige.tickets.application.TicketAccessPolicy;
-import java.time.Instant;
-import br.pucminas.sige.sla.application.SlaService;
-import java.util.*;
+import java.util.List;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.transaction.annotation.Transactional;
-
-@RestController @RequestMapping("/api/v1/dashboard")
-@Transactional(readOnly=true)
+@RestController @RequestMapping("/api/v1/dashboard") @Transactional(readOnly=true)
 public class DashboardController {
-  private final TicketAccessPolicy access; private final CurrentUser current;
-  public DashboardController(TicketAccessPolicy access,CurrentUser current){this.access=access;this.current=current;}
-  record StatusCount(String status,long count){} record Recent(String id,String number,String subject,String status,String clientName,String updatedAt){} record Response(long activeCount,long highPriorityCount,long validationCount,long waitingCount,long classifiedCount,long overdueCount,List<StatusCount> statusDistribution,List<Recent> recent){}
-  @GetMapping public Response dashboard(){var scope=access.visibleTickets(current.require());Instant now=Instant.now();long active=scope.stream().filter(this::active).count();long high=scope.stream().filter(this::active).filter(ticket->ticket.getPriority()==Priority.HIGH||ticket.getPriority()==Priority.URGENT).count();long validation=scope.stream().filter(ticket->ticket.getStatus()==TicketStatus.VALIDATION).count();long waiting=scope.stream().filter(ticket->ticket.getStatus()==TicketStatus.WAITING_FOR_CLIENT).count();long classified=scope.stream().filter(ticket->ticket.getResolutionDueAt()!=null&&active(ticket)).count();long overdue=scope.stream().filter(ticket->active(ticket)&&("OVERDUE".equals(SlaService.responseState(ticket,now))||"OVERDUE".equals(SlaService.resolutionState(ticket,now)))).count();List<StatusCount> distribution=Arrays.stream(TicketStatus.values()).map(status->new StatusCount(status.name(),scope.stream().filter(ticket->ticket.getStatus()==status).count())).toList();List<Recent> recent=scope.stream().sorted(Comparator.comparing(ticket->ticket.getUpdatedAt(),Comparator.reverseOrder())).limit(5).map(ticket->new Recent(ticket.getId().toString(),ticket.getNumber(),ticket.getSubject(),ticket.getStatus().name(),ticket.getClient().getName(),ticket.getUpdatedAt().toString())).toList();return new Response(active,high,validation,waiting,classified,overdue,distribution,recent);}
-  private boolean active(br.pucminas.sige.tickets.domain.Ticket ticket){return ticket.getStatus()!=TicketStatus.DONE&&ticket.getStatus()!=TicketStatus.CANCELLED;}
+  private final DashboardMetrics metrics;private final CurrentUser current;
+  public DashboardController(DashboardMetrics metrics,CurrentUser current){this.metrics=metrics;this.current=current;}
+  @io.swagger.v3.oas.annotations.media.Schema(name="DashboardStatusCount") public record StatusCount(@io.swagger.v3.oas.annotations.media.Schema(allowableValues={"OPEN","TRIAGE","EXECUTION","WAITING_FOR_CLIENT","VALIDATION","DONE","REOPENED","CANCELLED"}) String status,long count){}
+  @io.swagger.v3.oas.annotations.media.Schema(name="DashboardPriorityCount") public record PriorityCount(String priority,long count){}
+  @io.swagger.v3.oas.annotations.media.Schema(name="DashboardAssigneeCount") public record AssigneeCount(@io.swagger.v3.oas.annotations.media.Schema(types={"string","null"}) String id,String name,long count){}
+  @io.swagger.v3.oas.annotations.media.Schema(name="DashboardDeadlineCount") public record DeadlineCount(String state,long count){}
+  @io.swagger.v3.oas.annotations.media.Schema(name="DashboardRecent") public record Recent(String id,String number,String subject,@io.swagger.v3.oas.annotations.media.Schema(allowableValues={"OPEN","TRIAGE","EXECUTION","WAITING_FOR_CLIENT","VALIDATION","DONE","REOPENED","CANCELLED"}) String status,String clientName,String updatedAt){}
+  @io.swagger.v3.oas.annotations.media.Schema(name="DashboardResponse") public record Response(long activeCount,long highPriorityCount,long validationCount,long waitingCount,long classifiedCount,long overdueCount,List<StatusCount> statusDistribution,List<Recent> recent,List<PriorityCount> priorityDistribution,List<AssigneeCount> assigneeDistribution,List<DeadlineCount> deadlineDistribution){}
+  @GetMapping public Response dashboard(){return metrics.read(current.require());}
 }

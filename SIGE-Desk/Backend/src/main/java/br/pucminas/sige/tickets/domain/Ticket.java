@@ -70,6 +70,8 @@ public class Ticket extends AuditableEntity {
   public boolean isEvidenceRequired(){return snapshotFlag("evidenceRequired");}
   private boolean snapshotFlag(String key){try{return new com.fasterxml.jackson.databind.ObjectMapper().readTree(typeSnapshot).path(key).asBoolean();}catch(java.io.IOException ex){throw new IllegalStateException("Configuração do tipo aplicada ao ticket inválida");}}
   public void finishResolutionPause(Instant now){if(resolutionPausedAt==null)return;try{var mapper=new com.fasterxml.jackson.databind.ObjectMapper();var periods=(com.fasterxml.jackson.databind.node.ArrayNode)mapper.readTree(resolutionPauseIntervals);var period=periods.addObject();period.put("start",resolutionPausedAt.toString());period.put("end",now.toString());resolutionPauseIntervals=mapper.writeValueAsString(periods);resolutionPausedAt=null;}catch(java.io.IOException ex){throw new IllegalStateException("Registro de pausas inválido");}}
+  public void recordActivity(){updatedAt=Instant.now();}
+  public void reassign(AppUser user){require(TicketStatus.TRIAGE,TicketStatus.EXECUTION,TicketStatus.WAITING_FOR_CLIENT,TicketStatus.VALIDATION,TicketStatus.REOPENED);if(user==null||!user.isActive()||user.getRole()!=br.pucminas.sige.shared.domain.Role.TRAFFIC_MANAGER)throw new IllegalArgumentException("Responsável inválido");assignee=user;recordActivity();}
   public void setResolutionDueAt(Instant dueAt){resolutionDueAt=dueAt;}
   public void pauseValidation(){resolutionPausedAt=Instant.now();slaState="PAUSED";}
   public void startTriage(){ require(TicketStatus.OPEN, TicketStatus.REOPENED); status=TicketStatus.TRIAGE; }

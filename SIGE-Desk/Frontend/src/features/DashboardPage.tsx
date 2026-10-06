@@ -31,5 +31,10 @@ export function DashboardPage() {
       </Panel>
       <Panel><SectionHeading title={t('dashboard.distribution')} /><Box sx={{ p: 2.5 }}><StatusDistribution distribution={data.statusDistribution} /><Box sx={{ mt: 3, pt: 2.5, borderTop: 1, borderColor: 'divider' }}><Typography variant="h6">{t('dashboard.slaHealth')}</Typography><Typography variant="caption" color="text.secondary">{t('dashboard.classified', { count: data.classifiedCount })}</Typography><Typography sx={{ mt: 1, fontSize: 28, fontWeight: 800, color: data.overdueCount ? 'error.main' : 'secondary.main' }}>{data.overdueCount}</Typography><Typography variant="body2" color="text.secondary">{t('dashboard.overdue')}</Typography></Box></Box></Panel>
     </Box>
+    <Box sx={{display:'grid',gridTemplateColumns:{xs:'1fr',md:'repeat(3,1fr)'},gap:2}}>
+      <Panel><SectionHeading title="Tickets por prioridade"/><Stack spacing={1} sx={{p:2.5}}>{data.priorityDistribution.map(item=><Stack key={item.priority} direction="row" justifyContent="space-between"><Typography variant="body2">{item.priority==='UNCLASSIFIED'?t('tickets.unclassified'):t(`priority.${item.priority}`)}</Typography><Typography fontWeight={700}>{item.count}</Typography></Stack>)}</Stack></Panel>
+      <Panel><SectionHeading title="Tickets por responsável"/><Stack spacing={1} sx={{p:2.5}}>{data.assigneeDistribution.map(item=><Stack key={item.id??'none'} direction="row" justifyContent="space-between"><Typography variant="body2">{item.name}</Typography><Typography fontWeight={700}>{item.count}</Typography></Stack>)}</Stack></Panel>
+      <Panel><SectionHeading title="Prazos dos tickets ativos"/><Stack spacing={1} sx={{p:2.5}}>{data.deadlineDistribution.map(item=><Stack key={item.state} direction="row" justifyContent="space-between"><Typography variant="body2">{t(`slaState.${item.state}`)}</Typography><Typography fontWeight={700}>{item.count}</Typography></Stack>)}</Stack></Panel>
+    </Box>
   </Stack>;
 }

@@ -1,15 +1,19 @@
-export type Role = 'CLIENT' | 'SERVICE' | 'TRAFFIC_MANAGER' | 'ADMIN';
-export type TicketStatus = 'OPEN' | 'TRIAGE' | 'EXECUTION' | 'WAITING_FOR_CLIENT' | 'VALIDATION' | 'DONE' | 'REOPENED' | 'CANCELLED';
-export type Priority = 'URGENT' | 'HIGH' | 'MEDIUM' | 'LOW';
-export interface Session { id: string; name: string; email: string; role: Role; clientId: string | null; }
-export interface TicketItem { id:string; clientId:string; campaignId:string|null; demandTypeId:string; number:string; subject:string; clientName:string; campaignName:string|null; typeName:string; status:TicketStatus; priority:Priority|null; urgency:Priority; assigneeName:string|null; updatedAt:string; actions:string[]; }
-export interface TicketFilters { search?:string; status?:TicketStatus; clientId?:string; campaignId?:string; demandTypeId?:string; priority?:Priority; assigneeId?:string; createdFrom?:string; createdTo?:string; page?:number; size?:number; }
-export interface TicketList { items:TicketItem[]; total:number; page:number; size:number; }
-export interface TicketHistory { id:string; actorName:string; action:string; fieldName:string|null; oldValue:string|null; newValue:string|null; reason:string|null; createdAt:string; }
-export interface TicketComment { id:string; authorName:string; body:string; effectiveResponse:boolean; createdAt:string; }
-export interface TicketAttachment { id:string; name:string; contentType:string; sizeBytes:number; kind:'ATTACHMENT'|'EVIDENCE'; description:string|null; evidenceUrl:string|null; createdAt:string; }
-export interface TicketDetail { channel?:string; responseCompletedAt?:string|null; responseSlaState?:string; resolutionSlaState?:string; ticket:TicketItem; description:string; pendingCampaign:string|null; desiredDate:string|null; requesterName:string; authorName:string; slaState:string; responseDueAt:string|null; resolutionDueAt:string|null; resolutionCycle:number; waitOrigin:string|null; waitReason:string|null; complementReceived:boolean; metrics:string|null; comments:TicketComment[]; attachments:TicketAttachment[]; history:TicketHistory[]; }
-export interface ReferenceData { clients:{id:string;label:string}[]; campaigns:{id:string;clientId:string;name:string;channel:string;objective:string}[]; demandTypes:{id:string;name:string;approvalRequired:boolean;evidenceRequired:boolean;fieldDefinitions:string}[]; trafficManagers:{id:string;name:string;role:Role;clientId:string|null}[]; clientUsers:{id:string;name:string;role:Role;clientId:string|null}[]; }
-export interface Dashboard { activeCount:number; highPriorityCount:number; validationCount:number; waitingCount:number; classifiedCount:number; overdueCount:number; statusDistribution:{status:TicketStatus;count:number}[]; recent:{id:string;number:string;subject:string;status:TicketStatus;clientName:string;updatedAt:string}[]; }
-export interface TicketReport { items:TicketItem[]; total:number; summary:{activeCount:number;completedCount:number;classifiedCount:number;slaCompliantCount:number;overdueCount:number;averageResolutionMinutes:number|null}; }
-export interface NotificationItem {id:string;ticketId:string;ticketNumber:string;eventType:string;summary:string;readAt:string|null;createdAt:string;}
+import type { ApiSchemas } from './generated';
+
+type Response<T> = T extends readonly (infer U)[] ? Response<U>[] : T extends object ? { [K in keyof T]-?: Response<T[K]> } : T;
+export type Session = Response<ApiSchemas['AuthSessionResponse']>;
+export type TicketItem = Response<ApiSchemas['TicketItem']>;
+export type TicketList = Response<ApiSchemas['TicketList']>;
+export type TicketHistory = Response<ApiSchemas['TicketHistoryItem']>;
+export type TicketComment = Response<ApiSchemas['TicketCommentItem']>;
+export type TicketAttachment = Response<ApiSchemas['AttachmentItem']>;
+export type TicketDetail = Response<ApiSchemas['TicketDetail']>;
+export type ReferenceData = Response<ApiSchemas['ReferenceResponse']>;
+export type Dashboard = Response<ApiSchemas['DashboardResponse']>;
+export type TicketReport = Response<ApiSchemas['TicketReport']>;
+export type NotificationItem = Response<ApiSchemas['NotificationItem']>;
+export type Notifications = Response<ApiSchemas['NotificationResponse']>;
+export type Role = Session['role'];
+export type TicketStatus = TicketItem['status'];
+export type Priority = TicketItem['urgency'];
+export interface TicketFilters { search?:string; status?:TicketStatus; clientId?:string; campaignId?:string; demandTypeId?:string; priority?:Priority; assigneeId?:string; createdFrom?:string; createdTo?:string; overdue?:boolean; page?:number; size?:number; }

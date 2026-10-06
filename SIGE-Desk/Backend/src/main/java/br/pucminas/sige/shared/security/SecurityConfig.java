@@ -35,7 +35,7 @@ public class SecurityConfig {
     return http.build();
   }
   @Bean CorsConfigurationSource corsConfigurationSource(@Value("${sige.cors.allowed-origin}") String origin) {
-    CorsConfiguration config = new CorsConfiguration(); config.setAllowedOrigins(List.of(origin)); config.setAllowedMethods(List.of("GET","POST","PUT","PATCH","DELETE","OPTIONS")); config.setAllowedHeaders(List.of("Content-Type","X-XSRF-TOKEN")); config.setAllowCredentials(true);
+    CorsConfiguration config = new CorsConfiguration(); config.setAllowedOrigins(List.of(origin)); config.setAllowedMethods(List.of("GET","POST","PUT","PATCH","DELETE","OPTIONS")); config.setAllowedHeaders(List.of("Content-Type","X-XSRF-TOKEN","If-Match")); config.setAllowCredentials(true);
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(); source.registerCorsConfiguration("/**", config); return source;
   }
 }

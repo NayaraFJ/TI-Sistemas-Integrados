@@ -1,0 +1,64 @@
+{
+  "tests": 47,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "suites": [
+    {
+      "name": "br.pucminas.sige.auth.api.LogoutSecurityTest",
+      "tests": 2
+    },
+    {
+      "name": "br.pucminas.sige.dashboard.api.DashboardControllerTest",
+      "tests": 2
+    },
+    {
+      "name": "br.pucminas.sige.demandtypes.application.DynamicFieldValidatorTest",
+      "tests": 6
+    },
+    {
+      "name": "br.pucminas.sige.demo.DemoDataInitializerTest",
+      "tests": 2
+    },
+    {
+      "name": "br.pucminas.sige.integration.MySqlMigrationIntegrationTest",
+      "tests": 1
+    },
+    {
+      "name": "br.pucminas.sige.notifications.api.NotificationControllerTest",
+      "tests": 1
+    },
+    {
+      "name": "br.pucminas.sige.notifications.application.DeadlineNotificationServiceTest",
+      "tests": 4
+    },
+    {
+      "name": "br.pucminas.sige.notifications.application.NotificationServiceTest",
+      "tests": 1
+    },
+    {
+      "name": "br.pucminas.sige.shared.api.ApiExceptionHandlerTest",
+      "tests": 1
+    },
+    {
+      "name": "br.pucminas.sige.sla.application.SlaServiceTest",
+      "tests": 12
+    },
+    {
+      "name": "br.pucminas.sige.tickets.application.TicketAccessPolicyTest",
+      "tests": 3
+    },
+    {
+      "name": "br.pucminas.sige.tickets.application.TicketReportTest",
+      "tests": 2
+    },
+    {
+      "name": "br.pucminas.sige.tickets.domain.TicketTransitionTest",
+      "tests": 7
+    },
+    {
+      "name": "br.pucminas.sige.users.application.DefaultAdminInitializerTest",
+      "tests": 3
+    }
+  ]
+}

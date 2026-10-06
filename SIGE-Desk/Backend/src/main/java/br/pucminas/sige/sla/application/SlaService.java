@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SlaService {
   public record Calculation(String snapshot, Instant responseDueAt, Instant resolutionDueAt) {}
-  private record Calendar(ZoneId zone, JsonNode days, JsonNode holidays, LocalTime start, LocalTime end) {}
+  private record Calendar(ZoneId zone, JsonNode days, JsonNode holidays, LocalTime start, LocalTime end, boolean nationalHolidays) {}
   private final SlaRuleRepository rules;
   private final ObjectMapper json;
   public SlaService(SlaRuleRepository rules, ObjectMapper json) { this.rules=rules; this.json=json; }
@@ -45,6 +45,13 @@ public class SlaService {
   public boolean pauseInValidation(Ticket ticket) {
     try{return ticket.getSlaRuleSnapshot()!=null&&json.readTree(ticket.getSlaRuleSnapshot()).path("pauseInValidation").asBoolean();}catch(java.io.IOException ex){throw new IllegalStateException("Configuração de SLA inválida");}
   }
+  public long elapsedBusinessMinutes(Ticket ticket, Instant now) {
+    try {
+      String source=ticket.getSlaRuleSnapshot();
+      if(source==null)source=snapshot(rules.findByActiveTrue().stream().filter(rule->matches(rule,ticket)).max(Comparator.comparingInt(this::specificity)).orElseThrow(()->new IllegalStateException("Regra padrão de SLA não encontrada")));
+      return businessDuration(ticket.getCreatedAt(),now,calendar(json.readTree(source))).toMinutes();
+    }catch(java.io.IOException ex){throw new IllegalStateException("Calendário de SLA inválido");}
+  }
   public static String responseState(Ticket ticket, Instant now) {
     if(ticket.getResponseDueAt()==null)return "PENDING_CLASSIFICATION";
     Instant end=ticket.getResponseCompletedAt();
@@ -74,14 +81,14 @@ public class SlaService {
   }
   private int specificity(SlaRule rule){return switch(rule.getScope()){case DEFAULT->0;case DEMAND_TYPE->1;case CLIENT->2;case CLIENT_AND_DEMAND_TYPE->3;};}
   private String snapshot(SlaRule rule)throws java.io.IOException {
-    var node=json.createObjectNode();node.put("id",rule.getId().toString());node.put("name",rule.getName());node.put("version",rule.getVersionNumber());node.put("timezone",rule.getTimezone());node.put("pauseInValidation",rule.isPauseInValidation());node.set("deadlines",json.readTree(rule.getDeadlines()));node.set("businessDays",json.readTree(rule.getBusinessDays()));node.put("businessStart",rule.getBusinessStart().toString());node.put("businessEnd",rule.getBusinessEnd().toString());node.set("holidays",json.readTree(rule.getHolidays()));return json.writeValueAsString(node);
+    var node=json.createObjectNode();node.put("id",rule.getId().toString());node.put("name",rule.getName());node.put("version",rule.getVersionNumber());node.put("timezone",rule.getTimezone());node.put("pauseInValidation",rule.isPauseInValidation());node.put("nationalHolidayPolicy","BR_FIXED_V1");node.set("deadlines",json.readTree(rule.getDeadlines()));node.set("businessDays",json.readTree(rule.getBusinessDays()));node.put("businessStart",rule.getBusinessStart().toString());node.put("businessEnd",rule.getBusinessEnd().toString());node.set("holidays",json.readTree(rule.getHolidays()));return json.writeValueAsString(node);
   }
   private Calendar calendar(JsonNode config) {
     JsonNode days=config.path("businessDays"),holidays=config.path("holidays");
     LocalTime start=LocalTime.parse(config.path("businessStart").asText()),end=LocalTime.parse(config.path("businessEnd").asText());
     if(!days.isArray()||days.isEmpty()||!holidays.isArray()||!start.isBefore(end))throw new IllegalStateException("Calendário de SLA inválido");
     for(JsonNode day:days)DayOfWeek.valueOf(day.asText());
-    return new Calendar(ZoneId.of(config.path("timezone").asText()),days,holidays,start,end);
+    return new Calendar(ZoneId.of(config.path("timezone").asText()),days,holidays,start,end,"BR_FIXED_V1".equals(config.path("nationalHolidayPolicy").asText()));
   }
   private Instant add(Instant start,Duration remaining,Calendar calendar) {
     if(remaining.isZero())return start;
@@ -106,6 +113,6 @@ public class SlaService {
     }
     return result;
   }
-  private boolean working(LocalDate date,Calendar calendar){return contains(calendar.days(),date.getDayOfWeek().name())&&!contains(calendar.holidays(),date.toString());}
+  private boolean working(LocalDate date,Calendar calendar){return contains(calendar.days(),date.getDayOfWeek().name())&&!contains(calendar.holidays(),date.toString())&&!(calendar.nationalHolidays()&&BrazilianHolidays.isHoliday(date));}
   private boolean contains(JsonNode values,String value){for(JsonNode node:values)if(value.equals(node.asText()))return true;return false;}
 }

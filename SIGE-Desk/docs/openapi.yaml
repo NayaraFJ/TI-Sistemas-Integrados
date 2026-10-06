@@ -1,119 +1,5775 @@
-openapi: 3.0.3
-info:
-  title: SIGE Desk API
-  version: 1.0.0
-  description: Contrato de referência da API. A descrição completa e sincronizada com os controladores está disponível em /v3/api-docs quando a aplicação está em execução.
-servers:
-  - url: /api/v1
-paths:
-  /auth/login:
-    post: { summary: Inicia sessão, requestBody: { $ref: '#/components/requestBodies/Login' }, responses: { '200': { $ref: '#/components/responses/Session' }, '401': { $ref: '#/components/responses/Unauthorized' } } }
-  /auth/logout:
-    post: { summary: Encerra sessão, responses: { '204': { description: Sessão encerrada } } }
-  /auth/me:
-    get: { summary: Consulta a sessão atual, responses: { '200': { $ref: '#/components/responses/Session' }, '401': { $ref: '#/components/responses/Unauthorized' } } }
-  /auth/csrf:
-    get: { summary: Emite ou renova o token CSRF, responses: { '200': { description: Token entregue por cookie } } }
-  /dashboard:
-    get: { summary: Indicadores calculados no escopo do usuário, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /reference:
-    get: { summary: Opções de referência autorizadas para formulários, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /clients:
-    get: { summary: Lista clientes autorizados, responses: { '200': { $ref: '#/components/responses/Json' } } }
-    post: { summary: Cria cliente, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
-  /clients/{id}:
-    put: { summary: Atualiza cliente, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /clients/{id}/active:
-    post: { summary: Ativa ou inativa cliente, parameters: [ { $ref: '#/components/parameters/Id' }, { name: value, in: query, required: true, schema: { type: boolean } } ], responses: { '200': { $ref: '#/components/responses/Json' }, '409': { $ref: '#/components/responses/Conflict' } } }
-  /campaigns:
-    get: { summary: Lista campanhas autorizadas, responses: { '200': { $ref: '#/components/responses/Json' } } }
-    post: { summary: Cria campanha, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
-  /campaigns/{id}:
-    put: { summary: Atualiza campanha, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /campaigns/{id}/active:
-    post: { summary: Ativa ou inativa campanha, parameters: [ { $ref: '#/components/parameters/Id' }, { name: value, in: query, required: true, schema: { type: boolean } } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /demand-types:
-    get: { summary: Lista tipos de demanda, responses: { '200': { $ref: '#/components/responses/Json' } } }
-    post: { summary: Cria tipo de demanda, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
-  /demand-types/{id}:
-    put: { summary: Atualiza tipo de demanda, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /demand-types/{id}/active:
-    post: { summary: Ativa ou inativa tipo de demanda, parameters: [ { $ref: '#/components/parameters/Id' }, { name: value, in: query, required: true, schema: { type: boolean } } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /sla-rules:
-    get: { summary: Lista regras de SLA, responses: { '200': { $ref: '#/components/responses/Json' } } }
-    post: { summary: Cria regra de SLA, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
-  /sla-rules/{id}:
-    put: { summary: Atualiza regra de SLA, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /users:
-    get: { summary: Lista usuários, responses: { '200': { $ref: '#/components/responses/Json' } } }
-    post: { summary: Cria usuário, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
-  /users/{id}:
-    put: { summary: Atualiza usuário, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' }, '409': { $ref: '#/components/responses/Conflict' } } }
-  /tickets:
-    get: { summary: 'Lista tickets com busca, filtros e escopo aplicados', parameters: [ { $ref: '#/components/parameters/TicketFilters' }, { $ref: '#/components/parameters/Page' }, { $ref: '#/components/parameters/PageSize' } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
-    post: { summary: Abre um ticket, requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' }, '400': { $ref: '#/components/responses/ValidationError' } } }
-  /tickets/{id}:
-    get: { summary: 'Consulta detalhe, histórico, comentários e anexos de um ticket visível', parameters: [ { $ref: '#/components/parameters/Id' } ], responses: { '200': { $ref: '#/components/responses/Json' }, '404': { $ref: '#/components/responses/NotFound' } } }
-  /tickets/{id}/triage/start:
-    post: { summary: Inicia a triagem, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' }, '409': { $ref: '#/components/responses/Conflict' } } }
-  /tickets/{id}/triage:
-    post: { summary: Classifica e atribui a demanda, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' }, '400': { $ref: '#/components/responses/ValidationError' } } }
-  /tickets/{id}/wait:
-    post: { summary: Solicita complemento e pausa o fluxo, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /tickets/{id}/complement:
-    post: { summary: Registra complemento enviado pelo cliente, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /tickets/{id}/resume:
-    post: { summary: Confere complemento e retoma o fluxo, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /tickets/{id}/execution:
-    post: { summary: Registra execução e evidência, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /tickets/{id}/approve:
-    post: { summary: Aprova a entrega, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /tickets/{id}/correction:
-    post: { summary: Solicita correção, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /tickets/{id}/cancel:
-    post: { summary: Cancela antes da execução, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' }, '409': { $ref: '#/components/responses/Conflict' } } }
-  /tickets/{id}/reopen:
-    post: { summary: Reabre ticket concluído, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /tickets/{id}/comments:
-    post: { summary: Inclui comentário, parameters: [ { $ref: '#/components/parameters/Id' } ], requestBody: { $ref: '#/components/requestBodies/Json' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
-  /tickets/{ticketId}/attachments:
-    get: { summary: Lista anexos visíveis, parameters: [ { $ref: '#/components/parameters/TicketId' } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
-    post: { summary: Envia anexo, parameters: [ { $ref: '#/components/parameters/TicketId' } ], requestBody: { $ref: '#/components/requestBodies/Multipart' }, responses: { '201': { $ref: '#/components/responses/Json' } } }
-  /tickets/{ticketId}/attachments/{id}/download:
-    get: { summary: Baixa anexo com autorização do ticket, parameters: [ { $ref: '#/components/parameters/TicketId' }, { $ref: '#/components/parameters/Id' } ], responses: { '200': { description: Conteúdo do anexo } } }
-  /notifications:
-    get: { summary: Lista notificações no escopo atual, responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /notifications/{id}/read:
-    post: { summary: Marca uma notificação acessível como lida, parameters: [ { $ref: '#/components/parameters/Id' } ], responses: { '204': { description: Atualizada } } }
-  /notifications/read-all:
-    post: { summary: Marca notificações visíveis como lidas, responses: { '204': { description: Atualizadas } } }
-  /reports/tickets:
-    get: { summary: Relatório de tickets com os mesmos filtros e escopo da listagem, parameters: [ { $ref: '#/components/parameters/TicketFilters' } ], responses: { '200': { $ref: '#/components/responses/Json' } } }
-  /reports/tickets/export:
-    get: { summary: Exporta o relatório filtrado em CSV, parameters: [ { $ref: '#/components/parameters/TicketFilters' } ], responses: { '200': { description: CSV UTF-8 } } }
-components:
-  securitySchemes:
-    sessionCookie: { type: apiKey, in: cookie, name: JSESSIONID }
-    csrfToken: { type: apiKey, in: header, name: X-XSRF-TOKEN }
-  parameters:
-    Id: { name: id, in: path, required: true, schema: { type: string, format: uuid } }
-    TicketId: { name: ticketId, in: path, required: true, schema: { type: string, format: uuid } }
-    Page: { name: page, in: query, required: false, schema: { type: integer, minimum: 0, default: 0 } }
-    PageSize: { name: size, in: query, required: false, schema: { type: integer, minimum: 1, maximum: 100, default: 25 } }
-    TicketFilters: { name: search, in: query, required: false, schema: { type: string }, description: 'Também aceita status, clientId, campaignId, demandTypeId, priority, assigneeId, createdFrom e createdTo.' }
-  requestBodies:
-    Login: { required: true, content: { application/json: { schema: { type: object, required: [email, password], properties: { email: { type: string, format: email }, password: { type: string, format: password } } } } } }
-    Json: { required: true, content: { application/json: { schema: { type: object } } } }
-    Multipart: { required: true, content: { multipart/form-data: { schema: { type: object, required: [file], properties: { file: { type: string, format: binary }, kind: { type: string, enum: [ATTACHMENT, EVIDENCE] }, description: { type: string }, evidenceUrl: { type: string, format: uri } } } } } }
-  responses:
-    Json: { description: Resposta JSON da API, content: { application/json: { schema: { type: object } } } }
-    Session: { description: Sessão autenticada, content: { application/json: { schema: { type: object, required: [id, name, email, role], properties: { id: { type: string, format: uuid }, name: { type: string }, email: { type: string, format: email }, role: { type: string, enum: [CLIENT, SERVICE, TRAFFIC_MANAGER, ADMIN] }, clientId: { type: string, nullable: true, format: uuid } } } } } }
-    Unauthorized: { description: Sessão ausente, expirada ou credencial inválida }
-    NotFound: { description: Recurso inexistente ou fora do escopo }
-    ValidationError: { description: Erro de validação, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
-    Conflict: { description: Transição inválida ou conflito, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
-  schemas:
-    Error: { type: object, required: [code, message, timestamp], properties: { code: { type: string }, message: { type: string }, timestamp: { type: string, format: date-time }, fields: { type: object, additionalProperties: { type: string } } } }
-security:
-  - sessionCookie: []
-    csrfToken: []
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SIGE Desk API",
+    "description": "API autenticada para gestão de demandas de tráfego.",
+    "license": {
+      "name": "Uso acadêmico"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Backend local"
+    }
+  ],
+  "security": [
+    {
+      "sessionCookie": []
+    }
+  ],
+  "paths": {
+    "/api/v1/users/{id}": {
+      "put": {
+        "tags": [
+          "user-controller"
+        ],
+        "operationId": "update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sla-rules/{id}": {
+      "put": {
+        "tags": [
+          "sla-rule-controller"
+        ],
+        "operationId": "update_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SlaRuleRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SlaRuleItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/demand-types/{id}": {
+      "put": {
+        "tags": [
+          "demand-type-controller"
+        ],
+        "operationId": "update_2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DemandTypeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/DemandTypeItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/clients/{id}": {
+      "put": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "update_3",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClientItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/campaigns/{id}": {
+      "put": {
+        "tags": [
+          "campaign-controller"
+        ],
+        "operationId": "update_4",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "tags": [
+          "user-controller"
+        ],
+        "operationId": "list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserItem"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "user-controller"
+        ],
+        "operationId": "create",
+        "parameters": [
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tickets": {
+      "get": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "list_1",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "OPEN",
+                "TRIAGE",
+                "EXECUTION",
+                "WAITING_FOR_CLIENT",
+                "VALIDATION",
+                "DONE",
+                "REOPENED",
+                "CANCELLED"
+              ]
+            }
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "campaignId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "demandTypeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "priority",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "URGENT",
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            }
+          },
+          {
+            "name": "assigneeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "createdFrom",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "createdTo",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "overdue",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 25
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "description": "Criação JSON ou multipart atômica. Multipart: request com Content-Type application/json, files para anexos gerais e field.<name> para cada campo FILE. Limite de 10 MB por arquivo e 11 MB por envio. Valores dos campos FILE são preenchidos pelo servidor.",
+        "operationId": "createMultipart",
+        "parameters": [
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "request": {
+                    "$ref": "#/components/schemas/CreateTicketRequest"
+                  },
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                },
+                "required": [
+                  "request"
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTicketRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{ticketId}/attachments": {
+      "get": {
+        "tags": [
+          "ticket-file-controller"
+        ],
+        "operationId": "list_2",
+        "parameters": [
+          {
+            "name": "ticketId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TicketFileItem"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ticket-file-controller"
+        ],
+        "operationId": "upload",
+        "parameters": [
+          {
+            "name": "ticketId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "ATTACHMENT",
+              "enum": [
+                "ATTACHMENT",
+                "EVIDENCE"
+              ]
+            }
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "evidenceUrl",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketFileItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/wait": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "waitForComplement",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/triage": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "triage",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TriageRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/triage/start": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "startTriage",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartTriageRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/resume": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "resume",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/reopen": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "reopen",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/reassign": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "reassign",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReassignRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/execution": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "execute",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecutionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/correction": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "correct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/complement": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "complement",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/comments": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "comment",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketCommentItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/cancel": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "cancel",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}/approve": {
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "approve",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "Versão do TicketItem lido ao abrir o formulário",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "428": {
+            "description": "Versão esperada ausente"
+          }
+        }
+      }
+    },
+    "/api/v1/sla-rules": {
+      "get": {
+        "tags": [
+          "sla-rule-controller"
+        ],
+        "operationId": "list_3",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SlaRuleItem"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "sla-rule-controller"
+        ],
+        "operationId": "create_1",
+        "parameters": [
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SlaRuleRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SlaRuleItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/notifications/{id}/read": {
+      "post": {
+        "tags": [
+          "notification-controller"
+        ],
+        "operationId": "markRead",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/notifications/read-all": {
+      "post": {
+        "tags": [
+          "notification-controller"
+        ],
+        "operationId": "markAllRead",
+        "parameters": [
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/demand-types": {
+      "get": {
+        "tags": [
+          "demand-type-controller"
+        ],
+        "operationId": "list_4",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DemandTypeItem"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "demand-type-controller"
+        ],
+        "operationId": "create_2",
+        "parameters": [
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DemandTypeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/DemandTypeItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/demand-types/{id}/active": {
+      "post": {
+        "tags": [
+          "demand-type-controller"
+        ],
+        "operationId": "setActive",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "value",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/DemandTypeItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/clients": {
+      "get": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "list_5",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClientItem"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "create_3",
+        "parameters": [
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClientItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/clients/{id}/active": {
+      "post": {
+        "tags": [
+          "client-controller"
+        ],
+        "operationId": "setActive_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "value",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClientItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/campaigns": {
+      "get": {
+        "tags": [
+          "campaign-controller"
+        ],
+        "operationId": "list_6",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CampaignItem"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "campaign-controller"
+        ],
+        "operationId": "create_4",
+        "parameters": [
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/campaigns/{id}/active": {
+      "post": {
+        "tags": [
+          "campaign-controller"
+        ],
+        "operationId": "setActive_2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "value",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "tags": [
+          "auth-controller"
+        ],
+        "operationId": "login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthLoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthSessionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/{resource}/page": {
+      "get": {
+        "tags": [
+          "catalog-page-controller"
+        ],
+        "operationId": "page",
+        "parameters": [
+          {
+            "name": "resource",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 25
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogPagePageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{ticketId}/attachments/{id}/download": {
+      "get": {
+        "tags": [
+          "ticket-file-controller"
+        ],
+        "operationId": "download",
+        "parameters": [
+          {
+            "name": "ticketId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/{id}": {
+      "get": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "operationId": "detail",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketDetail"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/reports/tickets": {
+      "get": {
+        "tags": [
+          "report-controller"
+        ],
+        "operationId": "report",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "OPEN",
+                "TRIAGE",
+                "EXECUTION",
+                "WAITING_FOR_CLIENT",
+                "VALIDATION",
+                "DONE",
+                "REOPENED",
+                "CANCELLED"
+              ]
+            }
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "campaignId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "demandTypeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "priority",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "URGENT",
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            }
+          },
+          {
+            "name": "assigneeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "createdFrom",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "createdTo",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "overdue",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketReport"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/reports/tickets/export": {
+      "get": {
+        "tags": [
+          "report-controller"
+        ],
+        "operationId": "export",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "OPEN",
+                "TRIAGE",
+                "EXECUTION",
+                "WAITING_FOR_CLIENT",
+                "VALIDATION",
+                "DONE",
+                "REOPENED",
+                "CANCELLED"
+              ]
+            }
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "campaignId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "demandTypeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "priority",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "URGENT",
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            }
+          },
+          {
+            "name": "assigneeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "createdFrom",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "createdTo",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "overdue",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/reference": {
+      "get": {
+        "tags": [
+          "reference-controller"
+        ],
+        "operationId": "all",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReferenceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/notifications": {
+      "get": {
+        "tags": [
+          "notification-controller"
+        ],
+        "operationId": "list_7",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 25
+            }
+          },
+          {
+            "name": "unread",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/dashboard": {
+      "get": {
+        "tags": [
+          "dashboard-controller"
+        ],
+        "operationId": "dashboard",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/me": {
+      "get": {
+        "tags": [
+          "auth-controller"
+        ],
+        "operationId": "me",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthSessionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/csrf": {
+      "get": {
+        "tags": [
+          "auth-controller"
+        ],
+        "operationId": "csrf",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "summary": "Encerrar a sessão",
+        "operationId": "logout",
+        "parameters": [
+          {
+            "name": "X-XSRF-TOKEN",
+            "in": "header",
+            "description": "Token obtido em GET /api/v1/auth/csrf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Sessão encerrada"
+          },
+          "400": {
+            "description": "Dados inválidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Perfil ou CSRF não autorizado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recurso fora do escopo ou inexistente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflito de versão, transição ou cadastro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UserUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 0
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "CLIENT",
+              "SERVICE",
+              "TRAFFIC_MANAGER",
+              "ADMIN"
+            ]
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 12
+          }
+        },
+        "required": [
+          "email",
+          "name",
+          "role"
+        ]
+      },
+      "UserItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "SlaRuleRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "DEFAULT",
+              "CLIENT",
+              "DEMAND_TYPE",
+              "CLIENT_AND_DEMAND_TYPE"
+            ]
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "demandTypeId": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string",
+            "minLength": 1
+          },
+          "businessDays": {
+            "type": "string",
+            "minLength": 1
+          },
+          "businessStart": {
+            "type": "string"
+          },
+          "businessEnd": {
+            "type": "string"
+          },
+          "holidays": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pauseInValidation": {
+            "type": "boolean"
+          },
+          "deadlines": {
+            "type": "string",
+            "minLength": 1
+          },
+          "active": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "businessDays",
+          "businessEnd",
+          "businessStart",
+          "deadlines",
+          "holidays",
+          "name",
+          "scope",
+          "timezone"
+        ]
+      },
+      "SlaRuleItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "demandTypeId": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "businessDays": {
+            "type": "string"
+          },
+          "businessStart": {
+            "type": "string"
+          },
+          "businessEnd": {
+            "type": "string"
+          },
+          "holidays": {
+            "type": "string"
+          },
+          "pauseInValidation": {
+            "type": "boolean"
+          },
+          "deadlines": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "versionNumber": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "DemandTypeRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 0
+          },
+          "approvalRequired": {
+            "type": "boolean"
+          },
+          "evidenceRequired": {
+            "type": "boolean"
+          },
+          "fieldDefinitions": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "fieldDefinitions",
+          "name"
+        ]
+      },
+      "DemandTypeItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "approvalRequired": {
+            "type": "boolean"
+          },
+          "evidenceRequired": {
+            "type": "boolean"
+          },
+          "fieldDefinitions": {
+            "type": "string"
+          },
+          "versionNumber": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ClientRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 0
+          },
+          "contactName": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 0
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          },
+          "phone": {
+            "type": "string",
+            "maxLength": 40,
+            "minLength": 0
+          }
+        },
+        "required": [
+          "contactName",
+          "email",
+          "name"
+        ]
+      },
+      "ClientItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "contactName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CampaignRequest": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 0
+          },
+          "channel": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 0
+          },
+          "objective": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 0
+          }
+        },
+        "required": [
+          "channel",
+          "clientId",
+          "name",
+          "objective"
+        ]
+      },
+      "CampaignItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "objective": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserCreateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 0
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 12
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "CLIENT",
+              "SERVICE",
+              "TRAFFIC_MANAGER",
+              "ADMIN"
+            ]
+          },
+          "clientId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "name",
+          "password",
+          "role"
+        ]
+      },
+      "CreateTicketRequest": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "campaignId": {
+            "type": "string"
+          },
+          "pendingCampaign": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 0
+          },
+          "demandTypeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "channel": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 0
+          },
+          "subject": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 0
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "urgency": {
+            "type": "string",
+            "enum": [
+              "URGENT",
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "desiredDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "requesterId": {
+            "type": "string"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/TicketMetrics"
+          }
+        },
+        "required": [
+          "channel",
+          "clientId",
+          "demandTypeId",
+          "description",
+          "subject",
+          "urgency"
+        ]
+      },
+      "TicketMetrics": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 0
+          },
+          "impressions": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ctr": {
+            "type": "number",
+            "minimum": 0
+          },
+          "cpc": {
+            "type": "number",
+            "minimum": 0
+          },
+          "conversions": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "cpa": {
+            "type": "number",
+            "minimum": 0
+          },
+          "roas": {
+            "type": "number",
+            "minimum": 0
+          },
+          "fields": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TicketItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "campaignId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "demandTypeId": {
+            "type": "string"
+          },
+          "number": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "clientName": {
+            "type": "string"
+          },
+          "campaignName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "typeName": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "OPEN",
+              "TRIAGE",
+              "EXECUTION",
+              "WAITING_FOR_CLIENT",
+              "VALIDATION",
+              "DONE",
+              "REOPENED",
+              "CANCELLED"
+            ]
+          },
+          "priority": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "URGENT",
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "urgency": {
+            "type": "string",
+            "enum": [
+              "URGENT",
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "assigneeName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "version": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "slaState": {
+            "type": "string"
+          },
+          "overdue": {
+            "type": "boolean"
+          }
+        }
+      },
+      "TicketFileItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "contentType": {
+            "type": "string"
+          },
+          "sizeBytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "evidenceUrl": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ReasonRequest": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "reason"
+        ]
+      },
+      "TriageRequest": {
+        "type": "object",
+        "properties": {
+          "priority": {
+            "type": "string",
+            "enum": [
+              "URGENT",
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "assigneeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "demandTypeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "campaignId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effectiveResponse": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sendToExecution": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "assigneeId",
+          "campaignId",
+          "demandTypeId",
+          "effectiveResponse",
+          "priority"
+        ]
+      },
+      "StartTriageRequest": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "reason"
+        ]
+      },
+      "ReassignRequest": {
+        "type": "object",
+        "properties": {
+          "assigneeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "assigneeId",
+          "reason"
+        ]
+      },
+      "ExecutionRequest": {
+        "type": "object",
+        "properties": {
+          "actionDescription": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidenceUrl": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "actionDescription"
+        ]
+      },
+      "CommentRequest": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effectiveResponse": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "body"
+        ]
+      },
+      "TicketCommentItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "authorName": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "effectiveResponse": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "AuthLoginRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          },
+          "password": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      },
+      "AuthSessionResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "CLIENT",
+              "SERVICE",
+              "TRAFFIC_MANAGER",
+              "ADMIN"
+            ]
+          },
+          "clientId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "CatalogPagePageResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {}
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TicketList": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TicketItem"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "AttachmentItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "contentType": {
+            "type": "string"
+          },
+          "sizeBytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "ATTACHMENT",
+              "EVIDENCE"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidenceUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "TicketDetail": {
+        "type": "object",
+        "properties": {
+          "ticket": {
+            "$ref": "#/components/schemas/TicketItem"
+          },
+          "description": {
+            "type": "string"
+          },
+          "pendingCampaign": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "desiredDate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "requesterName": {
+            "type": "string"
+          },
+          "authorName": {
+            "type": "string"
+          },
+          "slaState": {
+            "type": "string"
+          },
+          "responseDueAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "resolutionDueAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "resolutionCycle": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "waitOrigin": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "waitReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "complementReceived": {
+            "type": "boolean"
+          },
+          "metrics": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TicketCommentItem"
+            }
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttachmentItem"
+            }
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TicketHistoryItem"
+            }
+          },
+          "channel": {
+            "type": "string"
+          },
+          "responseCompletedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "responseSlaState": {
+            "type": "string"
+          },
+          "resolutionSlaState": {
+            "type": "string"
+          },
+          "elapsedBusinessMinutes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "fieldLabels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TicketHistoryItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "actorName": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "fieldName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "oldValue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "newValue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ReportSummary": {
+        "type": "object",
+        "properties": {
+          "activeCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "completedCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "classifiedCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "slaCompliantCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "overdueCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "averageResolutionMinutes": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64"
+          }
+        }
+      },
+      "TicketReport": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TicketItem"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/ReportSummary"
+          }
+        }
+      },
+      "ReferenceCampaignItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "objective": {
+            "type": "string"
+          }
+        }
+      },
+      "ReferenceDemandTypeItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "approvalRequired": {
+            "type": "boolean"
+          },
+          "evidenceRequired": {
+            "type": "boolean"
+          },
+          "fieldDefinitions": {
+            "type": "string"
+          }
+        }
+      },
+      "ReferenceOption": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      },
+      "ReferenceResponse": {
+        "type": "object",
+        "properties": {
+          "clients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceOption"
+            }
+          },
+          "campaigns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceCampaignItem"
+            }
+          },
+          "demandTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceDemandTypeItem"
+            }
+          },
+          "trafficManagers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceUserItem"
+            }
+          },
+          "clientUsers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceUserItem"
+            }
+          }
+        }
+      },
+      "ReferenceUserItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "CLIENT",
+              "SERVICE",
+              "TRAFFIC_MANAGER",
+              "ADMIN"
+            ]
+          },
+          "clientId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "NotificationItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ticketId": {
+            "type": "string"
+          },
+          "ticketNumber": {
+            "type": "string"
+          },
+          "eventType": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "readAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NotificationResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationItem"
+            }
+          },
+          "unreadCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "DashboardAssigneeCount": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DashboardDeadlineCount": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DashboardPriorityCount": {
+        "type": "object",
+        "properties": {
+          "priority": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DashboardRecent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "number": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "OPEN",
+              "TRIAGE",
+              "EXECUTION",
+              "WAITING_FOR_CLIENT",
+              "VALIDATION",
+              "DONE",
+              "REOPENED",
+              "CANCELLED"
+            ]
+          },
+          "clientName": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "DashboardResponse": {
+        "type": "object",
+        "properties": {
+          "activeCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "highPriorityCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "validationCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "waitingCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "classifiedCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "overdueCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "statusDistribution": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardStatusCount"
+            }
+          },
+          "recent": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardRecent"
+            }
+          },
+          "priorityDistribution": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardPriorityCount"
+            }
+          },
+          "assigneeDistribution": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardAssigneeCount"
+            }
+          },
+          "deadlineDistribution": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardDeadlineCount"
+            }
+          }
+        }
+      },
+      "DashboardStatusCount": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "OPEN",
+              "TRIAGE",
+              "EXECUTION",
+              "WAITING_FOR_CLIENT",
+              "VALIDATION",
+              "DONE",
+              "REOPENED",
+              "CANCELLED"
+            ]
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ApiError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fields": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "sessionCookie": {
+        "type": "apiKey",
+        "name": "JSESSIONID",
+        "in": "cookie"
+      }
+    }
+  }
+}

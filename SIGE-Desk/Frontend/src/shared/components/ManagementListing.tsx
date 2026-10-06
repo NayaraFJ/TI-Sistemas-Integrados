@@ -30,7 +30,7 @@ export function ManagementListing({ resource, items, reference, search, onSearch
     const type = reference?.demandTypes.find(type => type.id === item.demandTypeId)?.name;
     return [schedule, `${value(item, 'businessStart').slice(0, 5)}–${value(item, 'businessEnd').slice(0, 5)}`, value(item, 'timezone'), clientName(item), type, urgent ? `Urgente: ${urgent.responseHours}h/${urgent.resolutionHours}h` : ''].filter(Boolean).join(' · ');
   };
-  const visible = items.filter(item => `${value(item, 'name')} ${describe(item)} ${item.active ? 'ativo' : 'inativo'} ${scopeLabels[String(item.scope)] ?? ''}`.toLocaleLowerCase('pt-BR').includes(search.toLocaleLowerCase('pt-BR')));
+  const visible = items;
   return <Panel>
     <Stack direction="row" alignItems="center" gap={1.5} sx={{ px: 2.5, py: 2, borderBottom: 1, borderColor: 'divider' }}>
       <TextField fullWidth size="small" label={t('actions.search')} placeholder={t('admin.searchPlaceholder')} value={search} onChange={event => onSearch(event.target.value)} />

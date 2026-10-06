@@ -124,17 +124,17 @@ SIGE-Desk/
 
 ## 10. Estado da implementação
 
-A revisão de 03/10/2026 validou 33 testes Java, 160 checks HTTP em MySQL isolado, build de produção e percursos no navegador. Isso comprova os cenários executados, mas a entrega continua parcial frente aos critérios completos. Consulte [a revisão com achados e matriz RF/RNF](docs/REVISAO-ENTREGA.md).
+Os achados técnicos P1/P2 da revisão de 03/10 foram corrigidos em 04/10/2026. A rodada final passou com 47 testes Java, 296 verificações HTTP no MySQL isolado, TypeScript e build de produção. A [revisão atualizada](docs/REVISAO-ENTREGA.md) descreve as evidências, o escopo e os limites de validação.
 
-| Fase | Estado | Evidência/pendência |
+| Fase | Estado | Evidência |
 | --- | --- | --- |
-| 0. Contrato e decisões | Parcial | Permissões revisadas; contrato estático e controle de formulário desatualizado precisam de acabamento. |
-| 1. Fundação | Validada no ambiente local | Sessão/CSRF, MySQL 8.0.40, Flyway V1–V4, carga demo idempotente e testes executados. |
-| 2. Cadastros e referências | Parcial | CRUD e referências exercitados; faltam campos tipados/condicionais e tratamento de e-mail duplicado em clientes. |
-| 3. Jornada principal | Percursos críticos validados | Criação, triagem, atribuição, execução, aprovação/correção e dois ciclos; falta reatribuição durante execução/espera. |
-| 4. Exceções e colaboração | Parcial | Complemento, pausas, reabertura, cancelamento, anexos e histórico testados; faltam notificações automáticas de vencimento e auditoria dedicada de prazo na retomada. |
-| 5. Gestão e acabamento | Parcial | Lista/Kanban, busca e relatórios testados; faltam agregações do painel, filtro/indicação de vencimento e tempo útil antes da triagem. |
-| 6. Validação e entrega | Revisão executada; aceite integral pendente | Evidências e roteiro em `docs/review` e `Backend/scripts`; faltam resolver achados e certificar acessibilidade, outros navegadores e escala. |
+| 0. Contrato e decisões | Contrato sincronizado | OpenAPI gerado e versionado, tipos TypeScript gerados, sessão/CSRF/versão esperada e multipart documentados. |
+| 1. Fundação | Validada localmente | MySQL 8.0.40, Flyway V1–V6, demo idempotente, sessão e testes. |
+| 2. Cadastros e referências | Achados corrigidos | Campos tipados/condicionais, e-mail duplicado tratado, referências e paginação SQL. |
+| 3. Jornada principal | Percursos testados | Triagem, execução, aprovação/correção, dois ciclos e reatribuição em execução/espera com prazo preservado. |
+| 4. Exceções e colaboração | Achados corrigidos | Job de vencimento deduplicado, retomada auditada, versão esperada, rollback de anexos. |
+| 5. Gestão e acabamento | Achados corrigidos | Agregações por prioridade/responsável/prazo, filtro/indicação de vencimento e tempo útil pré-triagem. |
+| 6. Validação e entrega | Regressão local aprovada | Evidências HTTP/Java/UI; não equivale a teste de carga, pentest, homologação de outros navegadores ou auditoria completa de acessibilidade. |
 
 ## Fontes técnicas para as escolhas
 

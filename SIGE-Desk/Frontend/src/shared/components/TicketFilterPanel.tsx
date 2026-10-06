@@ -1,5 +1,5 @@
 import { useId, useState } from 'react';
-import { Box, Button, Collapse, FormControl, InputLabel, MenuItem, Select, Stack, TextField } from '@mui/material';
+import { Box, Button, Checkbox, FormControlLabel, Collapse, FormControl, InputLabel, MenuItem, Select, Stack, TextField } from '@mui/material';
 import TuneOutlined from '@mui/icons-material/TuneOutlined';
 import { useTranslation } from 'react-i18next';
 import type { Priority, ReferenceData, TicketFilters, TicketStatus } from '../api/types';
@@ -30,6 +30,7 @@ export function TicketFilterPanel({ filters, onChange, reference, searchPlacehol
         {reference.clients.map(item => <MenuItem key={item.id} value={item.id}>{item.label}</MenuItem>)}
       </FilterSelect>
     </Box>
+    <FormControlLabel control={<Checkbox checked={Boolean(filters.overdue)} onChange={event=>onChange({...filters,overdue:event.target.checked||undefined})}/>} label={t('tickets.onlyOverdue')}/>
     <Collapse in={expanded}>
     <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(170px,1fr))', gap: 1.5, mt: 2 }}>
       <FilterSelect label={t('tickets.campaign')} value={filters.campaignId ?? ''} onChange={value => update('campaignId', value)}>

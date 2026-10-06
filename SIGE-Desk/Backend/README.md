@@ -113,4 +113,12 @@ Para executar os testes do backend:
 O teste de migração MySQL depende de uma base vazia e descartável configurada separadamente; consulte o [README geral](../README.md#validação-de-migration-mysql).
 
 
-A revisão funcional, as pendências por requisito e o roteiro HTTP em banco isolado estão em [docs/REVISAO-ENTREGA.md](../docs/REVISAO-ENTREGA.md).
+A revisão funcional, as correções por requisito e o roteiro HTTP em banco isolado estão em [docs/REVISAO-ENTREGA.md](../docs/REVISAO-ENTREGA.md).
+
+## Correções da revisão
+
+As migrations V5/V6 criam o controle de avisos de vencimento e índices de consulta. O backend verifica vencimentos a cada 60 segundos, com deduplicação por prazo e ciclo. Para ajustar, use as propriedades Spring `sige.notifications.overdue-interval-ms` e `sige.notifications.overdue-initial-delay-ms` (padrão 5000). O job respeita pausa da resolução e preserva o relógio da primeira resposta.
+
+Novas classificações excluem automaticamente feriados nacionais fixos; feriados locais/religiosos e recessos continuam na lista `holidays` da regra. O calendário fica congelado no ticket.
+
+Os comandos de ticket exigem `If-Match` com `TicketItem.version`. A criação multipart permite ticket e anexos no mesmo envio com rollback. Consulte [contrato e geração de tipos](../docs/openapi.md) e [regressão com evidências](../docs/REVISAO-ENTREGA.md). Para repetir a API, inicie demo em banco separado na porta 8081 e execute `python scripts/review_flows.py`; não use o banco principal nesse roteiro.
