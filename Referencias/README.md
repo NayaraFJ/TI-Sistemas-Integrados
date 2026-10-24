@@ -31,6 +31,10 @@ Dos treze artigos selecionados, doze são citados no artigo consolidado em `../O
 | Outras Fontes | Artigo científico sobre o questionário UEQ-S | Usado no artigo; fonte externa ao corpus IEEE que complementa o instrumento de avaliação | [Extração](<Outras Fontes/Extracoes/01-ueq-s-versao-curta.md>) |
 | Normas | Artigo científico sobre usabilidade de site de e-learning | Complementar, não usado no artigo atual | [Extração](<Normas/Extracoes/07-usabilidade-site-e-learning.md>) |
 
+## Fontes em triagem para ampliação do referencial teórico
+
+A [Pesquisa 04](<Pesquisa 04/README.md>) reúne sete livros selecionados do acervo local e o Scrum Guide de 2020 já disponível, para revisão bibliográfica, requisitos, backlog, MVP e testes funcionais e de usabilidade. O índice registra a aplicação de cada fonte e as lacunas identificadas. A seleção ainda não foi incorporada ao artigo nem constitui fichamento completo.
+
 ## Manutenção
 
 Ao adicionar uma extração, informe nesta página seu tipo e situação no artigo. Se ela passar a fundamentar o texto, atualize também a bibliografia e os arquivos correspondentes em `Trabalho/Artigo` e `Overleaf`.
