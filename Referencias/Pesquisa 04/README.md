@@ -2,12 +2,13 @@
 
 Seleção inicial realizada em 23/10/2026 para os tópicos solicitados pelo professor: revisão bibliográfica, requisitos do sistema, backlog, produto mínimo viável (MVP), testes funcionais e testes de usabilidade.
 
-Os sete livros foram copiados do acervo local `F:\GIT\Pessoal\Programming-Books-Livros-de-programacao\livros`, preservando os nomes dos arquivos. O Scrum Guide já estava nesta pasta. Foram consultados dados editoriais, sumários e trechos pertinentes; esta triagem não corresponde à leitura integral nem a fichamentos completos. As fontes estão selecionadas para consulta, ainda sem incorporação ao artigo nesta tarefa.
+Os sete livros foram copiados do acervo local `F:\GIT\Pessoal\Programming-Books-Livros-de-programacao\livros`, preservando os nomes dos arquivos. O Scrum Guide já estava nesta pasta, e o exemplar de Gil foi acrescentado posteriormente. A extração temática está concluída em [Extracoes](Extracoes/README.md), com nove fichas e um mapa dos cinco tópicos. A leitura abrange os trechos indicados em cada ficha, não a íntegra das obras. O conteúdo ainda não foi incorporado ao artigo nesta etapa.
 
 ## Fontes e aplicação
 
 | Tópico | Fonte disponível | Leitura indicada e contribuição |
 | --- | --- | --- |
+| Revisão bibliográfica | GIL, Antonio Carlos. **Como elaborar projetos de pesquisa**. 3. ed. São Paulo: Atlas, 1991. [PDF](gil_como_elaborar_projetos_de_pesquisa_-anto.pdf) | Seção 4.3, PDF pp. 27–28, e capítulo 5, PDF pp. 36–43. Conceituação e procedimentos. O exemplar também menciona 1996/tiragem; a [ficha](Extracoes/GIL_1991.md) registra a ressalva de identificação. |
 | Revisão bibliográfica | BOOTH, Wayne C.; COLOMB, Gregory G.; WILLIAMS, Joseph M. **The Craft of Research**. 3. ed. Chicago: The University of Chicago Press, 2008. [PDF](the-craft-of-research-3rd-edition_2008.pdf) | Capítulos 5 e 6, sobre localização, avaliação e uso de fontes. Apoio complementar para o processo de pesquisa; não foi identificado como substituto direto da definição de pesquisa bibliográfica proposta por Gil ou Marconi e Lakatos. |
 | Requisitos do sistema | SOMMERVILLE, Ian. **Engenharia de software**. 9. ed. São Paulo: Pearson Prentice Hall, 2011. [PDF](engenharia-de-software-9a-edicao-sommerville_2011.pdf) | Capítulo 4, Engenharia de requisitos. Fonte para conceituar requisitos e distinguir requisitos funcionais e não funcionais. |
 | Requisitos e testes funcionais | PRESSMAN, Roger S.; MAXIM, Bruce R. **Engenharia de software: uma abordagem profissional**. 9. ed. Porto Alegre: AMGH, 2021. [PDF](engenharia-de-software-uma-abordagem-profissional-9a-edicao_2021.pdf) | Engenharia de requisitos e capítulos de testes, especialmente a seção 19.5, Teste caixa-preta, com particionamento de equivalência e análise de valor limite. Complementa Sommerville e Myers. |
@@ -20,8 +21,8 @@ Os sete livros foram copiados do acervo local `F:\GIT\Pessoal\Programming-Books-
 
 ## Lacunas e cuidados para a redação
 
-- Não foram localizados no acervo livros de Antonio Carlos Gil, Marconi e Lakatos, Eric Ries, Jakob Nielsen, Steve Krug ou Delamaro. Myers está disponível.
-- A definição metodológica de pesquisa bibliográfica ainda precisa de uma fonte diretamente adequada. Booth, Colomb e Williams oferecem apoio ao uso de fontes, mas a triagem não confirmou uma definição equivalente à solicitada pelo professor.
+- A ausência inicial de Gil no acervo foi resolvida com o exemplar acrescentado a esta pasta. A definição metodológica foi extraída de sua seção 4.3. Não foram consultadas diretamente obras de Marconi e Lakatos, Eric Ries, Jakob Nielsen, Steve Krug ou Delamaro; Myers está disponível e foi fichado.
+- Booth, Colomb e Williams complementam Gil quanto ao uso crítico e à documentação das fontes. As fichas distinguem conteúdo consultado diretamente de autores mencionados pelas obras.
 - Para eficácia, eficiência e satisfação, consultar também as fontes de usabilidade já reunidas no projeto e identificar a origem precisa da definição. Avaliação heurística e teste de usabilidade com participantes são procedimentos diferentes.
 - Os anos e edições seguem os exemplares e o catálogo local. No livro de Myers, o copyright é de 2012 e a ficha de catalogação contém 2011; conferir o critério bibliográfico na preparação da referência definitiva. Não usar o ano da catalogação automaticamente como ano de publicação.
 - Antes de citar, conferir o trecho no exemplar, a numeração impressa e os dados editoriais. A página do visualizador pode diferir da página impressa. Não citar como lido um autor apenas mencionado por outra obra.
