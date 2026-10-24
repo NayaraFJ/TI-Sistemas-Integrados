@@ -43,7 +43,7 @@ Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e regi
 \subsubsection{\esp Objetivos específicos}
 
 \begin{itemize}
-\item Realizar uma revisão bibliográfica de artigos e normas aplicáveis para compreender o problema e fundamentar a solução;
+\item Realizar uma revisão bibliográfica de artigos, livros, guias e normas aplicáveis para compreender o problema e fundamentar a solução;
 \item Levantar, analisar e priorizar os requisitos do sistema;
 \item Modelar o processo de atendimento e definir o \textit{backlog} com responsabilidades, dependências e prazos de entrega;
 \item Prototipar a solução;
@@ -53,6 +53,54 @@ Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e regi
 \end{itemize}
 
 \section{\esp REFERENCIAL TEÓRICO}
+
+\subsection{\esp Revisão bibliográfica}
+
+A revisão bibliográfica organiza o conhecimento publicado que permite delimitar um problema de pesquisa, compreender conceitos e interpretar resultados. Sua base metodológica é a pesquisa bibliográfica, desenvolvida a partir de material já elaborado, sobretudo livros e artigos científicos. Esse procedimento pode constituir a principal forma de investigação ou complementar pesquisas que também utilizem outros meios de obtenção de dados \cite{GIL_1991}.
+
+O processo envolve estabelecer objetivos, elaborar um plano, identificar e localizar fontes, selecionar e ler os materiais, registrar as informações pertinentes e redigir uma síntese vinculada ao problema. A leitura exploratória verifica a utilidade da obra; a seletiva delimita os trechos relevantes; a analítica organiza suas ideias; e a interpretativa relaciona essas contribuições à investigação. Essas atividades exigem exame crítico e podem ser retomadas conforme o entendimento do tema evolui \cite{GIL_1991}.
+
+A qualidade da revisão depende da pertinência e da confiabilidade das fontes, da comparação de argumentos e do registro de autoria, edição e localização das informações. Fontes secundárias podem reproduzir erros, e a autoridade de uma publicação não dispensa a análise de suas evidências. No presente trabalho, esses fundamentos orientam a articulação entre estudos sobre atendimento e marketing digital e as bases conceituais necessárias à especificação e à avaliação do sistema \cite{GIL_1991,BOOTH_COLOMB_WILLIAMS_2008}.
+
+\subsection{\esp Requisitos do sistema}
+
+Os requisitos de um sistema descrevem os serviços que ele deve oferecer, os comportamentos esperados e as restrições de funcionamento, expressando necessidades dos interessados. A engenharia de requisitos abrange descobrir, analisar, documentar e verificar essas necessidades. Requisitos de usuário apresentam serviços e restrições em nível acessível ao público envolvido, enquanto requisitos de sistema detalham o que deve ser implementado \cite{SOMMERVILLE_2011}.
+
+Os requisitos funcionais especificam o que o sistema deve fazer, incluindo respostas a entradas e comportamentos em situações determinadas. Os não funcionais estabelecem propriedades e restrições, como desempenho, disponibilidade, segurança e usabilidade, além de exigências organizacionais e externas. A distinção não é absoluta: uma exigência de proteção pode originar funções de autenticação e autorização. No Help Desk proposto, registrar e acompanhar uma solicitação exemplificam funções, enquanto as condições de acesso e o tempo de resposta delimitam propriedades e restrições da solução \cite{SOMMERVILLE_2011}.
+
+Requisitos claros permitem reduzir interpretações divergentes e relacionar a especificação aos procedimentos de verificação. Sempre que viável, propriedades como desempenho e facilidade de uso devem ser expressas por condições observáveis, em vez de metas vagas. A ISO/IEC/IEEE 29148:2018 complementa essa orientação ao tratar características como ausência de ambiguidade e verificabilidade e apoiar o registro e a rastreabilidade dos requisitos ao longo do desenvolvimento \cite{SOMMERVILLE_2011,iso29148}.
+
+\subsection{\esp Backlog}
+
+No Scrum, o \textit{Product Backlog} é uma lista ordenada e emergente do que é necessário para melhorar o produto e constitui a fonte de trabalho do Scrum Team. Seu conteúdo evolui com o conhecimento adquirido, e sua ordenação permite orientar as decisões de desenvolvimento em relação à Meta do Produto. O Product Owner responde pelo gerenciamento eficaz dessa lista, incluindo a comunicação dos itens e a garantia de transparência e compreensão \cite{SCHWABER_SUTHERLAND_2020}.
+
+O refinamento é uma atividade contínua de desdobramento e detalhamento dos itens, tornando-os menores e mais precisos. O \textit{Sprint Backlog}, por sua vez, reúne a Meta da Sprint, os itens selecionados e o plano de ação para entregar o incremento, sendo atualizado pelos Developers durante o trabalho. Assim, a organização das necessidades do produto e o planejamento de uma Sprint possuem alcances distintos \cite{SCHWABER_SUTHERLAND_2020}.
+
+Audy descreve o backlog como instrumento vivo, construído a partir de demandas levantadas com os envolvidos e revisto conforme os pressupostos do produto são examinados. O registro pode utilizar planilhas, ferramentas especializadas ou post-its, e sua elaboração considera prioridade, valor e complexidade. Para o SIGE Desk, esse conceito fundamenta a organização das demandas de desenvolvimento e a seleção do escopo inicial; o uso do backlog, isoladamente, não caracteriza a adoção integral do Scrum \cite{AUDY_2015,SCHWABER_SUTHERLAND_2020}.
+
+\subsection{\esp Produto mínimo viável}
+
+O produto mínimo viável, ou \textit{Minimum Viable Product} (MVP), corresponde à versão mais simples de um produto que pode ser disponibilizada para validar um pequeno conjunto de hipóteses sobre o negócio. Seu propósito é produzir aprendizagem sobre o direcionamento da solução antes de ampliar o investimento. O recorte de funcionalidades deve, portanto, ser suficiente para realizar essa verificação \cite{CAROLI_2015}.
+
+A evolução ocorre por incrementos orientados pelos resultados das validações. Hipóteses amplas podem ser decompostas em hipóteses menores, permitindo obter retorno antecipado e corrigir o curso do produto. Uma resposta negativa também é relevante, pois pode mostrar que o investimento em uma solução mais elaborada não seria justificado \cite{CAROLI_2015}.
+
+Na proposta do SIGE Desk, a delimitação do MVP concentra-se no fluxo de registro e acompanhamento de demandas, com responsáveis, prazos, comunicação e histórico. A avaliação desse recorte deverá examinar se os usuários compreendem e conseguem percorrer os fluxos previstos. A prototipação poderá apoiar essa aprendizagem, enquanto a verificação das regras implementadas e da operação da aplicação dependerá dos testes correspondentes. Essa aplicação do conceito orienta o planejamento do projeto e não constitui resultado de validação já obtido.
+
+\subsection{\esp Testes funcionais e de usabilidade}
+
+\subsubsection{\esp Testes funcionais}
+
+Os testes funcionais procuram identificar discrepâncias entre o comportamento do software e sua especificação externa, considerada do ponto de vista do usuário. Na abordagem de caixa-preta, os casos são derivados das entradas, saídas e condições especificadas, sem utilizar a estrutura interna do programa como base para sua seleção. Cada caso precisa explicitar o resultado esperado e considerar também situações inválidas ou inesperadas \cite{MYERS_SANDLER_BADGETT_2012}.
+
+O particionamento de equivalência organiza as entradas em classes válidas e inválidas para selecionar representantes de comportamentos esperados. A análise de valor limite complementa essa técnica, explorando as fronteiras e os valores imediatamente próximos, tanto no domínio de entrada quanto no de saída. Em um formulário, isso pode orientar testes de campos obrigatórios e limites definidos na especificação, comparando a resposta obtida com a regra prevista \cite{MYERS_SANDLER_BADGETT_2012,PRESSMAN_MAXIM_2021}.
+
+\subsubsection{\esp Testes de usabilidade}
+
+Os testes de usabilidade examinam a interação de usuários com a interface durante a realização de tarefas. Teixeira destaca a compreensão e a manipulação do produto, enquanto Myers, Sandler e Badgett discutem clareza das mensagens, consistência, retorno das ações, navegação, aprendizagem e satisfação. A observação dessas dimensões complementa a verificação funcional, pois uma operação pode produzir a saída correta e ainda apresentar dificuldades de uso \cite{TEIXEIRA_2014,MYERS_SANDLER_BADGETT_2012}.
+
+Ao aplicar a ISO 9241-11 à avaliação de uma aplicação de assinatura digital, Radhitya et al. articulam eficácia, eficiência e satisfação em um contexto de uso. A eficácia diz respeito à realização dos objetivos, a eficiência relaciona essa realização aos recursos empregados, como o tempo, e a satisfação considera a percepção dos usuários. A combinação de desempenho nas tarefas e percepção permite distinguir a conclusão de uma atividade das dificuldades encontradas para concluí-la \cite{radhitya2024}.
+
+A avaliação requer tarefas realistas, participantes compatíveis com o público e instruções consistentes, com registro de conclusão, erros, ajuda e tempo. Entrevistas ou questionários podem complementar a observação; o UEQ-S, por exemplo, oferece uma medida resumida das qualidades pragmática e hedônica da experiência. Essas respostas não substituem os registros de execução das tarefas. O número de participantes e o alcance das conclusões devem considerar o contexto e a complexidade do sistema \cite{MYERS_SANDLER_BADGETT_2012,TEIXEIRA_2014,schrepp2017}.
 
 \subsection{\esp Gestão de demandas e sistemas de informação}
 
@@ -126,8 +174,10 @@ A Lei Geral de Proteção de Dados Pessoais (LGPD) estabelece o princípio da ne
 
 \subsection{\esp Síntese do marco teórico}
 
+A revisão bibliográfica fornece a base de seleção e análise do conhecimento; os requisitos descrevem serviços e restrições; o backlog organiza o trabalho para a evolução do produto; e o MVP delimita um recorte destinado à aprendizagem. Os testes funcionais verificam comportamentos especificados, enquanto os de usabilidade examinam a realização de tarefas e a percepção dos usuários. Esses fundamentos conectam a investigação do problema ao planejamento, à construção e à avaliação da solução \cite{GIL_1991,SOMMERVILLE_2011,SCHWABER_SUTHERLAND_2020,CAROLI_2015,MYERS_SANDLER_BADGETT_2012,TEIXEIRA_2014}.
+
 A gestão de demandas e sistemas de informação é fundamentada nos estudos de Service Desk e nos guias de registro, comunicação e atendimento de solicitações \cite{amanullah2017,fenner2015,firmansyah2022,servicedesk2023,servicerequest2020}. Marketing digital e tráfego pago são contextualizados pela cadeia de publicidade, pela distribuição de orçamento e pelas estratégias de busca paga \cite{agus2019,yahia2024,nain2025}. As competências de gestão de projetos em agências são discutidas por \citeonline{steponaitis2023}.
 
-A automação de marketing, o CRM e o atendimento são tratados por estudos de integração de atividades, relacionamento e adoção tecnológica \cite{gujar2024,younas2025,kharisma2024,emon2026}. Métricas e controle de campanhas são abordados pela análise de indicadores e da qualidade do tráfego \cite{nain2025,abbonizio2023}. Rastreabilidade, transparência e proteção de dados têm apoio nos guias de atendimento, na discussão ética da publicidade direcionada e nas fontes normativas de proteção de dados \cite{servicedesk2023,servicerequest2020,daoud2023,brasil2018,anpd2021}. A revisão articula esses seis campos, preservando os contextos e limites das evidências apresentadas.
+A automação de marketing, o CRM e o atendimento são tratados por estudos de integração de atividades, relacionamento e adoção tecnológica \cite{gujar2024,younas2025,kharisma2024,emon2026}. Métricas e controle de campanhas são abordados pela análise de indicadores e da qualidade do tráfego \cite{nain2025,abbonizio2023}. Rastreabilidade, transparência e proteção de dados têm apoio nos guias de atendimento, na discussão ética da publicidade direcionada e nas fontes normativas de proteção de dados \cite{servicedesk2023,servicerequest2020,daoud2023,brasil2018,anpd2021}. Esses seis campos de aplicação complementam os fundamentos de revisão bibliográfica, requisitos, backlog, MVP e testes apresentados no início do referencial, preservando os contextos e limites das evidências.
 
-A ISO/IEC/IEEE 29148:2018 trata a engenharia de requisitos e define características como clareza, ausência de ambiguidade e verificabilidade \cite{iso29148}. A especificação BPMN 2.0 estabelece uma notação para representar processos de negócio e suas interações, compreensível para participantes de negócio e técnicos \cite{omg2011}. Essas fontes complementam a fundamentação sobre descrição de necessidades e representação de processos.
+A especificação BPMN 2.0 complementa esses fundamentos ao estabelecer uma notação para representar processos de negócio e suas interações, compreensível para participantes de negócio e técnicos \cite{omg2011}. A representação do atendimento conecta as necessidades especificadas aos fluxos que serão desenvolvidos e avaliados.

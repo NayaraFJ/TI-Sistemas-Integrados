@@ -2,7 +2,7 @@
 
 Fichamentos dos trechos pertinentes aos cinco tópicos solicitados pelo professor. O quinto tópico foi subdividido em testes funcionais e testes de usabilidade para preservar a diferença entre seus objetivos. Há uma ficha por obra, inclusive quando a mesma fonte atende a mais de um tópico.
 
-Esta entrega registra conceitos, procedimentos, localizações e limites das fontes; não é a redação do referencial teórico. Nenhuma alteração foi feita em `Trabalho` ou `Overleaf` nesta etapa. A integração acadêmica deverá ocorrer em tarefa de redação, mantendo os dois conjuntos coerentes.
+As fichas registram conceitos, procedimentos, localizações e limites das fontes. A redação correspondente foi incorporada às cinco primeiras seções de [Etapa 03 — Referencial teórico](../../../Trabalho/Artigo/Etapa%2003%20-%20Referencial%20teorico.md), sincronizadas com [Overleaf final](../../../Overleaf/conteudo.tex) e [Overleaf progressivo](../../../Overleaf%20Progressivo/conteudo.tex). Os textos de domínio existentes foram preservados após esses fundamentos. As chaves da tabela abaixo são as mesmas das entradas nas duas bibliografias; as referências completas estão consolidadas no artigo Markdown e em cada projeto Overleaf.
 
 ## Mapa dos cinco tópicos
 
@@ -40,9 +40,9 @@ Esta entrega registra conceitos, procedimentos, localizações e limites das fon
 
 ## Fontes preexistentes e alcance da leitura
 
-Foram consultadas as fichas já existentes sobre [ISO/IEC/IEEE 29148](../../Normas/Extracoes/01-iso-iec-ieee-29148-requisitos.md), [usabilidade de assinatura digital baseada na ISO 9241-11](../../Normas/Extracoes/06-usabilidade-assinatura-digital-iso-9241-11.md) e [UEQ-S](../../Outras%20Fontes/Extracoes/01-ueq-s-versao-curta.md) para identificar continuidade com o material do projeto. Seus PDFs não foram reextraídos nem seus resultados revalidados nesta tarefa.
+Na extração inicial foram consultadas as fichas já existentes sobre [ISO/IEC/IEEE 29148](../../Normas/Extracoes/01-iso-iec-ieee-29148-requisitos.md), [usabilidade de assinatura digital baseada na ISO 9241-11](../../Normas/Extracoes/06-usabilidade-assinatura-digital-iso-9241-11.md) e [UEQ-S](../../Outras%20Fontes/Extracoes/01-ueq-s-versao-curta.md) para identificar continuidade com o material do projeto. Na redação, foram também conferidas a introdução e a seção II.B do PDF de Radhitya et al. (2024), pp. impressas 412–413 (PDF pp. 1–2), para sustentar a abordagem de eficácia, eficiência e satisfação por intermédio desse artigo. Não foi presumida consulta direta à ISO 9241-11 nem revalidação dos resultados empíricos do estudo.
 
-A ficha de assinatura digital já aborda eficácia/efetividade, eficiência e satisfação por intermédio de um artigo que utiliza a ISO 9241-11. Isso não equivale à consulta direta da norma. A ficha do UEQ-S trata da percepção de experiência do usuário; não deve ser usada isoladamente como medida de conclusão ou tempo de tarefas. Essas fontes poderão complementar a redação posterior, com conferência dos originais conforme a afirmação a sustentar.
+A ficha de assinatura digital aborda eficácia/efetividade, eficiência e satisfação por intermédio do artigo que utiliza a ISO 9241-11. A ficha do UEQ-S trata da percepção de experiência do usuário; não deve ser usada isoladamente como medida de conclusão ou tempo de tarefas. Ambas agora complementam o tópico de usabilidade no referencial e possuem entradas citadas nas bibliografias final e progressiva.
 
 ## Conferência e pendências
 

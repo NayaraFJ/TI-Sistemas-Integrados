@@ -33,7 +33,7 @@ Dos treze artigos selecionados, doze são citados no artigo consolidado em `../O
 
 ## Fontes em triagem para ampliação do referencial teórico
 
-A [Pesquisa 04](<Pesquisa 04/README.md>) reúne sete livros selecionados do acervo local, o Scrum Guide de 2020 e o exemplar de Gil acrescentado posteriormente, para revisão bibliográfica, requisitos, backlog, MVP e testes funcionais e de usabilidade. As [nove extrações temáticas](<Pesquisa 04/Extracoes/README.md>) registram conceitos, páginas consultadas, aplicações e limites de leitura. O fichamento é dos trechos pertinentes; o conteúdo ainda não foi incorporado ao artigo.
+A [Pesquisa 04](<Pesquisa 04/README.md>) reúne sete livros selecionados do acervo local, o Scrum Guide de 2020 e o exemplar de Gil acrescentado posteriormente, para revisão bibliográfica, requisitos, backlog, MVP e testes funcionais e de usabilidade. As [nove extrações temáticas](<Pesquisa 04/Extracoes/README.md>) registram conceitos, páginas consultadas, aplicações e limites de leitura. Esses fundamentos foram incorporados ao início do referencial teórico em `Trabalho/Artigo`, `Overleaf` e `Overleaf Progressivo`, com as referências consolidadas em cada versão.
 
 ## Manutenção
 

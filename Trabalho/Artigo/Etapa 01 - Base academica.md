@@ -25,11 +25,11 @@
 
 **Help Desk para Gestão de Tráfego Pago: uma Aplicação para Controle de Campanhas e Atendimento a Clientes**
 
-## Título revisado
+## Título vigente
 
-**Desenvolvimento de um Help Desk Web para Centralizar e Rastrear Demandas de Tráfego Pago**
+**Help Desk para Gestão de Demandas de Tráfego Pago**
 
-Em 3 de outubro de 2026, o título foi reformulado para explicitar o desenvolvimento da aplicação e sua finalidade de centralizar e rastrear demandas de tráfego pago, em alinhamento com a pergunta de pesquisa. O título da entrega inicial foi mantido acima como registro histórico. A reformulação ainda será apresentada ao professor; não constitui confirmação da interpretação do comentário sobre a Etapa 1.
+Em 3 de outubro de 2026, foi proposta uma reformulação do título a partir da interpretação de um comentário do professor. Após o esclarecimento de que o comentário não se referia ao título, foi retomado o título já validado: “Help Desk para Gestão de Demandas de Tráfego Pago”. O título da entrega inicial foi mantido acima como registro histórico.
 
 ## Registro da etapa
 

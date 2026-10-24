@@ -2,7 +2,7 @@
 
 Seleção inicial realizada em 23/10/2026 para os tópicos solicitados pelo professor: revisão bibliográfica, requisitos do sistema, backlog, produto mínimo viável (MVP), testes funcionais e testes de usabilidade.
 
-Os sete livros foram copiados do acervo local `F:\GIT\Pessoal\Programming-Books-Livros-de-programacao\livros`, preservando os nomes dos arquivos. O Scrum Guide já estava nesta pasta, e o exemplar de Gil foi acrescentado posteriormente. A extração temática está concluída em [Extracoes](Extracoes/README.md), com nove fichas e um mapa dos cinco tópicos. A leitura abrange os trechos indicados em cada ficha, não a íntegra das obras. O conteúdo ainda não foi incorporado ao artigo nesta etapa.
+Os sete livros foram copiados do acervo local `F:\GIT\Pessoal\Programming-Books-Livros-de-programacao\livros`, preservando os nomes dos arquivos. O Scrum Guide já estava nesta pasta, e o exemplar de Gil foi acrescentado posteriormente. A extração temática está concluída em [Extracoes](Extracoes/README.md), com nove fichas e um mapa dos cinco tópicos. A leitura abrange os trechos indicados em cada ficha, não a íntegra das obras. Os conceitos foram incorporados às cinco primeiras seções do referencial teórico em `Trabalho/Artigo/Etapa 03 - Referencial teorico.md` e nas versões final e progressiva do Overleaf.
 
 ## Fontes e aplicação
 
@@ -28,4 +28,4 @@ Os sete livros foram copiados do acervo local `F:\GIT\Pessoal\Programming-Books-
 - Antes de citar, conferir o trecho no exemplar, a numeração impressa e os dados editoriais. A página do visualizador pode diferir da página impressa. Não citar como lido um autor apenas mencionado por outra obra.
 - A ISO/IEC/IEEE 29148 já possui registro em `../Normas/Extracoes/01-iso-iec-ieee-29148-requisitos.md`; não foi criada uma cópia redundante nesta seleção.
 
-A próxima etapa de redação deverá incorporar os conceitos de forma coerente ao referencial teórico e manter os materiais de `Trabalho` e o artigo em `Overleaf` semanticamente sincronizados, com uma única lista consolidada de referências.
+A incorporação mantém os conceitos antes dos temas de domínio já existentes, preserva a síntese acadêmica e utiliza uma única lista consolidada de referências em cada versão do artigo. As chaves bibliográficas das nove fontes correspondem aos nomes das fichas em `Extracoes`.
