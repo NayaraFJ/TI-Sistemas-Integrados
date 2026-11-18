@@ -181,3 +181,104 @@ A gestão de demandas e sistemas de informação é fundamentada nos estudos de 
 A automação de marketing, o CRM e o atendimento são tratados por estudos de integração de atividades, relacionamento e adoção tecnológica \cite{gujar2024,younas2025,kharisma2024,emon2026}. Métricas e controle de campanhas são abordados pela análise de indicadores e da qualidade do tráfego \cite{nain2025,abbonizio2023}. Rastreabilidade, transparência e proteção de dados têm apoio nos guias de atendimento, na discussão ética da publicidade direcionada e nas fontes normativas de proteção de dados \cite{servicedesk2023,servicerequest2020,daoud2023,brasil2018,anpd2021}. Esses seis campos de aplicação complementam os fundamentos de revisão bibliográfica, requisitos, backlog, MVP e testes apresentados no início do referencial, preservando os contextos e limites das evidências.
 
 A especificação BPMN 2.0 complementa esses fundamentos ao estabelecer uma notação para representar processos de negócio e suas interações, compreensível para participantes de negócio e técnicos \cite{omg2011}. A representação do atendimento conecta as necessidades especificadas aos fluxos que serão desenvolvidos e avaliados.
+
+\section{\esp METODOLOGIA}
+
+\subsection{\esp Caracterização da pesquisa}
+
+A pesquisa foi caracterizada como aplicada, pois teve como objetivo propor e construir uma solução para um problema prático de gestão de demandas em agências de marketing digital. Quanto aos objetivos, assumiu caráter exploratório e descritivo: investigou possibilidades de organização de solicitações de tráfego pago a partir da literatura e da proposta de sistema e registrou necessidades, papéis, fluxos e requisitos. A abordagem adotada foi predominantemente qualitativa, com análise bibliográfica e documental e definição de medidas quantitativas descritivas para a avaliação. A revisão, a especificação, a modelagem, a prototipação e a implementação foram documentadas no projeto. As verificações técnicas da aplicação foram registradas separadamente; a avaliação com participantes foi descrita pelo protocolo elaborado, sem apresentação de resultados de sua aplicação nesta entrega.
+
+\subsection{\esp Revisão bibliográfica}
+
+A busca de artigos para o corpus temático foi realizada de forma estruturada na IEEE Xplore. As Pesquisas 01 e 02 foram executadas em 15 de agosto de 2026, com publicações em inglês, de 2019 a 2026, e no campo \textit{Document Title}; elas combinaram marketing digital a termos de gestão, automação, relacionamento com clientes, campanhas e publicidade paga. A Pesquisa 03 foi executada em 21 de agosto de 2026 para complementar a fundamentação de Help Desk, no campo \textit{All}, sem recorte temporal e limitada, na exportação, a artigos de periódicos e conferências. O Quadro \ref{qua:buscas-ieee} apresenta as expressões booleanas empregadas.
+
+\begin{quadro}[H]
+\centering
+\caption{Expressões de busca utilizadas na IEEE Xplore}
+\label{qua:buscas-ieee}
+\small
+\begin{tabular}{p{0.13\textwidth}p{0.75\textwidth}}
+\hline
+\textbf{Busca} & \textbf{Expressão booleana} \\
+\hline
+Pesquisa 01 & \ttfamily ("Document Title":"digital marketing") AND ("Document Title":"marketing automation" OR "Document Title":"project management" OR "Document Title":"customer relationship management" OR "Document Title":"marketing agency" OR "Document Title":"management system") \\
+\normalfont Pesquisa 02 & \ttfamily ("Document Title":"digital marketing") AND ("Document Title":campaign OR "Document Title":advertising OR "Document Title":"paid advertising" OR "Document Title":"media buying") \\
+\normalfont Pesquisa 03 & \ttfamily ("service desk") AND communication \\
+\hline
+\end{tabular}
+\par\footnotesize\normalfont\textbf{Fonte:} Elaborado pelo grupo a partir do protocolo de busca da pesquisa.
+\end{quadro}
+
+Foram incluídos artigos recuperados por essas expressões que apresentassem resumo ou texto disponível para leitura e contribuíssem diretamente para pelo menos um dos seguintes aspectos: gestão de demandas ou de projetos em agências; centralização de atividades de marketing; operação de campanhas pagas e análise de suas métricas; relacionamento e comunicação com clientes; privacidade aplicável ao contexto das campanhas; ou ponto único de contato, registro, rastreamento e processamento de solicitações. Nas Pesquisas 01 e 02, também foram aplicados o período e o idioma definidos; na Pesquisa 03, o filtro de tipo documental foi periódico ou conferência.
+
+Foram excluídos estudos cujo foco principal fosse: (a) automação, predição ou personalização por inteligência artificial sem relação direta com a gestão de demandas e fora do escopo do MVP; (b) Internet das Coisas, sinalização digital ou outro domínio tecnológico sem relação com tickets; (c) comportamento de consumo ou nicho de mercado sem contribuição direta para o fluxo de atendimento; (d) tema genérico de marketing, CRM ou Service Desk já contemplado por fonte mais aderente ao problema investigado; ou (e) contexto de telecomunicações, infraestrutura, saúde ou segurança sem transferência direta para o fluxo de demandas proposto. O descarte representa somente insuficiência de aderência ao problema e ao escopo do sistema, não uma avaliação negativa da qualidade dos artigos.
+
+As três buscas recuperaram 44 artigos sem duplicidade: dez na Pesquisa 01, quinze na Pesquisa 02 e dezenove na Pesquisa 03. A identificação de duplicidades foi feita pela comparação dos DOIs. A triagem compreendeu a leitura de títulos e resumos, a verificação de aderência aos critérios de inclusão e exclusão apresentados e a extração de conteúdo dos trabalhos avaliados. Ao final, treze artigos foram selecionados para fundamentar o projeto e 31 foram descartados conforme esses critérios. A relação individual dos trabalhos selecionados e descartados, suas contribuições e as justificativas de exclusão foram preservadas no registro de triagem bibliográfica da pesquisa. A Tabela \ref{tab:selecao-bibliografica} sintetiza esse processo.
+
+\begin{table}[H]
+\centering
+\caption{Resultado do processo de seleção bibliográfica}
+\label{tab:selecao-bibliografica}
+\begin{tabular}{lc}
+\hline
+\textbf{Etapa da seleção} & \textbf{Quantidade de artigos} \\
+\hline
+Recuperados na Pesquisa 01 & 10 \\
+Recuperados na Pesquisa 02 & 15 \\
+Recuperados na Pesquisa 03 & 19 \\
+Selecionados para a fundamentação do projeto & 13 \\
+Descartados após a triagem & 31 \\
+\hline
+\end{tabular}
+\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir do registro de triagem bibliográfica.
+\end{table}
+
+Os trabalhos selecionados foram analisados com a finalidade de fundamentar conceitos, identificar práticas recorrentes e apoiar escolhas de requisitos. A análise priorizou contribuições sobre gestão de projetos em agências, plataformas de marketing, gestão de campanhas, distribuição de orçamento, métricas de desempenho, relacionamento com clientes, privacidade, rastreabilidade, ponto único de contato e processamento de solicitações.
+
+Além do corpus da IEEE Xplore, foi utilizado um artigo externo especificamente para fundamentar o instrumento UEQ-S de avaliação de usabilidade \cite{schrepp2017}; ele não integra os totais da seleção bibliográfica. Também foram adotadas fontes para orientar as escolhas de projeto: ITIL 4 para Service Desk e solicitações de serviço, ISO/IEC/IEEE 29148 para requisitos, Business Process Model and Notation (BPMN) 2.0 para modelagem do processo e LGPD/ANPD para proteção de dados \cite{servicedesk2023,servicerequest2020,iso29148,omg2011,brasil2018,anpd2021}.
+
+A fundamentação conceitual foi complementada pela Pesquisa 04, com leitura temática de oito livros e do Guia do Scrum de 2020. Foram selecionados trechos sobre pesquisa bibliográfica, requisitos, backlog, MVP e testes funcionais e de usabilidade, registrados em nove fichas com identificação da obra, localização e limites de leitura \cite{GIL_1991,BOOTH_COLOMB_WILLIAMS_2008,SOMMERVILLE_2011,SCHWABER_SUTHERLAND_2020,AUDY_2015,CAROLI_2015,MYERS_SANDLER_BADGETT_2012,PRESSMAN_MAXIM_2021,TEIXEIRA_2014}. Essa seleção complementar não integra os totais de artigos das Pesquisas 01 a 03 e não foi tratada como revisão exaustiva das obras ou da literatura.
+
+\subsection{\esp Derivação e especificação de requisitos}
+
+Os requisitos preliminares foram derivados do problema de pesquisa, dos objetivos, do referencial teórico, das normas aplicáveis e do esboço do protótipo. A análise das fontes orientou as categorias entrada da demanda, priorização, execução, comunicação, aprovação, encerramento e indicadores. O levantamento foi bibliográfico e documental e não incluiu entrevistas ou outra coleta de dados com clientes, profissionais de atendimento ou gestores de tráfego.
+
+Cada requisito foi classificado como de prioridade alta, média ou baixa. O registro associou os requisitos a origem, versão, responsável, critério de aceite e caso de teste relacionado, conforme a ISO/IEC/IEEE 29148 \cite{iso29148}.
+
+\subsection{\esp Modelagem, prototipação e desenvolvimento}
+
+O fluxo desejado (\textit{To Be}) e o esboço do protótipo de baixa fidelidade foram elaborados a partir dos requisitos preliminares. O fluxo atual (\textit{As Is}) foi construído como hipótese analítica derivada da problemática e do referencial, sem representar um diagnóstico empírico de uma agência específica. A modelagem adotou BPMN 2.0 \cite{omg2011} e distinguiu Cliente e Agência como participantes e Atendimento ou gestor de conta e Gestor de tráfego como responsabilidades internas. O processo contemplou abertura, triagem, atribuição, execução, espera de cliente, validação, conclusão, reabertura e cancelamento.
+
+O refinamento separou a transferência de trabalho entre perfis da navegação da sessão, distinguiu correção em validação de reabertura após conclusão e permitiu conclusão direta apenas para tipos sem aprovação obrigatória. Também registrou a fase de origem do aguardo para orientar a retomada e definiu a classificação do SLA após a abertura, sem converter urgência informada em prioridade automática.
+
+A prototipação organizou painel, listagem de tickets, abertura de solicitação, detalhes do ticket e os demais fluxos dos perfis. O protótipo navegável representou as quinze telas definidas na documentação, com dados fictícios, e serviu de referência para a implementação. O SIGE Desk foi desenvolvido como aplicação web, com frontend, API e persistência em banco de dados. A priorização dos requisitos delimitou o escopo da implementação, que incluiu cadastro, autenticação, tickets, comentários, histórico, estados, prazos, responsáveis, notificações, filtros e controles de acesso. O recorte do MVP excluiu integrações automáticas com plataformas de anúncios, previsão por inteligência artificial e automação de alterações em campanhas, concentrando a proposta no atendimento e na rastreabilidade.
+
+\subsection{\esp Testes funcionais}
+
+Os casos de teste foram derivados dos critérios de aceite. O catálogo contemplou dezessete cenários e definiu o registro de identificador, requisitos relacionados, prioridade, pré-condição, passos, resultado esperado, resultado obtido e situação final. Os cenários abrangeram abertura, autenticação, cadastros, triagem, execução, complemento, aprovação, reabertura, cancelamento, vencimento, painel, métricas, exportação, notificações, configuração, auditoria e segurança.
+
+O critério interno de aprovação funcional foi definido como 100\% dos casos de alta prioridade aprovados, pelo menos 90\% do total de casos aprovados e ausência de defeito crítico em aberto. O protocolo estabeleceu o registro de correção ou justificativa de adiamento para cada reprovação. Esses limiares expressaram critérios de aceite do projeto, sem constituir resultados obtidos ou parâmetros universais da literatura.
+
+A verificação técnica da implementação foi documentada por testes automatizados e verificações da API, conforme o relatório de revisão técnica mantido na documentação da aplicação. Esses registros foram mantidos separados do catálogo acadêmico de dezessete cenários; sua existência não foi tomada como comprovação de aprovação integral desse catálogo nem da avaliação de usabilidade.
+
+\subsection{\esp Avaliação de usabilidade}
+
+Foi elaborado um protocolo de avaliação de usabilidade com amostra planejada de seis participantes: dois potenciais clientes, dois profissionais de atendimento ou gestão de conta e dois gestores de tráfego. A seleção por conveniência foi definida para contemplar os três perfis envolvidos no atendimento e identificar dificuldades nas tarefas de cada papel. O dimensionamento teve finalidade exploratória e não decorreu de cálculo amostral. O protocolo incluiu o registro de eventuais substituições de perfil e de suas limitações.
+
+O roteiro distribuiu as tarefas conforme as permissões de cada perfil. Para clientes, contemplou abertura, complemento, aprovação, solicitação de correção e reabertura; para Atendimento, classificação, atribuição e retomada; para gestores de tráfego, registro da execução. Também previu busca e filtros e o uso de sessões fictícias separadas para demonstrar as transferências entre papéis. A ficha de observação incluiu conclusão das tarefas, obstáculos, dúvidas, erros, necessidade de ajuda e tempo de realização.
+
+O UEQ-S foi selecionado para aplicação após as tarefas. O instrumento possui oito itens distribuídos entre as dimensões pragmática e hedônica. Para o tratamento das respostas, foi definida a conversão da escala de 1 a 7 para a escala de $-3$ a $+3$ e o cálculo das médias das dimensões e da média geral \cite{schrepp2017}. A escolha da versão curta considerou a redução do esforço de resposta e seu caráter resumido, sem o detalhamento das seis dimensões do UEQ completo.
+
+O plano de análise combinou as medidas de execução das tarefas, as respostas ao UEQ-S e os comentários dos participantes, com interpretação descritiva e sem meta numérica de aprovação para o protótipo acadêmico, em consonância com a abordagem de avaliação discutida por \citeonline{radhitya2024}. A documentação desta entrega registrou a definição do protocolo, sem apresentar resultados de aplicação com os seis participantes.
+
+\subsection{\esp Participantes, dados e análise}
+
+O protocolo definiu o convite por conveniência entre pessoas com experiência em atendimento, gestão de campanhas ou contratação de serviços de marketing digital. A participação voluntária, a explicação do objetivo do teste e a concordância com o registro agregado dos resultados foram estabelecidas como condições da coleta. O conjunto de dados foi delimitado ao perfil do participante, ao desempenho nas tarefas, às observações e às respostas ao questionário. Foram previstos tickets fictícios e dados estritamente necessários à avaliação. O protocolo excluiu a solicitação de credenciais de plataformas de anúncios, dados bancários, bases de audiência e informações pessoais sensíveis, bem como o uso de dados reais de clientes sem autorização.
+
+Foi definida a categorização temática das observações das tarefas e dos comentários dos participantes, com as categorias iniciais adequação do fluxo proposto, informações do ticket, comunicação, prioridade, prazo, aprovação, evidências e indicadores. O procedimento associou as dificuldades recorrentes às tarefas e aos requisitos correspondentes como base para a identificação de melhorias na interface e no fluxo de atendimento. Para os dados quantitativos, o plano adotou estatística descritiva e contemplou quantidade de casos aprovados e reprovados, conclusão das tarefas com e sem ajuda, erros, dúvidas, tempo de execução e médias pragmática, hedônica e geral do UEQ-S. A apresentação agregada, sem identificação individual, e a conversão das dificuldades em uma lista de melhorias foram definidas como formas de registro. O plano não atribuiu aos resultados representatividade de todas as agências de marketing nem antecipou conclusões sobre a efetividade da aplicação.
+
+\subsection{\esp Critérios de qualidade e validade}
+
+A associação entre requisitos, critérios de aceite e casos de teste foi adotada para reduzir ambiguidades e apoiar a verificação das regras de negócio. O histórico do ticket foi incluído como fonte de conferência das alterações do fluxo. A avaliação de usabilidade foi estruturada para considerar realização das tarefas, erros, dúvidas, tempo e respostas ao UEQ-S, sem meta numérica rígida.
+
+A revisão do corpus temático ficou restrita à IEEE Xplore, com os campos, idiomas e recortes descritos para cada busca. Os livros e o Guia do Scrum da Pesquisa 04 complementaram a fundamentação conceitual; o artigo externo sobre o UEQ-S fundamentou o instrumento de avaliação. Essas seleções não foram tratadas como exaustivas. O tamanho reduzido e a seleção por conveniência foram reconhecidos como limites à generalização da avaliação proposta. O protocolo incluiu a preservação dos instrumentos, cenários, decisões de requisitos e registros agregados, bem como a documentação de substituições de participantes e alterações de procedimento. A ausência de resultados da aplicação com participantes nesta entrega delimitou o alcance das conclusões sobre usabilidade.
