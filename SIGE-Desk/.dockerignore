@@ -1,0 +1,7 @@
+**
+!deploy/
+!deploy/aws/
+!deploy/aws/Dockerfile.api
+!Backend/
+!Backend/target/
+!Backend/target/sige-desk-api-0.1.0-SNAPSHOT.jar

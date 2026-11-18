@@ -19,6 +19,10 @@ As instruções específicas estão no [README do frontend](Frontend/README.md) 
 
 O frontend usa proxy local para `/api`, portanto não precisa conhecer a porta da API. As migrations do Flyway são executadas ao iniciar a API e o Hibernate não altera o esquema.
 
+## Publicação na AWS
+
+A configuração para publicar frontend, API e MySQL na mesma EC2 em `us-east-2` está em [publicação acadêmica na AWS](docs/publicacao-aws.md). O guia inclui geração do pacote, HTTPS, persistência, estimativa em créditos e operação para parar e ligar a máquina.
+
 ### MySQL já instalado
 
 Se for usar uma instância MySQL fora do Docker, informe a conexão antes de iniciar a API. O datasource usa `createDatabaseIfNotExist=true` para criar a base indicada quando ela não existir, antes de o Flyway executar as migrations. Isso também se aplica a uma URL definida em `SIGE_DB_URL`. A conta precisa ter permissão `CREATE` para essa base, além das permissões necessárias às migrations e à aplicação. Se ela não puder criar bancos, crie a base previamente com uma conta autorizada. Não use as credenciais de outro projeto na mesma instância.

@@ -1,0 +1,104 @@
+name: sige-desk
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: 10m
+    max-file: "3"
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    mem_limit: 512m
+    command:
+      - --innodb-buffer-pool-size=128M
+      - --max-connections=30
+      - --performance-schema=OFF
+    environment:
+      MYSQL_DATABASE: sige_desk
+      MYSQL_USER: sige
+      MYSQL_PASSWORD: ${SIGE_DB_PASSWORD:?Defina SIGE_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${SIGE_DB_ROOT_PASSWORD:?Defina SIGE_DB_ROOT_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks: [database]
+    healthcheck:
+      test: [CMD-SHELL, 'MYSQL_PWD=$$MYSQL_PASSWORD mysql -h127.0.0.1 -u$$MYSQL_USER -D$$MYSQL_DATABASE -e "SELECT 1" >/dev/null']
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+    logging: *logging
+
+  api:
+    image: sige-desk-api:local
+    build:
+      context: ../..
+      dockerfile: deploy/aws/Dockerfile.api
+    restart: unless-stopped
+    mem_limit: 768m
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SIGE_SPRING_PROFILES:-production}
+      SIGE_DB_URL: jdbc:mysql://mysql:3306/sige_desk?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SIGE_DB_USERNAME: sige
+      SIGE_DB_PASSWORD: ${SIGE_DB_PASSWORD:?Defina SIGE_DB_PASSWORD}
+      SIGE_ADMIN_PASSWORD: ${SIGE_ADMIN_PASSWORD:?Defina SIGE_ADMIN_PASSWORD}
+      SIGE_DEMO_PASSWORD: ${SIGE_DEMO_PASSWORD:?Defina SIGE_DEMO_PASSWORD}
+      SIGE_ALLOWED_ORIGIN: https://${SIGE_DOMAIN:?Defina SIGE_DOMAIN}
+      SIGE_STORAGE_PATH: /app/uploads
+      JAVA_TOOL_OPTIONS: -Xms128m -Xmx384m -XX:MaxMetaspaceSize=192m -XX:ReservedCodeCacheSize=64m -XX:+ExitOnOutOfMemoryError
+    volumes:
+      - uploads:/app/uploads
+    networks: [database, web]
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, curl, --fail, --silent, http://localhost:8080/actuator/health]
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 60s
+    logging: *logging
+
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    mem_limit: 128m
+    read_only: true
+    tmpfs: ["/tmp:size=32m,mode=1777"]
+    cap_drop: [ALL]
+    cap_add: [NET_BIND_SERVICE]
+    security_opt: [no-new-privileges:true]
+    environment:
+      SIGE_DOMAIN: ${SIGE_DOMAIN:?Defina SIGE_DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ../../Frontend/dist:/srv:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [web]
+    depends_on:
+      api:
+        condition: service_healthy
+    logging: *logging
+
+networks:
+  database:
+    internal: true
+  web:
+
+volumes:
+  mysql_data:
+  uploads:
+  caddy_data:
+  caddy_config:

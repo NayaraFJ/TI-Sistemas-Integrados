@@ -6,3 +6,5 @@
 **/.env
 **/uploads/
 *.log
+deploy/aws/artifacts/
+deploy/aws/*.local.json

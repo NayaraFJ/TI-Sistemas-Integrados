@@ -8,4 +8,4 @@ IF NOT EXIST "%WRAPPER_JAR%" (
   EXIT /B 1
 )
 java -classpath "%WRAPPER_JAR%" -Dmaven.multiModuleProjectDirectory="%MAVEN_PROJECTBASEDIR%" org.apache.maven.wrapper.MavenWrapperMain %*
-ENDLOCAL
+ENDLOCAL & EXIT /B %ERRORLEVEL%

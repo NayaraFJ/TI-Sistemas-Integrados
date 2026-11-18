@@ -1,0 +1,196 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: SIGE Desk academico - uma EC2 com MySQL, API e frontend em us-east-2.
+
+Parameters:
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+  SubnetId:
+    Type: AWS::EC2::Subnet::Id
+  AmiId:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
+
+Rules:
+  SelectedRegion:
+    Assertions:
+      - Assert: !Equals [!Ref 'AWS::Region', us-east-2]
+        AssertDescription: Os recursos deste projeto devem ficar em us-east-2.
+
+Resources:
+  Releases:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      LifecycleConfiguration:
+        Rules:
+          - Id: ExpireBuildArtifacts
+            Status: Enabled
+            Prefix: releases/
+            ExpirationInDays: 7
+            AbortIncompleteMultipartUpload:
+              DaysAfterInitiation: 1
+      Tags:
+        - Key: Project
+          Value: SIGE-Desk
+
+  ReleasesPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref Releases
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: RequireHttps
+            Effect: Deny
+            Principal: '*'
+            Action: s3:*
+            Resource: [!GetAtt Releases.Arn, !Sub '${Releases.Arn}/*']
+            Condition:
+              Bool:
+                aws:SecureTransport: false
+
+  InstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/AmazonSSMManagedInstanceCore'
+      Policies:
+        - PolicyName: ReadReleaseArtifacts
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: s3:GetObject
+                Resource: !Sub '${Releases.Arn}/releases/*'
+      Tags:
+        - Key: Project
+          Value: SIGE-Desk
+
+  InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles: [!Ref InstanceRole]
+
+  WebSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: HTTPS e validacao de certificado do SIGE Desk; administracao via SSM.
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+          Description: HTTP redireciona para HTTPS e valida o certificado.
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+          Description: Aplicacao HTTPS.
+      Tags:
+        - Key: Project
+          Value: SIGE-Desk
+
+  PublicIp:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      Tags:
+        - Key: Project
+          Value: SIGE-Desk
+
+  Server:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref AmiId
+      InstanceType: t3.small
+      IamInstanceProfile: !Ref InstanceProfile
+      CreditSpecification:
+        CPUCredits: standard
+      MetadataOptions:
+        HttpEndpoint: enabled
+        HttpTokens: required
+        HttpPutResponseHopLimit: 1
+      Monitoring: false
+      InstanceInitiatedShutdownBehavior: stop
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 20
+            VolumeType: gp3
+            Encrypted: true
+            DeleteOnTermination: true
+      NetworkInterfaces:
+        - DeviceIndex: '0'
+          AssociatePublicIpAddress: true
+          SubnetId: !Ref SubnetId
+          GroupSet: [!Ref WebSecurityGroup]
+      Tags:
+        - Key: Name
+          Value: sige-desk-academico
+        - Key: Project
+          Value: SIGE-Desk
+        - Key: Environment
+          Value: demonstration
+        - Key: ManagedBy
+          Value: CloudFormation
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          set -euo pipefail
+          dnf install -y docker openssl
+          systemctl enable --now docker amazon-ssm-agent
+          install -d -m 755 /usr/local/lib/docker/cli-plugins
+          compose_version=v5.6.0
+          release_url="https://github.com/docker/compose/releases/download/$compose_version"
+          install -d -m 700 /opt/sige-desk
+          cd /opt/sige-desk
+          curl --retry 5 -fsSL "$release_url/docker-compose-linux-x86_64" -o docker-compose-linux-x86_64
+          curl --retry 5 -fsSL "$release_url/checksums.txt" -o compose-checksums.txt
+          awk '$2 == "*docker-compose-linux-x86_64" { print }' compose-checksums.txt | sha256sum --check --status
+          install -m 755 docker-compose-linux-x86_64 /usr/local/lib/docker/cli-plugins/docker-compose
+          printf '%s\n' 'sige-desk.${PublicIp}.sslip.io' > /opt/sige-desk/deployment-domain
+          if [ ! -f /swapfile ]; then
+            fallocate -l 2G /swapfile
+            chmod 600 /swapfile
+            mkswap /swapfile
+            swapon /swapfile
+            printf '%s\n' '/swapfile none swap sw 0 0' >> /etc/fstab
+          fi
+          docker compose version
+
+  PublicIpAssociation:
+    Type: AWS::EC2::EIPAssociation
+    Properties:
+      InstanceId: !Ref Server
+      AllocationId: !GetAtt PublicIp.AllocationId
+
+Outputs:
+  InstanceId:
+    Value: !Ref Server
+  ArtifactBucket:
+    Value: !Ref Releases
+  PublicAddress:
+    Value: !Ref PublicIp
+  ApplicationUrl:
+    Value: !Sub 'https://sige-desk.${PublicIp}.sslip.io'
+  SessionManager:
+    Value: !Sub 'https://${AWS::Region}.console.aws.amazon.com/systems-manager/session-manager/${Server}?region=${AWS::Region}'
