@@ -75,7 +75,7 @@ O fluxo desejado (**To Be**) e o esboço do protótipo de baixa fidelidade foram
 
 O refinamento do fluxo separou a transferência de trabalho entre perfis da navegação da sessão, distinguiu correção em validação de reabertura após conclusão e permitiu conclusão direta apenas para tipos sem aprovação obrigatória. Também registrou a fase de origem do aguardo para orientar a retomada e definiu a classificação do SLA após a abertura, sem converter urgência informada em prioridade automática.
 
-A prototipação organizou painel, listagem de tickets, abertura de solicitação, detalhes do ticket e os demais fluxos dos perfis. O [protótipo navegável](../../Prototipo-SIGE-Desk/README.md) representou as quinze telas definidas na documentação, com dados fictícios, e serviu de referência para a implementação.
+A prototipação organizou painel, listagem de tickets, abertura de solicitação, detalhes do ticket e os demais fluxos dos perfis. O [protótipo navegável](../../Prototipos/Prototipo-HTML/README.md) representou as quinze telas definidas na documentação, com dados fictícios, e serviu de referência para a implementação.
 
 ### 2.4 Desenvolvimento da aplicação
 
@@ -85,7 +85,7 @@ O recorte do MVP excluiu integrações automáticas com plataformas de anúncios
 
 ### 2.5 Testes funcionais
 
-Os casos de teste foram derivados dos critérios de aceite. O catálogo contemplou dezessete cenários e definiu o registro de identificador, requisitos relacionados, prioridade, pré-condição, passos, resultado esperado, resultado obtido e situação final. Os cenários, os requisitos associados e os resultados esperados foram consolidados na [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais), com síntese no artigo.
+Os casos de teste foram derivados dos critérios de aceite. O catálogo contemplou dezessete cenários e definiu o registro de identificador, requisitos relacionados, prioridade, pré-condição, passos, resultado esperado, resultado obtido e situação final. As [17 fichas individuais preenchidas](../Documentacao%20do%20Projeto/Testes%20funcionais/README.md) reúnem requisitos, critérios de aceitação, responsáveis pela revisão documental, resultado obtido, evidências e trajetória dos ciclos, incluindo falhas de roteiro e de produto e os respectivos retestes. Os nomes distribuídos entre integrantes identificam coordenação e revisão documental; não atribuem execução humana retroativa aos ensaios realizados por agente. Os cenários, os requisitos associados e os resultados esperados foram consolidados na [Especificação do sistema.md](../Documentacao%20do%20Projeto/Especificacao/Especificacao%20do%20sistema.md#9-critérios-de-aceite-iniciais), com síntese no artigo.
 
 O critério interno de aprovação funcional foi definido como 100% dos casos de alta prioridade aprovados, pelo menos 90% do total de casos aprovados e ausência de defeito crítico em aberto. O protocolo estabeleceu o registro de correção ou justificativa de adiamento para cada reprovação. Esses limiares expressaram critérios de aceite do projeto, sem constituir resultados obtidos ou parâmetros universais da literatura.
 
@@ -93,43 +93,29 @@ A execução funcional em ambiente local isolado empregou requisições HTTP à 
 
 A consolidação das evidências de interface, API e banco aprovou, até esta revisão, dezesseis dos dezessete casos (94,1%), incluindo os onze de alta prioridade. CT-15 permaneceu parcial pela ausência de captura preservada dos gráficos. O limiar numérico de 90% foi atingido e, considerando a revisão de defeitos conhecidos, o critério interno foi atendido no escopo examinado. As observações visuais não tiveram capturas preservadas, e o histórico extenso foi avaliado por amostragem. Em CT-09, a correção preserva prospectivamente os snapshots, mas não recupera aqueles substituídos anteriormente. Em CT-07, avisos adicionais foram enviados a usuários autorizados; a matriz de notificações da especificação não declara exclusividade dos destinatários listados. A revisão dos defeitos conhecidos não identificou crítico aberto no escopo examinado, sem descartar falhas em cenários não verificados. Os resultados referem-se à implementação local e não constituem avaliação de usabilidade com participantes.
 
+A revisão documental explicitou a distinção entre consulta de lista, relatório e exportação e harmonizou os responsáveis pelas transições de execução com a matriz operacional, preservando a rastreabilidade com as fichas.
+
 ### 2.6 Avaliação de usabilidade
 
-Foi elaborado um protocolo de avaliação de usabilidade com amostra planejada de **seis participantes**: dois potenciais clientes, dois profissionais de atendimento/gestão de conta e dois gestores de tráfego. A seleção por conveniência foi definida para contemplar os três perfis envolvidos no atendimento e identificar dificuldades nas tarefas de cada papel. O dimensionamento teve finalidade exploratória e não decorreu de cálculo amostral. O protocolo incluiu o registro de eventuais substituições de perfil e de suas limitações.
+A avaliação de usabilidade foi planejada em duas fases. Primeiro, será realizado um piloto interno com os oito integrantes do grupo, distribuídos entre moderação, observação e simulação dos papéis de Cliente, Atendimento e Gestor de tráfego. Esse piloto servirá para conferir instruções, preparação dos tickets e instrumentos e para identificar problemas impeditivos antes da coleta externa. A familiaridade dos integrantes com o desenvolvimento será registrada como limitação; seus resultados não serão agregados aos dos participantes externos.
 
-O roteiro distribuiu as tarefas conforme as permissões de cada perfil. Para clientes, contemplou abertura, complemento, aprovação, solicitação de correção e reabertura; para Atendimento, classificação, atribuição e retomada; para gestores de tráfego, registro da execução. Também previu busca e filtros e o uso de sessões fictícias separadas para demonstrar as transferências entre papéis. A ficha de observação incluiu conclusão das tarefas, obstáculos, dúvidas, erros, necessidade de ajuda e tempo de realização.
+Após o piloto e a revisão do roteiro, está prevista uma avaliação exploratória com seis participantes externos selecionados por conveniência: dois potenciais clientes, dois profissionais de atendimento ou gestão de conta e dois gestores de tráfego. O dimensionamento não decorre de cálculo amostral. Substituições serão registradas com a experiência real e o papel simulado, sem caracterizar automaticamente o participante como profissional daquele papel.
 
-O **Short User Experience Questionnaire (UEQ-S)** foi selecionado para aplicação após as tarefas. O instrumento possui oito itens distribuídos entre as dimensões pragmática e hedônica. Para o tratamento das respostas, foi definida a conversão da escala de 1 a 7 para a escala de -3 a +3 e o cálculo das médias das dimensões e da média geral (SCHREPP; HINDERKS; THOMASCHEWSKI, 2017). A escolha da versão curta considerou a redução do esforço de resposta e seu caráter resumido, sem o detalhamento das seis dimensões do UEQ completo.
+O roteiro distribui tarefas conforme as permissões: abertura, complemento, aprovação, correção e reabertura para Cliente; classificação, atribuição, primeira resposta e retomada para Atendimento; ação executada, evidência e pedido de informação para Gestor. Busca, filtros e notificações serão observados nos três papéis. As transferências serão preparadas pelo moderador em sessões fictícias independentes, fora do tempo de execução do participante. Serão registrados conclusão sem ajuda, conclusão com ajuda, não conclusão e interrupção de ambiente, além de tempo, erros, dúvidas, auxílio e comentários retrospectivos. O piloto permitirá ajustar o procedimento antes de fixar a versão aplicada externamente.
 
-O plano de análise combinou as medidas de execução das tarefas, as respostas ao UEQ-S e os comentários dos participantes, com interpretação descritiva e sem meta numérica de aprovação para o protótipo acadêmico. A combinação dessas medidas teve apoio na abordagem discutida por Radhitya et al. (2024). A documentação desta entrega registrou a definição do protocolo, sem apresentar resultados de aplicação com os seis participantes.
+O UEQ-S será aplicado individualmente após as tarefas, preservando os oito itens, a ordem e os polos do instrumento. O plano prevê manter as respostas originais de 1 a 7, convertê-las à escala de -3 a +3 e calcular as médias pragmática, hedônica e geral, com indicação das respostas válidas e das ausências (SCHREPP; HINDERKS; THOMASCHEWSKI, 2017). A combinação de medidas de tarefas, questionário e comentários seguirá interpretação descritiva, sem nota mínima de aprovação de usabilidade, em consonância com a abordagem discutida por Radhitya et al. (2024). Os instrumentos foram preparados; não há, nesta revisão, resultados de aplicação do piloto ou da coleta externa.
 
-## 3. Participantes e dados
+O procedimento completo está no [roteiro de aplicação](../Documentacao%20do%20Projeto/Usabilidade/ROTEIRO.md), acompanhado de folha do participante e ficha de sessão.
 
-O protocolo definiu o convite por conveniência entre pessoas com experiência em atendimento, gestão de campanhas ou contratação de serviços de marketing digital. A participação voluntária, a explicação do objetivo do teste e a concordância com o registro agregado dos resultados foram estabelecidas como condições da coleta. O conjunto de dados foi delimitado ao perfil do participante, ao desempenho nas tarefas, às observações e às respostas ao questionário.
+## 3. Participantes, dados e análise
 
-Foram previstos tickets fictícios e dados estritamente necessários à avaliação. O protocolo excluiu a solicitação de credenciais de plataformas de anúncios, dados bancários, bases de audiência e informações pessoais sensíveis, bem como o uso de dados reais de clientes sem autorização.
+O piloto interno e a coleta externa serão identificados em registros separados. Para a fase externa, o convite por conveniência contemplará pessoas com experiência em atendimento, gestão de campanhas ou contratação de serviços de marketing. A participação será voluntária, com explicação do objetivo e concordância com o registro agregado; eventual gravação dependerá de concordância específica. Serão usados códigos anônimos, tickets fictícios e somente dados necessários à avaliação. Não serão solicitadas credenciais de anúncios, dados bancários, bases de audiência ou informações pessoais sensíveis. Versão do roteiro e da aplicação, ambiente, substituições e interrupções serão registrados para contextualizar cada sessão.
 
-## 4. Análise dos dados
+As observações e os comentários serão agrupados nas categorias iniciais fluxo, informações do ticket, comunicação, prioridade, prazo, aprovação, evidências e indicadores. Cada dificuldade será associada à tarefa, ao requisito e à evidência correspondente e convertida em melhoria com decisão, responsável e eventual reteste. A análise quantitativa apresentará, por fase e perfil, tarefas tentadas, conclusão com e sem ajuda, não conclusão, interrupções, tempos e médias do UEQ-S, informando quantidades válidas, ausências e exclusões. Tempos de preparação entre papéis não serão atribuídos ao participante; falha de ambiente não será tratada automaticamente como dificuldade de uso.
 
-Foi definida a categorização temática das observações das tarefas e dos comentários dos participantes, com as categorias iniciais adequação do fluxo proposto, informações necessárias no ticket, comunicação, prioridade, prazo, aprovação, evidências e indicadores. O procedimento associou as dificuldades recorrentes às tarefas e aos requisitos correspondentes como base para a identificação de melhorias na interface e no fluxo de atendimento.
+Os resultados dos testes funcionais serão mantidos separados das medidas de usabilidade. A rastreabilidade entre requisito, critério, caso e evidência e a preservação das tentativas, correções e retestes permitem conferir as decisões. Instrumentos, versões e registros serão mantidos para revisão do grupo, com acesso restrito às respostas individuais, apresentação agregada e prazo de descarte definido antes da coleta.
 
-Para os dados quantitativos, o plano de análise adotou estatística descritiva e contemplou:
-
-- quantidade de casos de teste aprovados e reprovados;
-- quantidade de tarefas concluídas com e sem ajuda;
-- principais erros ou dúvidas observados;
-- tempo de execução das tarefas;
-- médias pragmática, hedônica e geral do UEQ-S.
-
-A apresentação agregada, sem identificação individual, e a conversão das dificuldades em uma lista de melhorias foram definidas como formas de registro. O plano não atribuiu aos resultados representatividade de todas as agências de marketing nem antecipou conclusões sobre a efetividade da aplicação.
-
-## 5. Critérios de qualidade e validade
-
-A associação entre requisitos, critérios de aceite e casos de teste foi adotada para reduzir ambiguidades e apoiar a verificação das regras de negócio. O histórico do ticket foi incluído como fonte de conferência das alterações do fluxo. A avaliação de usabilidade foi estruturada para considerar realização das tarefas, erros, dúvidas, tempo e respostas ao UEQ-S, sem meta numérica rígida.
-
-A revisão do corpus temático ficou restrita à IEEE Xplore, com os campos, idiomas e recortes descritos para cada busca. Os livros e o Guia do Scrum da Pesquisa 04 complementaram a fundamentação conceitual, e o artigo externo sobre o UEQ-S fundamentou o instrumento. Essas seleções não foram tratadas como exaustivas. O tamanho reduzido e a seleção por conveniência foram reconhecidos como limites à generalização da avaliação proposta.
-
-O protocolo incluiu a preservação dos instrumentos, cenários, decisões de requisitos e registros agregados, bem como a documentação de substituições de participantes e alterações de procedimento. A ausência de resultados da aplicação com participantes nesta entrega delimitou o alcance das conclusões sobre usabilidade.
+A revisão bibliográfica permanece limitada às bases e aos recortes descritos, e a seleção complementar de livros e fontes não foi exaustiva. Na avaliação, a amostra reduzida por conveniência, as substituições de perfil e a familiaridade dos integrantes no piloto limitam a generalização. A ausência de coleta com participantes nesta revisão impede concluir sobre satisfação ou efetividade em uso real. Os resultados futuros serão interpretados como indícios exploratórios, sem representatividade de todas as agências de marketing.
 
 ## 6. Cronograma de atividades do artigo e do projeto
 
@@ -165,10 +151,12 @@ O catálogo detalhado, os critérios de aceite e a rastreabilidade estão mantid
 - [x] Síntese dos resultados de especificação elaborada para o artigo; o catálogo completo permanece na documentação do projeto.
 - [x] Implementação da versão inicial do aplicativo, documentada em `SIGE-Desk`.
 - [x] Verificações técnicas da implementação registradas no relatório de revisão.
-- [ ] Aprovação integral do catálogo acadêmico de dezessete casos documentada.
+- [x] Critério interno de aprovação funcional atendido no escopo examinado: 16/17 e 11/11 altas, sem crítico aberto identificado nas ocorrências examinadas.
+- [ ] Completar evidência visual e aprovação de CT-15 para alcançar 17/17.
+- [x] Fichas funcionais e instrumentos de piloto interno/coleta externa preparados.
 - [ ] Avaliação de usabilidade executada.
 
-> Os registros disponíveis comprovaram a implementação e verificações técnicas. A documentação desta entrega não incluiu a aplicação do protocolo de usabilidade com participantes nem comprovou a aprovação integral do catálogo acadêmico.
+> Os registros sustentam 16/17 aprovações funcionais no escopo examinado; não sustentam 17/17 nem resultados de usabilidade com participantes. A revisão documental dos integrantes e a coleta de usabilidade continuam pendentes.
 
 ## Referências metodológicas
 

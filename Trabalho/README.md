@@ -8,7 +8,7 @@ Os arquivos em [Artigo](Artigo/README.md) são as fontes de conteúdo para `../O
 
 ## Documentação do projeto
 
-Os arquivos em [Documentacao do Projeto](Documentacao%20do%20Projeto/README.md) registram processo, protótipo de baixa fidelidade e especificação completa. Eles são a fonte dos apêndices e das sínteses apresentadas no artigo, mas não devem ser copiados integralmente para o corpo do artigo.
+O estado da implementação, as fichas funcionais e os instrumentos de usabilidade estão indexados na documentação do projeto. Os arquivos em [Documentacao do Projeto](Documentacao%20do%20Projeto/README.md) registram processo, protótipo de baixa fidelidade e especificação completa. Eles são a fonte dos apêndices e das sínteses apresentadas no artigo, mas não devem ser copiados integralmente para o corpo do artigo.
 
 ## Regra de manutenção
 

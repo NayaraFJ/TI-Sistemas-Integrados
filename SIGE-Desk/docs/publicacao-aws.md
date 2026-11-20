@@ -1,5 +1,15 @@
 # Publicação acadêmica na AWS
 
+## Atualização publicada em 20/11/2026
+
+A release `20261120-090312-5eb70aa1` foi aplicada à instância existente em `us-east-2`, sem criar infraestrutura adicional. Endereço: [SIGE Desk](https://sige-desk.13.184.52.130.sslip.io). O plano consultado nesta atualização estava `FREE/ACTIVE`, com US$ 98,62 em créditos; esse valor é um retrato da consulta, não previsão de saldo futuro.
+
+O pacote `sige-desk-20261120-090312-5eb70aa1.tar.gz` tem SHA-256 `e387419f01f7ced221d9e95cfcac14fd114e4482bb1deef0acb5514f874f1dfb`. O JAR publicado tem SHA-256 `bd065901d4e4338615c97370e33046b3a3a72223b5876534c05722fe1d7feba4`, conferido na instância. O build compilou o frontend e executou `mvnw verify`: 80 testes Java, zero falhas/erros, dois testes ignorados por configuração de integração. O pacote contém somente os artefatos de execução; a documentação acadêmica não é servida pela aplicação.
+
+Antes da substituição, a API foi parada e foram preservados banco, anexos, configuração e versão anterior em `/opt/sige-desk-backups/20261120-090312-5eb70aa1`, com acesso restrito e hashes dos arquivos. A imagem anterior também foi retida como `sige-desk-api:before-20261120-090312-5eb70aa1`. A restauração desse backup não foi ensaiada nesta atualização. O backup contém configuração sensível e não deve ser publicado ou enviado ao repositório. A atualização preservou `.env` e volumes; Flyway aplicou V7 com sucesso e a contagem permaneceu em 24 tickets. Não foram enviados os dados sintéticos das centenas de testes locais para a publicação.
+
+O comando SSM de atualização `cc3aa2aa-2d80-4374-89c6-e4b8fc5df2bd` terminou em `Success`. O ensaio pós-publicação `8f74fb4c-f969-41b1-bf51-a98c19224524` também terminou em `Success`: HTTPS e saúde `UP`, página inicial e rota `/tickets`, sete assets, login administrativo, sessão, listagem de 24 tickets, painel, detalhe, download de anexo com tamanho conferido, CSRF e logout. Após logout, `/auth/me` retornou 401. Esse ensaio somente leu dados de negócio e criou/encerrou sessão; não repetiu testes mutáveis do catálogo na publicação. As únicas entradas do grupo de segurança continuaram sendo TCP 80 e 443. Não houve ciclo de parada/inicialização da EC2 nesta atualização; a máquina foi mantida ligada.
+
 O pacote em `deploy/aws/` prepara uma única EC2 para executar o frontend React, a API Spring Boot e o MySQL. Todos os recursos regionais ficam em `us-east-2`, usando o perfil local `sige-desk`.
 
 Esta configuração foi preparada para uma demonstração de até dois meses, com uso intermitente. Preparar o pacote e validar o template não publica a aplicação. A publicação exige criar a infraestrutura, enviar o pacote e verificar o sistema em execução.

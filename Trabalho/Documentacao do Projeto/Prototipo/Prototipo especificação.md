@@ -1,5 +1,8 @@
 # SIGE Desk — Documentação de orientação para telas
 
+> Atualização documental de 19/11/2026: a especificação e os registros de desenho abaixo preservam seu propósito. A situação executada está nas [17 fichas funcionais](../Testes%20funcionais/README.md) e no [estado da entrega](../ESTADO-DA-ENTREGA.md); 16/17 aprovados, incluindo 11/11 altas, com CT-15 parcial. A [usabilidade](../Usabilidade/ROTEIRO.md) tem protocolo preparado e coleta pendente. Pendências históricas do protótipo não devem ser lidas automaticamente como ausência de implementação atual.
+
+
 **Aplicação:** Help Desk para Gestão de Demandas de Tráfego Pago  
 **Finalidade:** orientar a equipe responsável por criar o protótipo, sem definir layout, cores, componentes ou desenhos visuais.
 

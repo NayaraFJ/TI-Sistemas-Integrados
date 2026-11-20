@@ -1,5 +1,8 @@
 # Help Desk para Gestão de Demandas de Tráfego Pago
 
+> Atualização documental de 19/11/2026: a especificação e os registros de desenho abaixo preservam seu propósito. A situação executada está nas [17 fichas funcionais](../Testes%20funcionais/README.md) e no [estado da entrega](../ESTADO-DA-ENTREGA.md); 16/17 aprovados, incluindo 11/11 altas, com CT-15 parcial. A [usabilidade](../Usabilidade/ROTEIRO.md) tem protocolo preparado e coleta pendente. Pendências históricas do protótipo não devem ser lidas automaticamente como ausência de implementação atual.
+
+
 ## Documentação do projeto — Especificação preliminar do sistema
 
 > Este documento reúne requisitos iniciais derivados do problema, objetivos e referencial teórico. Eles devem ser validados com usuários e podem ser refinados antes da implementação.
@@ -144,14 +147,15 @@ O prazo de primeira resposta termina no primeiro comentário ou registro de reto
 | Abrir demanda | Própria organização. | Em nome de cliente ativo, identificando autor e solicitante. | Não. | Em nome de cliente ativo, identificando autor e solicitante. |
 | Consultar ticket, comentário, anexo e notificação | Somente organização vinculada. | Todos os tickets da agência. | Somente ticket atribuído. | Todos os tickets da agência. |
 | Iniciar triagem, classificar, atribuir, reatribuir ou alterar prioridade/prazo | Não. | Sim. | Não. | Sim. |
-| Solicitar complemento, conferir suficiência e retomar fase | Somente enviar o complemento solicitado. | Sim. | Solicitar complemento apenas em execução; não confirma retomada. | Sim. |
+| Solicitar complemento, conferir suficiência e retomar fase | Somente enviar o complemento solicitado. | Solicitar na triagem; conferir suficiência e retomar ambas as origens. | Solicitar complemento apenas em execução atribuída; não confirma retomada. | Solicitar na triagem; conferir suficiência e retomar ambas as origens. |
 | Registrar ação, material e evidência | Não. | Não. | Somente ticket atribuído em execução. | Não. |
 | Encaminhar para validação ou concluir diretamente | Não. | Não. | Somente ticket atribuído, conforme regra do tipo. | Não. |
 | Aprovar ou solicitar correção | Somente Cliente ativo da organização, em validação. | Não. | Não. | Não. |
 | Reabrir concluída | Própria organização, com justificativa. | Sim, com justificativa. | Não. | Sim, com justificativa. |
 | Cancelar antes da execução | Não. | Sim, inclusive aguardo originado na triagem. | Não. | Sim, inclusive aguardo originado na triagem. |
 | Gerir campanhas | Consultar apenas no ticket. | Cadastrar/editar/ativar/inativar campanha de cliente ativo. | Não. | Sim. |
-| Consultar relatório e exportar | Lista restrita da própria organização em T03; sem T10. | T10 no escopo da agência. | Lista restrita às demandas atribuídas em T03; sem T10. | T10 no escopo da agência. |
+| Consultar lista de tickets | Lista restrita da própria organização em T03. | Todos os tickets da agência em T03. | Lista restrita às demandas atribuídas em T03. | Todos os tickets da agência em T03. |
+| Consultar relatório e exportar CSV | Não; nem exportação direta. | T10 e exportação da seleção filtrada em T03/T10 no escopo da agência. | Não; nem exportação direta. | T10 e exportação da seleção filtrada em T03/T10 no escopo da agência. |
 
 Comentário e anexo podem ser adicionados por usuário autorizado durante estados ativos e em **Concluída** para registrar informação posterior, sem alterar o status. **Cancelada** é somente consultável. Trabalho adicional após conclusão exige reabertura explícita; uma interação isolada nunca muda o estado do ticket.
 
@@ -223,7 +227,7 @@ Comentário e anexo podem ser adicionados por usuário autorizado durante estado
 | --- | --- | --- | --- | --- |
 | Aberta | Em triagem, Cancelada | Atendimento, Administrador | Início da triagem ou motivo e confirmação de cancelamento. | Tempo útil começa na abertura; prazo permanece pendente até classificação. Cancelamento preserva e encerra a contagem. |
 | Em triagem | Em execução, Aguardando cliente, Cancelada | Atendimento, Administrador | Para execução: prioridade, regra de SLA, prazo e responsável. Para aguardo: informação necessária e origem `triagem`. Para cancelamento: motivo e confirmação. | Prazo calculado desde a abertura após classificar; pausa somente em aguardo. |
-| Em execução | Aguardando cliente, Em validação, Concluída | Responsável atribuído, Atendimento, Administrador | Para aguardo: informação necessária e origem `execução`. Para validação/conclusão: ação executada, material/evidência quando exigido e regra de aprovação aplicada. Conclusão direta exige dispensa automática do tipo. | Pausa somente em aguardo. |
+| Em execução | Aguardando cliente, Em validação, Concluída | Somente Gestor de tráfego atribuído para estas transições, conforme matriz 8.1 e RN-04. | Para aguardo: informação necessária e origem `execução`. Para validação/conclusão: ação executada, material/evidência quando exigido e regra de aprovação aplicada. Conclusão direta exige dispensa automática do tipo. | Pausa somente em aguardo. |
 | Aguardando cliente (origem triagem) | Em triagem, Cancelada | Atendimento, Administrador | Complemento conferido e suficiente para retomar, nova informação solicitada ou motivo e confirmação de cancelamento. | Retoma somente após confirmação de suficiência; cancelamento encerra a contagem. |
 | Aguardando cliente (origem execução) | Em execução | Atendimento, Administrador | Complemento conferido e suficiente para retomar ou nova informação solicitada. | Retoma somente após confirmação de suficiência; cancelamento não é permitido. |
 | Em validação | Concluída, Reaberta | Cliente ativo vinculado à organização | Aprovação ou justificativa da correção, com material avaliado. | Continua até conclusão; correção mantém o ciclo de resolução. |

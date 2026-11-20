@@ -1,6 +1,6 @@
 # Documentação do projeto
 
-Esta documentação registra as definições técnicas do SIGE Desk. Ela sustenta a proposta e a documentação de apoio ao desenvolvimento, mas não deve ser reproduzida integralmente no corpo do artigo.
+Esta documentação registra as definições técnicas do SIGE Desk. Ela reúne especificação, estado da implementação e documentação de validação, mas não deve ser reproduzida integralmente no corpo do artigo.
 
 | Arquivo | Fonte canônica | Uso no artigo |
 | --- | --- | --- |
@@ -13,3 +13,12 @@ Esta documentação registra as definições técnicas do SIGE Desk. Ela sustent
 | [BACKLOG.md](BACKLOG.md) | Marcos, tarefas, responsáveis, dependências e critérios de entrega. | Gestão interna; não integra o artigo. |
 
 Os arquivos `.bpm` e `.png` do processo ficam em `Processo/` como artefatos de edição e figura-fonte.
+
+## Validação e situação da entrega — 19/11/2026
+
+- [Testes funcionais: índice das 17 fichas](Testes%20funcionais/README.md): requisitos, critérios, execução, defeitos, ciclos, retestes e evidências; 16/17 aprovados, 11/11 altas, CT-15 parcial.
+- [Usabilidade: roteiro para o grupo](Usabilidade/ROTEIRO.md), [folha dos participantes](Usabilidade/PARTICIPANTE.md) e [ficha de sessão](Usabilidade/FICHA-DE-SESSAO.md): piloto interno e coleta externa planejados, sem resultados inventados.
+- [Mapa de implementação e pendências](ESTADO-DA-ENTREGA.md): ponte entre requisitos, código, API e validação.
+- [Histórico da revisão da problemática e justificativa](Historico/Revisao%20-%20Problematica%20e%20Justificativa.md): revisão já aplicada em setembro, preservada como registro de decisão.
+
+Os artefatos brutos e os relatórios técnicos permanecem em [SIGE-Desk/docs/qa](../../SIGE-Desk/docs/qa/resultado-catalogo.md); as fichas acadêmicas consolidam sua leitura e não substituem os arquivos de evidência. Os registros de QA não equivalem a aceite assinado pelos integrantes nem a avaliação com participantes.
