@@ -1,6 +1,31 @@
 # Publicação acadêmica na AWS
 
-## Atualização publicada em 20/11/2026
+## Versão atual — 20/11/2026, release 20261120-103310-967c209d
+
+Publicada em [SIGE Desk](https://sige-desk.13.184.52.130.sslip.io), na mesma EC2 em `us-east-2`. Esta atualização entrega o tutorial contextual, o padrão compartilhado de tags e os gráficos interativos. O plano consultado continuou `FREE/ACTIVE`, com US$ 98,62 em créditos; não foram criados recursos de infraestrutura adicionais. A instância permanece ligada para uso pelo grupo.
+
+O pacote `sige-desk-20261120-103310-967c209d.tar.gz`, com 59.394.452 bytes, tem SHA-256 `c7f6bc255c344e48ce2f0898a0d0e84202c0256654eeb231d1e56dbd78791716`. Foi enviado ao bucket privado de releases e conferido na instância. O frontend veio do build de produção aprovado, com nove testes Node aprovados. O backend não sofreu alteração de execução: seu JAR manteve SHA-256 `bd065901d4e4338615c97370e33046b3a3a72223b5876534c05722fe1d7feba4`, igual à publicação anterior. Não houve nova execução dos 80 testes Java nesta atualização de interface.
+
+O comando SSM `75fa04b1-9607-4d0e-8adc-0486bdf005a1` terminou em `Success`. Antes da troca, foram conferidos JAR e arquivos operacionais e preservados o frontend anterior e o manifesto em `/opt/sige-desk-backups/20261120-103310-967c209d-ui`, com diretório restrito. Os novos assets foram copiados antes do índice; os assets antigos foram mantidos para compatibilidade com páginas já abertas. A API, o MySQL e o Caddy permaneceram em execução. `.env`, volumes, anexos e os 24 tickets foram preservados. Não houve migration, reinicialização da EC2 ou alteração das senhas e permissões existentes.
+
+O ensaio pós-publicação `16e34b1b-b58f-4c3b-8cd5-395a21d03710` terminou em `Success`: HTTPS, índice publicado com SHA-256 `214ee613b00654acb5724f3076d6b6d5eca47ef818229fb61be168e7d725d393`, sete assets e login/sessão/consultas/logout das oito contas ativas. Cada conta consultou tickets, painel, notificações e referências. Somente Admin acessou `/users` com 200; os demais perfis receberam 403. Logout retornou 204 e a sessão encerrada recebeu 401. A primeira tentativa do ensaio foi interrompida por uma expectativa incorreta de 200 no logout; o script foi corrigido para o contrato 204 e repetido com sucesso, sem correção na aplicação.
+
+| Conta de demonstração | Perfil | Tickets visíveis no ensaio |
+| --- | --- | ---: |
+| `admin@sige.demo` | Administrador | 24 |
+| `cliente@aurora.demo` | Cliente — Aurora Educação | 8 |
+| `cliente@viva.demo` | Cliente — Viva Saúde | 8 |
+| `rafael@horizonte.demo` | Cliente — Horizonte Solar | 8 |
+| `atendimento@sige.demo` | Atendimento | 24 |
+| `atendimento2@sige.demo` | Atendimento | 24 |
+| `gestor@sige.demo` | Gestor — Lucas Martins | 9 |
+| `gestor2@sige.demo` | Gestor — Ana Ribeiro | 5 |
+
+As contas foram conferidas e mantidas; `inativo@sige.demo` continua desativada como fixture. A folha `deploy/aws/ACESSOS-GRUPO.local.md` contém as credenciais e a distribuição inicial aos integrantes, está ignorada pelo Git e não integra o pacote de publicação. As contagens acima são um retrato, não uma garantia para sessões posteriores que alterem tickets. Os estados iniciais das tarefas de usabilidade ainda precisam ser preparados/conferidos pelo moderador em cada sessão, especialmente aprovação e correção em tickets diferentes. A avaliação com integrantes não foi executada por este ensaio de publicação.
+
+No navegador, o login administrativo abriu a página publicada com a nova legenda dos gráficos e o tutorial contextual de seis etapas. A [captura da publicação](ui/2026-11-20/aws-tutorial-publicado.jpg) preserva esse estado. O ensaio visual não substitui a coleta de usabilidade com o grupo.
+
+## Publicação anterior — 20/11/2026, release 20261120-090312-5eb70aa1
 
 A release `20261120-090312-5eb70aa1` foi aplicada à instância existente em `us-east-2`, sem criar infraestrutura adicional. Endereço: [SIGE Desk](https://sige-desk.13.184.52.130.sslip.io). O plano consultado nesta atualização estava `FREE/ACTIVE`, com US$ 98,62 em créditos; esse valor é um retrato da consulta, não previsão de saldo futuro.
 

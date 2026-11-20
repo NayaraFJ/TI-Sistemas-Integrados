@@ -17,7 +17,7 @@ Os arquivos `.bpm` e `.png` do processo ficam em `Processo/` como artefatos de e
 ## Validação e situação da entrega — 19/11/2026
 
 - [Testes funcionais: índice das 17 fichas](Testes%20funcionais/README.md): requisitos, critérios, execução, defeitos, ciclos, retestes e evidências; 17/17 aprovados, 11/11 altas, com capturas de CT-15 preservadas.
-- [Usabilidade: roteiro para o grupo](Usabilidade/ROTEIRO.md), [folha dos participantes](Usabilidade/PARTICIPANTE.md) e [ficha de sessão](Usabilidade/FICHA-DE-SESSAO.md): avaliação interna entre os integrantes planejada, sem resultados inventados.
+- [Usabilidade: organização e materiais](Usabilidade/README.md), com roteiro, folha dos participantes, questionário UEQ-S, guia de aplicação e cálculo e ficha de sessão: avaliação interna planejada, coleta e análise pendentes.
 - [Mapa de implementação e pendências](ESTADO-DA-ENTREGA.md): ponte entre requisitos, código, API e validação.
 - [Histórico da revisão da problemática e justificativa](Historico/Revisao%20-%20Problematica%20e%20Justificativa.md): revisão já aplicada em setembro, preservada como registro de decisão.
 

@@ -1,12 +1,14 @@
 # Roteiro de avaliação de usabilidade
 
-Versão 2 — revisado em 20/11/2026. **Situação: planejado, sem sessões realizadas neste registro.** A avaliação será realizada somente pelos integrantes do grupo. A familiaridade com a aplicação e a participação em seu desenvolvimento serão registradas como limitações dos resultados.
+Versão 3 — detalhamento do UEQ-S em 20/11/2026. **Situação: planejado, sem sessões realizadas neste registro.** A avaliação será realizada somente pelos integrantes do grupo. A familiaridade com a aplicação e a participação em seu desenvolvimento serão registradas como limitações dos resultados.
 
 ## Objetivo e materiais
 
 Observar se a pessoa compreende o fluxo, encontra informações e realiza tarefas do seu perfil. Relacionar dificuldades a requisitos e melhorias. A meta funcional de 90% dos CTs não é uma nota de usabilidade.
 
 Preparar ambiente de demonstração isolado, contas fictícias separadas de Cliente, Atendimento e Gestor, organização e campanha ativas e tickets no estado inicial de cada tarefa. Usar a mesma versão da aplicação durante cada rodada e registrar versão, navegador, resolução e ambiente na [ficha de sessão](FICHA-DE-SESSAO.md). Não usar dados ou senhas reais de clientes. O [guia demo](../../../SIGE-Desk/Backend/VALIDACAO-DEMO.md) é referência para as fixtures; confirmar os estados antes da sessão, sem pressupor que os IDs locais de QA existam em outro ambiente.
+
+Registrar se o participante já viu o tutorial e se o utilizou durante alguma tarefa. O recurso nativo pode ser usado sem ajuda do moderador; nesse caso, registrar o uso separadamente, sem classificar automaticamente como ajuda humana. Manter a mesma orientação para todos.
 
 Entregar somente a [folha do participante](PARTICIPANTE.md), o cenário do papel e as credenciais fictícias por canal reservado. O moderador conserva critérios de observação e transições entre papéis. As ações fora do perfil são feitas pelo moderador em outra sessão para preparar a tarefa seguinte; não entram no tempo do participante.
 
@@ -34,7 +36,7 @@ Antes da aplicação, verificar se as instruções são compreensíveis, se os e
 4. Observar em silêncio, sem indicar botão ou rota. Se houver dúvida sobre o enunciado, esclarecer sem dar a solução. Se solicitada ajuda de navegação, registrar o instante e o conteúdo; a tarefa passa a “com ajuda”.
 5. Como limite operacional inicial, após cinco minutos sem avanço perguntar se deseja continuar ou encerrar. Esse limite pode ser ajustado na conferência do roteiro; não é parâmetro da literatura. Falha de ambiente gera “interrompida”, não erro de usabilidade atribuído ao participante.
 6. Depois da tentativa, perguntar onde houve dificuldade e o que a pessoa esperava. Perguntas retrospectivas evitam obrigar verbalização contínua durante a medição de tempo. Se houver fala espontânea, registrar seu contexto.
-7. Após o conjunto de tarefas do papel, aplicar UEQ-S individualmente, sem orientar respostas; em seguida colher comentários finais. Encerrar e revisar os registros com o observador.
+7. Após o conjunto completo de tarefas do papel e U-T1/U-T2, aplicar o [questionário UEQ-S](UEQ-S-PARTICIPANTE.md) uma única vez, individualmente, antes da discussão final. Usar o [guia detalhado](GUIA-UEQ-S.md) para instrução, transcrição e cálculo. Depois colher os comentários finais e revisar os registros com o observador.
 
 ## Tarefas e critérios de observação do moderador
 
@@ -60,10 +62,14 @@ U-T1 e U-T2 são aplicadas aos três papéis. O participante usa somente seu pap
 
 Usar uma cópia de [FICHA-DE-SESSAO.md](FICHA-DE-SESSAO.md) por sessão. Classificar cada tarefa como concluída sem ajuda, concluída com ajuda, não concluída ou interrompida por ambiente; não transformar tarefa não aplicável em sucesso. Anotar tempo em segundos, erros observados, dúvidas, ajuda, evidência e versão. Não preencher células vazias como zero.
 
-Aplicar os oito itens do UEQ-S a partir do [material oficial](https://www.ueq-online.org/), preservando termos, ordem, escala e orientação dos polos. O portal oferece o questionário curto e a ferramenta de análise. Arquivar a versão efetivamente aplicada com os dados da rodada; não improvisar tradução nem selecionar oito itens do UEQ completo. A ficha possui campos para transcrição, mas não substitui o formulário oficial. Fonte metodológica já adotada no projeto: Schrepp, Hinderks e Thomaschewski (2017), DOI 10.9781/ijimai.2017.09.001.
+Aplicar o [questionário preparado para o participante](UEQ-S-PARTICIPANTE.md), com os oito pares da versão portuguesa oficial conferidos em 20/11/2026. Preservar termos, ordem e polos; a folha acrescenta identificação e numeração das sete posições, sem criar outra tradução. O [guia do UEQ-S](GUIA-UEQ-S.md) especifica fala do moderador, momento de aplicação, exemplos e regras de cálculo. Na organização inicial, seis executores podem produzir até seis questionários, um após cada bloco completo; moderação e observação não geram respostas de uso sem executarem tarefas.
 
-Na disposição padronizada do UEQ-S, converter 1–7 em -3–+3 por resposta menos quatro, conferindo os polos da versão aplicada. Calcular média pragmática dos quatro primeiros itens e hedônica dos quatro últimos; registrar média geral dos oito como síntese. Manter respostas originais. Se houver resposta ausente, registrar ausência e não imputar neutralidade; informar o número válido por estatística, evitando comparar médias construídas com conjuntos diferentes sem explicação.
+Manter as respostas originais de 1 a 7 e converter cada valor válido por resposta menos quatro. Por decisão interna deste protocolo, calcular pragmática somente com Q1–Q4 completos, hedônica com Q5–Q8 completos e geral com os oito completos; informar quantidade válida em cada dimensão. Não imputar ausências. A média geral será complementar. O manual oficial recomenda o UEQ completo em avaliações usuais após tarefas; a opção já prevista pelo UEQ-S será mantida como medida resumida complementar, registrando a perda de detalhamento como limitação. Não serão apresentadas as seis escalas do UEQ completo a partir destes oito itens.
 
 Apresentar os resultados por papel simulado e versão do roteiro, informando quantas pessoas distintas participaram, quantas executaram tarefas e quais realizaram rodízio. Para tarefas, informar conclusão com/sem ajuda, falhas, interrupções e tempo descritivo das tarefas efetivamente tentadas, identificando situações excluídas. Para comentários, agrupar temas de fluxo, informações, comunicação, prioridade, prazo, aprovação, evidências e indicadores; relacionar a tarefa, requisito e sugestão. Registrar a familiaridade com a aplicação e o envolvimento no desenvolvimento como possíveis influências sobre os tempos, a necessidade de ajuda e as respostas. Os achados não constituem validação independente nem representam usuários externos. Sem inferência estatística, benchmark improvisado ou nota mínima arbitrária do UEQ-S.
 
 Transformar achados em lista de melhorias com impacto, tarefa/requisito, responsável, decisão, correção e reteste. A evidência funcional existente não antecipa satisfação ou eficiência dos participantes. Guardar respostas e fichas em acesso restrito ao grupo durante a elaboração e revisão do trabalho; antes da coleta, definir na ficha a data de descarte e eventuais exigências da disciplina. Publicar somente resultados agregados e exemplos anonimizados.
+
+## Histórico do instrumento
+
+Versão 3: detalha aplicação única ao final do bloco, entrega folha de UEQ-S com pares oficiais, define completude por dimensão, registra uso do tutorial e acrescenta a limitação da versão curta. As tarefas e a distribuição inicial dos integrantes foram preservadas; não houve coleta nesta revisão.

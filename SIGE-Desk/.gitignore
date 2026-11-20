@@ -8,3 +8,4 @@
 *.log
 deploy/aws/artifacts/
 deploy/aws/*.local.json
+deploy/aws/*.local.md

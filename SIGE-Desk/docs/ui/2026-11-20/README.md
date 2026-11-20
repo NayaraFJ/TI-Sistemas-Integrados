@@ -25,6 +25,8 @@ Os gráficos comparam volume por status (barras horizontais) e participação no
 
 Não foram criados ou alterados tickets nesta verificação. A preferência de movimento reduzido está configurada no componente; não foi emulada no navegador. Os demais perfis foram cobertos pela lógica de seleção de etapas, sem nova execução visual integral de cada perfil. Publicação AWS não faz parte desta revisão local.
 
+Após a revisão local, a release `20261120-103310-967c209d` foi publicada em tarefa autorizada pelo usuário. Login e tutorial foram conferidos também no navegador na AWS; o [registro de publicação](../../publicacao-aws.md) documenta o ensaio das oito contas. Isso não representa nova coleta de usabilidade.
+
 ## Evidências
 
 - [Tutorial no desktop](tutorial-desktop.jpg)
@@ -34,3 +36,4 @@ Não foram criados ou alterados tickets nesta verificação. A preferência de m
 - [Tags de escopo do SLA](tags-sla.jpg)
 - [Gráficos no desktop com destaque](graficos-desktop.jpg)
 - [Gráficos no celular](graficos-mobile.jpg)
+- [Tutorial na versão publicada na AWS](aws-tutorial-publicado.jpg)

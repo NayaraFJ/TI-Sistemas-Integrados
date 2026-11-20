@@ -15,6 +15,8 @@
 | Concordância voluntária registrada | Sim / não; sem concordância não iniciar |
 | Gravação específica autorizada | Não prevista; se adotada, registrar consentimento e guarda |
 | Versão do roteiro e aplicação / commit ou build | |
+| Já havia usado o tutorial? Quando? | |
+| Tutorial usado nesta sessão / tarefa / momento | |
 | Ambiente, navegador, resolução e dispositivo | |
 | Organização e IDs de tickets fictícios preparados | |
 | Pessoas autorizadas a acessar fichas e respostas | |
@@ -28,15 +30,42 @@ Tempos em segundos; registrar início/fim e pausas de ambiente. Resultado: SA = 
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | | | |
 
-## UEQ-S após as tarefas
+## UEQ-S após o bloco completo de tarefas
 
-Anexar formulário oficial preenchido ou identificador de seu registro; preservar idioma, versão e orientação dos polos. Campos abaixo são transcrição, não um questionário alternativo.
+Aplicar **uma vez**, depois das tarefas do papel e U-T1/U-T2, antes da discussão final. Entregar o [questionário](UEQ-S-PARTICIPANTE.md) em branco e seguir o [guia de aplicação e cálculo](GUIA-UEQ-S.md). O participante registra sua percepção da sessão inteira. Esta seção é transcrição do formulário original, não uma segunda aplicação.
 
-| Versão / idioma / fonte do formulário | Identificador do registro | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | | | | |
+| Controle da aplicação | Preencher |
+| --- | --- |
+| Questionário aplicado? | Sim / não; motivo se não aplicado |
+| Código / sessão / papel conferidos | |
+| Todas as tentativas encerradas? | Sim / não; registrar desistências e interrupções |
+| Horário do questionário, após as tarefas | |
+| Fonte / idioma / versão da folha | UEQ-S, português; folha do projeto de 20/11/2026, pares oficiais |
+| Identificador ou caminho restrito do formulário original | |
+| Respondeu individualmente antes da discussão final? | |
+| Dúvida sobre termos / marcação e esclarecimento dado | |
+| Transcrição conferida por / data | |
 
-Registrar valores originais 1–7; ausentes ficam ausentes. Na versão padrão, resposta menos quatro resulta em -3–+3; conferir os polos. Registrar médias pragmática Q1–Q4, hedônica Q5–Q8 e geral, com quantidade válida e tratamento das ausências explicitado.
+Registrar posições originais de 1–7. A conversão é original menos quatro; ausência permanece vazia, com motivo quando conhecido. Não preencher esta tabela com os valores fictícios do guia.
+
+| Item | Dimensão | Resposta original (1–7) | Convertida (−3 a +3) | Ausência / ambiguidade / observação |
+| --- | --- | --- | --- | --- |
+| Q1 | Pragmática | | | |
+| Q2 | Pragmática | | | |
+| Q3 | Pragmática | | | |
+| Q4 | Pragmática | | | |
+| Q5 | Hedônica | | | |
+| Q6 | Hedônica | | | |
+| Q7 | Hedônica | | | |
+| Q8 | Hedônica | | | |
+
+| Medida individual | Itens válidos | Média ou sem cálculo | Motivo de ausência de cálculo |
+| --- | --- | --- | --- |
+| Pragmática, Q1–Q4 | /4 | | |
+| Hedônica, Q5–Q8 | /4 | | |
+| Geral complementar, Q1–Q8 | /8 | | |
+
+Calcular cada dimensão somente se seus quatro itens forem válidos; geral somente com os oito válidos. Uma dimensão incompleta não impede calcular a outra completa. Não converter essas médias em percentual nem em aprovação funcional. Para consolidar, separar pessoas distintas de sessões repetidas e informar o número válido de cada estatística.
 
 ## Comentários retrospectivos
 

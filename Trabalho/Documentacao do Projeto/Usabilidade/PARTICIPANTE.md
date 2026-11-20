@@ -29,4 +29,10 @@ O moderador entregará somente o bloco do seu perfil e os identificadores dos ti
 1. Encontre o pedido indicado usando os recursos disponíveis de busca e filtro. Identifique situação, responsável e prazo.
 2. Encontre uma atualização recebida sobre esse pedido, consulte seu contexto e indique que você já a leu.
 
-Após as tarefas, responda individualmente ao questionário UEQ-S que o moderador fornecerá. Considere sua experiência nesta sessão. Comente também qual foi a maior dificuldade e qual mudança ajudaria mais no uso da aplicação.
+## Depois de encerrar as tarefas
+
+O bloco inclui as tarefas do seu papel e as duas tarefas de busca e notificações: sete para Cliente ou quatro para Atendimento/Gestor. Avise quando concluir, desistir ou precisar encerrar cada tentativa. Você pode usar o tutorial disponível na aplicação; informe ao observador se o utilizar.
+
+Depois do bloco inteiro, responda **uma única vez** ao [questionário UEQ-S](UEQ-S-PARTICIPANTE.md), individualmente e antes da conversa final. Cada uma das oito linhas tem duas palavras opostas: escolha uma das sete posições entre elas, conforme a impressão da sua experiência nesta sessão. Não é necessário acertar todas as tarefas para responder e não há resposta certa ou errada. Não consulte as respostas dos colegas.
+
+Após entregar o questionário, comente qual foi a maior dificuldade e qual mudança ajudaria mais. O moderador registra a sessão; você não precisa preencher a ficha de observação nem calcular as médias.
