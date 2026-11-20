@@ -58,3 +58,8 @@ A [primeira execução](concorrencia-if-match-independente.json) retornou 201 e 
 ## Período inválido na listagem — CT-06
 
 A interface ocultava os filtros e a ação Limpar quando o período era inválido. Após a correção, o [reteste visual](relatorio-interface.md) manteve os controles visíveis: corrigir as datas ou usar Limpar recuperou a listagem sem recarregar. O build do frontend passou; não foi preservada captura. O confronto de [período individual por API e MySQL](ct06-periodo-individual-20261119.json) complementa o teste dos filtros.
+
+
+## Complemento CT-15 de 20/11/2026
+
+O [fechamento do painel](relatorio-ct15-fechamento-20261120.md) preservou sete capturas de página inteira e textos completos, confrontados com dataset MySQL e respostas de API. Foram 161 verificações de valores/rótulos sem divergência e inspeção do estado vazio e dos gráficos. CT-15 passou a Aprovado. Não houve nova correção do produto; as falhas de preparação e de captura incompleta do roteiro foram preservadas com seus retestes no relatório. Os registros anteriores de pendência são históricos.

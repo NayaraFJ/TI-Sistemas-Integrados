@@ -5,7 +5,7 @@
 | Campo | Preencher |
 | --- | --- |
 | Código anônimo | |
-| Fase | Piloto interno / externa |
+| Rodada / sessão | Avaliação interna do grupo; registrar rodízio, se houver |
 | Data e horário com fuso | |
 | Moderador / observador | |
 | Perfil real e experiência por categoria | |
@@ -53,4 +53,4 @@ Registrar valores originais 1–7; ausentes ficam ausentes. Na versão padrão, 
 
 ## Síntese da rodada
 
-Consolidar por fase e perfil: convidados, participantes efetivos, substituições, tarefas tentadas e concluídas com/sem ajuda, interrupções, tempos e respostas válidas do UEQ-S. Registrar versões, exclusões e limites. Não preencher antes da coleta nem misturar piloto e externos em um único indicador de aprovação.
+Consolidar por papel simulado e versão do roteiro: integrantes distintos, executores das tarefas, moderadores/observadores e rodízios, tarefas tentadas e concluídas com/sem ajuda, interrupções, tempos e respostas válidas do UEQ-S. Registrar versões, exclusões e limites. Não preencher antes da coleta nem contar rodízios como pessoas adicionais. Registrar a familiaridade com a aplicação como limitação.

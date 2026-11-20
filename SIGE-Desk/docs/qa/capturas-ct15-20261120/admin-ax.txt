@@ -1,0 +1,102 @@
+Browser tab: 1, Title: "SIGE Desk", URL: "http://localhost:5173/".
+0 AXWebArea SIGE Desk, URL: localhost:5173/
+	1 container root
+		2 container
+			3 text SIGE Desk Administrador SIGE Desk  ·  Administrador
+			4 button Sair
+		5 container
+			6 content list
+				7 link Description: Visão geral, Value: localhost:5173/
+				8 link Description: Tickets, Value: localhost:5173/tickets
+				9 link Description: Notificações, Value: localhost:5173/notifications
+				10 link Description: Relatórios, Value: localhost:5173/reports
+				11 link Description: Clientes, Value: localhost:5173/clients
+				12 link Description: Campanhas, Value: localhost:5173/campaigns
+				13 link Description: Tipos de demanda, Value: localhost:5173/demand-types
+				14 link Description: Configuração de SLA, Value: localhost:5173/sla
+				15 link Description: Usuários e perfis, Value: localhost:5173/users
+			16 button ​ Ver tutorial
+				17 text Ver tutorial
+		18 container
+			19 heading Visão geral, Value: 1
+				20 text Visão geral
+			21 text Acompanhe a operação disponível para o perfil Administrador.
+			22 link Description: ​ Criar ticket, Value: localhost:5173/tickets/new
+			23 text TICKETS ATIVOS 590 Em andamento agora
+			24 progress indicator 80
+			25 text ALTA PRIORIDADE 235 Urgentes ou altas
+			26 progress indicator 32
+			27 text EM VALIDAÇÃO 8 Aguardando decisão
+			28 progress indicator 1
+			29 text AGUARDANDO CLIENTE 7 SLA pausado
+			30 progress indicator 1
+			31 heading Atividade recente, Value: 2
+				32 text Atividade recente
+			33 link Description: Ver todos, Value: localhost:5173/tickets
+			34 table Atividade recente
+				35 row
+					36 cell
+						37 text TICKET
+					38 cell
+						39 text CLIENTE
+					40 cell
+						41 text STATUS
+				42 row
+					43 cell
+						44 link Description: SIGE-1747 · QA CT12 UI 6a76230f pendência, Value: localhost:5173/tickets/98daf4a8-e815-4b00-87ea-78d32498385f
+						45 text 19/11/2026, 19:20
+					46 cell
+						47 text QA CT12 UI 6a76230f
+					48 cell
+						49 text Aguardando cliente
+				50 row
+					51 cell
+						52 link Description: SIGE-1731 · Review 998acb59 CT09 antigo, Value: localhost:5173/tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1
+						53 text 19/11/2026, 18:58
+					54 cell
+						55 text Aurora Educação
+					56 cell
+						57 text Em execução
+				58 row
+					59 cell
+						60 link Description: SIGE-1745 · Review bb24b19b aprovação protegida CT08, Value: localhost:5173/tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5
+						61 text 19/11/2026, 18:55
+					62 cell
+						63 text Aurora Educação
+					64 cell
+						65 text Em validação
+				66 row
+					67 cell
+						68 link Description: SIGE-1744 · Review e37897a4 aprovação protegida CT08, Value: localhost:5173/tickets/697c2d11-c447-419e-bb4d-5b11a338cd67
+						69 text 19/11/2026, 18:55
+					70 cell
+						71 text Aurora Educação
+					72 cell
+						73 text Em validação
+				74 row
+					75 cell
+						76 link Description: SIGE-1743 · Review 7aa03728 mutação direta CT08, Value: localhost:5173/tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1
+						77 text 19/11/2026, 18:54
+					78 cell
+						79 text Aurora Educação
+					80 cell
+						81 text Em execução
+			82 heading Distribuição por status, Value: 2
+				83 text Distribuição por status
+			84 container
+				85 text 738 tickets
+			86 text Aberta 309 Em triagem 39 Em execução 203 Aguardando cliente 7 Em validação 8 Concluída 64 Reaberta 24 Cancelada 84
+			87 heading Saúde do SLA, Value: 6
+				88 text Saúde do SLA
+			89 text 221 ticket(s) classificados 32 SLA vencido
+			90 heading Tickets por prioridade, Value: 2
+				91 text Tickets por prioridade
+			92 text Urgente 4 Alta 292 Média 5 Baixa 4 Sem classificação 433
+			93 heading Tickets por responsável, Value: 2
+				94 text Tickets por responsável
+			95 text Sem responsável 433 Ana Ribeiro 21 Lucas Martins 284
+			96 heading Prazos dos tickets ativos, Value: 2
+				97 text Prazos dos tickets ativos
+			98 text Vencido 32 Pausado 4 Pendente de classificação 367 No prazo 187
+
+The focused UI element is 0 AXWebArea SIGE Desk, URL: localhost:5173/

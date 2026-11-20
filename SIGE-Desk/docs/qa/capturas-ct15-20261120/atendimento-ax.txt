@@ -1,0 +1,98 @@
+Browser tab: 1, Title: "SIGE Desk", URL: "http://localhost:5173/".
+0 AXWebArea SIGE Desk, URL: localhost:5173/
+	1 container root
+		2 container
+			3 text SIGE Desk Beatriz Souza  ·  Atendimento
+			4 button Sair
+		5 container
+			6 content list
+				7 link Description: Visão geral, Value: localhost:5173/
+				8 link Description: Tickets, Value: localhost:5173/tickets
+				9 link Description: Notificações, Value: localhost:5173/notifications
+				10 link Description: Relatórios, Value: localhost:5173/reports
+				11 link Description: Campanhas, Value: localhost:5173/campaigns
+			12 button ​ Ver tutorial
+				13 text Ver tutorial
+		14 container
+			15 heading Visão geral, Value: 1
+				16 text Visão geral
+			17 text Acompanhe a operação disponível para o perfil Atendimento.
+			18 link Description: ​ Criar ticket, Value: localhost:5173/tickets/new
+			19 text TICKETS ATIVOS 590 Em andamento agora
+			20 progress indicator 80
+			21 text ALTA PRIORIDADE 235 Urgentes ou altas
+			22 progress indicator 32
+			23 text EM VALIDAÇÃO 8 Aguardando decisão
+			24 progress indicator 1
+			25 text AGUARDANDO CLIENTE 7 SLA pausado
+			26 progress indicator 1
+			27 heading Atividade recente, Value: 2
+				28 text Atividade recente
+			29 link Description: Ver todos, Value: localhost:5173/tickets
+			30 table Atividade recente
+				31 row
+					32 cell
+						33 text TICKET
+					34 cell
+						35 text CLIENTE
+					36 cell
+						37 text STATUS
+				38 row
+					39 cell
+						40 link Description: SIGE-1747 · QA CT12 UI 6a76230f pendência, Value: localhost:5173/tickets/98daf4a8-e815-4b00-87ea-78d32498385f
+						41 text 19/11/2026, 19:20
+					42 cell
+						43 text QA CT12 UI 6a76230f
+					44 cell
+						45 text Aguardando cliente
+				46 row
+					47 cell
+						48 link Description: SIGE-1731 · Review 998acb59 CT09 antigo, Value: localhost:5173/tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1
+						49 text 19/11/2026, 18:58
+					50 cell
+						51 text Aurora Educação
+					52 cell
+						53 text Em execução
+				54 row
+					55 cell
+						56 link Description: SIGE-1745 · Review bb24b19b aprovação protegida CT08, Value: localhost:5173/tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5
+						57 text 19/11/2026, 18:55
+					58 cell
+						59 text Aurora Educação
+					60 cell
+						61 text Em validação
+				62 row
+					63 cell
+						64 link Description: SIGE-1744 · Review e37897a4 aprovação protegida CT08, Value: localhost:5173/tickets/697c2d11-c447-419e-bb4d-5b11a338cd67
+						65 text 19/11/2026, 18:55
+					66 cell
+						67 text Aurora Educação
+					68 cell
+						69 text Em validação
+				70 row
+					71 cell
+						72 link Description: SIGE-1743 · Review 7aa03728 mutação direta CT08, Value: localhost:5173/tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1
+						73 text 19/11/2026, 18:54
+					74 cell
+						75 text Aurora Educação
+					76 cell
+						77 text Em execução
+			78 heading Distribuição por status, Value: 2
+				79 text Distribuição por status
+			80 container
+				81 text 738 tickets
+			82 text Aberta 309 Em triagem 39 Em execução 203 Aguardando cliente 7 Em validação 8 Concluída 64 Reaberta 24 Cancelada 84
+			83 heading Saúde do SLA, Value: 6
+				84 text Saúde do SLA
+			85 text 221 ticket(s) classificados 32 SLA vencido
+			86 heading Tickets por prioridade, Value: 2
+				87 text Tickets por prioridade
+			88 text Urgente 4 Alta 292 Média 5 Baixa 4 Sem classificação 433
+			89 heading Tickets por responsável, Value: 2
+				90 text Tickets por responsável
+			91 text Sem responsável 433 Ana Ribeiro 21 Lucas Martins 284
+			92 heading Prazos dos tickets ativos, Value: 2
+				93 text Prazos dos tickets ativos
+			94 text Vencido 32 Pausado 4 Pendente de classificação 367 No prazo 187
+
+The focused UI element is 0 AXWebArea SIGE Desk, URL: localhost:5173/

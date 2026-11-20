@@ -1,0 +1,94 @@
+Browser tab: 1, Title: "SIGE Desk", URL: "http://localhost:5173/".
+0 AXWebArea SIGE Desk, URL: localhost:5173/
+	1 container root
+		2 container
+			3 text SIGE Desk Ana Ribeiro  ·  Gestor de tráfego
+			4 button Sair
+		5 container
+			6 content list
+				7 link Description: Visão geral, Value: localhost:5173/
+				8 link Description: Tickets, Value: localhost:5173/tickets
+				9 link Description: Notificações, Value: localhost:5173/notifications
+			10 button ​ Ver tutorial
+				11 text Ver tutorial
+		12 container
+			13 heading Visão geral, Value: 1
+				14 text Visão geral
+			15 text Acompanhe a operação disponível para o perfil Gestor de tráfego. TICKETS ATIVOS 18 Em andamento agora
+			16 progress indicator 86
+			17 text ALTA PRIORIDADE 18 Urgentes ou altas
+			18 progress indicator 86
+			19 text EM VALIDAÇÃO 0 Aguardando decisão
+			20 progress indicator 0
+			21 text AGUARDANDO CLIENTE 2 SLA pausado
+			22 progress indicator 10
+			23 heading Atividade recente, Value: 2
+				24 text Atividade recente
+			25 link Description: Ver todos, Value: localhost:5173/tickets
+			26 table Atividade recente
+				27 row
+					28 cell
+						29 text TICKET
+					30 cell
+						31 text CLIENTE
+					32 cell
+						33 text STATUS
+				34 row
+					35 cell
+						36 link Description: SIGE-1720 · Review 8a15c542, Value: localhost:5173/tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877
+						37 text 19/11/2026, 17:56
+					38 cell
+						39 text Aurora Educação
+					40 cell
+						41 text Em execução
+				42 row
+					43 cell
+						44 link Description: SIGE-1719 · Review 8a15c542, Value: localhost:5173/tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa
+						45 text 19/11/2026, 17:56
+					46 cell
+						47 text Aurora Educação
+					48 cell
+						49 text Em execução
+				50 row
+					51 cell
+						52 link Description: SIGE-1702 · Review a0f70be8, Value: localhost:5173/tickets/2ec6a46a-020e-405a-8e7e-fa7b55bfbe5b
+						53 text 19/11/2026, 14:46
+					54 cell
+						55 text Aurora Educação
+					56 cell
+						57 text Reaberta
+				58 row
+					59 cell
+						60 link Description: SIGE-1549 · Review f2c6232f, Value: localhost:5173/tickets/bb47cf97-ac8d-48db-a063-433237d895b2
+						61 text 19/11/2026, 14:25
+					62 cell
+						63 text Aurora Educação
+					64 cell
+						65 text Reaberta
+				66 row
+					67 cell
+						68 link Description: SIGE-1505 · Review 1d50bd12, Value: localhost:5173/tickets/fe414552-28de-4604-a6be-458e76e77e2f
+						69 text 19/11/2026, 14:11
+					70 cell
+						71 text Aurora Educação
+					72 cell
+						73 text Reaberta
+			74 heading Distribuição por status, Value: 2
+				75 text Distribuição por status
+			76 container
+				77 text 21 tickets
+			78 text Em execução 2 Aguardando cliente 2 Concluída 3 Reaberta 14
+			79 heading Saúde do SLA, Value: 6
+				80 text Saúde do SLA
+			81 text 4 ticket(s) classificados 2 SLA vencido
+			82 heading Tickets por prioridade, Value: 2
+				83 text Tickets por prioridade
+			84 text Urgente 1 Alta 18 Média 1 Baixa 1 Sem classificação 0
+			85 heading Tickets por responsável, Value: 2
+				86 text Tickets por responsável
+			87 text Ana Ribeiro 21
+			88 heading Prazos dos tickets ativos, Value: 2
+				89 text Prazos dos tickets ativos
+			90 text Vencido 2 Pausado 0 Pendente de classificação 14 No prazo 2
+
+The focused UI element is 0 AXWebArea SIGE Desk, URL: localhost:5173/

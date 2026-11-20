@@ -1,0 +1,96 @@
+Browser tab: 1, Title: "SIGE Desk", URL: "http://localhost:5173/".
+0 AXWebArea SIGE Desk, URL: localhost:5173/
+	1 container root
+		2 container
+			3 text SIGE Desk Rafael Lima  ·  Cliente
+			4 button Sair
+		5 container
+			6 content list
+				7 link Description: Visão geral, Value: localhost:5173/
+				8 link Description: Tickets, Value: localhost:5173/tickets
+				9 link Description: Notificações, Value: localhost:5173/notifications
+			10 button ​ Ver tutorial
+				11 text Ver tutorial
+		12 container
+			13 heading Visão geral, Value: 1
+				14 text Visão geral
+			15 text Acompanhe a operação disponível para o perfil Cliente.
+			16 link Description: ​ Criar ticket, Value: localhost:5173/tickets/new
+			17 text TICKETS ATIVOS 8 Em andamento agora
+			18 progress indicator 80
+			19 text ALTA PRIORIDADE 3 Urgentes ou altas
+			20 progress indicator 30
+			21 text EM VALIDAÇÃO 1 Aguardando decisão
+			22 progress indicator 10
+			23 text AGUARDANDO CLIENTE 1 SLA pausado
+			24 progress indicator 10
+			25 heading Atividade recente, Value: 2
+				26 text Atividade recente
+			27 link Description: Ver todos, Value: localhost:5173/tickets
+			28 table Atividade recente
+				29 row
+					30 cell
+						31 text TICKET
+					32 cell
+						33 text CLIENTE
+					34 cell
+						35 text STATUS
+				36 row
+					37 cell
+						38 link Description: SIGE-1537 · Review d91d8dc8, Value: localhost:5173/tickets/bdfcf2ce-cd83-4b26-9c57-851868fd6de0
+						39 text 19/11/2026, 14:23
+					40 cell
+						41 text Horizonte Solar
+					42 cell
+						43 text Aberta
+				44 row
+					45 cell
+						46 link Description: SIGE-1533 · Review 7d00a1ef, Value: localhost:5173/tickets/edb5aba6-87c9-45c5-be8c-c35ed557cb14
+						47 text 19/11/2026, 14:22
+					48 cell
+						49 text Horizonte Solar
+					50 cell
+						51 text Aberta
+				52 row
+					53 cell
+						54 link Description: SIGE-1022 · Reabrir análise com divergência no período, Value: localhost:5173/tickets/89bc13ac-de08-459c-bc1c-38116b421e25
+						55 text 18/11/2026, 19:54
+					56 cell
+						57 text Horizonte Solar
+					58 cell
+						59 text Reaberta
+				60 row
+					61 cell
+						62 link Description: SIGE-1019 · Conferir complemento recebido do cliente, Value: localhost:5173/tickets/47b594d6-9206-44c4-9927-a97917d799c0
+						63 text 18/11/2026, 19:54
+					64 cell
+						65 text Horizonte Solar
+					66 cell
+						67 text Aguardando cliente
+				68 row
+					69 cell
+						70 link Description: SIGE-1016 · Solicitar análise de ROAS, Value: localhost:5173/tickets/68054f94-cf88-467e-a756-4ce43ce3b3d3
+						71 text 18/11/2026, 19:54
+					72 cell
+						73 text Horizonte Solar
+					74 cell
+						75 text Aberta
+			76 heading Distribuição por status, Value: 2
+				77 text Distribuição por status
+			78 container
+				79 text 10 tickets
+			80 text Aberta 3 Em triagem 1 Em execução 1 Aguardando cliente 1 Em validação 1 Concluída 1 Reaberta 1 Cancelada 1
+			81 heading Saúde do SLA, Value: 6
+				82 text Saúde do SLA
+			83 text 3 ticket(s) classificados 4 SLA vencido
+			84 heading Tickets por prioridade, Value: 2
+				85 text Tickets por prioridade
+			86 text Urgente 2 Alta 1 Média 1 Baixa 1 Sem classificação 5
+			87 heading Tickets por responsável, Value: 2
+				88 text Tickets por responsável
+			89 text Sem responsável 5 Ana Ribeiro 2 Lucas Martins 3
+			90 heading Prazos dos tickets ativos, Value: 2
+				91 text Prazos dos tickets ativos
+			92 text Vencido 4 Pausado 0 Pendente de classificação 4 No prazo 0
+
+The focused UI element is 0 AXWebArea SIGE Desk, URL: localhost:5173/

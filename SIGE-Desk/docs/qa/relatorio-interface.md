@@ -132,3 +132,8 @@ Em 19/11/2026, no frontend local `localhost:5173` com Admin e dados sintéticos,
 Ao alterar a data inicial para 20/11/2026 mantendo a final em 19/11/2026, a tela exibiu apenas “Período inválido” no conteúdo, sem os campos de filtro ou ação de limpar para corrigir a entrada; recarregar a página restaurou a listagem. Trata-se de defeito de recuperação da interface observado antes da correção; situação e reteste devem ser registrados separadamente.
 
 Reteste após alteração em `Frontend/src/features/TicketsPage.tsx`: no mesmo ambiente, início 20/11/2026 e fim 19/11/2026 exibiram “Período inválido” mantendo visíveis os filtros e Limpar. Ao corrigir o início para 19/11/2026, a listagem retornou com 605 tickets sem recarregar a página. Ao repetir o intervalo inválido e escolher Limpar, a listagem voltou a 738 tickets e os campos ficaram vazios. Resultado observado pela árvore de acessibilidade, sem arquivo de captura. O build de frontend foi executado após a alteração.
+
+
+## Complemento CT-15 de 20/11/2026
+
+O [fechamento do painel](relatorio-ct15-fechamento-20261120.md) preservou sete capturas de página inteira e textos completos, confrontados com dataset MySQL e respostas de API. Foram 161 verificações de valores/rótulos sem divergência e inspeção do estado vazio e dos gráficos. CT-15 passou a Aprovado. Não houve nova correção do produto; as falhas de preparação e de captura incompleta do roteiro foram preservadas com seus retestes no relatório. Os registros anteriores de pendência são históricos.

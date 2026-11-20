@@ -1,6 +1,6 @@
 # Rastreabilidade entre requisitos e fichas
 
-Matriz derivada dos vínculos explícitos do catálogo, consolidada em 19/11/2026. A aprovação é por CT e escopo; este índice não comprova cobertura de todos os requisitos não funcionais. CT-15 continua parcial.
+Matriz derivada dos vínculos explícitos do catálogo, consolidada em 19/11/2026. A aprovação é por CT e escopo; este índice não comprova cobertura de todos os requisitos não funcionais. CT-15 foi aprovado no complemento visual de 20/11/2026; total consolidado de 17/17.
 
 | Requisito / regra | Fichas relacionadas |
 | --- | --- |

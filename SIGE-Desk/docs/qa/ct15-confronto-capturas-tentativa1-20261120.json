@@ -1,0 +1,1206 @@
+{
+  "createdAt": "2026-11-20T12:34:57.418012+00:00",
+  "checks": [
+    {
+      "profile": "admin",
+      "label": "TICKETS ATIVOS",
+      "expected": 590,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "ALTA PRIORIDADE",
+      "expected": 235,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "EM VALIDAÇÃO",
+      "expected": 8,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "AGUARDANDO CLIENTE",
+      "expected": 7,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "statusDistribution:OPEN",
+      "expected": 309,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "statusDistribution:TRIAGE",
+      "expected": 39,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "statusDistribution:EXECUTION",
+      "expected": 203,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "statusDistribution:WAITING_FOR_CLIENT",
+      "expected": 7,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "statusDistribution:VALIDATION",
+      "expected": 8,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "statusDistribution:DONE",
+      "expected": 64,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "statusDistribution:REOPENED",
+      "expected": 24,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "statusDistribution:CANCELLED",
+      "expected": 84,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "priorityDistribution:URGENT",
+      "expected": 4,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "priorityDistribution:HIGH",
+      "expected": 292,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "priorityDistribution:MEDIUM",
+      "expected": 5,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "priorityDistribution:LOW",
+      "expected": 4,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "priorityDistribution:UNCLASSIFIED",
+      "expected": 433,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "deadlineDistribution:OVERDUE",
+      "expected": 32,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "deadlineDistribution:PAUSED",
+      "expected": 4,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "deadlineDistribution:PENDING_CLASSIFICATION",
+      "expected": 367,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "deadlineDistribution:ON_TIME",
+      "expected": 187,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "assignee:None",
+      "expected": 433,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "assignee:ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "expected": 21,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "assignee:0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "expected": 284,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "classifiedCount",
+      "expected": 221,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "admin",
+      "label": "total visível no gráfico",
+      "expected": 738,
+      "obtained": null,
+      "passed": false
+    },
+    {
+      "profile": "atendimento",
+      "label": "TICKETS ATIVOS",
+      "expected": 590,
+      "obtained": 590,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "ALTA PRIORIDADE",
+      "expected": 235,
+      "obtained": 235,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "EM VALIDAÇÃO",
+      "expected": 8,
+      "obtained": 8,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "AGUARDANDO CLIENTE",
+      "expected": 7,
+      "obtained": 7,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "statusDistribution:OPEN",
+      "expected": 309,
+      "obtained": 309,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "statusDistribution:TRIAGE",
+      "expected": 39,
+      "obtained": 39,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "statusDistribution:EXECUTION",
+      "expected": 203,
+      "obtained": 203,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "statusDistribution:WAITING_FOR_CLIENT",
+      "expected": 7,
+      "obtained": 7,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "statusDistribution:VALIDATION",
+      "expected": 8,
+      "obtained": 8,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "statusDistribution:DONE",
+      "expected": 64,
+      "obtained": 64,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "statusDistribution:REOPENED",
+      "expected": 24,
+      "obtained": 24,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "statusDistribution:CANCELLED",
+      "expected": 84,
+      "obtained": 84,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "priorityDistribution:URGENT",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "priorityDistribution:HIGH",
+      "expected": 292,
+      "obtained": 292,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "priorityDistribution:MEDIUM",
+      "expected": 5,
+      "obtained": 5,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "priorityDistribution:LOW",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "priorityDistribution:UNCLASSIFIED",
+      "expected": 433,
+      "obtained": 433,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "deadlineDistribution:OVERDUE",
+      "expected": 32,
+      "obtained": 32,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "deadlineDistribution:PAUSED",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "deadlineDistribution:PENDING_CLASSIFICATION",
+      "expected": 367,
+      "obtained": 367,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "deadlineDistribution:ON_TIME",
+      "expected": 187,
+      "obtained": 187,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "assignee:None",
+      "expected": 433,
+      "obtained": 433,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "assignee:ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "expected": 21,
+      "obtained": 21,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "assignee:0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "expected": 284,
+      "obtained": 284,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "classifiedCount",
+      "expected": 221,
+      "obtained": 221,
+      "passed": true
+    },
+    {
+      "profile": "atendimento",
+      "label": "total visível no gráfico",
+      "expected": 738,
+      "obtained": 738,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "TICKETS ATIVOS",
+      "expected": 508,
+      "obtained": 508,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "ALTA PRIORIDADE",
+      "expected": 165,
+      "obtained": 165,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "EM VALIDAÇÃO",
+      "expected": 6,
+      "obtained": 6,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "AGUARDANDO CLIENTE",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "statusDistribution:OPEN",
+      "expected": 305,
+      "obtained": 305,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "statusDistribution:TRIAGE",
+      "expected": 36,
+      "obtained": 36,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "statusDistribution:EXECUTION",
+      "expected": 135,
+      "obtained": 135,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "statusDistribution:WAITING_FOR_CLIENT",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "statusDistribution:VALIDATION",
+      "expected": 6,
+      "obtained": 6,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "statusDistribution:DONE",
+      "expected": 62,
+      "obtained": 62,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "statusDistribution:REOPENED",
+      "expected": 22,
+      "obtained": 22,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "statusDistribution:CANCELLED",
+      "expected": 82,
+      "obtained": 82,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "priorityDistribution:URGENT",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "priorityDistribution:HIGH",
+      "expected": 224,
+      "obtained": 224,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "priorityDistribution:MEDIUM",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "priorityDistribution:LOW",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "priorityDistribution:UNCLASSIFIED",
+      "expected": 423,
+      "obtained": 423,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "deadlineDistribution:OVERDUE",
+      "expected": 25,
+      "obtained": 25,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "deadlineDistribution:PAUSED",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "deadlineDistribution:PENDING_CLASSIFICATION",
+      "expected": 359,
+      "obtained": 359,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "deadlineDistribution:ON_TIME",
+      "expected": 120,
+      "obtained": 120,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "assignee:None",
+      "expected": 423,
+      "obtained": 423,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "assignee:ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "expected": 17,
+      "obtained": 17,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "assignee:0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "expected": 212,
+      "obtained": 212,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "classifiedCount",
+      "expected": 149,
+      "obtained": 149,
+      "passed": true
+    },
+    {
+      "profile": "cliente",
+      "label": "total visível no gráfico",
+      "expected": 652,
+      "obtained": 652,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "TICKETS ATIVOS",
+      "expected": 8,
+      "obtained": 8,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "ALTA PRIORIDADE",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "EM VALIDAÇÃO",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "AGUARDANDO CLIENTE",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "statusDistribution:OPEN",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "statusDistribution:TRIAGE",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "statusDistribution:EXECUTION",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "statusDistribution:WAITING_FOR_CLIENT",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "statusDistribution:VALIDATION",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "statusDistribution:DONE",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "statusDistribution:REOPENED",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "statusDistribution:CANCELLED",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "priorityDistribution:URGENT",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "priorityDistribution:HIGH",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "priorityDistribution:MEDIUM",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "priorityDistribution:LOW",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "priorityDistribution:UNCLASSIFIED",
+      "expected": 5,
+      "obtained": 5,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "deadlineDistribution:OVERDUE",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "deadlineDistribution:PAUSED",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "deadlineDistribution:PENDING_CLASSIFICATION",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "deadlineDistribution:ON_TIME",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "assignee:None",
+      "expected": 5,
+      "obtained": 5,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "assignee:ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "assignee:0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "classifiedCount",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "cliente-externo",
+      "label": "total visível no gráfico",
+      "expected": 10,
+      "obtained": 10,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "TICKETS ATIVOS",
+      "expected": 223,
+      "obtained": 223,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "ALTA PRIORIDADE",
+      "expected": 217,
+      "obtained": 217,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "EM VALIDAÇÃO",
+      "expected": 8,
+      "obtained": 8,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "AGUARDANDO CLIENTE",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "statusDistribution:TRIAGE",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "statusDistribution:EXECUTION",
+      "expected": 201,
+      "obtained": 201,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "statusDistribution:WAITING_FOR_CLIENT",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "statusDistribution:VALIDATION",
+      "expected": 8,
+      "obtained": 8,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "statusDistribution:DONE",
+      "expected": 61,
+      "obtained": 61,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "statusDistribution:REOPENED",
+      "expected": 10,
+      "obtained": 10,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "priorityDistribution:URGENT",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "priorityDistribution:HIGH",
+      "expected": 274,
+      "obtained": 274,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "priorityDistribution:MEDIUM",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "priorityDistribution:LOW",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "priorityDistribution:UNCLASSIFIED",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "deadlineDistribution:OVERDUE",
+      "expected": 30,
+      "obtained": 30,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "deadlineDistribution:PAUSED",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "deadlineDistribution:PENDING_CLASSIFICATION",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "deadlineDistribution:ON_TIME",
+      "expected": 185,
+      "obtained": 185,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "assignee:0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "expected": 284,
+      "obtained": 284,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "classifiedCount",
+      "expected": 217,
+      "obtained": 217,
+      "passed": true
+    },
+    {
+      "profile": "gestor",
+      "label": "total visível no gráfico",
+      "expected": 284,
+      "obtained": 284,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "TICKETS ATIVOS",
+      "expected": 18,
+      "obtained": 18,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "ALTA PRIORIDADE",
+      "expected": 18,
+      "obtained": 18,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "EM VALIDAÇÃO",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "AGUARDANDO CLIENTE",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "statusDistribution:EXECUTION",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "statusDistribution:WAITING_FOR_CLIENT",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "statusDistribution:DONE",
+      "expected": 3,
+      "obtained": 3,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "statusDistribution:REOPENED",
+      "expected": 14,
+      "obtained": 14,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "priorityDistribution:URGENT",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "priorityDistribution:HIGH",
+      "expected": 18,
+      "obtained": 18,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "priorityDistribution:MEDIUM",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "priorityDistribution:LOW",
+      "expected": 1,
+      "obtained": 1,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "priorityDistribution:UNCLASSIFIED",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "deadlineDistribution:OVERDUE",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "deadlineDistribution:PAUSED",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "deadlineDistribution:PENDING_CLASSIFICATION",
+      "expected": 14,
+      "obtained": 14,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "deadlineDistribution:ON_TIME",
+      "expected": 2,
+      "obtained": 2,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "assignee:ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "expected": 21,
+      "obtained": 21,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "classifiedCount",
+      "expected": 4,
+      "obtained": 4,
+      "passed": true
+    },
+    {
+      "profile": "gestor-nao-atribuido",
+      "label": "total visível no gráfico",
+      "expected": 21,
+      "obtained": 21,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "TICKETS ATIVOS",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "ALTA PRIORIDADE",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "EM VALIDAÇÃO",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "AGUARDANDO CLIENTE",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "priorityDistribution:URGENT",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "priorityDistribution:HIGH",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "priorityDistribution:MEDIUM",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "priorityDistribution:LOW",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "priorityDistribution:UNCLASSIFIED",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "deadlineDistribution:OVERDUE",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "deadlineDistribution:PAUSED",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "deadlineDistribution:PENDING_CLASSIFICATION",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "deadlineDistribution:ON_TIME",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "classifiedCount",
+      "expected": 0,
+      "obtained": 0,
+      "passed": true
+    },
+    {
+      "profile": "vazio",
+      "label": "estado vazio",
+      "expected": true,
+      "obtained": true,
+      "passed": true
+    }
+  ],
+  "captures": [
+    {
+      "path": "capturas-ct15-20261120/admin.jpg",
+      "bytes": 131293,
+      "sha256": "d9c289429286bc326aa00234cbded3cbd092da56bb66b89b4fd0bb12d644f8c3"
+    },
+    {
+      "path": "capturas-ct15-20261120/admin-ax.txt",
+      "bytes": 188,
+      "sha256": "af396d2c6e4a51bbdaa9243a64acba9b9a69b9ccc75c607d4410a1644ae52d96"
+    },
+    {
+      "path": "capturas-ct15-20261120/atendimento.jpg",
+      "bytes": 125134,
+      "sha256": "e4f1d60f6a43a421719b76b835a42933b08663d0e33879cf5b9355ca1f895d36"
+    },
+    {
+      "path": "capturas-ct15-20261120/atendimento-ax.txt",
+      "bytes": 3799,
+      "sha256": "3ad6ccab53e74bd5f668400c5350c9685d1a92b6d010b7c63911e720947983b1"
+    },
+    {
+      "path": "capturas-ct15-20261120/cliente.jpg",
+      "bytes": 128868,
+      "sha256": "64fd73cc9a7785b98def0d78a5ae1f9991c44dabcac10e8d7a8825cf9c01d368"
+    },
+    {
+      "path": "capturas-ct15-20261120/cliente-ax.txt",
+      "bytes": 3629,
+      "sha256": "cd7e3c98e04bbb19a91523c3ac64d03ca1205d933fd6c58514ee82c1c594f224"
+    },
+    {
+      "path": "capturas-ct15-20261120/cliente-externo.jpg",
+      "bytes": 121869,
+      "sha256": "b3392d6f6d7320a868def67391cf0fb453f379c3bac0f31e12ac8b30be94e647"
+    },
+    {
+      "path": "capturas-ct15-20261120/cliente-externo-ax.txt",
+      "bytes": 3548,
+      "sha256": "7327588df595c6ced8928fb58067537d77b363a08303a5e399895d530301ec83"
+    },
+    {
+      "path": "capturas-ct15-20261120/gestor.jpg",
+      "bytes": 125341,
+      "sha256": "c78e3bcee53814b2b06861fbf0b8c5d9aeaabdb87665548c99eb1c10ee0f1d3e"
+    },
+    {
+      "path": "capturas-ct15-20261120/gestor-ax.txt",
+      "bytes": 3500,
+      "sha256": "b62822929c8c19f88fede7220972c26e4162f1a97f7ad1c425b4c1147e342485"
+    },
+    {
+      "path": "capturas-ct15-20261120/gestor-nao-atribuido.jpg",
+      "bytes": 115074,
+      "sha256": "9e506575f47279d69c913190285ec29c6074b0fa2ab2ceaa887eb4affb8351a5"
+    },
+    {
+      "path": "capturas-ct15-20261120/gestor-nao-atribuido-ax.txt",
+      "bytes": 3352,
+      "sha256": "5db245aa5b4e1052bacff0d10ccd7880b03f008af455ff0c500bc525aeb374ed"
+    },
+    {
+      "path": "capturas-ct15-20261120/vazio.jpg",
+      "bytes": 77841,
+      "sha256": "d4f3d32dea23f7ce08fc0355836a880a021c5d10392774760f6cfd1ff11ddd58"
+    },
+    {
+      "path": "capturas-ct15-20261120/vazio-ax.txt",
+      "bytes": 1839,
+      "sha256": "0dd5d340fb378d4fd19157405cce6429ba6279925fcbd2aef8278146eb590f4b"
+    }
+  ],
+  "passed": false,
+  "scope": "Texto da interface real versus API previamente confrontada com dataset MySQL; inspeção das imagens complementa o confronto numérico."
+}

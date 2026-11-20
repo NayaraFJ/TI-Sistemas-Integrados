@@ -1,0 +1,94 @@
+Browser tab: 1, Title: "SIGE Desk", URL: "http://localhost:5173/".
+0 AXWebArea SIGE Desk, URL: localhost:5173/
+	1 container root
+		2 container
+			3 text SIGE Desk Lucas Martins  ·  Gestor de tráfego
+			4 button Sair
+		5 container
+			6 content list
+				7 link Description: Visão geral, Value: localhost:5173/
+				8 link Description: Tickets, Value: localhost:5173/tickets
+				9 link Description: Notificações, Value: localhost:5173/notifications
+			10 button ​ Ver tutorial
+				11 text Ver tutorial
+		12 container
+			13 heading Visão geral, Value: 1
+				14 text Visão geral
+			15 text Acompanhe a operação disponível para o perfil Gestor de tráfego. TICKETS ATIVOS 223 Em andamento agora
+			16 progress indicator 79
+			17 text ALTA PRIORIDADE 217 Urgentes ou altas
+			18 progress indicator 76
+			19 text EM VALIDAÇÃO 8 Aguardando decisão
+			20 progress indicator 3
+			21 text AGUARDANDO CLIENTE 3 SLA pausado
+			22 progress indicator 1
+			23 heading Atividade recente, Value: 2
+				24 text Atividade recente
+			25 link Description: Ver todos, Value: localhost:5173/tickets
+			26 table Atividade recente
+				27 row
+					28 cell
+						29 text TICKET
+					30 cell
+						31 text CLIENTE
+					32 cell
+						33 text STATUS
+				34 row
+					35 cell
+						36 link Description: SIGE-1731 · Review 998acb59 CT09 antigo, Value: localhost:5173/tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1
+						37 text 19/11/2026, 18:58
+					38 cell
+						39 text Aurora Educação
+					40 cell
+						41 text Em execução
+				42 row
+					43 cell
+						44 link Description: SIGE-1745 · Review bb24b19b aprovação protegida CT08, Value: localhost:5173/tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5
+						45 text 19/11/2026, 18:55
+					46 cell
+						47 text Aurora Educação
+					48 cell
+						49 text Em validação
+				50 row
+					51 cell
+						52 link Description: SIGE-1744 · Review e37897a4 aprovação protegida CT08, Value: localhost:5173/tickets/697c2d11-c447-419e-bb4d-5b11a338cd67
+						53 text 19/11/2026, 18:55
+					54 cell
+						55 text Aurora Educação
+					56 cell
+						57 text Em validação
+				58 row
+					59 cell
+						60 link Description: SIGE-1743 · Review 7aa03728 mutação direta CT08, Value: localhost:5173/tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1
+						61 text 19/11/2026, 18:54
+					62 cell
+						63 text Aurora Educação
+					64 cell
+						65 text Em execução
+				66 row
+					67 cell
+						68 link Description: SIGE-1740 · Review ff64c9fb, Value: localhost:5173/tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26
+						69 text 19/11/2026, 18:46
+					70 cell
+						71 text Aurora Educação
+					72 cell
+						73 text Concluída
+			74 heading Distribuição por status, Value: 2
+				75 text Distribuição por status
+			76 container
+				77 text 284 tickets
+			78 text Em triagem 1 Em execução 201 Aguardando cliente 3 Em validação 8 Concluída 61 Reaberta 10
+			79 heading Saúde do SLA, Value: 6
+				80 text Saúde do SLA
+			81 text 217 ticket(s) classificados 30 SLA vencido
+			82 heading Tickets por prioridade, Value: 2
+				83 text Tickets por prioridade
+			84 text Urgente 3 Alta 274 Média 4 Baixa 3 Sem classificação 0
+			85 heading Tickets por responsável, Value: 2
+				86 text Tickets por responsável
+			87 text Lucas Martins 284
+			88 heading Prazos dos tickets ativos, Value: 2
+				89 text Prazos dos tickets ativos
+			90 text Vencido 30 Pausado 4 Pendente de classificação 4 No prazo 185
+
+The focused UI element is 0 AXWebArea SIGE Desk, URL: localhost:5173/

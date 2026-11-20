@@ -1,6 +1,6 @@
 # Fichas dos testes funcionais
 
-Consolidação documental em 19/11/2026 das execuções preservadas em `SIGE-Desk/docs/qa`; não é nova execução. **16/17 aprovados (94,1%), 11/11 altas, CT-15 parcial**. Nenhum crítico aberto foi identificado entre as ocorrências examinadas; os limites de dados legados e de cobertura continuam registrados.
+Consolidação documental atualizada em 20/11/2026 das execuções preservadas em `SIGE-Desk/docs/qa`; inclui o novo complemento visual de CT-15. **17/17 aprovados (100%), 11/11 altas**. Nenhum crítico aberto foi identificado entre as ocorrências examinadas; os limites de dados legados e de cobertura continuam registrados.
 
 Os nomes foram distribuídos por sorteio reprodutível para coordenação e revisão documental do grupo. Não representam execução humana retroativa nem aceite assinado. Executor dos ensaios existentes: agente de QA, scripts e navegador sob coordenação da usuária. A validação dos integrantes permanece pendente.
 
@@ -22,14 +22,16 @@ Cada ficha reúne o contrato, a trajetória das verificações e o índice de ev
 | [CT-12 — Cadastros e proteção de continuidade](CT-12.md) | Alta | RF-03, RF-04; RF-02; RN-02, RN-09; seção 8.2. | Aprovado | Gabriel Fernandes de Araújo |
 | [CT-13 — Histórico completo e auditável](CT-13.md) | Alta | RF-09, RF-17; RNF-04. | Aprovado | Nayara Ferreira de Jesus Rodrigues |
 | [CT-14 — Cancelamento antes da execução](CT-14.md) | Média | RF-13; RN-07, RN-08; RNF-05. | Aprovado | Lorrainy Pâmela Siqueira Ferreira |
-| [CT-15 — Painel e agregações autorizadas](CT-15.md) | Média | RF-15; RN-09. | Parcial | Maria Heloisa Aguiar Mendes |
+| [CT-15 — Painel e agregações autorizadas](CT-15.md) | Média | RF-15; RN-09. | Aprovado | Maria Heloisa Aguiar Mendes |
 | [CT-16 — Métricas de contexto](CT-16.md) | Baixa | RF-18; seção 8.2. | Aprovado | Pedro Henrique Assuncao |
 | [CT-17 — Exportação da seleção filtrada](CT-17.md) | Baixa | RF-19; RF-14, RF-02; RN-09; seção 8.1. | Aprovado | Gabriel Rocha Lopes |
 
 ## Decisão e continuidade
 
-O critério interno exige 11/11 altas, pelo menos 16/17 no total e nenhum crítico aberto identificado no escopo examinado. Foi atendido nesse escopo; CT-15 continua parcial, e o aceite documental pelo grupo deve ser registrado separadamente. Para cada nova rodada, acrescentar ambiente, data, variante, resultado observado, evidência e decisão, preservando as tentativas anteriores.
+O critério interno exige 11/11 altas, pelo menos 16/17 no total e nenhum crítico aberto identificado no escopo examinado. Foi atendido nesse escopo; CT-15 foi concluído com capturas e confronto em 20/11/2026, e o aceite documental pelo grupo deve ser registrado separadamente. Para cada nova rodada, acrescentar ambiente, data, variante, resultado observado, evidência e decisão, preservando as tentativas anteriores.
 
 Fontes de consulta: [resultado técnico](../../../SIGE-Desk/docs/qa/resultado-catalogo.md), [decisão de defeitos](../../../SIGE-Desk/docs/qa/decisao-defeitos-atual.md), [roteiro de usabilidade](../Usabilidade/ROTEIRO.md).
 
 [Consulta inversa: requisito → fichas](RASTREABILIDADE.md).
+
+Fechamento de CT-15: [relatório, sete capturas e comparação de 161 valores](../../../SIGE-Desk/docs/qa/relatorio-ct15-fechamento-20261120.md).

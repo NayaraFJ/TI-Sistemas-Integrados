@@ -4,7 +4,7 @@ Este é o backlog operacional do grupo. Ele converte o [cronograma oficial](../.
 
 As atribuições iniciais representam afinidade e coordenação, não exclusividade: Pedro Henrique Assuncao atua no eixo de back-end; Karine Kessen Gilberti Felix, no de banco de dados; Lorrainy Pâmela Siqueira Ferreira e Maria Heloisa Aguiar Mendes, no de front-end; e Nayara Ferreira de Jesus Rodrigues, na documentação, no papel de Product Owner (PO) e na interface com a orientação. Cada entrega deve ter revisão de pelo menos outro integrante.
 
-**Revisão de situação: 19/11/2026.** A implementação e os ensaios já existem. “Implementado” ou “Verificado” descrevem evidência técnica, sem pressupor aceite do grupo ou postagem no ambiente acadêmico. Não foram inferidas datas retroativas de conclusão. As [17 fichas funcionais](Testes%20funcionais/README.md) consolidam 16 aprovações, incluindo 11/11 altas; CT-15 permanece parcial. A usabilidade tem [roteiro de aplicação](Usabilidade/ROTEIRO.md), ainda sem coleta realizada.
+**Revisão de situação: 20/11/2026.** A implementação e os ensaios já existem. “Implementado” ou “Verificado” descrevem evidência técnica, sem pressupor aceite do grupo ou postagem no ambiente acadêmico. Não foram inferidas datas retroativas de conclusão. As [17 fichas funcionais](Testes%20funcionais/README.md) consolidam 17 aprovações, incluindo 11/11 altas; CT-15 foi concluído com capturas e confronto visual em 20/11/2026. A usabilidade tem [roteiro de aplicação](Usabilidade/ROTEIRO.md), ainda sem coleta realizada.
 
 ## Integrantes e atribuição inicial
 
@@ -105,10 +105,10 @@ As frentes abaixo organizam a distribuição de trabalho entre os oito integrant
 | ID    | Item                                                                        | Entrega verificável                                                                                                                                                     | Dependência          | Conclusão prevista | Concluído em | Responsável                                                    | Situação |
 | ----- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ------------------ | ------------ | -------------------------------------------------------------- | -------- |
 | BL-25 | Implementar aprovação, reabertura, evidências e notificações prioritárias. | [CT-03](Testes%20funcionais/CT-03.md), [CT-05](Testes%20funcionais/CT-05.md), [CT-07](Testes%20funcionais/CT-07.md). | BL-20, BL-22 | 11/12/2026 |  |  | Verificado no escopo QA |
-| BL-26 | Implementar filtros, painel e indicação de vencimento de prazo. | [CT-06 aprovado](Testes%20funcionais/CT-06.md) e [CT-15 parcial](Testes%20funcionais/CT-15.md). | BL-20, BL-22 | 11/12/2026 |  | Lorrainy Pâmela Siqueira Ferreira; Maria Heloisa Aguiar Mendes | Implementado — CT-15 parcial |
+| BL-26 | Implementar filtros, painel e indicação de vencimento de prazo. | [CT-06 aprovado](Testes%20funcionais/CT-06.md) e [CT-15 aprovado](Testes%20funcionais/CT-15.md). | BL-20, BL-22 | 11/12/2026 |  | Lorrainy Pâmela Siqueira Ferreira; Maria Heloisa Aguiar Mendes | Verificado no escopo QA |
 | BL-27 | Implementar segurança e controles de qualidade definidos. | [CT-08/11](Testes%20funcionais/README.md) e [limites da revisão](../../SIGE-Desk/docs/qa/decisao-defeitos-atual.md); não equivale a pentest, acessibilidade ou compatibilidade completas. | BL-19, BL-20 | 11/12/2026 |  |  | Verificado parcialmente — cobertura RNF limitada |
-| BL-28 | Executar casos de teste, registrar defeitos e realizar retestes. | [17 fichas com ciclos e evidências](Testes%20funcionais/README.md); 16/17 aprovados e 11/11 altas; CT-15 parcial. | BL-22, BL-25 a BL-27 | 11/12/2026 |  |  | Critério interno atendido — 16/17 |
-| BL-29 | Realizar avaliação de usabilidade e registrar melhorias. | [Roteiro](Usabilidade/ROTEIRO.md), [instruções aos participantes](Usabilidade/PARTICIPANTE.md) e [ficha de coleta](Usabilidade/FICHA-DE-SESSAO.md); aplicação pendente. | BL-22 | 11/12/2026 |  |  | Planejado — piloto e coleta pendentes |
+| BL-28 | Executar casos de teste, registrar defeitos e realizar retestes. | [17 fichas com ciclos e evidências](Testes%20funcionais/README.md); 17/17 aprovados e 11/11 altas; CT-15 concluído em 20/11/2026. | BL-22, BL-25 a BL-27 | 11/12/2026 |  |  | Critério interno atendido — 17/17 |
+| BL-29 | Realizar avaliação de usabilidade e registrar melhorias. | [Roteiro](Usabilidade/ROTEIRO.md), [instruções aos participantes](Usabilidade/PARTICIPANTE.md) e [ficha de coleta](Usabilidade/FICHA-DE-SESSAO.md); aplicação pendente. | BL-22 | 11/12/2026 |  |  | Planejado — avaliação interna pendente |
 | BL-30 | Preparar release, instruções de execução e contingência da demonstração. | [Execução local](../../SIGE-Desk/README.md) e [registro de publicação](../../SIGE-Desk/docs/publicacao-aws.md); confirmar versão da demo e contingência antes da apresentação. | BL-23, BL-28 | 11/12/2026 |  |  | Em revisão — contingência e release pendentes |
 | BL-31 | Consolidar artigo, documentação de apoio e referências no padrão PUC Minas. | Versão revisada pelo orientador e pronta para submissão. | BL-28, BL-29 | 11/12/2026 |  | Nayara Ferreira de Jesus Rodrigues | Em revisão |
 | BL-32 | Preparar apresentação, roteiro e divisão de fala da demo. | Apresentação ensaiada, dados de demonstração e responsáveis por cada parte. | BL-30, BL-31 | 11/12/2026 |  |  | A fazer |
@@ -132,10 +132,10 @@ Estes itens permanecem fora do backlog de entrega, salvo decisão explícita do 
 
 ## Próximas ações de fechamento
 
-1. Completar CT-15 com captura dos gráficos e confronto visual do mesmo dataset.
+1. Revisar o fechamento de CT-15, suas capturas e confronto do dataset na ficha [CT-15](Testes%20funcionais/CT-15.md); execução concluída em 20/11/2026.
 2. Revisar as fichas sorteadas e registrar aceite humano, sem substituir a autoria real dos ensaios.
-3. Executar piloto interno de usabilidade; ajustar e congelar o roteiro antes dos seis participantes externos planejados.
-4. Aplicar a coleta externa, analisar os dados por fase e registrar melhorias e retestes.
+3. Conferir o roteiro e realizar a avaliação de usabilidade entre os integrantes do grupo, registrando papéis e familiaridade.
+4. Analisar os dados da avaliação interna por papel simulado, explicitar limitações e registrar melhorias e retestes.
 5. Ensaiar demo, conferir release, contingência, artigo e envio acadêmico.
 
 O roteiro não autoriza afirmar resultados de usabilidade antes da coleta. A manutenção em dados legados com snapshots sobrescritos depende de fonte histórica e não está encerrada pela aprovação prospectiva de CT-09.

@@ -1,0 +1,44 @@
+Browser tab: 1, Title: "SIGE Desk", URL: "http://localhost:5173/".
+0 AXWebArea SIGE Desk, URL: localhost:5173/
+	1 container root
+		2 container
+			3 text SIGE Desk QA CT15 painel vazio  ·  Gestor de tráfego
+			4 button Sair
+		5 container
+			6 content list
+				7 link Description: Visão geral, Value: localhost:5173/
+				8 link Description: Tickets, Value: localhost:5173/tickets
+				9 link Description: Notificações, Value: localhost:5173/notifications
+			10 button ​ Ver tutorial
+				11 text Ver tutorial
+		12 container
+			13 heading Visão geral, Value: 1
+				14 text Visão geral
+			15 text Acompanhe a operação disponível para o perfil Gestor de tráfego. TICKETS ATIVOS 0 Em andamento agora
+			16 progress indicator 0
+			17 text ALTA PRIORIDADE 0 Urgentes ou altas
+			18 progress indicator 0
+			19 text EM VALIDAÇÃO 0 Aguardando decisão
+			20 progress indicator 0
+			21 text AGUARDANDO CLIENTE 0 SLA pausado
+			22 progress indicator 0
+			23 heading Atividade recente, Value: 2
+				24 text Atividade recente
+			25 link Description: Ver todos, Value: localhost:5173/tickets
+			26 text Nenhum ticket foi encontrado.
+			27 heading Distribuição por status, Value: 2
+				28 text Distribuição por status
+			29 text Nenhum ticket foi encontrado.
+			30 heading Saúde do SLA, Value: 6
+				31 text Saúde do SLA
+			32 text 0 ticket(s) classificados 0 SLA vencido
+			33 heading Tickets por prioridade, Value: 2
+				34 text Tickets por prioridade
+			35 text Urgente 0 Alta 0 Média 0 Baixa 0 Sem classificação 0
+			36 heading Tickets por responsável, Value: 2
+				37 text Tickets por responsável
+			38 heading Prazos dos tickets ativos, Value: 2
+				39 text Prazos dos tickets ativos
+			40 text Vencido 0 Pausado 0 Pendente de classificação 0 No prazo 0
+
+The focused UI element is 0 AXWebArea SIGE Desk, URL: localhost:5173/
