@@ -1,0 +1,157 @@
+{
+  "startedAt": "2026-11-19T17:15:30.594757+00:00",
+  "finishedAt": "2026-11-19T17:15:31.634259+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "bed7e6d11fef0704b3fc30313d8a28fb92c6529131c4631924fb846a7c059cba",
+    "runTag": "Review 08bbb216"
+  },
+  "cases": [
+    {
+      "id": "CT-08-notificacao-vinculada",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:15:31.159257+00:00",
+      "finishedAt": "2026-11-19T17:15:31.634259+00:00",
+      "assertions": 22,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "cliente@aurora.demo GET /tickets/ceda9149-1e4a-415b-b8c3-a1b2a7a75bae HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "cliente@aurora.demo POST /tickets/ceda9149-1e4a-415b-b8c3-a1b2a7a75bae/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "Notificação alheia disponível",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "cliente@aurora.demo GET /tickets/ceda9149-1e4a-415b-b8c3-a1b2a7a75bae HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "rafael@horizonte.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "rafael@horizonte.demo POST /notifications/56395f0d-c588-4bbf-a936-76f704ace915/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "Notificação alheia não alterada CLIENT",
+      "passed": true,
+      "detail": "{'notificationId': '56395f0d-c588-4bbf-a936-76f704ace915', 'ticketId': 'ceda9149-1e4a-415b-b8c3-a1b2a7a75bae', 'actorId': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'auditDelta': 0}"
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "rafael@horizonte.demo GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "Notificação ausente da lista CLIENT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "gestor2@sige.demo POST /notifications/56395f0d-c588-4bbf-a936-76f704ace915/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "Notificação alheia não alterada TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": "{'notificationId': '56395f0d-c588-4bbf-a936-76f704ace915', 'ticketId': 'ceda9149-1e4a-415b-b8c3-a1b2a7a75bae', 'actorId': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'auditDelta': 0}"
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "gestor2@sige.demo GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "Notificação ausente da lista TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "cliente@aurora.demo GET /tickets/ceda9149-1e4a-415b-b8c3-a1b2a7a75bae HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-notificacao-vinculada",
+      "name": "Ticket e histórico preservados",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "finishedAt": "2026-11-19T17:43:03.560758+00:00",
+  "schema": "sige_desk_qa_20261118",
+  "ticketId": "3490153c-8099-497e-8551-09d8761ceefb",
+  "typeId": "730b0f25-8ffa-4674-90ab-e01810742c2c",
+  "database": {
+    "status": "WAITING_FOR_CLIENT",
+    "responseDueAt": "2026-11-19 16:37:53.095844",
+    "resolutionDueAt": "2026-11-24 13:37:52.456758",
+    "resolutionPausedAt": "2026-11-19 17:37:53.022259",
+    "responseCompletedAt": null
+  },
+  "detail": {
+    "slaState": "PAUSED",
+    "responseSlaState": "OVERDUE",
+    "resolutionSlaState": "PAUSED"
+  },
+  "item": {
+    "id": "3490153c-8099-497e-8551-09d8761ceefb",
+    "status": "WAITING_FOR_CLIENT",
+    "slaState": "PAUSED",
+    "overdue": true
+  },
+  "profiles": [
+    {
+      "role": "ADMIN",
+      "id": "668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "expectedVisible": true,
+      "obtained": [
+        "3490153c-8099-497e-8551-09d8761ceefb"
+      ],
+      "total": 1
+    },
+    {
+      "role": "SERVICE",
+      "id": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "expectedVisible": true,
+      "obtained": [
+        "3490153c-8099-497e-8551-09d8761ceefb"
+      ],
+      "total": 1
+    },
+    {
+      "role": "CLIENT",
+      "id": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "expectedVisible": true,
+      "obtained": [
+        "3490153c-8099-497e-8551-09d8761ceefb"
+      ],
+      "total": 1
+    },
+    {
+      "role": "TRAFFIC_MANAGER",
+      "id": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "expectedVisible": true,
+      "obtained": [
+        "3490153c-8099-497e-8551-09d8761ceefb"
+      ],
+      "total": 1
+    },
+    {
+      "role": "CLIENT",
+      "id": "16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "expectedVisible": false,
+      "obtained": [],
+      "total": 0
+    },
+    {
+      "role": "TRAFFIC_MANAGER",
+      "id": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "expectedVisible": false,
+      "obtained": [],
+      "total": 0
+    }
+  ]
+}

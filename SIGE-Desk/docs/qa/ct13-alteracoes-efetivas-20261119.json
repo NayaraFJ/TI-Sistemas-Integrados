@@ -1,0 +1,772 @@
+{
+  "startedAt": "2026-11-19T17:29:50.985758+00:00",
+  "finishedAt": "2026-11-19T17:29:51.888259+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runtimeSha256": "bd864c8633f9fd07f11ec4b754c041c526b70ee92cfd25c1fc73af0c944fbc0f",
+    "runTag": "Review d70bc01a"
+  },
+  "cases": [
+    {
+      "id": "CT-13-mudancas-efetivas",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:29:51.550258+00:00",
+      "finishedAt": "2026-11-19T17:29:51.888259+00:00",
+      "assertions": 28,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "atendimento@sige.demo POST /campaigns HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "atendimento@sige.demo GET /tickets/4f69ae98-63cb-442c-ab19-5da9e5635dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "atendimento@sige.demo POST /tickets/4f69ae98-63cb-442c-ab19-5da9e5635dee/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "atendimento@sige.demo GET /tickets/4f69ae98-63cb-442c-ab19-5da9e5635dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "atendimento@sige.demo POST /tickets/4f69ae98-63cb-442c-ab19-5da9e5635dee/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "cliente@aurora.demo GET /tickets/4f69ae98-63cb-442c-ab19-5da9e5635dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "atendimento@sige.demo GET /tickets/4f69ae98-63cb-442c-ab19-5da9e5635dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "atendimento@sige.demo POST /tickets/4f69ae98-63cb-442c-ab19-5da9e5635dee/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "cliente@aurora.demo GET /tickets/4f69ae98-63cb-442c-ab19-5da9e5635dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Mudança efetiva priority",
+      "passed": true,
+      "detail": "{'actual': ['priority', 'HIGH', 'LOW', 'Beatriz Souza', 'Prioridade confirmada'], 'expected': ['priority', 'HIGH', 'LOW', 'Beatriz Souza', 'Prioridade confirmada']}"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Mudança efetiva campaignId",
+      "passed": true,
+      "detail": "{'actual': ['campaignId', '21f5421c-ad5b-461c-a244-725621497016', '1d9999c2-23ac-4a50-a390-c7057f9d1e7c', 'Beatriz Souza', 'Campanha confirmada na triagem'], 'expected': ['campaignId', '21f5421c-ad5b-461c-a244-725621497016', '1d9999c2-23ac-4a50-a390-c7057f9d1e7c', 'Beatriz Souza', 'Campanha confirmada na triagem']}"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Mudança efetiva demandTypeId",
+      "passed": true,
+      "detail": "{'actual': ['demandTypeId', '4fbdf6fb-8331-4ce6-8f73-ed3b23724be4', 'cd3011a7-1a69-4bc7-bf65-34e0eca8ff8e', 'Beatriz Souza', 'Tipo de demanda confirmado na triagem'], 'expected': ['demandTypeId', '4fbdf6fb-8331-4ce6-8f73-ed3b23724be4', 'cd3011a7-1a69-4bc7-bf65-34e0eca8ff8e', 'Beatriz Souza', 'Tipo de demanda confirmado na triagem']}"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Eventos anteriores preservados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Junção MySQL correlaciona ator e evento completo",
+      "passed": true,
+      "detail": "{'count': 15, 'errors': []}"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Ator da reclassificação corresponde à sessão",
+      "passed": true,
+      "detail": "SENT_TO_EXECUTION"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Ator da reclassificação corresponde à sessão",
+      "passed": true,
+      "detail": "RESPONSE_DEADLINE_CHANGED"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Ator da reclassificação corresponde à sessão",
+      "passed": true,
+      "detail": "RESOLUTION_DEADLINE_CHANGED"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Ator da reclassificação corresponde à sessão",
+      "passed": true,
+      "detail": "TRIAGE_CLASSIFIED"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Ator da reclassificação corresponde à sessão",
+      "passed": true,
+      "detail": "TRIAGE_TYPE"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Ator da reclassificação corresponde à sessão",
+      "passed": true,
+      "detail": "ASSIGNEE_CHANGED"
+    },
+    {
+      "ct": "CT-13-mudancas-efetivas",
+      "name": "Ator da reclassificação corresponde à sessão",
+      "passed": true,
+      "detail": "TRIAGE_CAMPAIGN"
+    }
+  ],
+  "observed": {
+    "ticket": "4f69ae98-63cb-442c-ab19-5da9e5635dee",
+    "before": {
+      "ticket": {
+        "id": "4f69ae98-63cb-442c-ab19-5da9e5635dee",
+        "clientId": "4a8fc6eb-e876-4c8c-9128-bf10ff43d57d",
+        "campaignId": "21f5421c-ad5b-461c-a244-725621497016",
+        "demandTypeId": "4fbdf6fb-8331-4ce6-8f73-ed3b23724be4",
+        "number": "SIGE-1559",
+        "subject": "Review d70bc01a",
+        "clientName": "Aurora Educação",
+        "campaignName": "Pós-graduação Setembro",
+        "typeName": "Review d70bc01aba85d",
+        "status": "TRIAGE",
+        "priority": "HIGH",
+        "urgency": "HIGH",
+        "assigneeName": "Lucas Martins",
+        "updatedAt": "2026-11-19T17:29:51.728760Z",
+        "actions": [
+          "COMMENT"
+        ],
+        "version": 5,
+        "slaState": "ON_TIME",
+        "overdue": false
+      },
+      "description": "Teste fictício da revisão",
+      "pendingCampaign": null,
+      "desiredDate": null,
+      "requesterName": "Marina Costa",
+      "authorName": "Marina Costa",
+      "slaState": "ON_TIME",
+      "responseDueAt": "2026-11-23T11:29:51.677760Z",
+      "resolutionDueAt": "2026-11-24T13:29:51.677760Z",
+      "resolutionCycle": 1,
+      "waitOrigin": null,
+      "waitReason": null,
+      "complementReceived": false,
+      "metrics": "{\"cpa\": null, \"cpc\": null, \"ctr\": null, \"roas\": null, \"fields\": {}, \"period\": null, \"conversions\": null, \"impressions\": null}",
+      "comments": [
+        {
+          "id": "4a1910c8-532d-4a33-90b2-f2010feeab8e",
+          "authorName": "Beatriz Souza",
+          "body": "Resposta CT13",
+          "effectiveResponse": true,
+          "createdAt": "2026-11-19T17:29:51.726759Z"
+        }
+      ],
+      "attachments": [],
+      "history": [
+        {
+          "id": "a4741257-e044-4656-8e23-f114759e7c05",
+          "actorName": "Beatriz Souza",
+          "action": "RESPONSE_DEADLINE_CHANGED",
+          "fieldName": "responseDueAt",
+          "oldValue": null,
+          "newValue": "\"2026-11-23T11:29:51.677760Z\"",
+          "reason": "Prazo de primeira resposta aplicado",
+          "createdAt": "2026-11-19T17:29:51.728259Z"
+        },
+        {
+          "id": "20be8959-45b2-425f-bce2-f6e6efa733a9",
+          "actorName": "Beatriz Souza",
+          "action": "RESOLUTION_DEADLINE_CHANGED",
+          "fieldName": "resolutionDueAt",
+          "oldValue": null,
+          "newValue": "\"2026-11-24T13:29:51.677760Z\"",
+          "reason": "Prazo de resolução aplicado",
+          "createdAt": "2026-11-19T17:29:51.728259Z"
+        },
+        {
+          "id": "bd54176b-0812-4b05-ab6c-7eef484859a6",
+          "actorName": "Beatriz Souza",
+          "action": "ASSIGNEE_CHANGED",
+          "fieldName": "assigneeId",
+          "oldValue": null,
+          "newValue": "\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"",
+          "reason": "Responsável confirmado",
+          "createdAt": "2026-11-19T17:29:51.727760Z"
+        },
+        {
+          "id": "70a15c0a-f2e8-4ebd-b2b3-e2c3be04811d",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_CLASSIFIED",
+          "fieldName": "priority",
+          "oldValue": null,
+          "newValue": "\"HIGH\"",
+          "reason": "Prioridade confirmada",
+          "createdAt": "2026-11-19T17:29:51.727760Z"
+        },
+        {
+          "id": "85dc6775-3d25-4a3a-9eca-a910cd0251e8",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_TYPE",
+          "fieldName": "demandTypeId",
+          "oldValue": "\"4fbdf6fb-8331-4ce6-8f73-ed3b23724be4\"",
+          "newValue": "\"4fbdf6fb-8331-4ce6-8f73-ed3b23724be4\"",
+          "reason": "Tipo de demanda confirmado na triagem",
+          "createdAt": "2026-11-19T17:29:51.727260Z"
+        },
+        {
+          "id": "4969f363-9ccc-467b-801c-e8aa26825cd6",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_CAMPAIGN",
+          "fieldName": "campaignId",
+          "oldValue": "\"21f5421c-ad5b-461c-a244-725621497016\"",
+          "newValue": "\"21f5421c-ad5b-461c-a244-725621497016\"",
+          "reason": "Campanha confirmada na triagem",
+          "createdAt": "2026-11-19T17:29:51.727260Z"
+        },
+        {
+          "id": "6298a7da-eda0-4d08-a16a-a30dfb1a2d8b",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_STARTED",
+          "fieldName": "status",
+          "oldValue": "\"OPEN\"",
+          "newValue": "\"TRIAGE\"",
+          "reason": "Conferência de teste",
+          "createdAt": "2026-11-19T17:29:51.700260Z"
+        },
+        {
+          "id": "e6dfbe4b-0e9b-4506-b73a-dcff34c0f2f7",
+          "actorName": "Marina Costa",
+          "action": "TICKET_CREATED",
+          "fieldName": null,
+          "oldValue": null,
+          "newValue": "\"OPEN\"",
+          "reason": "Solicitação registrada",
+          "createdAt": "2026-11-19T17:29:51.677760Z"
+        }
+      ],
+      "channel": "Google Ads",
+      "responseCompletedAt": "2026-11-19T17:29:51.727260Z",
+      "responseSlaState": "COMPLETED",
+      "resolutionSlaState": "ON_TIME",
+      "elapsedBusinessMinutes": 0,
+      "fieldLabels": {}
+    },
+    "after": {
+      "ticket": {
+        "id": "4f69ae98-63cb-442c-ab19-5da9e5635dee",
+        "clientId": "4a8fc6eb-e876-4c8c-9128-bf10ff43d57d",
+        "campaignId": "1d9999c2-23ac-4a50-a390-c7057f9d1e7c",
+        "demandTypeId": "cd3011a7-1a69-4bc7-bf65-34e0eca8ff8e",
+        "number": "SIGE-1559",
+        "subject": "Review d70bc01a",
+        "clientName": "Aurora Educação",
+        "campaignName": "Review d70bc01a campanha CT13",
+        "typeName": "Review d70bc01ac15bc",
+        "status": "EXECUTION",
+        "priority": "LOW",
+        "urgency": "HIGH",
+        "assigneeName": "Lucas Martins",
+        "updatedAt": "2026-11-19T17:29:51.803760Z",
+        "actions": [
+          "COMMENT"
+        ],
+        "version": 8,
+        "slaState": "ON_TIME",
+        "overdue": false
+      },
+      "description": "Teste fictício da revisão",
+      "pendingCampaign": null,
+      "desiredDate": null,
+      "requesterName": "Marina Costa",
+      "authorName": "Marina Costa",
+      "slaState": "ON_TIME",
+      "responseDueAt": "2026-11-23T11:29:51.677760Z",
+      "resolutionDueAt": "2026-11-26T17:29:51.677760Z",
+      "resolutionCycle": 1,
+      "waitOrigin": null,
+      "waitReason": null,
+      "complementReceived": false,
+      "metrics": "{\"cpa\": null, \"cpc\": null, \"ctr\": null, \"roas\": null, \"fields\": {}, \"period\": null, \"conversions\": null, \"impressions\": null}",
+      "comments": [
+        {
+          "id": "4a1910c8-532d-4a33-90b2-f2010feeab8e",
+          "authorName": "Beatriz Souza",
+          "body": "Resposta CT13",
+          "effectiveResponse": true,
+          "createdAt": "2026-11-19T17:29:51.726759Z"
+        },
+        {
+          "id": "400cfece-fa86-4bcf-b4b8-ced931c2fb86",
+          "authorName": "Beatriz Souza",
+          "body": "Resposta CT13",
+          "effectiveResponse": true,
+          "createdAt": "2026-11-19T17:29:51.799759Z"
+        }
+      ],
+      "attachments": [],
+      "history": [
+        {
+          "id": "b2a46cee-49ed-4224-95ea-d4767c901e84",
+          "actorName": "Beatriz Souza",
+          "action": "SENT_TO_EXECUTION",
+          "fieldName": "status",
+          "oldValue": "\"TRIAGE\"",
+          "newValue": "\"EXECUTION\"",
+          "reason": "Triagem concluída",
+          "createdAt": "2026-11-19T17:29:51.801259Z"
+        },
+        {
+          "id": "6be354bd-8864-40b2-9d56-5c6689111673",
+          "actorName": "Beatriz Souza",
+          "action": "RESPONSE_DEADLINE_CHANGED",
+          "fieldName": "responseDueAt",
+          "oldValue": "\"2026-11-23T11:29:51.677760Z\"",
+          "newValue": "\"2026-11-23T11:29:51.677760Z\"",
+          "reason": "Prazo de primeira resposta aplicado",
+          "createdAt": "2026-11-19T17:29:51.800759Z"
+        },
+        {
+          "id": "52e1728f-381f-491d-9c8a-2b93e9ffb874",
+          "actorName": "Beatriz Souza",
+          "action": "RESOLUTION_DEADLINE_CHANGED",
+          "fieldName": "resolutionDueAt",
+          "oldValue": "\"2026-11-24T13:29:51.677760Z\"",
+          "newValue": "\"2026-11-26T17:29:51.677760Z\"",
+          "reason": "Prazo de resolução aplicado",
+          "createdAt": "2026-11-19T17:29:51.800759Z"
+        },
+        {
+          "id": "9de8718b-87d4-4729-a77c-4572efa14039",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_CLASSIFIED",
+          "fieldName": "priority",
+          "oldValue": "\"HIGH\"",
+          "newValue": "\"LOW\"",
+          "reason": "Prioridade confirmada",
+          "createdAt": "2026-11-19T17:29:51.800259Z"
+        },
+        {
+          "id": "237eb565-9af6-480d-9b59-821ddc944671",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_TYPE",
+          "fieldName": "demandTypeId",
+          "oldValue": "\"4fbdf6fb-8331-4ce6-8f73-ed3b23724be4\"",
+          "newValue": "\"cd3011a7-1a69-4bc7-bf65-34e0eca8ff8e\"",
+          "reason": "Tipo de demanda confirmado na triagem",
+          "createdAt": "2026-11-19T17:29:51.800259Z"
+        },
+        {
+          "id": "139526d1-f20d-452d-8e37-4041e9595c4b",
+          "actorName": "Beatriz Souza",
+          "action": "ASSIGNEE_CHANGED",
+          "fieldName": "assigneeId",
+          "oldValue": "\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"",
+          "newValue": "\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"",
+          "reason": "Responsável confirmado",
+          "createdAt": "2026-11-19T17:29:51.800259Z"
+        },
+        {
+          "id": "dee64477-75da-42e5-8e64-bbb0e54bdcb0",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_CAMPAIGN",
+          "fieldName": "campaignId",
+          "oldValue": "\"21f5421c-ad5b-461c-a244-725621497016\"",
+          "newValue": "\"1d9999c2-23ac-4a50-a390-c7057f9d1e7c\"",
+          "reason": "Campanha confirmada na triagem",
+          "createdAt": "2026-11-19T17:29:51.799759Z"
+        },
+        {
+          "id": "a4741257-e044-4656-8e23-f114759e7c05",
+          "actorName": "Beatriz Souza",
+          "action": "RESPONSE_DEADLINE_CHANGED",
+          "fieldName": "responseDueAt",
+          "oldValue": null,
+          "newValue": "\"2026-11-23T11:29:51.677760Z\"",
+          "reason": "Prazo de primeira resposta aplicado",
+          "createdAt": "2026-11-19T17:29:51.728259Z"
+        },
+        {
+          "id": "20be8959-45b2-425f-bce2-f6e6efa733a9",
+          "actorName": "Beatriz Souza",
+          "action": "RESOLUTION_DEADLINE_CHANGED",
+          "fieldName": "resolutionDueAt",
+          "oldValue": null,
+          "newValue": "\"2026-11-24T13:29:51.677760Z\"",
+          "reason": "Prazo de resolução aplicado",
+          "createdAt": "2026-11-19T17:29:51.728259Z"
+        },
+        {
+          "id": "bd54176b-0812-4b05-ab6c-7eef484859a6",
+          "actorName": "Beatriz Souza",
+          "action": "ASSIGNEE_CHANGED",
+          "fieldName": "assigneeId",
+          "oldValue": null,
+          "newValue": "\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"",
+          "reason": "Responsável confirmado",
+          "createdAt": "2026-11-19T17:29:51.727760Z"
+        },
+        {
+          "id": "70a15c0a-f2e8-4ebd-b2b3-e2c3be04811d",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_CLASSIFIED",
+          "fieldName": "priority",
+          "oldValue": null,
+          "newValue": "\"HIGH\"",
+          "reason": "Prioridade confirmada",
+          "createdAt": "2026-11-19T17:29:51.727760Z"
+        },
+        {
+          "id": "85dc6775-3d25-4a3a-9eca-a910cd0251e8",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_TYPE",
+          "fieldName": "demandTypeId",
+          "oldValue": "\"4fbdf6fb-8331-4ce6-8f73-ed3b23724be4\"",
+          "newValue": "\"4fbdf6fb-8331-4ce6-8f73-ed3b23724be4\"",
+          "reason": "Tipo de demanda confirmado na triagem",
+          "createdAt": "2026-11-19T17:29:51.727260Z"
+        },
+        {
+          "id": "4969f363-9ccc-467b-801c-e8aa26825cd6",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_CAMPAIGN",
+          "fieldName": "campaignId",
+          "oldValue": "\"21f5421c-ad5b-461c-a244-725621497016\"",
+          "newValue": "\"21f5421c-ad5b-461c-a244-725621497016\"",
+          "reason": "Campanha confirmada na triagem",
+          "createdAt": "2026-11-19T17:29:51.727260Z"
+        },
+        {
+          "id": "6298a7da-eda0-4d08-a16a-a30dfb1a2d8b",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_STARTED",
+          "fieldName": "status",
+          "oldValue": "\"OPEN\"",
+          "newValue": "\"TRIAGE\"",
+          "reason": "Conferência de teste",
+          "createdAt": "2026-11-19T17:29:51.700260Z"
+        },
+        {
+          "id": "e6dfbe4b-0e9b-4506-b73a-dcff34c0f2f7",
+          "actorName": "Marina Costa",
+          "action": "TICKET_CREATED",
+          "fieldName": null,
+          "oldValue": null,
+          "newValue": "\"OPEN\"",
+          "reason": "Solicitação registrada",
+          "createdAt": "2026-11-19T17:29:51.677760Z"
+        }
+      ],
+      "channel": "Google Ads",
+      "responseCompletedAt": "2026-11-19T17:29:51.727260Z",
+      "responseSlaState": "COMPLETED",
+      "resolutionSlaState": "ON_TIME",
+      "elapsedBusinessMinutes": 0,
+      "fieldLabels": {}
+    },
+    "matrix": [
+      {
+        "event": {
+          "id": "9de8718b-87d4-4729-a77c-4572efa14039",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_CLASSIFIED",
+          "fieldName": "priority",
+          "oldValue": "\"HIGH\"",
+          "newValue": "\"LOW\"",
+          "reason": "Prioridade confirmada",
+          "createdAt": "2026-11-19T17:29:51.800259Z"
+        },
+        "expected": [
+          "priority",
+          "HIGH",
+          "LOW",
+          "Beatriz Souza",
+          "Prioridade confirmada"
+        ]
+      },
+      {
+        "event": {
+          "id": "dee64477-75da-42e5-8e64-bbb0e54bdcb0",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_CAMPAIGN",
+          "fieldName": "campaignId",
+          "oldValue": "\"21f5421c-ad5b-461c-a244-725621497016\"",
+          "newValue": "\"1d9999c2-23ac-4a50-a390-c7057f9d1e7c\"",
+          "reason": "Campanha confirmada na triagem",
+          "createdAt": "2026-11-19T17:29:51.799759Z"
+        },
+        "expected": [
+          "campaignId",
+          "21f5421c-ad5b-461c-a244-725621497016",
+          "1d9999c2-23ac-4a50-a390-c7057f9d1e7c",
+          "Beatriz Souza",
+          "Campanha confirmada na triagem"
+        ]
+      },
+      {
+        "event": {
+          "id": "237eb565-9af6-480d-9b59-821ddc944671",
+          "actorName": "Beatriz Souza",
+          "action": "TRIAGE_TYPE",
+          "fieldName": "demandTypeId",
+          "oldValue": "\"4fbdf6fb-8331-4ce6-8f73-ed3b23724be4\"",
+          "newValue": "\"cd3011a7-1a69-4bc7-bf65-34e0eca8ff8e\"",
+          "reason": "Tipo de demanda confirmado na triagem",
+          "createdAt": "2026-11-19T17:29:51.800259Z"
+        },
+        "expected": [
+          "demandTypeId",
+          "4fbdf6fb-8331-4ce6-8f73-ed3b23724be4",
+          "cd3011a7-1a69-4bc7-bf65-34e0eca8ff8e",
+          "Beatriz Souza",
+          "Tipo de demanda confirmado na triagem"
+        ]
+      }
+    ],
+    "dbRows": [
+      {
+        "id": "e6dfbe4b-0e9b-4506-b73a-dcff34c0f2f7",
+        "action": "TICKET_CREATED",
+        "reason": "Solicitação registrada",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": "OPEN",
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:29:51.677760Z",
+        "fieldName": null
+      },
+      {
+        "id": "6298a7da-eda0-4d08-a16a-a30dfb1a2d8b",
+        "action": "TRIAGE_STARTED",
+        "reason": "Conferência de teste",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "TRIAGE",
+        "oldValue": "OPEN",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.700260Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "4969f363-9ccc-467b-801c-e8aa26825cd6",
+        "action": "TRIAGE_CAMPAIGN",
+        "reason": "Campanha confirmada na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "oldValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.727260Z",
+        "fieldName": "campaignId"
+      },
+      {
+        "id": "85dc6775-3d25-4a3a-9eca-a910cd0251e8",
+        "action": "TRIAGE_TYPE",
+        "reason": "Tipo de demanda confirmado na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "4fbdf6fb-8331-4ce6-8f73-ed3b23724be4",
+        "oldValue": "4fbdf6fb-8331-4ce6-8f73-ed3b23724be4",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.727260Z",
+        "fieldName": "demandTypeId"
+      },
+      {
+        "id": "70a15c0a-f2e8-4ebd-b2b3-e2c3be04811d",
+        "action": "TRIAGE_CLASSIFIED",
+        "reason": "Prioridade confirmada",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "HIGH",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.727760Z",
+        "fieldName": "priority"
+      },
+      {
+        "id": "bd54176b-0812-4b05-ab6c-7eef484859a6",
+        "action": "ASSIGNEE_CHANGED",
+        "reason": "Responsável confirmado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.727760Z",
+        "fieldName": "assigneeId"
+      },
+      {
+        "id": "20be8959-45b2-425f-bce2-f6e6efa733a9",
+        "action": "RESOLUTION_DEADLINE_CHANGED",
+        "reason": "Prazo de resolução aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-24T13:29:51.677760Z",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.728259Z",
+        "fieldName": "resolutionDueAt"
+      },
+      {
+        "id": "a4741257-e044-4656-8e23-f114759e7c05",
+        "action": "RESPONSE_DEADLINE_CHANGED",
+        "reason": "Prazo de primeira resposta aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-23T11:29:51.677760Z",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.728259Z",
+        "fieldName": "responseDueAt"
+      },
+      {
+        "id": "dee64477-75da-42e5-8e64-bbb0e54bdcb0",
+        "action": "TRIAGE_CAMPAIGN",
+        "reason": "Campanha confirmada na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "1d9999c2-23ac-4a50-a390-c7057f9d1e7c",
+        "oldValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.799759Z",
+        "fieldName": "campaignId"
+      },
+      {
+        "id": "139526d1-f20d-452d-8e37-4041e9595c4b",
+        "action": "ASSIGNEE_CHANGED",
+        "reason": "Responsável confirmado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "oldValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.800259Z",
+        "fieldName": "assigneeId"
+      },
+      {
+        "id": "237eb565-9af6-480d-9b59-821ddc944671",
+        "action": "TRIAGE_TYPE",
+        "reason": "Tipo de demanda confirmado na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "cd3011a7-1a69-4bc7-bf65-34e0eca8ff8e",
+        "oldValue": "4fbdf6fb-8331-4ce6-8f73-ed3b23724be4",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.800259Z",
+        "fieldName": "demandTypeId"
+      },
+      {
+        "id": "9de8718b-87d4-4729-a77c-4572efa14039",
+        "action": "TRIAGE_CLASSIFIED",
+        "reason": "Prioridade confirmada",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "LOW",
+        "oldValue": "HIGH",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.800259Z",
+        "fieldName": "priority"
+      },
+      {
+        "id": "52e1728f-381f-491d-9c8a-2b93e9ffb874",
+        "action": "RESOLUTION_DEADLINE_CHANGED",
+        "reason": "Prazo de resolução aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-26T17:29:51.677760Z",
+        "oldValue": "2026-11-24T13:29:51.677760Z",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.800759Z",
+        "fieldName": "resolutionDueAt"
+      },
+      {
+        "id": "6be354bd-8864-40b2-9d56-5c6689111673",
+        "action": "RESPONSE_DEADLINE_CHANGED",
+        "reason": "Prazo de primeira resposta aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-23T11:29:51.677760Z",
+        "oldValue": "2026-11-23T11:29:51.677760Z",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.800759Z",
+        "fieldName": "responseDueAt"
+      },
+      {
+        "id": "b2a46cee-49ed-4224-95ea-d4767c901e84",
+        "action": "SENT_TO_EXECUTION",
+        "reason": "Triagem concluída",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "EXECUTION",
+        "oldValue": "TRIAGE",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:29:51.801259Z",
+        "fieldName": "status"
+      }
+    ],
+    "actors": {
+      "staffId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "clientId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4"
+    }
+  }
+}

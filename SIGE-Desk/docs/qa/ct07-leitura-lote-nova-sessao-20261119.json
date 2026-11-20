@@ -1,0 +1,222 @@
+{
+  "at": "2026-11-19T17:28:38.517759+00:00",
+  "baseUrl": "http://localhost:8081/api/v1",
+  "schema": "sige_desk_qa_20261118",
+  "mysql": "8.0.40",
+  "runtimeSha256": "bd864c8633f9fd07f11ec4b754c041c526b70ee92cfd25c1fc73af0c944fbc0f",
+  "evidence": {
+    "userId": "580879ad-64ff-432e-864b-0f0830e437e2",
+    "ticketId": "8e6dafc4-0614-4e01-9035-4410981f42d8",
+    "ticketNumber": "SIGE-1558",
+    "notificationIds": [
+      "5184975f-2653-4aaf-b6f4-09a9345832bc",
+      "69a60dab-d963-43f0-a371-a8cf0be9dfee",
+      "7a6a17ea-3edd-456c-b505-6f51115ccb9f",
+      "bbcf2752-8743-4ba7-93cd-dacf86619374"
+    ],
+    "beforeDb": {
+      "total": 4,
+      "unread": 4
+    },
+    "afterDb": {
+      "read": 4,
+      "total": 4
+    },
+    "unreadAfter": 0,
+    "readAtAfter": {
+      "5184975f-2653-4aaf-b6f4-09a9345832bc": "2026-11-19T17:28:37.985759Z",
+      "bbcf2752-8743-4ba7-93cd-dacf86619374": "2026-11-19T17:28:37.985759Z",
+      "7a6a17ea-3edd-456c-b505-6f51115ccb9f": "2026-11-19T17:28:37.985759Z",
+      "69a60dab-d963-43f0-a371-a8cf0be9dfee": "2026-11-19T17:28:37.985759Z"
+    }
+  },
+  "checks": [
+    {
+      "ct": null,
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "admin@sige.demo POST /users HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Usuário exclusivo sem avisos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "admin@sige.demo GET /demand-types HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo GET /tickets/8e6dafc4-0614-4e01-9035-4410981f42d8 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo POST /tickets/8e6dafc4-0614-4e01-9035-4410981f42d8/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo GET /tickets/8e6dafc4-0614-4e01-9035-4410981f42d8 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo POST /tickets/8e6dafc4-0614-4e01-9035-4410981f42d8/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /tickets/8e6dafc4-0614-4e01-9035-4410981f42d8 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo POST /tickets/8e6dafc4-0614-4e01-9035-4410981f42d8/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Múltiplos avisos exclusivos não lidos",
+      "passed": true,
+      "detail": "{'total': 4, 'unread': 4}"
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test POST /notifications/read-all HTTP 204",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Lote marca todos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test POST /auth/logout HTTP 204",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test GET /notifications?unread=true&size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Nova sessão mantém leitura",
+      "passed": true,
+      "detail": "{'count': 4, 'read': 4}"
+    },
+    {
+      "ct": null,
+      "name": "Filtro não lidas vazio",
+      "passed": true,
+      "detail": "0"
+    },
+    {
+      "ct": null,
+      "name": "MySQL confirma leitura",
+      "passed": true,
+      "detail": "{'read': 4, 'total': 4}"
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "ct07-batch-a0e0dfb8167748c0b454febacc6ec7a2@example.test POST /auth/logout HTTP 204",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Fixture removida",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "error": null
+}

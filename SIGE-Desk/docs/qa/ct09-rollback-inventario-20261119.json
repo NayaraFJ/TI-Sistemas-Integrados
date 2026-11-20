@@ -1,0 +1,174 @@
+{
+  "timestamp": "2026-11-19T22:24:37.955758+00:00",
+  "schema": "sige_desk_qa_ct09_rollback_20261119",
+  "port": 18091,
+  "storage": "target\\qa-ct09-rollback-uploads",
+  "jarSha256": "bd065901d4e4338615c97370e33046b3a3a72223b5876534c05722fe1d7feba4",
+  "subject": "Review c5e7691c rollback segundo arquivo negativa",
+  "positiveTicket": "3eaf9bcb-a870-4c3c-a7cd-3670d9950b5d",
+  "response": {
+    "code": "BUSINESS_RULE",
+    "message": "Tipo de arquivo não permitido",
+    "timestamp": "2026-11-19T22:24:37.922259300Z",
+    "fields": {}
+  },
+  "inventoryBefore": {
+    "3eaf9bcb-a870-4c3c-a7cd-3670d9950b5d\\f1a09df2-dc8a-40fe-a765-346c5d60ff1d": "c2ed00b7654ab71ecee83bad7af94ce12e6886cc17ca811c6eac94d7e899d8ee",
+    "demo\\00d30b5c-30dc-4524-b6f6-ef47744de3ae\\attachment.csv": "410e96ab153b554bb2fef3cf0e218f436fa89573c325e795ba31eb20d2254e69",
+    "demo\\00d30b5c-30dc-4524-b6f6-ef47744de3ae\\evidence.csv": "2ca38465bba1d6fae2f9e99e468a1c5a90d099832fbc6ecc4a56ced8670c7c88",
+    "demo\\14263036-2f44-4d94-a447-2cd1268d4c0c\\attachment.csv": "d899da726109afd92742d122c0d468533f2d5d923674f073ccd2a8a1b83cdc56",
+    "demo\\21f677d1-8238-4c96-a8e1-63f22d37f733\\attachment.csv": "86de57cee297bc9edfddf840529c3512303985c98b5fd9a2c0a0f8065cd0beb2",
+    "demo\\2f5a4be7-c2b9-4a2c-84d2-c412668f0e08\\attachment.csv": "3086da655b206fa0b05bf3c057abfc528a7614edc9c8b7be3ff1e684d6467dc7",
+    "demo\\59ea8a16-98be-4c1d-adb6-154d2c191b67\\attachment.csv": "ce97ce2550ec896d7c5cc9872037173ee65aea4bf4f5691abe9d37819c1c7c73",
+    "demo\\61c47718-7872-4149-b120-04dea59503cc\\attachment.csv": "f900144f7844042e8f4f2a5a1ad10cb64e439c9d66954bfa8a490e1e71b01f01",
+    "demo\\61c47718-7872-4149-b120-04dea59503cc\\evidence.csv": "fd812eb1b106c3b0f47919c250191735472b8462ffec487b7713653aafc89fbf",
+    "demo\\6d9a0783-edd8-45c7-a32c-91eef56e490c\\attachment.csv": "3cad34cca670e9b369258c52b57fa5c43d27c6ddf6491708192e24f88967d7fe",
+    "demo\\6d9a0783-edd8-45c7-a32c-91eef56e490c\\evidence.csv": "3af6006a192be45a2cfb6c50c6371ef9ae874052a323ad831a5c5b34ad8b0641",
+    "demo\\7ef5ef91-c39b-4c7c-9170-59f55ab2beb6\\attachment.csv": "2212d9600cabf50fbd7c8d408debe1a5f0b80930420a8448a31afd2321e2c0b1",
+    "demo\\7f304b39-45cd-4dc8-b977-2f2f3b1b8aa3\\attachment.csv": "21250e13e56ba3b73f02b8bb0d4b27eb4d2097d8671142164cc036e5df82fdfe",
+    "demo\\83cb297b-18c2-49c0-9a82-fd1955fed273\\attachment.csv": "0893b9fb9e2e051b1440c0707ae50dabfb58959e2560688673ca0307ce67ebc9",
+    "demo\\83cb297b-18c2-49c0-9a82-fd1955fed273\\evidence.csv": "281a417d2c57964f57a0879532071df091c9ecea6fcfd3b04ff148d3d064d05d",
+    "demo\\8cf9e6dc-7ae3-4399-a307-7a620c1cef18\\attachment.csv": "183eefd78d6918a06b1a949fa9d424d5894c2507c7e9360c10334c75c3fb23ca",
+    "demo\\8cf9e6dc-7ae3-4399-a307-7a620c1cef18\\evidence.csv": "0036cf5521f214d801b1eea85bd06e5e08183382f4407c4678beaa392b2c9366",
+    "demo\\8ffbb8fa-50ba-4ccf-99a5-d8c9787d0dab\\attachment.csv": "c9637139ec377f3e59ecf03f0485b35aa282319d85ec42053001e53dd244af21",
+    "demo\\8ffbb8fa-50ba-4ccf-99a5-d8c9787d0dab\\evidence.csv": "691f95c3015fa8db970595e52fbb2f1fc27a994777a6720e31a7622e9dd49dde",
+    "demo\\97e04dde-eead-428e-a442-8da49b180199\\attachment.csv": "d8881da30465a8c65550ef62b6819527cae1894b3619f966af49bc2512ee20a5",
+    "demo\\a400c26a-3bde-45f4-8f47-58885acbd079\\attachment.csv": "1985c9961da2d0a6981152c75a0f50d342a70b553b9de8b9743888175a9e4904",
+    "demo\\b602afe3-4b54-4a42-ad97-af8e2e5ae83f\\attachment.csv": "288490acae108bb77c229638c67f0eba71f205675744f2d6a9a351df4b71ef3e",
+    "demo\\bacb2ade-5d06-4cec-9af7-0a8a9dd9a5a0\\attachment.csv": "4f2a3c58e5d9224f2b6e192c281376534b3f15972bdc8d8c84956c47e46e56f4",
+    "demo\\be726d57-3728-47e9-a9bf-7c14da81621c\\attachment.csv": "e574c5bad73ccd40818cecb92c2ac94ea05e8d1aecde0f2b83775e9c55bea8db",
+    "demo\\be726d57-3728-47e9-a9bf-7c14da81621c\\evidence.csv": "2f83a05ee66305ae82beac9b018f2eca078e910c184953f6281bad6a960686b0",
+    "demo\\c09a6dfa-7793-478d-bea7-42241c623c6e\\attachment.csv": "74072f5db06e03bdb9ca582642e99de62aaffe6b50299fab18942c507806fe8e",
+    "demo\\c09a6dfa-7793-478d-bea7-42241c623c6e\\evidence.csv": "418d21bc81b219c5431db92852557eaddc3cbb11e362d73c4f8beda7e11f50e7",
+    "demo\\d069fc4b-eb09-4c9e-9605-ece4036adb45\\attachment.csv": "da63cc69a45a65524a1485b3eebb893b526c17776818f6ea6bebbc62d0adc242",
+    "demo\\de9e97bc-dc03-4b33-a5b1-c578d7415c19\\attachment.csv": "107685126ee4472ba427a01549979d4b808f83080c82cf27e3155832353e420b",
+    "demo\\de9e97bc-dc03-4b33-a5b1-c578d7415c19\\evidence.csv": "a524acf819f1da638765847f2374560333f9eebb05b465d333dfa71ec01a9adf",
+    "demo\\dedac5f9-e7e6-40ca-abc3-7bb6d92ff9dc\\attachment.csv": "913347e3a0e00e66ce0f4b360770323c17546e0708975c29695b636a4486e948",
+    "demo\\e248ca8f-b712-44f2-bdd7-435502d841b9\\attachment.csv": "60ffa49cdc00cf6d033f3ff096086210fcf3932f32420496574e5864f806472e",
+    "demo\\e8970c4e-f9a2-4c91-af29-51a727bd8e30\\attachment.csv": "e509b17c9ad875d0c2fce53a92b3df1ce64dd89ee4e657c8de2f0cfd4b11f366",
+    "demo\\f725dad2-3849-4491-94a6-22e4b63ccb60\\attachment.csv": "ba40fc5d19b3f319ab450bb0f27bdede8439331b6f7ec162b5a6758014d4658f"
+  },
+  "inventoryAfter": {
+    "3eaf9bcb-a870-4c3c-a7cd-3670d9950b5d\\f1a09df2-dc8a-40fe-a765-346c5d60ff1d": "c2ed00b7654ab71ecee83bad7af94ce12e6886cc17ca811c6eac94d7e899d8ee",
+    "demo\\00d30b5c-30dc-4524-b6f6-ef47744de3ae\\attachment.csv": "410e96ab153b554bb2fef3cf0e218f436fa89573c325e795ba31eb20d2254e69",
+    "demo\\00d30b5c-30dc-4524-b6f6-ef47744de3ae\\evidence.csv": "2ca38465bba1d6fae2f9e99e468a1c5a90d099832fbc6ecc4a56ced8670c7c88",
+    "demo\\14263036-2f44-4d94-a447-2cd1268d4c0c\\attachment.csv": "d899da726109afd92742d122c0d468533f2d5d923674f073ccd2a8a1b83cdc56",
+    "demo\\21f677d1-8238-4c96-a8e1-63f22d37f733\\attachment.csv": "86de57cee297bc9edfddf840529c3512303985c98b5fd9a2c0a0f8065cd0beb2",
+    "demo\\2f5a4be7-c2b9-4a2c-84d2-c412668f0e08\\attachment.csv": "3086da655b206fa0b05bf3c057abfc528a7614edc9c8b7be3ff1e684d6467dc7",
+    "demo\\59ea8a16-98be-4c1d-adb6-154d2c191b67\\attachment.csv": "ce97ce2550ec896d7c5cc9872037173ee65aea4bf4f5691abe9d37819c1c7c73",
+    "demo\\61c47718-7872-4149-b120-04dea59503cc\\attachment.csv": "f900144f7844042e8f4f2a5a1ad10cb64e439c9d66954bfa8a490e1e71b01f01",
+    "demo\\61c47718-7872-4149-b120-04dea59503cc\\evidence.csv": "fd812eb1b106c3b0f47919c250191735472b8462ffec487b7713653aafc89fbf",
+    "demo\\6d9a0783-edd8-45c7-a32c-91eef56e490c\\attachment.csv": "3cad34cca670e9b369258c52b57fa5c43d27c6ddf6491708192e24f88967d7fe",
+    "demo\\6d9a0783-edd8-45c7-a32c-91eef56e490c\\evidence.csv": "3af6006a192be45a2cfb6c50c6371ef9ae874052a323ad831a5c5b34ad8b0641",
+    "demo\\7ef5ef91-c39b-4c7c-9170-59f55ab2beb6\\attachment.csv": "2212d9600cabf50fbd7c8d408debe1a5f0b80930420a8448a31afd2321e2c0b1",
+    "demo\\7f304b39-45cd-4dc8-b977-2f2f3b1b8aa3\\attachment.csv": "21250e13e56ba3b73f02b8bb0d4b27eb4d2097d8671142164cc036e5df82fdfe",
+    "demo\\83cb297b-18c2-49c0-9a82-fd1955fed273\\attachment.csv": "0893b9fb9e2e051b1440c0707ae50dabfb58959e2560688673ca0307ce67ebc9",
+    "demo\\83cb297b-18c2-49c0-9a82-fd1955fed273\\evidence.csv": "281a417d2c57964f57a0879532071df091c9ecea6fcfd3b04ff148d3d064d05d",
+    "demo\\8cf9e6dc-7ae3-4399-a307-7a620c1cef18\\attachment.csv": "183eefd78d6918a06b1a949fa9d424d5894c2507c7e9360c10334c75c3fb23ca",
+    "demo\\8cf9e6dc-7ae3-4399-a307-7a620c1cef18\\evidence.csv": "0036cf5521f214d801b1eea85bd06e5e08183382f4407c4678beaa392b2c9366",
+    "demo\\8ffbb8fa-50ba-4ccf-99a5-d8c9787d0dab\\attachment.csv": "c9637139ec377f3e59ecf03f0485b35aa282319d85ec42053001e53dd244af21",
+    "demo\\8ffbb8fa-50ba-4ccf-99a5-d8c9787d0dab\\evidence.csv": "691f95c3015fa8db970595e52fbb2f1fc27a994777a6720e31a7622e9dd49dde",
+    "demo\\97e04dde-eead-428e-a442-8da49b180199\\attachment.csv": "d8881da30465a8c65550ef62b6819527cae1894b3619f966af49bc2512ee20a5",
+    "demo\\a400c26a-3bde-45f4-8f47-58885acbd079\\attachment.csv": "1985c9961da2d0a6981152c75a0f50d342a70b553b9de8b9743888175a9e4904",
+    "demo\\b602afe3-4b54-4a42-ad97-af8e2e5ae83f\\attachment.csv": "288490acae108bb77c229638c67f0eba71f205675744f2d6a9a351df4b71ef3e",
+    "demo\\bacb2ade-5d06-4cec-9af7-0a8a9dd9a5a0\\attachment.csv": "4f2a3c58e5d9224f2b6e192c281376534b3f15972bdc8d8c84956c47e46e56f4",
+    "demo\\be726d57-3728-47e9-a9bf-7c14da81621c\\attachment.csv": "e574c5bad73ccd40818cecb92c2ac94ea05e8d1aecde0f2b83775e9c55bea8db",
+    "demo\\be726d57-3728-47e9-a9bf-7c14da81621c\\evidence.csv": "2f83a05ee66305ae82beac9b018f2eca078e910c184953f6281bad6a960686b0",
+    "demo\\c09a6dfa-7793-478d-bea7-42241c623c6e\\attachment.csv": "74072f5db06e03bdb9ca582642e99de62aaffe6b50299fab18942c507806fe8e",
+    "demo\\c09a6dfa-7793-478d-bea7-42241c623c6e\\evidence.csv": "418d21bc81b219c5431db92852557eaddc3cbb11e362d73c4f8beda7e11f50e7",
+    "demo\\d069fc4b-eb09-4c9e-9605-ece4036adb45\\attachment.csv": "da63cc69a45a65524a1485b3eebb893b526c17776818f6ea6bebbc62d0adc242",
+    "demo\\de9e97bc-dc03-4b33-a5b1-c578d7415c19\\attachment.csv": "107685126ee4472ba427a01549979d4b808f83080c82cf27e3155832353e420b",
+    "demo\\de9e97bc-dc03-4b33-a5b1-c578d7415c19\\evidence.csv": "a524acf819f1da638765847f2374560333f9eebb05b465d333dfa71ec01a9adf",
+    "demo\\dedac5f9-e7e6-40ca-abc3-7bb6d92ff9dc\\attachment.csv": "913347e3a0e00e66ce0f4b360770323c17546e0708975c29695b636a4486e948",
+    "demo\\e248ca8f-b712-44f2-bdd7-435502d841b9\\attachment.csv": "60ffa49cdc00cf6d033f3ff096086210fcf3932f32420496574e5864f806472e",
+    "demo\\e8970c4e-f9a2-4c91-af29-51a727bd8e30\\attachment.csv": "e509b17c9ad875d0c2fce53a92b3df1ce64dd89ee4e657c8de2f0cfd4b11f366",
+    "demo\\f725dad2-3849-4491-94a6-22e4b63ccb60\\attachment.csv": "ba40fc5d19b3f319ab450bb0f27bdede8439331b6f7ec162b5a6758014d4658f"
+  },
+  "checks": [
+    {
+      "name": "admin@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor2@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /users HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /tickets/3eaf9bcb-a870-4c3c-a7cd-3670d9950b5d HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Controle positivo possui anexo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Inventário de caminhos e hashes preservado",
+      "passed": true,
+      "detail": "{'before': {'3eaf9bcb-a870-4c3c-a7cd-3670d9950b5d\\\\f1a09df2-dc8a-40fe-a765-346c5d60ff1d': 'c2ed00b7654ab71ecee83bad7af94ce12e6886cc17ca811c6eac94d7e899d8ee', 'demo\\\\00d30b5c-30dc-4524-b6f6-ef47744de3ae\\\\attachment.csv': '410e96ab153b554bb2fef3cf0e218f436fa89573c325e795ba31eb20d2254e69', 'demo\\\\00d30b5c-30dc-4524-b6f6-ef47744de3ae\\\\evidence.csv': '2ca38465bba1d6fae2f9e99e468a1c5a90d099832fbc6ecc4a56ced8670c7c88', 'demo\\\\14263036-2f44-4d94-a447-2cd1268d4c0c\\\\attachment.csv': 'd899da726109afd92742d122c0d468533f2d5d923674f073ccd2a8a1b83cdc56', 'demo\\\\21f677d1-8238-4c96-a8e1-63f22d37f733\\\\attachment.csv': '86de57cee297bc9edfddf840529c3512303985c98b5fd9a2c0a0f8065cd0beb2', 'demo\\\\2f5a4be7-c2b9-4a2c-84d2-c412668f0e08\\\\attachment.csv': '3086da655b206fa0b05bf3c057abfc528a7614edc9c8b7be3ff1e684d6467dc7', 'demo\\\\59ea8a16-98be-4c1d-adb6-154d2c191b67\\\\attachment.csv': 'ce97ce2550ec896d7c5cc9872037173ee65aea4bf4f5691abe9d37819c1c7c73', 'demo\\\\61c47718-7872-4149-b120-04dea59503cc\\\\attachment.csv': 'f900144f7844042e8f4f2a5a1ad10cb64e439c9d66954bfa8a490e1e71b01f01', 'demo\\\\61c47718-7872-4149-b120-04dea59503cc\\\\evidence.csv': 'fd812eb1b106c3b0f47919c250191735472b8462ffec487b7713653aafc89fbf', 'demo\\\\6d9a0783-edd8-45c7-a32c-91eef56e490c\\\\attachment.csv': '3cad34cca670e9b369258c52b57fa5c43d27c6ddf6491708192e24f88967d7fe', 'demo\\\\6d9a0783-edd8-45c7-a32c-91eef56e490c\\\\evidence.csv': '3af6006a192be45a2cfb6c50c6371ef9ae874052a323ad831a5c5b34ad8b0641', 'demo\\\\7ef5ef91-c39b-4c7c-9170-59f55ab2beb6\\\\attachment.csv': '2212d9600cabf50fbd7c8d408debe1a5f0b80930420a8448a31afd2321e2c0b1', 'demo\\\\7f304b39-45cd-4dc8-b977-2f2f3b1b8aa3\\\\attachment.csv': '21250e13e56ba3b73f02b8bb0d4b27eb4d2097d8671142164cc036e5df82fdfe', 'demo\\\\83cb297b-18c2-49c0-9a82-fd1955fed273\\\\attachment.csv': '0893b9fb9e2e051b1440c0707ae50dabfb58959e2560688673ca0307ce67ebc9', 'demo\\\\83cb297b-18c2-49c0-9a82-fd1955fed273\\\\evidence.csv': '281a417d2c57964f57a0879532071df091c9ecea6fcfd3b04ff148d3d064d05d', 'demo\\\\8cf9e6dc-7ae3-4399-a307-7a620c1cef18\\\\attachment.csv': '183eefd78d6918a06b1a949fa9d424d5894c2507c7e9360c10334c75c3fb23ca', 'demo\\\\8cf9e6dc-7ae3-4399-a307-7a620c1cef18\\\\evidence.csv': '0036cf5521f214d801b1eea85bd06e5e08183382f4407c4678beaa392b2c9366', 'demo\\\\8ffbb8fa-50ba-4ccf-99a5-d8c9787d0dab\\\\attachment.csv': 'c9637139ec377f3e59ecf03f0485b35aa282319d85ec42053001e53dd244af21', 'demo\\\\8ffbb8fa-50ba-4ccf-99a5-d8c9787d0dab\\\\evidence.csv': '691f95c3015fa8db970595e52fbb2f1fc27a994777a6720e31a7622e9dd49dde', 'demo\\\\97e04dde-eead-428e-a442-8da49b180199\\\\attachment.csv': 'd8881da30465a8c65550ef62b6819527cae1894b3619f966af49bc2512ee20a5', 'demo\\\\a400c26a-3bde-45f4-8f47-58885acbd079\\\\attachment.csv': '1985c9961da2d0a6981152c75a0f50d342a70b553b9de8b9743888175a9e4904', 'demo\\\\b602afe3-4b54-4a42-ad97-af8e2e5ae83f\\\\attachment.csv': '288490acae108bb77c229638c67f0eba71f205675744f2d6a9a351df4b71ef3e', 'demo\\\\bacb2ade-5d06-4cec-9af7-0a8a9dd9a5a0\\\\attachment.csv': '4f2a3c58e5d9224f2b6e192c281376534b3f15972bdc8d8c84956c47e46e56f4', 'demo\\\\be726d57-3728-47e9-a9bf-7c14da81621c\\\\attachment.csv': 'e574c5bad73ccd40818cecb92c2ac94ea05e8d1aecde0f2b83775e9c55bea8db', 'demo\\\\be726d57-3728-47e9-a9bf-7c14da81621c\\\\evidence.csv': '2f83a05ee66305ae82beac9b018f2eca078e910c184953f6281bad6a960686b0', 'demo\\\\c09a6dfa-7793-478d-bea7-42241c623c6e\\\\attachment.csv': '74072f5db06e03bdb9ca582642e99de62aaffe6b50299fab18942c507806fe8e', 'demo\\\\c09a6dfa-7793-478d-bea7-42241c623c6e\\\\evidence.csv': '418d21bc81b219c5431db92852557eaddc3cbb11e362d73c4f8beda7e11f50e7', 'demo\\\\d069fc4b-eb09-4c9e-9605-ece4036adb45\\\\attachment.csv': 'da63cc69a45a65524a1485b3eebb893b526c17776818f6ea6bebbc62d0adc242', 'demo\\\\de9e97bc-dc03-4b33-a5b1-c578d7415c19\\\\attachment.csv': '107685126ee4472ba427a01549979d4b808f83080c82cf27e3155832353e420b', 'demo\\\\de9e97bc-dc03-4b33-a5b1-c578d7415c19\\\\evidence.csv': 'a524acf819f1da638765847f2374560333f9eebb05b465d333dfa71ec01a9adf', 'demo\\\\dedac5f9-e7e6-40ca-abc3-7bb6d92ff9dc\\\\attachment.csv': '913347e3a0e00e66ce0f4b360770323c17546e0708975c29695b636a4486e948', 'demo\\\\e248ca8f-b712-44f2-bdd7-435502d841b9\\\\attachment.csv': '60ffa49cdc00cf6d033f3ff096086210fcf3932f32420496574e5864f806472e', 'demo\\\\e8970c4e-f9a2-4c91-af29-51a727bd8e30\\\\attachment.csv': 'e509b17c9ad875d0c2fce53a92b3df1ce64dd89ee4e657c8de2f0cfd4b11f366', 'demo\\\\f725dad2-3849-4491-94a6-22e4b63ccb60\\\\attachment.csv': 'ba40fc5d19b3f319ab450bb0f27bdede8439331b6f7ec162b5a6758014d4658f'}, 'after': {'3eaf9bcb-a870-4c3c-a7cd-3670d9950b5d\\\\f1a09df2-dc8a-40fe-a765-346c5d60ff1d': 'c2ed00b7654ab71ecee83bad7af94ce12e6886cc17ca811c6eac94d7e899d8ee', 'demo\\\\00d30b5c-30dc-4524-b6f6-ef47744de3ae\\\\attachment.csv': '410e96ab153b554bb2fef3cf0e218f436fa89573c325e795ba31eb20d2254e69', 'demo\\\\00d30b5c-30dc-4524-b6f6-ef47744de3ae\\\\evidence.csv': '2ca38465bba1d6fae2f9e99e468a1c5a90d099832fbc6ecc4a56ced8670c7c88', 'demo\\\\14263036-2f44-4d94-a447-2cd1268d4c0c\\\\attachment.csv': 'd899da726109afd92742d122c0d468533f2d5d923674f073ccd2a8a1b83cdc56', 'demo\\\\21f677d1-8238-4c96-a8e1-63f22d37f733\\\\attachment.csv': '86de57cee297bc9edfddf840529c3512303985c98b5fd9a2c0a0f8065cd0beb2', 'demo\\\\2f5a4be7-c2b9-4a2c-84d2-c412668f0e08\\\\attachment.csv': '3086da655b206fa0b05bf3c057abfc528a7614edc9c8b7be3ff1e684d6467dc7', 'demo\\\\59ea8a16-98be-4c1d-adb6-154d2c191b67\\\\attachment.csv': 'ce97ce2550ec896d7c5cc9872037173ee65aea4bf4f5691abe9d37819c1c7c73', 'demo\\\\61c47718-7872-4149-b120-04dea59503cc\\\\attachment.csv': 'f900144f7844042e8f4f2a5a1ad10cb64e439c9d66954bfa8a490e1e71b01f01', 'demo\\\\61c47718-7872-4149-b120-04dea59503cc\\\\evidence.csv': 'fd812eb1b106c3b0f47919c250191735472b8462ffec487b7713653aafc89fbf', 'demo\\\\6d9a0783-edd8-45c7-a32c-91eef56e490c\\\\attachment.csv': '3cad34cca670e9b369258c52b57fa5c43d27c6ddf6491708192e24f88967d7fe', 'demo\\\\6d9a0783-edd8-45c7-a32c-91eef56e490c\\\\evidence.csv': '3af6006a192be45a2cfb6c50c6371ef9ae874052a323ad831a5c5b34ad8b0641', 'demo\\\\7ef5ef91-c39b-4c7c-9170-59f55ab2beb6\\\\attachment.csv': '2212d9600cabf50fbd7c8d408debe1a5f0b80930420a8448a31afd2321e2c0b1', 'demo\\\\7f304b39-45cd-4dc8-b977-2f2f3b1b8aa3\\\\attachment.csv': '21250e13e56ba3b73f02b8bb0d4b27eb4d2097d8671142164cc036e5df82fdfe', 'demo\\\\83cb297b-18c2-49c0-9a82-fd1955fed273\\\\attachment.csv': '0893b9fb9e2e051b1440c0707ae50dabfb58959e2560688673ca0307ce67ebc9', 'demo\\\\83cb297b-18c2-49c0-9a82-fd1955fed273\\\\evidence.csv': '281a417d2c57964f57a0879532071df091c9ecea6fcfd3b04ff148d3d064d05d', 'demo\\\\8cf9e6dc-7ae3-4399-a307-7a620c1cef18\\\\attachment.csv': '183eefd78d6918a06b1a949fa9d424d5894c2507c7e9360c10334c75c3fb23ca', 'demo\\\\8cf9e6dc-7ae3-4399-a307-7a620c1cef18\\\\evidence.csv': '0036cf5521f214d801b1eea85bd06e5e08183382f4407c4678beaa392b2c9366', 'demo\\\\8ffbb8fa-50ba-4ccf-99a5-d8c9787d0dab\\\\attachment.csv': 'c9637139ec377f3e59ecf03f0485b35aa282319d85ec42053001e53dd244af21', 'demo\\\\8ffbb8fa-50ba-4ccf-99a5-d8c9787d0dab\\\\evidence.csv': '691f95c3015fa8db970595e52fbb2f1fc27a994777a6720e31a7622e9dd49dde', 'demo\\\\97e04dde-eead-428e-a442-8da49b180199\\\\attachment.csv': 'd8881da30465a8c65550ef62b6819527cae1894b3619f966af49bc2512ee20a5', 'demo\\\\a400c26a-3bde-45f4-8f47-58885acbd079\\\\attachment.csv': '1985c9961da2d0a6981152c75a0f50d342a70b553b9de8b9743888175a9e4904', 'demo\\\\b602afe3-4b54-4a42-ad97-af8e2e5ae83f\\\\attachment.csv': '288490acae108bb77c229638c67f0eba71f205675744f2d6a9a351df4b71ef3e', 'demo\\\\bacb2ade-5d06-4cec-9af7-0a8a9dd9a5a0\\\\attachment.csv': '4f2a3c58e5d9224f2b6e192c281376534b3f15972bdc8d8c84956c47e46e56f4', 'demo\\\\be726d57-3728-47e9-a9bf-7c14da81621c\\\\attachment.csv': 'e574c5bad73ccd40818cecb92c2ac94ea05e8d1aecde0f2b83775e9c55bea8db', 'demo\\\\be726d57-3728-47e9-a9bf-7c14da81621c\\\\evidence.csv': '2f83a05ee66305ae82beac9b018f2eca078e910c184953f6281bad6a960686b0', 'demo\\\\c09a6dfa-7793-478d-bea7-42241c623c6e\\\\attachment.csv': '74072f5db06e03bdb9ca582642e99de62aaffe6b50299fab18942c507806fe8e', 'demo\\\\c09a6dfa-7793-478d-bea7-42241c623c6e\\\\evidence.csv': '418d21bc81b219c5431db92852557eaddc3cbb11e362d73c4f8beda7e11f50e7', 'demo\\\\d069fc4b-eb09-4c9e-9605-ece4036adb45\\\\attachment.csv': 'da63cc69a45a65524a1485b3eebb893b526c17776818f6ea6bebbc62d0adc242', 'demo\\\\de9e97bc-dc03-4b33-a5b1-c578d7415c19\\\\attachment.csv': '107685126ee4472ba427a01549979d4b808f83080c82cf27e3155832353e420b', 'demo\\\\de9e97bc-dc03-4b33-a5b1-c578d7415c19\\\\evidence.csv': 'a524acf819f1da638765847f2374560333f9eebb05b465d333dfa71ec01a9adf', 'demo\\\\dedac5f9-e7e6-40ca-abc3-7bb6d92ff9dc\\\\attachment.csv': '913347e3a0e00e66ce0f4b360770323c17546e0708975c29695b636a4486e948', 'demo\\\\e248ca8f-b712-44f2-bdd7-435502d841b9\\\\attachment.csv': '60ffa49cdc00cf6d033f3ff096086210fcf3932f32420496574e5864f806472e', 'demo\\\\e8970c4e-f9a2-4c91-af29-51a727bd8e30\\\\attachment.csv': 'e509b17c9ad875d0c2fce53a92b3df1ce64dd89ee4e657c8de2f0cfd4b11f366', 'demo\\\\f725dad2-3849-4491-94a6-22e4b63ccb60\\\\attachment.csv': 'ba40fc5d19b3f319ab450bb0f27bdede8439331b6f7ec162b5a6758014d4658f'}}"
+    },
+    {
+      "name": "Ticket ausente antes e depois",
+      "passed": true,
+      "detail": "{'before': 0, 'after': 0}"
+    }
+  ]
+}

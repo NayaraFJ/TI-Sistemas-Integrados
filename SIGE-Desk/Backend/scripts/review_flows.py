@@ -123,8 +123,13 @@ def catalog_roundtrip():
 
 def reference_and_report():
     for account in [a,c,other,staff,manager,other_manager]:account.request('/reference');account.request('/dashboard');account.request('/notifications')
-    scope=manager.request('/tickets?size=100');options=manager.request('/reference')
-    check('Gestor recebe apenas referências do escopo',set(item['id'] for item in options['clients']).issubset({item['clientId'] for item in scope['items']}) and options['clientUsers']==[])
+    scope=[];page=0
+    while True:
+        batch=manager.request('/tickets?size=100&page='+str(page));scope.extend(batch['items'])
+        if len(scope)>=batch['total']:break
+        page+=1
+    options=manager.request('/reference')
+    check('Gestor recebe apenas referências do escopo',set(item['id'] for item in options['clients']).issubset({item['clientId'] for item in scope}) and options['clientUsers']==[])
     check('Cliente não recebe outros solicitantes',len(c.request('/reference')['clientUsers'])==1)
     tickets=a.request('/tickets?search='+urllib.parse.quote(tag)+'&size=100');report=a.request('/reports/tickets?search='+urllib.parse.quote(tag))
     exported=a.request('/reports/tickets/export?search='+urllib.parse.quote(tag));rows=list(csv.reader(io.StringIO(exported.decode('utf-8-sig')),delimiter=';'))

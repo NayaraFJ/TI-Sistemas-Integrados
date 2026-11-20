@@ -1,0 +1,127 @@
+{
+  "startedAt": "2026-11-19T17:04:39.866257+00:00",
+  "finishedAt": "2026-11-19T17:04:40.841259+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "95c050c42d48bbf4b5502fb767ad7f6f24eb6663f4541fbc3e1abbf207357fe7",
+    "runTag": "Review 0a145267"
+  },
+  "cases": [
+    {
+      "id": "CT-01-negativas-adicionais",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:04:40.440759+00:00",
+      "finishedAt": "2026-11-19T17:04:40.840758+00:00",
+      "assertions": 17,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "atendimento@sige.demo POST /campaigns HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "atendimento@sige.demo POST /campaigns/1185bf34-2e82-4989-bf8d-de2151a8ac42/active?value=false HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "admin@sige.demo POST /clients HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "admin@sige.demo POST /clients/6550e274-11bb-46ef-88d5-92c48db662d6/active?value=false HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "Sem ticket parcial obrigatorio",
+      "passed": true,
+      "detail": "{'subject': 'Review 0a145267 obrigatorio', 'before': 0, 'after': 0}"
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "Sem ticket parcial campanha estrangeira",
+      "passed": true,
+      "detail": "{'subject': 'Review 0a145267 campanha estrangeira', 'before': 0, 'after': 0}"
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "Sem ticket parcial campanha inativa",
+      "passed": true,
+      "detail": "{'subject': 'Review 0a145267 campanha inativa', 'before': 0, 'after': 0}"
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "atendimento@sige.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-negativas-adicionais",
+      "name": "Sem ticket parcial cliente inativo",
+      "passed": true,
+      "detail": "{'subject': 'Review 0a145267 cliente inativo', 'before': 0, 'after': 0}"
+    }
+  ]
+}

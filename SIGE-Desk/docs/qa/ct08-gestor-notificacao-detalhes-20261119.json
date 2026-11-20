@@ -1,0 +1,103 @@
+{
+  "startedAt": "2026-11-19T20:55:25.828759+00:00",
+  "finishedAt": "2026-11-19T20:55:26.756257+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review ee247b29"
+  },
+  "cases": [
+    {
+      "id": "CT-08-gestor-notificacao-reteste",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T20:55:26.397258+00:00",
+      "finishedAt": "2026-11-19T20:55:26.756257+00:00",
+      "assertions": 13,
+      "error": "Auditoria registrada para Gestor: {'notificationId': '8b8ec107-1dc2-44ac-89bd-0ac8e61f7bc2', 'ticketId': 'ee7c5126-9db2-4b5c-a94f-55ef3dc72f24', 'auditDelta': 1, 'event': {'at': '2026-11-19T20:55:26.692757', 'code': 'SECURITY_NOTIFICATION_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'NOTIFICATION', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '8b8ec107-1dc2-44ac-89bd-0ac8e61f7bc2'}}"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/ee7c5126-9db2-4b5c-a94f-55ef3dc72f24 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /tickets/ee7c5126-9db2-4b5c-a94f-55ef3dc72f24/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Notificação alheia disponível",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/ee7c5126-9db2-4b5c-a94f-55ef3dc72f24 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "gestor2@sige.demo POST /notifications/8b8ec107-1dc2-44ac-89bd-0ac8e61f7bc2/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Auditoria registrada para Gestor",
+      "passed": false,
+      "detail": "{'notificationId': '8b8ec107-1dc2-44ac-89bd-0ac8e61f7bc2', 'ticketId': 'ee7c5126-9db2-4b5c-a94f-55ef3dc72f24', 'auditDelta': 1, 'event': {'at': '2026-11-19T20:55:26.692757', 'code': 'SECURITY_NOTIFICATION_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'NOTIFICATION', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '8b8ec107-1dc2-44ac-89bd-0ac8e61f7bc2'}}"
+    }
+  ]
+}

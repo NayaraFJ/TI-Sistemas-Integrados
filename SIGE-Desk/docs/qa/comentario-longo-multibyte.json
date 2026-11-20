@@ -1,0 +1,167 @@
+{
+  "startedAt": "2026-11-19T12:09:36.486218+00:00",
+  "finishedAt": "2026-11-19T12:09:37.844718+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "runtimeSha256": "06977d8e6046be381f2d07c25d2f804a24ea35c995849778db60af1abea60615",
+    "runTag": "Review 50895be8"
+  },
+  "cases": [
+    {
+      "id": "CT-07-comentario-longo",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:09:37.167220+00:00",
+      "finishedAt": "2026-11-19T12:09:37.844218+00:00",
+      "assertions": 24,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "atendimento@sige.demo GET /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "atendimento@sige.demo POST /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "atendimento@sige.demo GET /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "atendimento@sige.demo POST /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "gestor@sige.demo GET /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "gestor@sige.demo POST /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76/wait HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "cliente@aurora.demo GET /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "cliente@aurora.demo POST /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "API retorna comentário integral",
+      "passed": true,
+      "detail": "{'chars': 22828, 'bytes': 33630}"
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "cliente@aurora.demo GET /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "Detalhe contém comentário integral",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "MySQL preserva bytes integrais",
+      "passed": true,
+      "detail": "22828|33630|2b3dd9ff256132c6c23acaca964211b65de26934e26d7ac29f3d38c6e3e1862a"
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "Histórico registra resumo limitado e identificável",
+      "passed": true,
+      "detail": "[{'id': '4add5963-8c01-4cc3-a6c4-1d85015dac50', 'actorName': 'Marina Costa', 'action': 'COMPLEMENT_RECEIVED', 'fieldName': None, 'oldValue': None, 'newValue': None, 'reason': 'Comentário: Início único: ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã 漢字 ação técn…', 'createdAt': '2026-11-19T12:09:37.661220Z'}]"
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "atendimento@sige.demo GET /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "atendimento@sige.demo POST /tickets/ef56f544-089c-4df5-90c5-f37373dc2b76/resume HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-comentario-longo",
+      "name": "Notificações de retomada incluem resumo e confirmação",
+      "passed": true,
+      "detail": "['SIGE-1266 | Review 50895be8; Complemento confirmado: Informação recebida: Comentário: Início único: ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã …; confirmação: Conferência realizada; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:09:37.526720300Z.', 'SIGE-1266 | Review 50895be8; Complemento confirmado: Informação recebida: Comentário: Início único: ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã …; confirmação: Conferência realizada; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:09:37.526720300Z.', 'SIGE-1266 | Review 50895be8; Complemento confirmado: Informação recebida: Comentário: Início único: ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã …; confirmação: Conferência realizada; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:09:37.526720300Z.', 'SIGE-1266 | Review 50895be8; Complemento confirmado: Informação recebida: Comentário: Início único: ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã …; confirmação: Conferência realizada; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:09:37.526720300Z.', 'SIGE-1266 | Review 50895be8; Complemento confirmado: Informação recebida: Comentário: Início único: ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã 漢字 ação técnica çã …; confirmação: Conferência realizada; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:09:37.526720300Z.']"
+    }
+  ]
+}

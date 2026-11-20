@@ -1,0 +1,844 @@
+{
+  "startedAt": "2026-11-19T17:35:31.152258+00:00",
+  "finishedAt": "2026-11-19T17:35:34.649258+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runtimeSha256": "bd864c8633f9fd07f11ec4b754c041c526b70ee92cfd25c1fc73af0c944fbc0f",
+    "runTag": "Review 312d96fc",
+    "layer": "HTTP/MySQL/CSV; sem navegador"
+  },
+  "cases": [
+    {
+      "id": "CT-16-api-complemento",
+      "priority": "Baixa",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:35:31.717758+00:00",
+      "finishedAt": "2026-11-19T17:35:31.958760+00:00",
+      "assertions": 12,
+      "error": null
+    },
+    {
+      "id": "CT-17-api-complemento",
+      "priority": "Baixa",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:35:31.958760+00:00",
+      "finishedAt": "2026-11-19T17:35:34.648757+00:00",
+      "assertions": 123,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "cliente@aurora.demo GET /tickets/35c5e489-c580-40a9-bad4-fee9d518e15d HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "Métricas em nova sessão",
+      "passed": true,
+      "detail": "{'ticket': '35c5e489-c580-40a9-bad4-fee9d518e15d', 'sent': {'period': 'novembro 2026', 'impressions': 0, 'ctr': 2.75, 'cpc': 1.23, 'conversions': 12, 'cpa': 4.56, 'roas': None, 'fields': {}}, 'saved': {'cpa': 4.56, 'cpc': 1.23, 'ctr': 2.75, 'roas': None, 'fields': {}, 'period': 'novembro 2026', 'conversions': 12, 'impressions': 0}}"
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-16-api-complemento",
+      "name": "Inválidos sem gravação parcial",
+      "passed": true,
+      "detail": "{'before': 560, 'after': 560}"
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "admin@sige.demo GET /tickets?search=Review+312d96fc&demandTypeId=bdcea551-f1cb-411b-8ccd-146ae13d1a4a&size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "admin@sige.demo GET /tickets?search=Review+312d96fc&demandTypeId=bdcea551-f1cb-411b-8ccd-146ae13d1a4a&size=100&page=1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "Seleção filtrada em múltiplas páginas",
+      "passed": true,
+      "detail": "{'count': 101, 'expected': ['SIGE-1562', 'SIGE-1563', 'SIGE-1564', 'SIGE-1565', 'SIGE-1566', 'SIGE-1567', 'SIGE-1568', 'SIGE-1569', 'SIGE-1570', 'SIGE-1571', 'SIGE-1572', 'SIGE-1573', 'SIGE-1574', 'SIGE-1575', 'SIGE-1576', 'SIGE-1577', 'SIGE-1578', 'SIGE-1579', 'SIGE-1580', 'SIGE-1581', 'SIGE-1582', 'SIGE-1583', 'SIGE-1584', 'SIGE-1585', 'SIGE-1586', 'SIGE-1587', 'SIGE-1588', 'SIGE-1589', 'SIGE-1590', 'SIGE-1591', 'SIGE-1592', 'SIGE-1593', 'SIGE-1594', 'SIGE-1595', 'SIGE-1596', 'SIGE-1597', 'SIGE-1598', 'SIGE-1599', 'SIGE-1600', 'SIGE-1601', 'SIGE-1602', 'SIGE-1603', 'SIGE-1604', 'SIGE-1605', 'SIGE-1606', 'SIGE-1607', 'SIGE-1608', 'SIGE-1609', 'SIGE-1610', 'SIGE-1611', 'SIGE-1612', 'SIGE-1613', 'SIGE-1614', 'SIGE-1615', 'SIGE-1616', 'SIGE-1617', 'SIGE-1618', 'SIGE-1619', 'SIGE-1620', 'SIGE-1621', 'SIGE-1622', 'SIGE-1623', 'SIGE-1624', 'SIGE-1625', 'SIGE-1626', 'SIGE-1627', 'SIGE-1628', 'SIGE-1629', 'SIGE-1630', 'SIGE-1631', 'SIGE-1632', 'SIGE-1633', 'SIGE-1634', 'SIGE-1635', 'SIGE-1636', 'SIGE-1637', 'SIGE-1638', 'SIGE-1639', 'SIGE-1640', 'SIGE-1641', 'SIGE-1642', 'SIGE-1643', 'SIGE-1644', 'SIGE-1645', 'SIGE-1646', 'SIGE-1647', 'SIGE-1648', 'SIGE-1649', 'SIGE-1650', 'SIGE-1651', 'SIGE-1652', 'SIGE-1653', 'SIGE-1654', 'SIGE-1655', 'SIGE-1656', 'SIGE-1657', 'SIGE-1658', 'SIGE-1659', 'SIGE-1660', 'SIGE-1661', 'SIGE-1662'], 'obtained': ['SIGE-1562', 'SIGE-1563', 'SIGE-1564', 'SIGE-1565', 'SIGE-1566', 'SIGE-1567', 'SIGE-1568', 'SIGE-1569', 'SIGE-1570', 'SIGE-1571', 'SIGE-1572', 'SIGE-1573', 'SIGE-1574', 'SIGE-1575', 'SIGE-1576', 'SIGE-1577', 'SIGE-1578', 'SIGE-1579', 'SIGE-1580', 'SIGE-1581', 'SIGE-1582', 'SIGE-1583', 'SIGE-1584', 'SIGE-1585', 'SIGE-1586', 'SIGE-1587', 'SIGE-1588', 'SIGE-1589', 'SIGE-1590', 'SIGE-1591', 'SIGE-1592', 'SIGE-1593', 'SIGE-1594', 'SIGE-1595', 'SIGE-1596', 'SIGE-1597', 'SIGE-1598', 'SIGE-1599', 'SIGE-1600', 'SIGE-1601', 'SIGE-1602', 'SIGE-1603', 'SIGE-1604', 'SIGE-1605', 'SIGE-1606', 'SIGE-1607', 'SIGE-1608', 'SIGE-1609', 'SIGE-1610', 'SIGE-1611', 'SIGE-1612', 'SIGE-1613', 'SIGE-1614', 'SIGE-1615', 'SIGE-1616', 'SIGE-1617', 'SIGE-1618', 'SIGE-1619', 'SIGE-1620', 'SIGE-1621', 'SIGE-1622', 'SIGE-1623', 'SIGE-1624', 'SIGE-1625', 'SIGE-1626', 'SIGE-1627', 'SIGE-1628', 'SIGE-1629', 'SIGE-1630', 'SIGE-1631', 'SIGE-1632', 'SIGE-1633', 'SIGE-1634', 'SIGE-1635', 'SIGE-1636', 'SIGE-1637', 'SIGE-1638', 'SIGE-1639', 'SIGE-1640', 'SIGE-1641', 'SIGE-1642', 'SIGE-1643', 'SIGE-1644', 'SIGE-1645', 'SIGE-1646', 'SIGE-1647', 'SIGE-1648', 'SIGE-1649', 'SIGE-1650', 'SIGE-1651', 'SIGE-1652', 'SIGE-1653', 'SIGE-1654', 'SIGE-1655', 'SIGE-1656', 'SIGE-1657', 'SIGE-1658', 'SIGE-1659', 'SIGE-1660', 'SIGE-1661', 'SIGE-1662']}"
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "admin@sige.demo GET /reports/tickets/export?search=Review+312d96fc&demandTypeId=bdcea551-f1cb-411b-8ccd-146ae13d1a4a HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "CSV seleção e estrutura admin@sige.demo",
+      "passed": true,
+      "detail": "{'header': ['Número', 'Assunto', 'Cliente', 'Campanha', 'Tipo', 'Status', 'Prioridade', 'Responsável', 'Atualização'], 'count': 101, 'ids': ['SIGE-1662', 'SIGE-1661', 'SIGE-1660', 'SIGE-1659', 'SIGE-1658', 'SIGE-1657', 'SIGE-1656', 'SIGE-1655', 'SIGE-1654', 'SIGE-1653', 'SIGE-1652', 'SIGE-1651', 'SIGE-1650', 'SIGE-1649', 'SIGE-1648', 'SIGE-1647', 'SIGE-1646', 'SIGE-1645', 'SIGE-1644', 'SIGE-1643', 'SIGE-1642', 'SIGE-1641', 'SIGE-1640', 'SIGE-1639', 'SIGE-1638', 'SIGE-1637', 'SIGE-1636', 'SIGE-1635', 'SIGE-1634', 'SIGE-1633', 'SIGE-1632', 'SIGE-1631', 'SIGE-1630', 'SIGE-1629', 'SIGE-1628', 'SIGE-1627', 'SIGE-1626', 'SIGE-1625', 'SIGE-1624', 'SIGE-1623', 'SIGE-1622', 'SIGE-1621', 'SIGE-1620', 'SIGE-1619', 'SIGE-1618', 'SIGE-1617', 'SIGE-1616', 'SIGE-1615', 'SIGE-1614', 'SIGE-1613', 'SIGE-1612', 'SIGE-1611', 'SIGE-1610', 'SIGE-1609', 'SIGE-1608', 'SIGE-1607', 'SIGE-1606', 'SIGE-1605', 'SIGE-1604', 'SIGE-1603', 'SIGE-1602', 'SIGE-1601', 'SIGE-1600', 'SIGE-1599', 'SIGE-1598', 'SIGE-1597', 'SIGE-1596', 'SIGE-1595', 'SIGE-1594', 'SIGE-1593', 'SIGE-1592', 'SIGE-1591', 'SIGE-1590', 'SIGE-1589', 'SIGE-1588', 'SIGE-1587', 'SIGE-1586', 'SIGE-1585', 'SIGE-1584', 'SIGE-1583', 'SIGE-1582', 'SIGE-1581', 'SIGE-1580', 'SIGE-1579', 'SIGE-1578', 'SIGE-1577', 'SIGE-1576', 'SIGE-1575', 'SIGE-1574', 'SIGE-1573', 'SIGE-1572', 'SIGE-1571', 'SIGE-1570', 'SIGE-1569', 'SIGE-1568', 'SIGE-1567', 'SIGE-1566', 'SIGE-1565', 'SIGE-1564', 'SIGE-1563', 'SIGE-1562']}"
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "CSV escape e acentos admin@sige.demo",
+      "passed": true,
+      "detail": "{'special': 'Review 312d96fc ação; \"cotação\"\\nsegunda linha', 'row': ['SIGE-1562', 'Review 312d96fc ação; \"cotação\"\\nsegunda linha', 'Aurora Educação', 'Pós-graduação Setembro', 'Review 312d96fc37f77', 'OPEN', '', '', '2026-11-19T17:35:32.056258Z']}"
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "admin@sige.demo GET /reports/tickets/export?search=Review+312d96fc+inexistente HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "CSV vazio admin@sige.demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "atendimento@sige.demo GET /reports/tickets/export?search=Review+312d96fc&demandTypeId=bdcea551-f1cb-411b-8ccd-146ae13d1a4a HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "CSV seleção e estrutura atendimento@sige.demo",
+      "passed": true,
+      "detail": "{'header': ['Número', 'Assunto', 'Cliente', 'Campanha', 'Tipo', 'Status', 'Prioridade', 'Responsável', 'Atualização'], 'count': 101, 'ids': ['SIGE-1662', 'SIGE-1661', 'SIGE-1660', 'SIGE-1659', 'SIGE-1658', 'SIGE-1657', 'SIGE-1656', 'SIGE-1655', 'SIGE-1654', 'SIGE-1653', 'SIGE-1652', 'SIGE-1651', 'SIGE-1650', 'SIGE-1649', 'SIGE-1648', 'SIGE-1647', 'SIGE-1646', 'SIGE-1645', 'SIGE-1644', 'SIGE-1643', 'SIGE-1642', 'SIGE-1641', 'SIGE-1640', 'SIGE-1639', 'SIGE-1638', 'SIGE-1637', 'SIGE-1636', 'SIGE-1635', 'SIGE-1634', 'SIGE-1633', 'SIGE-1632', 'SIGE-1631', 'SIGE-1630', 'SIGE-1629', 'SIGE-1628', 'SIGE-1627', 'SIGE-1626', 'SIGE-1625', 'SIGE-1624', 'SIGE-1623', 'SIGE-1622', 'SIGE-1621', 'SIGE-1620', 'SIGE-1619', 'SIGE-1618', 'SIGE-1617', 'SIGE-1616', 'SIGE-1615', 'SIGE-1614', 'SIGE-1613', 'SIGE-1612', 'SIGE-1611', 'SIGE-1610', 'SIGE-1609', 'SIGE-1608', 'SIGE-1607', 'SIGE-1606', 'SIGE-1605', 'SIGE-1604', 'SIGE-1603', 'SIGE-1602', 'SIGE-1601', 'SIGE-1600', 'SIGE-1599', 'SIGE-1598', 'SIGE-1597', 'SIGE-1596', 'SIGE-1595', 'SIGE-1594', 'SIGE-1593', 'SIGE-1592', 'SIGE-1591', 'SIGE-1590', 'SIGE-1589', 'SIGE-1588', 'SIGE-1587', 'SIGE-1586', 'SIGE-1585', 'SIGE-1584', 'SIGE-1583', 'SIGE-1582', 'SIGE-1581', 'SIGE-1580', 'SIGE-1579', 'SIGE-1578', 'SIGE-1577', 'SIGE-1576', 'SIGE-1575', 'SIGE-1574', 'SIGE-1573', 'SIGE-1572', 'SIGE-1571', 'SIGE-1570', 'SIGE-1569', 'SIGE-1568', 'SIGE-1567', 'SIGE-1566', 'SIGE-1565', 'SIGE-1564', 'SIGE-1563', 'SIGE-1562']}"
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "CSV escape e acentos atendimento@sige.demo",
+      "passed": true,
+      "detail": "{'special': 'Review 312d96fc ação; \"cotação\"\\nsegunda linha', 'row': ['SIGE-1562', 'Review 312d96fc ação; \"cotação\"\\nsegunda linha', 'Aurora Educação', 'Pós-graduação Setembro', 'Review 312d96fc37f77', 'OPEN', '', '', '2026-11-19T17:35:32.056258Z']}"
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "atendimento@sige.demo GET /reports/tickets/export?search=Review+312d96fc+inexistente HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "CSV vazio atendimento@sige.demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo GET /reports/tickets HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo GET /reports/tickets/export HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "cliente@aurora.demo GET /reports/tickets/export?search=Review+312d96fc&demandTypeId=bdcea551-f1cb-411b-8ccd-146ae13d1a4a&clientId=4a8fc6eb-e876-4c8c-9128-bf10ff43d57d HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "gestor@sige.demo GET /reports/tickets HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "gestor@sige.demo GET /reports/tickets/export HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17-api-complemento",
+      "name": "gestor@sige.demo GET /reports/tickets/export?search=Review+312d96fc&demandTypeId=bdcea551-f1cb-411b-8ccd-146ae13d1a4a&clientId=4a8fc6eb-e876-4c8c-9128-bf10ff43d57d HTTP 403",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

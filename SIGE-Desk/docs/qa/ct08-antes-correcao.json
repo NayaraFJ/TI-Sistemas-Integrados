@@ -1,0 +1,12 @@
+{
+  "ct": "CT-08",
+  "round": "before-fix",
+  "status": "REPROVADO",
+  "checkedAt": "2026-11-18T22:59:00.036348+00:00",
+  "httpStatus": 404,
+  "auditTablePresent": false,
+  "ticketId": "a9678cd0-bb0f-4bb1-b287-97aab9e9e6a6",
+  "expected": "404 e registro persistente da tentativa negada",
+  "observed": "404, porém sem mecanismo persistente de auditoria na versãoV6",
+  "environment": "localhost:8081 / sige_desk_qa_20261118 / pacote publicado anterior"
+}

@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-11-19T12:18:15.992217+00:00",
+  "schema": "sige_desk_qa_20261118",
+  "baseUrl": "http://localhost:8081/api/v1",
+  "ticketId": "8558b898-5712-4716-9232-470ff17bf8b2",
+  "actorId": "16b19b2b-57cc-46c4-8124-8b758934f3fb",
+  "method": "Trigger BEFORE INSERT restrito a ator e ticket; removido em finally",
+  "status": 404,
+  "response": "{\"code\":\"REQUEST_ERROR\",\"message\":\"Ticket não encontrado\",\"timestamp\":\"2026-11-19T12:18:15.591218400Z\",\"fields\":{}}",
+  "missingStatus": 404,
+  "missingResponse": "{\"code\":\"REQUEST_ERROR\",\"message\":\"Ticket não encontrado\",\"timestamp\":\"2026-11-19T12:18:15.499719100Z\",\"fields\":{}}",
+  "responseEqualExceptTimestamp": true,
+  "ownerBefore": 200,
+  "ownerAfter": 200,
+  "ownerVersionPreserved": true,
+  "auditCountBefore": 0,
+  "auditCountAfter": 0,
+  "triggerRemaining": 0,
+  "subjectDisclosed": false,
+  "failureLog": [
+    "2026-11-19T09:18:15.590-03:00 ERROR 38272 --- [sige-desk-api] [nio-8081-exec-4] b.p.sige.shared.api.ApiExceptionHandler  : eventCode=SECURITY_TICKET_AUDIT_FAILED actorId=16b19b2b-57cc-46c4-8124-8b758934f3fb resourceType=TICKET resourceId=8558b898-5712-4716-9232-470ff17bf8b2 failureType=UncategorizedSQLException"
+  ]
+}

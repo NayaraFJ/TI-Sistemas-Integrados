@@ -1,0 +1,433 @@
+{
+  "startedAt": "2026-11-19T12:26:05.425220+00:00",
+  "finishedAt": "2026-11-19T12:26:07.588716+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "cf55c62895dad8658991c9288b695eef48543c45a8cdfb5558bb693bf8ee18c9",
+    "runTag": "Review ee8680c1"
+  },
+  "cases": [
+    {
+      "id": "CT-03-perfis-sessao",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T12:26:06.096224+00:00",
+      "finishedAt": "2026-11-19T12:26:06.499718+00:00",
+      "assertions": 20,
+      "error": "Negativa preserva estado CLIENT: "
+    },
+    {
+      "id": "CT-09-negativas-material",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:26:06.499718+00:00",
+      "finishedAt": "2026-11-19T12:26:07.357718+00:00",
+      "assertions": 34,
+      "error": null
+    },
+    {
+      "id": "CT-14-prazos",
+      "priority": "Média",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:26:07.357718+00:00",
+      "finishedAt": "2026-11-19T12:26:07.588217+00:00",
+      "assertions": 11,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "atendimento@sige.demo GET /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "atendimento@sige.demo POST /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "atendimento@sige.demo GET /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "atendimento@sige.demo POST /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "gestor@sige.demo GET /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "gestor@sige.demo POST /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "gestor@sige.demo POST /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "cliente@aurora.demo GET /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "cliente@aurora.demo GET /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "cliente@aurora.demo POST /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0/execution HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "cliente@aurora.demo GET /tickets/b7947862-e479-4829-9b87-53bb5aa5a2f0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-perfis-sessao",
+      "name": "Negativa preserva estado CLIENT",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Rejeição sem ticket parcial obrigatório",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Rejeição sem ticket parcial número",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Rejeição sem ticket parcial limite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Rejeição sem ticket parcial data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Rejeição sem ticket parcial opção",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Rejeição sem ticket parcial condicional",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Rejeição sem ticket parcial desconhecido",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "atendimento@sige.demo GET /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "atendimento@sige.demo POST /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "atendimento@sige.demo GET /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "atendimento@sige.demo POST /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo GET /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1/approve HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "gestor@sige.demo GET /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "gestor@sige.demo POST /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1/execution HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "gestor@sige.demo GET /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "gestor@sige.demo POST /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo GET /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Material precede decisão",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo GET /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo POST /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1/approve HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "cliente@aurora.demo GET /tickets/e4cc36a1-078b-4ada-8919-fd519bd4aef1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-negativas-material",
+      "name": "Decisão posterior conclui",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "atendimento@sige.demo GET /tickets/85ba578e-b74f-419f-b4e1-eb4c67f7ed44 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "atendimento@sige.demo POST /tickets/85ba578e-b74f-419f-b4e1-eb4c67f7ed44/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "cliente@aurora.demo GET /tickets/85ba578e-b74f-419f-b4e1-eb4c67f7ed44 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "atendimento@sige.demo GET /tickets/85ba578e-b74f-419f-b4e1-eb4c67f7ed44 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "atendimento@sige.demo POST /tickets/85ba578e-b74f-419f-b4e1-eb4c67f7ed44/cancel HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "cliente@aurora.demo GET /tickets/85ba578e-b74f-419f-b4e1-eb4c67f7ed44 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "Cancelamento preserva prazos e resposta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-14-prazos",
+      "name": "Cancelamento terminal e histórico",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

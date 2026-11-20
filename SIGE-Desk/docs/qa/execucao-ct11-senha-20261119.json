@@ -1,0 +1,15 @@
+{
+  "target": "API local isolada 8095",
+  "schema": "sige_ct11_expiracao_20261119",
+  "startedAtUtc": "2026-11-19T22:09:52.7951427Z",
+  "hashHasBcryptFormat": true,
+  "hashDiffersFromPassword": true,
+  "httpStatuses": [
+    200,
+    200,
+    200
+  ],
+  "responsesOmitPasswordAndStoredHash": true,
+  "passed": true,
+  "finishedAtUtc": "2026-11-19T22:09:53.4257329Z"
+}

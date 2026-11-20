@@ -12,7 +12,7 @@ public class Notification {
   @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="user_id", nullable=false) private AppUser user;
   @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="ticket_id", nullable=false) private Ticket ticket;
   @Column(name="event_type", nullable=false) private String eventType;
-  @Column(nullable=false) private String summary;
+  @Column(nullable=false, length=500) private String summary;
   @Column(name="read_at") private Instant readAt;
   @Column(name="created_at", nullable=false) private Instant createdAt;
   protected Notification() {}

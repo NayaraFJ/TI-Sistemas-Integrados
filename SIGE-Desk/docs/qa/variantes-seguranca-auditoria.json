@@ -1,0 +1,624 @@
+{
+  "cases": [
+    {
+      "id": "CT-08",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-18T23:13:16.565907+00:00",
+      "finishedAt": "2026-11-18T23:13:16.980908+00:00",
+      "assertions": 30,
+      "error": null
+    },
+    {
+      "id": "CT-13",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-18T23:13:16.980908+00:00",
+      "finishedAt": "2026-11-18T23:13:17.812656+00:00",
+      "assertions": 70,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "cliente@aurora.demo POST /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "rafael@horizonte.demo GET /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048 HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "rafael@horizonte.demo GET /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048/attachments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "rafael@horizonte.demo GET /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048/attachments/017fe2cd-0d3a-447d-b897-7b83090d9023/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "Tentativa negada tem mecanismo persistente de auditoria",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "Negação foi registrada para o ticket",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "ct": "CT-08",
+      "name": "cliente@aurora.demo GET /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "rafael@horizonte.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "rafael@horizonte.demo POST /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048/comments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "gestor2@sige.demo GET /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048 HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "gestor2@sige.demo GET /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048/attachments/017fe2cd-0d3a-447d-b897-7b83090d9023/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "gestor2@sige.demo POST /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048/comments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "rafael@horizonte.demo GET /tickets?search=SIGE-1123 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "Busca por número não amplia escopo rafael@horizonte.demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "rafael@horizonte.demo GET /tickets?clientId=4a8fc6eb-e876-4c8c-9128-bf10ff43d57d&size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "Filtro clientId não amplia escopo rafael@horizonte.demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "gestor2@sige.demo GET /tickets?search=SIGE-1123 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "Busca por número não amplia escopo gestor2@sige.demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "gestor2@sige.demo GET /tickets?clientId=4a8fc6eb-e876-4c8c-9128-bf10ff43d57d&size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "Filtro clientId não amplia escopo gestor2@sige.demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "cliente@aurora.demo POST /tickets HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "cliente@aurora.demo GET /tickets/ba54fb99-04c7-4667-9d34-aa3a6f50f048 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08",
+      "name": "Mutação indevida preserva versão",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/triage/start HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Formulário antigo retorna conflito explícito",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/wait HTTP 428",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/reassign HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "gestor@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "gestor2@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Reatribuição preserva prazo e ciclo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/reassign HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "gestor2@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "gestor2@sige.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/wait HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "admin@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "admin@sige.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/reassign HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "gestor2@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/complement HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac/resume HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Retomada audita novo prazo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "admin@sige.demo GET /tickets?search=Review%209aed2008&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "admin@sige.demo GET /tickets/f90f007c-ee91-4842-b317-5ffde9cdfaac HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Autor e data presentes em todos eventos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Campos alterados conservam novo valor e motivo",
+      "passed": true,
+      "detail": "[{'id': '09c29503-855a-470a-ae67-61a149510a2c', 'actorName': 'Beatriz Souza', 'action': 'TICKET_RESUMED', 'fieldName': 'status', 'oldValue': '\"WAITING_FOR_CLIENT\"', 'newValue': '\"EXECUTION\"', 'reason': 'Contexto suficiente', 'createdAt': '2026-11-18T23:13:17.468047Z'}, {'id': 'fc424880-3980-480c-be14-12661cd7594c', 'actorName': 'Administrador SIGE Desk', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': '\"ff2f1bcd-a088-4000-a7bb-abc4452827bf\"', 'newValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'reason': 'Redistribuição durante espera', 'createdAt': '2026-11-18T23:13:17.401371Z'}, {'id': '619cb7ba-31c8-49e3-889f-8249f0438778', 'actorName': 'Ana Ribeiro', 'action': 'COMPLEMENT_REQUESTED', 'fieldName': 'status', 'oldValue': '\"EXECUTION\"', 'newValue': '\"WAITING_FOR_CLIENT\"', 'reason': 'Preciso de contexto', 'createdAt': '2026-11-18T23:13:17.373829Z'}, {'id': '675d63a7-db5d-447d-9543-a3f79453262a', 'actorName': 'Beatriz Souza', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'newValue': '\"ff2f1bcd-a088-4000-a7bb-abc4452827bf\"', 'reason': 'Continuidade do atendimento', 'createdAt': '2026-11-18T23:13:17.255670Z'}, {'id': 'eff5e10e-0059-4d26-9dd6-7504ad6d0546', 'actorName': 'Beatriz Souza', 'action': 'RESPONSE_DEADLINE_CHANGED', 'fieldName': 'responseDueAt', 'oldValue': None, 'newValue': '\"2026-11-19T15:00:00Z\"', 'reason': 'Prazo de primeira resposta aplicado', 'createdAt': '2026-11-18T23:13:17.150409Z'}, {'id': 'e65db513-7dc6-476c-b5d3-0b6505cb797b', 'actorName': 'Beatriz Souza', 'action': 'RESOLUTION_DEADLINE_CHANGED', 'fieldName': 'resolutionDueAt', 'oldValue': None, 'newValue': '\"2026-11-23T17:00:00Z\"', 'reason': 'Prazo de resolução aplicado', 'createdAt': '2026-11-18T23:13:17.150409Z'}, {'id': '19531e12-bcaa-4435-8baf-71c4cbc5375e', 'actorName': 'Beatriz Souza', 'action': 'SENT_TO_EXECUTION', 'fieldName': 'status', 'oldValue': '\"TRIAGE\"', 'newValue': '\"EXECUTION\"', 'reason': 'Triagem concluída', 'createdAt': '2026-11-18T23:13:17.150409Z'}, {'id': 'adc0e126-a76e-4698-a615-55558b30dd31', 'actorName': 'Beatriz Souza', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': None, 'newValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'reason': 'Responsável confirmado', 'createdAt': '2026-11-18T23:13:17.149909Z'}, {'id': '2bd5ce2d-821f-496e-8c9f-93d98ab55d63', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CLASSIFIED', 'fieldName': 'priority', 'oldValue': None, 'newValue': '\"HIGH\"', 'reason': 'Prioridade confirmada', 'createdAt': '2026-11-18T23:13:17.149909Z'}, {'id': '16916b57-5d61-4252-a67c-e3b43b7da58e', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_TYPE', 'fieldName': 'demandTypeId', 'oldValue': '\"f2ae0e47-16db-4a20-8823-7e2a0814b53b\"', 'newValue': '\"f2ae0e47-16db-4a20-8823-7e2a0814b53b\"', 'reason': 'Tipo de demanda confirmado na triagem', 'createdAt': '2026-11-18T23:13:17.149909Z'}, {'id': '27ad2a90-5d37-41e0-b135-51415ceb2c8d', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CAMPAIGN', 'fieldName': 'campaignId', 'oldValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'newValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'reason': 'Campanha confirmada na triagem', 'createdAt': '2026-11-18T23:13:17.149408Z'}, {'id': '10992df5-82f3-43c8-af36-7bf9484947cd', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_STARTED', 'fieldName': 'status', 'oldValue': '\"OPEN\"', 'newValue': '\"TRIAGE\"', 'reason': 'Conferência de teste', 'createdAt': '2026-11-18T23:13:17.110410Z'}]"
+    },
+    {
+      "ct": "CT-13",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Auditoria confere estado real TRIAGE_CLASSIFIED",
+      "passed": true,
+      "detail": "{'id': '49bb3f89-9551-4b3c-a8a3-c8dbe00453bd', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CLASSIFIED', 'fieldName': 'priority', 'oldValue': None, 'newValue': '\"HIGH\"', 'reason': 'Prioridade confirmada', 'createdAt': '2026-11-18T23:13:17.576403Z'}"
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Auditoria confere estado real ASSIGNEE_CHANGED",
+      "passed": true,
+      "detail": "{'id': '1749f00e-9bcd-4b3c-8914-23b6f09cf19c', 'actorName': 'Beatriz Souza', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': None, 'newValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'reason': 'Responsável confirmado', 'createdAt': '2026-11-18T23:13:17.576903Z'}"
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Auditoria confere estado real SENT_TO_EXECUTION",
+      "passed": true,
+      "detail": "{'id': '38f0edea-97c5-45f7-a102-b2f637163938', 'actorName': 'Beatriz Souza', 'action': 'SENT_TO_EXECUTION', 'fieldName': 'status', 'oldValue': '\"TRIAGE\"', 'newValue': '\"EXECUTION\"', 'reason': 'Triagem concluída', 'createdAt': '2026-11-18T23:13:17.577403Z'}"
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Auditoria confere estado real RESPONSE_DEADLINE_CHANGED",
+      "passed": true,
+      "detail": "{'id': '25e1eb2d-bdb0-47f9-8c23-8c923fa6dd0a', 'actorName': 'Beatriz Souza', 'action': 'RESPONSE_DEADLINE_CHANGED', 'fieldName': 'responseDueAt', 'oldValue': None, 'newValue': '\"2026-11-19T15:00:00Z\"', 'reason': 'Prazo de primeira resposta aplicado', 'createdAt': '2026-11-18T23:13:17.576903Z'}"
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Auditoria confere estado real RESOLUTION_DEADLINE_CHANGED",
+      "passed": true,
+      "detail": "{'id': 'b5b90703-45ad-4c16-acbc-4249f97bb5e7', 'actorName': 'Beatriz Souza', 'action': 'RESOLUTION_DEADLINE_CHANGED', 'fieldName': 'resolutionDueAt', 'oldValue': None, 'newValue': '\"2026-11-23T17:00:00Z\"', 'reason': 'Prazo de resolução aplicado', 'createdAt': '2026-11-18T23:13:17.577403Z'}"
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "atendimento@sige.demo POST /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72/reassign HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Auditoria confere responsável anterior/novo",
+      "passed": true,
+      "detail": "{'id': 'a809fb3a-3759-4bdd-8edb-cd58af51844e', 'actorName': 'Beatriz Souza', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'newValue': '\"ff2f1bcd-a088-4000-a7bb-abc4452827bf\"', 'reason': 'Reatribuição auditável QA', 'createdAt': '2026-11-18T23:13:17.624645Z'}"
+    },
+    {
+      "ct": "CT-13",
+      "name": "gestor2@sige.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "gestor2@sige.demo POST /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo POST /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72/approve HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Decisão auditada com ator e motivo",
+      "passed": true,
+      "detail": "{'id': '81921746-9e20-4e51-86a9-0304230f4b44', 'actorName': 'Marina Costa', 'action': 'APPROVED', 'fieldName': 'status', 'oldValue': '\"VALIDATION\"', 'newValue': '\"DONE\"', 'reason': 'Decisão auditável QA', 'createdAt': '2026-11-18T23:13:17.695146Z'}"
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo POST /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72/reopen HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Ciclo anterior congelado na auditoria",
+      "passed": true,
+      "detail": "{'cycle': 1, 'priority': 'HIGH', 'completedAt': '2026-11-18T23:13:17.695146Z', 'slaSnapshot': '{\"id\": \"180ec224-ee7e-435d-aca0-abee54643273\", \"name\": \"Review a4d1fb26 SLA CLIENT\", \"version\": 2, \"holidays\": [\"2026-12-24\"], \"timezone\": \"America/Sao_Paulo\", \"deadlines\": {\"LOW\": {\"responseHours\": 16, \"resolutionHours\": 40}, \"HIGH\": {\"responseHours\": 4, \"resolutionHours\": 16}, \"MEDIUM\": {\"responseHours\": 8, \"resolutionHours\": 24}, \"URGENT\": {\"responseHours\": 2, \"resolutionHours\": 8}}, \"businessEnd\": \"18:00\", \"businessDays\": [\"MONDAY\", \"TUESDAY\", \"WEDNESDAY\", \"THURSDAY\", \"FRIDAY\"], \"businessStart\": \"08:00\", \"pauseInValidation\": true, \"nationalHolidayPolicy\": \"BR_FIXED_V1\"}', 'resolutionDueAt': '2026-11-23T17:00:00Z'}"
+    },
+    {
+      "ct": "CT-13",
+      "name": "cliente@aurora.demo GET /tickets/3f3c6364-58fc-443b-9e64-07c80b976f72 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13",
+      "name": "Eventos anteriores preservados após decisões e reabertura",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "startedAt": "2026-11-19T17:09:31.278758+00:00",
+  "finishedAt": "2026-11-19T17:09:32.680258+00:00",
+  "schema": "sige_desk_qa_20261118",
+  "baseUrl": "http://localhost:8081/api/v1",
+  "cases": [
+    {
+      "id": "CT-07-prazo-runtime",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:09:31.853259+00:00",
+      "finishedAt": "2026-11-19T17:09:32.679758+00:00",
+      "assertions": 51,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "atendimento@sige.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "atendimento@sige.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "atendimento@sige.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "atendimento@sige.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "classificacao versão",
+      "passed": true,
+      "detail": "{'responseVersion': 5, 'detailVersion': 5, 'due': '2026-11-24T13:09:31.985759Z', 'history': ['\"2026-11-24T13:09:31.985759Z\"'], 'summaries': ['SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.'], 'status': 'EXECUTION'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "classificacao prazo do histórico",
+      "passed": true,
+      "detail": "{'responseVersion': 5, 'detailVersion': 5, 'due': '2026-11-24T13:09:31.985759Z', 'history': ['\"2026-11-24T13:09:31.985759Z\"'], 'summaries': ['SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.'], 'status': 'EXECUTION'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "classificacao prazo do aviso",
+      "passed": true,
+      "detail": "{'responseVersion': 5, 'detailVersion': 5, 'due': '2026-11-24T13:09:31.985759Z', 'history': ['\"2026-11-24T13:09:31.985759Z\"'], 'summaries': ['SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.', 'SIGE-1493 | Review f4139a4e; Prioridade: HIGH; prazo de resolução: 2026-11-24T13:09:31.985759Z; responsável: Lucas Martins.'], 'status': 'EXECUTION'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "gestor@sige.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "gestor@sige.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/wait HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "aguardo versão",
+      "passed": true,
+      "detail": "{'responseVersion': 7, 'detailVersion': 7, 'due': '2026-11-24T13:09:31.985759Z', 'history': [], 'summaries': [], 'status': 'WAITING_FOR_CLIENT'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "atendimento@sige.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "atendimento@sige.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/resume HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "retomada versão",
+      "passed": true,
+      "detail": "{'responseVersion': 11, 'detailVersion': 11, 'due': '2026-11-24T13:09:32.126258Z', 'history': ['\"2026-11-24T13:09:32.126258Z\"'], 'summaries': ['SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.'], 'status': 'EXECUTION'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "retomada prazo do histórico",
+      "passed": true,
+      "detail": "{'responseVersion': 11, 'detailVersion': 11, 'due': '2026-11-24T13:09:32.126258Z', 'history': ['\"2026-11-24T13:09:32.126258Z\"'], 'summaries': ['SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.'], 'status': 'EXECUTION'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "retomada prazo do aviso",
+      "passed": true,
+      "detail": "{'responseVersion': 11, 'detailVersion': 11, 'due': '2026-11-24T13:09:32.126258Z', 'history': ['\"2026-11-24T13:09:32.126258Z\"'], 'summaries': ['SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.', 'SIGE-1493 | Review f4139a4e; Complemento confirmado: Informação recebida: Comentário: QA precisão complemento; confirmação: QA precisão retomada; fase retomada: EXECUTION; prazo de resolução: 2026-11-24T13:09:32.126258Z.'], 'status': 'EXECUTION'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "gestor@sige.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "gestor@sige.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "validacao versão",
+      "passed": true,
+      "detail": "{'responseVersion': 13, 'detailVersion': 13, 'due': '2026-11-24T13:09:32.126258Z', 'history': [], 'summaries': [], 'status': 'VALIDATION'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/correction HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "correcao versão",
+      "passed": true,
+      "detail": "{'responseVersion': 15, 'detailVersion': 15, 'due': '2026-11-24T13:09:32.212758Z', 'history': ['\"2026-11-24T13:09:32.212758Z\"', '\"2026-11-24T13:09:32.126258Z\"'], 'summaries': [], 'status': 'REOPENED'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "correcao prazo do histórico",
+      "passed": true,
+      "detail": "{'responseVersion': 15, 'detailVersion': 15, 'due': '2026-11-24T13:09:32.212758Z', 'history': ['\"2026-11-24T13:09:32.212758Z\"', '\"2026-11-24T13:09:32.126258Z\"'], 'summaries': [], 'status': 'REOPENED'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "gestor@sige.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "gestor@sige.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "nova_validacao versão",
+      "passed": true,
+      "detail": "{'responseVersion': 17, 'detailVersion': 17, 'due': '2026-11-24T13:09:32.212758Z', 'history': [], 'summaries': [], 'status': 'VALIDATION'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/approve HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "aprovacao versão",
+      "passed": true,
+      "detail": "{'responseVersion': 20, 'detailVersion': 20, 'due': '2026-11-24T13:09:32.259252Z', 'history': ['\"2026-11-24T13:09:32.259252Z\"'], 'summaries': [], 'status': 'DONE'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "aprovacao prazo do histórico",
+      "passed": true,
+      "detail": "{'responseVersion': 20, 'detailVersion': 20, 'due': '2026-11-24T13:09:32.259252Z', 'history': ['\"2026-11-24T13:09:32.259252Z\"'], 'summaries': [], 'status': 'DONE'}"
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo POST /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447/approve HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "cliente@aurora.demo GET /tickets/89f2bfa1-fd96-40bf-b612-aa3ce69e9447 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-prazo-runtime",
+      "name": "rollback após flush",
+      "passed": true,
+      "detail": "{'before': {'version': 20, 'due': '2026-11-24T13:09:32.259252Z', 'status': 'DONE', 'counts': '20:53'}, 'after': {'version': 20, 'due': '2026-11-24T13:09:32.259252Z', 'status': 'DONE', 'counts': '20:53'}}"
+    }
+  ]
+}

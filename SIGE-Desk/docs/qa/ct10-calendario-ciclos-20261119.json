@@ -1,0 +1,55 @@
+{
+  "startedAt": "2026-11-19T17:07:13.091258+00:00",
+  "finishedAt": "2026-11-19T17:07:13.989757+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "95c050c42d48bbf4b5502fb767ad7f6f24eb6663f4541fbc3e1abbf207357fe7",
+    "runTag": "Review 039b041f"
+  },
+  "cases": [
+    {
+      "id": "CT-10-calendario-pausa-ciclos",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T17:07:13.854761+00:00",
+      "finishedAt": "2026-11-19T17:07:13.989257+00:00",
+      "assertions": 5,
+      "error": "admin@sige.demo POST /sla-rules HTTP 201: b'{\"code\":\"BUSINESS_RULE\",\"message\":\"Todos os prazos de SLA devem ser positivos\",\"timestamp\":\"2026-11-19T17:07:13.988757200Z\",\"fields\":{}}'"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "admin@sige.demo GET /sla-rules HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "admin@sige.demo POST /sla-rules HTTP 201",
+      "passed": false,
+      "detail": "b'{\"code\":\"BUSINESS_RULE\",\"message\":\"Todos os prazos de SLA devem ser positivos\",\"timestamp\":\"2026-11-19T17:07:13.988757200Z\",\"fields\":{}}'"
+    }
+  ]
+}

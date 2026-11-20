@@ -21,10 +21,10 @@ class MySqlMigrationIntegrationTest {
     Flyway.configure().dataSource(url, username, password).locations("classpath:db/migration").load().migrate();
 
     try (var connection = DriverManager.getConnection(url, username, password);
-         var statement = connection.prepareStatement("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name IN ('clients','users','tickets','ticket_attachments','notifications','outbox_events','flyway_schema_history')");
+         var statement = connection.prepareStatement("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name IN ('clients','users','tickets','ticket_attachments','notifications','outbox_events','security_access_events','flyway_schema_history')");
          var result = statement.executeQuery()) {
       assertTrue(result.next());
-      assertEquals(7, result.getInt(1));
+      assertEquals(8, result.getInt(1));
     }
   }
 

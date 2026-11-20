@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-11-19T12:35:47.456721+00:00",
+  "finishedAt": "2026-11-19T12:35:48.599220+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "runtimeSha256": "10f163768eb01b93dc32891fea4ed71be259bdeabce9c443cfd732d5ca754f94",
+    "runTag": "Review 1075b60d"
+  },
+  "ticketId": "5fe9db4e-6c6a-4756-951d-53f7df5517d7",
+  "initialVersion": 0,
+  "outcomes": [
+    {
+      "index": 0,
+      "status": 201
+    },
+    {
+      "index": 1,
+      "status": 409
+    }
+  ],
+  "finalVersion": 1,
+  "comments": [
+    "Concorrencia QA 0"
+  ],
+  "historyCount": 1,
+  "passed": true
+}

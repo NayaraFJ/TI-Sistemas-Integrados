@@ -1,0 +1,176 @@
+{
+  "startedAt": "2026-11-19T21:46:04.201758+00:00",
+  "finishedAt": "2026-11-19T21:46:05.091758+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review ff64c9fb"
+  },
+  "scope": "Uma fixture sintética; resposta HTTP e comparação de estado, versão e histórico por API e MySQL. Hash identifica o arquivo, não necessariamente o processo. Não demonstra interface ou outras operações.",
+  "cases": [
+    {
+      "id": "CT-05-entrega-sem-descricao",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T21:46:04.711758+00:00",
+      "finishedAt": "2026-11-19T21:46:05.091758+00:00",
+      "assertions": 25,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "atendimento@sige.demo GET /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "atendimento@sige.demo POST /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "atendimento@sige.demo GET /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "atendimento@sige.demo POST /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "cliente@aurora.demo GET /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "Fixture em execução atribuída ao Gestor",
+      "passed": true,
+      "detail": "{'ticket': 'ca110ed3-b4c0-4566-8d42-2b637ab35d26', 'number': 'SIGE-1740', 'assignee': 'Lucas Martins'}"
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "Fixture confirmada no MySQL",
+      "passed": true,
+      "detail": "{\"status\": \"EXECUTION\", \"version\": 5, \"assignee\": \"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"}"
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "gestor@sige.demo POST /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26/execution HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "Resposta rejeita descrição ausente",
+      "passed": true,
+      "detail": "{'code': 'VALIDATION_ERROR', 'message': 'Há campos inválidos.', 'timestamp': '2026-11-19T21:46:04.953257500Z', 'fields': {'actionDescription': 'não deve estar em branco'}}"
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "cliente@aurora.demo GET /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "Negativa preserva estado, versão e histórico",
+      "passed": true,
+      "detail": "{'ticket': 'ca110ed3-b4c0-4566-8d42-2b637ab35d26', 'beforeVersion': 5, 'afterVersion': 5, 'beforeStatus': 'EXECUTION', 'afterStatus': 'EXECUTION', 'beforeHistory': [{'id': 'ebb79d50-ac0a-4cc1-bc72-2ee302f97de2', 'actorName': 'Beatriz Souza', 'action': 'RESOLUTION_DEADLINE_CHANGED', 'fieldName': 'resolutionDueAt', 'oldValue': None, 'newValue': '\"2026-11-24T17:00:00Z\"', 'reason': 'Prazo de resolução aplicado', 'createdAt': '2026-11-19T21:46:04.870758Z'}, {'id': '52762d3b-b12f-450e-ac74-00a6f00b3608', 'actorName': 'Beatriz Souza', 'action': 'RESPONSE_DEADLINE_CHANGED', 'fieldName': 'responseDueAt', 'oldValue': None, 'newValue': '\"2026-11-23T15:00:00Z\"', 'reason': 'Prazo de primeira resposta aplicado', 'createdAt': '2026-11-19T21:46:04.870758Z'}, {'id': '0881f524-8f41-4611-a3aa-7439fb4dd39b', 'actorName': 'Beatriz Souza', 'action': 'SENT_TO_EXECUTION', 'fieldName': 'status', 'oldValue': '\"TRIAGE\"', 'newValue': '\"EXECUTION\"', 'reason': 'Triagem concluída', 'createdAt': '2026-11-19T21:46:04.870758Z'}, {'id': 'e9f7f09b-4e7f-4dcc-8da6-c7a1d109b5b8', 'actorName': 'Beatriz Souza', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': None, 'newValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'reason': 'Responsável confirmado', 'createdAt': '2026-11-19T21:46:04.870258Z'}, {'id': '7fefe6cd-60fc-435b-b6c6-8450a585f9bd', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CLASSIFIED', 'fieldName': 'priority', 'oldValue': None, 'newValue': '\"HIGH\"', 'reason': 'Prioridade confirmada', 'createdAt': '2026-11-19T21:46:04.870258Z'}, {'id': 'd92b5a13-fe81-4755-832a-8a4b3c470730', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CAMPAIGN', 'fieldName': 'campaignId', 'oldValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'newValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'reason': 'Campanha confirmada na triagem', 'createdAt': '2026-11-19T21:46:04.869758Z'}, {'id': '64992f55-d06e-4a88-a64d-26a7416fcfb1', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_TYPE', 'fieldName': 'demandTypeId', 'oldValue': '\"d4e06fed-fb0a-400f-a660-37a218b5e1a2\"', 'newValue': '\"d4e06fed-fb0a-400f-a660-37a218b5e1a2\"', 'reason': 'Tipo de demanda confirmado na triagem', 'createdAt': '2026-11-19T21:46:04.869758Z'}, {'id': '00838cad-a969-4338-aa85-6a9e6c5075cd', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_STARTED', 'fieldName': 'status', 'oldValue': '\"OPEN\"', 'newValue': '\"TRIAGE\"', 'reason': 'Conferência de teste', 'createdAt': '2026-11-19T21:46:04.840258Z'}, {'id': 'e29fb384-7490-4aac-a672-54d82551806d', 'actorName': 'Marina Costa', 'action': 'TICKET_CREATED', 'fieldName': None, 'oldValue': None, 'newValue': '\"OPEN\"', 'reason': 'Solicitação registrada', 'createdAt': '2026-11-19T21:46:04.793760Z'}], 'afterHistory': [{'id': 'ebb79d50-ac0a-4cc1-bc72-2ee302f97de2', 'actorName': 'Beatriz Souza', 'action': 'RESOLUTION_DEADLINE_CHANGED', 'fieldName': 'resolutionDueAt', 'oldValue': None, 'newValue': '\"2026-11-24T17:00:00Z\"', 'reason': 'Prazo de resolução aplicado', 'createdAt': '2026-11-19T21:46:04.870758Z'}, {'id': '52762d3b-b12f-450e-ac74-00a6f00b3608', 'actorName': 'Beatriz Souza', 'action': 'RESPONSE_DEADLINE_CHANGED', 'fieldName': 'responseDueAt', 'oldValue': None, 'newValue': '\"2026-11-23T15:00:00Z\"', 'reason': 'Prazo de primeira resposta aplicado', 'createdAt': '2026-11-19T21:46:04.870758Z'}, {'id': '0881f524-8f41-4611-a3aa-7439fb4dd39b', 'actorName': 'Beatriz Souza', 'action': 'SENT_TO_EXECUTION', 'fieldName': 'status', 'oldValue': '\"TRIAGE\"', 'newValue': '\"EXECUTION\"', 'reason': 'Triagem concluída', 'createdAt': '2026-11-19T21:46:04.870758Z'}, {'id': 'e9f7f09b-4e7f-4dcc-8da6-c7a1d109b5b8', 'actorName': 'Beatriz Souza', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': None, 'newValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'reason': 'Responsável confirmado', 'createdAt': '2026-11-19T21:46:04.870258Z'}, {'id': '7fefe6cd-60fc-435b-b6c6-8450a585f9bd', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CLASSIFIED', 'fieldName': 'priority', 'oldValue': None, 'newValue': '\"HIGH\"', 'reason': 'Prioridade confirmada', 'createdAt': '2026-11-19T21:46:04.870258Z'}, {'id': 'd92b5a13-fe81-4755-832a-8a4b3c470730', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CAMPAIGN', 'fieldName': 'campaignId', 'oldValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'newValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'reason': 'Campanha confirmada na triagem', 'createdAt': '2026-11-19T21:46:04.869758Z'}, {'id': '64992f55-d06e-4a88-a64d-26a7416fcfb1', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_TYPE', 'fieldName': 'demandTypeId', 'oldValue': '\"d4e06fed-fb0a-400f-a660-37a218b5e1a2\"', 'newValue': '\"d4e06fed-fb0a-400f-a660-37a218b5e1a2\"', 'reason': 'Tipo de demanda confirmado na triagem', 'createdAt': '2026-11-19T21:46:04.869758Z'}, {'id': '00838cad-a969-4338-aa85-6a9e6c5075cd', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_STARTED', 'fieldName': 'status', 'oldValue': '\"OPEN\"', 'newValue': '\"TRIAGE\"', 'reason': 'Conferência de teste', 'createdAt': '2026-11-19T21:46:04.840258Z'}, {'id': 'e29fb384-7490-4aac-a672-54d82551806d', 'actorName': 'Marina Costa', 'action': 'TICKET_CREATED', 'fieldName': None, 'oldValue': None, 'newValue': '\"OPEN\"', 'reason': 'Solicitação registrada', 'createdAt': '2026-11-19T21:46:04.793760Z'}]}"
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "MySQL preserva estado, versão, responsável e histórico",
+      "passed": true,
+      "detail": "{'before': '{\"status\": \"EXECUTION\", \"version\": 5, \"assignee\": \"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"}', 'after': '{\"status\": \"EXECUTION\", \"version\": 5, \"assignee\": \"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"}', 'historyBefore': '{\"id\": \"e29fb384-7490-4aac-a672-54d82551806d\", \"new\": \"OPEN\", \"old\": null, \"actor\": \"9cdd8229-26b0-4e8b-97cf-eba6c80743e4\", \"field\": null, \"action\": \"TICKET_CREATED\", \"reason\": \"Solicitação registrada\", \"created\": \"2026-11-19T21:46:04.793760\"}\\r\\n{\"id\": \"00838cad-a969-4338-aa85-6a9e6c5075cd\", \"new\": \"TRIAGE\", \"old\": \"OPEN\", \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"status\", \"action\": \"TRIAGE_STARTED\", \"reason\": \"Conferência de teste\", \"created\": \"2026-11-19T21:46:04.840258\"}\\r\\n{\"id\": \"64992f55-d06e-4a88-a64d-26a7416fcfb1\", \"new\": \"d4e06fed-fb0a-400f-a660-37a218b5e1a2\", \"old\": \"d4e06fed-fb0a-400f-a660-37a218b5e1a2\", \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"demandTypeId\", \"action\": \"TRIAGE_TYPE\", \"reason\": \"Tipo de demanda confirmado na triagem\", \"created\": \"2026-11-19T21:46:04.869758\"}\\r\\n{\"id\": \"d92b5a13-fe81-4755-832a-8a4b3c470730\", \"new\": \"21f5421c-ad5b-461c-a244-725621497016\", \"old\": \"21f5421c-ad5b-461c-a244-725621497016\", \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"campaignId\", \"action\": \"TRIAGE_CAMPAIGN\", \"reason\": \"Campanha confirmada na triagem\", \"created\": \"2026-11-19T21:46:04.869758\"}\\r\\n{\"id\": \"7fefe6cd-60fc-435b-b6c6-8450a585f9bd\", \"new\": \"HIGH\", \"old\": null, \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"priority\", \"action\": \"TRIAGE_CLASSIFIED\", \"reason\": \"Prioridade confirmada\", \"created\": \"2026-11-19T21:46:04.870258\"}\\r\\n{\"id\": \"e9f7f09b-4e7f-4dcc-8da6-c7a1d109b5b8\", \"new\": \"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\", \"old\": null, \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"assigneeId\", \"action\": \"ASSIGNEE_CHANGED\", \"reason\": \"Responsável confirmado\", \"created\": \"2026-11-19T21:46:04.870258\"}\\r\\n{\"id\": \"0881f524-8f41-4611-a3aa-7439fb4dd39b\", \"new\": \"EXECUTION\", \"old\": \"TRIAGE\", \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"status\", \"action\": \"SENT_TO_EXECUTION\", \"reason\": \"Triagem concluída\", \"created\": \"2026-11-19T21:46:04.870758\"}\\r\\n{\"id\": \"52762d3b-b12f-450e-ac74-00a6f00b3608\", \"new\": \"2026-11-23T15:00:00Z\", \"old\": null, \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"responseDueAt\", \"action\": \"RESPONSE_DEADLINE_CHANGED\", \"reason\": \"Prazo de primeira resposta aplicado\", \"created\": \"2026-11-19T21:46:04.870758\"}\\r\\n{\"id\": \"ebb79d50-ac0a-4cc1-bc72-2ee302f97de2\", \"new\": \"2026-11-24T17:00:00Z\", \"old\": null, \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"resolutionDueAt\", \"action\": \"RESOLUTION_DEADLINE_CHANGED\", \"reason\": \"Prazo de resolução aplicado\", \"created\": \"2026-11-19T21:46:04.870758\"}', 'historyAfter': '{\"id\": \"e29fb384-7490-4aac-a672-54d82551806d\", \"new\": \"OPEN\", \"old\": null, \"actor\": \"9cdd8229-26b0-4e8b-97cf-eba6c80743e4\", \"field\": null, \"action\": \"TICKET_CREATED\", \"reason\": \"Solicitação registrada\", \"created\": \"2026-11-19T21:46:04.793760\"}\\r\\n{\"id\": \"00838cad-a969-4338-aa85-6a9e6c5075cd\", \"new\": \"TRIAGE\", \"old\": \"OPEN\", \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"status\", \"action\": \"TRIAGE_STARTED\", \"reason\": \"Conferência de teste\", \"created\": \"2026-11-19T21:46:04.840258\"}\\r\\n{\"id\": \"64992f55-d06e-4a88-a64d-26a7416fcfb1\", \"new\": \"d4e06fed-fb0a-400f-a660-37a218b5e1a2\", \"old\": \"d4e06fed-fb0a-400f-a660-37a218b5e1a2\", \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"demandTypeId\", \"action\": \"TRIAGE_TYPE\", \"reason\": \"Tipo de demanda confirmado na triagem\", \"created\": \"2026-11-19T21:46:04.869758\"}\\r\\n{\"id\": \"d92b5a13-fe81-4755-832a-8a4b3c470730\", \"new\": \"21f5421c-ad5b-461c-a244-725621497016\", \"old\": \"21f5421c-ad5b-461c-a244-725621497016\", \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"campaignId\", \"action\": \"TRIAGE_CAMPAIGN\", \"reason\": \"Campanha confirmada na triagem\", \"created\": \"2026-11-19T21:46:04.869758\"}\\r\\n{\"id\": \"7fefe6cd-60fc-435b-b6c6-8450a585f9bd\", \"new\": \"HIGH\", \"old\": null, \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"priority\", \"action\": \"TRIAGE_CLASSIFIED\", \"reason\": \"Prioridade confirmada\", \"created\": \"2026-11-19T21:46:04.870258\"}\\r\\n{\"id\": \"e9f7f09b-4e7f-4dcc-8da6-c7a1d109b5b8\", \"new\": \"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\", \"old\": null, \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"assigneeId\", \"action\": \"ASSIGNEE_CHANGED\", \"reason\": \"Responsável confirmado\", \"created\": \"2026-11-19T21:46:04.870258\"}\\r\\n{\"id\": \"0881f524-8f41-4611-a3aa-7439fb4dd39b\", \"new\": \"EXECUTION\", \"old\": \"TRIAGE\", \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"status\", \"action\": \"SENT_TO_EXECUTION\", \"reason\": \"Triagem concluída\", \"created\": \"2026-11-19T21:46:04.870758\"}\\r\\n{\"id\": \"52762d3b-b12f-450e-ac74-00a6f00b3608\", \"new\": \"2026-11-23T15:00:00Z\", \"old\": null, \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"responseDueAt\", \"action\": \"RESPONSE_DEADLINE_CHANGED\", \"reason\": \"Prazo de primeira resposta aplicado\", \"created\": \"2026-11-19T21:46:04.870758\"}\\r\\n{\"id\": \"ebb79d50-ac0a-4cc1-bc72-2ee302f97de2\", \"new\": \"2026-11-24T17:00:00Z\", \"old\": null, \"actor\": \"22b56fe4-d522-4078-a24a-bf496757e367\", \"field\": \"resolutionDueAt\", \"action\": \"RESOLUTION_DEADLINE_CHANGED\", \"reason\": \"Prazo de resolução aplicado\", \"created\": \"2026-11-19T21:46:04.870758\"}'}"
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "gestor@sige.demo GET /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "Gestor atribuído acessa a fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "gestor@sige.demo GET /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "gestor@sige.demo POST /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "cliente@aurora.demo GET /tickets/ca110ed3-b4c0-4566-8d42-2b637ab35d26 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-05-entrega-sem-descricao",
+      "name": "Entrega válida posterior conclui e registra dispensa",
+      "passed": true,
+      "detail": "{'status': 'DONE', 'version': 7}"
+    }
+  ]
+}

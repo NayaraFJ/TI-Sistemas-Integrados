@@ -1,0 +1,145 @@
+{
+  "inicio": "2026-11-19T17:50:22.342261+00:00",
+  "fim": "2026-11-19T17:50:22.918258+00:00",
+  "api": "http://localhost:8081/api/v1",
+  "schema": "sige_desk_qa_20261118",
+  "tag": "CT12-219944035c",
+  "checks": [
+    {
+      "name": "admin@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /clients HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /campaigns HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /campaigns HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /clients/8dcb02aa-95d9-4bba-8e00-863db3773e66/active?value=false HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /campaigns HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /clients/8dcb02aa-95d9-4bba-8e00-863db3773e66/active?value=false HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /campaigns/9f68d068-8ee0-4411-b74f-876afda33705/active?value=false HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "campaigns inativo ausente em referência",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /campaigns/9f68d068-8ee0-4411-b74f-876afda33705/active?value=true HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "campaigns reativado presente em referência",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /clients/8dcb02aa-95d9-4bba-8e00-863db3773e66/active?value=false HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "clients inativo ausente em referência",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /clients/8dcb02aa-95d9-4bba-8e00-863db3773e66/active?value=true HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "clients reativado presente em referência",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Persistência MySQL",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "erro": null,
+  "limpeza": [
+    "campanha removida",
+    "organização removida",
+    "remanescente=0"
+  ]
+}

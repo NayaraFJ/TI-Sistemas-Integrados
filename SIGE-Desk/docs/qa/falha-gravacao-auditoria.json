@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-19T12:15:53.828720+00:00",
+  "schema": "sige_desk_qa_20261118",
+  "baseUrl": "http://localhost:8081/api/v1",
+  "ticketId": "8b74858e-7bf5-4ae1-a1aa-34a8b231de67",
+  "actorId": "16b19b2b-57cc-46c4-8124-8b758934f3fb",
+  "method": "Trigger BEFORE INSERT restrito a ator e ticket; removido em finally",
+  "status": 404,
+  "response": "{\"timestamp\":\"2026-11-19T12:15:53.748+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/v1/tickets/8b74858e-7bf5-4ae1-a1aa-34a8b231de67\"}",
+  "ownerBefore": 200,
+  "ownerAfter": 200,
+  "ownerVersionPreserved": true,
+  "auditCountBefore": 0,
+  "auditCountAfter": 0,
+  "triggerRemaining": 0,
+  "subjectDisclosed": false,
+  "requestedIdInErrorPath": true
+}

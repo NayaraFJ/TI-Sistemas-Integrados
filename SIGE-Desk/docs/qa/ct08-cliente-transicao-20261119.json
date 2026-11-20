@@ -1,0 +1,114 @@
+{
+  "startedAt": "2026-11-19T21:55:47.192260+00:00",
+  "finishedAt": "2026-11-19T21:55:47.987757+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review e37897a4"
+  },
+  "cases": [
+    {
+      "id": "CT-08-cliente-transicao",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T21:55:47.662757+00:00",
+      "finishedAt": "2026-11-19T21:55:47.987257+00:00",
+      "assertions": 15,
+      "error": "Ticket da organização A aguarda aprovação: VALIDATION"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo GET /tickets/697c2d11-c447-419e-bb4d-5b11a338cd67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo POST /tickets/697c2d11-c447-419e-bb4d-5b11a338cd67/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo GET /tickets/697c2d11-c447-419e-bb4d-5b11a338cd67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo POST /tickets/697c2d11-c447-419e-bb4d-5b11a338cd67/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "gestor@sige.demo GET /tickets/697c2d11-c447-419e-bb4d-5b11a338cd67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "gestor@sige.demo POST /tickets/697c2d11-c447-419e-bb4d-5b11a338cd67/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo GET /tickets/697c2d11-c447-419e-bb4d-5b11a338cd67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "Ticket da organização A aguarda aprovação",
+      "passed": false,
+      "detail": "VALIDATION"
+    }
+  ]
+}

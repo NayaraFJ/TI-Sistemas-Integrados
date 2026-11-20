@@ -1,0 +1,393 @@
+{
+  "startedAt": "2026-11-19T17:43:35.280757+00:00",
+  "finishedAt": "2026-11-19T17:43:36.990758+00:00",
+  "schema": "sige_desk_qa_20261118",
+  "baseUrl": "http://localhost:8081/api/v1",
+  "tag": "Review 51177ae2",
+  "typeId": "f0904a40-d7a8-40c9-aecd-ca564d9e0961",
+  "fixture": {
+    "response_late_completed": "dec953dc-1319-4df4-83a3-dc772f04f516",
+    "resolution_late": "ad27d258-915f-40bd-bcbf-57edcaa92123",
+    "paused_on_time": "3b42b608-e9b0-4fbf-b634-af4549a08413",
+    "done_late": "45fbd0b0-2f4c-46ae-8674-e221b7cfb501",
+    "cancelled": "18c1285f-8abe-477c-88b6-a1aa8ce12e94"
+  },
+  "dataset": [
+    {
+      "id": "18c1285f-8abe-477c-88b6-a1aa8ce12e94",
+      "status": "CANCELLED",
+      "completedAt": null,
+      "responseDueAt": "2026-11-19 15:43:36.762045",
+      "resolutionDueAt": null,
+      "resolutionPausedAt": null,
+      "responseCompletedAt": null
+    },
+    {
+      "id": "3b42b608-e9b0-4fbf-b634-af4549a08413",
+      "status": "WAITING_FOR_CLIENT",
+      "completedAt": null,
+      "responseDueAt": "2026-11-20 17:43:36.688234",
+      "resolutionDueAt": "2026-11-19 16:43:36.688234",
+      "resolutionPausedAt": "2026-11-19 17:43:36.371257",
+      "responseCompletedAt": "2026-11-19 17:43:36.688234"
+    },
+    {
+      "id": "45fbd0b0-2f4c-46ae-8674-e221b7cfb501",
+      "status": "DONE",
+      "completedAt": "2026-11-19 16:43:36.719799",
+      "responseDueAt": "2026-11-20 17:43:36.719799",
+      "resolutionDueAt": "2026-11-19 15:43:36.719799",
+      "resolutionPausedAt": null,
+      "responseCompletedAt": "2026-11-19 17:43:36.719799"
+    },
+    {
+      "id": "ad27d258-915f-40bd-bcbf-57edcaa92123",
+      "status": "EXECUTION",
+      "completedAt": null,
+      "responseDueAt": "2026-11-20 17:43:36.656152",
+      "resolutionDueAt": "2026-11-19 16:43:36.656152",
+      "resolutionPausedAt": null,
+      "responseCompletedAt": "2026-11-19 17:43:36.656152"
+    },
+    {
+      "id": "dec953dc-1319-4df4-83a3-dc772f04f516",
+      "status": "EXECUTION",
+      "completedAt": null,
+      "responseDueAt": "2026-11-19 15:43:36.624372",
+      "resolutionDueAt": "2026-11-20 17:43:36.624372",
+      "resolutionPausedAt": null,
+      "responseCompletedAt": "2026-11-19 16:43:36.624372"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/dec953dc-1319-4df4-83a3-dc772f04f516 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/dec953dc-1319-4df4-83a3-dc772f04f516/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/dec953dc-1319-4df4-83a3-dc772f04f516 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/dec953dc-1319-4df4-83a3-dc772f04f516/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/ad27d258-915f-40bd-bcbf-57edcaa92123 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/ad27d258-915f-40bd-bcbf-57edcaa92123/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/ad27d258-915f-40bd-bcbf-57edcaa92123 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/ad27d258-915f-40bd-bcbf-57edcaa92123/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/3b42b608-e9b0-4fbf-b634-af4549a08413 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/3b42b608-e9b0-4fbf-b634-af4549a08413/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/3b42b608-e9b0-4fbf-b634-af4549a08413 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/3b42b608-e9b0-4fbf-b634-af4549a08413/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /tickets/3b42b608-e9b0-4fbf-b634-af4549a08413 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo POST /tickets/3b42b608-e9b0-4fbf-b634-af4549a08413/wait HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/45fbd0b0-2f4c-46ae-8674-e221b7cfb501 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/45fbd0b0-2f4c-46ae-8674-e221b7cfb501/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/45fbd0b0-2f4c-46ae-8674-e221b7cfb501 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/45fbd0b0-2f4c-46ae-8674-e221b7cfb501/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /tickets/45fbd0b0-2f4c-46ae-8674-e221b7cfb501 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo POST /tickets/45fbd0b0-2f4c-46ae-8674-e221b7cfb501/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/18c1285f-8abe-477c-88b6-a1aa8ce12e94 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/18c1285f-8abe-477c-88b6-a1aa8ce12e94/cancel HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo GET /tickets?demandTypeId=f0904a40-d7a8-40c9-aecd-ca564d9e0961&overdue=true&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtro matriz ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": "{'expected': ['45fbd0b0-2f4c-46ae-8674-e221b7cfb501', 'ad27d258-915f-40bd-bcbf-57edcaa92123', 'dec953dc-1319-4df4-83a3-dc772f04f516'], 'obtained': ['45fbd0b0-2f4c-46ae-8674-e221b7cfb501', 'ad27d258-915f-40bd-bcbf-57edcaa92123', 'dec953dc-1319-4df4-83a3-dc772f04f516'], 'total': 3}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets?demandTypeId=f0904a40-d7a8-40c9-aecd-ca564d9e0961&overdue=true&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtro matriz SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": "{'expected': ['45fbd0b0-2f4c-46ae-8674-e221b7cfb501', 'ad27d258-915f-40bd-bcbf-57edcaa92123', 'dec953dc-1319-4df4-83a3-dc772f04f516'], 'obtained': ['45fbd0b0-2f4c-46ae-8674-e221b7cfb501', 'ad27d258-915f-40bd-bcbf-57edcaa92123', 'dec953dc-1319-4df4-83a3-dc772f04f516'], 'total': 3}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets?demandTypeId=f0904a40-d7a8-40c9-aecd-ca564d9e0961&overdue=true&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtro matriz CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": "{'expected': ['45fbd0b0-2f4c-46ae-8674-e221b7cfb501', 'ad27d258-915f-40bd-bcbf-57edcaa92123', 'dec953dc-1319-4df4-83a3-dc772f04f516'], 'obtained': ['45fbd0b0-2f4c-46ae-8674-e221b7cfb501', 'ad27d258-915f-40bd-bcbf-57edcaa92123', 'dec953dc-1319-4df4-83a3-dc772f04f516'], 'total': 3}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /tickets?demandTypeId=f0904a40-d7a8-40c9-aecd-ca564d9e0961&overdue=true&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtro matriz TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": "{'expected': ['45fbd0b0-2f4c-46ae-8674-e221b7cfb501', 'ad27d258-915f-40bd-bcbf-57edcaa92123', 'dec953dc-1319-4df4-83a3-dc772f04f516'], 'obtained': ['45fbd0b0-2f4c-46ae-8674-e221b7cfb501', 'ad27d258-915f-40bd-bcbf-57edcaa92123', 'dec953dc-1319-4df4-83a3-dc772f04f516'], 'total': 3}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "rafael@horizonte.demo GET /tickets?demandTypeId=f0904a40-d7a8-40c9-aecd-ca564d9e0961&overdue=true&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtro matriz CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": "{'expected': [], 'obtained': [], 'total': 0}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor2@sige.demo GET /tickets?demandTypeId=f0904a40-d7a8-40c9-aecd-ca564d9e0961&overdue=true&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtro matriz TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": "{'expected': [], 'obtained': [], 'total': 0}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets/dec953dc-1319-4df4-83a3-dc772f04f516 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Detalhe response_late_completed",
+      "passed": true,
+      "detail": "{'expected': True, 'obtained': True, 'response': 'OVERDUE', 'resolution': 'ON_TIME', 'status': 'EXECUTION'}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets/ad27d258-915f-40bd-bcbf-57edcaa92123 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Detalhe resolution_late",
+      "passed": true,
+      "detail": "{'expected': True, 'obtained': True, 'response': 'COMPLETED', 'resolution': 'OVERDUE', 'status': 'EXECUTION'}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets/3b42b608-e9b0-4fbf-b634-af4549a08413 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Detalhe paused_on_time",
+      "passed": true,
+      "detail": "{'expected': False, 'obtained': False, 'response': 'COMPLETED', 'resolution': 'PAUSED', 'status': 'WAITING_FOR_CLIENT'}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets/45fbd0b0-2f4c-46ae-8674-e221b7cfb501 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Detalhe done_late",
+      "passed": true,
+      "detail": "{'expected': True, 'obtained': True, 'response': 'COMPLETED', 'resolution': 'OVERDUE', 'status': 'DONE'}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets/18c1285f-8abe-477c-88b6-a1aa8ce12e94 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Detalhe cancelled",
+      "passed": true,
+      "detail": "{'expected': False, 'obtained': False, 'response': 'OVERDUE', 'resolution': 'CANCELLED', 'status': 'CANCELLED'}"
+    }
+  ],
+  "error": null,
+  "limitations": [
+    "Fixtures exclusivas preservadas em QA. Datas forçadas no banco apenas por ID e tipo próprios.",
+    "Sem relógio controlado de aplicação, interface ou demonstração de todos limites."
+  ]
+}

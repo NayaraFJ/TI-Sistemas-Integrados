@@ -1,0 +1,307 @@
+{
+  "startedAt": "2026-11-19T21:10:20.500757+00:00",
+  "finishedAt": "2026-11-19T21:10:21.926259+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review 998acb59"
+  },
+  "cases": [
+    {
+      "id": "CT-09-complemento-snapshot",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T21:10:21.085257+00:00",
+      "finishedAt": "2026-11-19T21:10:21.925759+00:00",
+      "assertions": 47,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Nome sem arquivo não cria ticket",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Definições originais integrais",
+      "passed": true,
+      "detail": "{'id': '4980a5ca-feee-4210-a04a-ea958c54d441', 'name': 'Review 998acb59 CT09', 'version': 1, 'approvalRequired': True, 'evidenceRequired': True, 'fieldDefinitions': [{'name': 'budget', 'type': 'NUMBER', 'label': 'Valor original', 'required': True, 'validation': {'max': 100, 'min': 0}}, {'name': 'date', 'type': 'DATE', 'label': 'Data', 'required': True}, {'name': 'choice', 'type': 'SELECT', 'label': 'Escolha', 'options': ['Sim', 'Nao'], 'required': True}, {'name': 'context', 'type': 'TEXT', 'label': 'Contexto', 'validation': {'minLength': 3}, 'requiredWhen': {'field': 'choice', 'equals': 'Sim'}}, {'name': 'brief', 'type': 'FILE', 'label': 'Arquivo', 'required': True}]}"
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Valores persistidos",
+      "passed": true,
+      "detail": "{'budget': 'Valor original', 'date': 'Data', 'choice': 'Escolha', 'context': 'Contexto', 'brief': 'Arquivo'}"
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1/attachments/07e7e05a-5950-4ae0-b742-cde0ee991527/download HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Arquivo recuperado",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "admin@sige.demo PUT /demand-types/4980a5ca-feee-4210-a04a-ea958c54d441 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Snapshot integral após edição",
+      "passed": true,
+      "detail": "{'before': {'id': '4980a5ca-feee-4210-a04a-ea958c54d441', 'name': 'Review 998acb59 CT09', 'version': 1, 'approvalRequired': True, 'evidenceRequired': True, 'fieldDefinitions': [{'name': 'budget', 'type': 'NUMBER', 'label': 'Valor original', 'required': True, 'validation': {'max': 100, 'min': 0}}, {'name': 'date', 'type': 'DATE', 'label': 'Data', 'required': True}, {'name': 'choice', 'type': 'SELECT', 'label': 'Escolha', 'options': ['Sim', 'Nao'], 'required': True}, {'name': 'context', 'type': 'TEXT', 'label': 'Contexto', 'validation': {'minLength': 3}, 'requiredWhen': {'field': 'choice', 'equals': 'Sim'}}, {'name': 'brief', 'type': 'FILE', 'label': 'Arquivo', 'required': True}]}, 'after': {'id': '4980a5ca-feee-4210-a04a-ea958c54d441', 'name': 'Review 998acb59 CT09', 'version': 1, 'approvalRequired': True, 'evidenceRequired': True, 'fieldDefinitions': [{'name': 'budget', 'type': 'NUMBER', 'label': 'Valor original', 'required': True, 'validation': {'max': 100, 'min': 0}}, {'name': 'date', 'type': 'DATE', 'label': 'Data', 'required': True}, {'name': 'choice', 'type': 'SELECT', 'label': 'Escolha', 'options': ['Sim', 'Nao'], 'required': True}, {'name': 'context', 'type': 'TEXT', 'label': 'Contexto', 'validation': {'minLength': 3}, 'requiredWhen': {'field': 'choice', 'equals': 'Sim'}}, {'name': 'brief', 'type': 'FILE', 'label': 'Arquivo', 'required': True}]}}"
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/ba08618c-2ba9-422a-9c84-f1e2c32ddd9f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Rótulos e valores antigos preservados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Novo ticket aplica rótulo e limite revisados",
+      "passed": true,
+      "detail": "{'budget': 'Valor revisado', 'date': 'Data', 'choice': 'Escolha', 'context': 'Contexto', 'brief': 'Arquivo'}"
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Condição falsa dispensa campo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo POST /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo POST /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "gestor@sige.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "gestor@sige.demo POST /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1/execution HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "gestor@sige.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "gestor@sige.demo POST /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Regras antigas aplicadas",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo GET /tickets/ba08618c-2ba9-422a-9c84-f1e2c32ddd9f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo POST /tickets/ba08618c-2ba9-422a-9c84-f1e2c32ddd9f/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo GET /tickets/ba08618c-2ba9-422a-9c84-f1e2c32ddd9f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo POST /tickets/ba08618c-2ba9-422a-9c84-f1e2c32ddd9f/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "gestor@sige.demo GET /tickets/ba08618c-2ba9-422a-9c84-f1e2c32ddd9f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "gestor@sige.demo POST /tickets/ba08618c-2ba9-422a-9c84-f1e2c32ddd9f/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/ba08618c-2ba9-422a-9c84-f1e2c32ddd9f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Regras novas aplicadas",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "admin@sige.demo POST /demand-types/4980a5ca-feee-4210-a04a-ea958c54d441/active?value=false HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Snapshot integral após inativação",
+      "passed": true,
+      "detail": "{'id': '4980a5ca-feee-4210-a04a-ea958c54d441', 'name': 'Review 998acb59 CT09', 'version': 1, 'approvalRequired': True, 'evidenceRequired': True, 'fieldDefinitions': [{'name': 'budget', 'type': 'NUMBER', 'label': 'Valor original', 'required': True, 'validation': {'max': 100, 'min': 0}}, {'name': 'date', 'type': 'DATE', 'label': 'Data', 'required': True}, {'name': 'choice', 'type': 'SELECT', 'label': 'Escolha', 'options': ['Sim', 'Nao'], 'required': True}, {'name': 'context', 'type': 'TEXT', 'label': 'Contexto', 'validation': {'minLength': 3}, 'requiredWhen': {'field': 'choice', 'equals': 'Sim'}}, {'name': 'brief', 'type': 'FILE', 'label': 'Arquivo', 'required': True}]}"
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Snapshot novo integral",
+      "passed": true,
+      "detail": "[{'name': 'budget', 'label': 'Valor revisado', 'type': 'NUMBER', 'required': True, 'validation': {'min': 0, 'max': 200}}, {'name': 'date', 'label': 'Data', 'type': 'DATE', 'required': True}, {'name': 'choice', 'label': 'Escolha', 'type': 'SELECT', 'options': ['Sim', 'Nao'], 'required': True}, {'name': 'context', 'label': 'Contexto', 'type': 'TEXT', 'requiredWhen': {'field': 'choice', 'equals': 'Sim'}, 'validation': {'minLength': 3}}, {'name': 'brief', 'label': 'Arquivo', 'type': 'FILE', 'required': True}]"
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/0bdbd9c6-064b-4e87-a7c7-5c79c4dd68c1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Inativo não cria ticket e anterior é consultável",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

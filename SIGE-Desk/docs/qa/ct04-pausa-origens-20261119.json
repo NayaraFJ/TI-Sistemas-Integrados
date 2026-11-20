@@ -1,0 +1,180 @@
+{
+  "startedAt": "2026-11-19T21:01:49.434257+00:00",
+  "finishedAt": "2026-11-19T21:01:50.616757+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review a44bdfd9"
+  },
+  "cases": [
+    {
+      "id": "CT-04-pausa-origens",
+      "priority": "Média",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T21:01:49.999257+00:00",
+      "finishedAt": "2026-11-19T21:01:50.616757+00:00",
+      "assertions": 26,
+      "error": "name 'ZoneInfo' is not defined"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "Ticket API presente no schema QA",
+      "passed": true,
+      "detail": "9cb8027d-bb76-4a1e-8030-ce1a24718928"
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "admin@sige.demo GET /sla-rules HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "admin@sige.demo POST /sla-rules HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "Ticket pertence ao schema TRIAGE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo POST /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo POST /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928/wait HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo POST /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo POST /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928/resume HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "atendimento@sige.demo POST /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-04-pausa-origens",
+      "name": "cliente@aurora.demo GET /tickets/9cb8027d-bb76-4a1e-8030-ce1a24718928 HTTP 200",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

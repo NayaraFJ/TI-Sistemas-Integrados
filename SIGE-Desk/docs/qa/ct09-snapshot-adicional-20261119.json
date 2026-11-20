@@ -1,0 +1,193 @@
+{
+  "startedAt": "2026-11-19T17:50:16.185257+00:00",
+  "finishedAt": "2026-11-19T17:50:17.186258+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review e706864f"
+  },
+  "cases": [
+    {
+      "id": "CT-09-complemento-snapshot",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T17:50:16.768758+00:00",
+      "finishedAt": "2026-11-19T17:50:17.185758+00:00",
+      "assertions": 28,
+      "error": "atendimento@sige.demo POST /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032/triage HTTP 200: b'{\"code\":\"BUSINESS_RULE\",\"message\":\"Tipo de demanda indispon\\xc3\\xadvel\",\"timestamp\":\"2026-11-19T17:50:17.185258700Z\",\"fields\":{}}'"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Nome sem arquivo não cria ticket",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Valores persistidos",
+      "passed": true,
+      "detail": "{'budget': 'Valor original', 'date': 'Data', 'choice': 'Escolha', 'context': 'Contexto', 'brief': 'Arquivo'}"
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032/attachments/4ecfeb25-3762-44ef-ae67-9ea71da58a97/download HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Arquivo recuperado",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "admin@sige.demo PUT /demand-types/29588e71-c03a-4cd2-adf9-57c8e587a7a7 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/3b27ac72-cb89-4c6d-8b76-9a54a6f82224 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Rótulos e valores antigos preservados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Novo ticket aplica rótulo e limite revisados",
+      "passed": true,
+      "detail": "{'budget': 'Valor revisado', 'date': 'Data', 'choice': 'Escolha', 'context': 'Contexto', 'brief': 'Arquivo'}"
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Condição falsa dispensa campo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "admin@sige.demo POST /demand-types/29588e71-c03a-4cd2-adf9-57c8e587a7a7/active?value=false HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "cliente@aurora.demo GET /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "Inativo não cria ticket e anterior é consultável",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo GET /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo POST /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo GET /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-09-complemento-snapshot",
+      "name": "atendimento@sige.demo POST /tickets/141bfa67-5ff4-434e-9759-99d8dc8e5032/triage HTTP 200",
+      "passed": false,
+      "detail": "b'{\"code\":\"BUSINESS_RULE\",\"message\":\"Tipo de demanda indispon\\xc3\\xadvel\",\"timestamp\":\"2026-11-19T17:50:17.185258700Z\",\"fields\":{}}'"
+    }
+  ]
+}

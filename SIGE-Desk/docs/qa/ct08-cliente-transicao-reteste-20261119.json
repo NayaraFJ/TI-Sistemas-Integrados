@@ -1,0 +1,150 @@
+{
+  "startedAt": "2026-11-19T21:55:57.732259+00:00",
+  "finishedAt": "2026-11-19T21:55:58.536757+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review bb24b19b"
+  },
+  "cases": [
+    {
+      "id": "CT-08-cliente-transicao",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T21:55:58.203257+00:00",
+      "finishedAt": "2026-11-19T21:55:58.536757+00:00",
+      "assertions": 21,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo GET /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo POST /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo GET /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "atendimento@sige.demo POST /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "gestor@sige.demo GET /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "gestor@sige.demo POST /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo GET /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "Ticket da organização A aguarda aprovação",
+      "passed": true,
+      "detail": "VALIDATION"
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "rafael@horizonte.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "rafael@horizonte.demo POST /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5/approve HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "Evento de negação correlacionado ao Cliente B e ticket A",
+      "passed": true,
+      "detail": "{'ticketId': '1e12aea5-206d-42b1-bf2f-8edacb7fdcb5', 'events': [{'at': '2026-11-19T21:55:58.477258', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '1e12aea5-206d-42b1-bf2f-8edacb7fdcb5'}]}"
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "cliente@aurora.demo GET /tickets/1e12aea5-206d-42b1-bf2f-8edacb7fdcb5 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "Detalhe e histórico inalterados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-cliente-transicao",
+      "name": "Linha do ticket no MySQL inalterada",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "startedAt": "2026-11-19T20:56:33.611256+00:00",
+  "finishedAt": "2026-11-19T20:56:34.968260+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review 8a15c542"
+  },
+  "cases": [
+    {
+      "id": "CT-08-gestor-anexo-reteste",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T20:56:34.177257+00:00",
+      "finishedAt": "2026-11-19T20:56:34.967757+00:00",
+      "assertions": 44,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo GET /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo POST /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo GET /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo POST /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo GET /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo POST /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo GET /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo POST /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo GET /tickets/a73595e0-869f-4e3f-a870-6048e1414c60 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo POST /tickets/a73595e0-869f-4e3f-a870-6048e1414c60/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo GET /tickets/a73595e0-869f-4e3f-a870-6048e1414c60 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "atendimento@sige.demo POST /tickets/a73595e0-869f-4e3f-a870-6048e1414c60/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo POST /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo POST /tickets/a73595e0-869f-4e3f-a870-6048e1414c60/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "gestor2@sige.demo GET /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "gestor2@sige.demo GET /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "gestor2@sige.demo GET /tickets/a73595e0-869f-4e3f-a870-6048e1414c60 HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo GET /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo GET /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo GET /tickets/a73595e0-869f-4e3f-a870-6048e1414c60 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "gestor2@sige.demo GET /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa/attachments/bc1ec1f8-46c5-4a5a-b742-1d242a2ffdb8/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "Auditoria anexo protegido",
+      "passed": true,
+      "detail": "{'path': '/tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa/attachments/bc1ec1f8-46c5-4a5a-b742-1d242a2ffdb8/download', 'response': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T20:56:34.779757Z', 'fields': {}}, 'events': [{'at': '2026-11-19T20:56:34.771257', 'code': 'SECURITY_ATTACHMENT_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'ATTACHMENT', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': 'bc1ec1f8-46c5-4a5a-b742-1d242a2ffdb8'}]}"
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "gestor2@sige.demo GET /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa/attachments/8eef63b2-cc78-4923-8dbe-c8248b4ae3ec/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "Auditoria anexo inexistente ou visível",
+      "passed": true,
+      "detail": "{'path': '/tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa/attachments/8eef63b2-cc78-4923-8dbe-c8248b4ae3ec/download', 'response': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T20:56:34.832257200Z', 'fields': {}}, 'events': []}"
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "gestor2@sige.demo GET /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa/attachments/b4348455-dd43-482c-95fa-384acb825af7/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "Auditoria anexo inexistente ou visível",
+      "passed": true,
+      "detail": "{'path': '/tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa/attachments/b4348455-dd43-482c-95fa-384acb825af7/download', 'response': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T20:56:34.883757Z', 'fields': {}}, 'events': []}"
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "Corpos genéricos equivalentes",
+      "passed": true,
+      "detail": "{'protected': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T20:56:34.779757Z', 'fields': {}}, 'missing': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T20:56:34.832257200Z', 'fields': {}}, 'visible': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T20:56:34.883757Z', 'fields': {}}}"
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo GET /tickets/314b9c85-d20c-411f-98ad-3a0d29e3a0aa HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo GET /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "cliente@aurora.demo GET /tickets/a73595e0-869f-4e3f-a870-6048e1414c60 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "Tickets e histórico preservados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "gestor@sige.demo GET /tickets/a73595e0-869f-4e3f-a870-6048e1414c60/attachments/bc1ec1f8-46c5-4a5a-b742-1d242a2ffdb8/download HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "Bytes preservados no anexo protegido",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "gestor2@sige.demo GET /tickets/6a41fa0d-92f7-432c-b2a5-444e8c915877/attachments/b4348455-dd43-482c-95fa-384acb825af7/download HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-anexo-reteste",
+      "name": "Bytes preservados no anexo visível",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

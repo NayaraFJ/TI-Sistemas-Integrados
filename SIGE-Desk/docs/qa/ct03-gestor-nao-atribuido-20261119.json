@@ -1,0 +1,164 @@
+{
+  "startedAt": "2026-11-19T21:40:22.943757+00:00",
+  "finishedAt": "2026-11-19T21:40:24.437257+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review 1b44ef6b"
+  },
+  "scope": "Uma fixture sintética; resposta, estado, versão e histórico via HTTP; MySQL identifica o schema. Não demonstra interface ou outras operações.",
+  "cases": [
+    {
+      "id": "CT-03-gestor-nao-atribuido",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T21:40:24.104257+00:00",
+      "finishedAt": "2026-11-19T21:40:24.436757+00:00",
+      "assertions": 23,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "atendimento@sige.demo GET /tickets/d9744f72-129a-4549-9ef5-ff29dd540339 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "atendimento@sige.demo POST /tickets/d9744f72-129a-4549-9ef5-ff29dd540339/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "atendimento@sige.demo GET /tickets/d9744f72-129a-4549-9ef5-ff29dd540339 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "atendimento@sige.demo POST /tickets/d9744f72-129a-4549-9ef5-ff29dd540339/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "cliente@aurora.demo GET /tickets/d9744f72-129a-4549-9ef5-ff29dd540339 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "Fixture em execução atribuída ao Gestor",
+      "passed": true,
+      "detail": "{'ticket': 'd9744f72-129a-4549-9ef5-ff29dd540339', 'number': 'SIGE-1737', 'assignee': 'Lucas Martins'}"
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "gestor2@sige.demo POST /tickets/d9744f72-129a-4549-9ef5-ff29dd540339/execution HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "cliente@aurora.demo GET /tickets/d9744f72-129a-4549-9ef5-ff29dd540339 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "Negativa preserva estado, versão e histórico",
+      "passed": true,
+      "detail": "{'ticket': 'd9744f72-129a-4549-9ef5-ff29dd540339', 'beforeVersion': 5, 'afterVersion': 5, 'beforeStatus': 'EXECUTION', 'afterStatus': 'EXECUTION', 'beforeHistory': [{'id': '8ccd4724-6d96-4344-ba92-c763d3e82426', 'actorName': 'Beatriz Souza', 'action': 'SENT_TO_EXECUTION', 'fieldName': 'status', 'oldValue': '\"TRIAGE\"', 'newValue': '\"EXECUTION\"', 'reason': 'Triagem concluída', 'createdAt': '2026-11-19T21:40:24.266757Z'}, {'id': '5d06f260-e3c1-4d9e-9774-d5e7943a66fd', 'actorName': 'Beatriz Souza', 'action': 'RESOLUTION_DEADLINE_CHANGED', 'fieldName': 'resolutionDueAt', 'oldValue': None, 'newValue': '\"2026-11-24T17:00:00Z\"', 'reason': 'Prazo de resolução aplicado', 'createdAt': '2026-11-19T21:40:24.266757Z'}, {'id': '4125bbd8-812b-4180-9142-1eaefa60cc6c', 'actorName': 'Beatriz Souza', 'action': 'RESPONSE_DEADLINE_CHANGED', 'fieldName': 'responseDueAt', 'oldValue': None, 'newValue': '\"2026-11-23T15:00:00Z\"', 'reason': 'Prazo de primeira resposta aplicado', 'createdAt': '2026-11-19T21:40:24.266757Z'}, {'id': 'ff3c02b8-e132-4092-a0f9-7c6b9354a458', 'actorName': 'Beatriz Souza', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': None, 'newValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'reason': 'Responsável confirmado', 'createdAt': '2026-11-19T21:40:24.266257Z'}, {'id': '98be09fd-6eda-4f79-b8cc-7a32619b3c89', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CLASSIFIED', 'fieldName': 'priority', 'oldValue': None, 'newValue': '\"HIGH\"', 'reason': 'Prioridade confirmada', 'createdAt': '2026-11-19T21:40:24.266257Z'}, {'id': '80000269-18b4-4a7d-8795-64d3e6a615b0', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_TYPE', 'fieldName': 'demandTypeId', 'oldValue': '\"e8e28053-8fee-4ea5-bf7c-ae0f20d479d9\"', 'newValue': '\"e8e28053-8fee-4ea5-bf7c-ae0f20d479d9\"', 'reason': 'Tipo de demanda confirmado na triagem', 'createdAt': '2026-11-19T21:40:24.265757Z'}, {'id': '52c18185-7dd0-4436-b750-d037899ea504', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CAMPAIGN', 'fieldName': 'campaignId', 'oldValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'newValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'reason': 'Campanha confirmada na triagem', 'createdAt': '2026-11-19T21:40:24.265757Z'}, {'id': 'ae2e335b-4acd-4f7c-b734-658316a6e3d5', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_STARTED', 'fieldName': 'status', 'oldValue': '\"OPEN\"', 'newValue': '\"TRIAGE\"', 'reason': 'Conferência de teste', 'createdAt': '2026-11-19T21:40:24.238257Z'}, {'id': 'd53c8b97-81b4-4067-8c4f-39ddf4dcb765', 'actorName': 'Marina Costa', 'action': 'TICKET_CREATED', 'fieldName': None, 'oldValue': None, 'newValue': '\"OPEN\"', 'reason': 'Solicitação registrada', 'createdAt': '2026-11-19T21:40:24.201757Z'}], 'afterHistory': [{'id': '8ccd4724-6d96-4344-ba92-c763d3e82426', 'actorName': 'Beatriz Souza', 'action': 'SENT_TO_EXECUTION', 'fieldName': 'status', 'oldValue': '\"TRIAGE\"', 'newValue': '\"EXECUTION\"', 'reason': 'Triagem concluída', 'createdAt': '2026-11-19T21:40:24.266757Z'}, {'id': '5d06f260-e3c1-4d9e-9774-d5e7943a66fd', 'actorName': 'Beatriz Souza', 'action': 'RESOLUTION_DEADLINE_CHANGED', 'fieldName': 'resolutionDueAt', 'oldValue': None, 'newValue': '\"2026-11-24T17:00:00Z\"', 'reason': 'Prazo de resolução aplicado', 'createdAt': '2026-11-19T21:40:24.266757Z'}, {'id': '4125bbd8-812b-4180-9142-1eaefa60cc6c', 'actorName': 'Beatriz Souza', 'action': 'RESPONSE_DEADLINE_CHANGED', 'fieldName': 'responseDueAt', 'oldValue': None, 'newValue': '\"2026-11-23T15:00:00Z\"', 'reason': 'Prazo de primeira resposta aplicado', 'createdAt': '2026-11-19T21:40:24.266757Z'}, {'id': 'ff3c02b8-e132-4092-a0f9-7c6b9354a458', 'actorName': 'Beatriz Souza', 'action': 'ASSIGNEE_CHANGED', 'fieldName': 'assigneeId', 'oldValue': None, 'newValue': '\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"', 'reason': 'Responsável confirmado', 'createdAt': '2026-11-19T21:40:24.266257Z'}, {'id': '98be09fd-6eda-4f79-b8cc-7a32619b3c89', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CLASSIFIED', 'fieldName': 'priority', 'oldValue': None, 'newValue': '\"HIGH\"', 'reason': 'Prioridade confirmada', 'createdAt': '2026-11-19T21:40:24.266257Z'}, {'id': '80000269-18b4-4a7d-8795-64d3e6a615b0', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_TYPE', 'fieldName': 'demandTypeId', 'oldValue': '\"e8e28053-8fee-4ea5-bf7c-ae0f20d479d9\"', 'newValue': '\"e8e28053-8fee-4ea5-bf7c-ae0f20d479d9\"', 'reason': 'Tipo de demanda confirmado na triagem', 'createdAt': '2026-11-19T21:40:24.265757Z'}, {'id': '52c18185-7dd0-4436-b750-d037899ea504', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_CAMPAIGN', 'fieldName': 'campaignId', 'oldValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'newValue': '\"21f5421c-ad5b-461c-a244-725621497016\"', 'reason': 'Campanha confirmada na triagem', 'createdAt': '2026-11-19T21:40:24.265757Z'}, {'id': 'ae2e335b-4acd-4f7c-b734-658316a6e3d5', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_STARTED', 'fieldName': 'status', 'oldValue': '\"OPEN\"', 'newValue': '\"TRIAGE\"', 'reason': 'Conferência de teste', 'createdAt': '2026-11-19T21:40:24.238257Z'}, {'id': 'd53c8b97-81b4-4067-8c4f-39ddf4dcb765', 'actorName': 'Marina Costa', 'action': 'TICKET_CREATED', 'fieldName': None, 'oldValue': None, 'newValue': '\"OPEN\"', 'reason': 'Solicitação registrada', 'createdAt': '2026-11-19T21:40:24.201757Z'}]}"
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "gestor@sige.demo GET /tickets/d9744f72-129a-4549-9ef5-ff29dd540339 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "Gestor atribuído acessa a fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "gestor@sige.demo GET /tickets/d9744f72-129a-4549-9ef5-ff29dd540339 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "gestor@sige.demo POST /tickets/d9744f72-129a-4549-9ef5-ff29dd540339/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "cliente@aurora.demo GET /tickets/d9744f72-129a-4549-9ef5-ff29dd540339 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-gestor-nao-atribuido",
+      "name": "Gestor atribuído executa após negativa",
+      "passed": true,
+      "detail": "{'status': 'DONE', 'version': 7}"
+    }
+  ]
+}

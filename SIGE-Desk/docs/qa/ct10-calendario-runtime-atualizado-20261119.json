@@ -1,0 +1,169 @@
+{
+  "startedAt": "2026-11-19T17:08:35.951258+00:00",
+  "finishedAt": "2026-11-19T17:08:37.622258+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "bed7e6d11fef0704b3fc30313d8a28fb92c6529131c4631924fb846a7c059cba",
+    "runTag": "Review 104bd667"
+  },
+  "cases": [
+    {
+      "id": "CT-10-calendario-pausa-ciclos",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T17:08:36.713259+00:00",
+      "finishedAt": "2026-11-19T17:08:37.622258+00:00",
+      "assertions": 24,
+      "error": "Pausa de validação usa somente tempo útil e preserva ciclo: {'interval': {'end': '2026-11-19T17:08:37.557258600Z', 'start': '2026-11-18T20:00:00Z'}, 'businessSeconds': 25717.557258, 'expected': '2026-11-19T19:08:37.557258Z', 'observed': '2026-11-19T19:08:37.557259Z', 'snapshot': {'id': 'c49d0693-1e08-4889-acec-3b669771ff30', 'name': 'Review 104bd667 calendario', 'version': 2, 'holidays': ['2026-11-17', '2026-11-23'], 'timezone': 'America/Sao_Paulo', 'deadlines': {'LOW': {'responseHours': 4, 'resolutionHours': 12}, 'HIGH': {'responseHours': 4, 'resolutionHours': 12}, 'MEDIUM': {'responseHours': 4, 'resolutionHours': 12}, 'URGENT': {'responseHours': 4, 'resolutionHours': 12}}, 'businessEnd': '18:00', 'businessDays': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'businessStart': '08:00', 'pauseInValidation': True, 'nationalHolidayPolicy': 'BR_FIXED_V1'}}"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "admin@sige.demo GET /sla-rules HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "admin@sige.demo POST /sla-rules HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "atendimento@sige.demo GET /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "atendimento@sige.demo POST /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "atendimento@sige.demo GET /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "atendimento@sige.demo POST /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo GET /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "Ciclo 1 calcula a partir da abertura no calendário do snapshot",
+      "passed": true,
+      "detail": "{'ticket': '6be95c27-469a-4c68-ba76-433de92ed8e4', 'fixture': {'pause': [], 'created': '2026-11-16T20:00:00.000000Z', 'snapshot': {'id': 'c49d0693-1e08-4889-acec-3b669771ff30', 'name': 'Review 104bd667 calendario', 'version': 2, 'holidays': ['2026-11-17', '2026-11-23'], 'timezone': 'America/Sao_Paulo', 'deadlines': {'LOW': {'responseHours': 4, 'resolutionHours': 12}, 'HIGH': {'responseHours': 4, 'resolutionHours': 12}, 'MEDIUM': {'responseHours': 4, 'resolutionHours': 12}, 'URGENT': {'responseHours': 4, 'resolutionHours': 12}}, 'businessEnd': '18:00', 'businessDays': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'businessStart': '08:00', 'pauseInValidation': True, 'nationalHolidayPolicy': 'BR_FIXED_V1'}, 'cycleStart': None}, 'responseExpected': '2026-11-18T14:00:00Z', 'resolutionExpected': '2026-11-19T12:00:00Z', 'responseObserved': '2026-11-18T14:00:00Z', 'resolutionObserved': '2026-11-19T12:00:00Z'}"
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "gestor@sige.demo GET /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "gestor@sige.demo POST /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo GET /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "Snapshot habilita pausa em validação",
+      "passed": true,
+      "detail": "{'ticket': '6be95c27-469a-4c68-ba76-433de92ed8e4', 'status': 'VALIDATION', 'slaState': 'PAUSED'}"
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo GET /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo POST /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4/correction HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "cliente@aurora.demo GET /tickets/6be95c27-469a-4c68-ba76-433de92ed8e4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10-calendario-pausa-ciclos",
+      "name": "Pausa de validação usa somente tempo útil e preserva ciclo",
+      "passed": false,
+      "detail": "{'interval': {'end': '2026-11-19T17:08:37.557258600Z', 'start': '2026-11-18T20:00:00Z'}, 'businessSeconds': 25717.557258, 'expected': '2026-11-19T19:08:37.557258Z', 'observed': '2026-11-19T19:08:37.557259Z', 'snapshot': {'id': 'c49d0693-1e08-4889-acec-3b669771ff30', 'name': 'Review 104bd667 calendario', 'version': 2, 'holidays': ['2026-11-17', '2026-11-23'], 'timezone': 'America/Sao_Paulo', 'deadlines': {'LOW': {'responseHours': 4, 'resolutionHours': 12}, 'HIGH': {'responseHours': 4, 'resolutionHours': 12}, 'MEDIUM': {'responseHours': 4, 'resolutionHours': 12}, 'URGENT': {'responseHours': 4, 'resolutionHours': 12}}, 'businessEnd': '18:00', 'businessDays': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'businessStart': '08:00', 'pauseInValidation': True, 'nationalHolidayPolicy': 'BR_FIXED_V1'}}"
+    }
+  ]
+}

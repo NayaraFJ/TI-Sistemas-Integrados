@@ -1,0 +1,213 @@
+{
+  "cases": [
+    {
+      "id": "CT-10",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-18T23:11:11.801021+00:00",
+      "finishedAt": "2026-11-18T23:11:12.368629+00:00",
+      "assertions": 33,
+      "error": "'scope'"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-10",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo GET /sla-rules HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo POST /sla-rules HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo POST /sla-rules HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo POST /sla-rules HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo GET /tickets/d1ee978a-7d10-41dd-8e0c-d4754bbb2cfb HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo POST /tickets/d1ee978a-7d10-41dd-8e0c-d4754bbb2cfb/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo GET /tickets/d1ee978a-7d10-41dd-8e0c-d4754bbb2cfb HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo POST /tickets/d1ee978a-7d10-41dd-8e0c-d4754bbb2cfb/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "Precedência cliente e tipo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "Calendário completo congelado",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo PUT /sla-rules/e111cb75-c551-4f8f-af5e-f9acacb6c661 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "Ticket existente preserva snapshot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo GET /tickets/4087fe50-6fbc-438b-a841-45ad300b98ea HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo POST /tickets/4087fe50-6fbc-438b-a841-45ad300b98ea/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo GET /tickets/4087fe50-6fbc-438b-a841-45ad300b98ea HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo POST /tickets/4087fe50-6fbc-438b-a841-45ad300b98ea/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "Novo ticket aplica revisão",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo POST /clients HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo POST /users HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo POST /campaigns HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo GET /tickets/d7689dc9-c112-48ec-94be-d9d94cb4c496 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo POST /tickets/d7689dc9-c112-48ec-94be-d9d94cb4c496/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo GET /tickets/d7689dc9-c112-48ec-94be-d9d94cb4c496 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-10",
+      "name": "atendimento@sige.demo POST /tickets/d7689dc9-c112-48ec-94be-d9d94cb4c496/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,4611 @@
+{
+  "startedAt": "2026-11-19T17:31:08.315758+00:00",
+  "finishedAt": "2026-11-19T17:31:14.004258+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runTag": "Review 5320ad24"
+  },
+  "cases": [
+    {
+      "id": "CT-13-historico-extenso-atores",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:31:08.867258+00:00",
+      "finishedAt": "2026-11-19T17:31:14.004258+00:00",
+      "assertions": 262,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "Primeira fixture confere eventos e nomes pela junção",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "Atores da primeira fixture correspondem às sessões",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "atendimento@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "gestor@sige.demo POST /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "Histórico extenso retorna todos eventos MySQL",
+      "passed": true,
+      "detail": "{'api': 129, 'mysql': 129, 'errors': []}"
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "Histórico não duplica eventos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "Histórico preserva eventos anteriores",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "Ordenação temporal decrescente",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "120 comentários auditam as três sessões",
+      "passed": true,
+      "detail": "{'9cdd8229-26b0-4e8b-97cf-eba6c80743e4': 40, '22b56fe4-d522-4078-a24a-bf496757e367': 40, '0f1c3b65-cd0a-47f8-a264-dc23278e1f8e': 40}"
+    },
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "rafael@horizonte.demo GET /tickets/fc210d9a-0745-4d4c-a20e-2596bc9eba89 HTTP 404",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "observed": {
+    "ticket": "fc210d9a-0745-4d4c-a20e-2596bc9eba89",
+    "history": [
+      {
+        "id": "0c04b209-42e6-4be8-a50d-263fcdd647ad",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.928259Z"
+      },
+      {
+        "id": "bced8bb2-0009-4978-9cde-d4a707e3a3b0",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.880258Z"
+      },
+      {
+        "id": "79bc8f2d-45d6-4caa-a370-31aff943bb52",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.855758Z"
+      },
+      {
+        "id": "f4588c4f-4a4b-4724-9a68-42f0350acb3f",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.830260Z"
+      },
+      {
+        "id": "f83a9b26-7b42-41a2-9090-94b7c83f3ca3",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.804259Z"
+      },
+      {
+        "id": "62b6ff55-40ee-4b35-92c5-8685c1028afa",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.756260Z"
+      },
+      {
+        "id": "e624cb4e-190e-4a56-98fe-ca6052d52359",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.720258Z"
+      },
+      {
+        "id": "437ee33e-117f-4582-87c2-2b405a1f4e07",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.694261Z"
+      },
+      {
+        "id": "63b15924-ca18-4503-8431-cf64674135e3",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.655259Z"
+      },
+      {
+        "id": "fb35aa1d-9fe2-4199-807b-a64be75c3d82",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.618262Z"
+      },
+      {
+        "id": "a6e9e37d-8062-4ce7-9266-d732d12812b1",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.589759Z"
+      },
+      {
+        "id": "34fa02bd-f761-415c-8820-9b994e479bb2",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.565759Z"
+      },
+      {
+        "id": "4eb83a08-31a9-4557-b887-a62f9d85ced8",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.540259Z"
+      },
+      {
+        "id": "3c1603be-b91b-4d66-92dd-43c94eac4d8b",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.516259Z"
+      },
+      {
+        "id": "a43c867f-a90e-461e-9a82-db77c9305ea6",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.477758Z"
+      },
+      {
+        "id": "65f6671b-d409-4af5-ac60-5f960d3d7783",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.448760Z"
+      },
+      {
+        "id": "c5bef52f-4f39-404a-9448-26cc5bde65c8",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.400758Z"
+      },
+      {
+        "id": "822e4ee3-1f48-4058-8ea2-6b098c5c93cf",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.376257Z"
+      },
+      {
+        "id": "c01422ec-52e5-4834-bfd7-e5b3f7799cfb",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.306758Z"
+      },
+      {
+        "id": "85b5a2de-7087-4d3e-a568-700d9d8ba153",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.283259Z"
+      },
+      {
+        "id": "c6157911-41a8-4f0f-9169-ff0df4d60d62",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.237258Z"
+      },
+      {
+        "id": "f828b00c-f7ed-4d2f-831d-b535a55e729d",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.169759Z"
+      },
+      {
+        "id": "c38c7d72-2902-42e4-ab58-0fdf11df7ff5",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.144259Z"
+      },
+      {
+        "id": "1854d0ce-1dfc-4c6a-a94a-ae58ad5b62dd",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.105258Z"
+      },
+      {
+        "id": "908ec5fe-ab79-4d28-8256-cfdcb576caf3",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.069258Z"
+      },
+      {
+        "id": "952ce912-de53-4654-a997-1d7c89f98993",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:13.042758Z"
+      },
+      {
+        "id": "289a84c6-c82d-4138-b1dc-87bbf25e51e0",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.997758Z"
+      },
+      {
+        "id": "d0401d46-722f-4b34-b0af-a57c9fba5994",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.973258Z"
+      },
+      {
+        "id": "a642d743-dc10-476c-be45-db6ebdc4b50f",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.911760Z"
+      },
+      {
+        "id": "8101e96a-9c9b-4dbc-abf2-81bd07505ad1",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.874258Z"
+      },
+      {
+        "id": "37702705-f63a-4177-820b-51786de2546a",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.849258Z"
+      },
+      {
+        "id": "d5eb5fb6-782a-4ae6-8146-7588c161fab6",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.780259Z"
+      },
+      {
+        "id": "4fa87289-b3e7-4109-8ea8-936737b23341",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.741759Z"
+      },
+      {
+        "id": "78a85690-a9fe-4917-9cf3-92ef22ce506c",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.682762Z"
+      },
+      {
+        "id": "6d45676f-ceaf-4eea-9379-0b1578e5fefd",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.655259Z"
+      },
+      {
+        "id": "112d2737-5c61-457c-8f24-e2956a205bf9",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.611258Z"
+      },
+      {
+        "id": "3833143a-f42d-4f8c-ab57-8b9483875caa",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.586260Z"
+      },
+      {
+        "id": "7b7be7df-e6c6-483b-b09f-ec436bef7d4c",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.522759Z"
+      },
+      {
+        "id": "c423bb5a-897f-438d-aabf-4e6f7f8f8228",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.493259Z"
+      },
+      {
+        "id": "06558f24-4ec9-45e5-ab1e-ce35cd978f37",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.447258Z"
+      },
+      {
+        "id": "11138270-84a2-47d4-b9a8-56d2d014fcb6",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.394259Z"
+      },
+      {
+        "id": "ff0c7dfc-3045-4ed3-abe2-13847da65d1a",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.349259Z"
+      },
+      {
+        "id": "72024865-59a0-4a64-9778-5d6a24ac614f",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.322758Z"
+      },
+      {
+        "id": "6f232792-3ab9-4d6a-a015-e5ed61f8a508",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.279759Z"
+      },
+      {
+        "id": "beaf5e93-e0c1-41a1-b6dc-8a259ab81e7f",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.253761Z"
+      },
+      {
+        "id": "6278d4d2-4096-4013-b351-49bf367482f6",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.225759Z"
+      },
+      {
+        "id": "d5355017-4fc5-4763-91fe-ce02cc0cde5e",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.183261Z"
+      },
+      {
+        "id": "9034c82c-6e0e-4037-be3b-de4f0ab63573",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.140258Z"
+      },
+      {
+        "id": "9560b0ee-74b6-4c2c-b9e4-412f9701f733",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.116259Z"
+      },
+      {
+        "id": "91019ef2-0175-4995-8144-421acce7f414",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.090259Z"
+      },
+      {
+        "id": "b5dbe100-e868-422f-88c7-ef76d987be05",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.048760Z"
+      },
+      {
+        "id": "5be98d27-f6bf-4d87-9bc0-781f64886cdc",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:12.020258Z"
+      },
+      {
+        "id": "8c57308e-795c-4bb5-a27a-5e0910c8428e",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.991259Z"
+      },
+      {
+        "id": "1657aafd-3293-4e68-b454-b1f831ac49c9",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.963759Z"
+      },
+      {
+        "id": "5319db4a-75eb-4c82-b5dc-fbd6d2b93340",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.935759Z"
+      },
+      {
+        "id": "fafe7cae-c651-48a9-aa8a-fe7ccb7bb487",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.905760Z"
+      },
+      {
+        "id": "4ba50377-b97e-4dc2-b001-e6a50a21d370",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.874259Z"
+      },
+      {
+        "id": "c430656e-7d49-4f19-a647-3fbfb588a9a4",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.804259Z"
+      },
+      {
+        "id": "b1e8e03f-d58e-4503-9d5b-18f9c3a4a8fd",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.749258Z"
+      },
+      {
+        "id": "0549a190-7f52-4562-a089-80b0c08d5cc0",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.687760Z"
+      },
+      {
+        "id": "16388007-b41e-4d05-9a00-eee7f3170f44",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.633260Z"
+      },
+      {
+        "id": "7bfbea31-9992-4486-8606-76a8f5ae8fb0",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.586760Z"
+      },
+      {
+        "id": "e078df2d-842e-49b1-b4f6-ee1e33aad4aa",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.532758Z"
+      },
+      {
+        "id": "adf2aea8-c07a-4a80-ace9-088b78aa7f38",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.458259Z"
+      },
+      {
+        "id": "40ae5bf0-3498-4249-a9a1-19b4abbb9300",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.432759Z"
+      },
+      {
+        "id": "533ccdfc-ee17-4a4d-a778-347c3eef54dd",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.377758Z"
+      },
+      {
+        "id": "bf9e682c-85c4-4038-a493-4cece92e53d2",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.322757Z"
+      },
+      {
+        "id": "5e073ec1-02b5-41e2-a852-604f6685e1ae",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.272758Z"
+      },
+      {
+        "id": "f0ca1bfd-59e7-46b3-8498-456d6654a2fb",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.244758Z"
+      },
+      {
+        "id": "0d5a22b0-a80e-46f8-8086-fd0ce9cf04bb",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.216758Z"
+      },
+      {
+        "id": "34ce7a65-2a5d-4415-aa25-c836a5dec99e",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.165759Z"
+      },
+      {
+        "id": "bbc23c4a-5e35-45dd-9002-912c9b916524",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.138259Z"
+      },
+      {
+        "id": "ab89c9dd-d456-4d16-b2a1-4c1f157ba02e",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.099259Z"
+      },
+      {
+        "id": "53788635-fdca-4c3b-bc70-ddb5456dcdf2",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.048259Z"
+      },
+      {
+        "id": "fdde4a91-e34e-4ca9-b497-f7878a1d4041",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:11.021258Z"
+      },
+      {
+        "id": "cac8ed17-1332-4434-9be3-5f69ab6bff71",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.974759Z"
+      },
+      {
+        "id": "e6313bb8-f55c-443d-b89c-c4a01416cece",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.924259Z"
+      },
+      {
+        "id": "8f278c92-e651-4844-9f5b-f96968de6ffa",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.870259Z"
+      },
+      {
+        "id": "56028f4b-b61f-472c-ba7f-6bbca945a4d5",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.835259Z"
+      },
+      {
+        "id": "234f2ac4-edd6-4997-b270-f664b826bbb3",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.773259Z"
+      },
+      {
+        "id": "845e7552-ff4b-4291-a5c5-3f0c837cff00",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.733260Z"
+      },
+      {
+        "id": "4f8f6ccc-7f1e-44e2-b5c9-dedbc7dab5a6",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.697261Z"
+      },
+      {
+        "id": "2420e19f-2aef-44ef-9874-a029bdad9e95",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.644760Z"
+      },
+      {
+        "id": "0fdeb3ca-c112-44a5-96e9-afb0fdf9a45c",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.598260Z"
+      },
+      {
+        "id": "d63fdf83-ff8c-42be-b86a-09872f2d8d2d",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.567760Z"
+      },
+      {
+        "id": "6d5a5b69-e93e-44a1-9812-446cb1a36efb",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.537261Z"
+      },
+      {
+        "id": "b495f042-4b5b-44c8-9e1a-f457643da9e7",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.495259Z"
+      },
+      {
+        "id": "f5ce7c8d-af66-4e66-bf57-b4d6215385ab",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.448759Z"
+      },
+      {
+        "id": "1b40e7cb-134b-40fa-b1b8-2bb9a702d6d6",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.386760Z"
+      },
+      {
+        "id": "a106c68f-ef64-4bcb-98da-6699fa7553ef",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.355259Z"
+      },
+      {
+        "id": "4583ffb7-83b5-4c4c-84c2-d1909636d03a",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.304260Z"
+      },
+      {
+        "id": "71f56146-d7c7-4953-a6d3-1dd8e1f4d441",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.274759Z"
+      },
+      {
+        "id": "fdb55ca9-b7f7-447f-bb68-4f6d1b230b9f",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.217260Z"
+      },
+      {
+        "id": "34a1e178-7169-4e21-a9f7-85ead6795c88",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.138760Z"
+      },
+      {
+        "id": "e57c0b3f-f44c-49de-a21c-22b746953e37",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.092762Z"
+      },
+      {
+        "id": "f42f7007-1061-46f1-a11f-315cfdc90215",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.045260Z"
+      },
+      {
+        "id": "307c30b7-0e9b-4588-94bb-bb3413b37ee8",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:10.014759Z"
+      },
+      {
+        "id": "2e770529-387e-4324-bc23-c4af7fb13cce",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.968760Z"
+      },
+      {
+        "id": "906c1081-e88e-452e-a7f4-e76fc7ddf0ee",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.898260Z"
+      },
+      {
+        "id": "07f4627d-b081-4e97-9097-f5304316faec",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.869259Z"
+      },
+      {
+        "id": "134c8aca-b734-4647-ae54-74687722c938",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.844260Z"
+      },
+      {
+        "id": "cb390103-5600-4754-b7a5-5a023e7878ea",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.821258Z"
+      },
+      {
+        "id": "3d6d5952-4d43-4e03-b900-176fae22f573",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.798258Z"
+      },
+      {
+        "id": "92a359d5-6541-40b6-97a0-366cbdfa5c24",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.772258Z"
+      },
+      {
+        "id": "bf6f574f-8f9c-4dab-a7f0-06616117ceed",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.725759Z"
+      },
+      {
+        "id": "80195f0a-86e9-4b85-aa17-04e69dad2469",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.682759Z"
+      },
+      {
+        "id": "edc2d506-0d82-49e9-9f19-4ccaf6e87deb",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.648759Z"
+      },
+      {
+        "id": "91b4db0b-fefa-4fd8-80f4-0df82283da9b",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.592758Z"
+      },
+      {
+        "id": "e5265022-a321-4a5d-a59a-374f462810a8",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.555759Z"
+      },
+      {
+        "id": "b7e5b49f-3e05-4d0f-8099-24bf25c06509",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.458759Z"
+      },
+      {
+        "id": "1ef088c6-b92b-4565-b35b-0913d93a1675",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.425258Z"
+      },
+      {
+        "id": "1ad835f5-46da-4dbe-a089-4cba6bcb9dd5",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.393259Z"
+      },
+      {
+        "id": "b7ac2829-a800-4aa4-8a79-635be48c64ad",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.345759Z"
+      },
+      {
+        "id": "0aed0140-ec1c-4766-a765-bbf5e8e33725",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.322259Z"
+      },
+      {
+        "id": "0e084976-67f2-46d4-b008-ddc926574ffb",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.285259Z"
+      },
+      {
+        "id": "70a4abae-f643-4232-80b9-329a2f14d96a",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.247259Z"
+      },
+      {
+        "id": "d5cea5a9-b130-430f-b30f-9322681a21bb",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.223261Z"
+      },
+      {
+        "id": "735b1ccf-5e48-4cef-bc12-b04cff212e58",
+        "actorName": "Lucas Martins",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.183258Z"
+      },
+      {
+        "id": "ce44328e-a179-4da4-90e9-11f9b2ccaf1d",
+        "actorName": "Beatriz Souza",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.160759Z"
+      },
+      {
+        "id": "f79c3fdf-bfff-4a4f-a02d-a15b3a0c2ed4",
+        "actorName": "Marina Costa",
+        "action": "COMMENT_ADDED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": null,
+        "reason": "Comentário registrado",
+        "createdAt": "2026-11-19T17:31:09.120258Z"
+      },
+      {
+        "id": "9d61d362-571c-4abb-9c02-5fe0f73be6a7",
+        "actorName": "Beatriz Souza",
+        "action": "SENT_TO_EXECUTION",
+        "fieldName": "status",
+        "oldValue": "\"TRIAGE\"",
+        "newValue": "\"EXECUTION\"",
+        "reason": "Triagem concluída",
+        "createdAt": "2026-11-19T17:31:09.078758Z"
+      },
+      {
+        "id": "75509e7e-138a-4e73-bedd-098677ede187",
+        "actorName": "Beatriz Souza",
+        "action": "RESOLUTION_DEADLINE_CHANGED",
+        "fieldName": "resolutionDueAt",
+        "oldValue": null,
+        "newValue": "\"2026-11-24T13:31:08.988258Z\"",
+        "reason": "Prazo de resolução aplicado",
+        "createdAt": "2026-11-19T17:31:09.078758Z"
+      },
+      {
+        "id": "8507cc8b-28a0-4ac5-8c07-61c97845269e",
+        "actorName": "Beatriz Souza",
+        "action": "RESPONSE_DEADLINE_CHANGED",
+        "fieldName": "responseDueAt",
+        "oldValue": null,
+        "newValue": "\"2026-11-23T11:31:08.988258Z\"",
+        "reason": "Prazo de primeira resposta aplicado",
+        "createdAt": "2026-11-19T17:31:09.078259Z"
+      },
+      {
+        "id": "4d8c9b64-7975-4ed2-90c9-5939597c0bf2",
+        "actorName": "Beatriz Souza",
+        "action": "ASSIGNEE_CHANGED",
+        "fieldName": "assigneeId",
+        "oldValue": null,
+        "newValue": "\"0f1c3b65-cd0a-47f8-a264-dc23278e1f8e\"",
+        "reason": "Responsável confirmado",
+        "createdAt": "2026-11-19T17:31:09.078259Z"
+      },
+      {
+        "id": "7f33c4c6-f834-487e-bfac-fd37226c18f5",
+        "actorName": "Beatriz Souza",
+        "action": "TRIAGE_CLASSIFIED",
+        "fieldName": "priority",
+        "oldValue": null,
+        "newValue": "\"HIGH\"",
+        "reason": "Prioridade confirmada",
+        "createdAt": "2026-11-19T17:31:09.077759Z"
+      },
+      {
+        "id": "317299e9-244b-4ab3-86a5-6a1428be1e51",
+        "actorName": "Beatriz Souza",
+        "action": "TRIAGE_CAMPAIGN",
+        "fieldName": "campaignId",
+        "oldValue": "\"21f5421c-ad5b-461c-a244-725621497016\"",
+        "newValue": "\"21f5421c-ad5b-461c-a244-725621497016\"",
+        "reason": "Campanha confirmada na triagem",
+        "createdAt": "2026-11-19T17:31:09.077759Z"
+      },
+      {
+        "id": "2029f08f-3513-4ed4-ae33-ad617706b5d5",
+        "actorName": "Beatriz Souza",
+        "action": "TRIAGE_TYPE",
+        "fieldName": "demandTypeId",
+        "oldValue": "\"8cf67df4-c612-49a1-a339-1e69f92c8a94\"",
+        "newValue": "\"8cf67df4-c612-49a1-a339-1e69f92c8a94\"",
+        "reason": "Tipo de demanda confirmado na triagem",
+        "createdAt": "2026-11-19T17:31:09.077759Z"
+      },
+      {
+        "id": "96df8cb5-73ab-463d-b7e4-2a2b2ba35481",
+        "actorName": "Beatriz Souza",
+        "action": "TRIAGE_STARTED",
+        "fieldName": "status",
+        "oldValue": "\"OPEN\"",
+        "newValue": "\"TRIAGE\"",
+        "reason": "Conferência de teste",
+        "createdAt": "2026-11-19T17:31:09.028758Z"
+      },
+      {
+        "id": "905e884c-30ee-4173-8819-0d3ce3cc862b",
+        "actorName": "Marina Costa",
+        "action": "TICKET_CREATED",
+        "fieldName": null,
+        "oldValue": null,
+        "newValue": "\"OPEN\"",
+        "reason": "Solicitação registrada",
+        "createdAt": "2026-11-19T17:31:08.988258Z"
+      }
+    ],
+    "dbRows": [
+      {
+        "id": "905e884c-30ee-4173-8819-0d3ce3cc862b",
+        "action": "TICKET_CREATED",
+        "reason": "Solicitação registrada",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": "OPEN",
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:08.988258Z",
+        "fieldName": null
+      },
+      {
+        "id": "96df8cb5-73ab-463d-b7e4-2a2b2ba35481",
+        "action": "TRIAGE_STARTED",
+        "reason": "Conferência de teste",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "TRIAGE",
+        "oldValue": "OPEN",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.028758Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "2029f08f-3513-4ed4-ae33-ad617706b5d5",
+        "action": "TRIAGE_TYPE",
+        "reason": "Tipo de demanda confirmado na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "8cf67df4-c612-49a1-a339-1e69f92c8a94",
+        "oldValue": "8cf67df4-c612-49a1-a339-1e69f92c8a94",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.077759Z",
+        "fieldName": "demandTypeId"
+      },
+      {
+        "id": "317299e9-244b-4ab3-86a5-6a1428be1e51",
+        "action": "TRIAGE_CAMPAIGN",
+        "reason": "Campanha confirmada na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "oldValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.077759Z",
+        "fieldName": "campaignId"
+      },
+      {
+        "id": "7f33c4c6-f834-487e-bfac-fd37226c18f5",
+        "action": "TRIAGE_CLASSIFIED",
+        "reason": "Prioridade confirmada",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "HIGH",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.077759Z",
+        "fieldName": "priority"
+      },
+      {
+        "id": "4d8c9b64-7975-4ed2-90c9-5939597c0bf2",
+        "action": "ASSIGNEE_CHANGED",
+        "reason": "Responsável confirmado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.078259Z",
+        "fieldName": "assigneeId"
+      },
+      {
+        "id": "8507cc8b-28a0-4ac5-8c07-61c97845269e",
+        "action": "RESPONSE_DEADLINE_CHANGED",
+        "reason": "Prazo de primeira resposta aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-23T11:31:08.988258Z",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.078259Z",
+        "fieldName": "responseDueAt"
+      },
+      {
+        "id": "75509e7e-138a-4e73-bedd-098677ede187",
+        "action": "RESOLUTION_DEADLINE_CHANGED",
+        "reason": "Prazo de resolução aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-24T13:31:08.988258Z",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.078758Z",
+        "fieldName": "resolutionDueAt"
+      },
+      {
+        "id": "9d61d362-571c-4abb-9c02-5fe0f73be6a7",
+        "action": "SENT_TO_EXECUTION",
+        "reason": "Triagem concluída",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "EXECUTION",
+        "oldValue": "TRIAGE",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.078758Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "f79c3fdf-bfff-4a4f-a02d-a15b3a0c2ed4",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:09.120258Z",
+        "fieldName": null
+      },
+      {
+        "id": "ce44328e-a179-4da4-90e9-11f9b2ccaf1d",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.160759Z",
+        "fieldName": null
+      },
+      {
+        "id": "735b1ccf-5e48-4cef-bc12-b04cff212e58",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:09.183258Z",
+        "fieldName": null
+      },
+      {
+        "id": "d5cea5a9-b130-430f-b30f-9322681a21bb",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:09.223261Z",
+        "fieldName": null
+      },
+      {
+        "id": "70a4abae-f643-4232-80b9-329a2f14d96a",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.247259Z",
+        "fieldName": null
+      },
+      {
+        "id": "0e084976-67f2-46d4-b008-ddc926574ffb",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:09.285259Z",
+        "fieldName": null
+      },
+      {
+        "id": "0aed0140-ec1c-4766-a765-bbf5e8e33725",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:09.322259Z",
+        "fieldName": null
+      },
+      {
+        "id": "b7ac2829-a800-4aa4-8a79-635be48c64ad",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.345759Z",
+        "fieldName": null
+      },
+      {
+        "id": "1ad835f5-46da-4dbe-a089-4cba6bcb9dd5",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:09.393259Z",
+        "fieldName": null
+      },
+      {
+        "id": "1ef088c6-b92b-4565-b35b-0913d93a1675",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:09.425258Z",
+        "fieldName": null
+      },
+      {
+        "id": "b7e5b49f-3e05-4d0f-8099-24bf25c06509",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.458759Z",
+        "fieldName": null
+      },
+      {
+        "id": "e5265022-a321-4a5d-a59a-374f462810a8",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:09.555759Z",
+        "fieldName": null
+      },
+      {
+        "id": "91b4db0b-fefa-4fd8-80f4-0df82283da9b",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:09.592758Z",
+        "fieldName": null
+      },
+      {
+        "id": "edc2d506-0d82-49e9-9f19-4ccaf6e87deb",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.648759Z",
+        "fieldName": null
+      },
+      {
+        "id": "80195f0a-86e9-4b85-aa17-04e69dad2469",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:09.682759Z",
+        "fieldName": null
+      },
+      {
+        "id": "bf6f574f-8f9c-4dab-a7f0-06616117ceed",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:09.725759Z",
+        "fieldName": null
+      },
+      {
+        "id": "92a359d5-6541-40b6-97a0-366cbdfa5c24",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.772258Z",
+        "fieldName": null
+      },
+      {
+        "id": "3d6d5952-4d43-4e03-b900-176fae22f573",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:09.798258Z",
+        "fieldName": null
+      },
+      {
+        "id": "cb390103-5600-4754-b7a5-5a023e7878ea",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:09.821258Z",
+        "fieldName": null
+      },
+      {
+        "id": "134c8aca-b734-4647-ae54-74687722c938",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.844260Z",
+        "fieldName": null
+      },
+      {
+        "id": "07f4627d-b081-4e97-9097-f5304316faec",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:09.869259Z",
+        "fieldName": null
+      },
+      {
+        "id": "906c1081-e88e-452e-a7f4-e76fc7ddf0ee",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:09.898260Z",
+        "fieldName": null
+      },
+      {
+        "id": "2e770529-387e-4324-bc23-c4af7fb13cce",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:09.968760Z",
+        "fieldName": null
+      },
+      {
+        "id": "307c30b7-0e9b-4588-94bb-bb3413b37ee8",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:10.014759Z",
+        "fieldName": null
+      },
+      {
+        "id": "f42f7007-1061-46f1-a11f-315cfdc90215",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:10.045260Z",
+        "fieldName": null
+      },
+      {
+        "id": "e57c0b3f-f44c-49de-a21c-22b746953e37",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:10.092762Z",
+        "fieldName": null
+      },
+      {
+        "id": "34a1e178-7169-4e21-a9f7-85ead6795c88",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:10.138760Z",
+        "fieldName": null
+      },
+      {
+        "id": "fdb55ca9-b7f7-447f-bb68-4f6d1b230b9f",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:10.217260Z",
+        "fieldName": null
+      },
+      {
+        "id": "71f56146-d7c7-4953-a6d3-1dd8e1f4d441",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:10.274759Z",
+        "fieldName": null
+      },
+      {
+        "id": "4583ffb7-83b5-4c4c-84c2-d1909636d03a",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:10.304260Z",
+        "fieldName": null
+      },
+      {
+        "id": "a106c68f-ef64-4bcb-98da-6699fa7553ef",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:10.355259Z",
+        "fieldName": null
+      },
+      {
+        "id": "1b40e7cb-134b-40fa-b1b8-2bb9a702d6d6",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:10.386760Z",
+        "fieldName": null
+      },
+      {
+        "id": "f5ce7c8d-af66-4e66-bf57-b4d6215385ab",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:10.448759Z",
+        "fieldName": null
+      },
+      {
+        "id": "b495f042-4b5b-44c8-9e1a-f457643da9e7",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:10.495259Z",
+        "fieldName": null
+      },
+      {
+        "id": "6d5a5b69-e93e-44a1-9812-446cb1a36efb",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:10.537261Z",
+        "fieldName": null
+      },
+      {
+        "id": "d63fdf83-ff8c-42be-b86a-09872f2d8d2d",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:10.567760Z",
+        "fieldName": null
+      },
+      {
+        "id": "0fdeb3ca-c112-44a5-96e9-afb0fdf9a45c",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:10.598260Z",
+        "fieldName": null
+      },
+      {
+        "id": "2420e19f-2aef-44ef-9874-a029bdad9e95",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:10.644760Z",
+        "fieldName": null
+      },
+      {
+        "id": "4f8f6ccc-7f1e-44e2-b5c9-dedbc7dab5a6",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:10.697261Z",
+        "fieldName": null
+      },
+      {
+        "id": "845e7552-ff4b-4291-a5c5-3f0c837cff00",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:10.733260Z",
+        "fieldName": null
+      },
+      {
+        "id": "234f2ac4-edd6-4997-b270-f664b826bbb3",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:10.773259Z",
+        "fieldName": null
+      },
+      {
+        "id": "56028f4b-b61f-472c-ba7f-6bbca945a4d5",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:10.835259Z",
+        "fieldName": null
+      },
+      {
+        "id": "8f278c92-e651-4844-9f5b-f96968de6ffa",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:10.870259Z",
+        "fieldName": null
+      },
+      {
+        "id": "e6313bb8-f55c-443d-b89c-c4a01416cece",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:10.924259Z",
+        "fieldName": null
+      },
+      {
+        "id": "cac8ed17-1332-4434-9be3-5f69ab6bff71",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:10.974759Z",
+        "fieldName": null
+      },
+      {
+        "id": "fdde4a91-e34e-4ca9-b497-f7878a1d4041",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:11.021258Z",
+        "fieldName": null
+      },
+      {
+        "id": "53788635-fdca-4c3b-bc70-ddb5456dcdf2",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:11.048259Z",
+        "fieldName": null
+      },
+      {
+        "id": "ab89c9dd-d456-4d16-b2a1-4c1f157ba02e",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:11.099259Z",
+        "fieldName": null
+      },
+      {
+        "id": "bbc23c4a-5e35-45dd-9002-912c9b916524",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:11.138259Z",
+        "fieldName": null
+      },
+      {
+        "id": "34ce7a65-2a5d-4415-aa25-c836a5dec99e",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:11.165759Z",
+        "fieldName": null
+      },
+      {
+        "id": "0d5a22b0-a80e-46f8-8086-fd0ce9cf04bb",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:11.216758Z",
+        "fieldName": null
+      },
+      {
+        "id": "f0ca1bfd-59e7-46b3-8498-456d6654a2fb",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:11.244758Z",
+        "fieldName": null
+      },
+      {
+        "id": "5e073ec1-02b5-41e2-a852-604f6685e1ae",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:11.272758Z",
+        "fieldName": null
+      },
+      {
+        "id": "bf9e682c-85c4-4038-a493-4cece92e53d2",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:11.322757Z",
+        "fieldName": null
+      },
+      {
+        "id": "533ccdfc-ee17-4a4d-a778-347c3eef54dd",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:11.377758Z",
+        "fieldName": null
+      },
+      {
+        "id": "40ae5bf0-3498-4249-a9a1-19b4abbb9300",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:11.432759Z",
+        "fieldName": null
+      },
+      {
+        "id": "adf2aea8-c07a-4a80-ace9-088b78aa7f38",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:11.458259Z",
+        "fieldName": null
+      },
+      {
+        "id": "e078df2d-842e-49b1-b4f6-ee1e33aad4aa",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:11.532758Z",
+        "fieldName": null
+      },
+      {
+        "id": "7bfbea31-9992-4486-8606-76a8f5ae8fb0",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:11.586760Z",
+        "fieldName": null
+      },
+      {
+        "id": "16388007-b41e-4d05-9a00-eee7f3170f44",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:11.633260Z",
+        "fieldName": null
+      },
+      {
+        "id": "0549a190-7f52-4562-a089-80b0c08d5cc0",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:11.687760Z",
+        "fieldName": null
+      },
+      {
+        "id": "b1e8e03f-d58e-4503-9d5b-18f9c3a4a8fd",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:11.749258Z",
+        "fieldName": null
+      },
+      {
+        "id": "c430656e-7d49-4f19-a647-3fbfb588a9a4",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:11.804259Z",
+        "fieldName": null
+      },
+      {
+        "id": "4ba50377-b97e-4dc2-b001-e6a50a21d370",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:11.874259Z",
+        "fieldName": null
+      },
+      {
+        "id": "fafe7cae-c651-48a9-aa8a-fe7ccb7bb487",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:11.905760Z",
+        "fieldName": null
+      },
+      {
+        "id": "5319db4a-75eb-4c82-b5dc-fbd6d2b93340",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:11.935759Z",
+        "fieldName": null
+      },
+      {
+        "id": "1657aafd-3293-4e68-b454-b1f831ac49c9",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:11.963759Z",
+        "fieldName": null
+      },
+      {
+        "id": "8c57308e-795c-4bb5-a27a-5e0910c8428e",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:11.991259Z",
+        "fieldName": null
+      },
+      {
+        "id": "5be98d27-f6bf-4d87-9bc0-781f64886cdc",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.020258Z",
+        "fieldName": null
+      },
+      {
+        "id": "b5dbe100-e868-422f-88c7-ef76d987be05",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.048760Z",
+        "fieldName": null
+      },
+      {
+        "id": "91019ef2-0175-4995-8144-421acce7f414",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:12.090259Z",
+        "fieldName": null
+      },
+      {
+        "id": "9560b0ee-74b6-4c2c-b9e4-412f9701f733",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.116259Z",
+        "fieldName": null
+      },
+      {
+        "id": "9034c82c-6e0e-4037-be3b-de4f0ab63573",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.140258Z",
+        "fieldName": null
+      },
+      {
+        "id": "d5355017-4fc5-4763-91fe-ce02cc0cde5e",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:12.183261Z",
+        "fieldName": null
+      },
+      {
+        "id": "6278d4d2-4096-4013-b351-49bf367482f6",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.225759Z",
+        "fieldName": null
+      },
+      {
+        "id": "beaf5e93-e0c1-41a1-b6dc-8a259ab81e7f",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.253761Z",
+        "fieldName": null
+      },
+      {
+        "id": "6f232792-3ab9-4d6a-a015-e5ed61f8a508",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:12.279759Z",
+        "fieldName": null
+      },
+      {
+        "id": "72024865-59a0-4a64-9778-5d6a24ac614f",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.322758Z",
+        "fieldName": null
+      },
+      {
+        "id": "ff0c7dfc-3045-4ed3-abe2-13847da65d1a",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.349259Z",
+        "fieldName": null
+      },
+      {
+        "id": "11138270-84a2-47d4-b9a8-56d2d014fcb6",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:12.394259Z",
+        "fieldName": null
+      },
+      {
+        "id": "06558f24-4ec9-45e5-ab1e-ce35cd978f37",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.447258Z",
+        "fieldName": null
+      },
+      {
+        "id": "c423bb5a-897f-438d-aabf-4e6f7f8f8228",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.493259Z",
+        "fieldName": null
+      },
+      {
+        "id": "7b7be7df-e6c6-483b-b09f-ec436bef7d4c",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:12.522759Z",
+        "fieldName": null
+      },
+      {
+        "id": "3833143a-f42d-4f8c-ab57-8b9483875caa",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.586260Z",
+        "fieldName": null
+      },
+      {
+        "id": "112d2737-5c61-457c-8f24-e2956a205bf9",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.611258Z",
+        "fieldName": null
+      },
+      {
+        "id": "6d45676f-ceaf-4eea-9379-0b1578e5fefd",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:12.655259Z",
+        "fieldName": null
+      },
+      {
+        "id": "78a85690-a9fe-4917-9cf3-92ef22ce506c",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.682762Z",
+        "fieldName": null
+      },
+      {
+        "id": "4fa87289-b3e7-4109-8ea8-936737b23341",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.741759Z",
+        "fieldName": null
+      },
+      {
+        "id": "d5eb5fb6-782a-4ae6-8146-7588c161fab6",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:12.780259Z",
+        "fieldName": null
+      },
+      {
+        "id": "37702705-f63a-4177-820b-51786de2546a",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.849258Z",
+        "fieldName": null
+      },
+      {
+        "id": "8101e96a-9c9b-4dbc-abf2-81bd07505ad1",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.874258Z",
+        "fieldName": null
+      },
+      {
+        "id": "a642d743-dc10-476c-be45-db6ebdc4b50f",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:12.911760Z",
+        "fieldName": null
+      },
+      {
+        "id": "d0401d46-722f-4b34-b0af-a57c9fba5994",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:12.973258Z",
+        "fieldName": null
+      },
+      {
+        "id": "289a84c6-c82d-4138-b1dc-87bbf25e51e0",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:12.997758Z",
+        "fieldName": null
+      },
+      {
+        "id": "952ce912-de53-4654-a997-1d7c89f98993",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.042758Z",
+        "fieldName": null
+      },
+      {
+        "id": "908ec5fe-ab79-4d28-8256-cfdcb576caf3",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.069258Z",
+        "fieldName": null
+      },
+      {
+        "id": "1854d0ce-1dfc-4c6a-a94a-ae58ad5b62dd",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:13.105258Z",
+        "fieldName": null
+      },
+      {
+        "id": "c38c7d72-2902-42e4-ab58-0fdf11df7ff5",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.144259Z",
+        "fieldName": null
+      },
+      {
+        "id": "f828b00c-f7ed-4d2f-831d-b535a55e729d",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.169759Z",
+        "fieldName": null
+      },
+      {
+        "id": "c6157911-41a8-4f0f-9169-ff0df4d60d62",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:13.237258Z",
+        "fieldName": null
+      },
+      {
+        "id": "85b5a2de-7087-4d3e-a568-700d9d8ba153",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.283259Z",
+        "fieldName": null
+      },
+      {
+        "id": "c01422ec-52e5-4834-bfd7-e5b3f7799cfb",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.306758Z",
+        "fieldName": null
+      },
+      {
+        "id": "822e4ee3-1f48-4058-8ea2-6b098c5c93cf",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:13.376257Z",
+        "fieldName": null
+      },
+      {
+        "id": "c5bef52f-4f39-404a-9448-26cc5bde65c8",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.400758Z",
+        "fieldName": null
+      },
+      {
+        "id": "65f6671b-d409-4af5-ac60-5f960d3d7783",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.448760Z",
+        "fieldName": null
+      },
+      {
+        "id": "a43c867f-a90e-461e-9a82-db77c9305ea6",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:13.477758Z",
+        "fieldName": null
+      },
+      {
+        "id": "3c1603be-b91b-4d66-92dd-43c94eac4d8b",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.516259Z",
+        "fieldName": null
+      },
+      {
+        "id": "4eb83a08-31a9-4557-b887-a62f9d85ced8",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.540259Z",
+        "fieldName": null
+      },
+      {
+        "id": "34fa02bd-f761-415c-8820-9b994e479bb2",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:13.565759Z",
+        "fieldName": null
+      },
+      {
+        "id": "a6e9e37d-8062-4ce7-9266-d732d12812b1",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.589759Z",
+        "fieldName": null
+      },
+      {
+        "id": "fb35aa1d-9fe2-4199-807b-a64be75c3d82",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.618262Z",
+        "fieldName": null
+      },
+      {
+        "id": "63b15924-ca18-4503-8431-cf64674135e3",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:13.655259Z",
+        "fieldName": null
+      },
+      {
+        "id": "437ee33e-117f-4582-87c2-2b405a1f4e07",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.694261Z",
+        "fieldName": null
+      },
+      {
+        "id": "e624cb4e-190e-4a56-98fe-ca6052d52359",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.720258Z",
+        "fieldName": null
+      },
+      {
+        "id": "62b6ff55-40ee-4b35-92c5-8685c1028afa",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:13.756260Z",
+        "fieldName": null
+      },
+      {
+        "id": "f83a9b26-7b42-41a2-9090-94b7c83f3ca3",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.804259Z",
+        "fieldName": null
+      },
+      {
+        "id": "f4588c4f-4a4b-4724-9a68-42f0350acb3f",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.830260Z",
+        "fieldName": null
+      },
+      {
+        "id": "79bc8f2d-45d6-4caa-a370-31aff943bb52",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:31:13.855758Z",
+        "fieldName": null
+      },
+      {
+        "id": "bced8bb2-0009-4978-9cde-d4a707e3a3b0",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:31:13.880258Z",
+        "fieldName": null
+      },
+      {
+        "id": "0c04b209-42e6-4be8-a50d-263fcdd647ad",
+        "action": "COMMENT_ADDED",
+        "reason": "Comentário registrado",
+        "actorId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Lucas Martins",
+        "createdAt": "2026-11-19T17:31:13.928259Z",
+        "fieldName": null
+      }
+    ],
+    "priorActorRows": [
+      {
+        "id": "190fe17a-32a4-4020-ab46-ee6b6b400884",
+        "action": "TICKET_CREATED",
+        "reason": "Solicitação registrada",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": "OPEN",
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:27:51.515759Z",
+        "fieldName": null
+      },
+      {
+        "id": "c5ae2395-ce9b-4fac-abab-4054e69f3277",
+        "action": "TRIAGE_STARTED",
+        "reason": "Conferência de teste",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "TRIAGE",
+        "oldValue": "OPEN",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.545260Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "1a4010f6-920f-49cc-a905-02be39b9a512",
+        "action": "TRIAGE_CAMPAIGN",
+        "reason": "Campanha confirmada na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "oldValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.578261Z",
+        "fieldName": "campaignId"
+      },
+      {
+        "id": "20eb8c3f-b2aa-40f5-864c-ca3ce147506d",
+        "action": "ASSIGNEE_CHANGED",
+        "reason": "Responsável confirmado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.578760Z",
+        "fieldName": "assigneeId"
+      },
+      {
+        "id": "2c54fb4a-5782-4e04-8403-31b58114ba53",
+        "action": "TRIAGE_TYPE",
+        "reason": "Tipo de demanda confirmado na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "e25e654a-eaf1-4534-b35d-fb7467a70793",
+        "oldValue": "e25e654a-eaf1-4534-b35d-fb7467a70793",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.578760Z",
+        "fieldName": "demandTypeId"
+      },
+      {
+        "id": "a7ddfa1f-0b5c-4a1f-af85-362d0802e9e0",
+        "action": "TRIAGE_CLASSIFIED",
+        "reason": "Prioridade confirmada",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "HIGH",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.578760Z",
+        "fieldName": "priority"
+      },
+      {
+        "id": "c904ecd8-ca98-437d-874a-1b7e32b3068f",
+        "action": "RESPONSE_DEADLINE_CHANGED",
+        "reason": "Prazo de primeira resposta aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-23T11:27:51.515759Z",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.579261Z",
+        "fieldName": "responseDueAt"
+      },
+      {
+        "id": "cafe0e7b-fd96-4b55-9c89-470239c6967b",
+        "action": "RESOLUTION_DEADLINE_CHANGED",
+        "reason": "Prazo de resolução aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-24T13:27:51.515759Z",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.579261Z",
+        "fieldName": "resolutionDueAt"
+      },
+      {
+        "id": "6cb2e6e5-4384-4333-bf06-93124438ef0f",
+        "action": "SENT_TO_EXECUTION",
+        "reason": "Triagem concluída",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "EXECUTION",
+        "oldValue": "TRIAGE",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.579761Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "5028d756-10d2-4c4a-ba9b-da2e40213869",
+        "action": "ASSIGNEE_CHANGED",
+        "reason": "Reatribuição CT13",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+        "oldValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.607758Z",
+        "fieldName": "assigneeId"
+      },
+      {
+        "id": "91627696-f54b-43a9-8bd3-7a817ca5bbf7",
+        "action": "COMPLEMENT_REQUESTED",
+        "reason": "Aguardo CT13",
+        "actorId": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+        "newValue": "WAITING_FOR_CLIENT",
+        "oldValue": "EXECUTION",
+        "actorName": "Ana Ribeiro",
+        "createdAt": "2026-11-19T17:27:51.655259Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "8609e899-b0ba-4176-94da-351b9eb81cf2",
+        "action": "COMPLEMENT_RECEIVED",
+        "reason": "Comentário: Complemento CT13",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": null,
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:27:51.705762Z",
+        "fieldName": null
+      },
+      {
+        "id": "d13bdaa8-0ef1-47f6-9790-a77970e86f76",
+        "action": "RESOLUTION_DEADLINE_CHANGED",
+        "reason": "Prazo recalculado após a pausa",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-24T13:27:51.594258Z",
+        "oldValue": "2026-11-24T13:27:51.515759Z",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.735258Z",
+        "fieldName": "resolutionDueAt"
+      },
+      {
+        "id": "faa7e537-8352-4c00-9d31-8c1941b79a7a",
+        "action": "TICKET_RESUMED",
+        "reason": "Retomada CT13",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "EXECUTION",
+        "oldValue": "WAITING_FOR_CLIENT",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.735258Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "5a70b3ce-43e7-40c2-8e4c-3aa45c8d3c21",
+        "action": "EXECUTION_RECORDED",
+        "reason": "Entrega CT13",
+        "actorId": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+        "newValue": "VALIDATION",
+        "oldValue": "EXECUTION",
+        "actorName": "Ana Ribeiro",
+        "createdAt": "2026-11-19T17:27:51.779759Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "6644581a-1bc2-469a-8061-859b4b84863b",
+        "action": "RESOLUTION_DEADLINE_CHANGED",
+        "reason": "Prazo recalculado após validação",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": "2026-11-24T13:27:51.622257Z",
+        "oldValue": "2026-11-24T13:27:51.594258Z",
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:27:51.809258Z",
+        "fieldName": "resolutionDueAt"
+      },
+      {
+        "id": "e39da08b-7d21-42ef-9250-cf41ae4d39c3",
+        "action": "APPROVED",
+        "reason": "Aprovação CT13",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": "DONE",
+        "oldValue": "VALIDATION",
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:27:51.809258Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "00fdf5d8-9b42-4390-b5c0-af12af45a516",
+        "action": "REOPENED",
+        "reason": "Reabertura CT13",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": "REOPENED",
+        "oldValue": "DONE",
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:27:51.840258Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "a15269d9-138d-4810-a768-927ceea0edb6",
+        "action": "RESOLUTION_CYCLE_CLOSED",
+        "reason": "Reabertura CT13",
+        "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+        "newValue": {
+          "cycle": 1,
+          "priority": "HIGH",
+          "completedAt": "2026-11-19T17:27:51.809258Z",
+          "slaSnapshot": "{\"id\": \"180ec224-ee7e-435d-aca0-abee54643273\", \"name\": \"Review a4d1fb26 SLA CLIENT\", \"version\": 2, \"holidays\": [\"2026-12-24\"], \"timezone\": \"America/Sao_Paulo\", \"deadlines\": {\"LOW\": {\"responseHours\": 16, \"resolutionHours\": 40}, \"HIGH\": {\"responseHours\": 4, \"resolutionHours\": 16}, \"MEDIUM\": {\"responseHours\": 8, \"resolutionHours\": 24}, \"URGENT\": {\"responseHours\": 2, \"resolutionHours\": 8}}, \"businessEnd\": \"18:00\", \"businessDays\": [\"MONDAY\", \"TUESDAY\", \"WEDNESDAY\", \"THURSDAY\", \"FRIDAY\"], \"businessStart\": \"08:00\", \"pauseInValidation\": true, \"nationalHolidayPolicy\": \"BR_FIXED_V1\"}",
+          "resolutionDueAt": "2026-11-24T13:27:51.622257Z"
+        },
+        "oldValue": null,
+        "actorName": "Marina Costa",
+        "createdAt": "2026-11-19T17:27:51.840258Z",
+        "fieldName": "resolutionCycle"
+      },
+      {
+        "id": "90e99703-c378-436f-a487-6a100aafc718",
+        "action": "TRIAGE_CAMPAIGN",
+        "reason": "Campanha confirmada na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "oldValue": "21f5421c-ad5b-461c-a244-725621497016",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.915260Z",
+        "fieldName": "campaignId"
+      },
+      {
+        "id": "5862ebdb-3c63-40b9-88a4-87c9021e54e0",
+        "action": "TRIAGE_TYPE",
+        "reason": "Tipo de demanda confirmado na triagem",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "e25e654a-eaf1-4534-b35d-fb7467a70793",
+        "oldValue": "e25e654a-eaf1-4534-b35d-fb7467a70793",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.915758Z",
+        "fieldName": "demandTypeId"
+      },
+      {
+        "id": "e6eeb6c9-8dfb-45d9-9ee2-be5d774d3bf7",
+        "action": "ASSIGNEE_CHANGED",
+        "reason": "Responsável confirmado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+        "oldValue": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.915758Z",
+        "fieldName": "assigneeId"
+      },
+      {
+        "id": "ec9a3a11-94c8-4d6f-a147-3f3b46c0d431",
+        "action": "TRIAGE_CLASSIFIED",
+        "reason": "Prioridade confirmada",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "HIGH",
+        "oldValue": "HIGH",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.915758Z",
+        "fieldName": "priority"
+      },
+      {
+        "id": "2fc8fe25-7040-470b-8a4b-32b252475b91",
+        "action": "RESPONSE_DEADLINE_CHANGED",
+        "reason": "Prazo de primeira resposta aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-23T11:27:51.515759Z",
+        "oldValue": "2026-11-23T11:27:51.515759Z",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.916258Z",
+        "fieldName": "responseDueAt"
+      },
+      {
+        "id": "d46c088b-6035-4fb4-979c-950f461b85c9",
+        "action": "SENT_TO_EXECUTION",
+        "reason": "Triagem concluída",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "EXECUTION",
+        "oldValue": "REOPENED",
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.916258Z",
+        "fieldName": "status"
+      },
+      {
+        "id": "f5f4e45b-9289-41e0-98ae-325109c9eefc",
+        "action": "RESOLUTION_DEADLINE_CHANGED",
+        "reason": "Prazo de resolução aplicado",
+        "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+        "newValue": "2026-11-24T13:27:51.840258Z",
+        "oldValue": null,
+        "actorName": "Beatriz Souza",
+        "createdAt": "2026-11-19T17:27:51.916258Z",
+        "fieldName": "resolutionDueAt"
+      }
+    ],
+    "commentActors": {
+      "9cdd8229-26b0-4e8b-97cf-eba6c80743e4": 40,
+      "22b56fe4-d522-4078-a24a-bf496757e367": 40,
+      "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 40
+    },
+    "contract": "Detalhe retorna lista de histórico, sem endpoint paginado no contrato implementado."
+  }
+}

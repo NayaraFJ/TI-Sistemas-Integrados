@@ -1,0 +1,133 @@
+{
+  "startedAt": "2026-11-19T20:55:33.799257+00:00",
+  "finishedAt": "2026-11-19T20:55:34.736759+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review 59563fa1"
+  },
+  "cases": [
+    {
+      "id": "CT-08-gestor-notificacao-reteste",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T20:55:34.362760+00:00",
+      "finishedAt": "2026-11-19T20:55:34.736259+00:00",
+      "assertions": 18,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/36ed3d52-9af8-4e62-9267-3ffa9a585fd6 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /tickets/36ed3d52-9af8-4e62-9267-3ffa9a585fd6/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Notificação alheia disponível",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/36ed3d52-9af8-4e62-9267-3ffa9a585fd6 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "gestor2@sige.demo POST /notifications/3fb70c0e-9abb-4421-8cf5-1c4e67a44b58/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Auditoria registrada para Gestor",
+      "passed": true,
+      "detail": "{'notificationId': '3fb70c0e-9abb-4421-8cf5-1c4e67a44b58', 'ticketId': '36ed3d52-9af8-4e62-9267-3ffa9a585fd6', 'auditDelta': 1, 'event': {'at': '2026-11-19T20:55:34.613758', 'code': 'SECURITY_NOTIFICATION_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'NOTIFICATION', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '3fb70c0e-9abb-4421-8cf5-1c4e67a44b58'}}"
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Notificação alheia não alterada TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "gestor2@sige.demo GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Notificação ausente da lista TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/36ed3d52-9af8-4e62-9267-3ffa9a585fd6 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Ticket e histórico preservados",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "startedAt": "2026-11-19T12:24:25.124219+00:00",
+  "finishedAt": "2026-11-19T12:24:26.328721+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "cf55c62895dad8658991c9288b695eef48543c45a8cdfb5558bb693bf8ee18c9",
+    "runTag": "Review 0843fb5f"
+  },
+  "cases": [
+    {
+      "id": "CT-08-auditoria-matriz",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:24:25.672719+00:00",
+      "finishedAt": "2026-11-19T12:24:26.328721+00:00",
+      "assertions": 38,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo POST /tickets/100668c9-4bcc-49ab-874b-38a814f1058e/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo POST /tickets/100668c9-4bcc-49ab-874b-38a814f1058e/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "rafael@horizonte.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Uma trilha por negativa CLIENT detalhe",
+      "passed": true,
+      "detail": "{'previous': 0, 'after': 1}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Ator, recurso, resultado e instante CLIENT detalhe",
+      "passed": true,
+      "detail": "{'at': '2026-11-19T12:24:25.885218', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '100668c9-4bcc-49ab-874b-38a814f1058e'}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "rafael@horizonte.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e/attachments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Uma trilha por negativa CLIENT anexos",
+      "passed": true,
+      "detail": "{'previous': 1, 'after': 2}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Ator, recurso, resultado e instante CLIENT anexos",
+      "passed": true,
+      "detail": "{'at': '2026-11-19T12:24:25.936720', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '100668c9-4bcc-49ab-874b-38a814f1058e'}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "rafael@horizonte.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e/attachments/e5f547e9-72e1-44da-aac0-85fadfb4bf36/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Uma trilha por negativa CLIENT download",
+      "passed": true,
+      "detail": "{'previous': 2, 'after': 3}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Ator, recurso, resultado e instante CLIENT download",
+      "passed": true,
+      "detail": "{'at': '2026-11-19T12:24:25.988220', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '100668c9-4bcc-49ab-874b-38a814f1058e'}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "rafael@horizonte.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "rafael@horizonte.demo POST /tickets/100668c9-4bcc-49ab-874b-38a814f1058e/comments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Uma trilha por negativa CLIENT comentário",
+      "passed": true,
+      "detail": "{'previous': 3, 'after': 4}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Ator, recurso, resultado e instante CLIENT comentário",
+      "passed": true,
+      "detail": "{'at': '2026-11-19T12:24:26.042720', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '100668c9-4bcc-49ab-874b-38a814f1058e'}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "gestor2@sige.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Uma trilha por negativa TRAFFIC_MANAGER detalhe",
+      "passed": true,
+      "detail": "{'previous': 0, 'after': 1}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Ator, recurso, resultado e instante TRAFFIC_MANAGER detalhe",
+      "passed": true,
+      "detail": "{'at': '2026-11-19T12:24:26.119220', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'TICKET', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '100668c9-4bcc-49ab-874b-38a814f1058e'}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "gestor2@sige.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e/attachments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Uma trilha por negativa TRAFFIC_MANAGER anexos",
+      "passed": true,
+      "detail": "{'previous': 1, 'after': 2}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Ator, recurso, resultado e instante TRAFFIC_MANAGER anexos",
+      "passed": true,
+      "detail": "{'at': '2026-11-19T12:24:26.169720', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'TICKET', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '100668c9-4bcc-49ab-874b-38a814f1058e'}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "gestor2@sige.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e/attachments/e5f547e9-72e1-44da-aac0-85fadfb4bf36/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Uma trilha por negativa TRAFFIC_MANAGER download",
+      "passed": true,
+      "detail": "{'previous': 2, 'after': 3}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Ator, recurso, resultado e instante TRAFFIC_MANAGER download",
+      "passed": true,
+      "detail": "{'at': '2026-11-19T12:24:26.225720', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'TICKET', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '100668c9-4bcc-49ab-874b-38a814f1058e'}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "gestor2@sige.demo POST /tickets/100668c9-4bcc-49ab-874b-38a814f1058e/comments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Uma trilha por negativa TRAFFIC_MANAGER comentário",
+      "passed": true,
+      "detail": "{'previous': 3, 'after': 4}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Ator, recurso, resultado e instante TRAFFIC_MANAGER comentário",
+      "passed": true,
+      "detail": "{'at': '2026-11-19T12:24:26.290220', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'TICKET', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '100668c9-4bcc-49ab-874b-38a814f1058e'}"
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "cliente@aurora.demo GET /tickets/100668c9-4bcc-49ab-874b-38a814f1058e HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-matriz",
+      "name": "Estado e recursos preservados",
+      "passed": true,
+      "detail": "{'ticket': '100668c9-4bcc-49ab-874b-38a814f1058e', 'beforeVersion': 2, 'afterVersion': 2}"
+    }
+  ]
+}

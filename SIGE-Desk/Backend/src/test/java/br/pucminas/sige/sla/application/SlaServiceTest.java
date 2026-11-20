@@ -27,6 +27,25 @@ class SlaServiceTest {
   @Test void excludesNationalHolidayWithoutManualRegistration(){Ticket t=ticket();ReflectionTestUtils.setField(t,"createdAt",Instant.parse("2026-11-19T20:00:00Z"));var repo=Mockito.mock(SlaRuleRepository.class);when(repo.findByActiveTrue()).thenReturn(List.of(rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES)));var result=new SlaService(repo,new ObjectMapper()).calculate(t,Priority.MEDIUM);assertEquals(Instant.parse("2026-11-23T12:00:00Z"),result.responseDueAt());}
   @Test void calculatesElapsedBusinessTimeBeforeClassification(){Ticket t=ticket();ReflectionTestUtils.setField(t,"createdAt",Instant.parse("2026-11-19T20:00:00Z"));var repo=Mockito.mock(SlaRuleRepository.class);when(repo.findByActiveTrue()).thenReturn(List.of(rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES)));assertEquals(120,new SlaService(repo,new ObjectMapper()).elapsedBusinessMinutes(t,Instant.parse("2026-11-23T12:00:00Z")));}
   @Test void nationalPolicyPreservesTheEffectiveYear(){org.junit.jupiter.api.Assertions.assertFalse(BrazilianHolidays.isHoliday(LocalDate.of(2023,11,20)));org.junit.jupiter.api.Assertions.assertTrue(BrazilianHolidays.isHoliday(LocalDate.of(2024,11,20)));org.junit.jupiter.api.Assertions.assertTrue(BrazilianHolidays.isHoliday(LocalDate.of(2026,10,12)));org.junit.jupiter.api.Assertions.assertFalse(BrazilianHolidays.isHoliday(LocalDate.of(2026,10,13)));}
+  @Test void configuredRecessSkipsEachListedBusinessDay() {
+    Ticket ticket=ticket();ReflectionTestUtils.setField(ticket,"createdAt",Instant.parse("2026-12-23T20:00:00Z"));
+    var repository=Mockito.mock(SlaRuleRepository.class);var rule=rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES);
+    rule.update("Regra",SlaRule.Scope.DEFAULT,null,null,"America/Sao_Paulo","[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\"]",LocalTime.of(8,0),LocalTime.of(18,0),"[\"2026-12-24\",\"2026-12-28\"]",false,DEADLINES,true);
+    when(repository.findByActiveTrue()).thenReturn(List.of(rule));
+    var result=new SlaService(repository,new ObjectMapper()).calculate(ticket,Priority.MEDIUM);
+    assertEquals(Instant.parse("2026-12-29T12:00:00Z"),result.responseDueAt());
+    org.junit.jupiter.api.Assertions.assertTrue(result.snapshot().contains("2026-12-24"));
+    org.junit.jupiter.api.Assertions.assertTrue(result.snapshot().contains("2026-12-28"));
+  }
+  @Test void configuredTimezoneChangesBusinessHoursInUtc() {
+    Ticket ticket=ticket();var repository=Mockito.mock(SlaRuleRepository.class);var rule=rule(SlaRule.Scope.DEFAULT,null,null,DEADLINES);
+    rule.update("Regra",SlaRule.Scope.DEFAULT,null,null,"UTC","[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\"]",LocalTime.of(8,0),LocalTime.of(18,0),"[]",false,DEADLINES,true);
+    when(repository.findByActiveTrue()).thenReturn(List.of(rule));
+    var result=new SlaService(repository,new ObjectMapper()).calculate(ticket,Priority.MEDIUM);
+    assertEquals(Instant.parse("2026-09-28T15:00:00Z"),result.responseDueAt());
+    assertEquals(Instant.parse("2026-09-29T13:00:00Z"),result.resolutionDueAt());
+    org.junit.jupiter.api.Assertions.assertTrue(result.snapshot().contains("\"timezone\":\"UTC\""));
+  }
   @Test
   void calculatesOnlyInsideBusinessHours() {
     SlaRuleRepository repository = Mockito.mock(SlaRuleRepository.class);

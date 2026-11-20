@@ -1,5 +1,6 @@
 import axios from 'axios';
 import type { Dashboard, Notifications, ReferenceData, Session, TicketDetail, TicketFilters, TicketItem, TicketList, TicketReport } from './types';
+import { hasPreviousSession, isExpiredSessionResponse, markSessionEstablished, clearPreviousSession } from './sessionState';
 
 // O interceptor envia o token mascarado do endpoint; o Axios não deve substituí-lo pelo cookie bruto.
 const api = axios.create({ baseURL: '/api/v1', withCredentials: true, withXSRFToken: false, headers: { 'Content-Type': 'application/json' } });
@@ -7,13 +8,13 @@ let csrfToken: string | null = null;
 async function csrf() { if (!csrfToken) { const response = await api.get<{token:string}>('/auth/csrf'); csrfToken=response.data.token; } return csrfToken; }
 api.interceptors.request.use(async config => { if (!['get','head','options'].includes(config.method?.toLowerCase() ?? 'get') && !config.url?.endsWith('/auth/login')) config.headers.set('X-XSRF-TOKEN', await csrf()); return config; });
 api.interceptors.response.use(response=>response,error=>{
-  if(axios.isAxiosError(error)&&error.response?.status===401&&!error.config?.url?.startsWith('/auth/'))window.dispatchEvent(new Event('sige-session-expired'));
+  if(axios.isAxiosError(error)&&isExpiredSessionResponse(error.response?.status,error.config?.url,hasPreviousSession()))window.dispatchEvent(new Event('sige-session-expired'));
   return Promise.reject(error);
 });
 export const apiClient = {
-  login: async (email:string,password:string) => { const response=await api.post<Session>('/auth/login',{email,password}); csrfToken=null; return response.data; },
-  me: () => api.get<Session>('/auth/me').then(response=>response.data),
-  logout: async () => { try { await api.post('/auth/logout'); } finally { csrfToken=null; } },
+  login: async (email:string,password:string) => { const response=await api.post<Session>('/auth/login',{email,password}); csrfToken=null; markSessionEstablished(); return response.data; },
+  me: () => api.get<Session>('/auth/me').then(response=>{ markSessionEstablished(); return response.data; }),
+  logout: async () => { try { await api.post('/auth/logout'); clearPreviousSession(); } finally { csrfToken=null; } },
   dashboard: () => api.get<Dashboard>('/dashboard').then(response=>response.data),
   tickets: (filters:TicketFilters={}) => api.get<TicketList>('/tickets',{params:filters}).then(response=>response.data),
   ticket: (id:string) => api.get<TicketDetail>(`/tickets/${id}`).then(response=>response.data),

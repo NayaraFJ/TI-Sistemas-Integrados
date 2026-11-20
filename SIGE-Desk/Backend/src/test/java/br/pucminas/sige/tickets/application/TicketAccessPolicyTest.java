@@ -9,12 +9,15 @@ import br.pucminas.sige.tickets.domain.Ticket;
 import br.pucminas.sige.tickets.domain.TicketRepository;
 import br.pucminas.sige.users.domain.AppUser;
 import java.time.LocalDate;
+import java.util.Optional;
+import org.springframework.web.server.ResponseStatusException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 class TicketAccessPolicyTest {
   private TicketAccessPolicy policy;
+  private TicketRepository tickets;
   private Ticket ticket;
   private AppUser owner;
   private AppUser anotherClient;
@@ -22,7 +25,8 @@ class TicketAccessPolicyTest {
 
   @BeforeEach
   void setUp() {
-    policy = new TicketAccessPolicy(Mockito.mock(TicketRepository.class));
+    tickets = Mockito.mock(TicketRepository.class);
+    policy = new TicketAccessPolicy(tickets);
     Client aurora = new Client("Aurora", "Marina", "aurora@example.test", null);
     Client horizonte = new Client("Horizonte", "Rafael", "horizonte@example.test", null);
     owner = new AppUser("Marina", "marina@example.test", "hash", Role.CLIENT, aurora);
@@ -54,5 +58,21 @@ class TicketAccessPolicyTest {
     AppUser admin = new AppUser("Nayara", "admin@example.test", "hash", Role.ADMIN, null);
     assertTrue(policy.canAccess(ticket, service));
     assertTrue(policy.canAccess(ticket, admin));
+  }
+
+  @Test
+  void deniedOrganizationAccessIsAuditedWithoutDisclosingTicket() {
+    Mockito.when(tickets.findById(ticket.getId())).thenReturn(Optional.of(ticket));
+    ResponseStatusException denied = assertThrows(ResponseStatusException.class,
+      () -> policy.requireVisible(ticket.getId(), anotherClient));
+    assertEquals(404, denied.getStatusCode().value());
+    assertEquals("Ticket não encontrado", denied.getReason());
+    assertInstanceOf(br.pucminas.sige.shared.security.TicketAccessDeniedException.class, denied);
+  }
+
+  @Test
+  void authorizedReadDoesNotGenerateDeniedAccessEvent() {
+    Mockito.when(tickets.findById(ticket.getId())).thenReturn(Optional.of(ticket));
+    assertSame(ticket, policy.requireVisible(ticket.getId(), owner));
   }
 }

@@ -1,0 +1,156 @@
+{
+  "startedAt": "2026-11-19T21:00:46.464759+00:00",
+  "finishedAt": "2026-11-19T21:00:47.545757+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review e9871b10"
+  },
+  "cases": [
+    {
+      "id": "CT-08-auditoria-dados-sensiveis",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T21:00:47.019261+00:00",
+      "finishedAt": "2026-11-19T21:00:47.545257+00:00",
+      "assertions": 22,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "admin@sige.demo POST /users HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "qa-audit-8fe152ef5efb49179bcaab3a33501041@example.test POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "cliente@aurora.demo GET /tickets/6bddc9c8-c62f-437b-b46d-51190fde7d4e HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "cliente@aurora.demo POST /tickets/6bddc9c8-c62f-437b-b46d-51190fde7d4e/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "cliente@aurora.demo GET /tickets/6bddc9c8-c62f-437b-b46d-51190fde7d4e HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "qa-audit-8fe152ef5efb49179bcaab3a33501041@example.test GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "Credenciais sintéticas e sessão disponíveis",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "qa-audit-8fe152ef5efb49179bcaab3a33501041@example.test POST /tickets/6bddc9c8-c62f-437b-b46d-51190fde7d4e/comments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "Evento único correlacionado",
+      "passed": true,
+      "detail": "{'actorId': '5e0f646c-4478-4c16-afce-cfb16dfd8680', 'ticketId': '6bddc9c8-c62f-437b-b46d-51190fde7d4e', 'delta': 1}"
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "Todas as colunas da tabela incluídas",
+      "passed": true,
+      "detail": "['id', 'actor_id', 'actor_role', 'event_code', 'resource_type', 'resource_id', 'occurred_at']"
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "Evento completo correlacionado",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "Registro integral sem marcadores sensíveis",
+      "passed": true,
+      "detail": "{'senha': True, 'token_csrf': True, 'assunto': True, 'comentario_protegido': True, 'corpo_negado': True, 'cookie_0': True, 'cookie_1': True}"
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "Log correlacionado encontrado",
+      "passed": true,
+      "detail": "{'files': ['qa-runtime-overdue-out.log'], 'count': 1}"
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "Log correlacionado sem marcadores sensíveis",
+      "passed": true,
+      "detail": "{'senha': True, 'token_csrf': True, 'assunto': True, 'comentario_protegido': True, 'corpo_negado': True, 'cookie_0': True, 'cookie_1': True}"
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "cliente@aurora.demo GET /tickets/6bddc9c8-c62f-437b-b46d-51190fde7d4e HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-auditoria-dados-sensiveis",
+      "name": "Ticket e recursos preservados",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

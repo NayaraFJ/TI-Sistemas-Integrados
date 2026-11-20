@@ -1,0 +1,76 @@
+{
+  "startedAt": "2026-11-19T17:54:16.783257+00:00",
+  "finishedAt": "2026-11-19T17:54:17.248758+00:00",
+  "baseUrl": "http://localhost:8082/api/v1",
+  "schema": "sige_desk_qa_admin_20261119",
+  "storage": "target/qa-admin-uploads",
+  "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+  "mysql": "8.0.40",
+  "before": "1:ADMIN",
+  "after": "1:ADMIN",
+  "response": {
+    "code": "INVALID_TRANSITION",
+    "message": "O último administrador ativo não pode perder o acesso",
+    "timestamp": "2026-11-19T17:54:17.185757900Z",
+    "fields": {}
+  },
+  "checks": [
+    {
+      "name": "Schema isolado confirmado",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /users HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Único Admin ativo identificado",
+      "passed": true,
+      "detail": "{'count': 1}"
+    },
+    {
+      "name": "Estado inicial persistido ativo/Admin",
+      "passed": true,
+      "detail": "1:ADMIN"
+    },
+    {
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo PUT /users/5ac28f0e-2a60-4536-ad04-f2f09b399238 HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Estado persistido preservado",
+      "passed": true,
+      "detail": "{'before': '1:ADMIN', 'after': '1:ADMIN'}"
+    },
+    {
+      "name": "admin@sige.demo GET /auth/me HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sessão ainda acessa usuário ativo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Um único Admin ativo permanece",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "error": null,
+  "retention": "Schema isolado e uploads preservados para auditoria"
+}

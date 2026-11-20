@@ -52,8 +52,6 @@ Desenvolver uma aplicação web de Help Desk para centralizar, acompanhar e regi
 \item Entregar uma versão final funcional do aplicativo, acompanhada da documentação e da demonstração previstas para o projeto.
 \end{itemize}
 
-Além desta introdução, o artigo apresenta os fundamentos de revisão bibliográfica, requisitos, backlog, MVP e testes, seguidos do referencial sobre gestão de demandas, Help Desk e tráfego pago; descreve a metodologia adotada; expõe os resultados da especificação e da proposta de solução; e encerra com as considerações finais.
-
 \section{\esp REFERENCIAL TEÓRICO}
 
 \subsection{\esp Revisão bibliográfica}
@@ -261,7 +259,9 @@ Os casos de teste foram derivados dos critérios de aceite. O catálogo contempl
 
 O critério interno de aprovação funcional foi definido como 100\% dos casos de alta prioridade aprovados, pelo menos 90\% do total de casos aprovados e ausência de defeito crítico em aberto. O protocolo estabeleceu o registro de correção ou justificativa de adiamento para cada reprovação. Esses limiares expressaram critérios de aceite do projeto, sem constituir resultados obtidos ou parâmetros universais da literatura.
 
-A verificação técnica da implementação foi documentada por testes automatizados e verificações da API, conforme o relatório de revisão técnica mantido na documentação da aplicação. Esses registros foram mantidos separados do catálogo acadêmico de dezessete cenários; sua existência não foi tomada como comprovação de aprovação integral desse catálogo nem da avaliação de usabilidade.
+A execução em ambiente local isolado utilizou requisições HTTP à API, banco MySQL e dados sintéticos. Após correções, uma rodada automatizada verificou os dezessete cenários no recorte de API e banco, incluindo os onze de alta prioridade. Essa rodada não substituiu a verificação das variantes de interface exigidas pelo catálogo. O pacote Java coletou 75 testes sem falhas ou erros, com dois ignorados; um deles foi executado separadamente em um esquema MySQL exclusivo de testes e aprovado.
+
+A consolidação das evidências de interface, API e banco aprovou, até esta revisão, dezesseis dos dezessete casos (94,1\%), incluindo os onze de alta prioridade. CT-15 permaneceu parcial pela ausência de captura preservada dos gráficos. O limiar numérico de 90\% foi atingido e, considerando a revisão de defeitos conhecidos, o critério interno foi atendido no escopo examinado. As observações visuais não tiveram capturas preservadas, e o histórico extenso foi avaliado por amostragem. Em CT-09, a correção preserva prospectivamente os snapshots, mas não recupera aqueles substituídos anteriormente. Em CT-07, avisos adicionais foram enviados a usuários autorizados; a matriz de notificações da especificação não declara exclusividade dos destinatários listados. A revisão dos defeitos conhecidos não identificou crítico aberto no escopo examinado, sem descartar falhas em cenários não verificados. Os resultados referem-se à implementação local e não constituem avaliação de usabilidade com participantes.
 
 \subsection{\esp Avaliação de usabilidade}
 
@@ -284,99 +284,3 @@ Foi definida a categorização temática das observações das tarefas e dos com
 A associação entre requisitos, critérios de aceite e casos de teste foi adotada para reduzir ambiguidades e apoiar a verificação das regras de negócio. O histórico do ticket foi incluído como fonte de conferência das alterações do fluxo. A avaliação de usabilidade foi estruturada para considerar realização das tarefas, erros, dúvidas, tempo e respostas ao UEQ-S, sem meta numérica rígida.
 
 A revisão do corpus temático ficou restrita à IEEE Xplore, com os campos, idiomas e recortes descritos para cada busca. Os livros e o Guia do Scrum da Pesquisa 04 complementaram a fundamentação conceitual; o artigo externo sobre o UEQ-S fundamentou o instrumento de avaliação. Essas seleções não foram tratadas como exaustivas. O tamanho reduzido e a seleção por conveniência foram reconhecidos como limites à generalização da avaliação proposta. O protocolo incluiu a preservação dos instrumentos, cenários, decisões de requisitos e registros agregados, bem como a documentação de substituições de participantes e alterações de procedimento. A ausência de resultados da aplicação com participantes nesta entrega delimitou o alcance das conclusões sobre usabilidade.
-
-\section{\esp RESULTADOS DA ESPECIFICAÇÃO E PROPOSTA DA SOLUÇÃO}
-
-A etapa de especificação resultou na identificação de 23 requisitos funcionais, seis requisitos não funcionais e 14 regras de negócio. Esta seção apresenta resultados de especificação e de proposta de solução; as verificações técnicas da implementação foram registradas na documentação da aplicação, sem comprovação de aprovação integral do catálogo acadêmico nem resultados de avaliação de usabilidade com participantes nesta entrega. Os requisitos foram organizados em cinco eixos: abertura e acompanhamento de solicitações; triagem, atribuição e prazos; comunicação, aprovação e evidências; gestão de cadastros e configurações; e rastreabilidade, segurança, privacidade, compatibilidade e acessibilidade. Essa organização evidencia que a proposta não se limita ao registro de chamados, pois articula o controle operacional das demandas com transparência para o cliente e apoio à gestão.
-
-\subsection{\esp Síntese dos resultados de especificação e escopo do MVP}
-
-O SIGE Desk foi desenvolvido como aplicação web para organizar demandas de tráfego pago entre clientes e equipe de uma agência. O MVP contempla o registro de criação, alteração ou pausa de anúncios; ajustes de orçamento, público, segmentação e criativos; solicitação de relatórios; análise de métricas; e aprovação de entregas. Não fazem parte do escopo inicial integrações automáticas com APIs de anúncios, execução automática de alterações, geração de recomendações por inteligência artificial, cálculo automatizado de métricas, faturamento ou armazenamento de bases de audiência.
-
-\subsection{\esp Perfis e processo de atendimento}
-
-O cliente abre solicitações, consulta sua situação, complementa informações e aprova ou solicita correções. O atendimento ou gestor de conta realiza a triagem, define prioridade e prazo, atribui responsável e acompanha o acordo de nível de serviço (SLA). O gestor de tráfego executa a demanda, registra ação e evidência e a encaminha para validação. O administrador mantém usuários, clientes, campanhas, tipos de demanda, regras e configurações do sistema.
-
-O processo To Be inicia com o registro da solicitação. Na triagem, o atendimento verifica a completude das informações, classifica a demanda, define prioridade, regra de SLA e prazos e atribui um responsável. Antes dessa classificação, a abertura registra o tempo transcorrido, mas não atribui prioridade a partir da urgência. Quando há necessidade de informação adicional, o ticket registra a fase de origem e fica aguardando o cliente; a resolução só é retomada depois de o complemento ser conferido. A demanda é então executada. Tipos com aprovação obrigatória seguem para validação; os demais podem ser concluídos com a dispensa registrada pela configuração. A aprovação encerra o atendimento; uma correção em validação mantém o ciclo de resolução, enquanto a reabertura de uma demanda concluída inicia novo ciclo, sempre preservando o histórico anterior. A Figura \ref{fig:processo-to-be} sintetiza esse fluxo.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figuras/bpmn-processo-to-be.png}
-\caption{Processo To Be do SIGE Desk}
-\label{fig:processo-to-be}
-\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo, com base em BPMN 2.0 \cite{omg2011}.
-\end{figure}
-
-\subsection{\esp Guia de telas para prototipação}
-
-Para orientar a elaboração do protótipo de baixa fidelidade sem antecipar suas decisões visuais, foi preparado um guia de telas. O guia define quinze telas navegáveis, seus objetivos, campos, permissões, ações e regras de comportamento; a composição visual e a escolha dos componentes permanecem sob responsabilidade da equipe de interface. O Quadro \ref{qua:guia-telas} sintetiza o inventário previsto.
-
-\begin{quadro}[H]
-\centering
-\caption{Inventário do guia de telas para prototipação}
-\label{qua:guia-telas}
-\begin{tabular}{p{0.23\textwidth}p{0.65\textwidth}}
-\hline
-\textbf{Grupo} & \textbf{Telas e finalidade} \\
-\hline
-Acesso e acompanhamento & Autenticação; painel; lista e filtros; abertura; detalhe, comunicação e histórico do ticket. \\
-Tratamento do ticket & Triagem e atribuição; registro de execução e evidência; validação, correção e reabertura. \\
-Comunicação e consulta & Central de notificações; relatórios e exportação. \\
-Administração & Clientes; campanhas; tipos de demanda; configuração de SLA; usuários e perfis. \\
-\hline
-\end{tabular}
-\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo a partir da especificação do sistema.
-\end{quadro}
-
-O fluxo de telas parte da autenticação, painel e abertura de solicitação; prossegue pelo detalhe, triagem, execução e validação; e contempla os caminhos de complemento, cancelamento e reabertura. A abertura exige cliente, tipo de demanda, urgência, assunto, descrição e solicitante, e poderá receber campanha, canal, prazo desejado, métricas de contexto e anexos. A prioridade oficial, a regra de SLA, os prazos e o responsável são definidos na triagem; até então, a demanda exibe prazo pendente de classificação. No detalhe, a demanda mantém número, status, prazos, comentários, histórico de alterações, ação executada, material/evidência, decisão de aprovação e motivo de cancelamento ou reabertura, quando aplicável. As mudanças de estado retornam ao detalhe na sessão atual; o perfil seguinte acessa o ticket somente por sua própria sessão autorizada.
-
-O guia também prevê variantes para todos os estados do ticket, um diagrama de navegação identificado pelos códigos das telas e uma matriz que relaciona as telas aos requisitos funcionais, regras de negócio, requisitos não funcionais e fluxo BPMN. Assim, o protótipo poderá demonstrar a cobertura do MVP sem incorporar integrações automáticas com plataformas de anúncios, cálculos de desempenho, faturamento ou chat externo ao histórico do ticket.
-
-A revisão documental de cobertura e fluxos confirmou a referência aos 23 requisitos funcionais no guia e resultou na consolidação das transições, permissões e cenários de exceção. Foram definidos os caminhos de conclusão com e sem aprovação, a autoridade exclusiva do Cliente para aprovar em validação, a retomada conforme a origem do complemento, o limite de cancelamento antes da execução, a classificação do SLA após a abertura, o vínculo de campanha pendente na triagem e a submissão de criativo como material anterior à decisão do Cliente. Esses refinamentos constituem definição documental para a prototipação; a comprovação funcional continuará dependente da implementação e dos testes previstos.
-
-A implementação do primeiro acesso administrativo cadastra uma conta ativa quando a tabela de usuários está vazia, após as migrações, independentemente do perfil de demonstração. A senha é armazenada com BCrypt e recebida por configuração de ambiente; o padrão de desenvolvimento local deve ser substituído em outros ambientes. A carga de dados fictícios, quando habilitada, precede esse cadastro. Reinicializações não sobrescrevem contas, senhas ou estados de ativação existentes, e as credenciais da aplicação são independentes da conexão ao banco. Esse mecanismo viabiliza o cadastro dos demais usuários em uma base nova, sem alterar as permissões dos perfis especificados.
-
-A carga demonstrativa de apoio à validação reúne 24 tickets, três em cada um dos oito estados, três organizações ativas, seis campanhas ativas, seis tipos de demanda e quatro regras de SLA com diferentes escopos. Inclui usuários dos perfis previstos, exemplos de cadastros inativos, métricas fictícias, comentários, histórico, notificações lidas e não lidas e 33 arquivos CSV de contexto e evidência disponíveis para download. Datas recentes e históricas permitem inspecionar filtros e situações de prazo. Os cenários distinguem complemento na triagem e na execução, conferência de complemento recebido, conclusão com e sem aprovação, correção no mesmo ciclo e reabertura após conclusão com novo ciclo. A carga preserva contas compatíveis existentes, utiliza a sequência transacional de tickets e registra sua versão para evitar duplicação. Esses dados apoiam a comparação com as telas T01 a T15 e os casos funcionais, mas não constituem evidência de fidelidade da interface ou de aprovação na avaliação com participantes.
-
-\subsection{\esp Estados, SLA e rastreabilidade}
-
-O ciclo de vida do ticket possui os estados Aberta, Em triagem, Em execução, Aguardando cliente, Em validação, Concluída, Reaberta e Cancelada. A conclusão requer aprovação quando configurada ou dispensa derivada do tipo; o cancelamento requer justificativa e só ocorre antes da execução. A correção solicitada em validação mantém o ciclo de resolução, enquanto a reabertura de concluída inicia novo ciclo, sem apagar o histórico anterior.
-
-Os SLAs serão configuráveis por cliente e tipo de demanda. A precedência será cliente e tipo, cliente, tipo e regra padrão. Na ausência de regra específica, o calendário padrão considerará segunda a sexta-feira, das 8h às 18h, no fuso America/Sao\_Paulo, excluindo feriados e recessos configurados; somente os intervalos inseridos nesse calendário serão contabilizados como horas úteis. A urgência informada pelo solicitante não substituirá a prioridade oficial, que será definida na triagem. Até essa classificação, o ticket mostrará o tempo útil transcorrido e o prazo pendente; após ela, os prazos serão calculados desde a abertura.
-
-A primeira resposta corresponde ao primeiro retorno efetivo registrado ao solicitante; a confirmação automática de recebimento não encerra esse prazo. O relógio de resolução será pausado em Aguardando cliente, preservando o tempo útil restante, e retomado somente após o complemento suficiente ser confirmado para a fase de origem. Em validação não pausará o SLA, salvo configuração específica. Quando um ticket concluído for reaberto, os resultados e prazos do ciclo anterior serão preservados, um novo ciclo de resolução será iniciado conforme a prioridade e regra vigentes e o prazo de primeira resposta já cumprido não será reiniciado. O vencimento deverá informar se se refere à primeira resposta ou à resolução e ser comunicado ao responsável, atendimento e administrador. A Tabela \ref{tab:sla} sintetiza a configuração inicial.
-
-\begin{table}[H]
-\centering
-\caption{Prazos preliminares de SLA}
-\label{tab:sla}
-\begin{tabular}{p{0.12\textwidth}p{0.38\textwidth}p{0.17\textwidth}p{0.17\textwidth}}
-\hline
-\textbf{Prioridade} & \textbf{Exemplo} & \textbf{Primeira resposta} & \textbf{Resolução} \\
-\hline
-Urgente & Campanha ativa com erro crítico, gasto indevido ou risco de grande impacto. & 2 horas úteis & 8 horas úteis \\
-Alta & Alteração com impacto relevante em orçamento, prazo ou desempenho. & 4 horas úteis & 16 horas úteis \\
-Média & Ajuste planejado, relatório ou solicitação sem impacto imediato. & 8 horas úteis & 24 horas úteis \\
-Baixa & Melhoria, dúvida ou demanda programável. & 16 horas úteis & 40 horas úteis \\
-\hline
-\end{tabular}
-\par\footnotesize\textbf{Fonte:} Elaborado pelo grupo.
-\end{table}
-
-Toda mudança de status, responsável, prioridade, prazo ou aprovação deverá registrar usuário, data e hora, motivo, valor anterior e novo valor. Esse histórico, associado a comentários, anexos e evidências, sustenta a rastreabilidade e a auditoria da demanda.
-
-\subsection{\esp Governança de dados, acesso e continuidade}
-
-O acesso seguirá o princípio do menor privilégio, de modo que cada perfil consulte e altere somente as informações necessárias às suas responsabilidades. Anexos serão vinculados ao ticket e acessíveis apenas a usuários autorizados. O MVP utilizará dados fictícios ou autorizados; portanto, retenção operacional, backup, restauração e disponibilidade contínua não integram a entrega acadêmica. Em eventual adoção real, esses controles deverão ser definidos conforme contratos, finalidade do tratamento e orientação jurídica \cite{brasil2018,anpd2021}.
-
-A finalidade declarada para os dados será registrar, comunicar, executar, validar e auditar demandas de tráfego pago. Antes do uso em produção, a agência deverá identificar controlador, operadores e base legal aplicável, além de publicar aviso de privacidade e manter canal para solicitações de acesso, correção ou eliminação. O procedimento de incidente deverá contemplar registro, contenção, avaliação de impacto, decisão sobre comunicação e ações corretivas, com responsabilidades definidas e evidências das medidas adotadas.
-
-\subsection{\esp Requisitos prioritários}
-
-Os requisitos foram organizados conforme a ISO/IEC/IEEE 29148 \cite{iso29148}. Para a primeira versão, são prioritários autenticação e autorização por perfil; cadastro de clientes e campanhas; abertura e identificação única do ticket; triagem e atribuição; atualização de status; comentários e anexos; histórico auditável; notificações; filtros; configuração de tipos de demanda e de SLA. Requisitos de segurança, privacidade, integridade, compatibilidade e acessibilidade complementam o escopo. A especificação individual dos requisitos, as regras de negócio, os dados, as transições, a rastreabilidade, as notificações e os casos de teste compõem a documentação de apoio ao desenvolvimento do sistema.
-
-\section{\esp CONSIDERAÇÕES FINAIS}
-
-O SIGE Desk foi proposto para centralizar e rastrear demandas de tráfego pago por meio de um fluxo de atendimento com responsáveis, prazos, validações e evidências. A solução combina fundamentos de gestão de serviços, marketing digital, gestão de projetos e proteção de dados para responder ao problema de organização dessas demandas.
-
-O trabalho consolidou a especificação, a prototipação, a implementação da aplicação e os registros de verificação técnica. A definição dos protocolos de validação estabeleceu os critérios funcionais e o roteiro de usabilidade. A documentação desta entrega não incluiu resultados da aplicação com participantes nem comprovação de aprovação integral do catálogo acadêmico de casos de teste, o que limitou as conclusões sobre a efetividade da solução em condições de uso.

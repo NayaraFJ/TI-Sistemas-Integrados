@@ -15,6 +15,29 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
+  private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ApiExceptionHandler.class);
+  private final br.pucminas.sige.shared.security.SecurityAccessAudit securityAudit;
+  public ApiExceptionHandler(br.pucminas.sige.shared.security.SecurityAccessAudit securityAudit) { this.securityAudit = securityAudit; }
+  @ExceptionHandler(br.pucminas.sige.shared.security.TicketAccessDeniedException.class)
+  ResponseEntity<ApiError> ticketDenied(br.pucminas.sige.shared.security.TicketAccessDeniedException ex) {
+    try {
+      securityAudit.ticketAccessDenied(ex.actor(), ex.ticketId());
+    } catch (RuntimeException failure) {
+      log.error("eventCode=SECURITY_TICKET_AUDIT_FAILED actorId={} resourceType=TICKET resourceId={} failureType={}",
+        ex.actor().getId(), ex.ticketId(), failure.getClass().getSimpleName());
+    }
+    return status(ex);
+  }
+  @ExceptionHandler(br.pucminas.sige.shared.security.LinkedResourceAccessDeniedException.class)
+  ResponseEntity<ApiError> linkedResourceDenied(br.pucminas.sige.shared.security.LinkedResourceAccessDeniedException ex) {
+    try {
+      securityAudit.linkedResourceAccessDenied(ex.actor(), ex.resourceId(), ex.resourceType());
+    } catch (RuntimeException failure) {
+      log.error("eventCode=SECURITY_LINKED_RESOURCE_AUDIT_FAILED actorId={} resourceType={} resourceId={} failureType={}",
+        ex.actor().getId(), ex.resourceType(), ex.resourceId(), failure.getClass().getSimpleName());
+    }
+    return status(ex);
+  }
   record ApiError(String code, String message, Instant timestamp, Map<String, String> fields) {}
   @ExceptionHandler(MethodArgumentNotValidException.class)
   ResponseEntity<ApiError> validation(MethodArgumentNotValidException ex) {
@@ -29,6 +52,8 @@ public class ApiExceptionHandler {
   ResponseEntity<ApiError> conflict(IllegalStateException ex) { return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiError("INVALID_TRANSITION", ex.getMessage(), Instant.now(), Map.of())); }
   @ExceptionHandler({OptimisticLockException.class, ObjectOptimisticLockingFailureException.class})
   ResponseEntity<ApiError> optimistic(Exception ex) { return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiError("VERSION_CONFLICT", "O ticket foi alterado por outra pessoa.", Instant.now(), Map.of())); }
+  @ExceptionHandler(org.springframework.dao.CannotAcquireLockException.class)
+  ResponseEntity<ApiError> concurrentLock(Exception ex) { return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiError("CONCURRENT_OPERATION", "Uma operação concorrente impediu a alteração. Tente novamente.", Instant.now(), Map.of())); }
   @ExceptionHandler(org.springframework.dao.DataIntegrityViolationException.class)
   ResponseEntity<ApiError> integrity(org.springframework.dao.DataIntegrityViolationException ex) { return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiError("DATA_CONFLICT", "O cadastro conflita com dados existentes. Confira os campos informados.", Instant.now(), Map.of())); }
   @ExceptionHandler(org.springframework.web.multipart.MaxUploadSizeExceededException.class)

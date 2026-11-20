@@ -1,0 +1,173 @@
+{
+  "schema": "sige_desk_qa_labels_reteste2_20261119",
+  "port": 18089,
+  "jarSha256": "bd065901d4e4338615c97370e33046b3a3a72223b5876534c05722fe1d7feba4",
+  "ticket": "SIGE-1024",
+  "checks": [
+    {
+      "name": "admin@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor2@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /users HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /tickets/7273a18e-e642-46a6-979f-ccbb017eec67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Rótulo original na abertura",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo GET /tickets/7273a18e-e642-46a6-979f-ccbb017eec67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /tickets/7273a18e-e642-46a6-979f-ccbb017eec67/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo GET /tickets/7273a18e-e642-46a6-979f-ccbb017eec67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /tickets/7273a18e-e642-46a6-979f-ccbb017eec67/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /tickets/7273a18e-e642-46a6-979f-ccbb017eec67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nova sessão mantém rótulo original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nova sessão mantém valor original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Snapshot no MySQL tem regras do novo tipo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Snapshot no MySQL preserva definição original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo GET /tickets/7273a18e-e642-46a6-979f-ccbb017eec67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /tickets/7273a18e-e642-46a6-979f-ccbb017eec67/execution HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo GET /tickets/7273a18e-e642-46a6-979f-ccbb017eec67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /tickets/7273a18e-e642-46a6-979f-ccbb017eec67/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /tickets/7273a18e-e642-46a6-979f-ccbb017eec67 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nova regra exige aprovação",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

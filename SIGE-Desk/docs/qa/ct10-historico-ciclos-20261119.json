@@ -1,0 +1,75 @@
+{
+  "startedAt": "2026-11-19T22:02:43.556758+00:00",
+  "finishedAt": "2026-11-19T22:02:43.613258+00:00",
+  "schema": "sige_desk_qa_20261118",
+  "baseUrl": "http://localhost:8081/api/v1",
+  "fixture": "327e60de-cb22-4d68-9acd-45cb00787d44",
+  "source": "../docs/qa/ct10-calendario-runtime-atualizado-reteste-20261119.json",
+  "checks": [
+    {
+      "name": "admin@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor2@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /users HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /tickets/327e60de-cb22-4d68-9acd-45cb00787d44 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Evento do histórico API corresponde ao MySQL",
+      "passed": true,
+      "detail": "{'api': {'id': '8d52b6e6-30a7-4fa2-863a-c2c983a011fe', 'actorName': 'Marina Costa', 'action': 'RESOLUTION_CYCLE_CLOSED', 'fieldName': 'resolutionCycle', 'oldValue': None, 'newValue': '{\"cycle\": 1, \"priority\": \"HIGH\", \"completedAt\": \"2026-11-19T17:09:00.448259Z\", \"slaSnapshot\": \"{\\\\\"id\\\\\": \\\\\"7e558ef9-10e4-43f8-a7e9-eb37590591d2\\\\\", \\\\\"name\\\\\": \\\\\"Review 5ffda55c calendario\\\\\", \\\\\"version\\\\\": 2, \\\\\"holidays\\\\\": [\\\\\"2026-11-17\\\\\", \\\\\"2026-11-23\\\\\"], \\\\\"timezone\\\\\": \\\\\"America/Sao_Paulo\\\\\", \\\\\"deadlines\\\\\": {\\\\\"LOW\\\\\": {\\\\\"responseHours\\\\\": 4, \\\\\"resolutionHours\\\\\": 12}, \\\\\"HIGH\\\\\": {\\\\\"responseHours\\\\\": 4, \\\\\"resolutionHours\\\\\": 12}, \\\\\"MEDIUM\\\\\": {\\\\\"responseHours\\\\\": 4, \\\\\"resolutionHours\\\\\": 12}, \\\\\"URGENT\\\\\": {\\\\\"responseHours\\\\\": 4, \\\\\"resolutionHours\\\\\": 12}}, \\\\\"businessEnd\\\\\": \\\\\"18:00\\\\\", \\\\\"businessDays\\\\\": [\\\\\"MONDAY\\\\\", \\\\\"TUESDAY\\\\\", \\\\\"WEDNESDAY\\\\\", \\\\\"THURSDAY\\\\\", \\\\\"FRIDAY\\\\\"], \\\\\"businessStart\\\\\": \\\\\"08:00\\\\\", \\\\\"pauseInValidation\\\\\": true, \\\\\"nationalHolidayPolicy\\\\\": \\\\\"BR_FIXED_V1\\\\\"}\", \"resolutionDueAt\": \"2026-11-19T19:09:00.264759Z\"}', 'reason': 'Ciclo novo CT10', 'createdAt': '2026-11-19T17:09:00.554258Z'}, 'mysql': {'id': '8d52b6e6-30a7-4fa2-863a-c2c983a011fe', 'new': {'cycle': 1, 'priority': 'HIGH', 'completedAt': '2026-11-19T17:09:00.448259Z', 'slaSnapshot': '{\"id\": \"7e558ef9-10e4-43f8-a7e9-eb37590591d2\", \"name\": \"Review 5ffda55c calendario\", \"version\": 2, \"holidays\": [\"2026-11-17\", \"2026-11-23\"], \"timezone\": \"America/Sao_Paulo\", \"deadlines\": {\"LOW\": {\"responseHours\": 4, \"resolutionHours\": 12}, \"HIGH\": {\"responseHours\": 4, \"resolutionHours\": 12}, \"MEDIUM\": {\"responseHours\": 4, \"resolutionHours\": 12}, \"URGENT\": {\"responseHours\": 4, \"resolutionHours\": 12}}, \"businessEnd\": \"18:00\", \"businessDays\": [\"MONDAY\", \"TUESDAY\", \"WEDNESDAY\", \"THURSDAY\", \"FRIDAY\"], \"businessStart\": \"08:00\", \"pauseInValidation\": true, \"nationalHolidayPolicy\": \"BR_FIXED_V1\"}', 'resolutionDueAt': '2026-11-19T19:09:00.264759Z'}, 'old': None, 'field': 'resolutionCycle', 'action': 'RESOLUTION_CYCLE_CLOSED', 'created': '2026-11-19T17:09:00.554258Z'}}"
+    },
+    {
+      "name": "Snapshot encerrado igual ao ciclo 1 registrado anteriormente",
+      "passed": true,
+      "detail": "{'closed': {'id': '7e558ef9-10e4-43f8-a7e9-eb37590591d2', 'name': 'Review 5ffda55c calendario', 'version': 2, 'holidays': ['2026-11-17', '2026-11-23'], 'timezone': 'America/Sao_Paulo', 'deadlines': {'LOW': {'responseHours': 4, 'resolutionHours': 12}, 'HIGH': {'responseHours': 4, 'resolutionHours': 12}, 'MEDIUM': {'responseHours': 4, 'resolutionHours': 12}, 'URGENT': {'responseHours': 4, 'resolutionHours': 12}}, 'businessEnd': '18:00', 'businessDays': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'businessStart': '08:00', 'pauseInValidation': True, 'nationalHolidayPolicy': 'BR_FIXED_V1'}, 'prior': {'id': '7e558ef9-10e4-43f8-a7e9-eb37590591d2', 'name': 'Review 5ffda55c calendario', 'version': 2, 'holidays': ['2026-11-17', '2026-11-23'], 'timezone': 'America/Sao_Paulo', 'deadlines': {'LOW': {'responseHours': 4, 'resolutionHours': 12}, 'HIGH': {'responseHours': 4, 'resolutionHours': 12}, 'MEDIUM': {'responseHours': 4, 'resolutionHours': 12}, 'URGENT': {'responseHours': 4, 'resolutionHours': 12}}, 'businessEnd': '18:00', 'businessDays': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'businessStart': '08:00', 'pauseInValidation': True, 'nationalHolidayPolicy': 'BR_FIXED_V1'}}"
+    },
+    {
+      "name": "Prazo encerrado igual à última alteração anterior",
+      "passed": true,
+      "detail": "{'cycle': {'cycle': 1, 'priority': 'HIGH', 'completedAt': '2026-11-19T17:09:00.448259Z', 'slaSnapshot': '{\"id\": \"7e558ef9-10e4-43f8-a7e9-eb37590591d2\", \"name\": \"Review 5ffda55c calendario\", \"version\": 2, \"holidays\": [\"2026-11-17\", \"2026-11-23\"], \"timezone\": \"America/Sao_Paulo\", \"deadlines\": {\"LOW\": {\"responseHours\": 4, \"resolutionHours\": 12}, \"HIGH\": {\"responseHours\": 4, \"resolutionHours\": 12}, \"MEDIUM\": {\"responseHours\": 4, \"resolutionHours\": 12}, \"URGENT\": {\"responseHours\": 4, \"resolutionHours\": 12}}, \"businessEnd\": \"18:00\", \"businessDays\": [\"MONDAY\", \"TUESDAY\", \"WEDNESDAY\", \"THURSDAY\", \"FRIDAY\"], \"businessStart\": \"08:00\", \"pauseInValidation\": true, \"nationalHolidayPolicy\": \"BR_FIXED_V1\"}', 'resolutionDueAt': '2026-11-19T19:09:00.264759Z'}, 'latestDeadline': {'id': '096b03d4-8d5f-4291-9110-a1795d7eff57', 'new': '2026-11-19T19:09:00.264759Z', 'old': '2026-11-19T19:09:00.205258Z', 'field': 'resolutionDueAt', 'action': 'RESOLUTION_DEADLINE_CHANGED', 'created': '2026-11-19T17:09:00.447759Z'}}"
+    },
+    {
+      "name": "Ciclo atual corresponde ao snapshot e prazo do ciclo 2",
+      "passed": true,
+      "detail": "{'current': {'id': '7e558ef9-10e4-43f8-a7e9-eb37590591d2', 'name': 'Review 5ffda55c calendario', 'version': 3, 'holidays': ['2026-11-17', '2026-11-23'], 'timezone': 'America/Sao_Paulo', 'deadlines': {'LOW': {'responseHours': 4, 'resolutionHours': 12}, 'HIGH': {'responseHours': 4, 'resolutionHours': 12}, 'MEDIUM': {'responseHours': 4, 'resolutionHours': 12}, 'URGENT': {'responseHours': 4, 'resolutionHours': 12}}, 'businessEnd': '18:00', 'businessDays': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'businessStart': '08:00', 'pauseInValidation': False, 'nationalHolidayPolicy': 'BR_FIXED_V1'}, 'cycle2': {'pause': [], 'created': '2026-11-16T20:00:00.000000Z', 'snapshot': {'id': '7e558ef9-10e4-43f8-a7e9-eb37590591d2', 'name': 'Review 5ffda55c calendario', 'version': 3, 'holidays': ['2026-11-17', '2026-11-23'], 'timezone': 'America/Sao_Paulo', 'deadlines': {'LOW': {'responseHours': 4, 'resolutionHours': 12}, 'HIGH': {'responseHours': 4, 'resolutionHours': 12}, 'MEDIUM': {'responseHours': 4, 'resolutionHours': 12}, 'URGENT': {'responseHours': 4, 'resolutionHours': 12}}, 'businessEnd': '18:00', 'businessDays': ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'], 'businessStart': '08:00', 'pauseInValidation': False, 'nationalHolidayPolicy': 'BR_FIXED_V1'}, 'cycleStart': '2026-11-19T20:00:00.000000Z'}, 'resolutionDueAt': '2026-11-25T12:00:00Z'}"
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "startedAt": "2026-11-19T12:35:48.250218+00:00",
+  "finishedAt": "2026-11-19T12:35:49.799717+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "10f163768eb01b93dc32891fea4ed71be259bdeabce9c443cfd732d5ca754f94",
+    "runTag": "Review ca17587c"
+  },
+  "cases": [
+    {
+      "id": "CT-03-versao-reteste",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:35:48.905721+00:00",
+      "finishedAt": "2026-11-19T12:35:49.799217+00:00",
+      "assertions": 52,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/execution HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Negativa preserva versão e estado CLIENT",
+      "passed": true,
+      "detail": "{'before': 4, 'after': 4}"
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/execution HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Negativa preserva versão e estado SERVICE",
+      "passed": true,
+      "detail": "{'before': 4, 'after': 4}"
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "admin@sige.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "admin@sige.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/execution HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Negativa preserva versão e estado ADMIN",
+      "passed": true,
+      "detail": "{'before': 4, 'after': 4}"
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "gestor@sige.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/execution HTTP 428",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Versão ausente preserva ticket",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "gestor@sige.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/execution HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Versão obsoleta preserva ticket",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "gestor@sige.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "gestor@sige.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Comando autorizado atualiza versão e estado",
+      "passed": true,
+      "detail": "{'before': 4, 'after': 6}"
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "gestor@sige.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "gestor@sige.demo POST /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1/execution HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/f43cfc6b-e922-4cb1-b2e8-b8fa27ab17e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Estado inválido preserva versão",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/e03a6a30-085d-4e95-afa5-bcde69cf2dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/e03a6a30-085d-4e95-afa5-bcde69cf2dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo POST /tickets/e03a6a30-085d-4e95-afa5-bcde69cf2dee/cancel HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/e03a6a30-085d-4e95-afa5-bcde69cf2dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Cancelamento sem permissão preserva versão",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo GET /tickets/e03a6a30-085d-4e95-afa5-bcde69cf2dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "atendimento@sige.demo POST /tickets/e03a6a30-085d-4e95-afa5-bcde69cf2dee/cancel HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/e03a6a30-085d-4e95-afa5-bcde69cf2dee HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-03-versao-reteste",
+      "name": "Validação inválida preserva versão",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

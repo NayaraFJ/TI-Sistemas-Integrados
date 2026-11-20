@@ -17,6 +17,9 @@ import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { apiClient } from '../shared/api/client';
+import { loginErrorKey } from '../shared/api/loginError';
+import { clearPreviousSession, hasPreviousSession } from '../shared/api/sessionState';
+import { formatHistoryValue } from '../shared/api/historyValue';
 import type { Priority, Role, TicketDetail, TicketStatus } from '../shared/api/types';
 
 import Add from '@mui/icons-material/Add';
@@ -61,6 +64,8 @@ function StatusChip({status}:{status:TicketStatus}){return <StatusBadge status={
 function Login(){
   const {t}=useTranslation();
   const navigate=useNavigate();
+  const location=useLocation();
+  useEffect(()=>{clearPreviousSession();},[]);
   const cache=useQueryClient();
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
@@ -73,9 +78,10 @@ function Login(){
     </Box>
     <Stack component="form" onSubmit={event=>{event.preventDefault();mutation.mutate();}} justifyContent="center" spacing={3} sx={{width:'100%',maxWidth:480,mx:'auto',boxSizing:'border-box',p:{xs:3,sm:5}}}>
       <Box><Typography variant="h4" fontWeight={700}>{t('login.title')}</Typography><Typography color="text.secondary" sx={{mt:1}}>{t('login.subtitle')}</Typography></Box>
-      {mutation.isError&&<Alert severity="error">{t('login.invalid')}</Alert>}
-      <TextField size="medium" label={t('login.email')} type="email" value={email} onChange={event=>setEmail(event.target.value)} required autoComplete="email"/>
-      <TextField size="medium" label={t('login.password')} type="password" value={password} onChange={event=>setPassword(event.target.value)} required autoComplete="current-password"/>
+      {location.state?.sessionExpired&&!mutation.isError&&<Alert severity="info">{t('login.expired')}</Alert>}
+      {mutation.isError&&<Alert severity="error">{t(loginErrorKey(mutation.error))}</Alert>}
+      <TextField size="medium" label={t('login.email')} type="email" value={email} onChange={event=>{setEmail(event.target.value);if(mutation.isError)mutation.reset();}} required autoComplete="email"/>
+      <TextField size="medium" label={t('login.password')} type="password" value={password} onChange={event=>{setPassword(event.target.value);if(mutation.isError)mutation.reset();}} required autoComplete="current-password"/>
       <Button type="submit" size="large" variant="contained" disabled={mutation.isPending}>{t('actions.login')}</Button>
     </Stack>
   </Box>
@@ -88,7 +94,7 @@ function Layout(){
   const location=useLocation();
   useEffect(()=>{window.scrollTo({top:0,left:0});},[location.pathname]);
   const cache=useQueryClient();
-  useEffect(()=>{const expired=()=>{cache.clear();navigate('/login',{replace:true});};window.addEventListener('sige-session-expired',expired);return ()=>window.removeEventListener('sige-session-expired',expired);},[cache,navigate]);
+  useEffect(()=>{const expired=()=>{clearPreviousSession();cache.clear();navigate('/login',{replace:true,state:{sessionExpired:true}});};window.addEventListener('sige-session-expired',expired);return ()=>window.removeEventListener('sige-session-expired',expired);},[cache,navigate]);
   const compact=useMediaQuery(theme.breakpoints.down('md'));
   const [menuOpen,setMenuOpen]=useState(false);
   const [tutorialOpen,setTutorialOpen]=useState(false);
@@ -96,7 +102,7 @@ function Layout(){
     await cache.cancelQueries(); cache.clear(); navigate('/login',{replace:true});
   }});
   if(session.isPending)return <Loading/>;
-  if(session.isError)return <Navigate to="/login" replace/>;
+  if(session.isError)return <Navigate to="/login" replace state={{sessionExpired:hasPreviousSession() && (session.error as {response?:{status?:number}}).response?.status===401}}/>;
   const user=session.data;
   const items=navigation.filter(item=>navByRole[user.role].includes(item.key));
   return <Box sx={{display:'flex',minHeight:'100vh'}}>
@@ -190,7 +196,7 @@ function TicketDetailPage(){
       <TicketRequestSummary data={data}/><TicketMetricsCard source={data.metrics} labels={data.fieldLabels??{}}/>
       <Card><CardContent><Typography variant="h6">{t('tickets.attachments')}</Typography><Stack spacing={1} mt={2}>{data.attachments.length===0?<Typography color="text.secondary">—</Typography>:data.attachments.map(item=><Box key={item.id}><Typography fontWeight={600}>{item.kind==='EVIDENCE'&&item.description?item.description:item.name}</Typography>{item.evidenceUrl?<Button component="a" href={item.evidenceUrl} target="_blank" rel="noreferrer">{item.evidenceUrl}</Button>:<Button component="a" href={apiClient.attachmentDownloadUrl(data.ticket.id,item.id)}>{t('actions.download')}</Button>}<Typography variant="caption" display="block" color="text.secondary">{date(item.createdAt)}</Typography></Box>)}</Stack>{data.ticket.status!=='CANCELLED'&&<AttachmentUploader ticketId={data.ticket.id}/>}</CardContent></Card>
       <Card><CardContent><Typography variant="h6">{t('tickets.comments')}</Typography><Stack spacing={2} mt={2}>{data.comments.map(item=><Box key={item.id}><Typography fontWeight={600}>{item.authorName}</Typography><Typography>{item.body}</Typography><Typography variant="caption" color="text.secondary">{date(item.createdAt)}</Typography></Box>)}</Stack></CardContent></Card>
-    </Stack><Stack spacing={3}><Card><CardContent><Typography variant="h6">{t('tickets.sla')}</Typography>{data.ticket.slaState.startsWith('PENDING')&&<Typography variant="body2">{t('tickets.elapsedBusiness',{minutes:data.elapsedBusinessMinutes})}</Typography>}<Typography>{t(`slaState.${data.slaState}`,{defaultValue:data.slaState})}</Typography><Stack spacing={1} sx={{mt:2}}><Typography variant="body2">{t('tickets.responseDeadline')}: <strong>{date(data.responseDueAt)}</strong> · {t(`slaState.${data.responseSlaState??data.slaState}`)}</Typography><Typography variant="body2">{t('tickets.resolutionDeadline')}: <strong>{date(data.resolutionDueAt)}</strong> · {t(`slaState.${data.resolutionSlaState??data.slaState}`)}</Typography><Typography variant="caption" color="text.secondary">Ciclo de resolução: {data.resolutionCycle}</Typography></Stack></CardContent></Card><Card><CardContent><Typography variant="h6">{t('tickets.history')}</Typography><Stack spacing={2} mt={2}>{data.history.map(item=><Box key={item.id}><Typography fontWeight={600}>{t(`historyAction.${item.action}`,{defaultValue:item.action})}</Typography><Typography variant="body2">{item.actorName} · {date(item.createdAt)}</Typography><Typography variant="body2" color="text.secondary">{item.reason}</Typography></Box>)}</Stack></CardContent></Card></Stack></Box>
+    </Stack><Stack spacing={3}><Card><CardContent><Typography variant="h6">{t('tickets.sla')}</Typography>{data.ticket.slaState.startsWith('PENDING')&&<Typography variant="body2">{t('tickets.elapsedBusiness',{minutes:data.elapsedBusinessMinutes})}</Typography>}<Typography>{t(`slaState.${data.slaState}`,{defaultValue:data.slaState})}</Typography><Stack spacing={1} sx={{mt:2}}><Typography variant="body2">{t('tickets.responseDeadline')}: <strong>{date(data.responseDueAt)}</strong> · {t(`slaState.${data.responseSlaState??data.slaState}`)}</Typography><Typography variant="body2">{t('tickets.resolutionDeadline')}: <strong>{date(data.resolutionDueAt)}</strong> · {t(`slaState.${data.resolutionSlaState??data.slaState}`)}</Typography><Typography variant="caption" color="text.secondary">Ciclo de resolução: {data.resolutionCycle}</Typography></Stack></CardContent></Card><Card><CardContent><Typography variant="h6">{t('tickets.history')}</Typography><Stack spacing={2} mt={2}>{data.history.map(item=><Box key={item.id}><Typography fontWeight={600}>{t(`historyAction.${item.action}`,{defaultValue:item.action})}</Typography><Typography variant="body2">{item.actorName} · {date(item.createdAt)}</Typography>{item.reason && <Typography variant="body2" color="text.secondary">{t('historyDetail.reason')}: {item.reason}</Typography>}{(item.fieldName != null || item.oldValue != null || item.newValue != null) && <Box component="dl" sx={{ m: 0, mt: 1, '& dt': { fontWeight: 600 }, '& dd': { m: 0, mb: 0.5, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' } }}><Typography component="dt" variant="body2">{t('historyDetail.field')}</Typography><Typography component="dd" variant="body2">{item.fieldName ? t('historyField.' + item.fieldName, { defaultValue: item.fieldName }) : t('historyDetail.empty')}</Typography><Typography component="dt" variant="body2">{t('historyDetail.oldValue')}</Typography><Typography component="dd" variant="body2">{formatHistoryValue(item.oldValue, t('historyDetail.empty'))}</Typography><Typography component="dt" variant="body2">{t('historyDetail.newValue')}</Typography><Typography component="dd" variant="body2">{formatHistoryValue(item.newValue, t('historyDetail.empty'))}</Typography></Box>}</Box>)}</Stack></CardContent></Card></Stack></Box>
     {action&&<ActionDialog ticket={data} action={action} onClose={()=>setAction(null)}/>}</Stack>
 }
 
@@ -271,9 +277,9 @@ function ManagementPage({resource,titleKey}:{resource:string;titleKey:string}){
   if(query.isPending||refs.isPending||session.isPending)return <Loading/>;
   if(query.isError||refs.isError||session.isError)return <Failure error={query.error??refs.error??session.error}/>;
   return <Stack spacing={2.5}>
-    <PageHeading title={t(titleKey)} description={t(`admin.descriptions.${resource}`)} actions={<Button variant="contained" startIcon={<Add/>} onClick={()=>setEditing(null)}>{t('admin.add')}</Button>}/>
+    <PageHeading title={t(titleKey)} description={t(`admin.descriptions.${resource}`)} actions={<Button variant="contained" startIcon={<Add/>} onClick={()=>{toggle.reset();setEditing(null);}}>{t('admin.add')}</Button>}/>
     {toggle.isError&&<Failure error={toggle.error}/>}
-    <ManagementListing resource={resource} items={query.data.items} reference={refs.data} search={search} onSearch={value=>{setSearch(value);setPage(0);}} onEdit={setEditing} onToggle={item=>toggle.mutate(item)} pending={toggle.isPending} currentUserId={session.data.id}/>
+    <ManagementListing resource={resource} items={query.data.items} reference={refs.data} search={search} onSearch={value=>{setSearch(value);setPage(0);}} onEdit={item=>{toggle.reset();setEditing(item);}} onToggle={item=>toggle.mutate(item)} pending={toggle.isPending} currentUserId={session.data.id}/>
     <TablePagination component="div" count={query.data.total} page={page} rowsPerPage={25} rowsPerPageOptions={[25]} onPageChange={(_,next)=>setPage(next)} labelRowsPerPage="Itens por página" labelDisplayedRows={({from,to,count})=>`${from}–${to} de ${count}`} getItemAriaLabel={type=>type==='next'?'Próxima página':'Página anterior'}/>
     {editing!==undefined&&<ManagementDialog resource={resource} item={editing} onClose={()=>setEditing(undefined)}/>}
   </Stack>;

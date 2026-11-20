@@ -15,9 +15,10 @@ public class NotificationService {
   private final NotificationRepository notifications; private final AppUserRepository users; private final OutboxEventRepository outbox;
   public NotificationService(NotificationRepository notifications, AppUserRepository users, OutboxEventRepository outbox) { this.notifications=notifications; this.users=users; this.outbox=outbox; }
   public void publish(Ticket ticket, String eventType, String summary) {
+    String renderedSummary = NotificationSummary.render(ticket, eventType, summary);
     Set<UUID> recipients=new HashSet<>(); recipients.add(ticket.getRequester().getId()); if(ticket.getAssignee()!=null) recipients.add(ticket.getAssignee().getId());
     users.findByRoleInAndActiveTrue(List.of(Role.SERVICE,Role.ADMIN)).forEach(user -> recipients.add(user.getId()));
-    recipients.forEach(id -> users.findById(id).filter(user->user.isActive()&&(user.getRole()==Role.ADMIN||user.getRole()==Role.SERVICE||(user.getRole()==Role.CLIENT&&user.getClient()!=null&&user.getClient().getId().equals(ticket.getClient().getId()))||(user.getRole()==Role.TRAFFIC_MANAGER&&ticket.getAssignee()!=null&&ticket.getAssignee().getId().equals(user.getId())))).ifPresent(user -> notifications.save(new Notification(user,ticket,eventType,summary))));
+    recipients.forEach(id -> users.findById(id).filter(user->user.isActive()&&(user.getRole()==Role.ADMIN||user.getRole()==Role.SERVICE||(user.getRole()==Role.CLIENT&&user.getClient()!=null&&user.getClient().getId().equals(ticket.getClient().getId()))||(user.getRole()==Role.TRAFFIC_MANAGER&&ticket.getAssignee()!=null&&ticket.getAssignee().getId().equals(user.getId())))).ifPresent(user -> notifications.save(new Notification(user,ticket,eventType,renderedSummary))));
     outbox.save(new OutboxEvent("TICKET",ticket.getId(),eventType,"{\"ticketId\":\""+ticket.getId()+"\",\"eventType\":\""+eventType+"\"}"));
   }
 }

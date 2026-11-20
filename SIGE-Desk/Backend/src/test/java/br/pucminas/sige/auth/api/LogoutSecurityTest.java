@@ -3,12 +3,14 @@ package br.pucminas.sige.auth.api;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import br.pucminas.sige.shared.security.CurrentUser;
 import br.pucminas.sige.shared.security.DatabaseUserDetailsService;
 import br.pucminas.sige.shared.security.SecurityConfig;
 import java.util.List;
+import jakarta.servlet.http.Cookie;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -27,6 +29,7 @@ class LogoutSecurityTest {
   @Autowired MockMvc mvc;
   @MockitoBean DatabaseUserDetailsService users;
   @MockitoBean CurrentUser current;
+  @MockitoBean br.pucminas.sige.shared.security.SecurityAccessAudit securityAudit;
 
   @Test
   void invalidatesTheSessionAndReturnsNoContentWithoutARedirect() throws Exception {
@@ -43,6 +46,15 @@ class LogoutSecurityTest {
     MockHttpSession session=authenticatedSession();
     mvc.perform(post("/api/v1/auth/logout").session(session)).andExpect(status().isForbidden());
     org.junit.jupiter.api.Assertions.assertFalse(session.isInvalid());
+  }
+
+  @Test
+  void staleSessionCookieCannotAuthenticateAfterServerInvalidation() throws Exception {
+    MockHttpSession session=authenticatedSession();
+    String oldId=session.getId();
+    session.invalidate();
+    mvc.perform(get("/api/v1/auth/me").cookie(new Cookie("JSESSIONID",oldId)))
+        .andExpect(status().isUnauthorized());
   }
 
   private MockHttpSession authenticatedSession() {

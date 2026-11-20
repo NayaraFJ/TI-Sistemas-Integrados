@@ -1,0 +1,658 @@
+{
+  "ticket": "cf06ea9e-65a5-4e82-925e-2ae439b71c8e",
+  "checks": [
+    {
+      "name": "triagem TRIAGE_STARTED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "status",
+          "OPEN",
+          "TRIAGE",
+          "Beatriz Souza",
+          "Conferência de teste"
+        ],
+        "actual": [
+          "status",
+          "OPEN",
+          "TRIAGE",
+          "Beatriz Souza",
+          "Conferência de teste"
+        ],
+        "createdAt": "2026-11-19T17:27:51.545260Z",
+        "id": "c5ae2395-ce9b-4fac-abab-4054e69f3277"
+      }
+    },
+    {
+      "name": "classificacao TRIAGE_CLASSIFIED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "priority",
+          null,
+          "HIGH",
+          "Beatriz Souza",
+          "Prioridade confirmada"
+        ],
+        "actual": [
+          "priority",
+          null,
+          "HIGH",
+          "Beatriz Souza",
+          "Prioridade confirmada"
+        ],
+        "createdAt": "2026-11-19T17:27:51.578760Z",
+        "id": "a7ddfa1f-0b5c-4a1f-af85-362d0802e9e0"
+      }
+    },
+    {
+      "name": "classificacao ASSIGNEE_CHANGED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "assigneeId",
+          null,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "Beatriz Souza",
+          "Responsável confirmado"
+        ],
+        "actual": [
+          "assigneeId",
+          null,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "Beatriz Souza",
+          "Responsável confirmado"
+        ],
+        "createdAt": "2026-11-19T17:27:51.578760Z",
+        "id": "20eb8c3f-b2aa-40f5-864c-ca3ce147506d"
+      }
+    },
+    {
+      "name": "classificacao SENT_TO_EXECUTION",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "status",
+          "TRIAGE",
+          "EXECUTION",
+          "Beatriz Souza",
+          "Triagem concluída"
+        ],
+        "actual": [
+          "status",
+          "TRIAGE",
+          "EXECUTION",
+          "Beatriz Souza",
+          "Triagem concluída"
+        ],
+        "createdAt": "2026-11-19T17:27:51.579761Z",
+        "id": "6cb2e6e5-4384-4333-bf06-93124438ef0f"
+      }
+    },
+    {
+      "name": "classificacao RESPONSE_DEADLINE_CHANGED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "responseDueAt",
+          null,
+          "2026-11-23T11:27:51.515759Z",
+          "Beatriz Souza",
+          "Prazo de primeira resposta aplicado"
+        ],
+        "actual": [
+          "responseDueAt",
+          null,
+          "2026-11-23T11:27:51.515759Z",
+          "Beatriz Souza",
+          "Prazo de primeira resposta aplicado"
+        ],
+        "createdAt": "2026-11-19T17:27:51.579261Z",
+        "id": "c904ecd8-ca98-437d-874a-1b7e32b3068f"
+      }
+    },
+    {
+      "name": "classificacao RESOLUTION_DEADLINE_CHANGED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "resolutionDueAt",
+          null,
+          "2026-11-24T13:27:51.515759Z",
+          "Beatriz Souza",
+          "Prazo de resolução aplicado"
+        ],
+        "actual": [
+          "resolutionDueAt",
+          null,
+          "2026-11-24T13:27:51.515759Z",
+          "Beatriz Souza",
+          "Prazo de resolução aplicado"
+        ],
+        "createdAt": "2026-11-19T17:27:51.579261Z",
+        "id": "cafe0e7b-fd96-4b55-9c89-470239c6967b"
+      }
+    },
+    {
+      "name": "reatribuicao ASSIGNEE_CHANGED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "assigneeId",
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+          "Beatriz Souza",
+          "Reatribuição CT13"
+        ],
+        "actual": [
+          "assigneeId",
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+          "Beatriz Souza",
+          "Reatribuição CT13"
+        ],
+        "createdAt": "2026-11-19T17:27:51.607758Z",
+        "id": "5028d756-10d2-4c4a-ba9b-da2e40213869"
+      }
+    },
+    {
+      "name": "aguardo COMPLEMENT_REQUESTED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "status",
+          "EXECUTION",
+          "WAITING_FOR_CLIENT",
+          "Ana Ribeiro",
+          "Aguardo CT13"
+        ],
+        "actual": [
+          "status",
+          "EXECUTION",
+          "WAITING_FOR_CLIENT",
+          "Ana Ribeiro",
+          "Aguardo CT13"
+        ],
+        "createdAt": "2026-11-19T17:27:51.655259Z",
+        "id": "91627696-f54b-43a9-8bd3-7a817ca5bbf7"
+      }
+    },
+    {
+      "name": "retomada TICKET_RESUMED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "status",
+          "WAITING_FOR_CLIENT",
+          "EXECUTION",
+          "Beatriz Souza",
+          "Retomada CT13"
+        ],
+        "actual": [
+          "status",
+          "WAITING_FOR_CLIENT",
+          "EXECUTION",
+          "Beatriz Souza",
+          "Retomada CT13"
+        ],
+        "createdAt": "2026-11-19T17:27:51.735258Z",
+        "id": "faa7e537-8352-4c00-9d31-8c1941b79a7a"
+      }
+    },
+    {
+      "name": "retomada RESOLUTION_DEADLINE_CHANGED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "resolutionDueAt",
+          "2026-11-24T13:27:51.515759Z",
+          "2026-11-24T13:27:51.594258Z",
+          "Beatriz Souza",
+          "Prazo recalculado após a pausa"
+        ],
+        "actual": [
+          "resolutionDueAt",
+          "2026-11-24T13:27:51.515759Z",
+          "2026-11-24T13:27:51.594258Z",
+          "Beatriz Souza",
+          "Prazo recalculado após a pausa"
+        ],
+        "createdAt": "2026-11-19T17:27:51.735258Z",
+        "id": "d13bdaa8-0ef1-47f6-9790-a77970e86f76"
+      }
+    },
+    {
+      "name": "entrega EXECUTION_RECORDED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "status",
+          "EXECUTION",
+          "VALIDATION",
+          "Ana Ribeiro",
+          "Entrega CT13"
+        ],
+        "actual": [
+          "status",
+          "EXECUTION",
+          "VALIDATION",
+          "Ana Ribeiro",
+          "Entrega CT13"
+        ],
+        "createdAt": "2026-11-19T17:27:51.779759Z",
+        "id": "5a70b3ce-43e7-40c2-8e4c-3aa45c8d3c21"
+      }
+    },
+    {
+      "name": "aprovacao APPROVED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "status",
+          "VALIDATION",
+          "DONE",
+          "Marina Costa",
+          "Aprovação CT13"
+        ],
+        "actual": [
+          "status",
+          "VALIDATION",
+          "DONE",
+          "Marina Costa",
+          "Aprovação CT13"
+        ],
+        "createdAt": "2026-11-19T17:27:51.809258Z",
+        "id": "e39da08b-7d21-42ef-9250-cf41ae4d39c3"
+      }
+    },
+    {
+      "name": "aprovacao RESOLUTION_DEADLINE_CHANGED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "resolutionDueAt",
+          "2026-11-24T13:27:51.594258Z",
+          "2026-11-24T13:27:51.622257Z",
+          "Marina Costa",
+          "Prazo recalculado após validação"
+        ],
+        "actual": [
+          "resolutionDueAt",
+          "2026-11-24T13:27:51.594258Z",
+          "2026-11-24T13:27:51.622257Z",
+          "Marina Costa",
+          "Prazo recalculado após validação"
+        ],
+        "createdAt": "2026-11-19T17:27:51.809258Z",
+        "id": "6644581a-1bc2-469a-8061-859b4b84863b"
+      }
+    },
+    {
+      "name": "reabertura REOPENED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "status",
+          "DONE",
+          "REOPENED",
+          "Marina Costa",
+          "Reabertura CT13"
+        ],
+        "actual": [
+          "status",
+          "DONE",
+          "REOPENED",
+          "Marina Costa",
+          "Reabertura CT13"
+        ],
+        "createdAt": "2026-11-19T17:27:51.840258Z",
+        "id": "00fdf5d8-9b42-4390-b5c0-af12af45a516"
+      }
+    },
+    {
+      "name": "Ciclo encerrado",
+      "passed": true,
+      "detail": {
+        "cycle": 1,
+        "priority": "HIGH",
+        "completedAt": "2026-11-19T17:27:51.809258Z",
+        "slaSnapshot": "{\"id\": \"180ec224-ee7e-435d-aca0-abee54643273\", \"name\": \"Review a4d1fb26 SLA CLIENT\", \"version\": 2, \"holidays\": [\"2026-12-24\"], \"timezone\": \"America/Sao_Paulo\", \"deadlines\": {\"LOW\": {\"responseHours\": 16, \"resolutionHours\": 40}, \"HIGH\": {\"responseHours\": 4, \"resolutionHours\": 16}, \"MEDIUM\": {\"responseHours\": 8, \"resolutionHours\": 24}, \"URGENT\": {\"responseHours\": 2, \"resolutionHours\": 8}}, \"businessEnd\": \"18:00\", \"businessDays\": [\"MONDAY\", \"TUESDAY\", \"WEDNESDAY\", \"THURSDAY\", \"FRIDAY\"], \"businessStart\": \"08:00\", \"pauseInValidation\": true, \"nationalHolidayPolicy\": \"BR_FIXED_V1\"}",
+        "resolutionDueAt": "2026-11-24T13:27:51.622257Z"
+      }
+    },
+    {
+      "name": "reclassificacao ASSIGNEE_CHANGED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "assigneeId",
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "Beatriz Souza",
+          "Responsável confirmado"
+        ],
+        "actual": [
+          "assigneeId",
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "Beatriz Souza",
+          "Responsável confirmado"
+        ],
+        "createdAt": "2026-11-19T17:27:51.915758Z",
+        "id": "e6eeb6c9-8dfb-45d9-9ee2-be5d774d3bf7"
+      }
+    },
+    {
+      "name": "reclassificacao RESOLUTION_DEADLINE_CHANGED",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "resolutionDueAt",
+          null,
+          "2026-11-24T13:27:51.840258Z",
+          "Beatriz Souza",
+          "Prazo de resolução aplicado"
+        ],
+        "actual": [
+          "resolutionDueAt",
+          null,
+          "2026-11-24T13:27:51.840258Z",
+          "Beatriz Souza",
+          "Prazo de resolução aplicado"
+        ],
+        "createdAt": "2026-11-19T17:27:51.916258Z",
+        "id": "f5f4e45b-9289-41e0-98ae-325109c9eefc"
+      }
+    },
+    {
+      "name": "Histórico preservado por todas as etapas",
+      "passed": true,
+      "detail": 26
+    },
+    {
+      "name": "API coincide com registros MySQL",
+      "passed": true,
+      "detail": {
+        "apiCount": 26,
+        "dbCount": 26,
+        "differences": []
+      }
+    },
+    {
+      "name": "Negativas preservam histórico e versão",
+      "passed": true,
+      "detail": {
+        "version": 23
+      }
+    }
+  ],
+  "dbRows": [
+    {
+      "id": "190fe17a-32a4-4020-ab46-ee6b6b400884",
+      "action": "TICKET_CREATED",
+      "reason": "Solicitação registrada",
+      "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "newValue": "OPEN",
+      "oldValue": null,
+      "createdAt": "2026-11-19T17:27:51.515759Z",
+      "fieldName": null
+    },
+    {
+      "id": "c5ae2395-ce9b-4fac-abab-4054e69f3277",
+      "action": "TRIAGE_STARTED",
+      "reason": "Conferência de teste",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "TRIAGE",
+      "oldValue": "OPEN",
+      "createdAt": "2026-11-19T17:27:51.545260Z",
+      "fieldName": "status"
+    },
+    {
+      "id": "1a4010f6-920f-49cc-a905-02be39b9a512",
+      "action": "TRIAGE_CAMPAIGN",
+      "reason": "Campanha confirmada na triagem",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "21f5421c-ad5b-461c-a244-725621497016",
+      "oldValue": "21f5421c-ad5b-461c-a244-725621497016",
+      "createdAt": "2026-11-19T17:27:51.578261Z",
+      "fieldName": "campaignId"
+    },
+    {
+      "id": "20eb8c3f-b2aa-40f5-864c-ca3ce147506d",
+      "action": "ASSIGNEE_CHANGED",
+      "reason": "Responsável confirmado",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "oldValue": null,
+      "createdAt": "2026-11-19T17:27:51.578760Z",
+      "fieldName": "assigneeId"
+    },
+    {
+      "id": "2c54fb4a-5782-4e04-8403-31b58114ba53",
+      "action": "TRIAGE_TYPE",
+      "reason": "Tipo de demanda confirmado na triagem",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "e25e654a-eaf1-4534-b35d-fb7467a70793",
+      "oldValue": "e25e654a-eaf1-4534-b35d-fb7467a70793",
+      "createdAt": "2026-11-19T17:27:51.578760Z",
+      "fieldName": "demandTypeId"
+    },
+    {
+      "id": "a7ddfa1f-0b5c-4a1f-af85-362d0802e9e0",
+      "action": "TRIAGE_CLASSIFIED",
+      "reason": "Prioridade confirmada",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "HIGH",
+      "oldValue": null,
+      "createdAt": "2026-11-19T17:27:51.578760Z",
+      "fieldName": "priority"
+    },
+    {
+      "id": "c904ecd8-ca98-437d-874a-1b7e32b3068f",
+      "action": "RESPONSE_DEADLINE_CHANGED",
+      "reason": "Prazo de primeira resposta aplicado",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "2026-11-23T11:27:51.515759Z",
+      "oldValue": null,
+      "createdAt": "2026-11-19T17:27:51.579261Z",
+      "fieldName": "responseDueAt"
+    },
+    {
+      "id": "cafe0e7b-fd96-4b55-9c89-470239c6967b",
+      "action": "RESOLUTION_DEADLINE_CHANGED",
+      "reason": "Prazo de resolução aplicado",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "2026-11-24T13:27:51.515759Z",
+      "oldValue": null,
+      "createdAt": "2026-11-19T17:27:51.579261Z",
+      "fieldName": "resolutionDueAt"
+    },
+    {
+      "id": "6cb2e6e5-4384-4333-bf06-93124438ef0f",
+      "action": "SENT_TO_EXECUTION",
+      "reason": "Triagem concluída",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "EXECUTION",
+      "oldValue": "TRIAGE",
+      "createdAt": "2026-11-19T17:27:51.579761Z",
+      "fieldName": "status"
+    },
+    {
+      "id": "5028d756-10d2-4c4a-ba9b-da2e40213869",
+      "action": "ASSIGNEE_CHANGED",
+      "reason": "Reatribuição CT13",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "oldValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "createdAt": "2026-11-19T17:27:51.607758Z",
+      "fieldName": "assigneeId"
+    },
+    {
+      "id": "91627696-f54b-43a9-8bd3-7a817ca5bbf7",
+      "action": "COMPLEMENT_REQUESTED",
+      "reason": "Aguardo CT13",
+      "actorId": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "newValue": "WAITING_FOR_CLIENT",
+      "oldValue": "EXECUTION",
+      "createdAt": "2026-11-19T17:27:51.655259Z",
+      "fieldName": "status"
+    },
+    {
+      "id": "8609e899-b0ba-4176-94da-351b9eb81cf2",
+      "action": "COMPLEMENT_RECEIVED",
+      "reason": "Comentário: Complemento CT13",
+      "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "newValue": null,
+      "oldValue": null,
+      "createdAt": "2026-11-19T17:27:51.705762Z",
+      "fieldName": null
+    },
+    {
+      "id": "d13bdaa8-0ef1-47f6-9790-a77970e86f76",
+      "action": "RESOLUTION_DEADLINE_CHANGED",
+      "reason": "Prazo recalculado após a pausa",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "2026-11-24T13:27:51.594258Z",
+      "oldValue": "2026-11-24T13:27:51.515759Z",
+      "createdAt": "2026-11-19T17:27:51.735258Z",
+      "fieldName": "resolutionDueAt"
+    },
+    {
+      "id": "faa7e537-8352-4c00-9d31-8c1941b79a7a",
+      "action": "TICKET_RESUMED",
+      "reason": "Retomada CT13",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "EXECUTION",
+      "oldValue": "WAITING_FOR_CLIENT",
+      "createdAt": "2026-11-19T17:27:51.735258Z",
+      "fieldName": "status"
+    },
+    {
+      "id": "5a70b3ce-43e7-40c2-8e4c-3aa45c8d3c21",
+      "action": "EXECUTION_RECORDED",
+      "reason": "Entrega CT13",
+      "actorId": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "newValue": "VALIDATION",
+      "oldValue": "EXECUTION",
+      "createdAt": "2026-11-19T17:27:51.779759Z",
+      "fieldName": "status"
+    },
+    {
+      "id": "6644581a-1bc2-469a-8061-859b4b84863b",
+      "action": "RESOLUTION_DEADLINE_CHANGED",
+      "reason": "Prazo recalculado após validação",
+      "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "newValue": "2026-11-24T13:27:51.622257Z",
+      "oldValue": "2026-11-24T13:27:51.594258Z",
+      "createdAt": "2026-11-19T17:27:51.809258Z",
+      "fieldName": "resolutionDueAt"
+    },
+    {
+      "id": "e39da08b-7d21-42ef-9250-cf41ae4d39c3",
+      "action": "APPROVED",
+      "reason": "Aprovação CT13",
+      "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "newValue": "DONE",
+      "oldValue": "VALIDATION",
+      "createdAt": "2026-11-19T17:27:51.809258Z",
+      "fieldName": "status"
+    },
+    {
+      "id": "00fdf5d8-9b42-4390-b5c0-af12af45a516",
+      "action": "REOPENED",
+      "reason": "Reabertura CT13",
+      "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "newValue": "REOPENED",
+      "oldValue": "DONE",
+      "createdAt": "2026-11-19T17:27:51.840258Z",
+      "fieldName": "status"
+    },
+    {
+      "id": "a15269d9-138d-4810-a768-927ceea0edb6",
+      "action": "RESOLUTION_CYCLE_CLOSED",
+      "reason": "Reabertura CT13",
+      "actorId": "9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "newValue": {
+        "cycle": 1,
+        "priority": "HIGH",
+        "completedAt": "2026-11-19T17:27:51.809258Z",
+        "slaSnapshot": "{\"id\": \"180ec224-ee7e-435d-aca0-abee54643273\", \"name\": \"Review a4d1fb26 SLA CLIENT\", \"version\": 2, \"holidays\": [\"2026-12-24\"], \"timezone\": \"America/Sao_Paulo\", \"deadlines\": {\"LOW\": {\"responseHours\": 16, \"resolutionHours\": 40}, \"HIGH\": {\"responseHours\": 4, \"resolutionHours\": 16}, \"MEDIUM\": {\"responseHours\": 8, \"resolutionHours\": 24}, \"URGENT\": {\"responseHours\": 2, \"resolutionHours\": 8}}, \"businessEnd\": \"18:00\", \"businessDays\": [\"MONDAY\", \"TUESDAY\", \"WEDNESDAY\", \"THURSDAY\", \"FRIDAY\"], \"businessStart\": \"08:00\", \"pauseInValidation\": true, \"nationalHolidayPolicy\": \"BR_FIXED_V1\"}",
+        "resolutionDueAt": "2026-11-24T13:27:51.622257Z"
+      },
+      "oldValue": null,
+      "createdAt": "2026-11-19T17:27:51.840258Z",
+      "fieldName": "resolutionCycle"
+    },
+    {
+      "id": "90e99703-c378-436f-a487-6a100aafc718",
+      "action": "TRIAGE_CAMPAIGN",
+      "reason": "Campanha confirmada na triagem",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "21f5421c-ad5b-461c-a244-725621497016",
+      "oldValue": "21f5421c-ad5b-461c-a244-725621497016",
+      "createdAt": "2026-11-19T17:27:51.915260Z",
+      "fieldName": "campaignId"
+    },
+    {
+      "id": "5862ebdb-3c63-40b9-88a4-87c9021e54e0",
+      "action": "TRIAGE_TYPE",
+      "reason": "Tipo de demanda confirmado na triagem",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "e25e654a-eaf1-4534-b35d-fb7467a70793",
+      "oldValue": "e25e654a-eaf1-4534-b35d-fb7467a70793",
+      "createdAt": "2026-11-19T17:27:51.915758Z",
+      "fieldName": "demandTypeId"
+    },
+    {
+      "id": "e6eeb6c9-8dfb-45d9-9ee2-be5d774d3bf7",
+      "action": "ASSIGNEE_CHANGED",
+      "reason": "Responsável confirmado",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "oldValue": "ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "createdAt": "2026-11-19T17:27:51.915758Z",
+      "fieldName": "assigneeId"
+    },
+    {
+      "id": "ec9a3a11-94c8-4d6f-a147-3f3b46c0d431",
+      "action": "TRIAGE_CLASSIFIED",
+      "reason": "Prioridade confirmada",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "HIGH",
+      "oldValue": "HIGH",
+      "createdAt": "2026-11-19T17:27:51.915758Z",
+      "fieldName": "priority"
+    },
+    {
+      "id": "2fc8fe25-7040-470b-8a4b-32b252475b91",
+      "action": "RESPONSE_DEADLINE_CHANGED",
+      "reason": "Prazo de primeira resposta aplicado",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "2026-11-23T11:27:51.515759Z",
+      "oldValue": "2026-11-23T11:27:51.515759Z",
+      "createdAt": "2026-11-19T17:27:51.916258Z",
+      "fieldName": "responseDueAt"
+    },
+    {
+      "id": "d46c088b-6035-4fb4-979c-950f461b85c9",
+      "action": "SENT_TO_EXECUTION",
+      "reason": "Triagem concluída",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "EXECUTION",
+      "oldValue": "REOPENED",
+      "createdAt": "2026-11-19T17:27:51.916258Z",
+      "fieldName": "status"
+    },
+    {
+      "id": "f5f4e45b-9289-41e0-98ae-325109c9eefc",
+      "action": "RESOLUTION_DEADLINE_CHANGED",
+      "reason": "Prazo de resolução aplicado",
+      "actorId": "22b56fe4-d522-4078-a24a-bf496757e367",
+      "newValue": "2026-11-24T13:27:51.840258Z",
+      "oldValue": null,
+      "createdAt": "2026-11-19T17:27:51.916258Z",
+      "fieldName": "resolutionDueAt"
+    }
+  ],
+  "failed": 0
+}

@@ -1,0 +1,13 @@
+{
+  "target": "instância local isolada, porta 8095",
+  "configuredTimeoutSeconds": 60,
+  "startedAtUtc": "2026-11-19T22:03:31.0616892Z",
+  "loginStatus": 200,
+  "cookieReceived": true,
+  "beforeWaitStatus": 200,
+  "waitSeconds": 65.01,
+  "cookieStillSent": true,
+  "afterWaitStatus": 401,
+  "passed": true,
+  "finishedAtUtc": "2026-11-19T22:04:36.5997362Z"
+}

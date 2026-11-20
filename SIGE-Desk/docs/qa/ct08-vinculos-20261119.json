@@ -1,0 +1,277 @@
+{
+  "startedAt": "2026-11-19T17:14:44.154758+00:00",
+  "finishedAt": "2026-11-19T17:14:45.551757+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "bed7e6d11fef0704b3fc30313d8a28fb92c6529131c4631924fb846a7c059cba",
+    "runTag": "Review 5effbe51"
+  },
+  "cases": [
+    {
+      "id": "CT-08-vinculos",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:14:44.741259+00:00",
+      "finishedAt": "2026-11-19T17:14:45.551257+00:00",
+      "assertions": 42,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo POST /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo POST /tickets/2a0e49f8-fe1f-4f38-91ff-95fa9b98317b/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo POST /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "atendimento@sige.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "atendimento@sige.demo POST /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "atendimento@sige.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "atendimento@sige.demo POST /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /tickets/2a0e49f8-fe1f-4f38-91ff-95fa9b98317b HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "Fixture contém histórico, comentário e anexo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/attachments/777796d6-9165-4467-8762-63cdfc3469f9/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "ID divergente negado CLIENT",
+      "passed": true,
+      "detail": "{'ticket': '2ce733b4-8534-4462-981d-6b90e377cc5c', 'attachment': '777796d6-9165-4467-8762-63cdfc3469f9', 'audit': []}"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "gestor@sige.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/attachments/777796d6-9165-4467-8762-63cdfc3469f9/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "ID divergente negado TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": "{'ticket': '2ce733b4-8534-4462-981d-6b90e377cc5c', 'attachment': '777796d6-9165-4467-8762-63cdfc3469f9', 'audit': []}"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "rafael@horizonte.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/attachments/777796d6-9165-4467-8762-63cdfc3469f9/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "ID divergente negado CLIENT",
+      "passed": true,
+      "detail": "{'ticket': '2ce733b4-8534-4462-981d-6b90e377cc5c', 'attachment': '777796d6-9165-4467-8762-63cdfc3469f9', 'audit': [{'at': '2026-11-19T17:14:45.308758', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '2ce733b4-8534-4462-981d-6b90e377cc5c'}]}"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "Auditoria do ticket invisível CLIENT",
+      "passed": true,
+      "detail": "[{'at': '2026-11-19T17:14:45.308758', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '2ce733b4-8534-4462-981d-6b90e377cc5c'}]"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "gestor2@sige.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/attachments/777796d6-9165-4467-8762-63cdfc3469f9/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "ID divergente negado TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": "{'ticket': '2ce733b4-8534-4462-981d-6b90e377cc5c', 'attachment': '777796d6-9165-4467-8762-63cdfc3469f9', 'audit': [{'at': '2026-11-19T17:14:45.366758', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'TICKET', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '2ce733b4-8534-4462-981d-6b90e377cc5c'}]}"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "Auditoria do ticket invisível TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": "[{'at': '2026-11-19T17:14:45.366758', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'TICKET', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '2ce733b4-8534-4462-981d-6b90e377cc5c'}]"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "rafael@horizonte.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "rafael@horizonte.demo POST /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/attachments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "Auditoria upload negado CLIENT",
+      "passed": true,
+      "detail": "[{'at': '2026-11-19T17:14:45.425758', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '2ce733b4-8534-4462-981d-6b90e377cc5c'}]"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "gestor2@sige.demo POST /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/attachments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "Auditoria upload negado TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": "[{'at': '2026-11-19T17:14:45.486257', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'TICKET', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '2ce733b4-8534-4462-981d-6b90e377cc5c'}]"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "Ticket e histórico preservados",
+      "passed": true,
+      "detail": "{'ticket': '2ce733b4-8534-4462-981d-6b90e377cc5c'}"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /tickets/2a0e49f8-fe1f-4f38-91ff-95fa9b98317b HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /tickets/2a0e49f8-fe1f-4f38-91ff-95fa9b98317b/attachments/777796d6-9165-4467-8762-63cdfc3469f9/download HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "Ticket e anexo divergente preservados",
+      "passed": true,
+      "detail": "{'ticket': '2a0e49f8-fe1f-4f38-91ff-95fa9b98317b'}"
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "cliente@aurora.demo GET /tickets/2ce733b4-8534-4462-981d-6b90e377cc5c/attachments/475a46f6-fe89-4e6a-9f1c-9e1b2b1fb5ee/download HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos",
+      "name": "Anexo original preservado",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

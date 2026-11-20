@@ -1,0 +1,317 @@
+{
+  "startedAt": "2026-11-19T12:08:31.858720+00:00",
+  "finishedAt": "2026-11-19T12:08:32.923220+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "runtimeSha256": "cc213f43e9a6e7dca4579de7f442f0c76545d0d813d9a9f1adff58d09a9c5090",
+    "runTag": "Review fc7aec29"
+  },
+  "cases": [
+    {
+      "id": "CT-17",
+      "priority": "Baixa",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:08:32.363220+00:00",
+      "finishedAt": "2026-11-19T12:08:32.923220+00:00",
+      "assertions": 49,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-17",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /notifications HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "cliente@aurora.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "cliente@aurora.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "cliente@aurora.demo GET /notifications HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "rafael@horizonte.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "rafael@horizonte.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "rafael@horizonte.demo GET /notifications HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "atendimento@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "atendimento@sige.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "atendimento@sige.demo GET /notifications HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor@sige.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor@sige.demo GET /notifications HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor2@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor2@sige.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor2@sige.demo GET /notifications HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor@sige.demo GET /tickets?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor@sige.demo GET /tickets?size=100&page=1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "Gestor recebe apenas referências do escopo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "cliente@aurora.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "Cliente não recebe outros solicitantes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /tickets?search=Review%20fc7aec29&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /reports/tickets?search=Review%20fc7aec29 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /reports/tickets/export?search=Review%20fc7aec29 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "CSV, relatório e lista coincidem",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "cliente@aurora.demo GET /reports/tickets/export HTTP 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /reports/tickets/export?search=SIGE-1265 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "CSV neutraliza fórmula em assunto",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /tickets?page=1&size=10 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "Paginação devolve segunda página",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /tickets?page=-1 HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /tickets?search=Review%20fc7aec29&size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /reports/tickets/export?search=Review%20fc7aec29 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "CSV cobre exatamente seleção inteira admin@sige.demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "admin@sige.demo GET /reports/tickets/export?search=QA-SEM-RESULTADO-EXCLUSIVO HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "CSV vazio preserva cabeçalho",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "atendimento@sige.demo GET /reports/tickets/export?search=Review%20fc7aec29 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "CSV cobre exatamente seleção inteira atendimento@sige.demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "atendimento@sige.demo GET /reports/tickets/export?search=QA-SEM-RESULTADO-EXCLUSIVO HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "CSV vazio preserva cabeçalho",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-17",
+      "name": "gestor@sige.demo GET /reports/tickets/export HTTP 403",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

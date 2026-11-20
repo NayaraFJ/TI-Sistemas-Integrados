@@ -33,6 +33,39 @@ class NotificationControllerTest {
 
     var ex=org.junit.jupiter.api.Assertions.assertThrows(org.springframework.web.server.ResponseStatusException.class,()->new NotificationController(notifications,current,access).markRead(notification.getId()));
     assertEquals(404,ex.getStatusCode().value());
+    org.junit.jupiter.api.Assertions.assertInstanceOf(br.pucminas.sige.shared.security.LinkedResourceAccessDeniedException.class, ex);
+    org.junit.jupiter.api.Assertions.assertNull(notification.getReadAt());
+  }
+
+  @Test
+  void distinguishesAnAbsentNotificationInternallyWithoutChangingTheResponse() {
+    NotificationRepository notifications = Mockito.mock(NotificationRepository.class);
+    CurrentUser current = Mockito.mock(CurrentUser.class);
+    TicketAccessPolicy access = Mockito.mock(TicketAccessPolicy.class);
+    var id = java.util.UUID.randomUUID();
+    when(current.require()).thenReturn(user());
+    when(notifications.findById(id)).thenReturn(java.util.Optional.empty());
+    var ex = org.junit.jupiter.api.Assertions.assertThrows(org.springframework.web.server.ResponseStatusException.class,
+        () -> new NotificationController(notifications, current, access).markRead(id));
+    assertEquals(404, ex.getStatusCode().value());
+    org.junit.jupiter.api.Assertions.assertEquals(org.springframework.web.server.ResponseStatusException.class, ex.getClass());
+  }
+
+  @Test
+  void deniesAnotherUsersNotificationEvenWhenTicketIsVisible() {
+    NotificationRepository notifications = Mockito.mock(NotificationRepository.class);
+    CurrentUser current = Mockito.mock(CurrentUser.class);
+    TicketAccessPolicy access = Mockito.mock(TicketAccessPolicy.class);
+    AppUser owner = user();
+    AppUser actor = user();
+    Ticket ticket = ticket(owner);
+    Notification notification = new Notification(owner, ticket, "ASSIGNED", "Resumo");
+    when(current.require()).thenReturn(actor);
+    when(notifications.findById(notification.getId())).thenReturn(java.util.Optional.of(notification));
+    var ex = org.junit.jupiter.api.Assertions.assertThrows(br.pucminas.sige.shared.security.LinkedResourceAccessDeniedException.class,
+        () -> new NotificationController(notifications, current, access).markRead(notification.getId()));
+    assertEquals("NOTIFICATION", ex.resourceType());
+    assertEquals(notification.getId(), ex.resourceId());
     org.junit.jupiter.api.Assertions.assertNull(notification.getReadAt());
   }
 

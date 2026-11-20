@@ -1,0 +1,61 @@
+{
+  "startedAt": "2026-11-19T21:43:48.014258+00:00",
+  "finishedAt": "2026-11-19T21:43:48.755258+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review a56e76b9"
+  },
+  "cases": [
+    {
+      "id": "CT-01-campanha-sem-identificacao",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T21:43:48.578256+00:00",
+      "finishedAt": "2026-11-19T21:43:48.755258+00:00",
+      "assertions": 6,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-01-campanha-sem-identificacao",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-campanha-sem-identificacao",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-campanha-sem-identificacao",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-campanha-sem-identificacao",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-campanha-sem-identificacao",
+      "name": "cliente@aurora.demo POST /tickets HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-campanha-sem-identificacao",
+      "name": "Sem ticket parcial",
+      "passed": true,
+      "detail": "{'subject': 'Review a56e76b9 campanha sem identificacao', 'before': 0, 'after': 0}"
+    }
+  ]
+}

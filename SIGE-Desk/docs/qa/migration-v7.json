@@ -1,0 +1,10 @@
+{
+  "Environment": "sige_desk_qa_migration_20261118",
+  "MigrationsApplied": 7,
+  "Tests": 1,
+  "Failures": 0,
+  "Errors": 0,
+  "Skipped": 0,
+  "BuildSuccess": true,
+  "EvidenceLog": "SIGE-Desk/Backend/target/qa-migration-test.log"
+}

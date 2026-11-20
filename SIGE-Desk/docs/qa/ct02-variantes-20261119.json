@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-11-19T21:58:08.911257+00:00",
+  "finishedAt": "2026-11-19T21:58:09.517257+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review cb118754"
+  },
+  "cases": [
+    {
+      "id": "CT-02-variantes",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T21:58:09.439757+00:00",
+      "finishedAt": "2026-11-19T21:58:09.517257+00:00",
+      "assertions": 3,
+      "error": "cliente@aurora.demo POST /tickets HTTP 201: b'{\"code\":\"BUSINESS_RULE\",\"message\":\"Preencha o campo obrigat\\xc3\\xb3rio: justificativa\",\"timestamp\":\"2026-11-19T21:58:09.517257Z\",\"fields\":{}}'"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-02-variantes",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-02-variantes",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-02-variantes",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": false,
+      "detail": "b'{\"code\":\"BUSINESS_RULE\",\"message\":\"Preencha o campo obrigat\\xc3\\xb3rio: justificativa\",\"timestamp\":\"2026-11-19T21:58:09.517257Z\",\"fields\":{}}'"
+    }
+  ],
+  "cleanup": {}
+}

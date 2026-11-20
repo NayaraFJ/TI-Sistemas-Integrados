@@ -1,0 +1,144 @@
+{
+  "startedAt": "2026-11-19T12:41:51.831719+00:00",
+  "finishedAt": "2026-11-19T12:41:52.732218+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "runtimeSha256": "10f163768eb01b93dc32891fea4ed71be259bdeabce9c443cfd732d5ca754f94",
+    "runTag": "Review f3c88b8c"
+  },
+  "cases": [
+    {
+      "id": "CT-08-corpo-invalido",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:41:52.395220+00:00",
+      "finishedAt": "2026-11-19T12:41:52.731720+00:00",
+      "assertions": 20,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "cliente@aurora.demo GET /tickets/891163e4-20a8-4a2b-929e-63cfca88a7d2 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "rafael@horizonte.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "rafael@horizonte.demo POST /tickets/891163e4-20a8-4a2b-929e-63cfca88a7d2/comments HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "CLIENT invalid",
+      "passed": true,
+      "detail": "{'status': 400, 'auditDelta': 0, 'response': {'code': 'VALIDATION_ERROR', 'message': 'Há campos inválidos.', 'timestamp': '2026-11-19T12:41:52.550220900Z', 'fields': {'body': 'não deve estar em branco'}}}"
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "rafael@horizonte.demo POST /tickets/891163e4-20a8-4a2b-929e-63cfca88a7d2/comments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "CLIENT valid",
+      "passed": true,
+      "detail": "{'status': 404, 'auditDelta': 1, 'response': {'code': 'REQUEST_ERROR', 'message': 'Ticket não encontrado', 'timestamp': '2026-11-19T12:41:52.602217200Z', 'fields': {}}}"
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "cliente@aurora.demo GET /tickets/891163e4-20a8-4a2b-929e-63cfca88a7d2 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "Estado preservado CLIENT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "gestor2@sige.demo POST /tickets/891163e4-20a8-4a2b-929e-63cfca88a7d2/comments HTTP 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "TRAFFIC_MANAGER invalid",
+      "passed": true,
+      "detail": "{'status': 400, 'auditDelta': 0, 'response': {'code': 'VALIDATION_ERROR', 'message': 'Há campos inválidos.', 'timestamp': '2026-11-19T12:41:52.653217200Z', 'fields': {'body': 'não deve estar em branco'}}}"
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "gestor2@sige.demo POST /tickets/891163e4-20a8-4a2b-929e-63cfca88a7d2/comments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "TRAFFIC_MANAGER valid",
+      "passed": true,
+      "detail": "{'status': 404, 'auditDelta': 1, 'response': {'code': 'REQUEST_ERROR', 'message': 'Ticket não encontrado', 'timestamp': '2026-11-19T12:41:52.706217700Z', 'fields': {}}}"
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "cliente@aurora.demo GET /tickets/891163e4-20a8-4a2b-929e-63cfca88a7d2 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-corpo-invalido",
+      "name": "Estado preservado TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

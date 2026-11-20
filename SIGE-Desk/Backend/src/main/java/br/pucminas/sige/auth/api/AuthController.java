@@ -10,6 +10,8 @@ import jakarta.validation.constraints.NotBlank;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.AccountStatusException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -29,14 +31,15 @@ public class AuthController {
   @io.swagger.v3.oas.annotations.media.Schema(name="AuthSessionResponse") record SessionResponse(String id, String name, String email, @io.swagger.v3.oas.annotations.media.Schema(allowableValues={"CLIENT","SERVICE","TRAFFIC_MANAGER","ADMIN"}) String role, @io.swagger.v3.oas.annotations.media.Schema(types={"string","null"}) String clientId) {}
   @PostMapping("/login")
   public SessionResponse login(@Valid @RequestBody LoginRequest request, HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
+    Authentication authentication;
     try {
-      Authentication authentication = authenticationManager.authenticate(UsernamePasswordAuthenticationToken.unauthenticated(request.email(), request.password()));
-      servletRequest.getSession(); servletRequest.changeSessionId();
-      org.springframework.security.web.csrf.CookieCsrfTokenRepository.withHttpOnlyFalse().saveToken(null,servletRequest,servletResponse);
-      SecurityContext context = SecurityContextHolder.createEmptyContext(); context.setAuthentication(authentication); SecurityContextHolder.setContext(context); contexts.saveContext(context, servletRequest, servletResponse);
-      SigeUserPrincipal user=(SigeUserPrincipal) authentication.getPrincipal();
-      return new SessionResponse(user.id().toString(), user.name(), user.email(), user.role(), user.clientId()==null?null:user.clientId().toString());
-    } catch (Exception exception) { throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciais inválidas."); }
+      authentication = authenticationManager.authenticate(UsernamePasswordAuthenticationToken.unauthenticated(request.email(), request.password()));
+    } catch (BadCredentialsException | AccountStatusException exception) { throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciais inválidas."); }
+    servletRequest.getSession(); servletRequest.changeSessionId();
+    org.springframework.security.web.csrf.CookieCsrfTokenRepository.withHttpOnlyFalse().saveToken(null,servletRequest,servletResponse);
+    SecurityContext context = SecurityContextHolder.createEmptyContext(); context.setAuthentication(authentication); SecurityContextHolder.setContext(context); contexts.saveContext(context, servletRequest, servletResponse);
+    SigeUserPrincipal user=(SigeUserPrincipal) authentication.getPrincipal();
+    return new SessionResponse(user.id().toString(), user.name(), user.email(), user.role(), user.clientId()==null?null:user.clientId().toString());
   }
   @GetMapping("/me")
   public SessionResponse me() { var user=currentUser.require(); return new SessionResponse(user.getId().toString(),user.getName(),user.getEmail(),user.getRole().name(),user.getClient()==null?null:user.getClient().getId().toString()); }

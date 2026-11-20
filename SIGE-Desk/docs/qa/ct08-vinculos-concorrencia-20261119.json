@@ -1,0 +1,451 @@
+{
+  "startedAt": "2026-11-19T17:23:17.248757+00:00",
+  "finishedAt": "2026-11-19T17:23:19.266758+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "bd864c8633f9fd07f11ec4b754c041c526b70ee92cfd25c1fc73af0c944fbc0f",
+    "runTag": "Review d91d8dc8"
+  },
+  "cases": [
+    {
+      "id": "CT-08-vinculos-reteste",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T17:23:17.831257+00:00",
+      "finishedAt": "2026-11-19T17:23:19.266258+00:00",
+      "assertions": 71,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /tickets/749b5449-1435-4da2-882f-8fb139d3b40a/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo POST /tickets/bdfcf2ce-cd83-4b26-9c57-851868fd6de0/attachments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo GET /tickets/bdfcf2ce-cd83-4b26-9c57-851868fd6de0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo POST /tickets/bdfcf2ce-cd83-4b26-9c57-851868fd6de0/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/749b5449-1435-4da2-882f-8fb139d3b40a HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo GET /tickets/bdfcf2ce-cd83-4b26-9c57-851868fd6de0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/ba09df51-5d28-42fc-b2e3-8158766e3a3f/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Auditoria ATTACHMENT existente protegido",
+      "passed": true,
+      "detail": "{'path': '/tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/ba09df51-5d28-42fc-b2e3-8158766e3a3f/download', 'response': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T17:23:18.164259800Z', 'fields': {}}, 'events': [{'at': '2026-11-19T17:23:18.156258', 'code': 'SECURITY_ATTACHMENT_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'ATTACHMENT', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': 'ba09df51-5d28-42fc-b2e3-8158766e3a3f'}]}"
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/dbdc4d7b-87cf-4602-9c24-42d4959461e5/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Auditoria ATTACHMENT ausente ou visível",
+      "passed": true,
+      "detail": "{'path': '/tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/dbdc4d7b-87cf-4602-9c24-42d4959461e5/download', 'response': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T17:23:18.214758800Z', 'fields': {}}, 'events': []}"
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/e8e1ecde-1440-4c17-bcf1-a8cc281a47b1/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Auditoria ATTACHMENT ausente ou visível",
+      "passed": true,
+      "detail": "{'path': '/tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/e8e1ecde-1440-4c17-bcf1-a8cc281a47b1/download', 'response': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T17:23:18.262757700Z', 'fields': {}}, 'events': []}"
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Resposta genérica anexo",
+      "passed": true,
+      "detail": "{'protected': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T17:23:18.164259800Z', 'fields': {}}, 'missing': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T17:23:18.214758800Z', 'fields': {}}, 'visible': {'code': 'REQUEST_ERROR', 'message': 'Arquivo não encontrado', 'timestamp': '2026-11-19T17:23:18.262757700Z', 'fields': {}}}"
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /notifications/34b53c5c-6f6e-4064-9e03-3eed1f2580e0/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Auditoria NOTIFICATION existente protegido",
+      "passed": true,
+      "detail": "{'path': '/notifications/34b53c5c-6f6e-4064-9e03-3eed1f2580e0/read', 'response': {'code': 'REQUEST_ERROR', 'message': 'Notificação não encontrada', 'timestamp': '2026-11-19T17:23:18.317257500Z', 'fields': {}}, 'events': [{'at': '2026-11-19T17:23:18.309258', 'code': 'SECURITY_NOTIFICATION_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'NOTIFICATION', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': '34b53c5c-6f6e-4064-9e03-3eed1f2580e0'}]}"
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /notifications/a1a0a540-edec-4248-97c7-c83d50cc82ea/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Auditoria NOTIFICATION ausente ou visível",
+      "passed": true,
+      "detail": "{'path': '/notifications/a1a0a540-edec-4248-97c7-c83d50cc82ea/read', 'response': {'code': 'REQUEST_ERROR', 'message': 'Notificação não encontrada', 'timestamp': '2026-11-19T17:23:18.367758700Z', 'fields': {}}, 'events': []}"
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Resposta genérica notificação",
+      "passed": true,
+      "detail": "{'protected': {'code': 'REQUEST_ERROR', 'message': 'Notificação não encontrada', 'timestamp': '2026-11-19T17:23:18.317257500Z', 'fields': {}}, 'missing': {'code': 'REQUEST_ERROR', 'message': 'Notificação não encontrada', 'timestamp': '2026-11-19T17:23:18.367758700Z', 'fields': {}}}"
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/749b5449-1435-4da2-882f-8fb139d3b40a HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo GET /tickets/bdfcf2ce-cd83-4b26-9c57-851868fd6de0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Tickets e notificação preservados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo GET /tickets/bdfcf2ce-cd83-4b26-9c57-851868fd6de0/attachments/ba09df51-5d28-42fc-b2e3-8158766e3a3f/download HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Conteúdo do anexo protegido preservado",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /notifications/34b53c5c-6f6e-4064-9e03-3eed1f2580e0/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/ba09df51-5d28-42fc-b2e3-8158766e3a3f/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /notifications/34b53c5c-6f6e-4064-9e03-3eed1f2580e0/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/ba09df51-5d28-42fc-b2e3-8158766e3a3f/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /notifications/34b53c5c-6f6e-4064-9e03-3eed1f2580e0/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo POST /notifications/34b53c5c-6f6e-4064-9e03-3eed1f2580e0/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/ba09df51-5d28-42fc-b2e3-8158766e3a3f/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6/attachments/ba09df51-5d28-42fc-b2e3-8158766e3a3f/download HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Oito negativas simultâneas registradas",
+      "passed": true,
+      "detail": "[{'at': '2026-11-19T17:23:19.166259', 'code': 'SECURITY_NOTIFICATION_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'NOTIFICATION', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': '34b53c5c-6f6e-4064-9e03-3eed1f2580e0'}, {'at': '2026-11-19T17:23:19.167259', 'code': 'SECURITY_NOTIFICATION_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'NOTIFICATION', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': '34b53c5c-6f6e-4064-9e03-3eed1f2580e0'}, {'at': '2026-11-19T17:23:19.167259', 'code': 'SECURITY_ATTACHMENT_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'ATTACHMENT', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': 'ba09df51-5d28-42fc-b2e3-8158766e3a3f'}, {'at': '2026-11-19T17:23:19.168258', 'code': 'SECURITY_ATTACHMENT_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'ATTACHMENT', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': 'ba09df51-5d28-42fc-b2e3-8158766e3a3f'}, {'at': '2026-11-19T17:23:19.168758', 'code': 'SECURITY_NOTIFICATION_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'NOTIFICATION', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': '34b53c5c-6f6e-4064-9e03-3eed1f2580e0'}, {'at': '2026-11-19T17:23:19.177257', 'code': 'SECURITY_NOTIFICATION_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'NOTIFICATION', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': '34b53c5c-6f6e-4064-9e03-3eed1f2580e0'}, {'at': '2026-11-19T17:23:19.181258', 'code': 'SECURITY_ATTACHMENT_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'ATTACHMENT', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': 'ba09df51-5d28-42fc-b2e3-8158766e3a3f'}, {'at': '2026-11-19T17:23:19.181258', 'code': 'SECURITY_ATTACHMENT_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'ATTACHMENT', 'actor': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'resource': 'ba09df51-5d28-42fc-b2e3-8158766e3a3f'}]"
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/9cad8b1d-482e-4dcb-afd4-e2f4f7b4c7c6 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "cliente@aurora.demo GET /tickets/749b5449-1435-4da2-882f-8fb139d3b40a HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "rafael@horizonte.demo GET /tickets/bdfcf2ce-cd83-4b26-9c57-851868fd6de0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-vinculos-reteste",
+      "name": "Estado preservado após concorrência",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

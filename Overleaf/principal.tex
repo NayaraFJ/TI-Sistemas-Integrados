@@ -3,11 +3,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{times}
 \usepackage{abakos}
-\usepackage{longtable}
 \usepackage{ragged2e}
-\usepackage{adjustbox}
-\usepackage{enumitem}
-\usepackage{verbatim}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{url}
@@ -31,7 +27,6 @@ Maria Heloisa Aguiar Mendes\textsuperscript{6}\\
 Nayara Ferreira de Jesus Rodrigues\textsuperscript{7}\\
 Pedro Henrique Assuncao\textsuperscript{8}}
 \newcommand{\orientador}{Prof. Dr. Paulo Augusto Isnard Santos\textsuperscript{9}}
-\newcommand{\keyword}[1]{\textsf{#1}}
 \providecommand{\htmladdnormallink}[2]{\url{#2}}
 
 \begin{document}
@@ -64,27 +59,14 @@ Instituto de Ciências Exatas e de Informática
 \footnotetext[9]{Professor do Programa de Graduação em Sistemas de Informação.}
 \thispagestyle{empty}
 
-\vspace{1.0cm}
-\begin{abstract}
-\noindent
-Este trabalho aborda a gestão de demandas de tráfego pago em agências de marketing digital e analisa como a centralização e o rastreamento de solicitações podem apoiar a definição de responsáveis e prazos, o acompanhamento do atendimento, a recuperação de decisões e o registro de aprovações e evidências. O estudo tem como objetivo desenvolver uma aplicação web de Help Desk, denominada SIGE Desk, destinada a organizar essas solicitações. A pesquisa caracteriza-se como aplicada, exploratória e descritiva, com abordagem predominantemente qualitativa, e utiliza revisão bibliográfica estruturada na IEEE Xplore, complementada por livros e fontes normativas e oficiais, derivação e especificação de requisitos fundamentadas no referencial, modelagem do processo em Business Process Model and Notation (BPMN) 2.0, prototipação, desenvolvimento da aplicação e definição de protocolos de testes funcionais e de avaliação de usabilidade com seis participantes. Como resultados da etapa de especificação, foram definidos os perfis de usuário, o ciclo de vida dos tickets, as regras de acordo de nível de serviço (SLA), os requisitos funcionais e não funcionais, os mecanismos de histórico, aprovação e evidência e o plano de validação do sistema. Conclui-se, em caráter preliminar, que o SIGE Desk constitui uma proposta tecnicamente coerente para apoiar a organização e a rastreabilidade das demandas, cuja efetividade permaneceu dependente da avaliação do produto mínimo viável (MVP) com usuários.
-\\\textbf{\keyword{Palavras-chave:}} gestão de demandas; help desk; tráfego pago; marketing digital; sistemas de informação.
-\end{abstract}
-
-\selectlanguage{english}
-\begin{abstract}
-\noindent
-This work addresses the management of paid advertising requests in digital marketing agencies and analyzes how the centralization and tracking of requests can support the definition of responsibilities and deadlines, service monitoring, retrieval of decisions, and recording of approvals and evidence. The study aims to develop SIGE Desk, a web-based help desk application designed to organize these requests. The research is applied, exploratory, and descriptive, with a predominantly qualitative approach, and employs a structured literature review in IEEE Xplore, complemented by books and official and normative sources, literature-grounded requirements derivation and specification, Business Process Model and Notation (BPMN) 2.0 process modeling, prototyping, application development, and the design of functional test and six-participant usability evaluation protocols. The specification stage resulted in the definition of user roles, the ticket life cycle, service level agreement (SLA) rules, functional and non-functional requirements, history, approval, and evidence mechanisms, and a system validation plan. It is preliminarily concluded that SIGE Desk is a technically coherent proposal to support the organization and traceability of requests, although its effectiveness remained dependent on minimum viable product (MVP) evaluation with users.
-\\\textbf{\keyword{Keywords:}} demand management; help desk; paid advertising; digital marketing; information systems.
-\end{abstract}
-\selectlanguage{brazilian}
-
+\clearpage
 \onehalfspace
 \setlength{\parindent}{1.25cm}
 \setlength{\JustifyingParindent}{1.25cm}
 \justifying
 % O referencial inicia por revisão bibliográfica, requisitos, backlog, MVP
 % e testes funcionais e de usabilidade, antes dos temas de domínio.
+% Quarta entrega progressiva: metodologia e protocolos descritos no passado.
 \input{conteudo}
 
 \clearpage

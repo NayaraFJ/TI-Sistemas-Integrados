@@ -1,0 +1,85 @@
+{
+  "startedAt": "2026-11-19T21:42:40.768257+00:00",
+  "finishedAt": "2026-11-19T21:42:41.501258+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review f718f90f"
+  },
+  "cases": [
+    {
+      "id": "CT-01-abertura-valida",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T21:42:41.320258+00:00",
+      "finishedAt": "2026-11-19T21:42:41.500760+00:00",
+      "assertions": 10,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "cliente@aurora.demo GET /tickets/f7841c55-f3e1-4d53-be52-9592af62c257 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "atendimento@sige.demo GET /tickets/f7841c55-f3e1-4d53-be52-9592af62c257 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "Um ticket persistido",
+      "passed": true,
+      "detail": "{'subject': 'Review f718f90f abertura valida', 'before': 0, 'after': 1, 'id': 'f7841c55-f3e1-4d53-be52-9592af62c257', 'number': 'SIGE-1739'}"
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "Consulta por Cliente e Atendimento",
+      "passed": true,
+      "detail": "{'client': {'ticket': {'id': 'f7841c55-f3e1-4d53-be52-9592af62c257', 'clientId': '4a8fc6eb-e876-4c8c-9128-bf10ff43d57d', 'campaignId': '21f5421c-ad5b-461c-a244-725621497016', 'demandTypeId': 'b35c261a-f775-44f7-a0da-cb4a47ec3225', 'number': 'SIGE-1739', 'subject': 'Review f718f90f abertura valida', 'clientName': 'Aurora Educação', 'campaignName': 'Pós-graduação Setembro', 'typeName': 'Review f718f90fd563f', 'status': 'OPEN', 'priority': None, 'urgency': 'HIGH', 'assigneeName': None, 'updatedAt': '2026-11-19T21:42:41.440758Z', 'actions': ['COMMENT'], 'version': 0, 'slaState': 'PENDING_CLASSIFICATION', 'overdue': False}, 'description': 'Demanda sintetica de QA', 'pendingCampaign': None, 'desiredDate': '2027-01-15', 'requesterName': 'Marina Costa', 'authorName': 'Marina Costa', 'slaState': 'PENDING_CLASSIFICATION', 'responseDueAt': None, 'resolutionDueAt': None, 'resolutionCycle': 1, 'waitOrigin': None, 'waitReason': None, 'complementReceived': False, 'metrics': '{\"cpa\": null, \"cpc\": null, \"ctr\": null, \"roas\": null, \"fields\": {}, \"period\": null, \"conversions\": null, \"impressions\": null}', 'comments': [], 'attachments': [], 'history': [{'id': 'f0aafe6b-0789-4c89-b861-48e52d12af42', 'actorName': 'Marina Costa', 'action': 'TICKET_CREATED', 'fieldName': None, 'oldValue': None, 'newValue': '\"OPEN\"', 'reason': 'Solicitação registrada', 'createdAt': '2026-11-19T21:42:41.440758Z'}], 'channel': 'Google Ads', 'responseCompletedAt': None, 'responseSlaState': 'PENDING_CLASSIFICATION', 'resolutionSlaState': 'PENDING_CLASSIFICATION', 'elapsedBusinessMinutes': 0, 'fieldLabels': {}}, 'staff': {'ticket': {'id': 'f7841c55-f3e1-4d53-be52-9592af62c257', 'clientId': '4a8fc6eb-e876-4c8c-9128-bf10ff43d57d', 'campaignId': '21f5421c-ad5b-461c-a244-725621497016', 'demandTypeId': 'b35c261a-f775-44f7-a0da-cb4a47ec3225', 'number': 'SIGE-1739', 'subject': 'Review f718f90f abertura valida', 'clientName': 'Aurora Educação', 'campaignName': 'Pós-graduação Setembro', 'typeName': 'Review f718f90fd563f', 'status': 'OPEN', 'priority': None, 'urgency': 'HIGH', 'assigneeName': None, 'updatedAt': '2026-11-19T21:42:41.440758Z', 'actions': ['START_TRIAGE', 'CANCEL', 'COMMENT'], 'version': 0, 'slaState': 'PENDING_CLASSIFICATION', 'overdue': False}, 'description': 'Demanda sintetica de QA', 'pendingCampaign': None, 'desiredDate': '2027-01-15', 'requesterName': 'Marina Costa', 'authorName': 'Marina Costa', 'slaState': 'PENDING_CLASSIFICATION', 'responseDueAt': None, 'resolutionDueAt': None, 'resolutionCycle': 1, 'waitOrigin': None, 'waitReason': None, 'complementReceived': False, 'metrics': '{\"cpa\": null, \"cpc\": null, \"ctr\": null, \"roas\": null, \"fields\": {}, \"period\": null, \"conversions\": null, \"impressions\": null}', 'comments': [], 'attachments': [], 'history': [{'id': 'f0aafe6b-0789-4c89-b861-48e52d12af42', 'actorName': 'Marina Costa', 'action': 'TICKET_CREATED', 'fieldName': None, 'oldValue': None, 'newValue': '\"OPEN\"', 'reason': 'Solicitação registrada', 'createdAt': '2026-11-19T21:42:41.440758Z'}], 'channel': 'Google Ads', 'responseCompletedAt': None, 'responseSlaState': 'PENDING_CLASSIFICATION', 'resolutionSlaState': 'PENDING_CLASSIFICATION', 'elapsedBusinessMinutes': 0, 'fieldLabels': {}}}"
+    },
+    {
+      "ct": "CT-01-abertura-valida",
+      "name": "Dados e estado preservados",
+      "passed": true,
+      "detail": "{'created': {'id': 'f7841c55-f3e1-4d53-be52-9592af62c257', 'clientId': '4a8fc6eb-e876-4c8c-9128-bf10ff43d57d', 'campaignId': '21f5421c-ad5b-461c-a244-725621497016', 'demandTypeId': 'b35c261a-f775-44f7-a0da-cb4a47ec3225', 'number': 'SIGE-1739', 'subject': 'Review f718f90f abertura valida', 'clientName': 'Aurora Educação', 'campaignName': 'Pós-graduação Setembro', 'typeName': 'Review f718f90fd563f', 'status': 'OPEN', 'priority': None, 'urgency': 'HIGH', 'assigneeName': None, 'updatedAt': None, 'actions': ['COMMENT'], 'version': 0, 'slaState': 'PENDING_CLASSIFICATION', 'overdue': False}, 'desiredDate': '2027-01-15', 'slaState': 'PENDING_CLASSIFICATION'}"
+    }
+  ]
+}

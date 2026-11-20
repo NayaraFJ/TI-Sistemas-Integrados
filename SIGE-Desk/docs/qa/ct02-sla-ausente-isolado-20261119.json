@@ -1,0 +1,134 @@
+{
+  "startedAt": "2026-11-19T22:00:24.298760+00:00",
+  "finishedAt": "2026-11-19T22:00:24.615257+00:00",
+  "schema": "sige_qa_ct02_isolado_20261119",
+  "baseUrl": "http://localhost:8082/api/v1",
+  "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+  "checks": [
+    {
+      "name": "admin@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gestor2@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /reference HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /users HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /sla-rules HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Uma regra padrão ativa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "admin@sige.demo PUT /sla-rules/f0be853d-7e84-43f2-ac5d-b8c8d2ecb94d HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Última regra permanece ativa",
+      "passed": true,
+      "detail": "{'code': 'INVALID_TRANSITION', 'message': 'A última regra padrão não pode ser desativada', 'timestamp': '2026-11-19T22:00:24.337759300Z', 'fields': {}}"
+    },
+    {
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo GET /tickets/d76ee6c3-da48-4122-b933-882cf77d8d50 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /tickets/d76ee6c3-da48-4122-b933-882cf77d8d50/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cliente@aurora.demo GET /tickets/d76ee6c3-da48-4122-b933-882cf77d8d50 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Fixture isolada sem regra ativa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo POST /tickets/d76ee6c3-da48-4122-b933-882cf77d8d50/triage HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "atendimento@sige.demo GET /tickets/d76ee6c3-da48-4122-b933-882cf77d8d50 HTTP 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Triagem e leitura sem SLA retornam erro explícito",
+      "passed": true,
+      "detail": "{'ticket': 'd76ee6c3-da48-4122-b933-882cf77d8d50', 'triage': {'code': 'INVALID_TRANSITION', 'message': 'Regra padrão de SLA não encontrada', 'timestamp': '2026-11-19T22:00:24.555257900Z', 'fields': {}}, 'read': {'code': 'INVALID_TRANSITION', 'message': 'Regra padrão de SLA não encontrada', 'timestamp': '2026-11-19T22:00:24.590261300Z', 'fields': {}}, 'before': {'ticket': {'id': 'd76ee6c3-da48-4122-b933-882cf77d8d50', 'clientId': '86431d30-3305-4747-85fd-8f20429834d6', 'campaignId': '6d00d3db-ac24-4c53-8828-0854528551ba', 'demandTypeId': '19854627-675c-42fd-bc1d-2088b82f688a', 'number': 'SIGE-1025', 'subject': 'Review 4406bbe9', 'clientName': 'Aurora Educação', 'campaignName': 'Pós-graduação Setembro', 'typeName': 'Review 4406bbe974836', 'status': 'TRIAGE', 'priority': None, 'urgency': 'HIGH', 'assigneeName': None, 'updatedAt': '2026-11-19T22:00:24.451259Z', 'actions': ['COMMENT'], 'version': 2, 'slaState': 'PENDING_CLASSIFICATION', 'overdue': False}, 'description': 'Teste fictício da revisão', 'pendingCampaign': None, 'desiredDate': None, 'requesterName': 'Marina Costa', 'authorName': 'Marina Costa', 'slaState': 'PENDING_CLASSIFICATION', 'responseDueAt': None, 'resolutionDueAt': None, 'resolutionCycle': 1, 'waitOrigin': None, 'waitReason': None, 'complementReceived': False, 'metrics': '{\"cpa\": null, \"cpc\": null, \"ctr\": null, \"roas\": null, \"fields\": {}, \"period\": null, \"conversions\": null, \"impressions\": null}', 'comments': [], 'attachments': [], 'history': [{'id': '0b761de8-25a1-4a7d-8d26-69422f89e83a', 'actorName': 'Beatriz Souza', 'action': 'TRIAGE_STARTED', 'fieldName': 'status', 'oldValue': '\"OPEN\"', 'newValue': '\"TRIAGE\"', 'reason': 'Conferência de teste', 'createdAt': '2026-11-19T22:00:24.447760Z'}, {'id': 'd3a99bed-fac9-4303-8d5f-c83d31c5387d', 'actorName': 'Marina Costa', 'action': 'TICKET_CREATED', 'fieldName': None, 'oldValue': None, 'newValue': '\"OPEN\"', 'reason': 'Solicitação registrada', 'createdAt': '2026-11-19T22:00:24.391259Z'}], 'channel': 'Google Ads', 'responseCompletedAt': None, 'responseSlaState': 'PENDING_CLASSIFICATION', 'resolutionSlaState': 'PENDING_CLASSIFICATION', 'elapsedBusinessMinutes': 0, 'fieldLabels': {}}}"
+    },
+    {
+      "name": "Banco mantém ausência de classificação",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

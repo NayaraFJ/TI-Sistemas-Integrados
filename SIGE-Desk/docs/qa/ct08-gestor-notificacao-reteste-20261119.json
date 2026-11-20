@@ -1,0 +1,133 @@
+{
+  "startedAt": "2026-11-19T20:55:11.184757+00:00",
+  "finishedAt": "2026-11-19T20:55:12.331259+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review 06cf6ccd"
+  },
+  "cases": [
+    {
+      "id": "CT-08-gestor-notificacao-reteste",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T20:55:11.954257+00:00",
+      "finishedAt": "2026-11-19T20:55:12.330759+00:00",
+      "assertions": 18,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/8af08706-35a7-499d-ab3f-5ea4d1f3a527 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo POST /tickets/8af08706-35a7-499d-ab3f-5ea4d1f3a527/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Notificação alheia disponível",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/8af08706-35a7-499d-ab3f-5ea4d1f3a527 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "gestor2@sige.demo POST /notifications/b0fb8492-9f2c-450d-ae6c-faf432e001e0/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Auditoria registrada para Gestor",
+      "passed": true,
+      "detail": "{'notificationId': 'b0fb8492-9f2c-450d-ae6c-faf432e001e0', 'ticketId': '8af08706-35a7-499d-ab3f-5ea4d1f3a527', 'actorId': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'auditDelta': 1}"
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Notificação alheia não alterada TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "gestor2@sige.demo GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Notificação ausente da lista TRAFFIC_MANAGER",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "cliente@aurora.demo GET /tickets/8af08706-35a7-499d-ab3f-5ea4d1f3a527 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-gestor-notificacao-reteste",
+      "name": "Ticket e histórico preservados",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

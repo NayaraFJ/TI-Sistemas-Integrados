@@ -1,0 +1,278 @@
+{
+  "at": "2026-11-19T17:14:23.571758+00:00",
+  "baseUrl": "http://localhost:8081/api/v1",
+  "schema": "sige_desk_qa_20261118",
+  "ticket": "443da315-1d66-40cc-bfbb-a3a3a633d839",
+  "checks": [
+    {
+      "ct": null,
+      "name": "admin@sige.demo GET /demand-types HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo GET /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo POST /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo GET /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo POST /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Atribuicao: destinatarios exatos",
+      "passed": true,
+      "detail": "{'expected': ['0f1c3b65-cd0a-47f8-a264-dc23278e1f8e', '22b56fe4-d522-4078-a24a-bf496757e367', '668d17ec-48ad-4ca2-86a3-2e370fd2110a', '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'df5dfa9d-969f-4ee8-802b-6503f9ce961b'], 'actual': ['0f1c3b65-cd0a-47f8-a264-dc23278e1f8e', '22b56fe4-d522-4078-a24a-bf496757e367', '668d17ec-48ad-4ca2-86a3-2e370fd2110a', '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'df5dfa9d-969f-4ee8-802b-6503f9ce961b']}"
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo GET /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "atendimento@sige.demo POST /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839/reassign HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo POST /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Comentario apos reatribuicao: destinatarios exatos",
+      "passed": true,
+      "detail": "{'expected': ['22b56fe4-d522-4078-a24a-bf496757e367', '668d17ec-48ad-4ca2-86a3-2e370fd2110a', '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'df5dfa9d-969f-4ee8-802b-6503f9ce961b', 'ff2f1bcd-a088-4000-a7bb-abc4452827bf'], 'actual': ['22b56fe4-d522-4078-a24a-bf496757e367', '668d17ec-48ad-4ca2-86a3-2e370fd2110a', '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'df5dfa9d-969f-4ee8-802b-6503f9ce961b', 'ff2f1bcd-a088-4000-a7bb-abc4452827bf']}"
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /notifications?size=100&page=1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /notifications?size=100&page=2 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /notifications?size=100&page=3 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /notifications?size=100&page=4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /notifications?size=100&page=5 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /notifications?size=100&page=6 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /notifications?size=100&page=7 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Gestor anterior nao ve notificacao antiga",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo POST /notifications/8a1e28e7-4902-43a4-b103-b0a16ace471a/read HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor@sige.demo GET /tickets/443da315-1d66-40cc-bfbb-a3a3a633d839 HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Novo gestor vê aviso",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Novo gestor ve aviso",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=100&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Leitura individual persiste em nova sessão",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Leitura individual persiste em nova sessao",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Filtro exclui aviso lido",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=7&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=7&page=1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=7&page=2 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=7&page=3 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=7&page=4 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=7&page=5 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=7&page=6 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "gestor2@sige.demo GET /notifications?size=7&page=7 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": null,
+      "name": "Paginação retorna conjunto completo sem duplicatas",
+      "passed": true,
+      "detail": "{'total': 55, 'pages': 8}"
+    },
+    {
+      "ct": null,
+      "name": "Fixture removida",
+      "passed": true,
+      "detail": "443da315-1d66-40cc-bfbb-a3a3a633d839"
+    }
+  ]
+}

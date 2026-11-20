@@ -1,0 +1,383 @@
+{
+  "startedAt": "2026-11-19T12:04:19.850217+00:00",
+  "finishedAt": "2026-11-19T12:04:22.234219+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "storage": "target/qa-uploads",
+    "mysql": "8.0.40",
+    "runtimeSha256": "cc213f43e9a6e7dca4579de7f442f0c76545d0d813d9a9f1adff58d09a9c5090",
+    "runTag": "Review d818a3a8",
+    "hikariPoolSize": "5: configuração de inicialização a confirmar no processo da API"
+  },
+  "cases": [
+    {
+      "id": "CT-07-regressoes",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:04:20.383220+00:00",
+      "finishedAt": "2026-11-19T12:04:21.141718+00:00",
+      "assertions": 38,
+      "error": null
+    },
+    {
+      "id": "CT-08-concorrencia",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T12:04:21.141718+00:00",
+      "finishedAt": "2026-11-19T12:04:22.233721+00:00",
+      "assertions": 20,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "atendimento@sige.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "atendimento@sige.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "atendimento@sige.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "atendimento@sige.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "gestor@sige.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "gestor@sige.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/wait HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/comments HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "atendimento@sige.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "atendimento@sige.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/resume HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "Retomada restaura execução e prazo",
+      "passed": true,
+      "detail": "2026-11-23T18:04:20.606722Z"
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "Cada aviso contém informação recebida e confirmação distintas, fase e data do prazo",
+      "passed": true,
+      "detail": "[{'id': '4782bc2d-dbb8-43d8-a445-fa2b2b140117', 'userId': '0f1c3b65-cd0a-47f8-a264-dc23278e1f8e', 'summary': 'SIGE-1230 | Review d818a3a8; Complemento confirmado: Informação recebida: Comentário: Informacao recebida exclusiva 4921; confirmação: Conferencia suficiente exclusiva 8732; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:04:20.606721900Z.'}, {'id': '80d4d04a-fa49-4fa3-812e-5e0c83ba7833', 'userId': '22b56fe4-d522-4078-a24a-bf496757e367', 'summary': 'SIGE-1230 | Review d818a3a8; Complemento confirmado: Informação recebida: Comentário: Informacao recebida exclusiva 4921; confirmação: Conferencia suficiente exclusiva 8732; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:04:20.606721900Z.'}, {'id': 'c3e83b3b-7598-4000-bee3-06132edac546', 'userId': '668d17ec-48ad-4ca2-86a3-2e370fd2110a', 'summary': 'SIGE-1230 | Review d818a3a8; Complemento confirmado: Informação recebida: Comentário: Informacao recebida exclusiva 4921; confirmação: Conferencia suficiente exclusiva 8732; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:04:20.606721900Z.'}, {'id': 'df64ec5f-f852-40ff-a51b-6041c515055a', 'userId': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'summary': 'SIGE-1230 | Review d818a3a8; Complemento confirmado: Informação recebida: Comentário: Informacao recebida exclusiva 4921; confirmação: Conferencia suficiente exclusiva 8732; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:04:20.606721900Z.'}, {'id': 'ee6ab7fe-a68c-425f-9de2-edba25db88b5', 'userId': 'df5dfa9d-969f-4ee8-802b-6503f9ce961b', 'summary': 'SIGE-1230 | Review d818a3a8; Complemento confirmado: Informação recebida: Comentário: Informacao recebida exclusiva 4921; confirmação: Conferencia suficiente exclusiva 8732; fase retomada: EXECUTION; prazo de resolução: 2026-11-23T18:04:20.606721900Z.'}]"
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "gestor@sige.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "gestor@sige.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/correction HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "Correção preserva ciclo e não antecipa prazo",
+      "passed": true,
+      "detail": "{'before': '2026-11-23T18:04:20.606722Z', 'after': '2026-11-23T18:04:20.656723Z', 'cycle': 1}"
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "Cada aviso de correção distingue ciclo e motivo",
+      "passed": true,
+      "detail": "[{'id': '5cb3aa17-453c-4ffc-8369-2363bb50d740', 'userId': '22b56fe4-d522-4078-a24a-bf496757e367', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 1; Justificativa: Correção no ciclo corrente 317; correção solicitada em validação; próximo passo: responsável executa a correção.'}, {'id': '8efd1045-bec3-4bda-afc8-f461fb6932f2', 'userId': 'df5dfa9d-969f-4ee8-802b-6503f9ce961b', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 1; Justificativa: Correção no ciclo corrente 317; correção solicitada em validação; próximo passo: responsável executa a correção.'}, {'id': 'afe4d8e2-b928-4019-a050-c7ad91ba9eae', 'userId': '668d17ec-48ad-4ca2-86a3-2e370fd2110a', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 1; Justificativa: Correção no ciclo corrente 317; correção solicitada em validação; próximo passo: responsável executa a correção.'}, {'id': 'e9b164b0-48ea-4cab-bb92-482819e7cb07', 'userId': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 1; Justificativa: Correção no ciclo corrente 317; correção solicitada em validação; próximo passo: responsável executa a correção.'}, {'id': 'fc0af2b0-9117-4332-95da-be294e257fec', 'userId': '0f1c3b65-cd0a-47f8-a264-dc23278e1f8e', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 1; Justificativa: Correção no ciclo corrente 317; correção solicitada em validação; próximo passo: responsável executa a correção.'}]"
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "gestor@sige.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "gestor@sige.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/execution HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/approve HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo POST /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285/reopen HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "cliente@aurora.demo GET /tickets/d7fe31a4-1c68-4f45-92f9-390166ee1285 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "Reabertura após conclusão inicia outro ciclo",
+      "passed": true,
+      "detail": "{'cycle': 2, 'due': None}"
+    },
+    {
+      "ct": "CT-07-regressoes",
+      "name": "Cada aviso de reabertura identifica novo ciclo e motivo",
+      "passed": true,
+      "detail": "[{'id': '0c1d1ef2-7d2c-45c7-9ff4-b7547d9989b6', 'userId': '0f1c3b65-cd0a-47f8-a264-dc23278e1f8e', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 2; Justificativa: Reabertura depois da conclusão 968; próximo passo: Atendimento confirma triagem antes da execução.'}, {'id': '2c8d1b78-bf5a-4d4c-b038-e3c977772433', 'userId': '668d17ec-48ad-4ca2-86a3-2e370fd2110a', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 2; Justificativa: Reabertura depois da conclusão 968; próximo passo: Atendimento confirma triagem antes da execução.'}, {'id': '5c46909f-79c6-4424-928f-a65b67d2f361', 'userId': '22b56fe4-d522-4078-a24a-bf496757e367', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 2; Justificativa: Reabertura depois da conclusão 968; próximo passo: Atendimento confirma triagem antes da execução.'}, {'id': 'bb18ea89-0188-431f-8e72-ff48e1e590c2', 'userId': 'df5dfa9d-969f-4ee8-802b-6503f9ce961b', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 2; Justificativa: Reabertura depois da conclusão 968; próximo passo: Atendimento confirma triagem antes da execução.'}, {'id': 'd447dedb-1d61-4fb0-9fb5-aca866ec91ab', 'userId': '9cdd8229-26b0-4e8b-97cf-eba6c80743e4', 'summary': 'SIGE-1230 | Review d818a3a8; Reaberta; ciclo: 2; Justificativa: Reabertura depois da conclusão 968; próximo passo: Atendimento confirma triagem antes da execução.'}]"
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "cliente@aurora.demo GET /tickets/1a9a1ecb-e1cb-4032-bfa7-a7dd30a8197d HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "rafael@horizonte.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "Doze negativas concorrentes retornam 404",
+      "passed": true,
+      "detail": "[{'status': 404, 'seconds': 0.015}, {'status': 404, 'seconds': 0.031}, {'status': 404, 'seconds': 0.015}, {'status': 404, 'seconds': 0.031}, {'status': 404, 'seconds': 0.031}, {'status': 404, 'seconds': 0.031}, {'status': 404, 'seconds': 0.015}, {'status': 404, 'seconds': 0.031}, {'status': 404, 'seconds': 0.031}, {'status': 404, 'seconds': 0.046}, {'status': 404, 'seconds': 0.031}, {'status': 404, 'seconds': 0.015}]"
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "Cada negativa concorrente gerou trilha persistida",
+      "passed": true,
+      "detail": "{'before': 0, 'after': 12, 'expected': 12}"
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "cliente@aurora.demo GET /tickets/1a9a1ecb-e1cb-4032-bfa7-a7dd30a8197d HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-concorrencia",
+      "name": "Ticket preserva versão após negativas concorrentes",
+      "passed": true,
+      "detail": "0"
+    }
+  ]
+}

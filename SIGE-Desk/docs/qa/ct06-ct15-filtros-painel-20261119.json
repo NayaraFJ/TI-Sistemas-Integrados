@@ -1,0 +1,1246 @@
+{
+  "startedAt": "2026-11-19T17:36:19.594758+00:00",
+  "finishedAt": "2026-11-19T17:36:21.925760+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "layer": "HTTP + MySQL; somente leitura"
+  },
+  "checks": [
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo GET /tickets?clientId=5da2f409-83cb-4156-b8c3-dac5f79262b6&campaignId=d036f532-1a11-4128-a800-0100de316fb2&demandTypeId=42d7e32f-7077-461f-97c1-87e685b20200&priority=LOW&assigneeId=0f1c3b65-cd0a-47f8-a264-dc23278e1f8e&status=EXECUTION&createdFrom=2020-01-01&createdTo=2099-12-31&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtros e páginas ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "5da2f409-83cb-4156-b8c3-dac5f79262b6",
+          "campaignId": "d036f532-1a11-4128-a800-0100de316fb2",
+          "demandTypeId": "42d7e32f-7077-461f-97c1-87e685b20200",
+          "priority": "LOW",
+          "assigneeId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "status": "EXECUTION",
+          "createdFrom": "2020-01-01",
+          "createdTo": "2099-12-31"
+        },
+        "expected": [
+          "ff61fe79-f7b7-45cb-81cf-ab975990eb32"
+        ],
+        "obtained": [
+          "ff61fe79-f7b7-45cb-81cf-ab975990eb32"
+        ],
+        "totals": [
+          1
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets?clientId=5da2f409-83cb-4156-b8c3-dac5f79262b6&campaignId=d036f532-1a11-4128-a800-0100de316fb2&demandTypeId=42d7e32f-7077-461f-97c1-87e685b20200&priority=LOW&assigneeId=0f1c3b65-cd0a-47f8-a264-dc23278e1f8e&status=EXECUTION&createdFrom=2020-01-01&createdTo=2099-12-31&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtros e páginas SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "5da2f409-83cb-4156-b8c3-dac5f79262b6",
+          "campaignId": "d036f532-1a11-4128-a800-0100de316fb2",
+          "demandTypeId": "42d7e32f-7077-461f-97c1-87e685b20200",
+          "priority": "LOW",
+          "assigneeId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "status": "EXECUTION",
+          "createdFrom": "2020-01-01",
+          "createdTo": "2099-12-31"
+        },
+        "expected": [
+          "ff61fe79-f7b7-45cb-81cf-ab975990eb32"
+        ],
+        "obtained": [
+          "ff61fe79-f7b7-45cb-81cf-ab975990eb32"
+        ],
+        "totals": [
+          1
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets?clientId=5da2f409-83cb-4156-b8c3-dac5f79262b6&campaignId=d036f532-1a11-4128-a800-0100de316fb2&demandTypeId=42d7e32f-7077-461f-97c1-87e685b20200&priority=LOW&assigneeId=0f1c3b65-cd0a-47f8-a264-dc23278e1f8e&status=EXECUTION&createdFrom=2020-01-01&createdTo=2099-12-31&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtros e páginas CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "5da2f409-83cb-4156-b8c3-dac5f79262b6",
+          "campaignId": "d036f532-1a11-4128-a800-0100de316fb2",
+          "demandTypeId": "42d7e32f-7077-461f-97c1-87e685b20200",
+          "priority": "LOW",
+          "assigneeId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "status": "EXECUTION",
+          "createdFrom": "2020-01-01",
+          "createdTo": "2099-12-31"
+        },
+        "expected": [],
+        "obtained": [],
+        "totals": [
+          0
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "rafael@horizonte.demo GET /tickets?clientId=5da2f409-83cb-4156-b8c3-dac5f79262b6&campaignId=d036f532-1a11-4128-a800-0100de316fb2&demandTypeId=42d7e32f-7077-461f-97c1-87e685b20200&priority=LOW&assigneeId=0f1c3b65-cd0a-47f8-a264-dc23278e1f8e&status=EXECUTION&createdFrom=2020-01-01&createdTo=2099-12-31&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtros e páginas CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "5da2f409-83cb-4156-b8c3-dac5f79262b6",
+          "campaignId": "d036f532-1a11-4128-a800-0100de316fb2",
+          "demandTypeId": "42d7e32f-7077-461f-97c1-87e685b20200",
+          "priority": "LOW",
+          "assigneeId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "status": "EXECUTION",
+          "createdFrom": "2020-01-01",
+          "createdTo": "2099-12-31"
+        },
+        "expected": [
+          "ff61fe79-f7b7-45cb-81cf-ab975990eb32"
+        ],
+        "obtained": [
+          "ff61fe79-f7b7-45cb-81cf-ab975990eb32"
+        ],
+        "totals": [
+          1
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /tickets?clientId=5da2f409-83cb-4156-b8c3-dac5f79262b6&campaignId=d036f532-1a11-4128-a800-0100de316fb2&demandTypeId=42d7e32f-7077-461f-97c1-87e685b20200&priority=LOW&assigneeId=0f1c3b65-cd0a-47f8-a264-dc23278e1f8e&status=EXECUTION&createdFrom=2020-01-01&createdTo=2099-12-31&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtros e páginas TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "5da2f409-83cb-4156-b8c3-dac5f79262b6",
+          "campaignId": "d036f532-1a11-4128-a800-0100de316fb2",
+          "demandTypeId": "42d7e32f-7077-461f-97c1-87e685b20200",
+          "priority": "LOW",
+          "assigneeId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "status": "EXECUTION",
+          "createdFrom": "2020-01-01",
+          "createdTo": "2099-12-31"
+        },
+        "expected": [
+          "ff61fe79-f7b7-45cb-81cf-ab975990eb32"
+        ],
+        "obtained": [
+          "ff61fe79-f7b7-45cb-81cf-ab975990eb32"
+        ],
+        "totals": [
+          1
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor2@sige.demo GET /tickets?clientId=5da2f409-83cb-4156-b8c3-dac5f79262b6&campaignId=d036f532-1a11-4128-a800-0100de316fb2&demandTypeId=42d7e32f-7077-461f-97c1-87e685b20200&priority=LOW&assigneeId=0f1c3b65-cd0a-47f8-a264-dc23278e1f8e&status=EXECUTION&createdFrom=2020-01-01&createdTo=2099-12-31&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Filtros e páginas TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "5da2f409-83cb-4156-b8c3-dac5f79262b6",
+          "campaignId": "d036f532-1a11-4128-a800-0100de316fb2",
+          "demandTypeId": "42d7e32f-7077-461f-97c1-87e685b20200",
+          "priority": "LOW",
+          "assigneeId": "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+          "status": "EXECUTION",
+          "createdFrom": "2020-01-01",
+          "createdTo": "2099-12-31"
+        },
+        "expected": [],
+        "obtained": [],
+        "totals": [
+          0
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Páginas combinadas ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "98ffba75-c080-46cc-85f0-9040924af728",
+          "status": "EXECUTION"
+        },
+        "expected": [
+          "00d37020-a865-47a6-b2b4-f977248e621c",
+          "11dce224-d685-4322-8497-f8978759b63b",
+          "4d6ca558-9ac5-4734-966d-49353c608626",
+          "d9770009-dd04-41dc-b6cc-36abb52d163b"
+        ],
+        "obtained": [
+          "00d37020-a865-47a6-b2b4-f977248e621c",
+          "4d6ca558-9ac5-4734-966d-49353c608626",
+          "11dce224-d685-4322-8497-f8978759b63b",
+          "d9770009-dd04-41dc-b6cc-36abb52d163b"
+        ],
+        "totals": [
+          4,
+          4
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Páginas combinadas SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "98ffba75-c080-46cc-85f0-9040924af728",
+          "status": "EXECUTION"
+        },
+        "expected": [
+          "00d37020-a865-47a6-b2b4-f977248e621c",
+          "11dce224-d685-4322-8497-f8978759b63b",
+          "4d6ca558-9ac5-4734-966d-49353c608626",
+          "d9770009-dd04-41dc-b6cc-36abb52d163b"
+        ],
+        "obtained": [
+          "00d37020-a865-47a6-b2b4-f977248e621c",
+          "4d6ca558-9ac5-4734-966d-49353c608626",
+          "11dce224-d685-4322-8497-f8978759b63b",
+          "d9770009-dd04-41dc-b6cc-36abb52d163b"
+        ],
+        "totals": [
+          4,
+          4
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Páginas combinadas CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "98ffba75-c080-46cc-85f0-9040924af728",
+          "status": "EXECUTION"
+        },
+        "expected": [],
+        "obtained": [],
+        "totals": [
+          0
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "rafael@horizonte.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Páginas combinadas CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "98ffba75-c080-46cc-85f0-9040924af728",
+          "status": "EXECUTION"
+        },
+        "expected": [],
+        "obtained": [],
+        "totals": [
+          0
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Páginas combinadas TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "98ffba75-c080-46cc-85f0-9040924af728",
+          "status": "EXECUTION"
+        },
+        "expected": [
+          "00d37020-a865-47a6-b2b4-f977248e621c",
+          "11dce224-d685-4322-8497-f8978759b63b",
+          "4d6ca558-9ac5-4734-966d-49353c608626",
+          "d9770009-dd04-41dc-b6cc-36abb52d163b"
+        ],
+        "obtained": [
+          "00d37020-a865-47a6-b2b4-f977248e621c",
+          "4d6ca558-9ac5-4734-966d-49353c608626",
+          "11dce224-d685-4322-8497-f8978759b63b",
+          "d9770009-dd04-41dc-b6cc-36abb52d163b"
+        ],
+        "totals": [
+          4,
+          4
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor2@sige.demo GET /tickets?clientId=98ffba75-c080-46cc-85f0-9040924af728&status=EXECUTION&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Páginas combinadas TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": {
+        "filters": {
+          "clientId": "98ffba75-c080-46cc-85f0-9040924af728",
+          "status": "EXECUTION"
+        },
+        "expected": [],
+        "obtained": [],
+        "totals": [
+          0
+        ],
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "admin@sige.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-15",
+      "name": "statusDistribution ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "REOPENED": 23,
+          "VALIDATION": 5,
+          "CANCELLED": 77,
+          "TRIAGE": 34,
+          "EXECUTION": 175,
+          "DONE": 53,
+          "OPEN": 291,
+          "WAITING_FOR_CLIENT": 3
+        },
+        "obtained": {
+          "OPEN": 291,
+          "TRIAGE": 34,
+          "EXECUTION": 175,
+          "WAITING_FOR_CLIENT": 3,
+          "VALIDATION": 5,
+          "DONE": 53,
+          "REOPENED": 23,
+          "CANCELLED": 77
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "priorityDistribution ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "UNCLASSIFIED": 403,
+          "URGENT": 4,
+          "LOW": 4,
+          "MEDIUM": 4,
+          "HIGH": 246
+        },
+        "obtained": {
+          "URGENT": 4,
+          "HIGH": 246,
+          "MEDIUM": 4,
+          "LOW": 4,
+          "UNCLASSIFIED": 403
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "assigneeDistribution ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "null": 403,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 240,
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 18
+        },
+        "obtained": {
+          "null": 403,
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 18,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 240
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Indicadores ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "activeCount": 531,
+          "highPriorityCount": 199,
+          "validationCount": 5,
+          "waitingCount": 3,
+          "classifiedCount": 187
+        },
+        "obtained": {
+          "activeCount": 531,
+          "highPriorityCount": 199,
+          "validationCount": 5,
+          "waitingCount": 3,
+          "classifiedCount": 187
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Prazos por estado, oráculo MySQL ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "OVERDUE": 23,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 342,
+          "ON_TIME": 166
+        },
+        "obtained": {
+          "OVERDUE": 23,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 342,
+          "ON_TIME": 166
+        },
+        "stable": true,
+        "timeStable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Partição de prazos ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": true,
+      "detail": {
+        "obtained": [
+          {
+            "state": "OVERDUE",
+            "count": 23
+          },
+          {
+            "state": "PAUSED",
+            "count": 0
+          },
+          {
+            "state": "PENDING_CLASSIFICATION",
+            "count": 342
+          },
+          {
+            "state": "ON_TIME",
+            "count": 166
+          }
+        ],
+        "active": 531
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "atendimento@sige.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-15",
+      "name": "statusDistribution SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "REOPENED": 23,
+          "VALIDATION": 5,
+          "CANCELLED": 77,
+          "TRIAGE": 34,
+          "EXECUTION": 175,
+          "DONE": 53,
+          "OPEN": 291,
+          "WAITING_FOR_CLIENT": 3
+        },
+        "obtained": {
+          "OPEN": 291,
+          "TRIAGE": 34,
+          "EXECUTION": 175,
+          "WAITING_FOR_CLIENT": 3,
+          "VALIDATION": 5,
+          "DONE": 53,
+          "REOPENED": 23,
+          "CANCELLED": 77
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "priorityDistribution SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "UNCLASSIFIED": 403,
+          "URGENT": 4,
+          "LOW": 4,
+          "MEDIUM": 4,
+          "HIGH": 246
+        },
+        "obtained": {
+          "URGENT": 4,
+          "HIGH": 246,
+          "MEDIUM": 4,
+          "LOW": 4,
+          "UNCLASSIFIED": 403
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "assigneeDistribution SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "null": 403,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 240,
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 18
+        },
+        "obtained": {
+          "null": 403,
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 18,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 240
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Indicadores SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "activeCount": 531,
+          "highPriorityCount": 199,
+          "validationCount": 5,
+          "waitingCount": 3,
+          "classifiedCount": 187
+        },
+        "obtained": {
+          "activeCount": 531,
+          "highPriorityCount": 199,
+          "validationCount": 5,
+          "waitingCount": 3,
+          "classifiedCount": 187
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Prazos por estado, oráculo MySQL SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "OVERDUE": 23,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 342,
+          "ON_TIME": 166
+        },
+        "obtained": {
+          "OVERDUE": 23,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 342,
+          "ON_TIME": 166
+        },
+        "stable": true,
+        "timeStable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Partição de prazos SERVICE 22b56fe4-d522-4078-a24a-bf496757e367",
+      "passed": true,
+      "detail": {
+        "obtained": [
+          {
+            "state": "OVERDUE",
+            "count": 23
+          },
+          {
+            "state": "PAUSED",
+            "count": 0
+          },
+          {
+            "state": "PENDING_CLASSIFICATION",
+            "count": 342
+          },
+          {
+            "state": "ON_TIME",
+            "count": 166
+          }
+        ],
+        "active": 531
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "cliente@aurora.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-15",
+      "name": "statusDistribution CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "REOPENED": 21,
+          "VALIDATION": 3,
+          "CANCELLED": 75,
+          "TRIAGE": 31,
+          "EXECUTION": 112,
+          "DONE": 51,
+          "OPEN": 287,
+          "WAITING_FOR_CLIENT": 1
+        },
+        "obtained": {
+          "OPEN": 287,
+          "TRIAGE": 31,
+          "EXECUTION": 112,
+          "WAITING_FOR_CLIENT": 1,
+          "VALIDATION": 3,
+          "DONE": 51,
+          "REOPENED": 21,
+          "CANCELLED": 75
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "priorityDistribution CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "UNCLASSIFIED": 394,
+          "URGENT": 1,
+          "LOW": 2,
+          "MEDIUM": 1,
+          "HIGH": 183
+        },
+        "obtained": {
+          "URGENT": 1,
+          "HIGH": 183,
+          "MEDIUM": 1,
+          "LOW": 2,
+          "UNCLASSIFIED": 394
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "assigneeDistribution CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "null": 394,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 173,
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 14
+        },
+        "obtained": {
+          "null": 394,
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 14,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 173
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Indicadores CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "activeCount": 455,
+          "highPriorityCount": 134,
+          "validationCount": 3,
+          "waitingCount": 1,
+          "classifiedCount": 120
+        },
+        "obtained": {
+          "activeCount": 455,
+          "highPriorityCount": 134,
+          "validationCount": 3,
+          "waitingCount": 1,
+          "classifiedCount": 120
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Prazos por estado, oráculo MySQL CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "OVERDUE": 17,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 335,
+          "ON_TIME": 103
+        },
+        "obtained": {
+          "OVERDUE": 17,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 335,
+          "ON_TIME": 103
+        },
+        "stable": true,
+        "timeStable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Partição de prazos CLIENT 9cdd8229-26b0-4e8b-97cf-eba6c80743e4",
+      "passed": true,
+      "detail": {
+        "obtained": [
+          {
+            "state": "OVERDUE",
+            "count": 17
+          },
+          {
+            "state": "PAUSED",
+            "count": 0
+          },
+          {
+            "state": "PENDING_CLASSIFICATION",
+            "count": 335
+          },
+          {
+            "state": "ON_TIME",
+            "count": 103
+          }
+        ],
+        "active": 455
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "rafael@horizonte.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-15",
+      "name": "statusDistribution CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "REOPENED": 1,
+          "VALIDATION": 1,
+          "CANCELLED": 1,
+          "TRIAGE": 1,
+          "EXECUTION": 1,
+          "OPEN": 3,
+          "DONE": 1,
+          "WAITING_FOR_CLIENT": 1
+        },
+        "obtained": {
+          "OPEN": 3,
+          "TRIAGE": 1,
+          "EXECUTION": 1,
+          "WAITING_FOR_CLIENT": 1,
+          "VALIDATION": 1,
+          "DONE": 1,
+          "REOPENED": 1,
+          "CANCELLED": 1
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "priorityDistribution CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "UNCLASSIFIED": 5,
+          "URGENT": 2,
+          "LOW": 1,
+          "MEDIUM": 1,
+          "HIGH": 1
+        },
+        "obtained": {
+          "URGENT": 2,
+          "HIGH": 1,
+          "MEDIUM": 1,
+          "LOW": 1,
+          "UNCLASSIFIED": 5
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "assigneeDistribution CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "null": 5,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 3,
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 2
+        },
+        "obtained": {
+          "null": 5,
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 2,
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 3
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Indicadores CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "activeCount": 8,
+          "highPriorityCount": 3,
+          "validationCount": 1,
+          "waitingCount": 1,
+          "classifiedCount": 3
+        },
+        "obtained": {
+          "activeCount": 8,
+          "highPriorityCount": 3,
+          "validationCount": 1,
+          "waitingCount": 1,
+          "classifiedCount": 3
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Prazos por estado, oráculo MySQL CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "OVERDUE": 3,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 4,
+          "ON_TIME": 1
+        },
+        "obtained": {
+          "OVERDUE": 3,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 4,
+          "ON_TIME": 1
+        },
+        "stable": true,
+        "timeStable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Partição de prazos CLIENT 16b19b2b-57cc-46c4-8124-8b758934f3fb",
+      "passed": true,
+      "detail": {
+        "obtained": [
+          {
+            "state": "OVERDUE",
+            "count": 3
+          },
+          {
+            "state": "PAUSED",
+            "count": 0
+          },
+          {
+            "state": "PENDING_CLASSIFICATION",
+            "count": 4
+          },
+          {
+            "state": "ON_TIME",
+            "count": 1
+          }
+        ],
+        "active": 8
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "gestor@sige.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-15",
+      "name": "statusDistribution TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "REOPENED": 10,
+          "VALIDATION": 5,
+          "CANCELLED": 0,
+          "TRIAGE": 0,
+          "EXECUTION": 175,
+          "DONE": 50,
+          "OPEN": 0,
+          "WAITING_FOR_CLIENT": 0
+        },
+        "obtained": {
+          "OPEN": 0,
+          "TRIAGE": 0,
+          "EXECUTION": 175,
+          "WAITING_FOR_CLIENT": 0,
+          "VALIDATION": 5,
+          "DONE": 50,
+          "REOPENED": 10,
+          "CANCELLED": 0
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "priorityDistribution TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "UNCLASSIFIED": 0,
+          "URGENT": 3,
+          "LOW": 3,
+          "MEDIUM": 3,
+          "HIGH": 231
+        },
+        "obtained": {
+          "URGENT": 3,
+          "HIGH": 231,
+          "MEDIUM": 3,
+          "LOW": 3,
+          "UNCLASSIFIED": 0
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "assigneeDistribution TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 240
+        },
+        "obtained": {
+          "0f1c3b65-cd0a-47f8-a264-dc23278e1f8e": 240
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Indicadores TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "activeCount": 190,
+          "highPriorityCount": 184,
+          "validationCount": 5,
+          "waitingCount": 0,
+          "classifiedCount": 185
+        },
+        "obtained": {
+          "activeCount": 190,
+          "highPriorityCount": 184,
+          "validationCount": 5,
+          "waitingCount": 0,
+          "classifiedCount": 185
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Prazos por estado, oráculo MySQL TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "OVERDUE": 21,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 3,
+          "ON_TIME": 166
+        },
+        "obtained": {
+          "OVERDUE": 21,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 3,
+          "ON_TIME": 166
+        },
+        "stable": true,
+        "timeStable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Partição de prazos TRAFFIC_MANAGER 0f1c3b65-cd0a-47f8-a264-dc23278e1f8e",
+      "passed": true,
+      "detail": {
+        "obtained": [
+          {
+            "state": "OVERDUE",
+            "count": 21
+          },
+          {
+            "state": "PAUSED",
+            "count": 0
+          },
+          {
+            "state": "PENDING_CLASSIFICATION",
+            "count": 3
+          },
+          {
+            "state": "ON_TIME",
+            "count": 166
+          }
+        ],
+        "active": 190
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "gestor2@sige.demo GET /dashboard HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-15",
+      "name": "statusDistribution TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "REOPENED": 13,
+          "VALIDATION": 0,
+          "CANCELLED": 0,
+          "TRIAGE": 0,
+          "EXECUTION": 0,
+          "DONE": 3,
+          "OPEN": 0,
+          "WAITING_FOR_CLIENT": 2
+        },
+        "obtained": {
+          "OPEN": 0,
+          "TRIAGE": 0,
+          "EXECUTION": 0,
+          "WAITING_FOR_CLIENT": 2,
+          "VALIDATION": 0,
+          "DONE": 3,
+          "REOPENED": 13,
+          "CANCELLED": 0
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "priorityDistribution TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "UNCLASSIFIED": 0,
+          "URGENT": 1,
+          "LOW": 1,
+          "MEDIUM": 1,
+          "HIGH": 15
+        },
+        "obtained": {
+          "URGENT": 1,
+          "HIGH": 15,
+          "MEDIUM": 1,
+          "LOW": 1,
+          "UNCLASSIFIED": 0
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "assigneeDistribution TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 18
+        },
+        "obtained": {
+          "ff2f1bcd-a088-4000-a7bb-abc4452827bf": 18
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Indicadores TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "activeCount": 15,
+          "highPriorityCount": 15,
+          "validationCount": 0,
+          "waitingCount": 2,
+          "classifiedCount": 2
+        },
+        "obtained": {
+          "activeCount": 15,
+          "highPriorityCount": 15,
+          "validationCount": 0,
+          "waitingCount": 2,
+          "classifiedCount": 2
+        },
+        "stable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Prazos por estado, oráculo MySQL TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "OVERDUE": 2,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 13,
+          "ON_TIME": 0
+        },
+        "obtained": {
+          "OVERDUE": 2,
+          "PAUSED": 0,
+          "PENDING_CLASSIFICATION": 13,
+          "ON_TIME": 0
+        },
+        "stable": true,
+        "timeStable": true
+      }
+    },
+    {
+      "ct": "CT-15",
+      "name": "Partição de prazos TRAFFIC_MANAGER ff2f1bcd-a088-4000-a7bb-abc4452827bf",
+      "passed": true,
+      "detail": {
+        "obtained": [
+          {
+            "state": "OVERDUE",
+            "count": 2
+          },
+          {
+            "state": "PAUSED",
+            "count": 0
+          },
+          {
+            "state": "PENDING_CLASSIFICATION",
+            "count": 13
+          },
+          {
+            "state": "ON_TIME",
+            "count": 0
+          }
+        ],
+        "active": 15
+      }
+    }
+  ],
+  "limitations": [
+    "Dados sintéticos preexistentes em QA; nenhuma fixture alterada.",
+    "Prazos calculados dos registros MySQL em duas amostras temporais; não controlam relógio nem todos os limites.",
+    "Interface não exercitada."
+  ]
+}

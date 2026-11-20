@@ -1,0 +1,254 @@
+{
+  "startedAt": "2026-11-19T17:37:51.726758+00:00",
+  "finishedAt": "2026-11-19T17:37:53.278758+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runTag": "Review b634b711",
+    "layer": "HTTP + MySQL",
+    "executor": "qa_filtros_painel"
+  },
+  "fixture": {
+    "typeId": "730b0f25-8ffa-4674-90ab-e01810742c2c",
+    "tickets": [
+      "3490153c-8099-497e-8551-09d8761ceefb",
+      "85892d66-3a21-4502-adc6-5158a0352a1f",
+      "cfa35e02-0166-4a0a-93cc-11a9896532ba",
+      "6d6e9e38-9554-4f97-9c3e-2df00899f07a"
+    ],
+    "before": "{\"id\": \"3490153c-8099-497e-8551-09d8761ceefb\", \"status\": \"WAITING_FOR_CLIENT\", \"responseDueAt\": \"2026-11-23 11:37:52.456758\", \"resolutionDueAt\": \"2026-11-24 13:37:52.456758\", \"resolutionPausedAt\": \"2026-11-19 17:37:53.022259\", \"responseCompletedAt\": \"2026-11-19 17:37:52.568258\"}",
+    "after": {
+      "id": "3490153c-8099-497e-8551-09d8761ceefb",
+      "status": "WAITING_FOR_CLIENT",
+      "responseDueAt": "2026-11-19 16:37:53.095844",
+      "resolutionDueAt": "2026-11-24 13:37:52.456758",
+      "resolutionPausedAt": "2026-11-19 17:37:53.022259",
+      "responseCompletedAt": null
+    }
+  },
+  "checks": [
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/3490153c-8099-497e-8551-09d8761ceefb HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/3490153c-8099-497e-8551-09d8761ceefb/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/3490153c-8099-497e-8551-09d8761ceefb HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/3490153c-8099-497e-8551-09d8761ceefb/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/85892d66-3a21-4502-adc6-5158a0352a1f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/85892d66-3a21-4502-adc6-5158a0352a1f/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/85892d66-3a21-4502-adc6-5158a0352a1f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/85892d66-3a21-4502-adc6-5158a0352a1f/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/cfa35e02-0166-4a0a-93cc-11a9896532ba HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/cfa35e02-0166-4a0a-93cc-11a9896532ba/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/cfa35e02-0166-4a0a-93cc-11a9896532ba HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/cfa35e02-0166-4a0a-93cc-11a9896532ba/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/6d6e9e38-9554-4f97-9c3e-2df00899f07a HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/6d6e9e38-9554-4f97-9c3e-2df00899f07a/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/6d6e9e38-9554-4f97-9c3e-2df00899f07a HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/6d6e9e38-9554-4f97-9c3e-2df00899f07a/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /tickets/3490153c-8099-497e-8551-09d8761ceefb HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo POST /tickets/3490153c-8099-497e-8551-09d8761ceefb/wait HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Fixture pausada e primeira resposta vencida no MySQL",
+      "passed": true,
+      "detail": "{'id': '3490153c-8099-497e-8551-09d8761ceefb', 'status': 'WAITING_FOR_CLIENT', 'responseDueAt': '2026-11-19 16:37:53.095844', 'resolutionDueAt': '2026-11-24 13:37:52.456758', 'resolutionPausedAt': '2026-11-19 17:37:53.022259', 'responseCompletedAt': None}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets/3490153c-8099-497e-8551-09d8761ceefb HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Detalhe mostra primeira resposta vencida apesar de pausa",
+      "passed": true,
+      "detail": "{'ticketId': '3490153c-8099-497e-8551-09d8761ceefb', 'overdue': True, 'slaState': 'PAUSED', 'resolutionSlaState': 'PAUSED', 'responseSlaState': 'OVERDUE'}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets?demandTypeId=730b0f25-8ffa-4674-90ab-e01810742c2c&size=2&page=0 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets?demandTypeId=730b0f25-8ffa-4674-90ab-e01810742c2c&size=2&page=1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets?demandTypeId=730b0f25-8ffa-4674-90ab-e01810742c2c&size=2&page=2 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Cliente percorre duas páginas sem perdas ou duplicação",
+      "passed": true,
+      "detail": "{'expected': ['3490153c-8099-497e-8551-09d8761ceefb', '6d6e9e38-9554-4f97-9c3e-2df00899f07a', '85892d66-3a21-4502-adc6-5158a0352a1f', 'cfa35e02-0166-4a0a-93cc-11a9896532ba'], 'obtained': ['3490153c-8099-497e-8551-09d8761ceefb', '6d6e9e38-9554-4f97-9c3e-2df00899f07a', 'cfa35e02-0166-4a0a-93cc-11a9896532ba', '85892d66-3a21-4502-adc6-5158a0352a1f'], 'totals': [4, 4, 4]}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo GET /tickets?demandTypeId=730b0f25-8ffa-4674-90ab-e01810742c2c&overdue=true&size=100 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Vencido pausado no escopo ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a",
+      "passed": false,
+      "detail": "{'ids': [], 'total': 0, 'expectedVisible': True}"
+    }
+  ],
+  "error": "AssertionError(\"Vencido pausado no escopo ADMIN 668d17ec-48ad-4ca2-86a3-2e370fd2110a: {'ids': [], 'total': 0, 'expectedVisible': True}\")",
+  "limitations": [
+    "Fixture isolada preservada para auditoria em QA; atualização SQL restrita ao ticket e tipo criados nesta execução.",
+    "Relógio de banco usado para forçar vencimento; não testa limites do calendário.",
+    "Interface não exercitada."
+  ]
+}

@@ -23,7 +23,9 @@ public class TicketAccessPolicy {
   }
   public Ticket requireVisible(UUID id, AppUser user) {
     Ticket ticket=tickets.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Ticket não encontrado"));
-    if (!canAccess(ticket,user)) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Ticket não encontrado");
+    if (!canAccess(ticket,user)) {
+      throw new br.pucminas.sige.shared.security.TicketAccessDeniedException(user, id);
+    }
     return ticket;
   }
   public boolean canAccess(Ticket ticket, AppUser user) {

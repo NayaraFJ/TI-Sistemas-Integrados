@@ -11,6 +11,7 @@ export function StatusDistribution({ distribution, bars = false }: { distributio
     const count = distribution.find(item => item.status === status)?.count ?? 0;
     return <Box key={status}><Stack direction="row" justifyContent="space-between" sx={{ mb: 0.75 }}><Typography variant="body2">{t(`status.${status}`)}</Typography><Typography variant="body2" fontWeight={700}>{count}</Typography></Stack><LinearProgress variant="determinate" value={total ? count / total * 100 : 0} sx={{ height: 4, borderRadius: 2, bgcolor: '#e7f5fb', '& .MuiLinearProgress-bar': { bgcolor: statusAppearance[status].color } }} /></Box>;
   })}</Stack>;
+  if (total === 0) return <Box sx={{ minHeight: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}><Typography color="text.secondary">{t('tickets.noItems')}</Typography></Box>;
   const slices = distribution.filter(item => item.count > 0).map(item => ({ id: item.status, value: item.count, label: t(`status.${item.status}`), color: statusAppearance[item.status].color }));
   return <Box>
     <Box sx={{ position: 'relative' }}><PieChart skipAnimation height={200} series={[{ data: slices, innerRadius: 56, outerRadius: 82, paddingAngle: 1, cornerRadius: 2 }]} hideLegend />

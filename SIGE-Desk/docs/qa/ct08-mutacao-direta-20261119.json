@@ -1,0 +1,162 @@
+{
+  "startedAt": "2026-11-19T21:54:43.895257+00:00",
+  "finishedAt": "2026-11-19T21:54:44.948756+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runtimeSha256": "8e38886b7a655b48fd514648113897ef1ff6d0dd32dd869eec1df16871d261ea",
+    "runTag": "Review 7aa03728"
+  },
+  "cases": [
+    {
+      "id": "CT-08-mutacao-direta",
+      "priority": "Alta",
+      "status": "APROVADO",
+      "startedAt": "2026-11-19T21:54:44.439757+00:00",
+      "finishedAt": "2026-11-19T21:54:44.948257+00:00",
+      "assertions": 23,
+      "error": null
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "atendimento@sige.demo GET /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "atendimento@sige.demo POST /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "atendimento@sige.demo GET /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "atendimento@sige.demo POST /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "cliente@aurora.demo GET /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "rafael@horizonte.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "rafael@horizonte.demo POST /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1/comments HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "CLIENT evento de negação correlacionado",
+      "passed": true,
+      "detail": "{'ticketId': '43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1', 'events': [{'at': '2026-11-19T21:54:44.761259', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'CLIENT', 'type': 'TICKET', 'actor': '16b19b2b-57cc-46c4-8124-8b758934f3fb', 'resource': '43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1'}]}"
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "cliente@aurora.demo GET /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "CLIENT detalhe e histórico inalterados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "CLIENT linha do ticket no MySQL inalterada",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "gestor2@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "gestor2@sige.demo POST /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1/execution HTTP 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "TRAFFIC_MANAGER evento de negação correlacionado",
+      "passed": true,
+      "detail": "{'ticketId': '43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1', 'events': [{'at': '2026-11-19T21:54:44.886257', 'code': 'SECURITY_TICKET_ACCESS_DENIED', 'role': 'TRAFFIC_MANAGER', 'type': 'TICKET', 'actor': 'ff2f1bcd-a088-4000-a7bb-abc4452827bf', 'resource': '43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1'}]}"
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "cliente@aurora.demo GET /tickets/43c5c1e7-8c54-4f67-80df-4cf9ed2c98e1 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "TRAFFIC_MANAGER detalhe e histórico inalterados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-08-mutacao-direta",
+      "name": "TRAFFIC_MANAGER linha do ticket no MySQL inalterada",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

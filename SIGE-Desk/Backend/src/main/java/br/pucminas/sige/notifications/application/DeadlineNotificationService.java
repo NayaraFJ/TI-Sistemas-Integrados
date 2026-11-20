@@ -12,14 +12,14 @@ public class DeadlineNotificationService {
   @Transactional public void inspect(UUID id,Instant now){
     Ticket ticket=tickets.lockForDeadline(id).orElse(null);
     if(ticket==null||ticket.getStatus()==TicketStatus.DONE||ticket.getStatus()==TicketStatus.CANCELLED)return;
-    if(ticket.getResponseCompletedAt()==null&&ticket.getResponseDueAt()!=null&&now.isAfter(ticket.getResponseDueAt()))publish(ticket,"RESPONSE",0,ticket.getResponseDueAt());
-    if(ticket.getResolutionPausedAt()==null&&ticket.getResolutionDueAt()!=null&&now.isAfter(ticket.getResolutionDueAt()))publish(ticket,"RESOLUTION",ticket.getResolutionCycle(),ticket.getResolutionDueAt());
+    if(ticket.getResponseCompletedAt()==null&&ticket.getResponseDueAt()!=null&&now.isAfter(ticket.getResponseDueAt()))publish(ticket,"RESPONSE",0,ticket.getResponseDueAt(),now);
+    if(ticket.getResolutionPausedAt()==null&&ticket.getResolutionDueAt()!=null&&now.isAfter(ticket.getResolutionDueAt()))publish(ticket,"RESOLUTION",ticket.getResolutionCycle(),ticket.getResolutionDueAt(),now);
   }
-  private void publish(Ticket ticket,String kind,int cycle,Instant deadline){
+  private void publish(Ticket ticket,String kind,int cycle,Instant deadline,Instant now){
     if(notices.existsByTicketIdAndKindAndCycleAndDeadline(ticket.getId(),kind,cycle,deadline))return;
     notices.saveAndFlush(new DeadlineNotice(ticket,kind,cycle,deadline));
     String label=kind.equals("RESPONSE")?"primeira resposta":"resolução";
     history.save(new TicketHistory(ticket,null,"SLA_OVERDUE",kind.equals("RESPONSE")?"responseDueAt":"resolutionDueAt",null,"\""+deadline+"\"","Prazo de "+label+" vencido"));
-    notifications.publish(ticket,"SLA_OVERDUE",ticket.getNumber()+" está com o prazo de "+label+" vencido.");
+    notifications.publish(ticket,"SLA_OVERDUE","Prazo de "+label+" vencido em "+deadline+"; atraso: "+Math.max(1,java.time.Duration.between(deadline,now).getSeconds())+" segundos; ciclo: "+cycle+".");
   }
 }

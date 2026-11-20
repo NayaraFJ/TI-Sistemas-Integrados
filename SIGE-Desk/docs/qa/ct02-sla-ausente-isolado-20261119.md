@@ -1,0 +1,9 @@
+# CT-02 — ausência de regra de SLA
+
+Em 19/11/2026, executou-se o [roteiro](../../Backend/scripts/qa_ct02_sla_ausente.py) na API exclusiva `localhost:8082` e no schema MySQL exclusivo `sige_qa_ct02_isolado_20261119`, com dados demonstrativos sintéticos. A instância compartilhada na porta 8081 não foi alterada. O [registro](ct02-sla-ausente-isolado-20261119.json) contém horários UTC, respostas e 25 verificações aprovadas. O SHA-256 identifica o JAR em disco; o processo de teste foi iniciado com esse caminho. Após a execução, o processo e o schema exclusivos foram removidos. Revisão independente pendente.
+
+Com uma única regra padrão ativa, Admin tentou desativá-la via API e recebeu HTTP 409; a consulta SQL confirmou que ela permaneceu ativa. O controlador também protege a mudança de escopo da última regra padrão. Isso demonstra a proteção para a alteração sequencial testada; não demonstra sua segurança sob concorrência ou contra alterações diretas no banco.
+
+Para simular um banco excepcional sem regras, o roteiro desativou diretamente todas as regras no schema exclusivo. Um ticket em triagem, sem snapshot de SLA, foi enviado para classificação com prioridade, campanha e responsável válidos: a API respondeu HTTP 409 com `Regra padrão de SLA não encontrada`. SQL confirmou que o ticket permaneceu em `TRIAGE`, sem prioridade, responsável ou snapshot. A leitura HTTP do mesmo ticket também retornou 409 com essa mensagem, de modo que a resposta não fornece o detalhe enquanto a regra está ausente.
+
+Uma primeira tentativa do roteiro interrompeu-se antes do POST porque seu auxiliar tentou ler a versão após desativar as regras e recebeu esse mesmo 409. O roteiro foi ajustado para usar a versão obtida antes da alteração; as regras do schema isolado foram restauradas antes da execução registrada. O teste cobre a ausência induzida de todas as regras, não conclui o comportamento visual nem todas as condições de configuração ou concorrência.

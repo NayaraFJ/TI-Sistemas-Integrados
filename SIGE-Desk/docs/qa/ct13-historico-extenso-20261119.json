@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-11-19T17:30:59.014758+00:00",
+  "finishedAt": "2026-11-19T17:30:59.660759+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runTag": "Review 8fe6d1f5"
+  },
+  "cases": [
+    {
+      "id": "CT-13-historico-extenso-atores",
+      "priority": "Alta",
+      "status": "REPROVADO",
+      "startedAt": "2026-11-19T17:30:59.549258+00:00",
+      "finishedAt": "2026-11-19T17:30:59.660759+00:00",
+      "assertions": 1,
+      "error": "Expecting ',' delimiter: line 1 column 276 (char 275)"
+    }
+  ],
+  "checks": [
+    {
+      "ct": "CT-13-historico-extenso-atores",
+      "name": "cliente@aurora.demo POST /auth/login HTTP 200",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "observed": {}
+}

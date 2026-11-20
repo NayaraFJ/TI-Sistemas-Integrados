@@ -1,0 +1,212 @@
+{
+  "startedAt": "2026-11-19T17:37:34.695259+00:00",
+  "finishedAt": "2026-11-19T17:37:36.033758+00:00",
+  "environment": {
+    "baseUrl": "http://localhost:8081/api/v1",
+    "schema": "sige_desk_qa_20261118",
+    "mysql": "8.0.40",
+    "runTag": "Review 6614afc4",
+    "layer": "HTTP + MySQL",
+    "executor": "qa_filtros_painel"
+  },
+  "fixture": {
+    "typeId": "a309bcbc-d214-45dd-81a1-e7b7b58f4b8b",
+    "tickets": [
+      "11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd",
+      "e4e36a86-733b-4406-b527-f2c8ba37e2d3",
+      "d530244b-5ff2-4339-bf85-2ef980a8e8c2",
+      "17a373eb-45f6-499c-b66f-0f39836fdb2f"
+    ],
+    "before": "{\"id\": \"11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd\", \"status\": \"WAITING_FOR_CLIENT\", \"responseDueAt\": \"2026-11-23 11:37:35.408257\", \"resolutionDueAt\": \"2026-11-24 13:37:35.408257\", \"resolutionPausedAt\": \"2026-11-19 17:37:35.926758\", \"responseCompletedAt\": \"2026-11-19 17:37:35.495258\"}",
+    "after": {
+      "id": "11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd",
+      "status": "WAITING_FOR_CLIENT",
+      "responseDueAt": "2026-11-19 16:37:35.993053",
+      "resolutionDueAt": "2026-11-24 13:37:35.408257",
+      "resolutionPausedAt": "2026-11-19 17:37:35.926758",
+      "responseCompletedAt": null
+    }
+  },
+  "checks": [
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "admin@sige.demo POST /demand-types HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/e4e36a86-733b-4406-b527-f2c8ba37e2d3 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/e4e36a86-733b-4406-b527-f2c8ba37e2d3/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/e4e36a86-733b-4406-b527-f2c8ba37e2d3 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/e4e36a86-733b-4406-b527-f2c8ba37e2d3/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/d530244b-5ff2-4339-bf85-2ef980a8e8c2 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/d530244b-5ff2-4339-bf85-2ef980a8e8c2/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/d530244b-5ff2-4339-bf85-2ef980a8e8c2 HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/d530244b-5ff2-4339-bf85-2ef980a8e8c2/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo POST /tickets HTTP 201",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/17a373eb-45f6-499c-b66f-0f39836fdb2f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/17a373eb-45f6-499c-b66f-0f39836fdb2f/triage/start HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo GET /tickets/17a373eb-45f6-499c-b66f-0f39836fdb2f HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "atendimento@sige.demo POST /tickets/17a373eb-45f6-499c-b66f-0f39836fdb2f/triage HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /auth/csrf HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo GET /tickets/11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "gestor@sige.demo POST /tickets/11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd/wait HTTP 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "ct": "CT-06",
+      "name": "Fixture pausada e primeira resposta vencida no MySQL",
+      "passed": true,
+      "detail": "{'id': '11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd', 'status': 'WAITING_FOR_CLIENT', 'responseDueAt': '2026-11-19 16:37:35.993053', 'resolutionDueAt': '2026-11-24 13:37:35.408257', 'resolutionPausedAt': '2026-11-19 17:37:35.926758', 'responseCompletedAt': None}"
+    },
+    {
+      "ct": "CT-06",
+      "name": "cliente@aurora.demo GET /tickets/11b1f6e1-5bca-41b3-a8fa-3d3a72a6b6cd HTTP 200",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "error": "KeyError('resolutionPausedAt')",
+  "limitations": [
+    "Fixture isolada preservada para auditoria em QA; atualização SQL restrita ao ticket e tipo criados nesta execução.",
+    "Relógio de banco usado para forçar vencimento; não testa limites do calendário.",
+    "Interface não exercitada."
+  ]
+}
