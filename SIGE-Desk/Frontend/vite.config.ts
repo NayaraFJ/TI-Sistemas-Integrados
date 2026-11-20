@@ -5,7 +5,7 @@ export default defineConfig(({mode})=>{
   const apiTarget=loadEnv(mode,'.','SIGE_').SIGE_API_TARGET??'http://localhost:8080';
   return {
   plugins: [react()],
-  server: { port: 5173, proxy: { '/api': apiTarget, '/actuator': apiTarget } },
+  server: { port: 5173, strictPort: true, proxy: { '/api': apiTarget, '/actuator': apiTarget } },
   build: {
     rollupOptions: {
       output: {

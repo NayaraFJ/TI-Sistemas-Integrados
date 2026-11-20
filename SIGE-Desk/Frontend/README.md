@@ -25,6 +25,8 @@ pnpm dev
 
 Acesse [http://localhost:5173](http://localhost:5173). Nas próximas execuções, basta usar `pnpm dev`; repita `pnpm install` quando as dependências ou o arquivo `pnpm-lock.yaml` forem atualizados.
 
+A porta é fixa (`strictPort: true`): se `5173` estiver ocupada, o Vite informa o conflito e encerra, em vez de iniciar silenciosamente em `5174`. Encerre a instância anterior do frontend e execute `pnpm dev` novamente. A origem local padrão permitida pela API é `http://localhost:5173`; acessar outra porta pode resultar em HTTP 403 (`Invalid CORS request`) mesmo com credenciais corretas.
+
 ## Kanban
 
 O Kanban utiliza [`@caldwell619/react-kanban`](https://github.com/christopher-caldwell/react-kanban), com licença MIT, e `@hello-pangea/dnd`. Ambos são instalados por `pnpm install`. O quadro apresenta os tickets retornados pelo backend, respeitando os filtros e a página atual. Clique em um cartão para abrir o ticket; alterações de status são feitas pelas ações do detalhe, com as validações do backend. A movimentação livre entre colunas está desativada porque algumas transições exigem triagem, justificativa, evidência ou aprovação.
@@ -61,6 +63,16 @@ As abas de clientes, campanhas, tipos de demanda, SLA e usuários usam uma lista
 Em Tickets, alterne entre Kanban e tabela. Os filtros principais ficam visíveis; **Mais filtros** mostra campanha, tipo, prioridade oficial, responsável e período. Recolher os campos preserva os filtros aplicados. A paginação permite 10, 25 ou 50 itens, e a exportação CSV considera todos os resultados dos filtros, independentemente da página exibida.
 
 Notificações permite consultar todas ou apenas não lidas, marcar uma notificação e marcar todas como lidas. Os indicadores e gráficos do painel e dos relatórios vêm da API. Os dados de demonstração do backend são persistidos no MySQL.
+
+## Tutorial, tags e gráficos
+
+**Ver tutorial** inicia um guia da página atual: destaca os controles na própria tela, rola até a área explicada e apresenta progresso, Anterior, Próximo e Concluir. As setas do teclado navegam pelas etapas e Esc fecha o guia. O conteúdo considera o perfil e os controles presentes; no celular, o acesso fica dentro de Menu. O guia não envia formulários nem executa ações de negócio.
+
+As tags seguem o tema compartilhado: altura de 24 px, texto de 12 px com peso 500, cantos de 6 px e fundo suave sem contorno. Status e SLA usam espaçamento de 8 px e podem quebrar linha sem encostar. Tags de cadastro, notificações, contadores do Kanban e anexos usam a mesma base.
+
+Os gráficos usam a versão Community de MUI X Charts já instalada. Barras horizontais com eixo de quantidade substituem as linhas de progresso do relatório; a rosca mostra quantidades e percentuais e permite destacar um status pelo gráfico ou pela legenda, inclusive com teclado. As cores e a ordem dos status são compartilhadas com as tags. As animações respeitam `prefers-reduced-motion`; o estado vazio informa a ausência de tickets.
+
+Validação e capturas locais: [registro de interface](../docs/ui/2026-11-20/README.md). Testes do frontend: `node --experimental-strip-types --test tests/*.test.ts`.
 
 ## Campos, concorrência e contrato
 

@@ -38,14 +38,14 @@ export function TicketsPage() {
     <Panel>
       <Stack direction={{ xs: 'column', sm: 'row' }} alignItems={{ sm: 'center' }} justifyContent="space-between" gap={1.5} sx={{ px: 2.5, py: 1.75, borderBottom: 1, borderColor: 'divider', bgcolor: '#fafcfd' }}>
         <Typography variant="body2"><strong>{query.data ? `${query.data.total} ticket(s)` : '—'}</strong><Box component="span" sx={{ color: 'text.secondary' }}> · {t(view === 'kanban' ? 'tickets.byStage' : 'tickets.inTable')}</Box></Typography>
-        <ToggleButtonGroup size="small" exclusive value={view} onChange={(_, next: 'kanban' | 'table' | null) => { if (next) setView(next); }} aria-label={t('tickets.view')}>
+        <ToggleButtonGroup data-tour="ticket-view" size="small" exclusive value={view} onChange={(_, next: 'kanban' | 'table' | null) => { if (next) setView(next); }} aria-label={t('tickets.view')}>
           <ToggleButton value="kanban"><ViewKanbanOutlined sx={{ fontSize: 17, mr: 0.75 }} />{t('actions.kanban')}</ToggleButton>
           <ToggleButton value="table"><TableRowsOutlined sx={{ fontSize: 17, mr: 0.75 }} />{t('actions.table')}</ToggleButton>
         </ToggleButtonGroup>
       </Stack>
-      <Box sx={{ p: 2.5, borderBottom: 1, borderColor: 'divider' }}><TicketFilterPanel filters={filters} onChange={next => { setFilters(next); setPage(0); }} reference={refs.data} searchPlaceholder={t('tickets.searchPlaceholder')} /></Box>
+      <Box data-tour="ticket-filters" sx={{ p: 2.5, borderBottom: 1, borderColor: 'divider' }}><TicketFilterPanel filters={filters} onChange={next => { setFilters(next); setPage(0); }} reference={refs.data} searchPlaceholder={t('tickets.searchPlaceholder')} /></Box>
       {query.isError ? <Box sx={{ p: 2.5 }}><Failure error={query.error} /></Box> : query.isPending ? <Loading /> : query.data && <>
-        <Box aria-busy={query.isFetching} sx={{ minWidth: 0 }}>{query.isFetching && <LinearProgress />}{view === 'kanban' ? <Box sx={{ p: 2, bgcolor: '#f1f6f8' }}><TicketKanban items={query.data.items} /></Box> : <TicketTable items={query.data.items} embedded />}</Box>
+        <Box data-tour="ticket-results" aria-busy={query.isFetching} sx={{ minWidth: 0 }}>{query.isFetching && <LinearProgress />}{view === 'kanban' ? <Box sx={{ p: 2, bgcolor: '#f1f6f8' }}><TicketKanban items={query.data.items} /></Box> : <TicketTable items={query.data.items} embedded />}</Box>
         <TablePagination component="div" count={query.data.total} page={page} rowsPerPage={size} rowsPerPageOptions={[10, 25, 50]} onPageChange={(_, next) => setPage(next)} onRowsPerPageChange={event => { setSize(Number(event.target.value)); setPage(0); }} labelRowsPerPage={t('tickets.rowsPerPage')} labelDisplayedRows={({ from, to, count }) => `${from}–${to} de ${count}`} getItemAriaLabel={type => t(type === 'next' ? 'tickets.nextPage' : 'tickets.previousPage')} sx={{ borderTop: 1, borderColor: 'divider', '& .MuiTablePagination-toolbar': { flexWrap: 'wrap', justifyContent: 'flex-end' } }} />
       </>}
     </Panel>

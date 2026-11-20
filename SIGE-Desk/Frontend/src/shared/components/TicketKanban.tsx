@@ -61,7 +61,7 @@ export function TicketKanban({ items }: { items: TicketItem[] }) {
       renderColumnHeader={column => <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2, minHeight: 32 }}>
         <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: columns.find(item => item.status === column.id)?.color, flexShrink: 0 }} />
         <Typography variant="body2" fontWeight={700} sx={{ flexGrow: 1 }}>{column.title}</Typography>
-        <Chip size="small" label={column.cards.length} sx={{ bgcolor: 'white', fontWeight: 700 }} />
+        <Chip size="small" label={column.cards.length}  />
       </Stack>}
       renderCard={({ ticket }) => <Card component={Link} to={`/tickets/${ticket.id}`} variant="outlined" sx={{
         display: 'block', width: 244, mb: 1.5, textDecoration: 'none', color: 'inherit',
@@ -71,7 +71,7 @@ export function TicketKanban({ items }: { items: TicketItem[] }) {
         '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main' }
       }}>
         <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
-          <Stack direction="row" justifyContent="space-between" alignItems="center" gap={1}><Typography variant="caption" color="primary" fontWeight={800}>{ticket.number}</Typography><PriorityText priority={ticket.priority}/></Stack>{ticket.overdue&&<Chip size="small" color="error" variant="outlined" label={t('dashboard.overdue')} sx={{mt:1}}/>}
+          <Stack direction="row" justifyContent="space-between" alignItems="center" gap={1}><Typography variant="caption" color="primary" fontWeight={800}>{ticket.number}</Typography><PriorityText priority={ticket.priority}/></Stack>{ticket.overdue&&<Chip size="small" color="error" label={t('dashboard.overdue')} sx={{mt:1}}/>}
           <Typography variant="body2" fontWeight={600} sx={{ mt: 0.5, minHeight: 42, overflowWrap: 'anywhere' }}>{ticket.subject}</Typography>
           <Typography variant="caption" display="block" color="text.secondary" sx={{ mt: 1 }}>{ticket.clientName}</Typography>
           <Typography variant="caption" display="block" color="text.secondary">{ticket.typeName}</Typography><Typography variant="caption" display="block" color="text.secondary" sx={{ mt: 1, pt: 1, borderTop: 1, borderColor: 'divider' }}>{ticket.campaignName ?? 'Campanha pendente'}</Typography>

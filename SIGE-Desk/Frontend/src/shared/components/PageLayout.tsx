@@ -18,12 +18,12 @@ export const ticketStatuses = Object.keys(statusAppearance) as TicketStatus[];
 export function PageHeading({ title, description, actions }: { title: string; description?: string; actions?: ReactNode }) {
   return <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ sm: 'flex-start' }} gap={2}>
     <Box><Typography variant="h4" component="h1">{title}</Typography>{description && <Typography color="text.secondary" sx={{ mt: 0.75 }}>{description}</Typography>}</Box>
-    {actions && <Stack direction="row" gap={1} flexWrap="wrap" sx={{ flexShrink: 0 }}>{actions}</Stack>}
+    {actions && <Stack data-tour="page-actions" direction="row" gap={1} flexWrap="wrap" sx={{ flexShrink: 0 }}>{actions}</Stack>}
   </Stack>;
 }
 
-export function Panel({ children }: { children: ReactNode }) {
-  return <Paper variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden', minWidth: 0 }}>{children}</Paper>;
+export function Panel({ children, tourId }: { children: ReactNode; tourId?: string }) {
+  return <Paper data-tour={tourId} variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden', minWidth: 0 }}>{children}</Paper>;
 }
 
 export function SectionHeading({ title, actions }: { title: string; actions?: ReactNode }) {
@@ -48,7 +48,7 @@ export function Metric({ label, value, hint, progress }: { label: string; value:
 export function StatusBadge({ status }: { status: TicketStatus }) {
   const { t } = useTranslation();
   const style = statusAppearance[status];
-  return <Chip size="small" label={<Stack direction="row" alignItems="center" spacing={0.75}><Box aria-hidden sx={{ width: 6, height: 6, bgcolor: 'currentColor', borderRadius: '50%' }} /><span>{t(`status.${status}`)}</span></Stack>} sx={{ height: 25, fontSize: 11, fontWeight: 800, color: style.color, bgcolor: style.background }} />;
+  return <Chip size="small" label={t(`status.${status}`)} sx={{ color: style.color, bgcolor: style.background }} />;
 }
 
 export function PriorityText({ priority }: { priority: Priority | null }) {

@@ -17,6 +17,12 @@ export const theme = createTheme({
     body1: { fontSize: 14 }, body2: { fontSize: 13 }, caption: { fontSize: 12 }
   },
   components: {
+    MuiChip: { defaultProps: { size: 'small' }, styleOverrides: {
+      root: { height: 24, borderRadius: 6, fontSize: 12, fontWeight: 500, verticalAlign: 'middle', maxWidth: '100%' },
+      label: { paddingLeft: 8, paddingRight: 8 },
+      colorPrimary: { backgroundColor: '#eaf4fb', color: '#176a94' },
+      colorError: { backgroundColor: '#fdeef0', color: '#ad3943' }
+    } },
     MuiCard: { defaultProps: { variant: 'outlined' }, styleOverrides: { root: { boxShadow: '0 1px 2px rgba(16,41,63,0.03)', borderRadius: 14 } } },
     MuiPaper: { styleOverrides: { outlined: { boxShadow: '0 1px 2px rgba(16,41,63,0.03)' } } },
     MuiButton: { defaultProps: { disableElevation: true }, styleOverrides: { root: { textTransform: 'none', fontWeight: 700, fontSize: 13, borderRadius: 9, whiteSpace: 'nowrap' }, contained: { backgroundColor: '#10293f', '&:hover': { backgroundColor: '#1a4968' } }, outlined: { borderColor: '#d9e3e8', color: '#10293f', backgroundColor: 'white', '&:hover': { borderColor: '#9db2be', backgroundColor: '#f8fbfc' } } } },

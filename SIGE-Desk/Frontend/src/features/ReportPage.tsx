@@ -29,14 +29,14 @@ export function ReportPage() {
   return <Stack spacing={2.5}>
     <PageHeading title={t('nav.reports')} description={t('reports.subtitle')} actions={<Button startIcon={<DownloadOutlined />} variant="outlined" onClick={() => exportCsv.mutate()} disabled={exportCsv.isPending}>{t('actions.export')}</Button>} />
     {exportCsv.isError && <Failure error={exportCsv.error} />}
-    <Panel><Box sx={{ p: 2.5 }}><TicketFilterPanel filters={filters} onChange={setFilters} reference={refs.data} /></Box></Panel>
-    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', lg: 'repeat(4,1fr)' }, gap: 1.75 }}>
+    <Panel tourId="report-filters"><Box sx={{ p: 2.5 }}><TicketFilterPanel filters={filters} onChange={setFilters} reference={refs.data} /></Box></Panel>
+    <Box data-tour="report-summary" sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', lg: 'repeat(4,1fr)' }, gap: 1.75 }}>
       <Metric label={t('reports.total')} value={query.data.total} hint={t('reports.totalHint')} />
       <Metric label={t('reports.completed')} value={summary.completedCount} hint={t('reports.completedHint')} />
       <Metric label={t('reports.slaCompliant')} value={compliant === null ? '—' : `${compliant}%`} hint={`${summary.slaCompliantCount}/${summary.classifiedCount} ${t('reports.classified')}`} />
       <Metric label={t('reports.averageResolution')} value={average} hint={t('reports.averageHint')} />
     </Box>
-    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: 'minmax(0,1.8fr) minmax(270px,0.8fr)' }, gap: 2.25, alignItems: 'start' }}>
+    <Box data-tour="report-charts" sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: 'minmax(0,1.8fr) minmax(270px,0.8fr)' }, gap: 2.25, alignItems: 'start' }}>
       <Panel><SectionHeading title={t('reports.distribution')} /><Box sx={{ p: 2.5 }}><StatusDistribution distribution={distribution} bars /></Box></Panel>
       <Panel><SectionHeading title={t('reports.quickRead')} /><Box sx={{ p: 2.5 }}><StatusDistribution distribution={distribution} /><Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>{t('reports.active')}: <strong>{summary.activeCount}</strong> · {t('reports.overdue')}: <strong>{summary.overdueCount}</strong></Typography></Box></Panel>
     </Box>

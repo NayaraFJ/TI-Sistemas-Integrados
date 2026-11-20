@@ -18,32 +18,34 @@ void i18n.use(initReactI18next).init({
     messages: { logoutError: 'Não foi possível sair. Tente novamente.', loading: 'Carregando dados…', error: 'Não foi possível carregar os dados.', validation: 'Revise os dados informados.', business: 'A solicitação não atende às regras de negócio.', conflict: 'A ação não é permitida no estado atual do ticket.', saved: 'Alteração salva.', required: 'Preencha este campo.', nonNegative: 'Informe um valor numérico maior ou igual a zero.', forbidden: 'Você não tem permissão para esta ação.' },
     metrics: { period: 'Período', impressions: 'Impressões', ctr: 'CTR (%)', cpc: 'CPC (R$)', conversions: 'Conversões', cpa: 'CPA (R$)', roas: 'ROAS' },
     notifications: { subtitle: 'Acompanhe eventos importantes dos seus tickets.', markAll: 'Marcar todas como lidas', all: 'Todas', unread: 'Não lidas', new: 'Nova', filters: 'Filtrar notificações', upToDate: 'Tudo em dia', title: 'Notificações', empty: 'Você não tem notificações.' },
-    tutorial: { open: 'Ver tutorial', title: 'Tutorial do SIGE Desk', progress: 'Etapa {{current}} de {{total}}', previous: 'Anterior', next: 'Próximo', finish: 'Concluir', close: 'Fechar', steps: {
-      CLIENT: [
-        { title: 'Acompanhe sua operação', text: 'A visão geral reúne os tickets da sua organização e destaca os itens que precisam da sua atenção.' },
-        { title: 'Abra uma solicitação', text: 'Em Tickets, use Criar ticket para registrar uma demanda com campanha, tipo, descrição e anexos.' },
-        { title: 'Acompanhe o fluxo', text: 'Alterne entre Kanban e tabela, aplique filtros e abra um ticket para consultar detalhes e histórico.' },
-        { title: 'Responda às atualizações', text: 'As notificações indicam pedidos de complemento e entregas que aguardam sua validação.' }
-      ],
-      SERVICE: [
-        { title: 'Leia os indicadores', text: 'A visão geral mostra o volume operacional, prioridades, itens em validação e dependências do cliente.' },
-        { title: 'Organize a fila', text: 'Em Tickets, o Kanban e os filtros ajudam a encontrar a demanda que precisa de triagem.' },
-        { title: 'Faça a triagem', text: 'Abra o ticket e inicie a triagem para definir campanha, tipo, prioridade, responsável e prazo de resposta.' },
-        { title: 'Acompanhe resultados', text: 'Relatórios e campanhas ajudam a acompanhar o volume, a conclusão e o cumprimento do SLA.' }
-      ],
-      TRAFFIC_MANAGER: [
-        { title: 'Veja sua fila', text: 'A visão geral considera os tickets atribuídos a você e aponta o que exige atenção.' },
-        { title: 'Abra demandas atribuídas', text: 'No Kanban, abra tickets em execução para consultar contexto, prazo, comentários e anexos.' },
-        { title: 'Registre a execução', text: 'Descreva o trabalho realizado e inclua a evidência antes de enviar a demanda para validação ou conclusão.' },
-        { title: 'Acompanhe os retornos', text: 'Notificações informam novas atribuições, pedidos de correção e conclusões.' }
-      ],
-      ADMIN: [
-        { title: 'Tenha a visão completa', text: 'A visão geral resume a operação e mostra os tickets que exigem atenção.' },
-        { title: 'Controle o fluxo', text: 'Use Tickets para acompanhar as etapas e executar as ações permitidas em cada demanda.' },
-        { title: 'Garanta a continuidade', text: 'Na triagem, classifique e atribua tickets para manter a operação em andamento.' },
-        { title: 'Mantenha os cadastros', text: 'Clientes, campanhas e tipos de demanda alimentam a abertura e preservam os vínculos históricos.' },
-        { title: 'Configure prazos e acessos', text: 'Em Configuração de SLA e Usuários e perfis, ajuste as regras operacionais e os acessos.' }
-      ]
+    charts: { total: 'tickets no total', highlight: 'Destacar {{status}}: {{count}} tickets, {{percentage}}' },
+    tutorial: { open: 'Ver tutorial', progress: 'Etapa {{current}} de {{total}}', previous: 'Anterior', next: 'Próximo', finish: 'Concluir', close: 'Fechar tutorial', steps: {
+      'dashboard-metrics': { title: 'O que precisa de atenção?', text: 'Estes indicadores resumem os tickets disponíveis para seu perfil de {{role}}. Observe as prioridades, as entregas em validação e as pendências com o cliente.' },
+      'dashboard-recent': { title: 'Retome uma demanda', text: 'A atividade recente mostra as últimas atualizações. Depois do tutorial, selecione um ticket para abrir os detalhes ou use Ver todos para consultar a fila.' },
+      'dashboard-status': { title: 'Entenda o andamento', text: 'O gráfico distribui os tickets por status. A saúde do SLA destaca os prazos vencidos entre os tickets classificados.' },
+      'dashboard-deadlines': { title: 'Acompanhe os prazos', text: 'Aqui você distingue tickets no prazo, vencidos, pausados e pendentes de classificação. Use essa leitura para organizar o acompanhamento da fila.' },
+      create: { title: 'Abra uma solicitação', text: 'Use Criar ticket para informar cliente, campanha, tipo de demanda, descrição e anexos. O formulário orienta os dados necessários antes do envio.' },
+      'ticket-tools': { title: 'Crie ou exporte demandas', text: 'Crie uma solicitação ou exporte os tickets em CSV. A exportação considera os filtros aplicados à lista.' },
+      'ticket-filters': { title: 'Encontre o ticket certo', text: 'Busque por número, assunto ou cliente. Combine os filtros disponíveis para seu perfil e abra Mais filtros para refinar a consulta. Limpar remove os filtros aplicados.' },
+      'ticket-view': { title: 'Escolha como acompanhar', text: 'O Kanban organiza os tickets por etapa. A tabela facilita comparar status, prioridade, responsável e atualização. A troca de visualização mantém seus filtros.' },
+      'ticket-results': { title: 'Explore sua fila', text: 'Selecione o número ou o cartão de um ticket para abrir sua solicitação, comentários, anexos e histórico. Os resultados respeitam as permissões do seu perfil.' },
+      'request-form': { title: 'Descreva sua demanda', text: 'Preencha os campos obrigatórios e os dados específicos do tipo de demanda. Inclua contexto e evidências para facilitar a triagem. O tutorial não preenche nem envia a solicitação.' },
+      'ticket-context': { title: 'Confira a solicitação', text: 'Consulte os dados de abertura e as informações da demanda antes de agir. O contexto registrado ajuda a entender o trabalho solicitado.' },
+      'ticket-actions': { title: 'Dê o próximo passo', text: 'Estes botões mostram as ações permitidas para você no estado atual do ticket. Cada ação solicita os dados necessários antes da confirmação.' },
+      'ticket-sla': { title: 'Entenda os prazos', text: 'Consulte o prazo de primeira resposta, o prazo de resolução e a situação do SLA. Pendências, pausas e ciclos de resolução aparecem nesta área.' },
+      'ticket-history': { title: 'Acompanhe as mudanças', text: 'O histórico registra as ações, seus responsáveis e datas. Quando disponíveis, os detalhes mostram o motivo e os valores anteriores e novos.' },
+      'notification-filters': { title: 'Veja o que ainda falta ler', text: 'Alterne entre Todas e Não lidas para acompanhar os eventos que exigem sua atenção.' },
+      'notification-list': { title: 'Acompanhe as atualizações', text: 'As notificações resumem eventos dos seus tickets. Abrir leva ao ticket relacionado e marca o aviso como lido. A lista também informa quando não há notificações.' },
+      'read-notifications': { title: 'Organize seus avisos', text: 'Marcar todas como lidas atualiza os avisos pendentes. O botão fica indisponível quando não há notificações não lidas.' },
+      'report-filters': { title: 'Defina o recorte', text: 'Combine os filtros para analisar o conjunto desejado de tickets. Os indicadores e a exportação acompanham esse recorte.' },
+      'report-summary': { title: 'Leia os resultados', text: 'Compare volume, conclusões, cumprimento do SLA e tempo médio de resolução. Quando não há dados suficientes, o indicador informa essa condição.' },
+      'report-charts': { title: 'Compare os status', text: 'Os gráficos mostram a distribuição dos tickets retornados pelo relatório e ajudam a identificar a concentração do trabalho.' },
+      export: { title: 'Leve os dados com você', text: 'Exportar CSV gera uma planilha com os tickets disponíveis no recorte selecionado.' },
+      'management-list': { title: 'Mantenha os cadastros', text: 'Use a busca para localizar registros. Os controles de cada item permitem editar seus dados e alterar sua disponibilidade conforme as permissões e regras do cadastro.' },
+      'add-record': { title: 'Cadastre um novo item', text: 'Adicionar abre o formulário deste cadastro. Revise os campos e confirme em Salvar para concluir o registro.' },
+      navigation: { title: 'Continue explorando', text: 'Este menu reúne as telas disponíveis para seu perfil. Em cada página, Ver tutorial inicia um guia específico daquela tela. Você pode fechar o guia a qualquer momento ou usar as setas do teclado para navegar.' },
+      'mobile-navigation': { title: 'Suas telas ficam no menu', text: 'Use Menu para acessar as telas permitidas para seu perfil. Dentro dele, Ver tutorial inicia o guia da página atual. Você pode fechar o guia a qualquer momento.' },
+      fallback: { title: 'Explore esta página', text: 'Aguarde o carregamento dos dados e abra Ver tutorial novamente para conhecer cada área.' }
     } },
     reports: { subtitle: 'Analise volume, cumprimento de SLA e desempenho operacional.', total: 'Volume total', totalHint: 'tickets no período', completedHint: 'entregas concluídas', classified: 'classificados', averageHint: 'até a resolução', distribution: 'Volume por status', quickRead: 'Leitura rápida', tickets: 'Tickets do relatório', active: 'Tickets ativos', completed: 'Concluídos', slaCompliant: 'SLA dentro do prazo', overdue: 'SLA vencido', averageResolution: 'Tempo médio de resolução', notAvailable: 'Sem dados', minutes: 'minutos' },
     admin: { add: 'Adicionar', editAction: 'Editar', active: 'Ativo', inactive: 'Inativo', activate: 'Ativar', deactivate: 'Desativar', searchPlaceholder: 'Filtrar registros', noRecords: 'Nenhum registro', emptyHint: 'Ajuste a busca ou adicione um novo item.', unavailableClient: 'Cliente indisponível', select: 'Selecione', passwordHint: 'Use uma senha com pelo menos 12 caracteres.', descriptions: { clients: 'Cadastre organizações e controle sua disponibilidade para novas demandas.', campaigns: 'Mantenha o catálogo usado na abertura e na triagem dos tickets.', 'demand-types': 'Defina campos, evidência e necessidade de aprovação por tipo.', 'sla-rules': 'Configure calendários e prazos com precedência explícita.', users: 'Administre acesso, vínculo com cliente e papel operacional.' }, new: 'Novo registro', edit: 'Editar registro', configuration: 'Configuração avançada', fields: { name: 'Nome', contactName: 'Contato', email: 'E-mail', phone: 'Telefone', clientId: 'Cliente', channel: 'Canal', objective: 'Objetivo', approvalRequired: 'Exige aprovação', evidenceRequired: 'Exige evidência', fieldDefinitions: 'Definição de campos', password: 'Senha', role: 'Perfil', active: 'Ativo', scope: 'Escopo', demandTypeId: 'Tipo de demanda', timezone: 'Fuso horário', businessDays: 'Dias úteis', businessStart: 'Início do expediente', businessEnd: 'Fim do expediente', holidays: 'Feriados', pauseInValidation: 'Pausar em validação', deadlines: 'Prazos por prioridade' } }
